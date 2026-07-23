@@ -62,17 +62,22 @@ export async function onRequestPost({ request, env }) {
   const files = form.getAll("file").filter((f) => typeof f !== "string");
   if (!files.length) return json({ error: "Nessun file ricevuto." }, 400);
 
+  const IMG_EXT = /\.(jpe?g|png|gif|webp|bmp|svg|avif|heic|heif)$/i;
   const saved = [];
   for (const f of files) {
-    if (!f.type || !f.type.startsWith("image/"))
+    const looksImage =
+      (f.type && f.type.startsWith("image/")) || IMG_EXT.test(f.name || "");
+    if (!looksImage)
       return json({ error: `"${f.name}" non è un'immagine.` }, 400);
     if (f.size > MAX_BYTES)
       return json({ error: `"${f.name}" supera il limite di 15 MB.` }, 400);
 
     const display = sanitize(f.name);
     const key = PREFIX + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 8) + "-" + display;
+    const ext = (display.match(/\.([a-z0-9]+)$/i) || [, ""])[1].toLowerCase();
+    const extType = { jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png", gif: "image/gif", webp: "image/webp", bmp: "image/bmp", svg: "image/svg+xml", avif: "image/avif", heic: "image/heic", heif: "image/heif" }[ext];
     await env.FOTO_BUCKET.put(key, await f.arrayBuffer(), {
-      httpMetadata: { contentType: f.type },
+      httpMetadata: { contentType: f.type || extType || "application/octet-stream" },
       customMetadata: { name: display },
     });
     saved.push(display);

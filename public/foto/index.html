@@ -67,6 +67,13 @@
   .card{position:relative;border-radius:14px;overflow:hidden;background:#eee;aspect-ratio:1/1;
     box-shadow:0 12px 28px -18px rgba(20,38,28,.5)}
   .card img{width:100%;height:100%;object-fit:cover;display:block}
+  .card .ph{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;
+    justify-content:center;gap:6px;background:#EAF3EC;color:var(--muted);text-align:center;padding:14px}
+  .card img.failed{display:none}
+  .card img.failed ~ .ph{display:flex}
+  .card .ph .phi{font-size:1.9rem}
+  .card .ph .phn{font-size:.8rem;color:var(--body);word-break:break-word;font-weight:700}
+  .card .ph .phm{font-size:.72rem}
   .card .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;
     padding:12px;background:linear-gradient(180deg,rgba(20,38,28,.25),transparent 30%,transparent 60%,rgba(20,38,28,.72));
     opacity:0;transition:.2s}
@@ -131,7 +138,7 @@
         <p><b>Trascina qui le foto</b> oppure</p>
         <button class="btn primary" id="pickBtn" type="button">Scegli dal dispositivo</button>
         <input type="file" id="file" accept="image/*" multiple class="hidden">
-        <div class="hint">JPG, PNG, GIF, WebP… fino a 15 MB per file.</div>
+        <div class="hint">JPG, PNG, GIF, WebP, HEIC (iPhone)… fino a 15 MB per file.</div>
       </div>
 
       <div class="bar">
@@ -201,7 +208,12 @@ function render(items){
   grid.innerHTML = items.map(it=>{
     const src = "/api/foto/"+encodeURIComponent(it.key);
     return `<div class="card">
-      <img src="${src}" alt="${escapeHtml(it.name)}" loading="lazy">
+      <img src="${src}" alt="${escapeHtml(it.name)}" loading="lazy" onerror="this.classList.add('failed')">
+      <div class="ph">
+        <div class="phi">🖼️</div>
+        <div class="phn">${escapeHtml(it.name)}</div>
+        <div class="phm">anteprima non disponibile<br>(usa ⬇ per scaricarla)</div>
+      </div>
       <div class="ov">
         <div class="fn">${escapeHtml(it.name)}</div>
         <div class="acts">
@@ -230,11 +242,37 @@ fileInput.addEventListener("change",()=>{ if(fileInput.files.length) upload(file
 ["dragleave","drop"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove("over");}));
 drop.addEventListener("drop",e=>{ const fs=[...(e.dataTransfer.files||[])].filter(f=>f.type.startsWith("image/")); if(fs.length) upload(fs); });
 
+// --- Conversione HEIC/HEIF (foto iPhone) -> JPEG, così sono visibili ovunque ---
+let heicLib;
+function loadHeic(){
+  if(!heicLib){
+    heicLib = new Promise((res,rej)=>{
+      const s=document.createElement("script");
+      s.src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js";
+      s.onload=res; s.onerror=()=>rej(new Error("lib HEIC non disponibile"));
+      document.head.appendChild(s);
+    });
+  }
+  return heicLib;
+}
+function isHeic(f){ return /image\/hei[cf]/i.test(f.type||"") || /\.(heic|heif)$/i.test(f.name||""); }
+async function toUploadable(f){
+  if(!isHeic(f)) return f;
+  try{
+    await loadHeic();
+    const out = await window.heic2any({ blob:f, toType:"image/jpeg", quality:0.9 });
+    const blob = Array.isArray(out) ? out[0] : out;
+    const name = (f.name||"foto").replace(/\.(heic|heif)$/i,"") + ".jpg";
+    return new File([blob], name, { type:"image/jpeg" });
+  }catch(e){ return f; } // fallback: carica l'originale; la galleria mostrerà un segnaposto scaricabile
+}
+
 async function upload(files){
   const btn=$("#pickBtn"); btn.disabled=true;
+  const anyHeic = [...files].some(isHeic);
+  toast(anyHeic ? `Preparo ${files.length} foto (converto HEIC)…` : `Carico ${files.length} foto…`);
   const fd=new FormData();
-  for(const f of files) fd.append("file",f);
-  toast(`Carico ${files.length} foto…`);
+  for(const f of files){ const u = await toUploadable(f); fd.append("file", u); }
   const r = await fetch("/api/foto",{method:"POST",body:fd});
   btn.disabled=false;
   if(r.ok){ const d=await r.json(); toast(`Caricate ${d.saved.length} foto`); load(); }

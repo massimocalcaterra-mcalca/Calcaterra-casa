@@ -81,7 +81,7 @@
       "folder": "public/foto/",
       "file": "public/foto/index.html",
       "description": "Galleria fotografica privata (upload/download/delete, con login).",
-      "image": "/img/foto.svg",
+      "image": "/img/foto.svg?v=2",
       "accent": "#1BAE70",
       "access": "privato",
       "status": "online",
