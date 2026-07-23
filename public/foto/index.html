@@ -76,7 +76,7 @@
   .card .ph .phm{font-size:.72rem}
   .card .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;
     padding:10px;background:linear-gradient(180deg,rgba(20,38,28,.32),transparent 34%,transparent 52%,rgba(20,38,28,.68));
-    opacity:1}
+    opacity:1;cursor:zoom-in}
   .card .fn{color:#fff;font-size:.76rem;word-break:break-word;text-shadow:0 1px 3px rgba(0,0,0,.6);
     opacity:0;transition:.2s}
   .card:hover .fn,.card:focus-within .fn{opacity:1}
@@ -87,6 +87,27 @@
   .icb:hover{transform:scale(1.08)}
   .icb.del:hover{background:var(--danger);color:#fff}
   .icb:active{transform:scale(.94)}
+
+  /* Lightbox (foto a schermo intero) */
+  .lb{position:fixed;inset:0;z-index:50;background:rgba(10,18,14,.93);
+    display:flex;align-items:center;justify-content:center;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+  .lb-fig{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px}
+  .lb-fig img{max-width:94vw;max-height:80vh;object-fit:contain;border-radius:10px;
+    box-shadow:0 24px 70px -24px rgba(0,0,0,.85);background:#0d150f}
+  .lb-fig img.failed{display:none}
+  .lb-cap{color:#fff;font-size:.86rem;opacity:.9;text-align:center;word-break:break-word;max-width:90vw}
+  .lb-btn{position:absolute;border:none;cursor:pointer;color:#fff;background:rgba(255,255,255,.14);
+    display:grid;place-items:center;transition:.15s;line-height:1}
+  .lb-btn:hover{background:rgba(255,255,255,.3)}
+  .lb-x{top:16px;right:16px;width:46px;height:46px;border-radius:50%;font-size:1.15rem}
+  .lb-nav{top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;font-size:1.9rem}
+  .lb-prev{left:14px}.lb-next{right:14px}
+  .lb-acts{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:12px}
+  @media(max-width:560px){
+    .lb-nav{width:44px;height:44px;font-size:1.5rem}
+    .lb-x{top:10px;right:10px;width:42px;height:42px}
+    .lb-fig img{max-height:74vh}
+  }
 
   .empty{text-align:center;color:var(--muted);padding:50px 0;font-size:.95rem}
   .foot{margin-top:56px;color:var(--muted);font-size:.8rem}
@@ -156,6 +177,21 @@
     <div class="foot">© 2026 · calcaterra.casa</div>
   </div>
 
+  <!-- LIGHTBOX -->
+  <div id="lb" class="lb hidden" role="dialog" aria-modal="true">
+    <button class="lb-btn lb-x" id="lbClose" title="Chiudi (Esc)" aria-label="Chiudi">✕</button>
+    <button class="lb-btn lb-nav lb-prev" id="lbPrev" title="Precedente" aria-label="Precedente">‹</button>
+    <button class="lb-btn lb-nav lb-next" id="lbNext" title="Successiva" aria-label="Successiva">›</button>
+    <figure class="lb-fig">
+      <img id="lbImg" alt="">
+      <figcaption class="lb-cap" id="lbCap"></figcaption>
+    </figure>
+    <div class="lb-acts">
+      <a class="icb" id="lbDl" title="Scarica" download>⬇</a>
+      <button class="icb del" id="lbDel" title="Elimina">🗑</button>
+    </div>
+  </div>
+
   <div class="toast" id="toast"></div>
 
 <script>
@@ -163,6 +199,7 @@ const $ = (s)=>document.querySelector(s);
 const views = {login:$("#loginView"), setup:$("#setupView"), gallery:$("#galleryView")};
 function show(name){ for(const k in views) views[k].classList.toggle("hidden", k!==name); }
 function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),2600); }
+let currentItems=[], lbIndex=0;
 
 async function boot(){
   try{
@@ -206,6 +243,7 @@ async function load(){
 
 function render(items){
   const grid=$("#grid");
+  currentItems = items;
   $("#count").textContent = items.length + (items.length===1?" foto":" foto");
   $("#empty").classList.toggle("hidden", items.length>0);
   grid.innerHTML = items.map(it=>{
@@ -226,7 +264,11 @@ function render(items){
       </div>
     </div>`;
   }).join("");
-  grid.querySelectorAll(".del").forEach(b=>b.addEventListener("click",()=>del(b.dataset.key,b.dataset.name)));
+  grid.querySelectorAll(".del").forEach(b=>b.addEventListener("click",(e)=>{ e.stopPropagation(); del(b.dataset.key,b.dataset.name); }));
+  grid.querySelectorAll(".card").forEach((c,i)=>c.addEventListener("click",(e)=>{
+    if(e.target.closest(".acts")) return;   // i click sui pulsanti non aprono il lightbox
+    openLb(i);
+  }));
 }
 
 async function del(key,name){
@@ -285,6 +327,48 @@ async function upload(files){
 
 function escapeHtml(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 function escapeAttr(s){ return escapeHtml(s); }
+
+/* --- LIGHTBOX (foto a schermo intero) --- */
+const lb=$("#lb"), lbImg=$("#lbImg"), lbCap=$("#lbCap"), lbDl=$("#lbDl");
+function openLb(i){
+  if(!currentItems.length) return;
+  lbIndex = (i % currentItems.length + currentItems.length) % currentItems.length;
+  const it = currentItems[lbIndex];
+  const src = "/api/foto/"+encodeURIComponent(it.key);
+  lbImg.classList.remove("failed");
+  lbImg.src = src; lbImg.alt = it.name;
+  lbCap.textContent = it.name + "  ·  " + (lbIndex+1) + "/" + currentItems.length;
+  lbDl.href = src+"?dl=1";
+  lb.classList.remove("hidden");
+  document.body.style.overflow = "hidden";
+}
+function closeLb(){ lb.classList.add("hidden"); lbImg.src=""; document.body.style.overflow=""; }
+function lbStep(d){ openLb(lbIndex + d); }
+
+$("#lbClose").addEventListener("click", closeLb);
+$("#lbPrev").addEventListener("click", ()=>lbStep(-1));
+$("#lbNext").addEventListener("click", ()=>lbStep(1));
+lb.addEventListener("click", (e)=>{ if(e.target===lb || e.target.classList.contains("lb-fig")) closeLb(); });
+lbImg.addEventListener("error", ()=>{ lbImg.classList.add("failed");
+  const it=currentItems[lbIndex]; lbCap.textContent = (it?it.name:"") + " — anteprima non disponibile (usa ⬇ per scaricarla)"; });
+$("#lbDel").addEventListener("click", async ()=>{
+  const it = currentItems[lbIndex]; if(!it) return;
+  if(!confirm(`Eliminare "${it.name}"? L'operazione è definitiva.`)) return;
+  const r = await fetch("/api/foto/"+encodeURIComponent(it.key),{method:"DELETE"});
+  if(r.ok){ toast("Foto eliminata"); closeLb(); load(); }
+  else if(r.status===401){ closeLb(); show("login"); }
+  else toast("Errore durante l'eliminazione");
+});
+document.addEventListener("keydown", (e)=>{
+  if(lb.classList.contains("hidden")) return;
+  if(e.key==="Escape") closeLb();
+  else if(e.key==="ArrowLeft") lbStep(-1);
+  else if(e.key==="ArrowRight") lbStep(1);
+});
+let _sx=0,_sy=0;
+lb.addEventListener("touchstart",(e)=>{ const t=e.changedTouches[0]; _sx=t.clientX; _sy=t.clientY; },{passive:true});
+lb.addEventListener("touchend",(e)=>{ const t=e.changedTouches[0]; const dx=t.clientX-_sx, dy=t.clientY-_sy;
+  if(Math.abs(dx)>50 && Math.abs(dx)>Math.abs(dy)) lbStep(dx<0?1:-1); },{passive:true});
 
 boot();
 </script>
