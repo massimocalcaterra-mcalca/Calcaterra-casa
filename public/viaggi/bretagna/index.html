@@ -2,406 +2,390 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bretagna in 7 giorni &mdash; Guida di viaggio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bretagna in 7 giorni · Guida di viaggio — Calcaterra Casa</title>
+<meta name="description" content="Itinerario di 7 giorni in Bretagna tra coste selvagge, borghi di pietra e l'eclissi solare del 12 agosto 2026.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛵</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#1b3a4b;
-    --deep-navy:#0f2732;
-    --teal:#2f7a71;
-    --sand:#f4ecdb;
-    --sand-dark:#e8dcc0;
-    --pink-granite:#d98a72;
-    --coral:#c85c46;
-    --cream:#fbf7ef;
-    --ink:#26333a;
+    --bg:#FBFBFA; --paper:#FFFFFF; --ink:#14261C; --body:#4B4F58; --muted:#8A8D86;
+    --line:#E7E6DF; --green:#1BAE70; --green-d:#06752E; --coral:#FF6B4A;
   }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Poppins',sans-serif;
-    color:var(--ink);
-    background:var(--cream);
-  }
-  h1,h2,h3{font-family:'Playfair Display',serif;}
-  .wrap{max-width:820px;margin:0 auto;padding:0 20px;}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Lato,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  .wrap{max-width:940px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:Poppins,sans-serif;letter-spacing:-.02em;line-height:1.12}
+  .kicker{font-family:Poppins,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--green-d)}
 
-  /* ---------- NAV ---------- */
-  nav.topnav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(15,39,50,.96);
-    backdrop-filter:blur(6px);
-    color:#fff;
-    overflow-x:auto;
-    white-space:nowrap;
-    border-bottom:1px solid rgba(255,255,255,.12);
-  }
-  nav.topnav .navinner{display:flex;gap:2px;padding:0 12px;}
-  nav.topnav a{
-    color:#cfe0dd;text-decoration:none;font-size:11.5px;font-weight:600;
-    padding:12px 10px;display:inline-block;letter-spacing:.3px;
-    border-bottom:2px solid transparent;
-  }
-  nav.topnav a:hover{color:#fff;border-bottom-color:var(--pink-granite);}
+  /* NAV */
+  .topbar{position:sticky;top:0;z-index:40;background:rgba(251,251,250,.9);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar .row{max-width:940px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 24px}
+  .brand{font-family:Poppins,sans-serif;font-weight:600;font-size:.95rem}
+  .brand .dot{color:var(--green)}
+  .topnav{margin-left:auto;display:flex;gap:2px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+  .topnav::-webkit-scrollbar{display:none}
+  .topnav a{font-family:Poppins,sans-serif;font-size:.74rem;font-weight:600;color:var(--muted);
+    padding:7px 10px;border-radius:8px;transition:.2s}
+  .topnav a:hover{color:var(--green-d);background:#EFF7F1}
 
-  /* ---------- COVER ---------- */
-  .cover{
-    background:linear-gradient(180deg,var(--navy) 0%,var(--deep-navy) 100%);
-    color:var(--cream);
-    padding:56px 0 40px;
-  }
-  .cover .eyebrow{
-    letter-spacing:4px;text-transform:uppercase;font-size:12px;
-    color:var(--pink-granite);font-weight:600;
-  }
-  .cover h1{font-size:clamp(34px,6vw,54px);line-height:1.1;margin-top:18px;font-weight:900;}
-  .cover h1 span{color:var(--pink-granite);}
-  .cover .sub{margin-top:20px;font-size:17px;font-weight:300;max-width:560px;color:#cfe0dd;line-height:1.65;}
-  .cover-illustration{width:100%;height:auto;max-height:220px;margin-top:36px;display:block;}
-  .cover-footer{
-    display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;
-    border-top:1px solid rgba(255,255,255,.2);padding-top:20px;margin-top:24px;
-    font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#a9c2bd;
-  }
-  .cover-footer b{color:var(--cream);font-size:13px;letter-spacing:2px;}
+  /* HERO */
+  .hero{position:relative;height:min(78vh,680px);display:flex;align-items:flex-end;overflow:hidden}
+  .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,38,28,.15),rgba(20,38,28,.78))}
+  .hero .inner{position:relative;max-width:940px;margin:0 auto;width:100%;padding:0 24px 48px;color:#fff}
+  .hero .eyebrow{font-family:Poppins,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.24em;
+    text-transform:uppercase;color:#fff;opacity:.9}
+  .hero h1{font-size:clamp(2.8rem,8vw,5rem);font-weight:700;margin:.2em 0 0}
+  .hero h1 span{color:#FFD9CE}
+  .hero .sub{max-width:620px;margin-top:16px;font-size:1.05rem;color:rgba(255,255,255,.92)}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:22px;margin-top:24px;padding-top:18px;
+    border-top:1px solid rgba(255,255,255,.28);font-size:.8rem;letter-spacing:.02em;color:rgba(255,255,255,.85)}
+  .hero .meta b{font-family:Poppins,sans-serif;color:#fff;font-weight:600}
+  .backlink{display:inline-block;margin-bottom:14px;font-size:.8rem;color:rgba(255,255,255,.85);font-weight:700}
+  .backlink:hover{color:#fff}
 
-  /* ---------- SECTION SHELLS ---------- */
-  section.block{padding:48px 0;border-bottom:1px solid var(--sand-dark);}
-  .section-tag{
-    display:inline-block;background:var(--teal);color:#fff;font-size:10.5px;
-    letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;
-    margin-bottom:14px;font-weight:600;
-  }
-  .overview h2{font-size:clamp(24px,4vw,32px);color:var(--navy);margin-bottom:14px;}
-  .overview p.lead{font-size:14.5px;line-height:1.75;color:#3d4a50;margin-bottom:22px;max-width:680px;}
-  .stat-row{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;}
-  .stat{flex:1;min-width:120px;background:#fff;border:1px solid var(--sand-dark);border-radius:10px;padding:16px;text-align:center;}
-  .stat .num{font-family:'Playfair Display',serif;font-size:26px;color:var(--coral);font-weight:700;}
-  .stat .lab{font-size:9.5px;text-transform:uppercase;letter-spacing:.5px;color:#6b7a80;margin-top:4px;}
+  /* SECTIONS */
+  section{padding:60px 0}
+  .tag{display:inline-block;background:#EFF7F1;color:var(--green-d);font-family:Poppins,sans-serif;
+    font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:5px 13px;border-radius:20px}
+  h2.big{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:700;margin:14px 0 0}
+  .lead{font-size:1.06rem;color:var(--body);max-width:680px;margin:16px 0 0}
 
-  table.itin{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px;}
-  table.itin thead th{
-    text-align:left;background:var(--navy);color:#fff;padding:10px 12px;
-    font-size:10px;text-transform:uppercase;letter-spacing:1px;
-  }
-  table.itin thead th:first-child{border-radius:8px 0 0 0;}
-  table.itin thead th:last-child{border-radius:0 8px 0 0;}
-  table.itin tbody td{padding:11px 12px;border-bottom:1px solid var(--sand-dark);background:#fff;vertical-align:top;}
-  table.itin tbody tr:nth-child(even) td{background:#fbf5e9;}
-  table.itin tbody tr:hover td{background:#f2e8d6;}
-  table.itin td.day{font-family:'Playfair Display',serif;font-weight:700;color:var(--coral);font-size:16px;white-space:nowrap;}
-  table.itin td.theme{color:var(--teal);font-weight:600;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;margin-top:34px}
+  .stat{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+  .stat .n{font-family:Poppins,sans-serif;font-size:1.8rem;font-weight:700;color:var(--green-d)}
+  .stat .l{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:4px}
 
-  .map-note{margin-top:16px;background:#fff;border-left:4px solid var(--pink-granite);padding:16px 18px;font-size:13.5px;line-height:1.65;color:#4a565b;border-radius:0 8px 8px 0;}
+  .tbl{margin-top:34px;border:1px solid var(--line);border-radius:14px;overflow:hidden;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px}
+  thead th{font-family:Poppins,sans-serif;text-align:left;background:var(--ink);color:#fff;
+    padding:12px 14px;font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+  tbody td{padding:12px 14px;border-top:1px solid var(--line);background:var(--paper);vertical-align:top}
+  tbody tr:nth-child(even) td{background:#FCFBF8}
+  td.d{font-family:Poppins,sans-serif;font-weight:700;color:var(--coral)}
+  td.th{color:var(--green-d);font-weight:700;font-size:.78rem}
 
-  /* ---------- DAY BLOCKS ---------- */
-  .day-block{scroll-margin-top:56px;}
-  .day-hero{background:var(--navy);color:#fff;padding:32px 28px;border-radius:14px;margin-bottom:0;}
-  .day-hero .day-num{font-family:'Playfair Display',serif;font-size:13.5px;letter-spacing:3px;text-transform:uppercase;color:var(--pink-granite);font-weight:700;}
-  .day-hero h2{font-size:clamp(22px,4vw,30px);margin-top:8px;line-height:1.2;}
-  .day-hero .loc{font-size:12.5px;color:#cfe0dd;margin-top:8px;font-weight:300;}
-  .day-body{background:#fff;border:1px solid var(--sand-dark);border-top:none;border-radius:0 0 14px 14px;padding:28px 28px 30px;margin-top:-2px;}
-  .day-body p{font-size:14px;line-height:1.85;color:#37454b;margin-bottom:14px;}
-  .day-body h3{font-size:15.5px;color:var(--navy);margin:20px 0 6px;}
+  .note{margin-top:22px;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--green);
+    padding:16px 20px;border-radius:0 12px 12px 0;color:var(--body);font-size:.92rem}
+  .tip{margin-top:20px;background:#FFF6F2;border:1px dashed var(--coral);border-radius:12px;
+    padding:16px 20px;font-size:.92rem;color:#5a3d33}
+  .tip b{color:var(--coral)}
+  .note b,.tip b{font-family:Poppins,sans-serif}
 
-  .info-grid{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;}
-  .info-card{flex:1;min-width:190px;background:var(--cream);border:1px solid var(--sand-dark);border-radius:10px;padding:14px 16px;}
-  .info-card .ic-label{font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:var(--teal);font-weight:700;margin-bottom:5px;}
-  .info-card .ic-value{font-size:12.5px;color:var(--ink);line-height:1.5;}
+  /* VIDEO BAND */
+  .videoband{position:relative;padding:0}
+  .videoband figure{margin:0;position:relative;max-width:1180px;margin:0 auto}
+  .videoband video{width:100%;height:min(64vh,560px);object-fit:cover;display:block;background:#0d150f}
+  .videoband figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 30px;color:#fff;
+    background:linear-gradient(0deg,rgba(13,21,15,.72),transparent);pointer-events:none}
+  .videoband figcaption .vk{font-family:Poppins,sans-serif;font-size:.7rem;font-weight:600;
+    letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+  .videoband figcaption .vt{font-family:Poppins,sans-serif;font-size:1.4rem;font-weight:600;margin-top:4px}
 
-  .tip-box{margin-top:18px;background:var(--sand);border-radius:10px;padding:14px 18px;font-size:13px;line-height:1.7;color:#4a3f2f;border:1px dashed var(--pink-granite);}
-  .tip-box b{color:var(--coral);}
+  /* DAYS */
+  .day{padding:54px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
+  .day .photo{border-radius:16px;overflow:hidden;box-shadow:0 20px 40px -24px rgba(20,38,28,.5);margin-bottom:8px}
+  .day .photo img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+  .daynum{font-family:Poppins,sans-serif;font-size:.74rem;font-weight:600;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--coral);margin-top:26px}
+  .day h2{font-size:clamp(1.5rem,3.6vw,2.1rem);font-weight:700;margin:8px 0 4px}
+  .day .loc{color:var(--muted);font-size:.86rem;font-family:Poppins,sans-serif;font-weight:500}
+  .day p{color:var(--body);margin:16px 0 0}
+  .day h3{font-size:1.05rem;color:var(--green-d);margin:22px 0 0}
+  .photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+  .photo-pair img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block}
+  @media(max-width:620px){.photo-pair{grid-template-columns:1fr}}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:22px}
+  .infocard{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .infocard .cl{font-family:Poppins,sans-serif;font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;
+    color:var(--green-d);font-weight:600;margin-bottom:5px}
+  .infocard .cv{font-size:.86rem;color:var(--ink)}
 
-  .day-stack{display:flex;flex-direction:column;gap:28px;}
+  /* PRACTICAL */
+  .prac{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+  @media(max-width:620px){.prac{grid-template-columns:1fr}}
+  .prac .pc{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .prac .pc h3{font-size:1.02rem;color:var(--coral);margin:0 0 6px}
+  .prac .pc p{font-size:.88rem;color:var(--body);margin:0}
 
-  /* ---------- PRACTICAL ---------- */
-  .practical h2{font-size:clamp(22px,4vw,30px);color:var(--navy);margin-bottom:20px;}
-  .prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-  @media (max-width:640px){.prac-grid{grid-template-columns:1fr;} .stat-row{gap:8px;}}
-  .prac-card{background:#fff;border:1px solid var(--sand-dark);border-radius:10px;padding:18px;}
-  .prac-card h3{font-size:14.5px;color:var(--coral);margin-bottom:6px;}
-  .prac-card p{font-size:12.5px;line-height:1.7;color:#3d4a50;}
+  /* CLOSING */
+  .closing{position:relative;border-radius:20px;overflow:hidden;color:#fff;text-align:center;margin-top:20px}
+  .closing video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .closing .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,117,46,.72),rgba(20,38,28,.82))}
+  .closing .inner{position:relative;padding:70px 24px}
+  .closing h2{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700}
+  .closing p{max-width:520px;margin:14px auto 0;color:rgba(255,255,255,.92)}
+  .closing .sign{margin-top:20px;font-family:Poppins,sans-serif;font-size:.72rem;letter-spacing:.2em;
+    text-transform:uppercase;color:#FFD9CE}
 
-  /* ---------- CLOSING ---------- */
-  .closing{background:linear-gradient(180deg,var(--deep-navy) 0%,var(--navy) 100%);color:var(--cream);text-align:center;padding:56px 20px;border-radius:14px;}
-  .closing h2{font-size:clamp(26px,5vw,36px);margin-bottom:16px;color:var(--cream);}
-  .closing p{font-size:13.5px;color:#cfe0dd;max-width:480px;margin:0 auto 10px;line-height:1.8;}
-  .closing .sign{margin-top:20px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--pink-granite);}
-
-  footer.pagefoot{text-align:center;padding:24px 0 40px;font-size:11px;color:#9aa8ad;letter-spacing:1px;text-transform:uppercase;}
+  /* CREDITS + FOOT */
+  .credits{font-size:.78rem;color:var(--muted);margin-top:40px;border-top:1px solid var(--line);padding-top:24px}
+  .credits h4{font-family:Poppins,sans-serif;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--body);margin:0 0 10px}
+  .credits ul{margin:0;padding:0;list-style:none;columns:2;column-gap:26px}
+  .credits li{margin-bottom:5px;break-inside:avoid}
+  @media(max-width:620px){.credits ul{columns:1}}
+  .foot{text-align:center;color:var(--muted);font-size:.8rem;padding:30px 0 60px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
 
-<nav class="topnav">
-  <div class="navinner">
-    <a href="#panoramica">Panoramica</a>
-    <a href="#giorno1">G1 Saint-Malo</a>
-    <a href="#giorno2">G2 Dinan</a>
-    <a href="#giorno3">G3 Granit Rose</a>
-    <a href="#giorno4">G4 Crozon</a>
-    <a href="#giorno5">G5 Pointe du Raz</a>
-    <a href="#giorno6">G6 Eclissi</a>
-    <a href="#giorno7">G7 Rennes</a>
-    <a href="#pratiche">Info pratiche</a>
+<div class="topbar">
+  <div class="row">
+    <a href="/"><span class="brand">calcaterra<span class="dot">.</span>casa</span></a>
+    <nav class="topnav">
+      <a href="#panoramica">Panoramica</a>
+      <a href="#g1">G1</a><a href="#g2">G2</a><a href="#g3">G3</a>
+      <a href="#g4">G4</a><a href="#g5">G5</a><a href="#g6">G6</a><a href="#g7">G7</a>
+      <a href="#pratiche">Info</a>
+    </nav>
   </div>
-</nav>
+</div>
 
-<!-- ============ COVER ============ -->
-<header class="cover">
-  <div class="wrap">
-    <div class="eyebrow">Guida di viaggio &middot; Estate 2026</div>
-    <h1>Bretagna tra <span>leggende,</span> menhir e coste selvagge</h1>
-    <div class="sub">Un itinerario di 7 giorni pensato per un gruppo di amici, tra sentieri costieri, isole e citt&agrave; di pietra &mdash; con un appuntamento speciale la sera del 12 agosto: l'eclissi solare parziale osservata da un punto panoramico del Finist&egrave;re, sull'estremo Atlantico bretone.</div>
-    <svg class="cover-illustration" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 140 Q50 125 100 140 T200 140 T300 140 T400 140 V180 H0 Z" fill="#2f7a71" opacity="0.55"/>
-      <path d="M0 155 Q50 142 100 155 T200 155 T300 155 T400 155 V180 H0 Z" fill="#2f7a71" opacity="0.8"/>
-      <path d="M0 140 L30 100 L55 130 L80 90 L110 140 Z" fill="#d98a72" opacity="0.9"/>
-      <rect x="330" y="70" width="10" height="55" fill="#fbf7ef"/>
-      <rect x="328" y="60" width="14" height="12" fill="#c85c46"/>
-      <polygon points="335,40 328,60 342,60" fill="#fbf7ef"/>
-      <rect x="325" y="125" width="20" height="6" fill="#0f2732"/>
-      <path d="M120 55 q5 -7 10 0 q5 -7 10 0" stroke="#cfe0dd" stroke-width="1.4" fill="none"/>
-      <path d="M160 40 q5 -7 10 0 q5 -7 10 0" stroke="#cfe0dd" stroke-width="1.4" fill="none"/>
-      <path d="M200 62 q5 -7 10 0 q5 -7 10 0" stroke="#cfe0dd" stroke-width="1.4" fill="none"/>
-      <rect x="150" y="115" width="8" height="26" rx="2" fill="#1b3a4b" opacity="0.6"/>
-      <rect x="163" y="122" width="7" height="19" rx="2" fill="#1b3a4b" opacity="0.6"/>
-      <rect x="175" y="112" width="9" height="29" rx="2" fill="#1b3a4b" opacity="0.6"/>
-      <rect x="189" y="120" width="7" height="21" rx="2" fill="#1b3a4b" opacity="0.6"/>
-      <path d="M250 148 L280 148 L273 158 L257 158 Z" fill="#fbf7ef"/>
-      <line x1="265" y1="148" x2="265" y2="130" stroke="#fbf7ef" stroke-width="1.5"/>
-      <path d="M265 131 L278 145 L265 145 Z" fill="#e8dcc0"/>
-    </svg>
-    <div class="cover-footer">
-      <div>7 giorni &middot; 6 notti<br><b>Saint-Malo &rarr; Rennes</b></div>
-      <div style="text-align:right;">Storia &middot; Natura &middot; Astronomia<br><b>Bretagna, Francia</b></div>
+<!-- HERO -->
+<header class="hero">
+  <img class="bg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Cote_Granite_Rose_pano.jpg/1920px-Cote_Granite_Rose_pano.jpg" alt="Costa di Granito Rosa, Bretagna">
+  <div class="veil"></div>
+  <div class="inner">
+    <a class="backlink" href="/">← Viaggi</a>
+    <div class="eyebrow">Guida di viaggio · Estate 2026</div>
+    <h1>Bretagna, tra <span>leggende</span><br>e coste selvagge</h1>
+    <div class="sub">Sette giorni tra sentieri costieri, isole e città di pietra — con un appuntamento speciale: l'eclissi solare parziale del 12 agosto, osservata dall'estremo Atlantico bretone.</div>
+    <div class="meta">
+      <div>7 giorni · 6 notti<br><b>Saint-Malo → Rennes</b></div>
+      <div>Storia · Natura · Astronomia<br><b>Bretagna, Francia</b></div>
+      <div>~480 km<br><b>4 tratti di GR34</b></div>
     </div>
   </div>
 </header>
 
-<!-- ============ OVERVIEW ============ -->
-<section class="block overview" id="panoramica">
+<!-- OVERVIEW -->
+<section id="panoramica">
   <div class="wrap">
-    <span class="section-tag">Panoramica</span>
-    <h2>Un giro ad anello nella Bretagna storica</h2>
-    <p class="lead">Questo itinerario unisce le due anime della Bretagna: quella selvaggia dei sentieri costieri (il celebre GR34, "sentiero dei doganieri") e delle punte estreme del Finist&egrave;re, e quella millenaria delle citt&agrave; murate e dei borghi di pietra. Il percorso parte da Saint-Malo e risale la costa nord fino all'estremo ovest bretone, dove la sera di mercoled&igrave; 12 agosto il gruppo assister&agrave; all'eclissi solare parziale da un punto panoramico sull'Atlantico, prima di rientrare verso Rennes. In totale, circa 480 km percorsi con calma in una settimana &mdash; nessuna tappa in auto supera le 2 ore e mezza.</p>
+    <span class="tag">Panoramica</span>
+    <h2 class="big">Un giro ad anello nella Bretagna storica</h2>
+    <p class="lead">Questo itinerario unisce le due anime della Bretagna: quella selvaggia dei sentieri costieri — il celebre GR34, il "sentiero dei doganieri" — e delle punte estreme del Finistère, e quella millenaria delle città murate e dei borghi di pietra. Si parte da Saint-Malo, si risale la costa nord fino all'estremo ovest bretone, e la sera di mercoledì 12 agosto il gruppo assiste all'eclissi solare parziale da un punto panoramico sull'Atlantico, prima di rientrare verso Rennes. In totale circa 480 km percorsi con calma in una settimana: nessuna tappa in auto supera le 2 ore e mezza.</p>
 
-    <div class="stat-row">
-      <div class="stat"><div class="num">7</div><div class="lab">Giorni / 6 notti</div></div>
-      <div class="stat"><div class="num">~480</div><div class="lab">Km di percorso</div></div>
-      <div class="stat"><div class="num">4</div><div class="lab">Tratti di GR34</div></div>
-      <div class="stat"><div class="num">96%</div><div class="lab">Sole coperto, 12 ago</div></div>
+    <div class="stats">
+      <div class="stat"><div class="n">7</div><div class="l">Giorni / 6 notti</div></div>
+      <div class="stat"><div class="n">~480</div><div class="l">Km di percorso</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">Tratti di GR34</div></div>
+      <div class="stat"><div class="n">96%</div><div class="l">Sole coperto, 12 ago</div></div>
     </div>
 
-    <table class="itin">
-      <thead><tr><th>Giorno</th><th>Data</th><th>Tappa</th><th>Tema</th><th>Pernottamento</th></tr></thead>
-      <tbody>
-        <tr><td class="day">1</td><td>Ven 7/8</td><td>Saint-Malo</td><td class="theme">Storia &middot; mare</td><td>Saint-Malo</td></tr>
-        <tr><td class="day">2</td><td>Sab 8/8</td><td>Dinan &rarr; Cap Fr&eacute;hel</td><td class="theme">Borgo medievale &middot; GR34</td><td>Paimpol / dintorni</td></tr>
-        <tr><td class="day">3</td><td>Dom 9/8</td><td>C&ocirc;te de Granit Rose</td><td class="theme">Trekking &middot; isole</td><td>Perros-Guirec</td></tr>
-        <tr><td class="day">4</td><td>Lun 10/8</td><td>Presqu'&icirc;le de Crozon</td><td class="theme">Scogliere &middot; GR34</td><td>Crozon / Camaret</td></tr>
-        <tr><td class="day">5</td><td>Mar 11/8</td><td>Cap Sizun &middot; Pointe du Raz</td><td class="theme">Finis Terrae &middot; GR34</td><td>Audierne / Plogoff</td></tr>
-        <tr><td class="day">6</td><td>Mer 12/8</td><td>Quimper &middot; <b>Eclissi solare</b></td><td class="theme">Citt&agrave; storica &middot; astronomia</td><td>Pays Bigouden</td></tr>
-        <tr><td class="day">7</td><td>Gio 13/8</td><td>Rientro verso Rennes</td><td class="theme">Citt&agrave; d'arte</td><td>&mdash;</td></tr>
-      </tbody>
-    </table>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Giorno</th><th>Data</th><th>Tappa</th><th>Tema</th><th>Pernottamento</th></tr></thead>
+        <tbody>
+          <tr><td class="d">1</td><td>Ven 7/8</td><td>Saint-Malo</td><td class="th">Storia · mare</td><td>Saint-Malo</td></tr>
+          <tr><td class="d">2</td><td>Sab 8/8</td><td>Dinan → Cap Fréhel</td><td class="th">Borgo medievale · GR34</td><td>Paimpol / dintorni</td></tr>
+          <tr><td class="d">3</td><td>Dom 9/8</td><td>Côte de Granit Rose</td><td class="th">Trekking · isole</td><td>Perros-Guirec</td></tr>
+          <tr><td class="d">4</td><td>Lun 10/8</td><td>Presqu'île de Crozon</td><td class="th">Scogliere · GR34</td><td>Crozon / Camaret</td></tr>
+          <tr><td class="d">5</td><td>Mar 11/8</td><td>Cap Sizun · Pointe du Raz</td><td class="th">Finis Terrae · GR34</td><td>Audierne / Plogoff</td></tr>
+          <tr><td class="d">6</td><td>Mer 12/8</td><td>Quimper · <b>Eclissi solare</b></td><td class="th">Città storica · astronomia</td><td>Pays Bigouden</td></tr>
+          <tr><td class="d">7</td><td>Gio 13/8</td><td>Rientro verso Rennes</td><td class="th">Città d'arte</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <div class="map-note"><b>Come muoversi:</b> l'itinerario &egrave; pensato in auto a noleggio (indispensabile per raggiungere Cap Fr&eacute;hel, la Presqu'&icirc;le de Crozon e le punte del Finist&egrave;re). In alternativa, il tratto Saint-Malo&ndash;Dinan &egrave; coperto anche da treno/bus, ma tutte le altre tappe naturalistiche richiedono un mezzo proprio.</div>
+    <div class="note"><b>Come muoversi:</b> l'itinerario è pensato in auto a noleggio (indispensabile per raggiungere Cap Fréhel, la Presqu'île de Crozon e le punte del Finistère). In alternativa il tratto Saint-Malo–Dinan è coperto anche da treno/bus, ma tutte le altre tappe naturalistiche richiedono un mezzo proprio.</div>
 
-    <div class="tip-box"><b>L'appuntamento del viaggio:</b> la sera di mercoled&igrave; 12 agosto 2026, il Finist&egrave;re si trova sulla traiettoria dell'eclissi solare parziale che attraverser&agrave; l'Europa (totale solo in Islanda, Groenlandia e Spagna). Nel sud-ovest del Finist&egrave;re la copertura del sole raggiunger&agrave; il 96-97%, tra le percentuali pi&ugrave; alte di Francia: l'itinerario &egrave; costruito apposta per farvi arrivare in zona con un giorno di anticipo, cos&igrave; da scegliere con calma il punto panoramico migliore. Dettagli completi al Giorno 6.</div>
+    <div class="tip"><b>L'appuntamento del viaggio:</b> la sera di mercoledì 12 agosto 2026 il Finistère si trova sulla traiettoria dell'eclissi solare parziale che attraverserà l'Europa (totale solo in Islanda, Groenlandia e Spagna). Nel sud-ovest del Finistère la copertura del sole raggiungerà il 96-97%, tra le più alte di Francia: l'itinerario è costruito apposta per farvi arrivare in zona con un giorno di anticipo. Dettagli al Giorno 6.</div>
   </div>
 </section>
 
-<!-- ============ DAYS ============ -->
-<section class="block" id="giorni">
-  <div class="wrap day-stack">
-
-    <div class="day-block" id="giorno1">
-      <div class="day-hero">
-        <div class="day-num">Giorno 1 &middot; Venerd&igrave; 7 agosto</div>
-        <h2>Saint-Malo, la citt&agrave; dei corsari</h2>
-        <div class="loc">Costa d'Smeraldo &middot; Ille-et-Vilaine</div>
-      </div>
-      <div class="day-body">
-        <p>Il viaggio comincia sugli spalti di Saint-Malo, la citt&agrave; murata affacciata sulla Manica che per secoli ha ospitato i corsari al servizio della corona francese. Dedicate il pomeriggio alla passeggiata sulle mura (circa 1,7 km, percorribile interamente a piedi in poco pi&ugrave; di un'ora), da cui si domina sia la citt&agrave; intra-muros sia l'oceano.</p>
-        <p>Con la bassa marea si pu&ograve; raggiungere a piedi il Fort National e l'isolotto del Grand B&eacute;, dove &egrave; sepolto lo scrittore Chateaubriand: verificate gli orari delle maree prima di incamminarvi, perch&eacute; il passaggio si chiude con l'alta marea. In serata, la citt&agrave; intra-muros &egrave; perfetta per la prima cena bretone: una galette de sarrasin, un bicchiere di sidro locale e, per chi ama i frutti di mare, un plateau di ostriche.</p>
-        <h3>Se avete tempo</h3>
-        <p>Una breve deviazione a Dinard, la elegante cittadina balneare sull'altra sponda dell'estuario della Rance, raggiungibile in traghetto navetta in circa 10 minuti: ville liberty e una lunga passeggiata sul mare.</p>
-        <div class="info-grid">
-          <div class="info-card"><div class="ic-label">Attivit&agrave; principale</div><div class="ic-value">Passeggiata sulle mura (facile, ~1h15)</div></div>
-          <div class="info-card"><div class="ic-label">Da non perdere</div><div class="ic-value">Fort National, Grand B&eacute; (con la bassa marea)</div></div>
-          <div class="info-card"><div class="ic-label">Dove mangiare</div><div class="ic-value">Cr&ecirc;perie nel centro storico, frutti di mare sul porto</div></div>
-        </div>
-        <div class="tip-box"><b>Consiglio pratico:</b> Saint-Malo &egrave; molto affollata in piena estate (luglio-agosto). Arrivate presto al mattino o dopo le 17 per godervi le mura senza folla, e controllate sempre gli orari di marea prima di camminare verso gli isolotti.</div>
-      </div>
-    </div>
-
-    <div class="day-block" id="giorno2">
-      <div class="day-hero">
-        <div class="day-num">Giorno 2 &middot; Sabato 8 agosto</div>
-        <h2>Dinan medievale e le scogliere di Cap Fr&eacute;hel</h2>
-        <div class="loc">Dinan &rarr; Cap Fr&eacute;hel &middot; ~1h di guida</div>
-      </div>
-      <div class="day-body">
-        <p>Al mattino, tappa a Dinan: una delle citt&agrave; medievali meglio conservate di Francia, con case a graticcio, le mura intatte e la ripida Rue du Jerzual che scende fino al porticciolo sul fiume Rance. Basta una passeggiata di due o tre ore per respirarne l'atmosfera, magari fermandosi in una delle boulangerie storiche per un kouign-amann.</p>
-        <p>Nel pomeriggio si raggiunge Cap Fr&eacute;hel, uno dei promontori pi&ugrave; spettacolari della costa bretone: falesie di arenaria rossa alte oltre 70 metri, il faro ottocentesco e colonie di uccelli marini. &Egrave; qui che si percorre il primo tratto del GR34, il leggendario "sentiero dei doganieri" che costeggia tutta la Bretagna: un anello di circa 7-8 km, facile e panoramico, che si pu&ograve; anche accorciare a piacere.</p>
-        <div class="info-grid">
-          <div class="info-card"><div class="ic-label">Trekking GR34</div><div class="ic-value">Anello Cap Fr&eacute;hel, ~7-8 km, facile, 2-2h30</div></div>
-          <div class="info-card"><div class="ic-label">Da non perdere</div><div class="ic-value">Rue du Jerzual a Dinan, faro di Cap Fr&eacute;hel</div></div>
-          <div class="info-card"><div class="ic-label">Pernottamento</div><div class="ic-value">Erquy, Paimpol o Saint-Cast-le-Guildo</div></div>
-        </div>
-        <div class="tip-box"><b>Consiglio pratico:</b> il parcheggio del Cap Fr&eacute;hel si riempie rapidamente nei weekend estivi: arrivate entro met&agrave; mattina o optate per un parcheggio secondario a 10-15 minuti a piedi.</div>
-      </div>
-    </div>
-
-    <div class="day-block" id="giorno3">
-      <div class="day-hero">
-        <div class="day-num">Giorno 3 &middot; Domenica 9 agosto</div>
-        <h2>La C&ocirc;te de Granit Rose</h2>
-        <div class="loc">Perros-Guirec &middot; Ploumanac'h &middot; ~1h30 di guida</div>
-      </div>
-      <div class="day-body">
-        <p>Oggi la Bretagna mostra uno dei suoi paesaggi pi&ugrave; unici al mondo: la Costa di Granito Rosa, dove enormi rocce rosa modellate dall'erosione formano forme surreali lungo il mare. Il cuore della giornata &egrave; il Sentiero dei Doganieri di Ploumanac'h, un tratto del GR34 di circa 5 km (facile, 1h30-2h) che si snoda tra i massi rosa, il faro di Ploumanac'h e piccole calette di sabbia bianca.</p>
-        <p>Nel pomeriggio, chi ama la natura pu&ograve; imbarcarsi per una gita in barca verso le &Icirc;les Sept-&Icirc;les, riserva ornitologica al largo di Perros-Guirec dove nidificano sule e pulcinelle di mare in primavera-estate. In alternativa, ci si pu&ograve; rilassare sulla spiaggia principale di Perros-Guirec o noleggiare un kayak per esplorare la costa dal mare.</p>
-        <div class="info-grid">
-          <div class="info-card"><div class="ic-label">Trekking GR34</div><div class="ic-value">Sentiero dei Doganieri, Ploumanac'h, ~5 km</div></div>
-          <div class="info-card"><div class="ic-label">Attivit&agrave; opzionale</div><div class="ic-value">Battello per le &Icirc;les Sept-&Icirc;les (fauna marina)</div></div>
-          <div class="info-card"><div class="ic-label">Pernottamento</div><div class="ic-value">Perros-Guirec o Tr&eacute;gastel</div></div>
-        </div>
-        <div class="tip-box"><b>Consiglio pratico:</b> le gite in barca verso le Sept-&Icirc;les vanno prenotate con qualche giorno d'anticipo in alta stagione. Il sentiero di Ploumanac'h &egrave; spettacolare al tramonto, quando la roccia rosa si accende di colore.</div>
-      </div>
-    </div>
-
-    <div class="day-block" id="giorno4">
-      <div class="day-hero">
-        <div class="day-num">Giorno 4 &middot; Luned&igrave; 10 agosto</div>
-        <h2>Verso il Finist&egrave;re: la Presqu'&icirc;le de Crozon</h2>
-        <div class="loc">Perros-Guirec &rarr; Crozon &middot; ~2h15 di guida</div>
-      </div>
-      <div class="day-body">
-        <p>Si lascia la costa nord e si punta decisamente verso ovest, nel Finist&egrave;re &mdash; "la fine della terra", il punto in cui la Bretagna si protende pi&ugrave; a lungo nell'oceano. La tappa &egrave; la Presqu'&icirc;le de Crozon, una penisola frastagliata che racchiude alcuni dei panorami pi&ugrave; belli della regione. Arrivati nel primo pomeriggio, ci si dirige verso la Pointe de Pen-Hir: un altro grande classico del GR34, con un anello di circa 5 km lungo falesie a picco sull'oceano e vista sui celebri faraglioni "Tas de Pois".</p>
-        <p>Chi ha ancora energie pu&ograve; proseguire fino al Cap de la Ch&egrave;vre, altro promontorio panoramico proprio di fronte alla baia di Douarnenez, e fare tappa serale a Camaret-sur-Mer, pittoresco porto di pescatori con il forte Vauban sulla punta.</p>
-        <div class="info-grid">
-          <div class="info-card"><div class="ic-label">Trekking GR34</div><div class="ic-value">Pointe de Pen-Hir, ~5 km, facile-medio</div></div>
-          <div class="info-card"><div class="ic-label">Da non perdere</div><div class="ic-value">Tas de Pois, Camaret-sur-Mer</div></div>
-          <div class="info-card"><div class="ic-label">Pernottamento</div><div class="ic-value">Crozon o Camaret-sur-Mer</div></div>
-        </div>
-        <div class="tip-box"><b>Consiglio pratico:</b> la Presqu'&icirc;le de Crozon &egrave; ventosa anche d'estate: utile un capo antivento per le passeggiate in falesia, soprattutto nel tardo pomeriggio.</div>
-      </div>
-    </div>
-
-    <div class="day-block" id="giorno5">
-      <div class="day-hero">
-        <div class="day-num">Giorno 5 &middot; Marted&igrave; 11 agosto</div>
-        <h2>Cap Sizun e la Pointe du Raz</h2>
-        <div class="loc">Crozon &rarr; Cap Sizun &middot; ~1h15 di guida</div>
-      </div>
-      <div class="day-body">
-        <p>Oggi si raggiunge il vero e proprio "finis terrae": la Pointe du Raz, lo sperone di roccia pi&ugrave; spettacolare di tutta la Bretagna, dove le correnti dell'oceano si scontrano in un punto chiamato l'Enfer de Plogoff. Un tratto di GR34 di circa 5-6 km costeggia la falesia fino al faro della Vieille, con vista sulla Baie des Trepass&eacute;s.</p>
-        <p>Nel pomeriggio, poco distante, la Pointe du Van offre un panorama altrettanto suggestivo ma molto meno affollato: un buon modo per prendere confidenza con l'orizzonte ovest della zona, visto che sar&agrave; proprio in questa direzione che domani sera il sole comincer&agrave; a essere oscurato dalla luna. Pernottamento in zona, a Audierne o Plogoff, gi&agrave; nel cuore del Pays Bigouden dove si terr&agrave; l'osservazione dell'eclissi.</p>
-        <div class="info-grid">
-          <div class="info-card"><div class="ic-label">Trekking GR34</div><div class="ic-value">Pointe du Raz &rarr; Baie des Trepass&eacute;s, ~5-6 km</div></div>
-          <div class="info-card"><div class="ic-label">Da non perdere</div><div class="ic-value">Pointe du Van (panorama, meno folla)</div></div>
-          <div class="info-card"><div class="ic-label">Pernottamento</div><div class="ic-value">Audierne o Plogoff</div></div>
-        </div>
-        <div class="tip-box"><b>Consiglio pratico:</b> approfittate di oggi per acquistare gli occhiali per l'eclissi (certificazione ISO 12312-2), se non gi&agrave; fatto: sotto la data del 12 agosto la disponibilit&agrave; nei negozi della zona pu&ograve; esaurirsi rapidamente.</div>
-      </div>
-    </div>
-
-    <div class="day-block" id="giorno6">
-      <div class="day-hero">
-        <div class="day-num">Giorno 6 &middot; Mercoled&igrave; 12 agosto</div>
-        <h2>Quimper e l'eclissi solare sull'Atlantico</h2>
-        <div class="loc">Pays Bigouden &middot; il giorno dell'eclissi</div>
-      </div>
-      <div class="day-body">
-        <p>Giornata pi&ugrave; tranquilla, in attesa dell'appuntamento serale. Al mattino, breve visita a Quimper, capoluogo del Finist&egrave;re: centro storico con case a graticcio, la cattedrale gotica Saint-Corentin e le rive del fiume Odet, ideale per un pranzo bretone senza fretta. Nel pomeriggio, si torna verso la costa del Pays Bigouden per scegliere con calma il punto da cui osservare l'eclissi, verificando che l'orizzonte a ovest sia libero da alberi o edifici.</p>
-        <h3>L'eclissi solare del 12 agosto 2026</h3>
-        <p>In questa zona del Finist&egrave;re la luna coprir&agrave; circa il 96-97% del disco solare &mdash; tra le percentuali pi&ugrave; alte osservabili in Francia, anche se non si tratta di un'eclissi totale (la totalit&agrave; interessa solo Islanda, Groenlandia e la Spagna). Il fenomeno inizia verso le 19:22, raggiunge il massimo intorno alle 20:19 e termina verso le 21:12 (ora locale, CEST): il sole sar&agrave; basso sull'orizzonte occidentale (circa 12&deg; di altezza, quasi esattamente a ovest) e non tramonta durante l'evento. Il luogo ideale &egrave; quindi un punto panoramico con vista aperta verso ovest sull'oceano: la Pointe de Penmarch (faro d'Eckmuhl), tra i siti con la percentuale di copertura pi&ugrave; alta della zona, oppure la Pointe du Raz o la Pointe du Van visitate il giorno prima.</p>
-        <div class="info-grid">
-          <div class="info-card"><div class="ic-label">Copertura del sole</div><div class="ic-value">~96-97%, eclissi parziale</div></div>
-          <div class="info-card"><div class="ic-label">Orari (CEST)</div><div class="ic-value">Inizio 19:22 &middot; Massimo 20:19 &middot; Fine 21:12</div></div>
-          <div class="info-card"><div class="ic-label">Punto consigliato</div><div class="ic-value">Pointe de Penmarch (Phare d'Eckmuhl), vista libera a ovest</div></div>
-        </div>
-        <div class="tip-box"><b>Sicurezza, obbligatoria:</b> anche al 97% di copertura il sole non va mai osservato a occhio nudo n&eacute; con normali occhiali da sole: servono esclusivamente occhiali per eclissi certificati <b>ISO 12312-2</b>. Arrivate sul posto con largo anticipo (almeno un'ora prima delle 19:22): nei siti pi&ugrave; noti come la Pointe du Raz si prevede grande affluenza.</div>
-      </div>
-    </div>
-
-    <div class="day-block" id="giorno7">
-      <div class="day-hero">
-        <div class="day-num">Giorno 7 &middot; Gioved&igrave; 13 agosto</div>
-        <h2>Il rientro verso Rennes</h2>
-        <div class="loc">Pays Bigouden &rarr; Rennes &middot; ~3h di guida</div>
-      </div>
-      <div class="day-body">
-        <p>Ultimo giorno, dedicato al rientro: dal Finist&egrave;re a Rennes la strada &egrave; di circa tre ore, percorribile con calma con una sosta intermedia. Se i tempi di volo o treno lo consentono, vale la pena spezzare il viaggio con una passeggiata nel centro storico di Rennes, con le sue case a graticcio multicolori intorno a Place Sainte-Anne e Place des Lices, prima di dirigersi verso l'aeroporto o la stazione TGV per il rientro.</p>
-        <p>Chi invece volesse allungare il viaggio di qualche giorno trova nel box qui sotto qualche spunto per proseguire verso sud, nella Bretagna del Golfo del Morbihan e dei megaliti.</p>
-        <div class="info-grid">
-          <div class="info-card"><div class="ic-label">Attivit&agrave; principale</div><div class="ic-value">Passeggiata nel centro storico di Rennes, 2-3h</div></div>
-          <div class="info-card"><div class="ic-label">Da non perdere</div><div class="ic-value">Place Sainte-Anne, Place des Lices</div></div>
-          <div class="info-card"><div class="ic-label">Partenza</div><div class="ic-value">Aeroporto di Rennes o stazione TGV</div></div>
-        </div>
-        <div class="tip-box"><b>Per chi ha pi&ugrave; giorni a disposizione:</b> aggiungendo 2-3 giorni al rientro, si pu&ograve; deviare verso sud per includere Vannes e il Golfo del Morbihan (kayak tra le isole), gli allineamenti megalitici di Carnac e la Presqu'&icirc;le de Quiberon, con eventuale traghetto per Belle-&Icirc;le-en-Mer.</div>
-      </div>
-    </div>
-
-  </div>
+<!-- VIDEO BAND 1 -->
+<section class="videoband" aria-label="Il respiro dell'Atlantico">
+  <figure>
+    <video src="video/coste-onde.mp4" autoplay muted loop playsinline preload="metadata"
+      poster="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pen%27Hir.jpg/1920px-Pen%27Hir.jpg"></video>
+    <figcaption><div class="vk">Bretagna atlantica</div><div class="vt">Il respiro dell'oceano sulle scogliere</div></figcaption>
+  </figure>
 </section>
 
-<!-- ============ PRACTICAL INFO ============ -->
-<section class="block practical" id="pratiche">
+<!-- DAYS -->
+<div class="wrap">
+
+  <article class="day" id="g1">
+    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Remparts_%28Saint-Malo%29_%282%29.jpg/1920px-Remparts_%28Saint-Malo%29_%282%29.jpg" alt="I bastioni di Saint-Malo" loading="lazy"></div>
+    <div class="daynum">Giorno 1 · Venerdì 7 agosto</div>
+    <h2>Saint-Malo, la città dei corsari</h2>
+    <div class="loc">Costa di Smeraldo · Ille-et-Vilaine</div>
+    <p>Il viaggio comincia sugli spalti di Saint-Malo, la città murata affacciata sulla Manica che per secoli ha ospitato i corsari al servizio della corona francese. Dedicate il pomeriggio alla passeggiata sulle mura (circa 1,7 km, percorribile interamente a piedi in poco più di un'ora), da cui si domina sia la città intra-muros sia l'oceano.</p>
+    <p>Con la bassa marea si può raggiungere a piedi il Fort National e l'isolotto del Grand Bé, dove è sepolto lo scrittore Chateaubriand: verificate gli orari delle maree, perché il passaggio si chiude con l'alta marea. In serata la città intra-muros è perfetta per la prima cena bretone: una galette de sarrasin, un bicchiere di sidro locale e, per chi ama i frutti di mare, un plateau di ostriche.</p>
+    <h3>Se avete tempo</h3>
+    <p>Una breve deviazione a Dinard, l'elegante cittadina balneare sull'altra sponda dell'estuario della Rance, raggiungibile in traghetto navetta in circa 10 minuti: ville liberty e una lunga passeggiata sul mare.</p>
+    <div class="cards">
+      <div class="infocard"><div class="cl">Attività principale</div><div class="cv">Passeggiata sulle mura (facile, ~1h15)</div></div>
+      <div class="infocard"><div class="cl">Da non perdere</div><div class="cv">Fort National, Grand Bé (con la bassa marea)</div></div>
+      <div class="infocard"><div class="cl">Dove mangiare</div><div class="cv">Crêperie nel centro storico, frutti di mare sul porto</div></div>
+    </div>
+    <div class="tip"><b>Consiglio pratico:</b> Saint-Malo è molto affollata in piena estate. Arrivate presto al mattino o dopo le 17 per godervi le mura senza folla, e controllate sempre gli orari di marea prima di camminare verso gli isolotti.</div>
+  </article>
+
+  <article class="day" id="g2">
+    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/7/74/.00_2803_Leuchtturm_am_Cap_Fr%C3%A9hel%2C_Frankreich.jpg" alt="Il faro di Cap Fréhel" loading="lazy"></div>
+    <div class="daynum">Giorno 2 · Sabato 8 agosto</div>
+    <h2>Dinan medievale e le scogliere di Cap Fréhel</h2>
+    <div class="loc">Dinan → Cap Fréhel · ~1h di guida</div>
+    <p>Al mattino, tappa a Dinan: una delle città medievali meglio conservate di Francia, con case a graticcio, le mura intatte e la ripida Rue du Jerzual che scende fino al porticciolo sul fiume Rance. Basta una passeggiata di due o tre ore per respirarne l'atmosfera, magari fermandosi in una boulangerie storica per un kouign-amann.</p>
+    <p>Nel pomeriggio si raggiunge Cap Fréhel, uno dei promontori più spettacolari della costa bretone: falesie di arenaria rossa alte oltre 70 metri, il faro ottocentesco e colonie di uccelli marini. È qui che si percorre il primo tratto del GR34, il leggendario "sentiero dei doganieri": un anello di circa 7-8 km, facile e panoramico, che si può accorciare a piacere.</p>
+    <div class="photo-pair">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Dinan_-_5_rue_du_Jerzual_20130216-02.JPG/1920px-Dinan_-_5_rue_du_Jerzual_20130216-02.JPG" alt="Rue du Jerzual, Dinan" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/.00_2803_Leuchtturm_am_Cap_Fr%C3%A9hel%2C_Frankreich.jpg" alt="Scogliere di Cap Fréhel" loading="lazy">
+    </div>
+    <div class="cards">
+      <div class="infocard"><div class="cl">Trekking GR34</div><div class="cv">Anello Cap Fréhel, ~7-8 km, facile, 2-2h30</div></div>
+      <div class="infocard"><div class="cl">Da non perdere</div><div class="cv">Rue du Jerzual a Dinan, faro di Cap Fréhel</div></div>
+      <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Erquy, Paimpol o Saint-Cast-le-Guildo</div></div>
+    </div>
+    <div class="tip"><b>Consiglio pratico:</b> il parcheggio del Cap Fréhel si riempie rapidamente nei weekend estivi: arrivate entro metà mattina o usate un parcheggio secondario a 10-15 minuti a piedi.</div>
+  </article>
+
+  <article class="day" id="g3">
+    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Phare_de_Ploumanac%27h_04.jpg/1920px-Phare_de_Ploumanac%27h_04.jpg" alt="Il faro di Ploumanac'h tra le rocce rosa" loading="lazy"></div>
+    <div class="daynum">Giorno 3 · Domenica 9 agosto</div>
+    <h2>La Côte de Granit Rose</h2>
+    <div class="loc">Perros-Guirec · Ploumanac'h · ~1h30 di guida</div>
+    <p>Oggi la Bretagna mostra uno dei suoi paesaggi più unici al mondo: la Costa di Granito Rosa, dove enormi rocce rosa modellate dall'erosione formano figure surreali lungo il mare. Il cuore della giornata è il Sentiero dei Doganieri di Ploumanac'h, un tratto del GR34 di circa 5 km (facile, 1h30-2h) tra i massi rosa, il faro di Ploumanac'h e piccole calette di sabbia bianca.</p>
+    <p>Nel pomeriggio, chi ama la natura può imbarcarsi per una gita verso le Îles Sept-Îles, riserva ornitologica al largo di Perros-Guirec dove nidificano sule e pulcinelle di mare. In alternativa ci si rilassa sulla spiaggia principale o si noleggia un kayak per esplorare la costa dal mare.</p>
+    <div class="cards">
+      <div class="infocard"><div class="cl">Trekking GR34</div><div class="cv">Sentiero dei Doganieri, Ploumanac'h, ~5 km</div></div>
+      <div class="infocard"><div class="cl">Attività opzionale</div><div class="cv">Battello per le Îles Sept-Îles (fauna marina)</div></div>
+      <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Perros-Guirec o Trégastel</div></div>
+    </div>
+    <div class="tip"><b>Consiglio pratico:</b> le gite in barca verso le Sept-Îles vanno prenotate con qualche giorno d'anticipo in alta stagione. Il sentiero di Ploumanac'h è spettacolare al tramonto, quando la roccia rosa si accende di colore.</div>
+  </article>
+
+  <article class="day" id="g4">
+    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pen%27Hir.jpg/1920px-Pen%27Hir.jpg" alt="La Pointe de Pen-Hir sulla Presqu'île de Crozon" loading="lazy"></div>
+    <div class="daynum">Giorno 4 · Lunedì 10 agosto</div>
+    <h2>Verso il Finistère: la Presqu'île de Crozon</h2>
+    <div class="loc">Perros-Guirec → Crozon · ~2h15 di guida</div>
+    <p>Si lascia la costa nord e si punta verso ovest, nel Finistère — "la fine della terra", dove la Bretagna si protende più a lungo nell'oceano. La tappa è la Presqu'île de Crozon, una penisola frastagliata con alcuni dei panorami più belli della regione. Arrivati nel primo pomeriggio ci si dirige verso la Pointe de Pen-Hir: un altro classico del GR34, con un anello di circa 5 km lungo falesie a picco sull'oceano e vista sui celebri faraglioni "Tas de Pois".</p>
+    <p>Chi ha ancora energie può proseguire fino al Cap de la Chèvre, altro promontorio panoramico di fronte alla baia di Douarnenez, e fare tappa serale a Camaret-sur-Mer, pittoresco porto di pescatori con il forte Vauban sulla punta.</p>
+    <div class="cards">
+      <div class="infocard"><div class="cl">Trekking GR34</div><div class="cv">Pointe de Pen-Hir, ~5 km, facile-medio</div></div>
+      <div class="infocard"><div class="cl">Da non perdere</div><div class="cv">Tas de Pois, Camaret-sur-Mer</div></div>
+      <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Crozon o Camaret-sur-Mer</div></div>
+    </div>
+    <div class="tip"><b>Consiglio pratico:</b> la Presqu'île de Crozon è ventosa anche d'estate: utile un capo antivento per le passeggiate in falesia, soprattutto nel tardo pomeriggio.</div>
+  </article>
+
+  <article class="day" id="g5">
+    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Pointe_du_Raz_bei_Sonnenuntergang.jpg/1920px-Pointe_du_Raz_bei_Sonnenuntergang.jpg" alt="La Pointe du Raz al tramonto" loading="lazy"></div>
+    <div class="daynum">Giorno 5 · Martedì 11 agosto</div>
+    <h2>Cap Sizun e la Pointe du Raz</h2>
+    <div class="loc">Crozon → Cap Sizun · ~1h15 di guida</div>
+    <p>Oggi si raggiunge il vero "finis terrae": la Pointe du Raz, lo sperone di roccia più spettacolare di tutta la Bretagna, dove le correnti dell'oceano si scontrano in un punto chiamato l'Enfer de Plogoff. Un tratto di GR34 di circa 5-6 km costeggia la falesia fino al faro della Vieille, con vista sulla Baie des Trépassés.</p>
+    <p>Nel pomeriggio, poco distante, la Pointe du Van offre un panorama altrettanto suggestivo ma molto meno affollato: un buon modo per prendere confidenza con l'orizzonte ovest, visto che sarà proprio in questa direzione che domani sera il sole comincerà a essere oscurato dalla luna. Pernottamento a Audierne o Plogoff, già nel cuore del Pays Bigouden.</p>
+    <div class="cards">
+      <div class="infocard"><div class="cl">Trekking GR34</div><div class="cv">Pointe du Raz → Baie des Trépassés, ~5-6 km</div></div>
+      <div class="infocard"><div class="cl">Da non perdere</div><div class="cv">Pointe du Van (panorama, meno folla)</div></div>
+      <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Audierne o Plogoff</div></div>
+    </div>
+    <div class="tip"><b>Consiglio pratico:</b> approfittate di oggi per acquistare gli occhiali per l'eclissi (certificazione ISO 12312-2), se non già fatto: sotto la data del 12 agosto la disponibilità nei negozi della zona può esaurirsi.</div>
+  </article>
+
+  <article class="day" id="g6">
+    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/20120930_troisPhares_Penmarch_Bretagne_DSC09655_PtrQs.jpg/1920px-20120930_troisPhares_Penmarch_Bretagne_DSC09655_PtrQs.jpg" alt="I fari di Penmarc'h, punto d'osservazione dell'eclissi" loading="lazy"></div>
+    <div class="daynum">Giorno 6 · Mercoledì 12 agosto</div>
+    <h2>Quimper e l'eclissi solare sull'Atlantico</h2>
+    <div class="loc">Pays Bigouden · il giorno dell'eclissi</div>
+    <p>Giornata più tranquilla, in attesa dell'appuntamento serale. Al mattino, breve visita a Quimper, capoluogo del Finistère: centro storico con case a graticcio, la cattedrale gotica Saint-Corentin e le rive dell'Odet, ideale per un pranzo bretone senza fretta. Nel pomeriggio si torna verso la costa del Pays Bigouden per scegliere con calma il punto da cui osservare l'eclissi, verificando che l'orizzonte a ovest sia libero da alberi o edifici.</p>
+    <h3>L'eclissi solare del 12 agosto 2026</h3>
+    <p>In questa zona del Finistère la luna coprirà circa il 96-97% del disco solare — tra le percentuali più alte osservabili in Francia, anche se non si tratta di totalità (che interessa solo Islanda, Groenlandia e Spagna). Il fenomeno inizia verso le 19:22, culmina intorno alle 20:19 e termina verso le 21:12 (ora locale, CEST): il sole sarà basso sull'orizzonte occidentale (circa 12° di altezza, quasi esattamente a ovest) e non tramonta durante l'evento. Il luogo ideale è quindi un punto panoramico con vista aperta a ovest: la Pointe de Penmarch (faro d'Eckmühl), tra i siti con la copertura più alta, oppure la Pointe du Raz o la Pointe du Van del giorno prima.</p>
+    <div class="photo-pair">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Quimper_-_Cath%C3%A9drale_Saint-Corentin_-_Portail_-_PA00090326_-_0001.jpg/1920px-Quimper_-_Cath%C3%A9drale_Saint-Corentin_-_Portail_-_PA00090326_-_0001.jpg" alt="Cattedrale di Quimper" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/20120930_troisPhares_Penmarch_Bretagne_DSC09655_PtrQs.jpg/1920px-20120930_troisPhares_Penmarch_Bretagne_DSC09655_PtrQs.jpg" alt="Faro d'Eckmühl a Penmarc'h" loading="lazy">
+    </div>
+    <div class="cards">
+      <div class="infocard"><div class="cl">Copertura del sole</div><div class="cv">~96-97%, eclissi parziale</div></div>
+      <div class="infocard"><div class="cl">Orari (CEST)</div><div class="cv">Inizio 19:22 · Massimo 20:19 · Fine 21:12</div></div>
+      <div class="infocard"><div class="cl">Punto consigliato</div><div class="cv">Pointe de Penmarch (Phare d'Eckmühl), vista libera a ovest</div></div>
+    </div>
+    <div class="tip"><b>Sicurezza, obbligatoria:</b> anche al 97% di copertura il sole non va mai osservato a occhio nudo né con normali occhiali da sole: servono esclusivamente occhiali per eclissi certificati <b>ISO 12312-2</b>. Arrivate sul posto con largo anticipo (almeno un'ora prima delle 19:22): nei siti più noti si prevede grande affluenza.</div>
+  </article>
+
+  <article class="day" id="g7">
+    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Place_des_Lices%2C_Rennes%2C_dimanche_15_mai_2016.jpg/1920px-Place_des_Lices%2C_Rennes%2C_dimanche_15_mai_2016.jpg" alt="Place des Lices a Rennes" loading="lazy"></div>
+    <div class="daynum">Giorno 7 · Giovedì 13 agosto</div>
+    <h2>Il rientro verso Rennes</h2>
+    <div class="loc">Pays Bigouden → Rennes · ~3h di guida</div>
+    <p>Ultimo giorno, dedicato al rientro: dal Finistère a Rennes la strada è di circa tre ore, percorribile con calma con una sosta intermedia. Se i tempi di volo o treno lo consentono, vale la pena spezzare il viaggio con una passeggiata nel centro storico di Rennes, con le case a graticcio multicolori intorno a Place Sainte-Anne e Place des Lices, prima di dirigersi verso l'aeroporto o la stazione TGV.</p>
+    <p>Chi volesse allungare il viaggio di qualche giorno trova nel box qui sotto qualche spunto per proseguire verso sud, nella Bretagna del Golfo del Morbihan e dei megaliti.</p>
+    <div class="cards">
+      <div class="infocard"><div class="cl">Attività principale</div><div class="cv">Passeggiata nel centro storico di Rennes, 2-3h</div></div>
+      <div class="infocard"><div class="cl">Da non perdere</div><div class="cv">Place Sainte-Anne, Place des Lices</div></div>
+      <div class="infocard"><div class="cl">Partenza</div><div class="cv">Aeroporto di Rennes o stazione TGV</div></div>
+    </div>
+    <div class="tip"><b>Per chi ha più giorni:</b> aggiungendo 2-3 giorni al rientro si può deviare verso sud per includere Vannes e il Golfo del Morbihan (kayak tra le isole), gli allineamenti megalitici di Carnac e la Presqu'île de Quiberon, con eventuale traghetto per Belle-Île-en-Mer.</div>
+  </article>
+
+</div>
+
+<!-- PRACTICAL -->
+<section id="pratiche">
   <div class="wrap">
-    <span class="section-tag">Informazioni pratiche</span>
-    <h2>Prima di partire</h2>
-    <div class="prac-grid">
-      <div class="prac-card">
-        <h3>Quando andare e meteo</h3>
-        <p>Giugno-settembre &egrave; il periodo migliore. In piena estate le temperature si aggirano tra 18&deg;C e 23&deg;C, ma il tempo in Bretagna cambia rapidamente. Portate sempre uno strato impermeabile, anche ad agosto.</p>
-      </div>
-      <div class="prac-card">
-        <h3>Come arrivare</h3>
-        <p>TGV diretto Parigi&ndash;Rennes (~1h25) o Parigi&ndash;Saint-Malo (~2h30); aeroporti di riferimento: Rennes, Dinard e Nantes. Da qui, noleggiare un'auto per tutta la durata del viaggio.</p>
-      </div>
-      <div class="prac-card">
-        <h3>Come muoversi</h3>
-        <p>Auto a noleggio fortemente consigliata: molte tappe (Cap Fr&eacute;hel, la Presqu'&icirc;le de Crozon, le punte del Finist&egrave;re) non sono ben servite dai mezzi pubblici.</p>
-      </div>
-      <div class="prac-card">
-        <h3>Dove dormire</h3>
-        <p>Un mix di chambres d'h&ocirc;tes e piccoli hotel nei centri storici offre il miglior rapporto qualit&agrave;-atmosfera. Prenotate con largo anticipo in alta stagione.</p>
-      </div>
-      <div class="prac-card">
-        <h3>Cosa mangiare</h3>
-        <p>Gallette di grano saraceno salate e cr&ecirc;pes dolci, sidro artigianale, frutti di mare, kouign-amann e far breton.</p>
-      </div>
-      <div class="prac-card">
-        <h3>Cosa mettere in valigia</h3>
-        <p>Scarpe da trekking, giacca impermeabile e a vento, costume da bagno, crema solare, strati sovrapponibili e occhiali certificati ISO 12312-2 per l'eclissi.</p>
-      </div>
-      <div class="prac-card">
-        <h3>L'eclissi del 12 agosto</h3>
-        <p>Acquistate gli occhiali per eclissi certificati ISO 12312-2 prima di partire: a ridosso dell'evento la disponibilit&agrave; in Finist&egrave;re pu&ograve; esaurirsi. Serve cielo sereno e orizzonte libero verso ovest.</p>
-      </div>
+    <span class="tag">Informazioni pratiche</span>
+    <h2 class="big">Prima di partire</h2>
+    <div class="prac">
+      <div class="pc"><h3>Quando andare e meteo</h3><p>Giugno-settembre è il periodo migliore. In piena estate le temperature si aggirano tra 18°C e 23°C, ma il tempo in Bretagna cambia rapidamente: portate sempre uno strato impermeabile, anche ad agosto.</p></div>
+      <div class="pc"><h3>Come arrivare</h3><p>TGV diretto Parigi–Rennes (~1h25) o Parigi–Saint-Malo (~2h30); aeroporti di riferimento: Rennes, Dinard e Nantes. Da qui, noleggiare un'auto per tutta la durata del viaggio.</p></div>
+      <div class="pc"><h3>Come muoversi</h3><p>Auto a noleggio fortemente consigliata: molte tappe (Cap Fréhel, la Presqu'île de Crozon, le punte del Finistère) non sono ben servite dai mezzi pubblici.</p></div>
+      <div class="pc"><h3>Dove dormire</h3><p>Un mix di chambres d'hôtes e piccoli hotel nei centri storici offre il miglior rapporto qualità-atmosfera. Prenotate con largo anticipo in alta stagione.</p></div>
+      <div class="pc"><h3>Cosa mangiare</h3><p>Galette di grano saraceno salate e crêpes dolci, sidro artigianale, frutti di mare, kouign-amann e far breton.</p></div>
+      <div class="pc"><h3>Cosa mettere in valigia</h3><p>Scarpe da trekking, giacca impermeabile e a vento, costume, crema solare, strati sovrapponibili e occhiali certificati ISO 12312-2 per l'eclissi.</p></div>
     </div>
-    <div class="tip-box" style="margin-top:16px;"><b>Budget indicativo:</b> per una settimana in stile chambre d'h&ocirc;te/hotel 3 stelle, pasti in cr&ecirc;perie e bistrot, noleggio auto e attivit&agrave;, il budget varia tipicamente in un ordine di grandezza di poche centinaia di euro a persona, escluso il viaggio di andata/ritorno: verificate i prezzi aggiornati al momento della prenotazione.</div>
+    <div class="tip" style="margin-top:16px"><b>Budget indicativo:</b> per una settimana in stile chambre d'hôte/hotel 3 stelle, pasti in crêperie e bistrot, noleggio auto e attività, il budget varia tipicamente nell'ordine di poche centinaia di euro a persona, escluso il viaggio di andata/ritorno: verificate i prezzi aggiornati al momento della prenotazione.</div>
   </div>
 </section>
 
-<!-- ============ CLOSING ============ -->
-<section class="block" style="border-bottom:none;">
+<!-- CLOSING with video -->
+<section>
   <div class="wrap">
     <div class="closing">
-      <h2>Bon voyage!</h2>
-      <p>La Bretagna si vive meglio senza fretta: lasciate spazio agli imprevisti, alle maree che cambiano i programmi e a qualche galette in pi&ugrave; lungo la strada.</p>
-      <p>Kenavo &mdash; a presto, in bretone.</p>
-      <div class="sign">Guida di viaggio &middot; Bretagna 2026</div>
+      <video src="video/onde-spiaggia.mp4" autoplay muted loop playsinline preload="metadata"
+        poster="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Pointe_du_Raz_bei_Sonnenuntergang.jpg/1920px-Pointe_du_Raz_bei_Sonnenuntergang.jpg"></video>
+      <div class="veil"></div>
+      <div class="inner">
+        <h2>Bon voyage!</h2>
+        <p>La Bretagna si vive meglio senza fretta: lasciate spazio agli imprevisti, alle maree che cambiano i programmi e a qualche galette in più lungo la strada.</p>
+        <p>Kenavo — a presto, in bretone.</p>
+        <div class="sign">Guida di viaggio · Bretagna 2026</div>
+      </div>
+    </div>
+
+    <div class="credits">
+      <h4>Crediti foto &amp; video</h4>
+      <ul>
+        <li>Panorama Côte de Granit Rose — Benh Lieu Song · CC BY-SA 3.0</li>
+        <li>Bastioni di Saint-Malo — Gzen92 · CC BY-SA 4.0</li>
+        <li>Rue du Jerzual, Dinan — Pymouss · CC BY-SA 3.0</li>
+        <li>Faro di Cap Fréhel — W. Bulach · CC BY-SA 4.0</li>
+        <li>Faro di Ploumanac'h — Stephan Sprinz · CC BY 4.0</li>
+        <li>Pointe de Pen-Hir — Diwall · CC BY-SA 3.0</li>
+        <li>Pointe du Raz al tramonto — Stephan Sprinz · CC BY 4.0</li>
+        <li>Fari di Penmarc'h — PtrQs · CC BY-SA 4.0</li>
+        <li>Cattedrale di Quimper — Thesupermat · CC BY-SA 3.0</li>
+        <li>Place des Lices, Rennes — Seb35 · CC BY-SA 4.0</li>
+        <li>Foto: Wikimedia Commons · Video: Mixkit (licenza gratuita)</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<footer class="pagefoot">Bretagna in 7 giorni &middot; guida di viaggio</footer>
+<footer class="foot">Bretagna in 7 giorni · guida di viaggio · calcaterra.casa</footer>
 
 </body>
 </html>
