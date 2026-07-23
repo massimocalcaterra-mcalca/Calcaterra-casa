@@ -75,15 +75,18 @@
   .card .ph .phn{font-size:.8rem;color:var(--body);word-break:break-word;font-weight:700}
   .card .ph .phm{font-size:.72rem}
   .card .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;
-    padding:12px;background:linear-gradient(180deg,rgba(20,38,28,.25),transparent 30%,transparent 60%,rgba(20,38,28,.72));
+    padding:10px;background:linear-gradient(180deg,rgba(20,38,28,.32),transparent 34%,transparent 52%,rgba(20,38,28,.68));
+    opacity:1}
+  .card .fn{color:#fff;font-size:.76rem;word-break:break-word;text-shadow:0 1px 3px rgba(0,0,0,.6);
     opacity:0;transition:.2s}
-  .card:hover .ov,.card:focus-within .ov{opacity:1}
-  .card .fn{color:#fff;font-size:.78rem;word-break:break-word;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+  .card:hover .fn,.card:focus-within .fn{opacity:1}
   .card .acts{display:flex;gap:8px;justify-content:flex-end}
-  .icb{width:38px;height:38px;border-radius:50%;border:none;cursor:pointer;font-size:1rem;
-    display:grid;place-items:center;background:rgba(255,255,255,.92);transition:.15s}
+  .icb{width:40px;height:40px;border-radius:50%;border:none;cursor:pointer;font-size:1.05rem;
+    display:grid;place-items:center;background:rgba(255,255,255,.95);color:var(--ink);
+    box-shadow:0 3px 10px -3px rgba(0,0,0,.5);transition:.15s;text-decoration:none}
   .icb:hover{transform:scale(1.08)}
   .icb.del:hover{background:var(--danger);color:#fff}
+  .icb:active{transform:scale(.94)}
 
   .empty{text-align:center;color:var(--muted);padding:50px 0;font-size:.95rem}
   .foot{margin-top:56px;color:var(--muted);font-size:.8rem}
