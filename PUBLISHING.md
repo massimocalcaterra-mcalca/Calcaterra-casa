@@ -129,13 +129,14 @@ Da fare **una sola volta**, nel dashboard `dash.cloudflare.com`:
 4. **Save and Deploy**. Esce un URL `*.pages.dev`: verifica che funzioni.
 5. **Custom domains → Set up a domain →** `calcaterra.casa` (e volendo `www`). Cloudflare crea i record da solo.
 
-### B. (Opzionale) Una pagina anche su sottodominio dedicato
-Per servire, es., `bretagna.calcaterra.casa` dal repo:
-1. Crea un **secondo progetto Pages** collegato allo stesso repo.
-2. **Root directory (advanced):** `public/bretagna` — Build command vuoto, output `.` (o lascia `public/bretagna`).
-3. **Custom domains →** `bretagna.calcaterra.casa`.
+### B. Sottodominio dedicato — `viaggi.calcaterra.casa`
+Per servire la sezione viaggi dal repo:
+1. Crea un **secondo progetto Pages** collegato allo stesso repo `calcaterra-casa`.
+2. **Root directory (advanced):** `public/viaggi` — Framework `None`, Build command vuoto, output `.`.
+3. **Custom domains →** `viaggi.calcaterra.casa`.
 
-> In alternativa puoi lasciare i sottodomini già esistenti come sono e integrarli nel repo con calma.
+Risultato: `viaggi.calcaterra.casa` mostra l'hub dei viaggi; l'atlante è in
+`viaggi.calcaterra.casa/normandie-bretagna`. Stesso schema per ogni futuro sottodominio.
 
 ---
 
@@ -144,7 +145,8 @@ Per servire, es., `bretagna.calcaterra.casa` dal repo:
 Le pagine già pubblicate a mano (es. `bretagna.calcaterra.casa`) restano online finché non le tocchi.
 Per portarle "sotto il sistema": scaricare i file, metterli in `public/<slug>/`, aggiornare `site.json`,
 push, e infine ripuntare il dominio/sottodominio al nuovo progetto Pages (§7).
-`bretagna` è già stata importata in `public/bretagna/` come prima pagina gestita dal sistema.
+L'atlante Normandie & Bretagne è già stato importato in `public/viaggi/normandie-bretagna/`;
+va servito dal sottodominio `viaggi.calcaterra.casa` (vedi §7B).
 
 ---
 

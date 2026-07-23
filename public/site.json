@@ -5,6 +5,13 @@
     "apex": "https://calcaterra.casa"
   },
   "updated": "2026-07-23",
+  "subdomains": [
+    {
+      "host": "viaggi.calcaterra.casa",
+      "folder": "public/viaggi",
+      "note": "Progetto Cloudflare Pages con root directory = public/viaggi"
+    }
+  ],
   "pages": [
     {
       "slug": "home",
@@ -29,17 +36,28 @@
       "updated": "2026-07-23"
     },
     {
-      "slug": "bretagna",
-      "title": "Normandie & Bretagne — Atlante di Bordo",
+      "slug": "viaggi",
+      "title": "Viaggi",
       "kind": "sottodominio",
-      "url": "https://bretagna.calcaterra.casa",
-      "pathUrl": "https://calcaterra.casa/bretagna",
-      "folder": "public/bretagna/",
-      "file": "public/bretagna/index.html",
-      "description": "Guida di viaggio per Normandia e Bretagna, 6–14 agosto 2026. Importata dalla versione gia online.",
+      "url": "https://viaggi.calcaterra.casa",
+      "folder": "public/viaggi/",
+      "file": "public/viaggi/index.html",
+      "description": "Sezione viaggi: atlanti di bordo e itinerari. Primo viaggio: Normandie & Bretagne.",
       "status": "online",
       "updated": "2026-07-23",
-      "assets": ["itinerario.pdf"]
+      "children": [
+        {
+          "slug": "normandie-bretagna",
+          "title": "Normandie & Bretagne — Atlante di Bordo",
+          "url": "https://viaggi.calcaterra.casa/normandie-bretagna",
+          "folder": "public/viaggi/normandie-bretagna/",
+          "file": "public/viaggi/normandie-bretagna/index.html",
+          "description": "Nove giorni tra Manica e Atlantico, 6–14 agosto 2026. 14 tappe.",
+          "status": "online",
+          "updated": "2026-07-23",
+          "assets": ["itinerario.pdf"]
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viaggi · Calcaterra Casa</title>
+<meta name="description" content="I viaggi di Massimo Calcaterra: atlanti di bordo, itinerari e appunti di rotta.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
+<style>
+  :root{
+    --abyss:#0a121a; --deep:#0f1c28; --panel:#14212e; --panel2:#182a39; --border:#284056;
+    --ink:#f2ecdf; --dim:rgba(242,236,223,.62); --faint:rgba(242,236,223,.40);
+    --accent:#7fb2d9; --gold:#e6b45a; --ok:#6bd39a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;color:var(--ink);
+    background:radial-gradient(1100px 560px at 50% -10%,#17293b 0,var(--abyss) 60%);
+    font:16px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:900px;margin:0 auto;padding:60px 22px 90px}
+  .eyebrow{color:var(--accent);font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700}
+  h1{font-size:2.8rem;line-height:1.05;margin:.2em 0 .25em;font-weight:800;letter-spacing:-.015em;text-wrap:balance}
+  .lead{color:var(--dim);font-size:1.1rem;max-width:56ch}
+  .rule{display:flex;align-items:center;gap:14px;color:var(--faint);font-size:.78rem;
+    letter-spacing:.14em;text-transform:uppercase;margin:46px 0 22px}
+  .rule::before,.rule::after{content:"";height:1px;background:var(--border);flex:1}
+
+  .trip{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;
+    background:linear-gradient(180deg,var(--panel),var(--deep));border:1px solid var(--border);
+    border-radius:16px;padding:22px 24px;margin-bottom:16px;overflow:hidden;
+    transition:transform .18s ease,border-color .18s ease}
+  .trip:hover{transform:translateY(-3px);border-color:var(--accent)}
+  .trip .cal{display:flex;flex-direction:column;align-items:center;justify-content:center;
+    width:70px;height:70px;border-radius:14px;background:var(--panel2);border:1px solid var(--border);flex-shrink:0}
+  .trip .cal .d{font-size:1.5rem;font-weight:800;line-height:1}
+  .trip .cal .m{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:3px}
+  .trip .body{min-width:0}
+  .trip .t{font-size:1.28rem;font-weight:800;letter-spacing:-.01em}
+  .trip .sub{color:var(--dim);font-size:.95rem;margin-top:2px}
+  .trip .meta{color:var(--faint);font-size:.82rem;margin-top:9px;display:flex;gap:16px;flex-wrap:wrap}
+  .trip .meta .live{color:var(--ok);display:inline-flex;align-items:center;gap:6px}
+  .trip .meta .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px var(--ok)}
+  .trip .go{font-size:1.6rem;color:var(--faint);transition:color .18s,transform .18s}
+  .trip:hover .go{color:var(--accent);transform:translateX(3px)}
+
+  .soon{opacity:.6}
+  .soon .cal{background:transparent;border-style:dashed}
+  .soon:hover{transform:none;border-color:var(--border);cursor:default}
+  .soon .go{display:none}
+  .pill{font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    padding:2px 9px;border-radius:999px;border:1px dashed var(--border);color:var(--faint)}
+
+  footer{color:var(--faint);font-size:.84rem;margin-top:50px;border-top:1px solid var(--border);padding-top:20px}
+  footer a{color:var(--accent)}
+  @media (max-width:560px){
+    h1{font-size:2.1rem}
+    .trip{grid-template-columns:auto 1fr;gap:16px}
+    .trip .go{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">Calcaterra Casa · Viaggi</div>
+      <h1>Appunti di rotta</h1>
+      <p class="lead">Gli atlanti di bordo dei miei viaggi: itinerari, tappe e cose da non perdere, raccolti prima di partire.</p>
+    </header>
+
+    <div class="rule">In programma</div>
+
+    <a class="trip" href="/normandie-bretagna">
+      <div class="cal"><span class="d">6</span><span class="m">Ago</span></div>
+      <div class="body">
+        <div class="t">Normandie &amp; Bretagne</div>
+        <div class="sub">Atlante di bordo · nove giorni tra Manica e Atlantico</div>
+        <div class="meta">
+          <span class="live">online</span>
+          <span>6–14 agosto 2026</span>
+          <span>14 tappe · itinerario PDF</span>
+        </div>
+      </div>
+      <div class="go">→</div>
+    </a>
+
+    <div class="trip soon">
+      <div class="cal"><span class="d">·</span><span class="m">2026</span></div>
+      <div class="body">
+        <div class="t">Madeira <span class="pill">in preparazione</span></div>
+        <div class="sub">Avventura sull'isola dell'eterna primavera</div>
+        <div class="meta"><span>Atlante in arrivo</span></div>
+      </div>
+    </div>
+
+    <footer>
+      Sezione viaggi di <a href="https://calcaterra.casa">calcaterra.casa</a> · Massimo Calcaterra
+    </footer>
+  </div>
+</body>
+</html>
