@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcaterra Casa</title>
+<meta name="description" content="Sito personale di Massimo Calcaterra.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+<style>
+  :root{
+    --bg:#0b141d; --panel:#14212e; --panel2:#0f1a24; --border:#25384a;
+    --ink:#f2ecdf; --dim:rgba(242,236,223,.60); --faint:rgba(242,236,223,.38);
+    --accent:#7fb2d9; --ok:#6bd39a; --draft:#e6b45a; --sub:#c88bd6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(1200px 600px at 70% -10%,#16283a 0,var(--bg) 60%);
+    color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:820px;margin:0 auto;padding:64px 22px 90px}
+  .hero{margin-bottom:44px}
+  .hello{color:var(--accent);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
+  h1{font-size:2.6rem;line-height:1.1;margin:.15em 0 .3em;font-weight:800}
+  .lead{color:var(--dim);font-size:1.08rem;max-width:52ch}
+  .group{margin-top:40px}
+  .group h2{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);
+    font-weight:700;margin:0 0 14px;border-bottom:1px solid var(--border);padding-bottom:8px}
+  .card{display:flex;gap:16px;align-items:flex-start;background:var(--panel);border:1px solid var(--border);
+    border-radius:14px;padding:18px 20px;margin-bottom:12px;transition:transform .15s ease,border-color .15s ease}
+  .card:hover{transform:translateY(-2px);border-color:var(--accent)}
+  .card .ic{font-size:1.5rem;line-height:1.4}
+  .card .body{flex:1;min-width:0}
+  .card .t{font-weight:700;font-size:1.08rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .card .d{color:var(--dim);font-size:.94rem;margin-top:3px}
+  .card .u{color:var(--faint);font-size:.8rem;margin-top:6px}
+  .badge{font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    padding:2px 8px;border-radius:999px;border:1px solid}
+  .b-online{color:var(--ok);border-color:rgba(107,211,154,.4);background:rgba(107,211,154,.08)}
+  .b-bozza{color:var(--draft);border-color:rgba(230,180,90,.4);background:rgba(230,180,90,.08)}
+  .b-sub{color:var(--sub);border-color:rgba(200,139,214,.4);background:rgba(200,139,214,.08)}
+  .arrow{color:var(--faint);align-self:center;font-size:1.3rem}
+  footer{color:var(--faint);font-size:.85rem;margin-top:56px;border-top:1px solid var(--border);padding-top:20px}
+  .err{color:var(--draft);background:var(--panel);border:1px solid var(--border);padding:16px;border-radius:12px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="hello">Calcaterra Casa</div>
+      <h1>Ciao, sono Massimo.</h1>
+      <p class="lead">Questo e il punto di partenza del mio sito: da qui raggiungi tutte le pagine e i progetti pubblicati su <strong>calcaterra.casa</strong>.</p>
+    </header>
+    <main id="content"><p class="dim">Carico le pagine…</p></main>
+    <footer>
+      © <span id="year"></span> Massimo Calcaterra · calcaterra.casa ·
+      <a href="/mappa" style="color:var(--accent)">Mappa del sito →</a>
+    </footer>
+  </div>
+
+<script>
+const ICON = { apex:"🏠", percorso:"📄", sottodominio:"🌐" };
+const GROUPS = [
+  { kind:"percorso",     label:"Pagine del sito" },
+  { kind:"sottodominio", label:"Progetti su sottodominio dedicato" },
+];
+const badge = (p) => {
+  if (p.kind === "sottodominio") return '<span class="badge b-sub">sottodominio</span>';
+  if (p.status === "bozza")      return '<span class="badge b-bozza">bozza</span>';
+  return '<span class="badge b-online">online</span>';
+};
+const card = (p) => `
+  <a class="card" href="${p.url}">
+    <div class="ic">${ICON[p.kind] || "📄"}</div>
+    <div class="body">
+      <div class="t">${p.title} ${badge(p)}</div>
+      <div class="d">${p.description || ""}</div>
+      <div class="u">Aggiornata il ${p.updated || "—"} · <span style="opacity:.8">${p.url.replace(/^https?:\/\//,"")}</span></div>
+    </div>
+    <div class="arrow">→</div>
+  </a>`;
+
+document.getElementById("year").textContent = "2026";
+fetch("/site.json", { cache:"no-store" })
+  .then(r => r.json())
+  .then(data => {
+    const pages = (data.pages || []).filter(p => p.kind !== "apex");
+    const html = GROUPS.map(g => {
+      const items = pages.filter(p => p.kind === g.kind);
+      if (!items.length) return "";
+      return `<section class="group"><h2>${g.label}</h2>${items.map(card).join("")}</section>`;
+    }).join("");
+    document.getElementById("content").innerHTML = html || '<p class="err">Nessuna pagina ancora.</p>';
+  })
+  .catch(() => {
+    document.getElementById("content").innerHTML =
+      '<div class="err">Impossibile leggere site.json (normale se apri il file in locale; online funziona).</div>';
+  });
+</script>
+</body>
+</html>
