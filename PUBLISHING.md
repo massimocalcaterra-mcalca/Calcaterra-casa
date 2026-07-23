@@ -87,11 +87,14 @@ In `site.json` il campo `kind` vale `"apex"`, `"percorso"` o `"sottodominio"`.
 
 ---
 
-## 5. Come Claude PUBBLICA una pagina nuova (via API GitHub)
+## 5. Come Claude PUBBLICA una pagina nuova
+
+Il metodo cambia a seconda del canale (vedi §2), ma il risultato è identico: un commit
+su `main` con il file nuovo/aggiornato e, quando serve, `public/site.json` allineato.
+
+### 5A. Canale "Claude Code" — via API GitHub (`gh`)
 
 Claude lavora **senza clone locale**, scrivendo i file direttamente via API GitHub.
-Il repo è `massimocalcaterra-mcalca/calcaterra-casa`, branch `main`.
-
 Per ogni file usa la **Contents API** (`gh api`), che crea/aggiorna un file con un commit.
 Esempio per creare `public/madeira/index.html`:
 
@@ -113,7 +116,33 @@ gh api -X PUT repos/massimocalcaterra-mcalca/calcaterra-casa/contents/public/mad
 >   -f message="Aggiorno testo Madeira" -f content="$B64" -f sha="$SHA" -f branch=main
 > ```
 
-### Checklist quando si aggiunge/cambia una pagina
+### 5B. Canale "Chat di claude.ai" — via `git` con token fornito in chat
+
+Niente `gh`, niente connettore (a meno che non sia stato collegato): l'utente incolla in
+chat un fine-grained token scoped su questo repo (vedi §2B), e Claude lavora con `git`
+in un ambiente temporaneo (es. una sandbox cloud), senza mai salvare il token in modo
+permanente:
+
+```bash
+# 1) clona il repo usando il token solo nell'URL della singola operazione
+git clone "https://<TOKEN>@github.com/massimocalcaterra-mcalca/calcaterra-casa.git" repo
+cd repo
+
+# 2) crea/aggiorna i file (es. public/madeira/index.html) e public/site.json
+
+# 3) commit e push
+git add public/madeira/index.html public/site.json
+git commit -m "Aggiungo pagina Madeira"
+git push origin main
+
+# 4) igiene: non lasciare il token nel remote salvato
+git remote set-url origin "https://github.com/massimocalcaterra-mcalca/calcaterra-casa.git"
+```
+
+> Il token non va mai scritto nei file del repo né in commit: vive solo nell'URL usato
+> per il clone/push di quella singola sessione di chat.
+
+### Checklist quando si aggiunge/cambia una pagina (entrambi i canali)
 1. Scrivere/aggiornare `public/<slug>/index.html` (+ asset).
 2. **Aggiornare `public/site.json`**: aggiungere/modificare la voce della pagina
    (`title`, `slug`, `kind`, `url`, `description`, `status`, `updated`) e il campo `updated` in alto.
