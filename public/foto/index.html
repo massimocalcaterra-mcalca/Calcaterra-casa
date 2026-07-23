@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foto · Calcaterra Casa</title>
+<meta name="description" content="Galleria fotografica privata di calcaterra.casa.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📷</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBFBFA; --paper:#FFFFFF; --ink:#14261C; --body:#4B4F58; --muted:#8A8D86;
+    --line:#E7E6DF; --green:#1BAE70; --green-d:#06752E; --danger:#E1533D;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Lato,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:30px 24px 70px}
+
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .name{font-family:Poppins,sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
+  .name .dot{color:var(--green)}
+  .nav .tag{font-size:.78rem;color:var(--muted);letter-spacing:.02em}
+  .btn{font-family:Poppins,sans-serif;font-weight:600;font-size:.82rem;cursor:pointer;
+    border:1px solid var(--line);background:var(--paper);color:var(--ink);
+    padding:9px 16px;border-radius:10px;transition:.2s}
+  .btn:hover{border-color:var(--green);color:var(--green-d)}
+  .btn.primary{background:var(--green);border-color:var(--green);color:#fff}
+  .btn.primary:hover{background:var(--green-d);border-color:var(--green-d);color:#fff}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+
+  .head{margin:56px 0 34px}
+  .kicker{font-family:Poppins,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--green-d)}
+  .head h1{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(2.4rem,6vw,3.8rem);
+    line-height:1;letter-spacing:-.03em;margin:.2em 0 0}
+  .head h1 .g{color:var(--green)}
+
+  /* Login */
+  .login{max-width:420px;margin:8vh auto 0;background:var(--paper);border:1px solid var(--line);
+    border-radius:18px;padding:34px 30px;box-shadow:0 20px 44px -28px rgba(20,38,28,.5)}
+  .login h2{font-family:Poppins,sans-serif;font-weight:600;margin:0 0 6px}
+  .login p{color:var(--muted);font-size:.9rem;margin:0 0 22px}
+  .field{display:flex;gap:10px}
+  input[type=password]{flex:1;font:inherit;padding:11px 14px;border:1px solid var(--line);
+    border-radius:10px;background:#fff}
+  input[type=password]:focus{outline:none;border-color:var(--green)}
+  .err{color:var(--danger);font-size:.85rem;margin-top:12px;min-height:1.2em}
+
+  /* Uploader */
+  .drop{border:2px dashed var(--line);border-radius:16px;background:var(--paper);
+    padding:28px;text-align:center;transition:.2s;margin-bottom:30px}
+  .drop.over{border-color:var(--green);background:#F3FBF6}
+  .drop .big{font-size:2rem}
+  .drop p{margin:8px 0 16px;color:var(--body)}
+  .drop .hint{font-size:.8rem;color:var(--muted)}
+
+  .bar{display:flex;justify-content:space-between;align-items:center;margin:0 0 18px;gap:12px}
+  .count{font-family:Poppins,sans-serif;font-weight:600;color:var(--muted);font-size:.85rem}
+
+  /* Grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+  .card{position:relative;border-radius:14px;overflow:hidden;background:#eee;aspect-ratio:1/1;
+    box-shadow:0 12px 28px -18px rgba(20,38,28,.5)}
+  .card img{width:100%;height:100%;object-fit:cover;display:block}
+  .card .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;
+    padding:12px;background:linear-gradient(180deg,rgba(20,38,28,.25),transparent 30%,transparent 60%,rgba(20,38,28,.72));
+    opacity:0;transition:.2s}
+  .card:hover .ov,.card:focus-within .ov{opacity:1}
+  .card .fn{color:#fff;font-size:.78rem;word-break:break-word;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+  .card .acts{display:flex;gap:8px;justify-content:flex-end}
+  .icb{width:38px;height:38px;border-radius:50%;border:none;cursor:pointer;font-size:1rem;
+    display:grid;place-items:center;background:rgba(255,255,255,.92);transition:.15s}
+  .icb:hover{transform:scale(1.08)}
+  .icb.del:hover{background:var(--danger);color:#fff}
+
+  .empty{text-align:center;color:var(--muted);padding:50px 0;font-size:.95rem}
+  .foot{margin-top:56px;color:var(--muted);font-size:.8rem}
+  .hidden{display:none!important}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--ink);
+    color:#fff;padding:12px 20px;border-radius:12px;font-size:.9rem;box-shadow:0 12px 30px -12px rgba(0,0,0,.5);
+    opacity:0;transition:.25s;pointer-events:none}
+  .toast.show{opacity:1}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <a href="/"><span class="name">calcaterra<span class="dot">.</span>casa</span></a>
+      <span class="tag" id="navTag">Area privata</span>
+    </div>
+
+    <!-- LOGIN -->
+    <section id="loginView" class="hidden">
+      <div class="login">
+        <h2>📷 Foto — area riservata</h2>
+        <p>Inserisci la password per accedere alla galleria.</p>
+        <form id="loginForm" class="field">
+          <input type="password" id="pass" placeholder="Password" autocomplete="current-password" required>
+          <button class="btn primary" type="submit">Entra</button>
+        </form>
+        <div class="err" id="loginErr"></div>
+      </div>
+    </section>
+
+    <!-- NOT CONFIGURED -->
+    <section id="setupView" class="hidden">
+      <div class="login">
+        <h2>⚙️ Da configurare</h2>
+        <p id="setupMsg" style="color:var(--body)">
+          La sezione foto è pubblicata ma mancano ancora storage o password lato Cloudflare.
+          Vedi <b>PUBLISHING.md §11</b> per i pochi passaggi (bucket R2 + due variabili).
+        </p>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="galleryView" class="hidden">
+      <header class="head">
+        <div class="kicker">Album privato</div>
+        <h1>Le mie <span class="g">foto</span></h1>
+      </header>
+
+      <div id="drop" class="drop">
+        <div class="big">📤</div>
+        <p><b>Trascina qui le foto</b> oppure</p>
+        <button class="btn primary" id="pickBtn" type="button">Scegli dal dispositivo</button>
+        <input type="file" id="file" accept="image/*" multiple class="hidden">
+        <div class="hint">JPG, PNG, GIF, WebP… fino a 15 MB per file.</div>
+      </div>
+
+      <div class="bar">
+        <span class="count" id="count">—</span>
+        <button class="btn" id="logoutBtn" type="button">Esci</button>
+      </div>
+
+      <div id="grid" class="grid"></div>
+      <div id="empty" class="empty hidden">Nessuna foto ancora. Carica la prima! 🌿</div>
+    </section>
+
+    <div class="foot">© 2026 · calcaterra.casa</div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+<script>
+const $ = (s)=>document.querySelector(s);
+const views = {login:$("#loginView"), setup:$("#setupView"), gallery:$("#galleryView")};
+function show(name){ for(const k in views) views[k].classList.toggle("hidden", k!==name); }
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),2600); }
+
+async function boot(){
+  try{
+    const r = await fetch("/api/me",{cache:"no-store"});
+    const s = await r.json();
+    if(!s.configured || !s.storage){
+      let msg="La sezione foto è pubblicata ma manca la configurazione lato Cloudflare: ";
+      const miss=[];
+      if(!s.storage) miss.push("bucket R2 (binding FOTO_BUCKET)");
+      if(!s.configured) miss.push("variabili SITE_PASSWORD e AUTH_SECRET");
+      $("#setupMsg").innerHTML = msg + "<b>"+miss.join(" · ")+"</b>. Vedi PUBLISHING.md §11.";
+      show("setup"); return;
+    }
+    if(s.authed){ show("gallery"); load(); }
+    else show("login");
+  }catch(e){ show("login"); }
+}
+
+/* --- LOGIN --- */
+$("#loginForm").addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  $("#loginErr").textContent="";
+  const password = $("#pass").value;
+  const r = await fetch("/api/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({password})});
+  if(r.ok){ $("#pass").value=""; show("gallery"); load(); }
+  else{ const d=await r.json().catch(()=>({})); $("#loginErr").textContent = d.error||"Accesso negato."; }
+});
+
+$("#logoutBtn").addEventListener("click", async ()=>{
+  await fetch("/api/logout",{method:"POST"});
+  show("login");
+});
+
+/* --- GALLERIA --- */
+async function load(){
+  const r = await fetch("/api/foto",{cache:"no-store"});
+  if(r.status===401){ show("login"); return; }
+  const d = await r.json();
+  render(d.items||[]);
+}
+
+function render(items){
+  const grid=$("#grid");
+  $("#count").textContent = items.length + (items.length===1?" foto":" foto");
+  $("#empty").classList.toggle("hidden", items.length>0);
+  grid.innerHTML = items.map(it=>{
+    const src = "/api/foto/"+encodeURIComponent(it.key);
+    return `<div class="card">
+      <img src="${src}" alt="${escapeHtml(it.name)}" loading="lazy">
+      <div class="ov">
+        <div class="fn">${escapeHtml(it.name)}</div>
+        <div class="acts">
+          <a class="icb" title="Scarica" href="${src}?dl=1" download>⬇</a>
+          <button class="icb del" title="Elimina" data-key="${escapeAttr(it.key)}" data-name="${escapeAttr(it.name)}">🗑</button>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+  grid.querySelectorAll(".del").forEach(b=>b.addEventListener("click",()=>del(b.dataset.key,b.dataset.name)));
+}
+
+async function del(key,name){
+  if(!confirm(`Eliminare "${name}"? L'operazione è definitiva.`)) return;
+  const r = await fetch("/api/foto/"+encodeURIComponent(key),{method:"DELETE"});
+  if(r.ok){ toast("Foto eliminata"); load(); }
+  else if(r.status===401){ show("login"); }
+  else toast("Errore durante l'eliminazione");
+}
+
+/* --- UPLOAD --- */
+const drop=$("#drop"), fileInput=$("#file");
+$("#pickBtn").addEventListener("click",()=>fileInput.click());
+fileInput.addEventListener("change",()=>{ if(fileInput.files.length) upload(fileInput.files); fileInput.value=""; });
+["dragenter","dragover"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add("over");}));
+["dragleave","drop"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove("over");}));
+drop.addEventListener("drop",e=>{ const fs=[...(e.dataTransfer.files||[])].filter(f=>f.type.startsWith("image/")); if(fs.length) upload(fs); });
+
+async function upload(files){
+  const btn=$("#pickBtn"); btn.disabled=true;
+  const fd=new FormData();
+  for(const f of files) fd.append("file",f);
+  toast(`Carico ${files.length} foto…`);
+  const r = await fetch("/api/foto",{method:"POST",body:fd});
+  btn.disabled=false;
+  if(r.ok){ const d=await r.json(); toast(`Caricate ${d.saved.length} foto`); load(); }
+  else if(r.status===401){ show("login"); }
+  else{ const d=await r.json().catch(()=>({})); toast(d.error||"Errore nell'upload"); }
+}
+
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+function escapeAttr(s){ return escapeHtml(s); }
+
+boot();
+</script>
+</body>
+</html>

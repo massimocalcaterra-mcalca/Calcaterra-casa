@@ -5,6 +5,13 @@
     "apex": "https://calcaterra.casa"
   },
   "updated": "2026-07-23",
+  "storage": [
+    {
+      "binding": "FOTO_BUCKET",
+      "type": "r2",
+      "note": "Bucket R2 per le foto dell'area /foto. Prefisso oggetti: foto/"
+    }
+  ],
   "subdomains": [
     {
       "host": "viaggi.calcaterra.casa",
@@ -65,6 +72,20 @@
           "updated": "2026-07-23"
         }
       ]
+    },
+    {
+      "slug": "foto",
+      "title": "Foto",
+      "kind": "percorso",
+      "url": "https://calcaterra.casa/foto",
+      "folder": "public/foto/",
+      "file": "public/foto/index.html",
+      "description": "Galleria fotografica privata (upload/download/delete, con login).",
+      "image": "/img/foto.svg",
+      "accent": "#1BAE70",
+      "access": "privato",
+      "status": "online",
+      "updated": "2026-07-23"
     },
     {
       "slug": "mappa",

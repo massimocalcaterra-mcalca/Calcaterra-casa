@@ -5,6 +5,7 @@ pubblicate automaticamente da **Cloudflare Pages** a ogni push su `main`.
 
 - 🏠 **Home / hub:** [`public/index.html`](public/index.html) → https://calcaterra.casa
 - 🗺️ **Mappa del sito:** [`public/mappa/index.html`](public/mappa/index.html) → https://calcaterra.casa/mappa
+- 📷 **Foto (area privata):** [`public/foto/index.html`](public/foto/index.html) → https://calcaterra.casa/foto — galleria con login, upload/download/delete (backend serverless in [`functions/`](functions/); setup in [PUBLISHING.md §11](PUBLISHING.md))
 - 🧭 **Fonte di verità della struttura:** [`public/site.json`](public/site.json)
 - 📖 **Manuale operativo (come pubblicare/modificare):** [`PUBLISHING.md`](PUBLISHING.md)
 

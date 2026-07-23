@@ -210,3 +210,72 @@ Ogni pubblicazione è un commit → si torna indietro sempre.
 - **`status`:** `"online"` = pubblicata e finita; `"bozza"` = c'è ma work-in-progress (badge giallo).
 - **Date:** formato `YYYY-MM-DD` nel campo `updated`.
 - **Non mettere segreti nel repo** (è materiale pubblicato).
+
+---
+
+## 11. Sezione Foto — area privata con upload/download/delete
+
+La pagina **`/foto`** (`public/foto/index.html`) è una **galleria privata**: si accede con
+password e si possono **caricare, scaricare ed eliminare** foto. A differenza del resto del
+sito (HTML statico puro), questa sezione ha bisogno di un piccolo **backend serverless**,
+già incluso nel repo. Non c'è build: sono file che Cloudflare esegue da solo.
+
+### Come è fatta (cosa c'è già nel repo)
+
+```
+functions/                     ← Cloudflare Pages Functions (serverless, servite su calcaterra.casa/api/*)
+├── _lib/auth.js               ← sessione firmata (HMAC) + helper
+├── api/login.js               ← POST /api/login   (password → cookie di sessione, 12h)
+├── api/logout.js              ← POST /api/logout
+├── api/me.js                  ← GET  /api/me      (stato sessione/configurazione)
+└── api/foto/
+    ├── index.js               ← GET (elenco) · POST (upload multiplo)
+    └── [name].js              ← GET (visualizza/scarica) · DELETE (elimina)
+public/foto/index.html         ← la galleria (login, drag&drop, download, delete)
+```
+
+- Le foto sono salvate su **Cloudflare R2** (storage oggetti), con prefisso `foto/`.
+- L'accesso è protetto da **password condivisa** + cookie di sessione **firmato HMAC**
+  (`HttpOnly`, `Secure`, `SameSite=Strict`, durata 12h). Nessuna foto è raggiungibile
+  senza login: anche le anteprime passano dalle API autenticate.
+- La pagina è `noindex` e non compare nei motori di ricerca.
+
+### Setup una-tantum su Cloudflare (≈5 minuti)
+
+Da fare **una sola volta** sul **progetto Pages principale** (quello di `calcaterra.casa`),
+in `dash.cloudflare.com`:
+
+1. **Crea il bucket R2.** *R2 → Create bucket* → nome es. `calcaterra-foto`. (R2 ha un piano
+   gratuito generoso; serve attivarlo la prima volta.)
+2. **Collega il bucket alle Functions.** Progetto Pages → *Settings → Functions →
+   R2 bucket bindings → Add binding*:
+   - **Variable name:** `FOTO_BUCKET`  (esatto: il codice cerca questo nome)
+   - **R2 bucket:** `calcaterra-foto`
+3. **Imposta le due variabili d'ambiente** (Progetto Pages → *Settings → Environment
+   variables → Production*), entrambe come **Secret** (Encrypt):
+   - `SITE_PASSWORD` → la password d'accesso alla galleria (scegline una robusta).
+   - `AUTH_SECRET` → una stringa lunga e casuale per firmare i cookie
+     (es. genera con `openssl rand -hex 32`). **Non** deve mai finire nel repo.
+4. **Ripubblica** (un push qualsiasi, oppure *Deployments → Retry deployment*). Fatto:
+   `calcaterra.casa/foto` chiede la password e funziona.
+
+> Finché mancano bucket o variabili, la pagina `/foto` mostra un avviso "Da configurare"
+> e indica cosa manca — non dà errori né espone nulla.
+
+### Uso quotidiano
+- Vai su `calcaterra.casa/foto`, inserisci la password.
+- **Carica:** trascina le foto nel riquadro o "Scegli dal dispositivo" (anche multiple, ≤15 MB l'una, solo immagini).
+- **Scarica:** passa il mouse su una foto → ⬇.
+- **Elimina:** icona 🗑 (chiede conferma, è definitiva).
+- **Esci:** bottone "Esci" (o dopo 12h scade la sessione).
+
+### Sicurezza — note e opzioni
+- La password è **condivisa** (una sola, per te). Per cambiarla: aggiorna `SITE_PASSWORD` su
+  Cloudflare e ripubblica; le sessioni attive restano valide fino a scadenza — per invalidarle
+  subito cambia anche `AUTH_SECRET`.
+- Vuoi un login "vero" (Google/email, senza password condivisa)? Metti **Cloudflare Access**
+  (Zero Trust) davanti alle rotte `/foto` e `/api/*`: *Zero Trust → Access → Applications →
+  Add → Self-hosted*, domini `calcaterra.casa/foto` e `calcaterra.casa/api/*`, policy "Emails =
+  i tuoi indirizzi". Fatto questo puoi anche togliere la password: Access autentica a monte.
+- **Il repo resta pubblico ma non contiene segreti:** password e chiave vivono solo tra le
+  variabili d'ambiente cifrate di Cloudflare.
