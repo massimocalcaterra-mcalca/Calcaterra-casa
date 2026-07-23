@@ -71,14 +71,14 @@ function node(p){
       ${c.dates?`<span class="kd">${c.dates}</span>`:(c.tag?`<span class="kd">${c.tag}</span>`:"")}
     </a>`).join("");
   return `
-  <a class="node" href="${p.url}">
-    <div class="head">
+  <div class="node">
+    <a class="head" href="${p.url}">
       <div class="chip" style="background:${tint(accent,.14)};color:${accent}">${p.emoji||"📄"}</div>
       <div><div class="t">${p.title}</div>
       <div class="u">${p.url.replace(/^https?:\/\//,"").replace(/\/$/,"")}</div></div>
-    </div>
+    </a>
     ${kids?`<div class="kids">${kids}</div>`:""}
-  </a>`;
+  </div>`;
 }
 
 fetch("/site.json",{cache:"no-store"})
