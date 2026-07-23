@@ -26,13 +26,29 @@ deve poter capire tutto da qui, senza contesto esterno.
 | Cosa | Valore |
 |---|---|
 | Proprietario repo | **massimocalcaterra-mcalca** (account personale di Massimo) |
-| Repo | `massimocalcaterra-mcalca/calcaterra-casa` (privato) |
-| Collaboratore con accesso in scrittura | **legnonord** ← è l'account con cui Claude pubblica in automatico |
+| Repo | `massimocalcaterra-mcalca/Calcaterra-casa` — **PUBBLICO** (branch `main`) |
 | Dominio | `calcaterra.casa`, zona su Cloudflare |
 
-> Claude opera da un ambiente autenticato come **legnonord**. Perché possa pubblicare,
-> `legnonord` deve restare **collaboratore** del repo. Nessuna password o token viene mai
-> condiviso con Claude: si usa solo l'accesso già presente.
+Il repo è **pubblico**: chiunque può leggerlo/clonarlo, ma per **scrivere** (push) serve
+un accesso autorizzato. Ci sono due canali, a seconda di *dove* gira Claude:
+
+**A) Claude Code (ambiente desktop/terminale)** — il canale principale.
+Claude opera da un ambiente con `git`/`gh` autenticati come **`legnonord`**, che è
+**collaboratore con accesso in scrittura** al repo. Pubblica via `gh api` (Contents API)
+o `git push`. Nessun token viene condiviso: si usa l'accesso già presente.
+→ Perché continui a funzionare, `legnonord` deve restare **collaboratore** del repo.
+
+**B) Chat di claude.ai** — canale secondario (per pubblicare "al volo" dalla chat).
+In chat **non** c'è un connettore GitHub né `gh`. Il metodo che funziona è un
+**fine-grained Personal Access Token** limitato a QUESTO repo, con permesso
+**Contents: Read and write**, che Claude usa con `git` (clone/push).
+→ Crea il token su GitHub → *Settings → Developer settings → Fine-grained tokens*,
+   *Repository access: Only select repositories → Calcaterra-casa*, *Permissions → Contents: Read and write*.
+   Fornisci quel token alla chat quando vuoi pubblicare. È **revocabile** in qualsiasi momento
+   e non dà accesso ad altro. Non riusarlo altrove.
+
+**C) Manuale** — sempre possibile: modifica i file da GitHub web (matita ✏️ → commit) o
+con un clone locale (`git commit && git push`). Vedi §6.
 
 ---
 

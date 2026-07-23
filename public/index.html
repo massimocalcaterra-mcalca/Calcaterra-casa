@@ -4,98 +4,97 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calcaterra Casa</title>
-<meta name="description" content="Il sito personale di Massimo Calcaterra.">
+<meta name="description" content="Il sito personale di Massimo Calcaterra — viaggi e appunti.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#FBFAF6; --card:#FFFFFF; --ink:#16202B; --muted:#6A7686; --line:#ECE6DC;
-    --shadow:0 10px 30px rgba(22,32,43,.08);
+    --bg:#FBFBFA; --paper:#FFFFFF; --ink:#14261C; --body:#4B4F58; --muted:#8A8D86;
+    --line:#E7E6DF; --green:#1BAE70; --green-d:#06752E;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--ink);
-    font-family:Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+    font-family:Lato,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:980px;margin:0 auto;padding:34px 22px 70px}
-  .brand{font-weight:600;font-size:.9rem;letter-spacing:.02em;color:var(--muted)}
-  .brand b{color:var(--ink)}
+  .wrap{max-width:1080px;margin:0 auto;padding:30px 24px 70px}
 
-  .hero{margin:56px 0 44px}
-  .hero h1{font-family:Fraunces,serif;font-weight:600;font-size:clamp(2.7rem,7vw,4.8rem);
-    line-height:1.02;margin:0;letter-spacing:-.02em;text-wrap:balance}
-  .hero .wave{display:inline-block;transform-origin:70% 70%;animation:wave 2.6s ease-in-out 1}
-  @keyframes wave{0%,60%,100%{transform:rotate(0)}20%{transform:rotate(16deg)}40%{transform:rotate(-8deg)}}
-  .hero p{color:var(--muted);font-size:1.15rem;margin:.7rem 0 0;max-width:34ch}
+  .nav{display:flex;justify-content:space-between;align-items:center}
+  .name{font-family:Poppins,sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
+  .name .dot{color:var(--green)}
+  .nav .tag{font-size:.78rem;color:var(--muted);letter-spacing:.02em}
 
-  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-  .tile{position:relative;min-height:220px;border-radius:26px;padding:24px;overflow:hidden;
-    display:flex;flex-direction:column;justify-content:space-between;color:#fff;
-    box-shadow:var(--shadow);transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
-  .tile:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(22,32,43,.18)}
-  .tile .emoji{font-size:2.7rem;filter:drop-shadow(0 3px 8px rgba(0,0,0,.18))}
-  .tile .glow{position:absolute;width:280px;height:280px;border-radius:50%;right:-90px;top:-90px;
-    background:rgba(255,255,255,.22);filter:blur(6px)}
-  .tile h2{font-family:Fraunces,serif;font-weight:600;font-size:1.7rem;margin:0;letter-spacing:-.01em}
-  .tile .meta{display:flex;align-items:center;gap:8px;margin-top:4px;font-size:.92rem;opacity:.9}
-  .tile .arrow{position:absolute;right:22px;bottom:22px;width:40px;height:40px;border-radius:50%;
-    background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:1.2rem;
-    transition:background .2s,transform .2s}
-  .tile:hover .arrow{background:rgba(255,255,255,.32);transform:translateX(3px)}
-  .tile .bottom{position:relative;z-index:1;padding-right:52px}
+  .hero{margin:76px 0 60px;max-width:16ch}
+  .kicker{font-family:Poppins,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--green-d)}
+  .hero h1{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(2.8rem,8vw,5.4rem);
+    line-height:1;letter-spacing:-.03em;margin:.24em 0 0}
+  .hero h1 .g{color:var(--green)}
 
-  .foot{margin-top:46px;color:var(--muted);font-size:.85rem}
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  .feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+  .feat{position:relative;display:block;border-radius:16px;overflow:hidden;aspect-ratio:16/11;
+    box-shadow:0 14px 34px -18px rgba(20,38,28,.5);transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+  .feat:hover{transform:translateY(-6px)}
+  .feat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+  .feat:hover img{transform:scale(1.05)}
+  .feat .veil{position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(20,38,28,.08),rgba(20,38,28,.72))}
+  .feat .cap{position:absolute;left:0;right:0;bottom:0;padding:22px 24px;color:#fff;
+    display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+  .feat .ck{font-family:Poppins,sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.2em;
+    text-transform:uppercase;opacity:.85}
+  .feat h2{font-family:Poppins,sans-serif;font-weight:600;font-size:1.75rem;margin:.15em 0 0;letter-spacing:-.01em}
+  .feat .arrow{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;font-size:1.2rem;flex-shrink:0;
+    transition:background .25s,transform .25s}
+  .feat:hover .arrow{background:var(--green);border-color:var(--green);transform:translateX(3px)}
+
+  .foot{margin-top:56px;color:var(--muted);font-size:.8rem}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
   <div class="wrap">
+    <nav class="nav">
+      <span class="name">Massimo Calcaterra<span class="dot">.</span></span>
+      <span class="tag">viaggi &amp; appunti</span>
+    </nav>
+
     <header class="hero">
-      <h1>Ciao, sono&nbsp;Massimo <span class="wave">👋</span></h1>
-      <p>Viaggi, mappe e appunti — in un posto solo.</p>
+      <div class="kicker">Calcaterra Casa</div>
+      <h1>Ciao, sono <span class="g">Massimo</span>.</h1>
     </header>
 
-    <main class="tiles" id="tiles"></main>
+    <main class="feats" id="feats"></main>
 
     <div class="foot">© 2026</div>
   </div>
 
 <script>
-const ICON = { sottodominio:"🧭", percorso:"🗺️", apex:"🏠" };
-function hexToRgb(h){const n=parseInt(h.slice(1),16);return [n>>16,(n>>8)&255,n&255];}
-function darken(h,f){const [r,g,b]=hexToRgb(h);const d=c=>Math.round(c*(1-f));
-  return `rgb(${d(r)},${d(g)},${d(b)})`;}
-
-function tile(p){
-  const accent = p.accent || "#2563EB";
-  const emoji = p.emoji || ICON[p.kind] || "📄";
-  let meta = "";
-  if (p.children && p.children.length) meta = `${p.children.length} viaggi`;
-  else if (p.description) meta = p.description;
+function feat(p){
+  const img=p.image || "/img/viaggi.jpg";
+  const ck=p.kind==="sottodominio" ? "Sezione" : "Pagina";
   return `
-  <a class="tile" href="${p.url}" style="background:linear-gradient(145deg,${accent},${darken(accent,.28)})">
-    <div class="glow"></div>
-    <div class="emoji">${emoji}</div>
-    <div class="bottom">
-      <h2>${p.title}</h2>
-      ${meta ? `<div class="meta">${meta}</div>` : ""}
+  <a class="feat" href="${p.url}">
+    <img src="${img}" alt="${p.title}" loading="lazy">
+    <div class="veil"></div>
+    <div class="cap">
+      <div><div class="ck">${ck}</div><h2>${p.title}</h2></div>
+      <div class="arrow">→</div>
     </div>
-    <div class="arrow">→</div>
   </a>`;
 }
-
 fetch("/site.json",{cache:"no-store"})
   .then(r=>r.json())
   .then(d=>{
     const pages=(d.pages||[]).filter(p=>p.kind!=="apex");
-    // Viaggi per primo, poi il resto
-    pages.sort((a,b)=> (a.kind==="sottodominio"?-1:1) - (b.kind==="sottodominio"?-1:1));
-    document.getElementById("tiles").innerHTML = pages.map(tile).join("");
+    pages.sort((a,b)=>(a.kind==="sottodominio"?-1:1)-(b.kind==="sottodominio"?-1:1));
+    document.getElementById("feats").innerHTML=pages.map(feat).join("");
   })
-  .catch(()=>{document.getElementById("tiles").innerHTML=
-    '<a class="tile" href="/mappa" style="background:linear-gradient(145deg,#2563EB,#1b49a6)"><div class="emoji">🗺️</div><div class="bottom"><h2>Esplora il sito</h2></div><div class="arrow">→</div></a>';});
+  .catch(()=>{document.getElementById("feats").innerHTML=
+    '<a class="feat" href="https://viaggi.calcaterra.casa"><img src="/img/viaggi.jpg" alt="Viaggi"><div class="veil"></div><div class="cap"><div><div class="ck">Sezione</div><h2>Viaggi</h2></div><div class="arrow">→</div></div></a>';});
 </script>
 </body>
 </html>
