@@ -9,7 +9,7 @@
     {
       "host": "viaggi.calcaterra.casa",
       "folder": "public/viaggi",
-      "note": "Progetto Cloudflare Pages con root directory = public/viaggi"
+      "note": "Progetto Cloudflare Pages con build output directory = public/viaggi"
     }
   ],
   "pages": [
@@ -20,18 +20,7 @@
       "url": "https://calcaterra.casa/",
       "folder": "public/",
       "file": "public/index.html",
-      "description": "Hub principale del sito: indice di tutte le pagine.",
-      "status": "online",
-      "updated": "2026-07-23"
-    },
-    {
-      "slug": "mappa",
-      "title": "Mappa del sito",
-      "kind": "percorso",
-      "url": "https://calcaterra.casa/mappa",
-      "folder": "public/mappa/",
-      "file": "public/mappa/index.html",
-      "description": "Schema grafico della struttura del sito (questa pagina).",
+      "description": "Home del sito.",
       "status": "online",
       "updated": "2026-07-23"
     },
@@ -42,22 +31,53 @@
       "url": "https://viaggi.calcaterra.casa",
       "folder": "public/viaggi/",
       "file": "public/viaggi/index.html",
-      "description": "Sezione viaggi: atlanti di bordo e itinerari. Primo viaggio: Normandie & Bretagne.",
+      "description": "I miei viaggi.",
+      "emoji": "🧭",
+      "accent": "#2563EB",
       "status": "online",
       "updated": "2026-07-23",
       "children": [
         {
           "slug": "normandie-bretagna",
-          "title": "Normandie & Bretagne — Atlante di Bordo",
+          "title": "Normandie & Bretagne",
+          "tag": "Atlante di bordo",
+          "dates": "6–14 ago 2026",
+          "emoji": "⚓",
+          "accent": "#0FB5A6",
           "url": "https://viaggi.calcaterra.casa/normandie-bretagna",
           "folder": "public/viaggi/normandie-bretagna/",
           "file": "public/viaggi/normandie-bretagna/index.html",
-          "description": "Nove giorni tra Manica e Atlantico, 6–14 agosto 2026. 14 tappe.",
           "status": "online",
           "updated": "2026-07-23",
           "assets": ["itinerario.pdf"]
+        },
+        {
+          "slug": "bretagna",
+          "title": "Bretagna",
+          "tag": "Guida · 7 giorni",
+          "dates": "",
+          "emoji": "🏰",
+          "accent": "#FF6B4A",
+          "url": "https://viaggi.calcaterra.casa/bretagna",
+          "folder": "public/viaggi/bretagna/",
+          "file": "public/viaggi/bretagna/index.html",
+          "status": "online",
+          "updated": "2026-07-23"
         }
       ]
+    },
+    {
+      "slug": "mappa",
+      "title": "Mappa",
+      "kind": "percorso",
+      "url": "https://calcaterra.casa/mappa",
+      "folder": "public/mappa/",
+      "file": "public/mappa/index.html",
+      "description": "Struttura del sito.",
+      "emoji": "🗺️",
+      "accent": "#7C5CFC",
+      "status": "online",
+      "updated": "2026-07-23"
     }
   ]
 }

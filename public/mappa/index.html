@@ -3,130 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mappa del sito · Calcaterra Casa</title>
-<meta name="description" content="Struttura grafica del sito calcaterra.casa.">
+<title>Mappa · Calcaterra Casa</title>
+<meta name="description" content="La struttura del sito calcaterra.casa.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗺️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0b141d; --panel:#14212e; --border:#25384a;
-    --ink:#f2ecdf; --dim:rgba(242,236,223,.60); --faint:rgba(242,236,223,.40);
-    --accent:#7fb2d9; --ok:#6bd39a; --draft:#e6b45a; --sub:#c88bd6; --root:#f2ecdf;
+    --bg:#FBFAF6; --card:#FFFFFF; --ink:#16202B; --muted:#6A7686; --line:#E4DDD1;
+    --shadow:0 8px 24px rgba(22,32,43,.07);
   }
   *{box-sizing:border-box}
-  body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,#16283a 0,var(--bg) 60%);
-    color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1000px;margin:0 auto;padding:48px 22px 90px}
-  .top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:6px}
-  h1{font-size:2rem;margin:0;font-weight:800}
-  .back{color:var(--accent);font-size:.95rem}
-  .sub{color:var(--dim);margin:0 0 36px}
-  .legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:34px;font-size:.82rem;color:var(--dim)}
-  .legend span{display:inline-flex;align-items:center;gap:7px}
-  .dot{width:10px;height:10px;border-radius:3px;display:inline-block}
-  .d-perc{background:var(--accent)} .d-sub{background:var(--sub)} .d-root{background:var(--root)}
+  .wrap{max-width:900px;margin:0 auto;padding:34px 22px 80px}
+  .back{font-weight:500;font-size:.9rem;color:var(--muted)}
+  .back:hover{color:var(--ink)}
+  h1{font-family:Fraunces,serif;font-weight:600;font-size:clamp(2.3rem,6vw,3.6rem);margin:44px 0 34px;letter-spacing:-.02em}
 
-  /* diagramma */
   .tree{display:flex;flex-direction:column;align-items:center}
-  .root-node{background:linear-gradient(180deg,#1d3346,#14212e);border:2px solid var(--root);
-    border-radius:14px;padding:16px 26px;text-align:center;min-width:230px;box-shadow:0 8px 30px rgba(0,0,0,.35)}
-  .root-node .dom{font-weight:800;font-size:1.15rem}
-  .root-node .cap{color:var(--dim);font-size:.8rem;margin-top:2px}
-  .trunk{width:2px;height:34px;background:var(--border)}
-  .cols{display:flex;gap:30px;align-items:flex-start;justify-content:center;flex-wrap:wrap;width:100%}
-  .col{flex:1;min-width:270px;max-width:440px}
-  .col-h{text-align:center;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
-    font-weight:700;color:var(--faint);margin-bottom:16px}
-  .node{position:relative;background:var(--panel);border:1px solid var(--border);border-radius:12px;
-    padding:14px 16px;margin:0 0 26px;transition:transform .15s,border-color .15s}
-  .node:last-child{margin-bottom:0}
-  .node.perc{border-left:4px solid var(--accent)}
-  .node.sub{border-left:4px solid var(--sub)}
-  .node:hover{transform:translateY(-2px)}
-  .node.perc:hover{border-color:var(--accent)} .node.sub:hover{border-color:var(--sub)}
-  .node .nt{font-weight:700;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
-  .node .nd{color:var(--dim);font-size:.9rem;margin-top:4px}
-  .node .nu{color:var(--faint);font-size:.78rem;margin-top:8px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-  .node .nu a{color:var(--accent)}
-  .badge{font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:999px;border:1px solid}
-  .b-online{color:var(--ok);border-color:rgba(107,211,154,.4);background:rgba(107,211,154,.08)}
-  .b-bozza{color:var(--draft);border-color:rgba(230,180,90,.4);background:rgba(230,180,90,.08)}
-  /* connettori verticali sopra ogni nodo */
-  .node::before{content:"";position:absolute;top:-26px;left:50%;width:2px;height:26px;background:var(--border)}
-  .col-h{position:relative}
-  .stat{color:var(--faint);font-size:.85rem;text-align:center;margin-top:40px;border-top:1px solid var(--border);padding-top:20px}
-  .err{color:var(--draft);background:var(--panel);border:1px solid var(--border);padding:16px;border-radius:12px;text-align:center}
+  .root{background:var(--ink);color:#fff;border-radius:16px;padding:14px 26px;font-weight:600;
+    font-size:1.05rem;box-shadow:var(--shadow);display:flex;gap:9px;align-items:center}
+  .stem{width:2px;height:34px;background:var(--line)}
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;width:100%}
+
+  .node{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;
+    padding:20px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+  .node:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(22,32,43,.13)}
+  .node::before{content:"";position:absolute;top:-34px;left:50%;width:2px;height:34px;background:var(--line)}
+  .node .head{display:flex;align-items:center;gap:12px}
+  .node .chip{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:1.5rem;flex-shrink:0}
+  .node .t{font-family:Fraunces,serif;font-weight:600;font-size:1.35rem}
+  .node .u{color:var(--muted);font-size:.82rem;margin-top:1px}
+  .kids{margin-top:16px;display:flex;flex-direction:column;gap:9px}
+  .kid{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:13px;
+    background:var(--bg);font-size:.92rem;font-weight:500;transition:background .18s}
+  .kid:hover{background:#F2EEE4}
+  .kid .ke{font-size:1.15rem}
+  .kid .kt{flex:1}
+  .kid .kd{color:var(--muted);font-size:.78rem;font-weight:400}
+  .loading{color:var(--muted);text-align:center}
 </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="top">
-      <h1>🗺️ Mappa del sito</h1>
-      <a class="back" href="/">← Torna alla home</a>
+    <a class="back" href="/">← Home</a>
+    <h1>Mappa del sito</h1>
+    <div class="tree">
+      <div class="root">🏠 calcaterra.casa</div>
+      <div class="stem"></div>
+      <div class="cols" id="cols"><p class="loading">…</p></div>
     </div>
-    <p class="sub">Struttura di <strong>calcaterra.casa</strong>, generata automaticamente da <code>site.json</code>.</p>
-    <div class="legend">
-      <span><i class="dot d-root"></i> Dominio principale</span>
-      <span><i class="dot d-perc"></i> Pagina a percorso (calcaterra.casa/…)</span>
-      <span><i class="dot d-sub"></i> Sottodominio dedicato</span>
-    </div>
-    <div id="tree" class="tree"><p class="err" style="border:0;background:none">Carico la struttura…</p></div>
-    <div id="stat" class="stat"></div>
   </div>
 
 <script>
-const badge = (p) => p.status === "bozza"
-  ? '<span class="badge b-bozza">bozza</span>'
-  : '<span class="badge b-online">online</span>';
+function tint(hex,a){const n=parseInt(hex.slice(1),16);
+  return `rgba(${n>>16},${(n>>8)&255},${n&255},${a})`;}
 
-const node = (p) => {
-  const cls = p.kind === "sottodominio" ? "sub" : "perc";
-  const host = p.url.replace(/^https?:\/\//,"").replace(/\/$/,"");
-  const extra = p.pathUrl ? ` · anche <a href="${p.pathUrl}">${p.pathUrl.replace(/^https?:\/\//,"")}</a>` : "";
+function node(p){
+  const accent=p.accent||"#2563EB";
+  const kids=(p.children||[]).map(c=>`
+    <a class="kid" href="${c.url}" style="--a:${c.accent||accent}">
+      <span class="ke">${c.emoji||"•"}</span>
+      <span class="kt">${c.title}</span>
+      ${c.dates?`<span class="kd">${c.dates}</span>`:(c.tag?`<span class="kd">${c.tag}</span>`:"")}
+    </a>`).join("");
   return `
-  <div class="node ${cls}">
-    <div class="nt">${p.title} ${badge(p)}</div>
-    <div class="nd">${p.description || ""}</div>
-    <div class="nu">
-      <a href="${p.url}">${host} →</a>
-      <span>agg. ${p.updated || "—"}</span>
+  <a class="node" href="${p.url}">
+    <div class="head">
+      <div class="chip" style="background:${tint(accent,.14)};color:${accent}">${p.emoji||"📄"}</div>
+      <div><div class="t">${p.title}</div>
+      <div class="u">${p.url.replace(/^https?:\/\//,"").replace(/\/$/,"")}</div></div>
     </div>
-    ${extra ? `<div class="nu"><span style="color:var(--faint)">${extra}</span></div>` : ""}
-  </div>`;
-};
+    ${kids?`<div class="kids">${kids}</div>`:""}
+  </a>`;
+}
 
-fetch("/site.json", { cache:"no-store" })
-  .then(r => r.json())
-  .then(data => {
-    const pages = data.pages || [];
-    const perc = pages.filter(p => p.kind === "percorso" || p.kind === "apex");
-    const subs = pages.filter(p => p.kind === "sottodominio");
-    const dom = (data.site && data.site.domain) || "calcaterra.casa";
-
-    const tree = `
-      <div class="root-node">
-        <div class="dom">🏠 ${dom}</div>
-        <div class="cap">Dominio su Cloudflare</div>
-      </div>
-      <div class="trunk"></div>
-      <div class="cols">
-        <div class="col">
-          <div class="col-h">Pagine del sito</div>
-          ${perc.map(node).join("") || '<div class="node perc"><div class="nd">Nessuna.</div></div>'}
-        </div>
-        <div class="col">
-          <div class="col-h">Sottodomini dedicati</div>
-          ${subs.map(node).join("") || '<div class="node sub"><div class="nd">Nessuno.</div></div>'}
-        </div>
-      </div>`;
-    document.getElementById("tree").innerHTML = tree;
-    document.getElementById("stat").textContent =
-      `${pages.length} pagine totali · ${perc.length} a percorso · ${subs.length} su sottodominio · ultimo aggiornamento ${data.updated || "—"}`;
+fetch("/site.json",{cache:"no-store"})
+  .then(r=>r.json())
+  .then(d=>{
+    const pages=(d.pages||[]).filter(p=>p.kind!=="apex");
+    pages.sort((a,b)=>(a.kind==="sottodominio"?-1:1)-(b.kind==="sottodominio"?-1:1));
+    document.getElementById("cols").innerHTML=pages.map(node).join("");
   })
-  .catch(() => {
-    document.getElementById("tree").innerHTML =
-      '<div class="err">Impossibile leggere site.json (normale se apri il file in locale; online funziona).</div>';
-  });
+  .catch(()=>{document.getElementById("cols").innerHTML='<p class="loading">Struttura non disponibile offline.</p>';});
 </script>
 </body>
 </html>

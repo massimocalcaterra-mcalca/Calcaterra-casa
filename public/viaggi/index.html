@@ -4,98 +4,87 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Viaggi · Calcaterra Casa</title>
-<meta name="description" content="I viaggi di Massimo Calcaterra: atlanti di bordo, itinerari e appunti di rotta.">
+<meta name="description" content="I viaggi di Massimo Calcaterra.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --abyss:#0a121a; --deep:#0f1c28; --panel:#14212e; --panel2:#182a39; --border:#284056;
-    --ink:#f2ecdf; --dim:rgba(242,236,223,.62); --faint:rgba(242,236,223,.40);
-    --accent:#7fb2d9; --gold:#e6b45a; --ok:#6bd39a;
+    --bg:#FBFAF6; --card:#FFFFFF; --ink:#16202B; --muted:#6A7686; --line:#ECE6DC;
+    --shadow:0 10px 30px rgba(22,32,43,.08);
   }
   *{box-sizing:border-box}
-  body{margin:0;min-height:100vh;color:var(--ink);
-    background:radial-gradient(1100px 560px at 50% -10%,#17293b 0,var(--abyss) 60%);
-    font:16px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:900px;margin:0 auto;padding:60px 22px 90px}
-  .eyebrow{color:var(--accent);font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700}
-  h1{font-size:2.8rem;line-height:1.05;margin:.2em 0 .25em;font-weight:800;letter-spacing:-.015em;text-wrap:balance}
-  .lead{color:var(--dim);font-size:1.1rem;max-width:56ch}
-  .rule{display:flex;align-items:center;gap:14px;color:var(--faint);font-size:.78rem;
-    letter-spacing:.14em;text-transform:uppercase;margin:46px 0 22px}
-  .rule::before,.rule::after{content:"";height:1px;background:var(--border);flex:1}
+  .wrap{max-width:980px;margin:0 auto;padding:34px 22px 70px}
+  .back{font-weight:500;font-size:.9rem;color:var(--muted);display:inline-flex;gap:6px;align-items:center}
+  .back:hover{color:var(--ink)}
 
-  .trip{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;
-    background:linear-gradient(180deg,var(--panel),var(--deep));border:1px solid var(--border);
-    border-radius:16px;padding:22px 24px;margin-bottom:16px;overflow:hidden;
-    transition:transform .18s ease,border-color .18s ease}
-  .trip:hover{transform:translateY(-3px);border-color:var(--accent)}
-  .trip .cal{display:flex;flex-direction:column;align-items:center;justify-content:center;
-    width:70px;height:70px;border-radius:14px;background:var(--panel2);border:1px solid var(--border);flex-shrink:0}
-  .trip .cal .d{font-size:1.5rem;font-weight:800;line-height:1}
-  .trip .cal .m{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:3px}
-  .trip .body{min-width:0}
-  .trip .t{font-size:1.28rem;font-weight:800;letter-spacing:-.01em}
-  .trip .sub{color:var(--dim);font-size:.95rem;margin-top:2px}
-  .trip .meta{color:var(--faint);font-size:.82rem;margin-top:9px;display:flex;gap:16px;flex-wrap:wrap}
-  .trip .meta .live{color:var(--ok);display:inline-flex;align-items:center;gap:6px}
-  .trip .meta .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px var(--ok)}
-  .trip .go{font-size:1.6rem;color:var(--faint);transition:color .18s,transform .18s}
-  .trip:hover .go{color:var(--accent);transform:translateX(3px)}
+  .hero{margin:50px 0 40px}
+  .hero h1{font-family:Fraunces,serif;font-weight:600;font-size:clamp(2.5rem,6.5vw,4.4rem);
+    line-height:1.02;margin:0;letter-spacing:-.02em}
+  .hero p{color:var(--muted);font-size:1.12rem;margin:.6rem 0 0}
 
-  .soon{opacity:.6}
-  .soon .cal{background:transparent;border-style:dashed}
-  .soon:hover{transform:none;border-color:var(--border);cursor:default}
-  .soon .go{display:none}
-  .pill{font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-    padding:2px 9px;border-radius:999px;border:1px dashed var(--border);color:var(--faint)}
+  .trips{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .trip{position:relative;min-height:280px;border-radius:28px;padding:26px;overflow:hidden;color:#fff;
+    display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow);
+    transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+  .trip:hover{transform:translateY(-6px);box-shadow:0 24px 46px rgba(22,32,43,.2)}
+  .trip .glow{position:absolute;width:320px;height:320px;border-radius:50%;right:-110px;top:-120px;
+    background:rgba(255,255,255,.2)}
+  .trip .top{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start}
+  .trip .emoji{font-size:3rem;filter:drop-shadow(0 3px 8px rgba(0,0,0,.2))}
+  .trip .pill{background:rgba(255,255,255,.22);border-radius:999px;padding:5px 12px;
+    font-size:.8rem;font-weight:600;backdrop-filter:blur(4px)}
+  .trip .bottom{position:relative;z-index:1;padding-right:52px}
+  .trip h2{font-family:Fraunces,serif;font-weight:600;font-size:2rem;margin:0 0 4px;letter-spacing:-.01em}
+  .trip .sub{opacity:.92;font-size:.98rem}
+  .trip .arrow{position:absolute;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;
+    background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:1.3rem;transition:.2s}
+  .trip:hover .arrow{background:rgba(255,255,255,.34);transform:translateX(3px)}
 
-  footer{color:var(--faint);font-size:.84rem;margin-top:50px;border-top:1px solid var(--border);padding-top:20px}
-  footer a{color:var(--accent)}
-  @media (max-width:560px){
-    h1{font-size:2.1rem}
-    .trip{grid-template-columns:auto 1fr;gap:16px}
-    .trip .go{display:none}
-  }
+  .soon{background:var(--card);color:var(--muted);border:2px dashed var(--line);box-shadow:none}
+  .soon:hover{transform:none;box-shadow:none}
+  .soon .emoji{filter:grayscale(1);opacity:.5}
+  .soon h2{color:var(--ink);opacity:.55}
+  .soon .arrow{display:none}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <div class="eyebrow">Calcaterra Casa · Viaggi</div>
-      <h1>Appunti di rotta</h1>
-      <p class="lead">Gli atlanti di bordo dei miei viaggi: itinerari, tappe e cose da non perdere, raccolti prima di partire.</p>
+    <a class="back" href="https://calcaterra.casa">← calcaterra.casa</a>
+
+    <header class="hero">
+      <h1>Viaggi</h1>
+      <p>Atlanti di bordo e itinerari.</p>
     </header>
 
-    <div class="rule">In programma</div>
-
-    <a class="trip" href="/normandie-bretagna">
-      <div class="cal"><span class="d">6</span><span class="m">Ago</span></div>
-      <div class="body">
-        <div class="t">Normandie &amp; Bretagne</div>
-        <div class="sub">Atlante di bordo · nove giorni tra Manica e Atlantico</div>
-        <div class="meta">
-          <span class="live">online</span>
-          <span>6–14 agosto 2026</span>
-          <span>14 tappe · itinerario PDF</span>
+    <main class="trips">
+      <a class="trip" href="/normandie-bretagna"
+         style="background:linear-gradient(150deg,#12b5a6,#0a7d75)">
+        <div class="glow"></div>
+        <div class="top"><span class="emoji">⚓</span><span class="pill">6–14 ago 2026</span></div>
+        <div class="bottom">
+          <h2>Normandie &amp; Bretagne</h2>
+          <div class="sub">Atlante di bordo · 14 tappe</div>
         </div>
-      </div>
-      <div class="go">→</div>
-    </a>
+        <div class="arrow">→</div>
+      </a>
 
-    <div class="trip soon">
-      <div class="cal"><span class="d">·</span><span class="m">2026</span></div>
-      <div class="body">
-        <div class="t">Madeira <span class="pill">in preparazione</span></div>
-        <div class="sub">Avventura sull'isola dell'eterna primavera</div>
-        <div class="meta"><span>Atlante in arrivo</span></div>
-      </div>
-    </div>
-
-    <footer>
-      Sezione viaggi di <a href="https://calcaterra.casa">calcaterra.casa</a> · Massimo Calcaterra
-    </footer>
+      <a class="trip" href="/bretagna"
+         style="background:linear-gradient(150deg,#ff6b4a,#d8432a)">
+        <div class="glow"></div>
+        <div class="top"><span class="emoji">🏰</span><span class="pill">7 giorni</span></div>
+        <div class="bottom">
+          <h2>Bretagna</h2>
+          <div class="sub">Guida di viaggio</div>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+    </main>
   </div>
 </body>
 </html>

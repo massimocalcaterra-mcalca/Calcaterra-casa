@@ -4,96 +4,100 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calcaterra Casa</title>
-<meta name="description" content="Sito personale di Massimo Calcaterra.">
+<meta name="description" content="Il sito personale di Massimo Calcaterra.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0b141d; --panel:#14212e; --panel2:#0f1a24; --border:#25384a;
-    --ink:#f2ecdf; --dim:rgba(242,236,223,.60); --faint:rgba(242,236,223,.38);
-    --accent:#7fb2d9; --ok:#6bd39a; --draft:#e6b45a; --sub:#c88bd6;
+    --bg:#FBFAF6; --card:#FFFFFF; --ink:#16202B; --muted:#6A7686; --line:#ECE6DC;
+    --shadow:0 10px 30px rgba(22,32,43,.08);
   }
   *{box-sizing:border-box}
-  body{margin:0;background:radial-gradient(1200px 600px at 70% -10%,#16283a 0,var(--bg) 60%);
-    color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:820px;margin:0 auto;padding:64px 22px 90px}
-  .hero{margin-bottom:44px}
-  .hello{color:var(--accent);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
-  h1{font-size:2.6rem;line-height:1.1;margin:.15em 0 .3em;font-weight:800}
-  .lead{color:var(--dim);font-size:1.08rem;max-width:52ch}
-  .group{margin-top:40px}
-  .group h2{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);
-    font-weight:700;margin:0 0 14px;border-bottom:1px solid var(--border);padding-bottom:8px}
-  .card{display:flex;gap:16px;align-items:flex-start;background:var(--panel);border:1px solid var(--border);
-    border-radius:14px;padding:18px 20px;margin-bottom:12px;transition:transform .15s ease,border-color .15s ease}
-  .card:hover{transform:translateY(-2px);border-color:var(--accent)}
-  .card .ic{font-size:1.5rem;line-height:1.4}
-  .card .body{flex:1;min-width:0}
-  .card .t{font-weight:700;font-size:1.08rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-  .card .d{color:var(--dim);font-size:.94rem;margin-top:3px}
-  .card .u{color:var(--faint);font-size:.8rem;margin-top:6px}
-  .badge{font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-    padding:2px 8px;border-radius:999px;border:1px solid}
-  .b-online{color:var(--ok);border-color:rgba(107,211,154,.4);background:rgba(107,211,154,.08)}
-  .b-bozza{color:var(--draft);border-color:rgba(230,180,90,.4);background:rgba(230,180,90,.08)}
-  .b-sub{color:var(--sub);border-color:rgba(200,139,214,.4);background:rgba(200,139,214,.08)}
-  .arrow{color:var(--faint);align-self:center;font-size:1.3rem}
-  footer{color:var(--faint);font-size:.85rem;margin-top:56px;border-top:1px solid var(--border);padding-top:20px}
-  .err{color:var(--draft);background:var(--panel);border:1px solid var(--border);padding:16px;border-radius:12px}
+  .wrap{max-width:980px;margin:0 auto;padding:34px 22px 70px}
+  .brand{font-weight:600;font-size:.9rem;letter-spacing:.02em;color:var(--muted)}
+  .brand b{color:var(--ink)}
+
+  .hero{margin:56px 0 44px}
+  .hero h1{font-family:Fraunces,serif;font-weight:600;font-size:clamp(2.7rem,7vw,4.8rem);
+    line-height:1.02;margin:0;letter-spacing:-.02em;text-wrap:balance}
+  .hero .wave{display:inline-block;transform-origin:70% 70%;animation:wave 2.6s ease-in-out 1}
+  @keyframes wave{0%,60%,100%{transform:rotate(0)}20%{transform:rotate(16deg)}40%{transform:rotate(-8deg)}}
+  .hero p{color:var(--muted);font-size:1.15rem;margin:.7rem 0 0;max-width:34ch}
+
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .tile{position:relative;min-height:220px;border-radius:26px;padding:24px;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:space-between;color:#fff;
+    box-shadow:var(--shadow);transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s}
+  .tile:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(22,32,43,.18)}
+  .tile .emoji{font-size:2.7rem;filter:drop-shadow(0 3px 8px rgba(0,0,0,.18))}
+  .tile .glow{position:absolute;width:280px;height:280px;border-radius:50%;right:-90px;top:-90px;
+    background:rgba(255,255,255,.22);filter:blur(6px)}
+  .tile h2{font-family:Fraunces,serif;font-weight:600;font-size:1.7rem;margin:0;letter-spacing:-.01em}
+  .tile .meta{display:flex;align-items:center;gap:8px;margin-top:4px;font-size:.92rem;opacity:.9}
+  .tile .arrow{position:absolute;right:22px;bottom:22px;width:40px;height:40px;border-radius:50%;
+    background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:1.2rem;
+    transition:background .2s,transform .2s}
+  .tile:hover .arrow{background:rgba(255,255,255,.32);transform:translateX(3px)}
+  .tile .bottom{position:relative;z-index:1;padding-right:52px}
+
+  .foot{margin-top:46px;color:var(--muted);font-size:.85rem}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
   <div class="wrap">
+    <div class="brand"><b>calcaterra</b>.casa</div>
+
     <header class="hero">
-      <div class="hello">Calcaterra Casa</div>
-      <h1>Ciao, sono Massimo.</h1>
-      <p class="lead">Questo e il punto di partenza del mio sito: da qui raggiungi tutte le pagine e i progetti pubblicati su <strong>calcaterra.casa</strong>.</p>
+      <h1>Ciao, sono&nbsp;Massimo <span class="wave">👋</span></h1>
+      <p>Viaggi, mappe e appunti — in un posto solo.</p>
     </header>
-    <main id="content"><p class="dim">Carico le pagine…</p></main>
-    <footer>
-      © <span id="year"></span> Massimo Calcaterra · calcaterra.casa ·
-      <a href="/mappa" style="color:var(--accent)">Mappa del sito →</a>
-    </footer>
+
+    <main class="tiles" id="tiles"></main>
+
+    <div class="foot">© 2026 · calcaterra.casa</div>
   </div>
 
 <script>
-const ICON = { apex:"🏠", percorso:"📄", sottodominio:"🌐" };
-const GROUPS = [
-  { kind:"percorso",     label:"Pagine del sito" },
-  { kind:"sottodominio", label:"Progetti su sottodominio dedicato" },
-];
-const badge = (p) => {
-  if (p.kind === "sottodominio") return '<span class="badge b-sub">sottodominio</span>';
-  if (p.status === "bozza")      return '<span class="badge b-bozza">bozza</span>';
-  return '<span class="badge b-online">online</span>';
-};
-const card = (p) => `
-  <a class="card" href="${p.url}">
-    <div class="ic">${ICON[p.kind] || "📄"}</div>
-    <div class="body">
-      <div class="t">${p.title} ${badge(p)}</div>
-      <div class="d">${p.description || ""}</div>
-      <div class="u">Aggiornata il ${p.updated || "—"} · <span style="opacity:.8">${p.url.replace(/^https?:\/\//,"")}</span></div>
+const ICON = { sottodominio:"🧭", percorso:"🗺️", apex:"🏠" };
+function hexToRgb(h){const n=parseInt(h.slice(1),16);return [n>>16,(n>>8)&255,n&255];}
+function darken(h,f){const [r,g,b]=hexToRgb(h);const d=c=>Math.round(c*(1-f));
+  return `rgb(${d(r)},${d(g)},${d(b)})`;}
+
+function tile(p){
+  const accent = p.accent || "#2563EB";
+  const emoji = p.emoji || ICON[p.kind] || "📄";
+  let meta = "";
+  if (p.children && p.children.length) meta = `${p.children.length} viaggi`;
+  else if (p.description) meta = p.description;
+  return `
+  <a class="tile" href="${p.url}" style="background:linear-gradient(145deg,${accent},${darken(accent,.28)})">
+    <div class="glow"></div>
+    <div class="emoji">${emoji}</div>
+    <div class="bottom">
+      <h2>${p.title}</h2>
+      ${meta ? `<div class="meta">${meta}</div>` : ""}
     </div>
     <div class="arrow">→</div>
   </a>`;
+}
 
-document.getElementById("year").textContent = "2026";
-fetch("/site.json", { cache:"no-store" })
-  .then(r => r.json())
-  .then(data => {
-    const pages = (data.pages || []).filter(p => p.kind !== "apex");
-    const html = GROUPS.map(g => {
-      const items = pages.filter(p => p.kind === g.kind);
-      if (!items.length) return "";
-      return `<section class="group"><h2>${g.label}</h2>${items.map(card).join("")}</section>`;
-    }).join("");
-    document.getElementById("content").innerHTML = html || '<p class="err">Nessuna pagina ancora.</p>';
+fetch("/site.json",{cache:"no-store"})
+  .then(r=>r.json())
+  .then(d=>{
+    const pages=(d.pages||[]).filter(p=>p.kind!=="apex");
+    // Viaggi per primo, poi il resto
+    pages.sort((a,b)=> (a.kind==="sottodominio"?-1:1) - (b.kind==="sottodominio"?-1:1));
+    document.getElementById("tiles").innerHTML = pages.map(tile).join("");
   })
-  .catch(() => {
-    document.getElementById("content").innerHTML =
-      '<div class="err">Impossibile leggere site.json (normale se apri il file in locale; online funziona).</div>';
-  });
+  .catch(()=>{document.getElementById("tiles").innerHTML=
+    '<a class="tile" href="/mappa" style="background:linear-gradient(145deg,#2563EB,#1b49a6)"><div class="emoji">🗺️</div><div class="bottom"><h2>Esplora il sito</h2></div><div class="arrow">→</div></a>';});
 </script>
 </body>
 </html>
