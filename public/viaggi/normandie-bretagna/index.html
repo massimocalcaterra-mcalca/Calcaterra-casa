@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Normandie &amp; Bretagne in 9 giorni · 6–14 agosto 2026 — Calcaterra Casa</title>
-<meta name="description" content="Grande giro Normandia e Bretagna in 9 giorni (6–14 agosto 2026) da Parigi-Beauvais: Rouen, le spiagge dello Sbarco, Mont-Saint-Michel, coste bretoni e l'eclissi del 12 agosto in Finistère.">
-<meta name="robots" content="index">
+<title>Normandie &amp; Bretagne in 11 giorni · 6–16 agosto 2026 — Calcaterra Casa</title>
+<meta name="description" content="Grande giro Normandia e Bretagna in 11 giorni (6–16 agosto 2026) da Parigi-Beauvais: Rouen, Étretat, lo Sbarco, Mont-Saint-Michel, coste bretoni, l'eclissi del 12 agosto in Finistère e i giardini di Monet a Giverny.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚓</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +12,7 @@
 <style>
   :root{
     --bg:#FBFBFA; --paper:#FFFFFF; --ink:#14261C; --body:#4B4F58; --muted:#8A8D86;
-    --line:#E7E6DF; --green:#1BAE70; --green-d:#06752E; --coral:#FF6B4A; --navy:#1b3a4b;
+    --line:#E7E6DF; --green:#1BAE70; --green-d:#06752E; --coral:#FF6B4A;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -24,7 +23,6 @@
   .wrap{max-width:940px;margin:0 auto;padding:0 24px}
   h1,h2,h3{font-family:Poppins,sans-serif;letter-spacing:-.02em;line-height:1.12}
 
-  /* NAV */
   .topbar{position:sticky;top:0;z-index:40;background:rgba(251,251,250,.9);
     -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .topbar .row{max-width:940px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 24px}
@@ -33,10 +31,9 @@
   .topnav{margin-left:auto;display:flex;gap:2px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
   .topnav::-webkit-scrollbar{display:none}
   .topnav a{font-family:Poppins,sans-serif;font-size:.74rem;font-weight:600;color:var(--muted);
-    padding:7px 9px;border-radius:8px;transition:.2s}
+    padding:7px 8px;border-radius:8px;transition:.2s}
   .topnav a:hover{color:var(--green-d);background:#EFF7F1}
 
-  /* HERO */
   .hero{position:relative;height:min(78vh,680px);display:flex;align-items:flex-end;overflow:hidden}
   .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,38,28,.18),rgba(20,38,28,.8))}
@@ -52,7 +49,6 @@
   .backlink{display:inline-block;margin-bottom:14px;font-size:.8rem;color:rgba(255,255,255,.85);font-weight:700}
   .backlink:hover{color:#fff}
 
-  /* SECTIONS */
   section{padding:60px 0}
   .tag{display:inline-block;background:#EFF7F1;color:var(--green-d);font-family:Poppins,sans-serif;
     font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:5px 13px;border-radius:20px}
@@ -78,9 +74,11 @@
   .tip{margin-top:20px;background:#FFF6F2;border:1px dashed var(--coral);border-radius:12px;
     padding:16px 20px;font-size:.92rem;color:#5a3d33}
   .tip b{color:var(--coral)}
-  .note b,.tip b{font-family:Poppins,sans-serif}
+  .curio{margin-top:16px;background:#EFF7F1;border:1px solid #CFE9D8;border-radius:12px;
+    padding:14px 18px;font-size:.9rem;color:#20402e}
+  .curio b{color:var(--green-d)}
+  .note b,.tip b,.curio b{font-family:Poppins,sans-serif}
 
-  /* VIDEO BAND */
   .videoband{position:relative;padding:0}
   .videoband figure{margin:0;position:relative;max-width:1180px;margin:0 auto}
   .videoband video{width:100%;height:min(64vh,560px);object-fit:cover;display:block;background:#0d150f}
@@ -90,7 +88,6 @@
     letter-spacing:.2em;text-transform:uppercase;opacity:.85}
   .videoband figcaption .vt{font-family:Poppins,sans-serif;font-size:1.4rem;font-weight:600;margin-top:4px}
 
-  /* DAYS */
   .day{padding:54px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
   .day .photo{border-radius:16px;overflow:hidden;box-shadow:0 20px 40px -24px rgba(20,38,28,.5);margin-bottom:8px}
   .day .photo img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
@@ -109,7 +106,6 @@
     color:var(--green-d);font-weight:600;margin-bottom:5px}
   .infocard .cv{font-size:.86rem;color:var(--ink)}
 
-  /* D-DAY SET-PIECE */
   .dday{background:linear-gradient(180deg,#12222e,#0d1a24);color:#eaf0f2}
   .dday .tag{background:rgba(255,255,255,.12);color:#cfe0dd}
   .dday h2.big{color:#fff}
@@ -127,14 +123,12 @@
   .scene .ss{font-size:.78rem;color:#a9c2bd;margin-bottom:8px}
   .scene p{font-size:.84rem;color:rgba(234,240,242,.82);margin:0}
 
-  /* PRACTICAL */
   .prac{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
   @media(max-width:620px){.prac{grid-template-columns:1fr}}
   .prac .pc{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px}
   .prac .pc h3{font-size:1.02rem;color:var(--coral);margin:0 0 6px}
   .prac .pc p{font-size:.88rem;color:var(--body);margin:0}
 
-  /* CLOSING */
   .closing{position:relative;border-radius:20px;overflow:hidden;color:#fff;text-align:center;margin-top:20px}
   .closing video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .closing .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,117,46,.72),rgba(20,38,28,.82))}
@@ -144,7 +138,6 @@
   .closing .sign{margin-top:20px;font-family:Poppins,sans-serif;font-size:.72rem;letter-spacing:.2em;
     text-transform:uppercase;color:#FFD9CE}
 
-  /* CREDITS + FOOT */
   .credits{font-size:.78rem;color:var(--muted);margin-top:40px;border-top:1px solid var(--line);padding-top:24px}
   .credits h4{font-family:Poppins,sans-serif;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
     color:var(--body);margin:0 0 10px}
@@ -162,40 +155,38 @@
     <a href="/"><span class="brand">calcaterra<span class="dot">.</span>casa</span></a>
     <nav class="topnav">
       <a href="#panoramica">Panoramica</a>
-      <a href="#g1">G1</a><a href="#g2">G2</a><a href="#g3">G3</a><a href="#g4">G4</a>
-      <a href="#g5">G5</a><a href="#g6">G6</a><a href="#g7">G7</a><a href="#g8">G8</a><a href="#g9">G9</a>
+      <a href="#g1">G1</a><a href="#g2">G2</a><a href="#g3">G3</a><a href="#g4">G4</a><a href="#g5">G5</a>
+      <a href="#g6">G6</a><a href="#g7">G7</a><a href="#g8">G8</a><a href="#g9">G9</a><a href="#g10">G10</a><a href="#g11">G11</a>
       <a href="#pratiche">Info</a>
     </nav>
   </div>
 </div>
 
-<!-- HERO -->
 <header class="hero">
   <img class="bg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/MSM_sunset_02.JPG/1920px-MSM_sunset_02.JPG" alt="Mont-Saint-Michel al tramonto">
   <div class="veil"></div>
   <div class="inner">
     <a class="backlink" href="/">← Viaggi</a>
-    <div class="eyebrow">Grande giro · 6–14 agosto 2026</div>
+    <div class="eyebrow">Grande giro · 6–16 agosto 2026</div>
     <h1>Normandie &amp; <span>Bretagne</span></h1>
-    <div class="sub">Nove giorni da Parigi-Beauvais: dalle guglie di Rouen alle spiagge dello Sbarco, dal Mont-Saint-Michel alle coste bretoni — fino all'eclissi solare del 12 agosto, osservata dalla punta estrema del Finistère.</div>
+    <div class="sub">Undici giorni da Parigi-Beauvais: dalle falesie di Étretat alle spiagge dello Sbarco, dal Mont-Saint-Michel alle coste bretoni fino all'eclissi del 12 agosto in Finistère — e il ritorno tra i giardini di Monet a Giverny.</div>
     <div class="meta">
-      <div>9 giorni · 8 notti<br><b>Beauvais → Normandia → Bretagna → Beauvais</b></div>
-      <div>Volo BVA<br><b>6 ago h 13:30 · 14 ago h 18:00</b></div>
-      <div>~1.450 km<br><b>Storia · Memoria · Oceano · Astronomia</b></div>
+      <div>11 giorni · 10 notti<br><b>Beauvais → Normandia → Bretagna → Beauvais</b></div>
+      <div>Volo BVA<br><b>6 ago arrivo 13:15 · 16 ago partenza 14:00</b></div>
+      <div>~1.600 km<br><b>Storia · Memoria · Oceano · Arte</b></div>
     </div>
   </div>
 </header>
 
-<!-- OVERVIEW -->
 <section id="panoramica">
   <div class="wrap">
     <span class="tag">Panoramica</span>
-    <h2 class="big">Due regioni, un solo arco atlantico</h2>
-    <p class="lead">Il viaggio comincia giovedì 6 agosto con l'atterraggio a Parigi-Beauvais alle 13:30. I primi giorni sono dedicati alla Normandia: Rouen la gotica, le spiagge dello Sbarco con i loro luoghi della memoria, e la meraviglia sospesa del Mont-Saint-Michel. Poi si entra in Bretagna — Saint-Malo corsara, la Costa di Granito Rosa — puntando decisi verso ovest, perché la sera di mercoledì 12 agosto il gruppo dev'essere in <b>Finistère</b>: è lì, sull'estremo Atlantico, che si osserverà l'eclissi solare parziale. Gli ultimi due giorni riportano verso est, con il rientro a Parigi-Beauvais venerdì 14 agosto in tempo per il volo delle 18:00. In tutto circa 1.450 km.</p>
+    <h2 class="big">Due regioni, un grande arco atlantico</h2>
+    <p class="lead">Undici giorni per unire Normandia e Bretagna in un unico viaggio. Si atterra a Parigi-Beauvais giovedì 6 agosto alle 13:15. I primi giorni sono normanni: Rouen la gotica, le falesie candide di Étretat, il porto di Honfleur, le spiagge dello Sbarco e la meraviglia sospesa del Mont-Saint-Michel. Poi la Bretagna — Saint-Malo, i castelli sul mare, la Costa di Granito Rosa — puntando a ovest perché mercoledì 12 agosto il gruppo dev'essere in <b>Finistère</b> per l'eclissi solare sull'oceano. Dopo le punte estreme e la Bretagna del sud, si rientra a tappe verso la Normandia della Senna, con i giardini di Monet a Giverny, fino a Parigi-Beauvais venerdì 16 agosto (volo alle 14:00). In tutto circa 1.600 km.</p>
 
     <div class="stats">
-      <div class="stat"><div class="n">9</div><div class="l">Giorni / 8 notti</div></div>
-      <div class="stat"><div class="n">~1450</div><div class="l">Km totali</div></div>
+      <div class="stat"><div class="n">11</div><div class="l">Giorni / 10 notti</div></div>
+      <div class="stat"><div class="n">~1600</div><div class="l">Km totali</div></div>
       <div class="stat"><div class="n">2</div><div class="l">Regioni · N &amp; B</div></div>
       <div class="stat"><div class="n">96%</div><div class="l">Sole coperto, 12 ago</div></div>
     </div>
@@ -205,30 +196,31 @@
         <thead><tr><th>Giorno</th><th>Data</th><th>Tappa</th><th>Tema</th><th>Pernottamento</th></tr></thead>
         <tbody>
           <tr><td class="d">1</td><td>Gio 6/8</td><td>Beauvais → Rouen</td><td class="th">Arrivo · Normandia gotica</td><td>Rouen</td></tr>
-          <tr><td class="d">2</td><td>Ven 7/8</td><td>Spiagge dello Sbarco (ovest)</td><td class="th">Memoria · D-Day</td><td>Bayeux</td></tr>
-          <tr><td class="d">3</td><td>Sab 8/8</td><td>Omaha · Colleville · Arromanches</td><td class="th">Memoria · D-Day</td><td>Bayeux</td></tr>
+          <tr><td class="d">2</td><td>Ven 7/8</td><td>Étretat · Honfleur</td><td class="th">Falesie · porto dei pittori</td><td>Bayeux</td></tr>
+          <tr><td class="d">3</td><td>Sab 8/8</td><td>Spiagge dello Sbarco</td><td class="th">Memoria · D-Day</td><td>Bayeux</td></tr>
           <tr><td class="d">4</td><td>Dom 9/8</td><td>Mont-Saint-Michel → Saint-Malo</td><td class="th">Abbazia · maree</td><td>Saint-Malo</td></tr>
-          <tr><td class="d">5</td><td>Lun 10/8</td><td>Saint-Malo</td><td class="th">Storia · mare</td><td>Saint-Malo</td></tr>
-          <tr><td class="d">6</td><td>Mar 11/8</td><td>Dinan · Côte de Granit Rose</td><td class="th">Borgo · GR34 · verso ovest</td><td>Finistère nord</td></tr>
+          <tr><td class="d">5</td><td>Lun 10/8</td><td>Saint-Malo · Cap Fréhel · Fort la Latte</td><td class="th">Corsari · castello sul mare</td><td>Saint-Malo / nord</td></tr>
+          <tr><td class="d">6</td><td>Mar 11/8</td><td>Côte de Granit Rose → ovest</td><td class="th">GR34 · verso il Finistère</td><td>Finistère nord</td></tr>
           <tr><td class="d">7</td><td>Mer 12/8</td><td>Finistère · <b>Eclissi solare</b></td><td class="th">Pointe du Raz · astronomia</td><td>Pays Bigouden</td></tr>
-          <tr><td class="d">8</td><td>Gio 13/8</td><td>Quimper → verso est</td><td class="th">Città storica · rientro</td><td>Rennes / dintorni</td></tr>
-          <tr><td class="d">9</td><td>Ven 14/8</td><td>Rennes → Beauvais (volo 18:00)</td><td class="th">Rientro</td><td>—</td></tr>
+          <tr><td class="d">8</td><td>Gio 13/8</td><td>Presqu'île de Crozon · Locronan</td><td class="th">Scogliere · borgo da film</td><td>Quimper / dintorni</td></tr>
+          <tr><td class="d">9</td><td>Ven 14/8</td><td>Quimper · Concarneau · Pont-Aven</td><td class="th">Città · ville close · pittori</td><td>Rennes</td></tr>
+          <tr><td class="d">10</td><td>Sab 15/8</td><td>Château Gaillard · Giverny</td><td class="th">Senna · giardini di Monet</td><td>Vernon / Rouen</td></tr>
+          <tr><td class="d">11</td><td>Dom 16/8</td><td>→ Beauvais (volo 14:00)</td><td class="th">Rientro</td><td>—</td></tr>
         </tbody>
       </table>
     </div>
 
-    <div class="note"><b>Come muoversi:</b> auto a noleggio ritirata e riconsegnata a Parigi-Beauvais (BVA). Beauvais → Rouen ~110 km; il ritorno Finistère → Beauvais è lungo (~600 km), per questo gli ultimi due giorni sono pensati come trasferimento a tappe verso est. In Normandia e Bretagna le distanze giornaliere restano contenute.</div>
+    <div class="note"><b>Come muoversi:</b> auto a noleggio ritirata e riconsegnata a Parigi-Beauvais (BVA). La struttura del viaggio riduce i grandi trasferimenti: Normandia nei primi giorni, discesa in Bretagna, e un rientro "a scendere" lungo la Senna. Solo il tratto Bretagna sud → Senna (giorni 9-10) richiede qualche ora di guida in più.</div>
 
-    <div class="tip"><b>Il vincolo del viaggio — il 12 in Finistère:</b> la sera di mercoledì 12 agosto 2026 la punta ovest del Finistère è tra i luoghi di Francia con la copertura solare più alta durante l'eclissi parziale (~96-97%). Tutto l'itinerario è costruito per <b>essere in Finistère quel giorno</b>: la Normandia e la costa nord bretone vanno percorse nei primi cinque giorni, così da avere l'oceano aperto a ovest la sera dell'eclissi. Dettagli al Giorno 7.</div>
+    <div class="tip"><b>Il vincolo del viaggio — il 12 in Finistère:</b> la sera di mercoledì 12 agosto 2026 la punta ovest del Finistère è tra i luoghi di Francia con la copertura solare più alta (~96-97%). Tutto l'itinerario è costruito per <b>essere in Finistère quel giorno</b>: Normandia e costa nord bretone nei primi cinque giorni, per avere l'oceano aperto a ovest la sera dell'eclissi. Dettagli al Giorno 7.</div>
   </div>
 </section>
 
-<!-- D-DAY SET-PIECE -->
 <section class="dday" id="dday">
   <div class="wrap">
     <span class="tag">Capitoli della memoria</span>
     <h2 class="big">6 giugno 1944, l'alba più lunga</h2>
-    <p class="lead">Due giornate sui luoghi dello Sbarco, dal lancio notturno dei paracadutisti al porto artificiale di Arromanches — quattro scene, come in un film.</p>
+    <p class="lead">Una giornata intera sui luoghi dello Sbarco, dal lancio notturno dei paracadutisti al porto artificiale di Arromanches — quattro scene, come in un film.</p>
     <div class="banner">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/2nd_Infantry_Division%2C_E-1_draw%2C_Easy_Red_sector%2C_Omaha_Beach%2C_D%2B1%2C_June_7%2C_1944.jpg/1920px-2nd_Infantry_Division%2C_E-1_draw%2C_Easy_Red_sector%2C_Omaha_Beach%2C_D%2B1%2C_June_7%2C_1944.jpg" alt="Omaha Beach, 7 giugno 1944" loading="lazy">
       <div class="cap">Omaha Beach, settore Easy Red — 7 giugno 1944 · U.S. Army Signal Corps</div>
@@ -269,7 +261,6 @@
   </div>
 </section>
 
-<!-- VIDEO BAND -->
 <section class="videoband" aria-label="Il respiro dell'Atlantico">
   <figure>
     <video src="../bretagna/video/coste-onde.mp4" autoplay muted loop playsinline preload="metadata"
@@ -278,55 +269,52 @@
   </figure>
 </section>
 
-<!-- DAYS -->
 <div class="wrap">
 
   <article class="day" id="g1">
     <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Rouen_Cathedral_as_seen_from_Gros_Horloge_140215_4.jpg/1920px-Rouen_Cathedral_as_seen_from_Gros_Horloge_140215_4.jpg" alt="La cattedrale di Rouen" loading="lazy"></div>
     <div class="daynum">Giorno 1 · Giovedì 6 agosto</div>
-    <h2>Arrivo a Parigi-Beauvais e prima tappa normanna</h2>
+    <h2>Arrivo a Beauvais e prima tappa normanna</h2>
     <div class="loc">Beauvais (BVA) → Rouen · ~110 km / 1h15</div>
-    <p>L'atterraggio a Beauvais alle 13:30 apre le porte alla Normandia. Ritirata l'auto a noleggio, si raggiunge Rouen in poco più di un'ora. Qui il tempo si è fermato tra guglie gotiche e vicoli medievali: la Cattedrale Notre-Dame — dipinta da Monet decine di volte in luci diverse — domina il quartiere del Gros-Horloge, con le sue case a graticcio.</p>
-    <p>Prima serata normanna nel centro storico, tra la piazza del Vieux-Marché (dove fu arsa Giovanna d'Arco) e una tavola di cucina locale.</p>
+    <p>L'atterraggio a Beauvais alle 13:15 apre le porte alla Normandia. Ritirata l'auto, si raggiunge Rouen in poco più di un'ora: guglie gotiche, vicoli medievali, la Cattedrale Notre-Dame dipinta da Monet decine di volte, e il quartiere del Gros-Horloge con il suo orologio astronomico rinascimentale. In serata, la piazza del Vieux-Marché, dove nel 1431 fu arsa Giovanna d'Arco.</p>
     <div class="cards">
-      <div class="infocard"><div class="cl">Volo</div><div class="cv">Parigi-Beauvais (BVA), atterraggio h 13:30</div></div>
+      <div class="infocard"><div class="cl">Volo</div><div class="cv">Parigi-Beauvais (BVA), atterraggio h 13:15</div></div>
       <div class="infocard"><div class="cl">Trasferimento</div><div class="cv">Beauvais → Rouen, ~110 km / 1h15</div></div>
       <div class="infocard"><div class="cl">Da non perdere</div><div class="cv">Cattedrale, Gros-Horloge, Vieux-Marché</div></div>
     </div>
-    <div class="tip"><b>Consiglio pratico:</b> prenotate il noleggio auto a Beauvais con anticipo (aeroporto piccolo). Rouen è comoda come prima notte: vicina a Beauvais e a mezz'ora dall'inizio della strada verso le spiagge dello Sbarco.</div>
+    <div class="curio"><b>Curiosità:</b> il Gros-Horloge di Rouen, del XVI secolo, ha un solo quadrante ma segna anche le fasi lunari e i giorni della settimana; il suo meccanismo è tra i più antichi d'Europa ancora funzionanti.</div>
   </article>
 
   <article class="day" id="g2">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Impact_in_reinforced_concrete_german_bunker_Pointe_du_Hoc_Normandy_Calvados.jpg/1920px-Impact_in_reinforced_concrete_german_bunker_Pointe_du_Hoc_Normandy_Calvados.jpg" alt="Pointe du Hoc" loading="lazy"></div>
+    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Porte_d%27Aval_%28Vue_depuis_la_Manneporte%29.jpg/1920px-Porte_d%27Aval_%28Vue_depuis_la_Manneporte%29.jpg" alt="Le falesie e gli archi di Étretat" loading="lazy"></div>
     <div class="daynum">Giorno 2 · Venerdì 7 agosto</div>
-    <h2>Le spiagge dello Sbarco — settore ovest</h2>
-    <div class="loc">Rouen → Bayeux · Sainte-Mère-Église · Utah · Pointe du Hoc</div>
-    <p>Prima giornata sui luoghi del D-Day (vedi le quattro "scene" qui sopra). Si parte dall'entroterra dei paracadutisti a Sainte-Mère-Église, primo paese liberato di Francia, con il suo Museo Airborne. Si prosegue verso Utah Beach, il settore con meno perdite dello Sbarco, e la drammatica falesia di Pointe du Hoc, ancora segnata dai crateri delle bombe.</p>
-    <p>In serata ci si sistema a Bayeux, prima città liberata e base ideale per le due giornate normanne (celebre anche per il suo arazzo medievale, se avanza tempo).</p>
-    <div class="cards">
-      <div class="infocard"><div class="cl">Tappe</div><div class="cv">Sainte-Mère-Église, Utah Beach, Pointe du Hoc</div></div>
-      <div class="infocard"><div class="cl">Da non perdere</div><div class="cv">Museo Airborne, crateri di Pointe du Hoc</div></div>
-      <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Bayeux (2 notti)</div></div>
+    <h2>Étretat e Honfleur, la Costa d'Alabastro</h2>
+    <div class="loc">Rouen → Étretat → Honfleur → Bayeux · ~250 km</div>
+    <p>Mattinata alle <b>falesie di Étretat</b>: archi di gesso bianco che si tuffano nel mare — la Porte d'Aval, l'Aiguille, la Manneporte — un paesaggio dipinto da Monet e reso celebre da Maupassant. Una passeggiata sul sentiero in cima regala vertigini e panorami. Nel pomeriggio, <b>Honfleur</b>, il porticciolo dalle case alte e strette riflesse nel Vieux Bassin, culla dell'impressionismo. In serata si raggiunge Bayeux, base per lo Sbarco.</p>
+    <div class="photo-pair">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Old_port_in_Honfleur._France.jpg/1920px-Old_port_in_Honfleur._France.jpg" alt="Il Vieux Bassin di Honfleur" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Porte_d%27Aval_%28Vue_depuis_la_Manneporte%29.jpg/1920px-Porte_d%27Aval_%28Vue_depuis_la_Manneporte%29.jpg" alt="Arco della Porte d'Aval, Étretat" loading="lazy">
     </div>
-    <div class="tip"><b>Consiglio pratico:</b> i siti del D-Day sono distribuiti su ~40 km di costa: conviene un ordine geografico da ovest (Utah) verso est (Omaha), spezzando in due giornate come qui.</div>
+    <div class="cards">
+      <div class="infocard"><div class="cl">Spettacolare</div><div class="cv">Archi e falesie di Étretat</div></div>
+      <div class="infocard"><div class="cl">Caratteristico</div><div class="cv">Vieux Bassin di Honfleur</div></div>
+      <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Bayeux</div></div>
+    </div>
+    <div class="curio"><b>Lo sapevi:</b> Maurice Leblanc ambientò a Étretat le avventure di Arsène Lupin: l'Aiguille (l'ago di roccia) è "L'Aiguille creuse" del romanzo, il nascondiglio del ladro gentiluomo. Monet dipinse queste falesie in oltre cinquanta tele.</div>
   </article>
 
   <article class="day" id="g3">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Cimetiere_americain_Colleville-sur-Mer.jpg/1920px-Cimetiere_americain_Colleville-sur-Mer.jpg" alt="Cimitero Americano di Colleville-sur-Mer" loading="lazy"></div>
+    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Impact_in_reinforced_concrete_german_bunker_Pointe_du_Hoc_Normandy_Calvados.jpg/1920px-Impact_in_reinforced_concrete_german_bunker_Pointe_du_Hoc_Normandy_Calvados.jpg" alt="Pointe du Hoc" loading="lazy"></div>
     <div class="daynum">Giorno 3 · Sabato 8 agosto</div>
-    <h2>Omaha, Colleville e Arromanches</h2>
-    <div class="loc">Bayeux · settore est dello Sbarco</div>
-    <p>Seconda giornata della memoria. Si cammina sulla battigia di Omaha Beach, il settore che pagò il prezzo più alto, poi si sale al Cimitero Americano di Colleville-sur-Mer: settanta ettari di prato e 9.386 croci affacciate sull'oceano. Nel pomeriggio Arromanches, dove i resti del porto artificiale Mulberry affiorano ancora dalla marea — un capolavoro d'ingegneria che fece sbarcare milioni di uomini e tonnellate di rifornimenti.</p>
-    <div class="photo-pair">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Mulberry_Arromanches_beach.jpg/1920px-Mulberry_Arromanches_beach.jpg" alt="Porto Mulberry ad Arromanches" loading="lazy">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/2nd_Infantry_Division%2C_E-1_draw%2C_Easy_Red_sector%2C_Omaha_Beach%2C_D%2B1%2C_June_7%2C_1944.jpg/1920px-2nd_Infantry_Division%2C_E-1_draw%2C_Easy_Red_sector%2C_Omaha_Beach%2C_D%2B1%2C_June_7%2C_1944.jpg" alt="Omaha Beach nel 1944" loading="lazy">
-    </div>
+    <h2>Le spiagge dello Sbarco</h2>
+    <div class="loc">Bayeux · le plaghe del D-Day · giornata della memoria</div>
+    <p>Giornata intera sui luoghi del D-Day (le quattro "scene" qui sopra): da Sainte-Mère-Église e Utah verso Pointe du Hoc, poi Omaha Beach e il Cimitero Americano di Colleville, infine Arromanches con i resti del porto Mulberry. Chi ha meno tempo può concentrarsi sul trittico Pointe du Hoc – Colleville – Arromanches, il più intenso.</p>
     <div class="cards">
-      <div class="infocard"><div class="cl">Tappe</div><div class="cv">Omaha Beach, Cimitero di Colleville, Arromanches</div></div>
-      <div class="infocard"><div class="cl">Da non perdere</div><div class="cv">Le 9.386 croci, i resti del Mulberry</div></div>
-      <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Bayeux</div></div>
+      <div class="infocard"><div class="cl">Tappe</div><div class="cv">Pointe du Hoc, Omaha, Colleville, Arromanches</div></div>
+      <div class="infocard"><div class="cl">Museo</div><div class="cv">Airborne (Sainte-Mère) o Overlord Museum</div></div>
+      <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Bayeux (2 notti)</div></div>
     </div>
-    <div class="tip"><b>Nota:</b> l'apertura di <em>Salvate il Soldato Ryan</em> non fu girata qui ma su una spiaggia irlandese, per rispetto di un luogo trattato come cimitero di guerra; il Cimitero di Colleville è però l'unico set normanno reale del film (scene iniziale e finale).</div>
+    <div class="curio"><b>Curiosità storica:</b> l'apertura di <em>Salvate il Soldato Ryan</em> non fu girata qui ma su una spiaggia irlandese, per rispetto di un luogo trattato come cimitero di guerra; il Cimitero di Colleville è però l'unico set normanno reale del film. A Bayeux, l'arazzo del XI secolo racconta un'altra invasione, quella normanna dell'Inghilterra nel 1066.</div>
   </article>
 
   <article class="day" id="g4">
@@ -334,48 +322,45 @@
     <div class="daynum">Giorno 4 · Domenica 9 agosto</div>
     <h2>Mont-Saint-Michel, la meraviglia sospesa</h2>
     <div class="loc">Bayeux → Mont-Saint-Michel → Saint-Malo · ~180 km</div>
-    <p>Nulla prepara alla prima vista del Mont che emerge dalla baia. La mattina è per l'Abbazia e i suoi chiostri sospesi tra cielo e mare; per chi vuole, una camminata guidata nelle sabbie della baia, tra le maree più forti del continente. Il tardo pomeriggio e il tramonto — quando i pullman se ne sono andati — regalano l'atmosfera più magica.</p>
-    <p>In serata si varca il confine in Bretagna e ci si sistema a Saint-Malo, base per le due notti successive.</p>
+    <p>Nulla prepara alla prima vista del Mont che emerge dalla baia. La mattina è per l'Abbazia e i suoi chiostri sospesi; per chi vuole, una camminata guidata nelle sabbie, tra le maree più forti del continente. Il tardo pomeriggio e il tramonto — senza folla — regalano l'atmosfera più magica. In serata si varca il confine in Bretagna e ci si sistema a Saint-Malo.</p>
     <div class="cards">
       <div class="infocard"><div class="cl">Attività</div><div class="cv">Abbazia, chiostri, camminata nella baia</div></div>
-      <div class="infocard"><div class="cl">Da non perdere</div><div class="cv">Il Mont al tramonto, senza folla</div></div>
+      <div class="infocard"><div class="cl">Da non perdere</div><div class="cv">Il Mont al tramonto</div></div>
       <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Saint-Malo</div></div>
     </div>
-    <div class="tip"><b>Consiglio pratico:</b> si parcheggia in terraferma e si raggiunge la rocca a piedi o con navetta gratuita. Controllate gli orari delle grandi maree, che possono isolare l'isolotto.</div>
+    <div class="curio"><b>Insolito:</b> le maree del Mont hanno un dislivello fino a 14 metri, il più ampio d'Europa continentale; il mare arriva "alla velocità di un cavallo al galoppo" e per secoli ha reso il pellegrinaggio pericoloso — da cui il soprannome "San Michele in pericolo di mare".</div>
   </article>
 
   <article class="day" id="g5">
     <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Remparts_%28Saint-Malo%29_%282%29.jpg/1920px-Remparts_%28Saint-Malo%29_%282%29.jpg" alt="I bastioni di Saint-Malo" loading="lazy"></div>
     <div class="daynum">Giorno 5 · Lunedì 10 agosto</div>
-    <h2>Saint-Malo, la città corsara</h2>
-    <div class="loc">Costa di Smeraldo · Ille-et-Vilaine</div>
-    <p>Una giornata piena per assorbire il ritmo di una città che visse di corsari e navigatori. Il giro completo delle mura (circa 1,7 km) con la marea che cambia il volto della baia, il bagno sotto i bastioni, l'Île du Grand Bé — dove è sepolto Chateaubriand — raggiungibile a piedi quando l'oceano si ritira.</p>
-    <p>Nel pomeriggio, una deviazione a Dinard sull'altra sponda della Rance, o semplicemente una galette e un sidro nel centro intra-muros.</p>
-    <div class="cards">
-      <div class="infocard"><div class="cl">Attività principale</div><div class="cv">Giro delle mura (facile, ~1h15)</div></div>
-      <div class="infocard"><div class="cl">Da non perdere</div><div class="cv">Grand Bé, Fort National (con la bassa marea)</div></div>
-      <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Saint-Malo</div></div>
+    <h2>Saint-Malo corsara e il castello sul mare</h2>
+    <div class="loc">Saint-Malo · Cap Fréhel · Fort la Latte</div>
+    <p>Mattinata sulle mura di Saint-Malo, la città dei corsari, con la marea che cambia il volto della baia e l'Île du Grand Bé (tomba di Chateaubriand) raggiungibile a piedi. Nel pomeriggio, uno dei tratti più scenografici della Costa di Smeraldo: <b>Cap Fréhel</b> con le sue falesie rosse e il faro, e <b>Fort la Latte</b>, un vero castello medievale del XIV secolo su uno sperone di roccia proteso nell'oceano.</p>
+    <div class="photo-pair">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Cote_Emeraude_Fort_La_Latte.jpg/1920px-Cote_Emeraude_Fort_La_Latte.jpg" alt="Fort la Latte" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/.00_2803_Leuchtturm_am_Cap_Fr%C3%A9hel%2C_Frankreich.jpg" alt="Faro di Cap Fréhel" loading="lazy">
     </div>
-    <div class="tip"><b>Consiglio pratico:</b> controllate sempre gli orari di marea prima di camminare verso gli isolotti: il passaggio si chiude con l'alta marea.</div>
+    <div class="cards">
+      <div class="infocard"><div class="cl">Attività</div><div class="cv">Giro delle mura, Grand Bé (bassa marea)</div></div>
+      <div class="infocard"><div class="cl">Insolito</div><div class="cv">Fort la Latte, castello sullo scoglio</div></div>
+      <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Saint-Malo o costa nord</div></div>
+    </div>
+    <div class="curio"><b>Cinema:</b> Fort la Latte fu il set de <em>I Vichinghi</em> (1958) con Kirk Douglas. Saint-Malo, quasi interamente ricostruita dopo il 1944, ha conservato l'anima della città corsara: i suoi armatori finanziarono spedizioni in tutto il mondo.</div>
   </article>
 
   <article class="day" id="g6">
     <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Phare_de_Ploumanac%27h_04.jpg/1920px-Phare_de_Ploumanac%27h_04.jpg" alt="Il faro di Ploumanac'h tra le rocce rosa" loading="lazy"></div>
     <div class="daynum">Giorno 6 · Martedì 11 agosto</div>
-    <h2>Dinan e la Côte de Granit Rose — verso ovest</h2>
-    <div class="loc">Saint-Malo → Dinan → Ploumanac'h → Finistère nord · ~250 km</div>
-    <p>Al mattino, il borgo medievale di Dinan sospeso sulla Rance, con le case a graticcio e la ripida Rue du Jerzual. Nel pomeriggio, la Costa di Granito Rosa: le rocce di Ploumanac'h che virano dal rosa al rame all'oro, e il Sentier des Douaniers (un tratto del GR34) fino al faro di Men Ruz, la camminata più fotografata di Bretagna.</p>
-    <p>In serata si continua verso ovest, avvicinandosi al Finistère: è la manovra chiave del viaggio, perché domani — 12 agosto — bisogna essere sull'oceano aperto per l'eclissi. Pernottamento nel nord del Finistère (Morlaix, Roscoff) o già verso il Pays Bigouden.</p>
-    <div class="photo-pair">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Dinan_-_5_rue_du_Jerzual_20130216-02.JPG/1920px-Dinan_-_5_rue_du_Jerzual_20130216-02.JPG" alt="Rue du Jerzual, Dinan" loading="lazy">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Cote_Granite_Rose_pano.jpg/1920px-Cote_Granite_Rose_pano.jpg" alt="Panorama della Côte de Granit Rose" loading="lazy">
-    </div>
+    <h2>La Côte de Granit Rose, verso ovest</h2>
+    <div class="loc">Saint-Malo → Ploumanac'h → Finistère nord · ~230 km</div>
+    <p>La Costa di Granito Rosa: le rocce di <b>Ploumanac'h</b> che virano dal rosa al rame all'oro, e il Sentier des Douaniers (GR34) fino al faro di Men Ruz, la camminata più fotografata di Bretagna. Nel pomeriggio si continua verso ovest, avvicinandosi al Finistère: è la manovra chiave, perché domani — 12 agosto — bisogna essere sull'oceano aperto per l'eclissi. Notte nel nord del Finistère (Morlaix, Roscoff) o già verso il Pays Bigouden.</p>
     <div class="cards">
       <div class="infocard"><div class="cl">Trekking GR34</div><div class="cv">Sentier des Douaniers, Ploumanac'h, ~5 km</div></div>
-      <div class="infocard"><div class="cl">Da non perdere</div><div class="cv">Rue du Jerzual, faro di Men Ruz</div></div>
+      <div class="infocard"><div class="cl">Da non perdere</div><div class="cv">Faro di Men Ruz, massi rosa</div></div>
       <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Finistère nord / verso Pays Bigouden</div></div>
     </div>
-    <div class="tip"><b>Consiglio pratico:</b> è la giornata con più chilometri della parte bretone (~250 km): partite presto da Saint-Malo per godervi Ploumanac'h nella luce calda del tardo pomeriggio, quando la roccia rosa si accende.</div>
+    <div class="curio"><b>Curiosità:</b> il granito rosa di Ploumanac'h ha oltre 300 milioni di anni. Poco a est, a Roscoff, parte l'insolita rotta storica dei "Johnnies", i venditori bretoni di cipolle rosa che in bicicletta raggiungevano il Galles e l'Inghilterra.</div>
   </article>
 
   <article class="day" id="g7">
@@ -383,9 +368,9 @@
     <div class="daynum">Giorno 7 · Mercoledì 12 agosto</div>
     <h2>Il Finistère e l'eclissi solare sull'Atlantico</h2>
     <div class="loc">Pointe du Raz · Pays Bigouden · il giorno dell'eclissi</div>
-    <p>Il giorno fissato del viaggio. Di giorno si raggiunge il vero "finis terrae": la Pointe du Raz, lo sperone di roccia più spettacolare di Bretagna, dove le correnti dell'oceano si scontrano nell'Enfer de Plogoff, con un tratto di GR34 fino al faro della Vieille. Poco distante, la Pointe du Van offre un panorama altrettanto suggestivo e meno affollato.</p>
+    <p>Il giorno fissato del viaggio. Di giorno si raggiunge il "finis terrae": la <b>Pointe du Raz</b>, dove le correnti dell'oceano si scontrano nell'Enfer de Plogoff, con un tratto di GR34 fino al faro della Vieille; poco distante, la Pointe du Van, meno affollata.</p>
     <h3>L'eclissi solare del 12 agosto 2026</h3>
-    <p>Nel sud-ovest del Finistère la luna coprirà circa il 96-97% del disco solare — tra le percentuali più alte osservabili in Francia (la totalità interessa solo Islanda, Groenlandia e Spagna). Il fenomeno inizia verso le 19:22, culmina intorno alle 20:19 e termina verso le 21:12 (CEST): il sole sarà basso sull'orizzonte occidentale (circa 12° di altezza, quasi esattamente a ovest) e non tramonta durante l'evento. Serve un punto panoramico con vista aperta a ovest sull'oceano: la Pointe de Penmarch (faro d'Eckmühl), tra i siti con la copertura più alta, oppure la stessa Pointe du Raz o la Pointe du Van.</p>
+    <p>Nel sud-ovest del Finistère la luna coprirà circa il 96-97% del disco solare — tra le percentuali più alte in Francia (la totalità interessa solo Islanda, Groenlandia e Spagna). Inizio verso le 19:22, massimo intorno alle 20:19, fine verso le 21:12 (CEST): il sole sarà basso sull'orizzonte occidentale (circa 12°, quasi esattamente a ovest) e non tramonta durante l'evento. Punto ideale: la <b>Pointe de Penmarch</b> (faro d'Eckmühl), oppure la Pointe du Raz o la Pointe du Van.</p>
     <div class="photo-pair">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/20120930_troisPhares_Penmarch_Bretagne_DSC09655_PtrQs.jpg/1920px-20120930_troisPhares_Penmarch_Bretagne_DSC09655_PtrQs.jpg" alt="I fari di Penmarc'h" loading="lazy">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pen%27Hir.jpg/1920px-Pen%27Hir.jpg" alt="Falesie del Finistère" loading="lazy">
@@ -393,61 +378,93 @@
     <div class="cards">
       <div class="infocard"><div class="cl">Copertura del sole</div><div class="cv">~96-97%, eclissi parziale</div></div>
       <div class="infocard"><div class="cl">Orari (CEST)</div><div class="cv">Inizio 19:22 · Massimo 20:19 · Fine 21:12</div></div>
-      <div class="infocard"><div class="cl">Punto consigliato</div><div class="cv">Pointe de Penmarch (Phare d'Eckmühl), vista libera a ovest</div></div>
+      <div class="infocard"><div class="cl">Punto consigliato</div><div class="cv">Pointe de Penmarch (Phare d'Eckmühl)</div></div>
     </div>
-    <div class="tip"><b>Sicurezza, obbligatoria:</b> anche al 97% di copertura il sole non va mai osservato a occhio nudo né con normali occhiali da sole: servono esclusivamente occhiali per eclissi certificati <b>ISO 12312-2</b>. Arrivate sul posto con largo anticipo (almeno un'ora prima delle 19:22): nei siti più noti si prevede grande affluenza.</div>
+    <div class="tip"><b>Sicurezza, obbligatoria:</b> anche al 97% il sole non va mai osservato a occhio nudo né con normali occhiali da sole: servono occhiali per eclissi certificati <b>ISO 12312-2</b>. Arrivate sul posto con largo anticipo (almeno un'ora prima delle 19:22).</div>
   </article>
 
   <article class="day" id="g8">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Quimper_-_Cath%C3%A9drale_Saint-Corentin_-_Portail_-_PA00090326_-_0001.jpg/1920px-Quimper_-_Cath%C3%A9drale_Saint-Corentin_-_Portail_-_PA00090326_-_0001.jpg" alt="La cattedrale di Quimper" loading="lazy"></div>
+    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pen%27Hir.jpg/1920px-Pen%27Hir.jpg" alt="La Pointe de Pen-Hir, Presqu'île de Crozon" loading="lazy"></div>
     <div class="daynum">Giorno 8 · Giovedì 13 agosto</div>
-    <h2>Quimper e la rotta verso est</h2>
-    <div class="loc">Pays Bigouden → Quimper → Rennes · ~2h30 di guida</div>
-    <p>Dopo la sera dell'eclissi si comincia il lungo rientro verso est, senza fretta. Prima tappa Quimper, capoluogo del Finistère: centro storico con case a graticcio, la cattedrale gotica Saint-Corentin e le rive dell'Odet, ideale per un pranzo bretone. Chi vuole può fare una sosta a Pont-Aven, il borgo dei pittori, o a Concarneau con la sua ville close murata.</p>
-    <p>Nel pomeriggio si prosegue verso Rennes, dove si pernotta per accorciare il trasferimento dell'ultimo giorno verso Beauvais.</p>
-    <div class="cards">
-      <div class="infocard"><div class="cl">Tappa principale</div><div class="cv">Quimper, centro storico e cattedrale</div></div>
-      <div class="infocard"><div class="cl">Sosta opzionale</div><div class="cv">Pont-Aven o Concarneau (ville close)</div></div>
-      <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Rennes o dintorni</div></div>
+    <h2>La Presqu'île de Crozon e il borgo di Locronan</h2>
+    <div class="loc">Pays Bigouden → Crozon → Locronan · ~2h di guida</div>
+    <p>Il giorno dopo l'eclissi si risale verso la <b>Presqu'île de Crozon</b>, tra i panorami più belli del Finistère: alla Pointe de Pen-Hir, un anello del GR34 corre lungo falesie a picco con vista sui faraglioni "Tas de Pois". Sulla via del ritorno, sosta a <b>Locronan</b>, uno dei "borghi più belli di Francia", con la sua piazza di granito rinascimentale rimasta intatta — set di numerosi film in costume.</p>
+    <div class="photo-pair">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Locronan_Village_View.jpg/1920px-Locronan_Village_View.jpg" alt="Il borgo di Locronan" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/20100712_Tour_Vauban_-_4.jpg/1920px-20100712_Tour_Vauban_-_4.jpg" alt="Tour Vauban a Camaret" loading="lazy">
     </div>
-    <div class="tip"><b>Consiglio pratico:</b> arrivare a Rennes stasera trasforma l'ultimo giorno in un trasferimento gestibile (~3h20 fino a Beauvais); dormire più a ovest renderebbe il 14 troppo teso per un volo delle 18:00.</div>
+    <div class="cards">
+      <div class="infocard"><div class="cl">Trekking GR34</div><div class="cv">Pointe de Pen-Hir, Tas de Pois</div></div>
+      <div class="infocard"><div class="cl">Borgo</div><div class="cv">Locronan, piazza rinascimentale</div></div>
+      <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Quimper o dintorni</div></div>
+    </div>
+    <div class="curio"><b>Cinema &amp; insolito:</b> a Locronan Roman Polanski girò <em>Tess</em>. A Camaret, sulla stessa penisola, l'insolito "cimitero di barche" e la Tour Vauban (patrimonio UNESCO) meritano una deviazione se avanza tempo.</div>
   </article>
 
   <article class="day" id="g9">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Place_des_Lices%2C_Rennes%2C_dimanche_15_mai_2016.jpg/1920px-Place_des_Lices%2C_Rennes%2C_dimanche_15_mai_2016.jpg" alt="Place des Lices a Rennes" loading="lazy"></div>
+    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Ville_close_de_Concarneau_%281%29.jpg/1920px-Ville_close_de_Concarneau_%281%29.jpg" alt="La Ville Close di Concarneau" loading="lazy"></div>
     <div class="daynum">Giorno 9 · Venerdì 14 agosto</div>
-    <h2>Rennes e il rientro a Parigi-Beauvais</h2>
-    <div class="loc">Rennes → Beauvais (BVA) · ~3h20 di guida · volo h 18:00</div>
-    <p>Ultima mattina in Bretagna a Rennes: una passeggiata tra le case a graticcio multicolori di Place Sainte-Anne e Place des Lices, un ultimo caffè in piazza. Poi si riprende l'auto verso nord.</p>
-    <p>Rennes–Beauvais sono circa 320 km (~3h20). Per il volo delle 18:00 conviene lasciare Rennes intorno alle 11:30-12:00 e arrivare in aeroporto verso le 15:30-16:00, con margine per riconsegnare l'auto e i controlli. Kenavo — a presto, in bretone.</p>
+    <h2>Quimper, Concarneau, Pont-Aven — poi verso est</h2>
+    <div class="loc">Quimper → Concarneau → Pont-Aven → Rennes · ~2h30 in totale</div>
+    <p>Mattinata a <b>Quimper</b>, capoluogo del Finistère, tra case a graticcio e la cattedrale Saint-Corentin. Poi la costa sud, più dolce: la <b>Ville Close di Concarneau</b>, cittadella di pescatori murata su un isolotto, e <b>Pont-Aven</b>, il paese dei mulini dove Gauguin e la sua scuola reinventarono la pittura. Nel pomeriggio si comincia a risalire verso est, con pernottamento a Rennes per accorciare il rientro.</p>
     <div class="cards">
-      <div class="infocard"><div class="cl">Mattina</div><div class="cv">Centro storico di Rennes, 2-3h</div></div>
-      <div class="infocard"><div class="cl">Trasferimento</div><div class="cv">Rennes → Beauvais, ~320 km / 3h20</div></div>
-      <div class="infocard"><div class="cl">Volo</div><div class="cv">Beauvais (BVA), partenza h 18:00 — in aeroporto per le 16:00</div></div>
+      <div class="infocard"><div class="cl">Città</div><div class="cv">Quimper, cattedrale e faïence</div></div>
+      <div class="infocard"><div class="cl">Da non perdere</div><div class="cv">Ville Close di Concarneau, Pont-Aven</div></div>
+      <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Rennes</div></div>
     </div>
-    <div class="tip"><b>Consiglio pratico:</b> con un volo low-cost siate al gate con largo anticipo e calcolate il tempo per la riconsegna auto. In alternativa, dormite la notte prima a Fougères o Vitré, borghi bellissimi sulla via del ritorno più a est.</div>
+    <div class="curio"><b>Lo sapevi:</b> la faïence di Quimper si produce dal 1690 ed è ancora dipinta a mano; a Pont-Aven, "città di 14 mulini e 15 case", nel 1888 nacque la scuola di Gauguin — e il celebre biscotto "galette".</div>
+  </article>
+
+  <article class="day" id="g10">
+    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Jardin_de_Claude_Monet-_Giverny-Bassin_aux_nymph%C3%A9as.jpg" alt="Il giardino delle ninfee di Monet a Giverny" loading="lazy"></div>
+    <div class="daynum">Giorno 10 · Sabato 15 agosto</div>
+    <h2>Ritorno lungo la Senna: Château Gaillard e Giverny</h2>
+    <div class="loc">Rennes → Les Andelys → Giverny · Normandia della Senna</div>
+    <p>Il rientro attraversa la Normandia interna della Senna. Prima sosta ai <b>Les Andelys</b>, sotto le rovine spettacolari del <b>Château Gaillard</b>, la fortezza fatta costruire da Riccardo Cuor di Leone in appena un anno, a picco su un'ansa del fiume. Nel pomeriggio, il sogno di ogni amante dell'arte: <b>Giverny</b>, la casa e i giardini di Claude Monet, con lo stagno delle ninfee e il ponte giapponese che ispirarono le sue tele più famose. Notte a Vernon o Rouen.</p>
+    <div class="photo-pair">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Les_Andelys_Ch%C3%A2teau_Gaillard_20.jpg/1920px-Les_Andelys_Ch%C3%A2teau_Gaillard_20.jpg" alt="Château Gaillard sulla Senna" loading="lazy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Jardin_de_Claude_Monet-_Giverny-Bassin_aux_nymph%C3%A9as.jpg" alt="Stagno delle ninfee, Giverny" loading="lazy">
+    </div>
+    <div class="cards">
+      <div class="infocard"><div class="cl">Spettacolare</div><div class="cv">Château Gaillard sulla Senna (Les Andelys)</div></div>
+      <div class="infocard"><div class="cl">Arte</div><div class="cv">Casa e giardini di Monet a Giverny</div></div>
+      <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Vernon o Rouen</div></div>
+    </div>
+    <div class="curio"><b>Curiosità:</b> il Château Gaillard fu costruito da Riccardo Cuor di Leone nel 1196-98 in tempi record; cadde nel 1204 dopo un assedio in cui gli assalitori entrarono, si dice, attraverso le latrine. A Giverny, Monet deviò un braccio del fiume Epte per creare lo stagno delle ninfee — un giardino "dipinto" prima ancora che sulla tela. Prenotate il biglietto di Giverny online per evitare le code.</div>
+  </article>
+
+  <article class="day" id="g11">
+    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Rouen_Cathedral_as_seen_from_Gros_Horloge_140215_4.jpg/1920px-Rouen_Cathedral_as_seen_from_Gros_Horloge_140215_4.jpg" alt="La cattedrale di Rouen" loading="lazy"></div>
+    <div class="daynum">Giorno 11 · Domenica 16 agosto</div>
+    <h2>Ultima mattina e rientro a Parigi-Beauvais</h2>
+    <div class="loc">Vernon / Rouen → Beauvais (BVA) · ~1h–1h15 · volo h 14:00</div>
+    <p>Ultimo tratto verso Beauvais. Da Vernon o Rouen sono poco più di un'ora; per il volo delle 14:00 conviene essere in aeroporto verso le 12:00, con margine per riconsegnare l'auto e i controlli. Un ultimo croissant, e si chiude il cerchio là dove era cominciato.</p>
+    <div class="cards">
+      <div class="infocard"><div class="cl">Trasferimento</div><div class="cv">Vernon/Rouen → Beauvais, ~1h–1h15</div></div>
+      <div class="infocard"><div class="cl">Volo</div><div class="cv">Beauvais (BVA), partenza h 14:00 — in aeroporto per le 12:00</div></div>
+      <div class="infocard"><div class="cl">Alternativa</div><div class="cv">Ultima notte a Gisors o Beauvais</div></div>
+    </div>
+    <div class="tip"><b>Consiglio pratico:</b> con un volo del primo pomeriggio, tenete margine per la riconsegna auto. Se preferite non guidare l'ultima mattina, dormite direttamente vicino a Beauvais.</div>
   </article>
 
 </div>
 
-<!-- PRACTICAL -->
 <section id="pratiche">
   <div class="wrap">
     <span class="tag">Informazioni pratiche</span>
     <h2 class="big">Prima di partire</h2>
     <div class="prac">
-      <div class="pc"><h3>Volo e aeroporto</h3><p>Parigi-Beauvais (BVA), piccolo scalo low-cost a ~85 km da Parigi. Andata 6 agosto (arrivo 13:30), ritorno 14 agosto (partenza 18:00). Presentatevi con largo anticipo.</p></div>
-      <div class="pc"><h3>Auto a noleggio</h3><p>Indispensabile: ritiro e riconsegna a Beauvais. Le spiagge dello Sbarco e le punte del Finistère non sono servite dai mezzi pubblici. Prenotate in anticipo per l'alta stagione.</p></div>
-      <div class="pc"><h3>Il 12 in Finistère</h3><p>È il vincolo che struttura tutto il viaggio: Normandia e costa nord bretone nei primi cinque giorni, così da essere sull'oceano aperto a ovest la sera dell'eclissi (12 agosto).</p></div>
-      <div class="pc"><h3>Eclissi — sicurezza</h3><p>Occhiali certificati ISO 12312-2 obbligatori: acquistateli prima di partire, a ridosso dell'evento in Finistère la disponibilità può esaurirsi. Serve cielo sereno e orizzonte libero a ovest.</p></div>
-      <div class="pc"><h3>Meteo e valigia</h3><p>Ad agosto 18-23°C, ma il tempo cambia in fretta: giacca impermeabile e a vento, scarpe da trekking, strati, costume e crema solare.</p></div>
-      <div class="pc"><h3>Dove dormire e mangiare</h3><p>Chambres d'hôtes e piccoli hotel nei centri storici. In tavola: galette e crêpes, sidro, frutti di mare, kouign-amann; in Normandia camembert, sidro e calvados.</p></div>
+      <div class="pc"><h3>Volo e aeroporto</h3><p>Parigi-Beauvais (BVA), scalo low-cost a ~85 km da Parigi. Andata 6 agosto (arrivo 13:15 da Treviso), ritorno 16 agosto (partenza 14:00). Presentatevi con anticipo.</p></div>
+      <div class="pc"><h3>Auto a noleggio</h3><p>Indispensabile: ritiro e riconsegna a Beauvais. Le spiagge dello Sbarco e le punte del Finistère non sono servite dai mezzi pubblici. Prenotate in anticipo.</p></div>
+      <div class="pc"><h3>Il 12 in Finistère</h3><p>È il vincolo che struttura il viaggio: Normandia e costa nord bretone nei primi cinque giorni, per essere sull'oceano aperto a ovest la sera dell'eclissi.</p></div>
+      <div class="pc"><h3>Eclissi — sicurezza</h3><p>Occhiali certificati ISO 12312-2 obbligatori: acquistateli prima di partire. Serve cielo sereno e orizzonte libero a ovest.</p></div>
+      <div class="pc"><h3>Prenotazioni utili</h3><p>Giverny (giardini di Monet) e l'Abbazia del Mont-Saint-Michel si visitano meglio con biglietto online; a Giverny le code estive sono lunghe.</p></div>
+      <div class="pc"><h3>Cosa mangiare</h3><p>In Normandia: camembert, sidro, calvados, teurgoule. In Bretagna: galette e crêpes, ostriche, kouign-amann, caramello al burro salato.</p></div>
     </div>
-    <div class="tip" style="margin-top:16px"><b>Budget indicativo:</b> per nove giorni in stile chambre d'hôte/hotel 3 stelle, pasti in crêperie e bistrot, noleggio auto e attività, il budget varia tipicamente nell'ordine di poche centinaia di euro a persona, escluso il volo: verificate i prezzi aggiornati al momento della prenotazione.</div>
+    <div class="tip" style="margin-top:16px"><b>Budget indicativo:</b> per undici giorni in stile chambre d'hôte/hotel 3 stelle, pasti in crêperie e bistrot, noleggio auto e attività, il budget varia tipicamente nell'ordine di poche centinaia di euro a persona, escluso il volo: verificate i prezzi aggiornati alla prenotazione.</div>
   </div>
 </section>
 
-<!-- CLOSING with video -->
 <section>
   <div class="wrap">
     <div class="closing">
@@ -456,9 +473,9 @@
       <div class="veil"></div>
       <div class="inner">
         <h2>Bon voyage!</h2>
-        <p>Dalla memoria delle spiagge normanne all'eclissi sull'oceano bretone: nove giorni che chiudono il cerchio tra storia, natura e cielo.</p>
+        <p>Dalla memoria delle spiagge normanne all'eclissi sull'oceano bretone, fino alle ninfee di Monet: undici giorni che chiudono il cerchio tra storia, natura, cielo e arte.</p>
         <p>Kenavo — a presto, in bretone.</p>
-        <div class="sign">Atlante di bordo · Normandie &amp; Bretagne · 6–14 agosto 2026</div>
+        <div class="sign">Normandie &amp; Bretagne · 6–16 agosto 2026</div>
       </div>
     </div>
 
@@ -467,26 +484,31 @@
       <ul>
         <li>Mont-Saint-Michel al tramonto — Benh Lieu Song · CC BY 2.5</li>
         <li>Cattedrale di Rouen — DXR · CC BY-SA 3.0</li>
+        <li>Falesie di Étretat (Porte d'Aval) — Jörg Braukmann · CC BY-SA 4.0</li>
+        <li>Vieux Bassin di Honfleur — Ввласенко · CC BY-SA 3.0</li>
         <li>Pointe du Hoc (bunker) — Jebulon · CC0</li>
         <li>Cimitero Americano di Colleville — Myrabella · CC BY-SA 3.0</li>
         <li>Porto Mulberry, Arromanches — Jebulon · CC0</li>
         <li>Omaha Beach, 1944 — U.S. Army Signal Corps · Pubblico dominio</li>
         <li>Bastioni di Saint-Malo — Gzen92 · CC BY-SA 4.0</li>
-        <li>Rue du Jerzual, Dinan — Pymouss · CC BY-SA 3.0</li>
-        <li>Panorama Côte de Granit Rose — Benh Lieu Song · CC BY-SA 3.0</li>
+        <li>Fort la Latte — Benh Lieu Song · CC BY-SA 3.0</li>
+        <li>Faro di Cap Fréhel — W. Bulach · CC BY-SA 4.0</li>
         <li>Faro di Ploumanac'h — Stephan Sprinz · CC BY 4.0</li>
         <li>Pointe du Raz al tramonto — Stephan Sprinz · CC BY 4.0</li>
-        <li>Pointe de Pen-Hir — Diwall · CC BY-SA 3.0</li>
         <li>Fari di Penmarc'h — PtrQs · CC BY-SA 4.0</li>
-        <li>Cattedrale di Quimper — Thesupermat · CC BY-SA 3.0</li>
-        <li>Place des Lices, Rennes — Seb35 · CC BY-SA 4.0</li>
+        <li>Pointe de Pen-Hir — Diwall · CC BY-SA 3.0</li>
+        <li>Locronan — Julek · CC BY-SA 4.0</li>
+        <li>Tour Vauban, Camaret — Michael Rapp · CC BY-SA 3.0</li>
+        <li>Ville Close di Concarneau — Julien1978 · CC BY-SA 4.0</li>
+        <li>Château Gaillard, Les Andelys — Zairon · CC BY-SA 4.0</li>
+        <li>Giardino di Monet, Giverny — Anabase4 · CC BY-SA 3.0</li>
         <li>Foto: Wikimedia Commons · Video: Mixkit (licenza gratuita)</li>
       </ul>
     </div>
   </div>
 </section>
 
-<footer class="foot">Normandie &amp; Bretagne in 9 giorni · 6–14 agosto 2026 · guida di viaggio · calcaterra.casa</footer>
+<footer class="foot">Normandie &amp; Bretagne in 11 giorni · 6–16 agosto 2026 · guida di viaggio · calcaterra.casa</footer>
 
 </body>
 </html>
