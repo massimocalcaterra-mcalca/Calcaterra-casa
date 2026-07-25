@@ -28,18 +28,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#FBFBFA; --paper:#FFFFFF; --ink:#14261C; --body:#4B4F58; --muted:#8A8D86;
+    --bg:#FBFBFA; --paper:#FFFFFF; --ink:#14261C; --body:#4B4F58; --muted:#6B6E67;
     --line:#E7E6DF; --green:#1BAE70; --green-d:#06752E;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);
     font-family:Lato,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
+  .visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+    clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+  .skip{position:absolute;left:-9999px;background:var(--paper);color:var(--ink);
+    border:1px solid var(--green-d);border-radius:10px;padding:10px 16px;font-weight:700}
+  .skip:focus{left:12px;top:12px;z-index:100}
+  :focus-visible{outline:3px solid var(--green-d);outline-offset:2px;border-radius:4px}
   .wrap{max-width:1080px;margin:0 auto;padding:30px 24px 70px}
 
   .nav{display:flex;justify-content:space-between;align-items:center}
   .name{font-family:Poppins,sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
-  .name .dot{color:var(--green)}
+  .name .dot{color:var(--green-d)}
   .nav .tag{font-size:.78rem;color:var(--muted);letter-spacing:.02em}
 
   .hero{margin:72px 0 60px}
@@ -47,7 +53,7 @@
     text-transform:uppercase;color:var(--green-d)}
   .hero h1{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(2.8rem,8vw,5.4rem);
     line-height:1;letter-spacing:-.03em;margin:.24em 0 0}
-  .hero h1 .g{color:var(--green)}
+  .hero h1 .g{color:var(--green-d)}
 
   .feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
   .feat{position:relative;display:block;border-radius:16px;overflow:hidden;aspect-ratio:16/11;
@@ -68,20 +74,66 @@
     transition:background .25s,transform .25s}
   .feat:hover .arrow{background:var(--green);border-color:var(--green);transform:translateX(3px)}
 
-  .foot{margin-top:56px;color:var(--muted);font-size:.8rem}
+  .method{margin-top:66px;padding-top:34px;border-top:1px solid var(--line)}
+  .method h2{font-family:Poppins,sans-serif;font-weight:600;font-size:1.5rem;margin:0 0 6px;letter-spacing:-.01em}
+  .method p{color:var(--body);max-width:62ch;line-height:1.65;margin:12px 0 0}
+  .rules{list-style:none;padding:0;margin:24px 0 0;display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .rules li{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .rules b{display:block;font-family:Poppins,sans-serif;font-size:.9rem;margin-bottom:5px}
+  .rules span{font-size:.88rem;color:var(--body);line-height:1.55}
+
+  .foot{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.8rem;line-height:1.7}
+  .foot a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px}
+  .foot a:hover{color:var(--green-d);text-decoration-color:var(--green-d)}
+  .foot .cols{display:flex;flex-wrap:wrap;gap:8px 22px;margin-bottom:10px}
+  .foot .colophon{max-width:70ch}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
+  <a class="skip" href="#contenuto">Vai al contenuto</a>
   <div class="wrap">
+    <main id="contenuto">
     <header class="hero">
       <div class="kicker">Contenuti &amp; viaggi</div>
       <h1>Trasformo i viaggi<br>in <span class="g">storie</span>.</h1>
     </header>
 
-    <main class="feats" id="feats"></main>
+    <div class="feats" id="feats"></div>
+    <section class="method">
+      <h2>Come sono fatte queste guide</h2>
+      <p>Non sono elenchi di cose belle. Sono itinerari costruiti su orari veri, distanze
+        verificate e vincoli reali — il volo che atterra alle 13:15, l'abbazia che chiude alle 19,
+        il sabato che il calendario del traffico segna in rosso. Quando un dato non regge, lo scrivo:
+        preferisco una cifra scomoda e vera a una ottimista.</p>
+      <ul class="rules">
+        <li><b>Tempi reali, non ottimistici</b><span>I tempi di guida includono le soste e i minuti
+          persi al banco del noleggio. Dove il navigatore dice 3h20 e la realtà dice 4h20, c'è scritto 4h20.</span></li>
+        <li><b>Fonti, non sentito dire</b><span>Maree dal calendario ufficiale del Mont, traffico da
+          Bison Futé, orari e prezzi dai gestori dei siti. Le fotografie hanno autore e licenza in fondo a ogni guida.</span></li>
+        <li><b>Gli errori restano scritti</b><span>Quando correggo qualcosa che avevo sbagliato, la
+          correzione resta visibile nella pagina invece di sparire.</span></li>
+        <li><b>Niente sponsor, niente affiliazioni</b><span>Nessun link a pagamento, nessuna
+          commissione su prenotazioni. Se un posto non vale la deviazione, lo dico.</span></li>
+      </ul>
+    </section>
+    </main>
 
-    <div class="foot">© 2026</div>
+    <footer class="foot">
+      <div class="cols">
+        <span>© 2026 Massimo Calcaterra</span>
+        <span>Ultimo aggiornamento: <b id="upd">25 luglio 2026</b></span>
+        <a href="/mappa/">Mappa del sito</a>
+        <a href="https://viaggi.calcaterra.casa">Viaggi</a>
+      </div>
+      <p class="colophon">Sito statico scritto a mano, senza framework e senza passaggi di
+        compilazione; ospitato su Cloudflare Pages. Caratteri Poppins e Lato, serviti da Google Fonts —
+        l'unica richiesta a terzi di tutto il sito. Nessun cookie, nessuna statistica, nessun
+        tracciatore. Le fotografie delle guide vengono da Wikimedia Commons: autore, licenza e
+        file originale sono elencati in fondo a ciascuna guida.</p>
+    </footer>
   </div>
 
 <script>
@@ -90,7 +142,7 @@ function feat(p){
   const ck=p.kind==="sottodominio" ? "Sezione" : "Pagina";
   return `
   <a class="feat" href="${p.url}">
-    <img src="${img}" alt="${p.title}" loading="lazy">
+    <img src="${img}" alt="" loading="lazy">
     <div class="veil"></div>
     <div class="cap">
       <div><div class="ck">${ck}</div><h2>${p.title}</h2></div>
@@ -104,9 +156,14 @@ fetch("/site.json",{cache:"no-store"})
     const pages=(d.pages||[]).filter(p=>p.kind!=="apex");
     pages.sort((a,b)=>(a.kind==="sottodominio"?-1:1)-(b.kind==="sottodominio"?-1:1));
     document.getElementById("feats").innerHTML=pages.map(feat).join("");
+    if(d.updated){
+      const t=new Date(d.updated+"T12:00:00Z");
+      if(!isNaN(t)) document.getElementById("upd").textContent =
+        t.toLocaleDateString("it-IT",{day:"numeric",month:"long",year:"numeric"});
+    }
   })
   .catch(()=>{document.getElementById("feats").innerHTML=
-    '<a class="feat" href="https://viaggi.calcaterra.casa"><img src="/img/viaggi.jpg" alt="Viaggi"><div class="veil"></div><div class="cap"><div><div class="ck">Sezione</div><h2>Viaggi</h2></div><div class="arrow">→</div></div></a>';});
+    '<a class="feat" href="https://viaggi.calcaterra.casa"><img src="/img/viaggi.jpg" alt=""><div class="veil"></div><div class="cap"><div><div class="ck">Sezione</div><h2>Viaggi</h2></div><div class="arrow">→</div></div></a>';});
 </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     "domain": "calcaterra.casa",
     "apex": "https://calcaterra.casa"
   },
-  "updated": "2026-07-23",
+  "updated": "2026-07-25",
   "storage": [
     {
       "binding": "FOTO_BUCKET",
@@ -29,7 +29,7 @@
       "file": "public/index.html",
       "description": "Home del sito.",
       "status": "online",
-      "updated": "2026-07-23"
+      "updated": "2026-07-25"
     },
     {
       "slug": "viaggi",
@@ -42,7 +42,7 @@
       "image": "/img/viaggi.jpg",
       "accent": "#1BAE70",
       "status": "online",
-      "updated": "2026-07-23",
+      "updated": "2026-07-25",
       "children": [
         {
           "slug": "normandie-bretagna",
@@ -84,7 +84,7 @@
       "accent": "#1BAE70",
       "access": "privato",
       "status": "online",
-      "updated": "2026-07-23"
+      "updated": "2026-07-25"
     },
     {
       "slug": "mappa",
@@ -97,7 +97,7 @@
       "image": "/img/mappa.jpg",
       "accent": "#06752E",
       "status": "online",
-      "updated": "2026-07-23"
+      "updated": "2026-07-25"
     }
   ]
 }
