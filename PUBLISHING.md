@@ -279,3 +279,65 @@ in `dash.cloudflare.com`:
   i tuoi indirizzi". Fatto questo puoi anche togliere la password: Access autentica a monte.
 - **Il repo resta pubblico ma non contiene segreti:** password e chiave vivono solo tra le
   variabili d'ambiente cifrate di Cloudflare.
+
+---
+
+## 12. Cose da fare a mano su Cloudflare (dopo il lavoro di luglio 2026)
+
+Queste quattro cose non si possono mettere nel repo: vanno cliccate nel pannello di Cloudflare.
+Sono elencate in ordine di importanza.
+
+### A. Disattivare la modalità SPA / catch-all — **necessario**, su ENTRAMBI i progetti
+Se il progetto Pages è in modalità *Single-page application*, ogni URL inesistente risponde
+`200` con la home invece di `404`, e persino `robots.txt` e `sitemap.xml` possono tornare HTML.
+Con quella modalità attiva i file `404.html` che stanno nel repo **non vengono mai usati**.
+
+*Workers & Pages → il progetto → Settings → Build & deployments*: se compare un'opzione di
+tipo *Single-page application* / *catch-all* o un redirect `/* → /index.html`, va disattivata.
+Verifica dopo il deploy: `curl -sI https://calcaterra.casa/xyz-non-esiste` deve dare `404`, e
+`curl -s https://calcaterra.casa/robots.txt` deve restituire testo, non HTML.
+
+### B. Limite di tentativi sul login — **consigliato**
+Le Functions hanno già un freno lato codice (`functions/_lib/ratelimit.js`), ma funziona solo
+se esiste un namespace KV. Due strade, la prima è più semplice:
+
+1. **WAF rate limiting** (nessun codice): *Security → WAF → Rate limiting rules → Create*.
+   Espressione `http.request.uri.path eq "/api/login"`, metodo `POST`, soglia **10 richieste in
+   60 secondi per IP**, azione *Block* per 10 minuti.
+2. **Namespace KV**: *Workers & Pages → KV → Create namespace* (es. `calcaterra-rate`), poi nel
+   progetto *Settings → Functions → KV namespace bindings* con nome esatto **`RATE_KV`**. Il
+   codice lo usa se c'è e lo ignora se manca (fail-open: una KV assente non chiude fuori nessuno).
+
+### C. Alzare HSTS un passo per volta — **da fare con calma**
+In `public/_headers` e `public/viaggi/_headers` c'è `Strict-Transport-Security: max-age=300`,
+volutamente bassa: HSTS non è revocabile lato client prima della scadenza. Scaletta consigliata,
+un passo alla volta e **allineata sui due progetti**:
+`300` → `86400` (un giorno) → `2592000` (un mese) → `31536000` (un anno).
+Solo all'ultimo passo, e solo se tutti i sottodomini sono in HTTPS, si può valutare
+`includeSubDomains`. `preload` è una scelta quasi irreversibile: meglio non farla.
+
+### D. Sessione foto revocabile subito — **opzionale**
+Aggiungendo la variabile `AUTH_VERSION` (un numero, es. `1`) fra le variabili d'ambiente del
+progetto, basta incrementarla per invalidare **tutte** le sessioni aperte senza cambiare
+`AUTH_SECRET`. Se la variabile non c'è, il codice usa `"1"` come valore predefinito.
+
+---
+
+## 13. Rigenerare immagini e mappe delle guide
+
+Le fotografie delle guide sono self-hosted in `public/viaggi/img/g/` (varianti AVIF a 480, 800,
+1200 e 1800 px, più JPEG di riserva fino a 1200 px) e nelle pagine sono richiamate con
+`<picture>` + `srcset`. Le due mappe degli itinerari sono SVG inline, generate da
+`tools/genera-mappe.py` con i dati Natural Earth (pubblico dominio).
+
+- **Aggiungere una fotografia:** scaricare l'originale da Wikimedia Commons, generare le varianti
+  con Pillow (`quality=52` per AVIF, `76` progressivo per JPEG), e aggiungere in fondo alla guida
+  la riga di credito con **autore, licenza con link e link al file originale** — è un obbligo
+  delle licenze CC BY-SA, non una gentilezza.
+- **Rigenerare le mappe:** servono i file `ne50_land.geojson` e `ne10_coastline.geojson` di
+  Natural Earth nella stessa cartella dello script; l'output va in `public/viaggi/img/`, poi la
+  mappa va reincollata inline nella pagina (inline e non `<img>`, perché le tappe sono
+  `<a href="#gN">` e l'evidenziazione usa `:target`).
+- **Video:** i due `.mp4` sotto `public/viaggi/bretagna/video/` sono H.264 e non hanno `poster`.
+  Un poster ricavato da un'altra fotografia sarebbe una copertina che non corrisponde al
+  contenuto: meglio nessuno.
