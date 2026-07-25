@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagina non trovata · Calcaterra Casa</title>
+<meta name="description" content="L'indirizzo richiesto non corrisponde a nessuna pagina di calcaterra.casa.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2242%22 fill=%22%231BAE70%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBFBFA; --paper:#FFFFFF; --ink:#14261C; --body:#4B4F58; --muted:#6B6E67;
+    --line:#E7E6DF; --green:#1BAE70; --green-d:#06752E;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Lato,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+
+  .skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:#fff;
+    padding:10px 16px;border-radius:0 0 10px 0;font-weight:700;font-size:.9rem}
+  .skip:focus{left:0}
+
+  :focus-visible{outline:3px solid var(--green-d);outline-offset:3px;border-radius:6px}
+
+  .wrap{max-width:720px;margin:0 auto;padding:30px 24px 80px}
+  .back{font-size:.82rem;letter-spacing:.03em;color:var(--muted);font-weight:700}
+  .back:hover{color:var(--ink)}
+  .kicker{font-family:Poppins,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--green-d)}
+  h1{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(2.1rem,6vw,3.2rem);
+    margin:.2em 0 .5em;letter-spacing:-.02em;line-height:1.05}
+  .lead{color:var(--body);font-size:1.05rem;line-height:1.6;margin:0 0 40px;max-width:52ch}
+
+  .links{display:flex;flex-direction:column;gap:10px;list-style:none;padding:0;margin:0}
+  .links a{display:flex;align-items:center;justify-content:space-between;gap:14px;
+    background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:15px 18px;
+    box-shadow:0 10px 26px -20px rgba(20,38,28,.4);
+    transition:transform .2s,box-shadow .2s,border-color .2s}
+  .links a:hover{transform:translateY(-3px);border-color:var(--green);
+    box-shadow:0 18px 34px -20px rgba(20,38,28,.45)}
+  .links .t{font-family:Poppins,sans-serif;font-weight:600;font-size:1.02rem}
+  .links .d{display:block;color:var(--muted);font-family:Lato,sans-serif;font-weight:400;
+    font-size:.82rem;margin-top:2px}
+  .links .arrow{color:var(--green-d);font-size:1.1rem;flex-shrink:0}
+
+  .foot{margin-top:56px;color:var(--muted);font-size:.8rem}
+
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+  <a class="skip" href="#contenuto">Vai al contenuto</a>
+
+  <div class="wrap">
+    <a class="back" href="/">← Home</a>
+
+    <main id="contenuto">
+      <div style="margin-top:36px" class="kicker">Errore 404</div>
+      <h1>Questa pagina non c'è.</h1>
+      <p class="lead">L'indirizzo richiesto non corrisponde a nessuna pagina del sito: può essere
+        stato spostato, oppure il link contiene un errore di battitura. Qui sotto ci sono i punti
+        di partenza utili.</p>
+
+      <ul class="links">
+        <li>
+          <a href="/">
+            <span><span class="t">Home</span>
+            <span class="d">calcaterra.casa</span></span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="/mappa/">
+            <span><span class="t">Mappa del sito</span>
+            <span class="d">Tutte le sezioni, in un colpo d'occhio</span></span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://viaggi.calcaterra.casa/">
+            <span><span class="t">Le guide di viaggio</span>
+            <span class="d">viaggi.calcaterra.casa</span></span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+    </main>
+
+    <div class="foot">Calcaterra Casa</div>
+  </div>
+</body>
+</html>

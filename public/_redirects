@@ -1,0 +1,26 @@
+# Progetto Cloudflare Pages A — calcaterra.casa (output directory: public/)
+#
+# Scopo: eliminare la duplicazione delle guide. public/viaggi/ e' la radice web del
+# progetto B (viaggi.calcaterra.casa) ma resta anche una sottocartella del progetto A,
+# quindi ogni guida esisterebbe su due URL identici. Qui si consolida tutto sul
+# sottodominio, che e' l'URL canonico dichiarato in public/site.json.
+#
+# Nota Cloudflare: i redirect vengono applicati sempre, anche quando esiste un asset
+# statico allo stesso percorso ("Redirects are always followed, regardless of whether
+# or not an asset matches the incoming request"). Quindi /viaggi/* vince sui file
+# fisicamente presenti in public/viaggi/ e la deduplicazione e' effettiva.
+# I redirect NON si applicano alle rotte servite da Pages Functions, quindi /api/*
+# (functions/api/**) non e' toccato.
+#
+# Le due ultime regole riparano i link rotti dell'hub: public/viaggi/index.html usa
+# href="/bretagna" (assoluto dalla radice del SOTTODOMINIO). Visto dall'apex quel
+# link puntava a calcaterra.casa/bretagna, che non esiste.
+#
+# Sintassi: <da> <a> <codice>. L'ordine conta: la prima regola che combacia vince,
+# percio' /viaggi e /viaggi/ stanno prima del wildcard /viaggi/*.
+
+/viaggi                https://viaggi.calcaterra.casa/                      301
+/viaggi/               https://viaggi.calcaterra.casa/                      301
+/viaggi/*              https://viaggi.calcaterra.casa/:splat                301
+/bretagna              https://viaggi.calcaterra.casa/bretagna/             301
+/normandie-bretagna    https://viaggi.calcaterra.casa/normandie-bretagna/   301

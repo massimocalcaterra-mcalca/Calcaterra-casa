@@ -1,0 +1,97 @@
+# Progetto Cloudflare Pages B — viaggi.calcaterra.casa (output directory: public/viaggi/)
+#
+# Questa cartella e' la RADICE WEB del progetto B: qui "/" e' l'hub delle guide,
+# non /viaggi/. Per il progetto A (calcaterra.casa) questa stessa cartella e' solo
+# una sottocartella, e tutti i suoi percorsi vengono rediretti sul sottodominio da
+# public/_redirects: questo file non ha quindi alcun effetto sull'apex.
+#
+# Sintassi: una riga con il pattern del percorso, poi gli header indentati di 2 spazi.
+# Nessuna riga vuota dentro un blocco. I commenti iniziano con #.
+#
+# ---------------------------------------------------------------------------
+# CSP — FASE 1 (attuale)
+# ---------------------------------------------------------------------------
+# CSS e JS delle guide sono inline (nessun build step), quindi 'unsafe-inline' e'
+# inevitabile finche' non si estraggono in file esterni con hash o nonce.
+# Destinazioni consentite e perche':
+#   - fonts.googleapis.com  -> foglio di stile dei font (style-src)
+#   - fonts.gstatic.com     -> file dei font (font-src)
+#   - upload.wikimedia.org  -> tutte le fotografie e i poster dei video delle guide
+#   - data:                 -> favicon SVG inline
+# I video (.mp4) sono self-hosted sotto /bretagna/video/, percio' media-src copre
+# 'self' oltre a Wikimedia (usato per i poster).
+# Non serve cdn.jsdelivr.net: heic2any e' usato solo da /foto, che vive sull'apex.
+# Bloccati: framing (frame-ancestors 'none'), plugin (object-src 'none'),
+# riscrittura della base URL, invio di form verso terze parti.
+#
+# ---------------------------------------------------------------------------
+# CSP — FASE 2 (da attivare quando gli asset saranno self-hosted)
+# ---------------------------------------------------------------------------
+# Prerequisiti: (1) CSS e JS in file sotto /assets/ oppure hash/nonce, (2) Poppins e
+# Lato scaricati in /assets/fonts/, (3) le immagini Wikimedia copiate in /img/ (con
+# le attribuzioni di licenza mantenute nelle pagine). Solo dopo, sostituire la riga
+# CSP di /* con:
+#
+#   Content-Security-Policy: default-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests
+#
+# Passaggio intermedio consigliato: affiancare prima alla CSP attiva un
+#   Content-Security-Policy-Report-Only: <policy fase 2>
+# e promuoverla solo quando le violazioni in console sono a zero.
+#
+# ---------------------------------------------------------------------------
+# HSTS
+# ---------------------------------------------------------------------------
+# max-age=300 (5 minuti), volutamente basso: HSTS non e' revocabile lato client
+# prima della scadenza. Niente includeSubDomains, niente preload.
+# Scaletta: 300 -> 86400 -> 2592000 -> 31536000, un passo per volta.
+# Da alzare in parallelo su entrambi i progetti, tenendoli allineati.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Cross-Origin-Opener-Policy: same-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), display-capture=()
+  Strict-Transport-Security: max-age=300
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://upload.wikimedia.org; media-src 'self' https://upload.wikimedia.org; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests
+
+# Copertine delle guide (public/viaggi/img/).
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Video. /video/* e' il percorso convenzionale per i futuri filmati alla radice;
+# i due .mp4 attuali stanno sotto /bretagna/video/ e servono anche alla guida
+# normandie-bretagna, che li richiama con ../bretagna/video/.
+/video/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/bretagna/video/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML: sempre rivalidato. I percorsi sono elencati uno per uno invece di usare
+# /*.html perche' quando piu' regole combaciano Cloudflare Pages UNISCE gli header,
+# e valori omonimi come Cache-Control finirebbero concatenati. Per lo stesso motivo
+# /* non imposta alcun Cache-Control.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/bretagna/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/bretagna/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/normandie-bretagna/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/normandie-bretagna/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/404.html
+  Cache-Control: public, max-age=0, must-revalidate

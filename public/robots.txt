@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /foto
+Disallow: /api/
+
+Sitemap: https://calcaterra.casa/sitemap.xml

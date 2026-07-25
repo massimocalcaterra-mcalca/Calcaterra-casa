@@ -1,0 +1,107 @@
+# Progetto Cloudflare Pages A — calcaterra.casa (output directory: public/)
+#
+# Sintassi: una riga con il pattern del percorso, poi gli header indentati di 2 spazi.
+# Nessuna riga vuota dentro un blocco. I commenti iniziano con #.
+#
+# ---------------------------------------------------------------------------
+# CSP — FASE 1 (attuale, permissiva sull'inline, restrittiva sulle destinazioni)
+# ---------------------------------------------------------------------------
+# 'unsafe-inline' su script-src e style-src e' oggi inevitabile: CSS e JS sono
+# scritti inline in ogni pagina (nessun build step, nessun file esterno, quindi
+# nessun hash/nonce generabile automaticamente).
+# Destinazioni consentite e perche':
+#   - fonts.googleapis.com  -> il foglio di stile dei font (style-src)
+#   - fonts.gstatic.com     -> i file dei font (font-src)
+#   - upload.wikimedia.org  -> immagini e poster video delle guide
+#   - cdn.jsdelivr.net      -> heic2any, caricato da /foto per convertire gli HEIC
+#   - data:                 -> favicon SVG inline di tutte le pagine
+#   - blob:                 -> anteprime generate lato client in /foto
+# 'wasm-unsafe-eval' serve al decoder HEIC di heic2any. Se la conversione HEIC in
+# /foto smette di funzionare, questa direttiva e' il primo posto da controllare.
+# Comunque bloccati: framing (frame-ancestors 'none'), plugin (object-src 'none'),
+# riscrittura della base URL, invio di form verso terze parti.
+#
+# ---------------------------------------------------------------------------
+# CSP — FASE 2 (da attivare quando gli asset saranno self-hosted)
+# ---------------------------------------------------------------------------
+# Prerequisiti: (1) estrarre CSS e JS in file sotto /assets/ oppure passare a
+# hash/nonce, (2) scaricare Poppins e Lato in /assets/fonts/, (3) copiare in
+# /img/ le immagini oggi prese da Wikimedia, (4) self-hostare heic2any in
+# /assets/js/. Solo dopo, sostituire la riga CSP di /* con:
+#
+#   Content-Security-Policy: default-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; font-src 'self'; img-src 'self' data: blob:; media-src 'self'; connect-src 'self'; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests
+#
+# Passaggio intermedio consigliato: aggiungere prima
+#   Content-Security-Policy-Report-Only: <policy fase 2>
+# accanto alla CSP di fase 1, controllare le violazioni in console, e solo quando
+# sono a zero promuovere la policy fase 2 a header attivo.
+#
+# ---------------------------------------------------------------------------
+# HSTS
+# ---------------------------------------------------------------------------
+# max-age=300 (5 minuti) e' volutamente basso: HSTS non e' reversibile lato client
+# prima della scadenza, quindi un errore con max-age lungo resterebbe impresso nei
+# browser dei visitatori per mesi. Niente includeSubDomains (romperebbe qualunque
+# futuro sottodominio non ancora in HTTPS) e niente preload (una volta nella
+# preload list di Chrome, l'uscita richiede settimane).
+# Scaletta di innalzamento, un passo alla volta verificando che tutto risponda in
+# HTTPS: 300 -> 86400 (1 giorno) -> 2592000 (30 giorni) -> 31536000 (1 anno).
+# Solo a 1 anno stabile e con TUTTI i sottodomini in HTTPS (incluso
+# viaggi.calcaterra.casa) aggiungere includeSubDomains, e infine preload.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Cross-Origin-Opener-Policy: same-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), display-capture=()
+  Strict-Transport-Security: max-age=300
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://upload.wikimedia.org; media-src 'self' blob: https://upload.wikimedia.org; connect-src 'self'; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests
+
+# Area privata e API: mai in cache condivisa, mai negli indici.
+/foto
+  Cache-Control: private, no-store, must-revalidate
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/foto/*
+  Cache-Control: private, no-store, must-revalidate
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/api/*
+  Cache-Control: private, no-store, must-revalidate
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+# Asset immutabili. Attenzione: senza build step non c'e' hash nel nome file,
+# quindi per sostituire un'immagine serve un nome nuovo (oppure ?v=N come fa
+# gia' /img/foto.svg?v=2 in site.json).
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonte di verita' della struttura del sito: fresca in fretta, ma servibile
+# mentre si rivalida.
+/site.json
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+# HTML: sempre rivalidato, cosi' una correzione al testo e' visibile subito.
+# I percorsi sono elencati uno per uno invece di usare /*.html: quando piu' regole
+# combaciano, Cloudflare Pages UNISCE gli header e i valori omonimi finirebbero
+# concatenati. /*.html avrebbe intercettato anche /foto/index.html, sommando due
+# Cache-Control contraddittori. Percio' i blocchi che impostano Cache-Control qui
+# sotto sono volutamente disgiunti, e /* non ne imposta nessuno.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/mappa/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/mappa/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/404.html
+  Cache-Control: public, max-age=0, must-revalidate
