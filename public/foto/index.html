@@ -75,8 +75,11 @@
   .card{position:relative;border-radius:14px;overflow:hidden;background:#eee;aspect-ratio:1/1;
     box-shadow:0 12px 28px -18px rgba(20,38,28,.5)}
   .card img{width:100%;height:100%;object-fit:cover;display:block}
+  /* segnaposto per i formati che il browser non sa mostrare (HEIC su Chrome):
+     il padding in basso lascia libero l'angolo dei pulsanti */
   .card .ph{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;
-    justify-content:center;gap:6px;background:#EAF3EC;color:var(--muted);text-align:center;padding:14px}
+    justify-content:center;gap:6px;background:#EAF3EC;color:var(--body);text-align:center;
+    padding:14px 14px 52px}
   .card img.failed{display:none}
   .card img.failed ~ .ph{display:flex}
   .card .ph .phi{font-size:1.9rem}
