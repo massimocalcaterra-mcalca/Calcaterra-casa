@@ -12,7 +12,6 @@
 # Destinazioni consentite e perche':
 #   - fonts.googleapis.com  -> il foglio di stile dei font (style-src)
 #   - fonts.gstatic.com     -> i file dei font (font-src)
-#   - upload.wikimedia.org  -> immagini e poster video delle guide
 #   - cdn.jsdelivr.net      -> heic2any, caricato da /foto per convertire gli HEIC
 #   - data:                 -> favicon SVG inline di tutte le pagine
 #   - blob:                 -> anteprime generate lato client in /foto
@@ -56,7 +55,7 @@
   Cross-Origin-Opener-Policy: same-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), display-capture=()
   Strict-Transport-Security: max-age=300
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://upload.wikimedia.org; media-src 'self' blob: https://upload.wikimedia.org; connect-src 'self'; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests
 
 # Area privata e API: mai in cache condivisa, mai negli indici.
 /foto

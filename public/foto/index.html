@@ -13,14 +13,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#FBFBFA; --paper:#FFFFFF; --ink:#14261C; --body:#4B4F58; --muted:#8A8D86;
-    --line:#E7E6DF; --green:#1BAE70; --green-d:#06752E; --danger:#E1533D;
+    --bg:#FBFBFA; --paper:#FFFFFF; --ink:#14261C; --body:#4B4F58; --muted:#767970;
+    --line:#E7E6DF; --line-strong:#8E8C82; --green:#1BAE70; --green-d:#06752E; --danger:#C1341F;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);
-    font-family:Lato,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    font-family:Lato,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:1080px;margin:0 auto;padding:30px 24px 70px}
+
+  .visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+    clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+  .skip{position:absolute;left:-9999px;background:var(--paper);color:var(--ink);
+    border:1px solid var(--green-d);border-radius:10px;padding:10px 16px;font-weight:700}
+  .skip:focus{left:12px;top:12px;z-index:100}
+  :focus-visible{outline:3px solid var(--green-d);outline-offset:2px;border-radius:4px}
 
   .nav{display:flex;justify-content:space-between;align-items:center;gap:16px}
   .name{font-family:Poppins,sans-serif;font-weight:600;font-size:1rem;letter-spacing:-.01em}
@@ -75,25 +82,37 @@
   .card .ph .phi{font-size:1.9rem}
   .card .ph .phn{font-size:.8rem;color:var(--body);word-break:break-word;font-weight:700}
   .card .ph .phm{font-size:.72rem}
-  .card .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;
-    padding:10px;background:linear-gradient(180deg,rgba(20,38,28,.32),transparent 34%,transparent 52%,rgba(20,38,28,.68));
-    opacity:1;cursor:zoom-in}
+  /* velo decorativo: non intercetta i clic, ci pensa il pulsante .zoom sotto */
+  .card .ov{position:absolute;inset:0;padding:10px;pointer-events:none;
+    background:linear-gradient(180deg,rgba(20,38,28,.32),transparent 34%,transparent 52%,rgba(20,38,28,.68))}
   .card .fn{color:#fff;font-size:.76rem;word-break:break-word;text-shadow:0 1px 3px rgba(0,0,0,.6);
     opacity:0;transition:.2s}
   .card:hover .fn,.card:focus-within .fn{opacity:1}
-  .card .acts{display:flex;gap:8px;justify-content:flex-end}
+  /* apertura a schermo intero: un vero <button> a tutta scheda, così si arriva
+     anche da tastiera e i lettori di schermo annunciano l'azione */
+  .card .zoom{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;
+    background:none;cursor:zoom-in;z-index:1}
+  .card .zoom:focus-visible{outline-offset:-4px}
+  .card .acts{position:absolute;right:10px;bottom:10px;z-index:2;display:flex;gap:8px}
   .icb{width:40px;height:40px;border-radius:50%;border:none;cursor:pointer;font-size:1.05rem;
     display:grid;place-items:center;background:rgba(255,255,255,.95);color:var(--ink);
-    box-shadow:0 3px 10px -3px rgba(0,0,0,.5);transition:.15s;text-decoration:none}
+    box-shadow:0 3px 10px -3px rgba(0,0,0,.5);transition:.15s;text-decoration:none;position:relative}
   .icb:hover{transform:scale(1.08)}
   .icb.del:hover{background:var(--danger);color:#fff}
   .icb:active{transform:scale(.94)}
   /* Pulsanti più piccoli sulle miniature (nel lightbox restano grandi) */
   .card .acts .icb{width:30px;height:30px;font-size:.82rem;box-shadow:0 2px 7px -2px rgba(0,0,0,.55)}
+  /* area di tocco 44x44 invisibile attorno ai pulsantini (WCAG 2.5.5) */
+  .card .acts .icb::after{content:"";position:absolute;left:50%;top:50%;
+    width:44px;height:44px;transform:translate(-50%,-50%)}
 
-  /* Lightbox (foto a schermo intero) */
-  .lb{position:fixed;inset:0;z-index:50;background:rgba(10,18,14,.93);
-    display:flex;align-items:center;justify-content:center;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+  /* Lightbox: <dialog> nativo, così focus trap, Esc e ritorno del fuoco
+     sono gestiti dal browser invece che a mano */
+  .lb{position:fixed;inset:0;width:100%;max-width:100%;height:100%;max-height:100%;
+    margin:0;padding:0;border:0;z-index:50;background:rgba(10,18,14,.93);color:#fff;
+    -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+  .lb[open]{display:flex;align-items:center;justify-content:center}
+  .lb::backdrop{background:rgba(10,18,14,.6)}
   .lb-fig{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px}
   .lb-fig img{max-width:94vw;max-height:80vh;object-fit:contain;border-radius:10px;
     box-shadow:0 24px 70px -24px rgba(0,0,0,.85);background:#0d150f}
@@ -123,29 +142,33 @@
 </style>
 </head>
 <body>
+  <a class="skip" href="#main">Vai al contenuto</a>
   <div class="wrap">
     <div class="nav">
       <a href="/"><span class="name">calcaterra<span class="dot">.</span>casa</span></a>
       <span class="tag" id="navTag">Area privata</span>
     </div>
 
+    <main id="main">
+
     <!-- LOGIN -->
-    <section id="loginView" class="hidden">
+    <section id="loginView" class="hidden" aria-labelledby="loginTitle">
       <div class="login">
-        <h2>📷 Foto — area riservata</h2>
-        <p>Inserisci la password per accedere alla galleria.</p>
+        <h2 id="loginTitle">📷 Foto — area riservata</h2>
+        <p>Solo per me: la password apre la galleria e resta valida dodici ore.</p>
         <form id="loginForm" class="field">
+          <label class="visually-hidden" for="pass">Password</label>
           <input type="password" id="pass" placeholder="Password" autocomplete="current-password" required>
           <button class="btn primary" type="submit">Entra</button>
         </form>
-        <div class="err" id="loginErr"></div>
+        <div class="err" id="loginErr" role="alert"></div>
       </div>
     </section>
 
     <!-- NOT CONFIGURED -->
-    <section id="setupView" class="hidden">
+    <section id="setupView" class="hidden" aria-labelledby="setupTitle">
       <div class="login">
-        <h2>⚙️ Da configurare</h2>
+        <h2 id="setupTitle">⚙️ Da configurare</h2>
         <p id="setupMsg" style="color:var(--body)">
           La sezione foto è pubblicata ma mancano ancora storage o password lato Cloudflare.
           Vedi <b>PUBLISHING.md §11</b> per i pochi passaggi (bucket R2 + due variabili).
@@ -154,54 +177,63 @@
     </section>
 
     <!-- GALLERY -->
-    <section id="galleryView" class="hidden">
+    <section id="galleryView" class="hidden" aria-labelledby="galleryTitle">
       <header class="head">
         <div class="kicker">Album privato</div>
-        <h1>Le mie <span class="g">foto</span></h1>
+        <h1 id="galleryTitle">Le mie <span class="g">foto</span></h1>
       </header>
 
       <div id="drop" class="drop">
-        <div class="big">📤</div>
+        <div class="big" aria-hidden="true">📤</div>
         <p><b>Trascina qui le foto</b> oppure</p>
         <button class="btn primary" id="pickBtn" type="button">Scegli dal dispositivo</button>
         <input type="file" id="file" accept="image/*" multiple class="hidden">
-        <div class="hint">JPG, PNG, GIF, WebP, HEIC (iPhone)… fino a 15 MB per file.</div>
+        <div class="hint" id="dropHint">JPG, PNG, GIF, WebP, HEIC dell'iPhone. Fino a 15 MB per foto,
+          20 foto e 60 MB per volta. Le HEIC diventano JPEG qui nel browser, così si vedono su tutto.</div>
       </div>
 
       <div class="bar">
-        <span class="count" id="count">—</span>
+        <span class="count" id="count" role="status">—</span>
         <button class="btn" id="logoutBtn" type="button">Esci</button>
       </div>
 
       <div id="grid" class="grid"></div>
-      <div id="empty" class="empty hidden">Nessuna foto ancora. Carica la prima! 🌿</div>
+      <div id="empty" class="empty hidden">Ancora niente qui dentro. La prima foto la carichi dal riquadro sopra.</div>
     </section>
+
+    </main>
 
     <div class="foot">© 2026 · calcaterra.casa</div>
   </div>
 
   <!-- LIGHTBOX -->
-  <div id="lb" class="lb hidden" role="dialog" aria-modal="true">
+  <dialog id="lb" class="lb" aria-label="Foto a schermo intero">
     <button class="lb-btn lb-x" id="lbClose" title="Chiudi (Esc)" aria-label="Chiudi">✕</button>
-    <button class="lb-btn lb-nav lb-prev" id="lbPrev" title="Precedente" aria-label="Precedente">‹</button>
-    <button class="lb-btn lb-nav lb-next" id="lbNext" title="Successiva" aria-label="Successiva">›</button>
+    <button class="lb-btn lb-nav lb-prev" id="lbPrev" title="Precedente" aria-label="Foto precedente">‹</button>
+    <button class="lb-btn lb-nav lb-next" id="lbNext" title="Successiva" aria-label="Foto successiva">›</button>
     <figure class="lb-fig">
       <img id="lbImg" alt="">
-      <figcaption class="lb-cap" id="lbCap"></figcaption>
+      <figcaption class="lb-cap" id="lbCap" role="status"></figcaption>
     </figure>
     <div class="lb-acts">
-      <a class="icb" id="lbDl" title="Scarica" download>⬇</a>
-      <button class="icb del" id="lbDel" title="Elimina">🗑</button>
+      <a class="icb" id="lbDl" title="Scarica" aria-label="Scarica questa foto" download>⬇</a>
+      <button class="icb del" id="lbDel" title="Elimina" aria-label="Elimina questa foto">🗑</button>
     </div>
-  </div>
+  </dialog>
 
-  <div class="toast" id="toast"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 const $ = (s)=>document.querySelector(s);
 const views = {login:$("#loginView"), setup:$("#setupView"), gallery:$("#galleryView")};
 function show(name){ for(const k in views) views[k].classList.toggle("hidden", k!==name); }
-function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),2600); }
+let toastTimer;
+function toast(msg, ms){
+  const t=$("#toast"); t.textContent=msg; t.classList.add("show");
+  clearTimeout(toastTimer);
+  // i messaggi lunghi (tipicamente errori) restano il tempo di leggerli
+  toastTimer = setTimeout(()=>t.classList.remove("show"), ms || (msg.length>44 ? 6500 : 2600));
+}
 let currentItems=[], lbIndex=0;
 
 async function boot(){
@@ -247,31 +279,30 @@ async function load(){
 function render(items){
   const grid=$("#grid");
   currentItems = items;
-  $("#count").textContent = items.length + (items.length===1?" foto":" foto");
+  $("#count").textContent = items.length===0 ? "nessuna foto"
+    : (items.length===1 ? "1 foto" : items.length + " foto");
   $("#empty").classList.toggle("hidden", items.length>0);
   grid.innerHTML = items.map(it=>{
     const src = "/api/foto/"+encodeURIComponent(it.key);
-    return `<div class="card">
-      <img src="${src}" alt="${escapeHtml(it.name)}" loading="lazy" onerror="this.classList.add('failed')">
+    const nm = escapeHtml(it.name);
+    return `<figure class="card">
+      <img src="${src}" alt="${nm}" loading="lazy" onerror="this.classList.add('failed')">
       <div class="ph">
-        <div class="phi">🖼️</div>
-        <div class="phn">${escapeHtml(it.name)}</div>
+        <div class="phi" aria-hidden="true">🖼️</div>
+        <div class="phn">${nm}</div>
         <div class="phm">anteprima non disponibile<br>(usa ⬇ per scaricarla)</div>
       </div>
-      <div class="ov">
-        <div class="fn">${escapeHtml(it.name)}</div>
-        <div class="acts">
-          <a class="icb" title="Scarica" href="${src}?dl=1" download>⬇</a>
-          <button class="icb del" title="Elimina" data-key="${escapeAttr(it.key)}" data-name="${escapeAttr(it.name)}">🗑</button>
-        </div>
+      <div class="ov" aria-hidden="true"><div class="fn">${nm}</div></div>
+      <button class="zoom" type="button" aria-label="Apri «${escapeAttr(it.name)}» a schermo intero"></button>
+      <div class="acts">
+        <a class="icb" title="Scarica" aria-label="Scarica «${escapeAttr(it.name)}»" href="${src}?dl=1" download>⬇</a>
+        <button class="icb del" type="button" title="Elimina" aria-label="Elimina «${escapeAttr(it.name)}»"
+          data-key="${escapeAttr(it.key)}" data-name="${escapeAttr(it.name)}">🗑</button>
       </div>
-    </div>`;
+    </figure>`;
   }).join("");
-  grid.querySelectorAll(".del").forEach(b=>b.addEventListener("click",(e)=>{ e.stopPropagation(); del(b.dataset.key,b.dataset.name); }));
-  grid.querySelectorAll(".card").forEach((c,i)=>c.addEventListener("click",(e)=>{
-    if(e.target.closest(".acts")) return;   // i click sui pulsanti non aprono il lightbox
-    openLb(i);
-  }));
+  grid.querySelectorAll(".del").forEach(b=>b.addEventListener("click",()=>del(b.dataset.key,b.dataset.name)));
+  grid.querySelectorAll(".zoom").forEach((b,i)=>b.addEventListener("click",()=>openLb(i)));
 }
 
 async function del(key,name){
@@ -315,17 +346,28 @@ async function toUploadable(f){
   }catch(e){ return f; } // fallback: carica l'originale; la galleria mostrerà un segnaposto scaricabile
 }
 
+function plural(n,uno,molte){ return n===1 ? "1 "+uno : n+" "+molte; }
+
 async function upload(files){
   const btn=$("#pickBtn"); btn.disabled=true;
   const anyHeic = [...files].some(isHeic);
-  toast(anyHeic ? `Preparo ${files.length} foto (converto HEIC)…` : `Carico ${files.length} foto…`);
+  toast(anyHeic ? `Preparo ${files.length} foto (converto le HEIC)…` : `Carico ${files.length} foto…`);
   const fd=new FormData();
   for(const f of files){ const u = await toUploadable(f); fd.append("file", u); }
-  const r = await fetch("/api/foto",{method:"POST",body:fd});
+  let r;
+  try{ r = await fetch("/api/foto",{method:"POST",body:fd}); }
+  catch(e){ btn.disabled=false; toast("Connessione interrotta: nessuna foto caricata."); return; }
   btn.disabled=false;
-  if(r.ok){ const d=await r.json(); toast(`Caricate ${d.saved.length} foto`); load(); }
-  else if(r.status===401){ show("login"); }
-  else{ const d=await r.json().catch(()=>({})); toast(d.error||"Errore nell'upload"); }
+  if(r.status===401){ show("login"); return; }
+  const d = await r.json().catch(()=>({}));
+  if(!r.ok && r.status!==207){ toast(d.error||"Errore nell'upload"); return; }
+  const saved = (d.saved||[]).length, failed = (d.failed||[]);
+  const why = failed.length ? `«${failed[0].name}»: ${failed[0].reason||"file non valido"}` : "";
+  const altre = failed.length>1 ? ` (e altre ${failed.length-1})` : "";
+  if(failed.length===0) toast(`Caricate ${plural(saved,"foto","foto")}`);
+  else if(saved===0)    toast(`Niente caricato — ${why}${altre}`);
+  else                  toast(`${plural(saved,"foto caricata","foto caricate")}, ${failed.length} scartate — ${why}`);
+  load();
 }
 
 function escapeHtml(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
@@ -342,12 +384,13 @@ function openLb(i){
   lbImg.src = src; lbImg.alt = it.name;
   lbCap.textContent = it.name + "  ·  " + (lbIndex+1) + "/" + currentItems.length;
   lbDl.href = src+"?dl=1";
-  lb.classList.remove("hidden");
-  document.body.style.overflow = "hidden";
+  if(!lb.open){ lb.showModal(); document.body.style.overflow = "hidden"; }
 }
-function closeLb(){ lb.classList.add("hidden"); lbImg.src=""; document.body.style.overflow=""; }
+function closeLb(){ if(lb.open) lb.close(); }
 function lbStep(d){ openLb(lbIndex + d); }
 
+// il browser riporta il fuoco alla scheda che ha aperto il dialogo
+lb.addEventListener("close", ()=>{ lbImg.src=""; document.body.style.overflow=""; });
 $("#lbClose").addEventListener("click", closeLb);
 $("#lbPrev").addEventListener("click", ()=>lbStep(-1));
 $("#lbNext").addEventListener("click", ()=>lbStep(1));
@@ -363,9 +406,8 @@ $("#lbDel").addEventListener("click", async ()=>{
   else toast("Errore durante l'eliminazione");
 });
 document.addEventListener("keydown", (e)=>{
-  if(lb.classList.contains("hidden")) return;
-  if(e.key==="Escape") closeLb();
-  else if(e.key==="ArrowLeft") lbStep(-1);
+  if(!lb.open) return;                       // Esc lo gestisce <dialog> da sé
+  if(e.key==="ArrowLeft") lbStep(-1);
   else if(e.key==="ArrowRight") lbStep(1);
 });
 let _sx=0,_sy=0;

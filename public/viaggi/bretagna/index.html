@@ -40,6 +40,8 @@
     font-family:Lato,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
   a{color:inherit;text-decoration:none}
   img{max-width:100%}
+  /* <picture> non deve interferire con il layout: l'<img> resta figlio diretto */
+  picture{display:contents}
   .wrap{max-width:940px;margin:0 auto;padding:0 24px}
   h1,h2,h3{font-family:Poppins,sans-serif;letter-spacing:-.02em;line-height:1.12}
 
@@ -53,6 +55,21 @@
   .topnav a{font-family:Poppins,sans-serif;font-size:.74rem;font-weight:600;color:var(--muted);
     padding:7px 8px;border-radius:8px;transition:.2s}
   .topnav a:hover{color:var(--green-d);background:#EFF7F1}
+  .topprint{font-family:Poppins,sans-serif;font-size:.74rem;font-weight:600;color:var(--green-d);
+    background:none;border:1px solid var(--line-strong);border-radius:8px;padding:6px 10px;
+    margin-left:6px;cursor:pointer}
+  .topprint:hover{border-color:var(--green-d);background:#EFF7F1}
+
+  /* --- indice delle tappe: il colpo d'occhio --- */
+  .glance{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:30px}
+  .glance a{display:block;background:var(--paper);border:1px solid var(--line);border-radius:14px;
+    padding:14px 16px;transition:.2s}
+  .glance a:hover{border-color:var(--green);box-shadow:0 12px 26px -20px rgba(20,38,28,.6);transform:translateY(-2px)}
+  .glance .gd{font-family:Poppins,sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--coral-text)}
+  .glance .gt{font-family:Poppins,sans-serif;font-weight:600;font-size:1.02rem;margin-top:4px;line-height:1.2}
+  .glance .gm{font-size:.8rem;color:var(--body);margin-top:6px}
+  .glance a.key{border-color:var(--green);background:#F5FBF7}
 
   .hero{position:relative;height:min(78vh,680px);display:flex;align-items:flex-end;overflow:hidden}
   .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -144,7 +161,12 @@
   .credits h4{font-family:Poppins,sans-serif;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
     color:var(--body);margin:0 0 10px}
   .credits ul{margin:0;padding:0;list-style:none;columns:2;column-gap:26px}
-  .credits li{margin-bottom:5px;break-inside:avoid}
+  .credits li{margin-bottom:7px;break-inside:avoid;line-height:1.45}
+  .credits a{color:var(--body);text-decoration:underline;text-decoration-color:var(--line-strong);
+    text-underline-offset:2px}
+  .credits a:hover{color:var(--green-d);text-decoration-color:var(--green-d)}
+  .credits li.cnote{columns:1;column-span:all;margin-top:14px;padding-top:12px;
+    border-top:1px solid var(--line);color:var(--body)}
   @media(max-width:620px){.credits ul{columns:1}}
   .foot{text-align:center;color:var(--muted);font-size:.8rem;padding:30px 0 60px}
 
@@ -201,21 +223,24 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
 
 <div class="topbar">
   <div class="row">
     <a href="/"><span class="brand">calcaterra<span class="dot">.</span>casa</span></a>
-    <nav class="topnav">
+    <nav class="topnav" aria-label="Sezioni della guida">
       <a href="#panoramica">Panoramica</a>
-      <a href="#g1">G1</a><a href="#g2">G2</a><a href="#g3">G3</a><a href="#g4">G4</a><a href="#g5">G5</a>
-      <a href="#g6">G6</a><a href="#g7">G7</a><a href="#g8">G8</a><a href="#g9">G9</a><a href="#g10">G10</a><a href="#g11">G11</a>
-      <a href="#pratiche">Info</a>
+      <a href="#tappe">Le tappe</a>
+      <a href="#g7">Eclissi</a>
+      <a href="#pratiche">Info pratiche</a>
+      <button class="topprint" type="button" id="printBtn">Stampa</button>
     </nav>
   </div>
 </div>
 
+<main id="contenuto">
 <header class="hero">
-  <img class="bg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Cote_Granite_Rose_pano.jpg/1920px-Cote_Granite_Rose_pano.jpg" alt="Costa di Granito Rosa, Bretagna">
+  <picture><source type="image/avif" sizes="100vw" srcset="/img/g/cote-granite-rose-pano-480.avif 480w, /img/g/cote-granite-rose-pano-800.avif 800w, /img/g/cote-granite-rose-pano-1200.avif 1200w, /img/g/cote-granite-rose-pano-1800.avif 1800w"><img class="bg" src="/img/g/cote-granite-rose-pano-1200.jpg" sizes="100vw" srcset="/img/g/cote-granite-rose-pano-480.jpg 480w, /img/g/cote-granite-rose-pano-800.jpg 800w, /img/g/cote-granite-rose-pano-1200.jpg 1200w" width="1200" height="318" alt="Costa di Granito Rosa, Bretagna" fetchpriority="high" decoding="async"></picture>
   <div class="veil"></div>
   <div class="inner">
     <a class="backlink" href="/">← Viaggi</a>
@@ -234,7 +259,7 @@
   <div class="wrap">
     <span class="tag">Panoramica</span>
     <h2 class="big">Il grande anello bretone, senza fretta</h2>
-    <p class="lead">Undici giorni sono il tempo giusto per vivere la Bretagna in profondità. Si atterra a Parigi-Beauvais giovedì 6 agosto alle 13:15 e si punta a ovest, spezzando il trasferimento con il Mont-Saint-Michel. Poi la Costa di Smeraldo e i suoi castelli, la Costa di Granito Rosa, le punte estreme del Finistère — dove mercoledì 12 agosto, appuntamento fisso, si osserva l'eclissi solare parziale sull'oceano. Quindi la Bretagna del sud: la ville close di Concarneau, i megaliti di Carnac, il Golfo del Morbihan, e la foresta di Brocéliande con le sue leggende arturiane, prima del rientro a Beauvais domenica 16 agosto (volo alle 14:00). In tutto circa 1.550 km, con giornate di guida quasi sempre brevi.</p>
+    <p class="lead">Undici giorni sono il tempo giusto per vivere la Bretagna in profondità. Si atterra a Parigi-Beauvais giovedì 6 agosto alle 13:15 e si punta a ovest, spezzando il trasferimento con il Mont-Saint-Michel. Poi la Costa di Smeraldo e i suoi castelli, la Costa di Granito Rosa, le punte estreme del Finistère — dove mercoledì 12 agosto, appuntamento fisso, si osserva l'eclissi solare parziale sull'oceano. Quindi la Bretagna del sud: la ville close di Concarneau, i megaliti di Carnac, il Golfo del Morbihan, e la foresta di Brocéliande con le sue leggende arturiane, prima del rientro a Beauvais domenica 16 agosto (volo alle 14:00). In tutto circa 1.950 km, con giornate di guida quasi sempre brevi — tranne il primo e l'ultimo trasferimento, che sono lunghi per forza.</p>
 
     <div class="stats">
       <div class="stat"><div class="n">11</div><div class="l">Giorni / 10 notti</div></div>
@@ -268,6 +293,27 @@
   </div>
 </section>
 
+<section id="tappe">
+  <div class="wrap">
+    <span class="tag">Il colpo d'occhio</span>
+    <h2 class="big">Le undici tappe, in un colpo d'occhio</h2>
+    <p class="lead">Undici schede, una per giornata. Chi vuole solo sapere dove si dorme guardi la tabella qui sopra; chi vuole capire cosa si vede parta da qui.</p>
+    <nav class="glance" aria-label="Indice delle tappe">
+      <a href="#g1"><div class="gd">Gio 6 ago · Giorno 1</div><div class="gt">Baia del Mont-Saint-Michel</div><div class="gm">340 km dall'aeroporto · niente abbazia, solo la baia alla luce della sera</div></a>
+      <a href="#g2"><div class="gd">Ven 7 ago · Giorno 2</div><div class="gt">Saint-Malo e Cancale</div><div class="gm">Bastioni, marea, ostriche · zero trasferimenti</div></a>
+      <a href="#g3"><div class="gd">Sab 8 ago · Giorno 3</div><div class="gt">Dinan, Cap Fréhel, Fort la Latte</div><div class="gm">140 km · un borgo medievale e un castello sul mare</div></a>
+      <a href="#g4"><div class="gd">Dom 9 ago · Giorno 4</div><div class="gt">Côte de Granit Rose</div><div class="gm">Ploumanac'h e il GR34 · la giornata più fotografata</div></a>
+      <a href="#g5"><div class="gd">Lun 10 ago · Giorno 5</div><div class="gt">Presqu'île de Crozon</div><div class="gm">2h15 · falesie di Pen-Hir e la Camaret dei relitti</div></a>
+      <a href="#g6"><div class="gd">Mar 11 ago · Giorno 6</div><div class="gt">Locronan e Cap Sizun</div><div class="gm">1h30 · il borgo di granito e la corsa al finis terrae</div></a>
+      <a class="key" href="#g7"><div class="gd">Mer 12 ago · Giorno 7</div><div class="gt">Quimper e l'eclissi</div><div class="gm">L'appuntamento fisso: 96,9% di sole coperto sull'oceano</div></a>
+      <a href="#g8"><div class="gd">Gio 13 ago · Giorno 8</div><div class="gt">Concarneau e Pont-Aven</div><div class="gm">La ville close e il paese dei pittori · notte delle Perseidi</div></a>
+      <a href="#g9"><div class="gd">Ven 14 ago · Giorno 9</div><div class="gt">Carnac e Golfo del Morbihan</div><div class="gm">Tremila menhir e un mare interno con quarantadue isole</div></a>
+      <a href="#g10"><div class="gd">Sab 15 ago · Giorno 10</div><div class="gt">Brocéliande, poi verso est</div><div class="gm">Giornata di trasferimento nel giorno di traffico peggiore dell'anno</div></a>
+      <a href="#g11"><div class="gd">Dom 16 ago · Giorno 11</div><div class="gt">Rientro a Beauvais</div><div class="gm">1h15 · volo alle 14:00, in aeroporto per mezzogiorno</div></a>
+    </nav>
+  </div>
+</section>
+
 <section class="videoband" aria-label="Il respiro dell'Atlantico">
   <figure>
     <video src="video/coste-onde.mp4" muted loop playsinline preload="none" controls
@@ -279,7 +325,7 @@
 <div class="wrap">
 
   <article class="day" id="g1">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/MSM_sunset_02.JPG/1920px-MSM_sunset_02.JPG" alt="Mont-Saint-Michel al tramonto" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/msm-sunset-02-480.avif 480w, /img/g/msm-sunset-02-800.avif 800w, /img/g/msm-sunset-02-1200.avif 1200w, /img/g/msm-sunset-02-1800.avif 1800w"><img src="/img/g/msm-sunset-02-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/msm-sunset-02-480.jpg 480w, /img/g/msm-sunset-02-800.jpg 800w, /img/g/msm-sunset-02-1200.jpg 1200w" width="1200" height="791" alt="Mont-Saint-Michel al tramonto" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 1 · Giovedì 6 agosto</div>
     <h2>Arrivo a Beauvais e trasferimento in Bretagna</h2>
     <div class="loc">Beauvais (BVA) → baia del Mont-Saint-Michel · ~340 km · 4h30–5h15 reali</div>
@@ -296,7 +342,7 @@
   </article>
 
   <article class="day" id="g2">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Remparts_%28Saint-Malo%29_%282%29.jpg/1920px-Remparts_%28Saint-Malo%29_%282%29.jpg" alt="I bastioni di Saint-Malo" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/remparts-saint-malo-2-480.avif 480w, /img/g/remparts-saint-malo-2-800.avif 800w, /img/g/remparts-saint-malo-2-1200.avif 1200w, /img/g/remparts-saint-malo-2-1800.avif 1800w"><img src="/img/g/remparts-saint-malo-2-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/remparts-saint-malo-2-480.jpg 480w, /img/g/remparts-saint-malo-2-800.jpg 800w, /img/g/remparts-saint-malo-2-1200.jpg 1200w" width="1200" height="800" alt="I bastioni di Saint-Malo" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 2 · Venerdì 7 agosto</div>
     <h2>Saint-Malo corsara e le ostriche di Cancale</h2>
     <div class="loc">Costa di Smeraldo · Ille-et-Vilaine</div>
@@ -310,14 +356,14 @@
   </article>
 
   <article class="day" id="g3">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Cote_Emeraude_Fort_La_Latte.jpg/1920px-Cote_Emeraude_Fort_La_Latte.jpg" alt="Fort la Latte sulla Costa di Smeraldo" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/cote-emeraude-fort-la-latte-480.avif 480w, /img/g/cote-emeraude-fort-la-latte-800.avif 800w, /img/g/cote-emeraude-fort-la-latte-1200.avif 1200w, /img/g/cote-emeraude-fort-la-latte-1800.avif 1800w"><img src="/img/g/cote-emeraude-fort-la-latte-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/cote-emeraude-fort-la-latte-480.jpg 480w, /img/g/cote-emeraude-fort-la-latte-800.jpg 800w, /img/g/cote-emeraude-fort-la-latte-1200.jpg 1200w" width="1200" height="536" alt="Fort la Latte sulla Costa di Smeraldo" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 3 · Sabato 8 agosto</div>
     <h2>Dinan, Cap Fréhel e il castello sul mare</h2>
     <div class="loc">Dinan → Cap Fréhel · Fort la Latte → Paimpol · ~140 km / 2h30</div>
     <p>Al mattino, il borgo medievale di <b>Dinan</b> sospeso sulla Rance, con le case a graticcio e la ripida Rue du Jerzual. Nel pomeriggio, uno dei tratti più spettacolari della costa: <b>Cap Fréhel</b>, con le sue falesie di arenaria rossa e il faro, e soprattutto <b>Fort la Latte</b>, un vero castello medievale del XIV secolo abbarbicato su uno sperone di roccia proteso nell'oceano. Un anello del GR34 collega i due promontori.</p>
     <div class="photo-pair">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Dinan_-_5_rue_du_Jerzual_20130216-02.JPG/1920px-Dinan_-_5_rue_du_Jerzual_20130216-02.JPG" alt="Rue du Jerzual, Dinan" loading="lazy">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/.00_2803_Leuchtturm_am_Cap_Fr%C3%A9hel%2C_Frankreich.jpg" alt="Faro di Cap Fréhel" loading="lazy">
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/dinan-5-rue-du-jerzual-20130216-02-480.avif 480w, /img/g/dinan-5-rue-du-jerzual-20130216-02-800.avif 800w, /img/g/dinan-5-rue-du-jerzual-20130216-02-1200.avif 1200w, /img/g/dinan-5-rue-du-jerzual-20130216-02-1800.avif 1800w"><img src="/img/g/dinan-5-rue-du-jerzual-20130216-02-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/dinan-5-rue-du-jerzual-20130216-02-480.jpg 480w, /img/g/dinan-5-rue-du-jerzual-20130216-02-800.jpg 800w, /img/g/dinan-5-rue-du-jerzual-20130216-02-1200.jpg 1200w" width="800" height="1200" alt="Rue du Jerzual, Dinan" loading="lazy" decoding="async"></picture>
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-480.avif 480w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-800.avif 800w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-1200.avif 1200w"><img src="/img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-480.jpg 480w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-800.jpg 800w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-1200.jpg 1200w" width="800" height="1200" alt="Faro di Cap Fréhel" loading="lazy" decoding="async"></picture>
     </div>
     <div class="cards">
       <div class="infocard"><div class="cl">Trekking GR34</div><div class="cv">Cap Fréhel → Fort la Latte, ~5 km, facile</div></div>
@@ -328,7 +374,7 @@
   </article>
 
   <article class="day" id="g4">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Phare_de_Ploumanac%27h_04.jpg/1920px-Phare_de_Ploumanac%27h_04.jpg" alt="Il faro di Ploumanac'h tra le rocce rosa" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/phare-de-ploumanac-h-04-480.avif 480w, /img/g/phare-de-ploumanac-h-04-800.avif 800w, /img/g/phare-de-ploumanac-h-04-1200.avif 1200w, /img/g/phare-de-ploumanac-h-04-1800.avif 1800w"><img src="/img/g/phare-de-ploumanac-h-04-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/phare-de-ploumanac-h-04-480.jpg 480w, /img/g/phare-de-ploumanac-h-04-800.jpg 800w, /img/g/phare-de-ploumanac-h-04-1200.jpg 1200w" width="1200" height="800" alt="Il faro di Ploumanac'h tra le rocce rosa" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 4 · Domenica 9 agosto</div>
     <h2>La Côte de Granit Rose</h2>
     <div class="loc">Perros-Guirec · Ploumanac'h · ~1h30 di guida</div>
@@ -342,14 +388,14 @@
   </article>
 
   <article class="day" id="g5">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pen%27Hir.jpg/1920px-Pen%27Hir.jpg" alt="La Pointe de Pen-Hir, Presqu'île de Crozon" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/pen-hir-480.avif 480w, /img/g/pen-hir-800.avif 800w, /img/g/pen-hir-1200.avif 1200w, /img/g/pen-hir-1800.avif 1800w"><img src="/img/g/pen-hir-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/pen-hir-480.jpg 480w, /img/g/pen-hir-800.jpg 800w, /img/g/pen-hir-1200.jpg 1200w" width="1200" height="412" alt="La Pointe de Pen-Hir, Presqu'île de Crozon" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 5 · Lunedì 10 agosto</div>
     <h2>La Presqu'île de Crozon e l'insolita Camaret</h2>
     <div class="loc">Perros-Guirec → Crozon · Camaret · ~2h15 di guida</div>
     <p>Si entra nel Finistère puntando alla Presqu'île de Crozon, una penisola frastagliata tra i panorami più belli di Bretagna. Alla <b>Pointe de Pen-Hir</b>, un anello del GR34 corre lungo falesie a picco con vista sui faraglioni "Tas de Pois". A <b>Camaret-sur-Mer</b> due sorprese: la Tour Vauban (patrimonio UNESCO) e, nel porto, l'insolito <b>cimitero di barche</b>, vecchi pescherecci lasciati marcire sulla sabbia — malinconico e fotogenico.</p>
     <div class="photo-pair">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/20100712_Tour_Vauban_-_4.jpg/1920px-20100712_Tour_Vauban_-_4.jpg" alt="Tour Vauban a Camaret-sur-Mer" loading="lazy">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pen%27Hir.jpg/1920px-Pen%27Hir.jpg" alt="Faraglioni Tas de Pois" loading="lazy">
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/20100712-tour-vauban-4-480.avif 480w, /img/g/20100712-tour-vauban-4-800.avif 800w, /img/g/20100712-tour-vauban-4-1200.avif 1200w, /img/g/20100712-tour-vauban-4-1800.avif 1800w"><img src="/img/g/20100712-tour-vauban-4-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/20100712-tour-vauban-4-480.jpg 480w, /img/g/20100712-tour-vauban-4-800.jpg 800w, /img/g/20100712-tour-vauban-4-1200.jpg 1200w" width="800" height="560" alt="Tour Vauban a Camaret-sur-Mer" loading="lazy" decoding="async"></picture>
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/pen-hir-480.avif 480w, /img/g/pen-hir-800.avif 800w, /img/g/pen-hir-1200.avif 1200w, /img/g/pen-hir-1800.avif 1800w"><img src="/img/g/pen-hir-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/pen-hir-480.jpg 480w, /img/g/pen-hir-800.jpg 800w, /img/g/pen-hir-1200.jpg 1200w" width="800" height="275" alt="Faraglioni Tas de Pois" loading="lazy" decoding="async"></picture>
     </div>
     <div class="cards">
       <div class="infocard"><div class="cl">Trekking GR34</div><div class="cv">Pointe de Pen-Hir, ~5 km, falesie</div></div>
@@ -360,14 +406,14 @@
   </article>
 
   <article class="day" id="g6">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Locronan_Village_View.jpg/1920px-Locronan_Village_View.jpg" alt="Il borgo di Locronan" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/locronan-village-view-480.avif 480w, /img/g/locronan-village-view-800.avif 800w, /img/g/locronan-village-view-1200.avif 1200w, /img/g/locronan-village-view-1800.avif 1800w"><img src="/img/g/locronan-village-view-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/locronan-village-view-480.jpg 480w, /img/g/locronan-village-view-800.jpg 800w, /img/g/locronan-village-view-1200.jpg 1200w" width="1200" height="801" alt="Il borgo di Locronan" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 6 · Martedì 11 agosto</div>
     <h2>Locronan e il Cap Sizun, verso il finis terrae</h2>
     <div class="loc">Crozon → Locronan → Cap Sizun · ~1h30 di guida</div>
     <p>Sosta a <b>Locronan</b>, uno dei "borghi più belli di Francia": una piazza di granito rinascimentale rimasta intatta, senza cavi elettrici a vista, tanto da essere set di numerosi film in costume. Nel pomeriggio si raggiunge il Cap Sizun con la <b>Pointe du Van</b> e la sua cappella isolata, molto meno affollata della vicina Pointe du Raz: un buon modo per prendere le misure dell'orizzonte ovest, dove domani sera comincerà l'eclissi. Notte nel Pays Bigouden, a Audierne o Plogoff.</p>
     <div class="photo-pair">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Pointe_du_Raz_bei_Sonnenuntergang.jpg/1920px-Pointe_du_Raz_bei_Sonnenuntergang.jpg" alt="La Pointe du Raz" loading="lazy">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Locronan_Village_View.jpg/1920px-Locronan_Village_View.jpg" alt="Piazza di Locronan" loading="lazy">
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/pointe-du-raz-bei-sonnenuntergang-480.avif 480w, /img/g/pointe-du-raz-bei-sonnenuntergang-800.avif 800w, /img/g/pointe-du-raz-bei-sonnenuntergang-1200.avif 1200w, /img/g/pointe-du-raz-bei-sonnenuntergang-1800.avif 1800w"><img src="/img/g/pointe-du-raz-bei-sonnenuntergang-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/pointe-du-raz-bei-sonnenuntergang-480.jpg 480w, /img/g/pointe-du-raz-bei-sonnenuntergang-800.jpg 800w, /img/g/pointe-du-raz-bei-sonnenuntergang-1200.jpg 1200w" width="800" height="533" alt="La Pointe du Raz" loading="lazy" decoding="async"></picture>
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/locronan-village-view-480.avif 480w, /img/g/locronan-village-view-800.avif 800w, /img/g/locronan-village-view-1200.avif 1200w, /img/g/locronan-village-view-1800.avif 1800w"><img src="/img/g/locronan-village-view-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/locronan-village-view-480.jpg 480w, /img/g/locronan-village-view-800.jpg 800w, /img/g/locronan-village-view-1200.jpg 1200w" width="800" height="534" alt="Piazza di Locronan" loading="lazy" decoding="async"></picture>
     </div>
     <div class="cards">
       <div class="infocard"><div class="cl">Borgo</div><div class="cv">Locronan, piazza rinascimentale in granito</div></div>
@@ -378,7 +424,7 @@
   </article>
 
   <article class="day" id="g7">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/20120930_troisPhares_Penmarc'h_Bretagne_DSC09655_PtrQs.jpg/1920px-20120930_troisPhares_Penmarc'h_Bretagne_DSC09655_PtrQs.jpg" alt="I fari di Penmarc'h, punto d'osservazione dell'eclissi" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/20120930-troisphares-penmarch-bretagne-dsc09655-480.avif 480w, /img/g/20120930-troisphares-penmarch-bretagne-dsc09655-800.avif 800w, /img/g/20120930-troisphares-penmarch-bretagne-dsc09655-1200.avif 1200w, /img/g/20120930-troisphares-penmarch-bretagne-dsc09655-1800.avif 1800w"><img src="/img/g/20120930-troisphares-penmarch-bretagne-dsc09655-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/20120930-troisphares-penmarch-bretagne-dsc09655-480.jpg 480w, /img/g/20120930-troisphares-penmarch-bretagne-dsc09655-800.jpg 800w, /img/g/20120930-troisphares-penmarch-bretagne-dsc09655-1200.jpg 1200w" width="1200" height="795" alt="I fari di Penmarc'h, punto d'osservazione dell'eclissi" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 7 · Mercoledì 12 agosto</div>
     <h2>Quimper e l'eclissi solare sull'Atlantico</h2>
     <div class="loc">Pays Bigouden · il giorno dell'eclissi</div>
@@ -386,8 +432,8 @@
     <h3>L'eclissi solare del 12 agosto 2026</h3>
     <p>Nel sud-ovest del Finistère la luna coprirà il <b>96,9%</b> del disco solare — il massimo di tutta la Bretagna — la copertura più alta di tutta la Bretagna (la fascia di totalità passa su Siberia artica, Groenlandia, Islanda, Spagna del nord e Baleari). Inizio verso le 19:22, massimo intorno alle 20:19, fine verso le 21:12 (CEST): il sole sarà basso sull'orizzonte occidentale (11,5° al massimo, azimut 279°: l'orizzonte da liberare è a <b>ovest-nordovest</b>, non a ovest) e non tramonta durante l'evento. Punto ideale: la <b>Pointe de Penmarc'h</b> (faro d'Eckmühl), tra i siti con la copertura più alta, oppure la Pointe du Raz o la Pointe du Van.</p>
     <div class="photo-pair">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Quimper_-_Cath%C3%A9drale_Saint-Corentin_-_Portail_-_PA00090326_-_0001.jpg/1920px-Quimper_-_Cath%C3%A9drale_Saint-Corentin_-_Portail_-_PA00090326_-_0001.jpg" alt="Cattedrale di Quimper" loading="lazy">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/20120930_troisPhares_Penmarc'h_Bretagne_DSC09655_PtrQs.jpg/1920px-20120930_troisPhares_Penmarc'h_Bretagne_DSC09655_PtrQs.jpg" alt="Faro d'Eckmühl, Penmarc'h" loading="lazy">
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/quimper-cathedrale-saint-corentin-portail-pa00-480.avif 480w, /img/g/quimper-cathedrale-saint-corentin-portail-pa00-800.avif 800w, /img/g/quimper-cathedrale-saint-corentin-portail-pa00-1200.avif 1200w, /img/g/quimper-cathedrale-saint-corentin-portail-pa00-1800.avif 1800w"><img src="/img/g/quimper-cathedrale-saint-corentin-portail-pa00-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/quimper-cathedrale-saint-corentin-portail-pa00-480.jpg 480w, /img/g/quimper-cathedrale-saint-corentin-portail-pa00-800.jpg 800w, /img/g/quimper-cathedrale-saint-corentin-portail-pa00-1200.jpg 1200w" width="800" height="1200" alt="Cattedrale di Quimper" loading="lazy" decoding="async"></picture>
+      <picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/20120930-troisphares-penmarch-bretagne-dsc09655-480.avif 480w, /img/g/20120930-troisphares-penmarch-bretagne-dsc09655-800.avif 800w, /img/g/20120930-troisphares-penmarch-bretagne-dsc09655-1200.avif 1200w, /img/g/20120930-troisphares-penmarch-bretagne-dsc09655-1800.avif 1800w"><img src="/img/g/20120930-troisphares-penmarch-bretagne-dsc09655-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/20120930-troisphares-penmarch-bretagne-dsc09655-480.jpg 480w, /img/g/20120930-troisphares-penmarch-bretagne-dsc09655-800.jpg 800w, /img/g/20120930-troisphares-penmarch-bretagne-dsc09655-1200.jpg 1200w" width="1200" height="795" alt="Faro d'Eckmühl, Penmarc'h" loading="lazy" decoding="async"></picture>
     </div>
     <div class="cards">
       <div class="infocard"><div class="cl">Copertura del sole</div><div class="cv">~96-97%, eclissi parziale</div></div>
@@ -399,7 +445,7 @@
   </article>
 
   <article class="day" id="g8">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Ville_close_de_Concarneau_%281%29.jpg/1920px-Ville_close_de_Concarneau_%281%29.jpg" alt="La Ville Close di Concarneau" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/ville-close-de-concarneau-1-480.avif 480w, /img/g/ville-close-de-concarneau-1-800.avif 800w, /img/g/ville-close-de-concarneau-1-1200.avif 1200w, /img/g/ville-close-de-concarneau-1-1800.avif 1800w"><img src="/img/g/ville-close-de-concarneau-1-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/ville-close-de-concarneau-1-480.jpg 480w, /img/g/ville-close-de-concarneau-1-800.jpg 800w, /img/g/ville-close-de-concarneau-1-1200.jpg 1200w" width="1200" height="675" alt="La Ville Close di Concarneau" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 8 · Giovedì 13 agosto</div>
     <h2>Concarneau e Pont-Aven, la Bretagna dei pittori</h2>
     <div class="loc">Pays Bigouden → Concarneau → Pont-Aven · costa sud</div>
@@ -413,14 +459,14 @@
   </article>
 
   <article class="day" id="g9">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Alignement_Menec_Carnac.jpg/1920px-Alignement_Menec_Carnac.jpg" alt="Gli allineamenti megalitici di Carnac" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/alignement-menec-carnac-480.avif 480w, /img/g/alignement-menec-carnac-800.avif 800w, /img/g/alignement-menec-carnac-1200.avif 1200w, /img/g/alignement-menec-carnac-1800.avif 1800w"><img src="/img/g/alignement-menec-carnac-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/alignement-menec-carnac-480.jpg 480w, /img/g/alignement-menec-carnac-800.jpg 800w, /img/g/alignement-menec-carnac-1200.jpg 1200w" width="1200" height="798" alt="Gli allineamenti megalitici di Carnac" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 9 · Venerdì 14 agosto</div>
     <h2>I megaliti di Carnac e il Golfo del Morbihan</h2>
     <div class="loc">Carnac → Golfo del Morbihan · Vannes</div>
     <p>Gli <b>allineamenti di Carnac</b>: circa 3.000 menhir in file parallele, 1.050 solo al Ménec, il più grande complesso megalitico del mondo, eretto tra il 4500 e il 3300 a.C., un millennio o più prima delle piramidi. Nel pomeriggio, il <b>Golfo del Morbihan</b>, piccolo mare interno punteggiato di isole (l'Île aux Moines è la più celebre), e la città murata di <b>Vannes</b> con la cattedrale e i lavatoi ai piedi dei bastioni.</p>
     <div class="photo-pair">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/%C3%8Ele_aux_Moines_4%2C_Morbihan%2C_France.jpg/1920px-%C3%8Ele_aux_Moines_4%2C_Morbihan%2C_France.jpg" alt="Golfo del Morbihan, Île aux Moines" loading="lazy">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/La_cath%C3%A9drale_Saint-Pierre_et_les_remparts_de_la_ville%2C_vue_prise_de_la_Promenade_de_la_Garenne_-_A41168S.jpg/1920px-La_cath%C3%A9drale_Saint-Pierre_et_les_remparts_de_la_ville%2C_vue_prise_de_la_Promenade_de_la_Garenne_-_A41168S.jpg" alt="Vannes, cattedrale e bastioni" loading="lazy">
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/ile-aux-moines-4-morbihan-france-480.avif 480w, /img/g/ile-aux-moines-4-morbihan-france-800.avif 800w, /img/g/ile-aux-moines-4-morbihan-france-1200.avif 1200w, /img/g/ile-aux-moines-4-morbihan-france-1800.avif 1800w"><img src="/img/g/ile-aux-moines-4-morbihan-france-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/ile-aux-moines-4-morbihan-france-480.jpg 480w, /img/g/ile-aux-moines-4-morbihan-france-800.jpg 800w, /img/g/ile-aux-moines-4-morbihan-france-1200.jpg 1200w" width="800" height="702" alt="Golfo del Morbihan, Île aux Moines" loading="lazy" decoding="async"></picture>
+      <picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/la-cathedrale-saint-pierre-et-les-remparts-de-480.avif 480w, /img/g/la-cathedrale-saint-pierre-et-les-remparts-de-800.avif 800w, /img/g/la-cathedrale-saint-pierre-et-les-remparts-de-1200.avif 1200w, /img/g/la-cathedrale-saint-pierre-et-les-remparts-de-1800.avif 1800w"><img src="/img/g/la-cathedrale-saint-pierre-et-les-remparts-de-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/la-cathedrale-saint-pierre-et-les-remparts-de-480.jpg 480w, /img/g/la-cathedrale-saint-pierre-et-les-remparts-de-800.jpg 800w, /img/g/la-cathedrale-saint-pierre-et-les-remparts-de-1200.jpg 1200w" width="1200" height="891" alt="Vannes, cattedrale e bastioni" loading="lazy" decoding="async"></picture>
     </div>
     <div class="cards">
       <div class="infocard"><div class="cl">Da non perdere</div><div class="cv">Alignements du Ménec, Carnac</div></div>
@@ -431,7 +477,7 @@
   </article>
 
   <article class="day" id="g10">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/La-For%C3%AAt-de-Broceliande-Octobre-2020.jpg/1920px-La-For%C3%AAt-de-Broceliande-Octobre-2020.jpg" alt="La foresta di Brocéliande" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/la-foret-de-broceliande-octobre-2020-480.avif 480w, /img/g/la-foret-de-broceliande-octobre-2020-800.avif 800w, /img/g/la-foret-de-broceliande-octobre-2020-1200.avif 1200w, /img/g/la-foret-de-broceliande-octobre-2020-1800.avif 1800w"><img src="/img/g/la-foret-de-broceliande-octobre-2020-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/la-foret-de-broceliande-octobre-2020-480.jpg 480w, /img/g/la-foret-de-broceliande-octobre-2020-800.jpg 800w, /img/g/la-foret-de-broceliande-octobre-2020-1200.jpg 1200w" width="1200" height="343" alt="La foresta di Brocéliande" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 10 · Sabato 15 agosto</div>
     <h2>Brocéliande, la foresta di Merlino — poi verso est</h2>
     <div class="loc">Morbihan → Paimpont (Brocéliande) → Normandia · trasferimento</div>
@@ -445,7 +491,7 @@
   </article>
 
   <article class="day" id="g11">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Rouen_Cathedral_as_seen_from_Gros_Horloge_140215_4.jpg/1920px-Rouen_Cathedral_as_seen_from_Gros_Horloge_140215_4.jpg" alt="La cattedrale di Rouen" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.avif 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.avif 800w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.avif 1200w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1800.avif 1800w"><img src="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.jpg 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.jpg 800w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.jpg 1200w" width="1200" height="1921" alt="La cattedrale di Rouen" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 11 · Domenica 16 agosto</div>
     <h2>Ultima mattina e rientro a Parigi-Beauvais</h2>
     <div class="loc">Rouen → Beauvais (BVA) · ~1h15 di guida · volo h 14:00</div>
@@ -508,32 +554,37 @@
     <div class="credits">
       <h4>Crediti foto &amp; video</h4>
       <ul>
-        <li>Panorama Côte de Granit Rose — Benh Lieu Song · CC BY-SA 3.0</li>
-        <li>Mont-Saint-Michel al tramonto — Benh Lieu Song · CC BY 2.5</li>
-        <li>Bastioni di Saint-Malo — Gzen92 · CC BY-SA 4.0</li>
-        <li>Fort la Latte — Benh Lieu Song · CC BY-SA 3.0</li>
-        <li>Rue du Jerzual, Dinan — Pymouss · CC BY-SA 3.0</li>
-        <li>Faro di Cap Fréhel — W. Bulach · CC BY-SA 4.0</li>
-        <li>Faro di Ploumanac'h — Stephan Sprinz · CC BY 4.0</li>
-        <li>Pointe de Pen-Hir — Diwall · CC BY-SA 3.0</li>
-        <li>Tour Vauban, Camaret — Michael Rapp · CC BY-SA 3.0</li>
-        <li>Locronan — Julek · CC BY-SA 4.0</li>
-        <li>Pointe du Raz al tramonto — Stephan Sprinz · CC BY 4.0</li>
-        <li>Fari di Penmarc'h — PtrQs · CC BY-SA 4.0</li>
-        <li>Cattedrale di Quimper — Thesupermat · CC BY-SA 3.0</li>
-        <li>Ville Close di Concarneau — Julien1978 · CC BY-SA 4.0</li>
-        <li>Allineamenti di Carnac — Myrabella · CC BY-SA 3.0</li>
-        <li>Golfo del Morbihan, Île aux Moines — Jebulon · CC0</li>
-        <li>Vannes, cattedrale e bastioni — Chevalier Georges · CC BY-SA 4.0</li>
-        <li>Foresta di Brocéliande — Erwan Corre · CC BY-SA 4.0</li>
-        <li>Cattedrale di Rouen — DXR · CC BY-SA 3.0</li>
-        <li>Foto: Wikimedia Commons · Video: Mixkit (licenza gratuita)</li>
+        <li>Costa di Granito Rosa, Bretagna — Benh LIEU SONG · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Cote_Granite_Rose_pano.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Mont-Saint-Michel al tramonto — Benh LIEU SONG · <a href="https://creativecommons.org/licenses/by/2.5" rel="license noopener" target="_blank">CC BY 2.5</a> · <a href="https://commons.wikimedia.org/wiki/File:MSM_sunset_02.JPG" rel="noopener" target="_blank">file originale</a></li>
+        <li>I bastioni di Saint-Malo — Gzen92 · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Remparts_(Saint-Malo)_(2).jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Fort la Latte sulla Costa di Smeraldo — Benh LIEU SONG · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Cote_Emeraude_Fort_La_Latte.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Rue du Jerzual, Dinan — Pymouss · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Dinan_-_5_rue_du_Jerzual_20130216-02.JPG" rel="noopener" target="_blank">file originale</a></li>
+        <li>Faro di Cap Fréhel — W. Bulach · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:.00_2803_Leuchtturm_am_Cap_Fr%C3%A9hel,_Frankreich.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Il faro di Ploumanac&#x27;h tra le rocce rosa — Stephan Sprinz · <a href="https://creativecommons.org/licenses/by/4.0" rel="license noopener" target="_blank">CC BY 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Phare_de_Ploumanac%27h_04.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>La Pointe de Pen-Hir, Presqu&#x27;île de Crozon — Diwall · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Pen%27Hir.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Tour Vauban a Camaret-sur-Mer — Michael Rapp · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:20100712_Tour_Vauban_-_4.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Il borgo di Locronan — Julek · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Locronan_Village_View.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>La Pointe du Raz — Stephan Sprinz · <a href="https://creativecommons.org/licenses/by/4.0" rel="license noopener" target="_blank">CC BY 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Pointe_du_Raz_bei_Sonnenuntergang.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>I fari di Penmarc&#x27;h, punto d&#x27;osservazione dell&#x27;eclissi — PtrQs · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:20120930_troisPhares_Penmarch_Bretagne_DSC09655_PtrQs.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Cattedrale di Quimper — Thesupermat · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Quimper_-_Cath%C3%A9drale_Saint-Corentin_-_Portail_-_PA00090326_-_0001.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>La Ville Close di Concarneau — Julien1978 · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Ville_close_de_Concarneau_(1).jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Gli allineamenti megalitici di Carnac — Myrabella · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Alignement_Menec_Carnac.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Golfo del Morbihan, Île aux Moines — Jebulon · <a href="https://creativecommons.org/publicdomain/zero/1.0" rel="license noopener" target="_blank">CC0</a> · <a href="https://commons.wikimedia.org/wiki/File:%C3%8Ele_aux_Moines_4,_Morbihan,_France.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Vannes, cattedrale e bastioni — Chevalier Georges · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:La_cath%C3%A9drale_Saint-Pierre_et_les_remparts_de_la_ville,_vue_prise_de_la_Promenade_de_la_Garenne_-_A41168S.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>La foresta di Brocéliande — Erwan Corre · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:La-For%C3%AAt-de-Broceliande-Octobre-2020.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>La cattedrale di Rouen — DXR · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Rouen_Cathedral_as_seen_from_Gros_Horloge_140215_4.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li class="cnote">Tutte le fotografie provengono da <a href="https://commons.wikimedia.org/" rel="noopener" target="_blank">Wikimedia Commons</a> e sono state <b>ridimensionate e ricompresse</b> (AVIF e JPEG) per il web: nessun altro intervento sull'immagine. Le opere in licenza CC BY-SA restano disponibili alle stesse condizioni. Video: Mixkit (licenza gratuita).</li>
       </ul>
     </div>
   </div>
 </section>
 
+</main>
+
 <footer class="foot">Bretagna in 11 giorni · 6–16 agosto 2026 · guida di viaggio · calcaterra.casa</footer>
 
+<script>
+  document.getElementById("printBtn").addEventListener("click", ()=>window.print());
+</script>
 </body>
 </html>

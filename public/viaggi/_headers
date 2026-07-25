@@ -16,10 +16,10 @@
 # Destinazioni consentite e perche':
 #   - fonts.googleapis.com  -> foglio di stile dei font (style-src)
 #   - fonts.gstatic.com     -> file dei font (font-src)
-#   - upload.wikimedia.org  -> tutte le fotografie e i poster dei video delle guide
 #   - data:                 -> favicon SVG inline
-# I video (.mp4) sono self-hosted sotto /bretagna/video/, percio' media-src copre
-# 'self' oltre a Wikimedia (usato per i poster).
+# Da luglio 2026 tutte le fotografie sono self-hosted sotto /img/g/ (varianti AVIF e
+# JPEG generate in locale) e i poster dei video sono in /img/: upload.wikimedia.org
+# non serve piu' ne' in img-src ne' in media-src. Restano solo i font di Google.
 # Non serve cdn.jsdelivr.net: heic2any e' usato solo da /foto, che vive sull'apex.
 # Bloccati: framing (frame-ancestors 'none'), plugin (object-src 'none'),
 # riscrittura della base URL, invio di form verso terze parti.
@@ -28,8 +28,8 @@
 # CSP — FASE 2 (da attivare quando gli asset saranno self-hosted)
 # ---------------------------------------------------------------------------
 # Prerequisiti: (1) CSS e JS in file sotto /assets/ oppure hash/nonce, (2) Poppins e
-# Lato scaricati in /assets/fonts/, (3) le immagini Wikimedia copiate in /img/ (con
-# le attribuzioni di licenza mantenute nelle pagine). Solo dopo, sostituire la riga
+# Lato scaricati in /assets/fonts/. Il punto (3) — immagini self-hosted con le
+# attribuzioni di licenza in pagina — e' FATTO. Dopo (1) e (2), sostituire la riga
 # CSP di /* con:
 #
 #   Content-Security-Policy: default-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests
@@ -53,7 +53,7 @@
   Cross-Origin-Opener-Policy: same-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), display-capture=()
   Strict-Transport-Security: max-age=300
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://upload.wikimedia.org; media-src 'self' https://upload.wikimedia.org; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests
 
 # Copertine delle guide (public/viaggi/img/).
 /img/*

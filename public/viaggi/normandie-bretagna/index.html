@@ -40,6 +40,8 @@
     font-family:Lato,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
   a{color:inherit;text-decoration:none}
   img{max-width:100%}
+  /* <picture> non deve interferire con il layout: l'<img> resta figlio diretto */
+  picture{display:contents}
   .wrap{max-width:940px;margin:0 auto;padding:0 24px}
   h1,h2,h3{font-family:Poppins,sans-serif;letter-spacing:-.02em;line-height:1.12}
 
@@ -53,6 +55,21 @@
   .topnav a{font-family:Poppins,sans-serif;font-size:.74rem;font-weight:600;color:var(--muted);
     padding:7px 8px;border-radius:8px;transition:.2s}
   .topnav a:hover{color:var(--green-d);background:#EFF7F1}
+  .topprint{font-family:Poppins,sans-serif;font-size:.74rem;font-weight:600;color:var(--green-d);
+    background:none;border:1px solid var(--line-strong);border-radius:8px;padding:6px 10px;
+    margin-left:6px;cursor:pointer}
+  .topprint:hover{border-color:var(--green-d);background:#EFF7F1}
+
+  /* --- indice delle tappe: il colpo d'occhio --- */
+  .glance{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:30px}
+  .glance a{display:block;background:var(--paper);border:1px solid var(--line);border-radius:14px;
+    padding:14px 16px;transition:.2s}
+  .glance a:hover{border-color:var(--green);box-shadow:0 12px 26px -20px rgba(20,38,28,.6);transform:translateY(-2px)}
+  .glance .gd{font-family:Poppins,sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--coral-text)}
+  .glance .gt{font-family:Poppins,sans-serif;font-weight:600;font-size:1.02rem;margin-top:4px;line-height:1.2}
+  .glance .gm{font-size:.8rem;color:var(--body);margin-top:6px}
+  .glance a.key{border-color:var(--green);background:#F5FBF7}
 
   .hero{position:relative;height:min(78vh,680px);display:flex;align-items:flex-end;overflow:hidden}
   .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -161,7 +178,12 @@
   .credits h4{font-family:Poppins,sans-serif;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
     color:var(--body);margin:0 0 10px}
   .credits ul{margin:0;padding:0;list-style:none;columns:2;column-gap:26px}
-  .credits li{margin-bottom:5px;break-inside:avoid}
+  .credits li{margin-bottom:7px;break-inside:avoid;line-height:1.45}
+  .credits a{color:var(--body);text-decoration:underline;text-decoration-color:var(--line-strong);
+    text-underline-offset:2px}
+  .credits a:hover{color:var(--green-d);text-decoration-color:var(--green-d)}
+  .credits li.cnote{columns:1;column-span:all;margin-top:14px;padding-top:12px;
+    border-top:1px solid var(--line);color:var(--body)}
   @media(max-width:620px){.credits ul{columns:1}}
   .foot{text-align:center;color:var(--muted);font-size:.8rem;padding:30px 0 60px}
 
@@ -218,21 +240,24 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
 
 <div class="topbar">
   <div class="row">
     <a href="/"><span class="brand">calcaterra<span class="dot">.</span>casa</span></a>
-    <nav class="topnav">
+    <nav class="topnav" aria-label="Sezioni della guida">
       <a href="#panoramica">Panoramica</a>
-      <a href="#g1">G1</a><a href="#g2">G2</a><a href="#g3">G3</a><a href="#g4">G4</a><a href="#g5">G5</a>
-      <a href="#g6">G6</a><a href="#g7">G7</a><a href="#g8">G8</a><a href="#g9">G9</a><a href="#g10">G10</a><a href="#g11">G11</a>
-      <a href="#pratiche">Info</a>
+      <a href="#tappe">Le tappe</a>
+      <a href="#g7">Eclissi</a>
+      <a href="#pratiche">Info pratiche</a>
+      <button class="topprint" type="button" id="printBtn">Stampa</button>
     </nav>
   </div>
 </div>
 
+<main id="contenuto">
 <header class="hero">
-  <img class="bg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/MSM_sunset_02.JPG/1920px-MSM_sunset_02.JPG" alt="Mont-Saint-Michel al tramonto">
+  <picture><source type="image/avif" sizes="100vw" srcset="/img/g/msm-sunset-02-480.avif 480w, /img/g/msm-sunset-02-800.avif 800w, /img/g/msm-sunset-02-1200.avif 1200w, /img/g/msm-sunset-02-1800.avif 1800w"><img class="bg" src="/img/g/msm-sunset-02-1200.jpg" sizes="100vw" srcset="/img/g/msm-sunset-02-480.jpg 480w, /img/g/msm-sunset-02-800.jpg 800w, /img/g/msm-sunset-02-1200.jpg 1200w" width="1200" height="791" alt="Mont-Saint-Michel al tramonto" fetchpriority="high" decoding="async"></picture>
   <div class="veil"></div>
   <div class="inner">
     <a class="backlink" href="/">← Viaggi</a>
@@ -251,7 +276,7 @@
   <div class="wrap">
     <span class="tag">Panoramica</span>
     <h2 class="big">Due regioni, un grande arco atlantico</h2>
-    <p class="lead">Undici giorni per unire Normandia e Bretagna in un unico viaggio. Si atterra a Parigi-Beauvais giovedì 6 agosto alle 13:15. I primi giorni sono normanni: Rouen la gotica, le falesie candide di Étretat, il porto di Honfleur, le spiagge dello Sbarco e la meraviglia sospesa del Mont-Saint-Michel. Poi la Bretagna — Saint-Malo, i castelli sul mare, la Costa di Granito Rosa — puntando a ovest perché mercoledì 12 agosto il gruppo dev'essere in <b>Finistère</b> per l'eclissi solare sull'oceano. Dopo le punte estreme e la Bretagna del sud, si rientra a tappe verso la Normandia della Senna, con i giardini di Monet a Giverny, fino a Parigi-Beauvais domenica 16 agosto (volo alle 14:00). In tutto circa 1.600 km.</p>
+    <p class="lead">Undici giorni per unire Normandia e Bretagna in un unico viaggio. Si atterra a Parigi-Beauvais giovedì 6 agosto alle 13:15. I primi giorni sono normanni: Rouen la gotica, le falesie candide di Étretat, il porto di Honfleur, le spiagge dello Sbarco e la meraviglia sospesa del Mont-Saint-Michel. Poi la Bretagna — Saint-Malo, i castelli sul mare, la Costa di Granito Rosa — puntando a ovest perché mercoledì 12 agosto il gruppo dev'essere in <b>Finistère</b> per l'eclissi solare sull'oceano. Dopo le punte estreme e la Bretagna del sud, si rientra a tappe verso la Normandia della Senna, con i giardini di Monet a Giverny, fino a Parigi-Beauvais domenica 16 agosto (volo alle 14:00). In tutto circa 2.150 km: è il giro più ambizioso dei due, e il prezzo si paga in chilometri.</p>
 
     <div class="stats">
       <div class="stat"><div class="n">11</div><div class="l">Giorni / 10 notti</div></div>
@@ -285,13 +310,34 @@
   </div>
 </section>
 
+<section id="tappe">
+  <div class="wrap">
+    <span class="tag">Il colpo d'occhio</span>
+    <h2 class="big">Le undici tappe, in un colpo d'occhio</h2>
+    <p class="lead">Undici schede, una per giornata. Due regioni in undici giorni si tengono solo se i trasferimenti stanno nei tempi scritti qui: sono già i tempi reali, non quelli ottimisti del navigatore.</p>
+    <nav class="glance" aria-label="Indice delle tappe">
+      <a href="#g1"><div class="gd">Gio 6 ago · Giorno 1</div><div class="gt">Rouen</div><div class="gm">85 km dall'aeroporto · gotico, Gros-Horloge, Vieux-Marché</div></a>
+      <a href="#g2"><div class="gd">Ven 7 ago · Giorno 2</div><div class="gt">Étretat e Honfleur</div><div class="gm">250 km · falesie di gesso e il porto dell'impressionismo</div></a>
+      <a href="#g3"><div class="gd">Sab 8 ago · Giorno 3</div><div class="gt">Le spiagge dello Sbarco</div><div class="gm">Giornata intera, base Bayeux · quattro luoghi in ordine cronologico</div></a>
+      <a href="#g4"><div class="gd">Dom 9 ago · Giorno 4</div><div class="gt">Mont-Saint-Michel</div><div class="gm">180 km · abbazia la mattina, Saint-Malo la sera</div></a>
+      <a href="#g5"><div class="gd">Lun 10 ago · Giorno 5</div><div class="gt">Saint-Malo, Cap Fréhel, Fort la Latte</div><div class="gm">Bastioni con la marea giusta e un castello sul mare</div></a>
+      <a href="#g6"><div class="gd">Mar 11 ago · Giorno 6</div><div class="gt">Côte de Granit Rose, verso ovest</div><div class="gm">230 km · la manovra chiave per essere in Finistère domani</div></a>
+      <a class="key" href="#g7"><div class="gd">Mer 12 ago · Giorno 7</div><div class="gt">Finistère e l'eclissi</div><div class="gm">Pointe du Raz e il 96,9% di sole coperto sull'Atlantico</div></a>
+      <a href="#g8"><div class="gd">Gio 13 ago · Giorno 8</div><div class="gt">Crozon e Locronan</div><div class="gm">2h · Pen-Hir e la piazza di granito · notte delle Perseidi</div></a>
+      <a href="#g9"><div class="gd">Ven 14 ago · Giorno 9</div><div class="gt">Quimper, Concarneau, Pont-Aven</div><div class="gm">2h30 · costa sud, poi si risale a Rennes per accorciare</div></a>
+      <a href="#g10"><div class="gd">Sab 15 ago · Giorno 10</div><div class="gt">Château Gaillard e Giverny</div><div class="gm">Il giorno di traffico peggiore dell'anno: partenza all'alba</div></a>
+      <a href="#g11"><div class="gd">Dom 16 ago · Giorno 11</div><div class="gt">Rientro a Beauvais</div><div class="gm">1h15 · volo alle 14:00, in aeroporto per mezzogiorno</div></a>
+    </nav>
+  </div>
+</section>
+
 <section class="dday" id="dday">
   <div class="wrap">
     <span class="tag">Una giornata sola</span>
     <h2 class="big">6 giugno 1944, l'alba più lunga</h2>
     <p class="lead">Una giornata intera sui luoghi dello Sbarco, dal lancio notturno dei paracadutisti al porto artificiale di Arromanches — quattro luoghi, nell'ordine in cui le cose accaddero.</p>
     <div class="banner">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/2nd_Infantry_Division%2C_E-1_draw%2C_Easy_Red_sector%2C_Omaha_Beach%2C_D%2B1%2C_June_7%2C_1944.jpg/1920px-2nd_Infantry_Division%2C_E-1_draw%2C_Easy_Red_sector%2C_Omaha_Beach%2C_D%2B1%2C_June_7%2C_1944.jpg" alt="Omaha Beach, 7 giugno 1944" loading="lazy">
+      <picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/2nd-infantry-division-e-1-draw-easy-red-sector-480.avif 480w, /img/g/2nd-infantry-division-e-1-draw-easy-red-sector-800.avif 800w, /img/g/2nd-infantry-division-e-1-draw-easy-red-sector-1200.avif 1200w, /img/g/2nd-infantry-division-e-1-draw-easy-red-sector-1800.avif 1800w"><img src="/img/g/2nd-infantry-division-e-1-draw-easy-red-sector-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/2nd-infantry-division-e-1-draw-easy-red-sector-480.jpg 480w, /img/g/2nd-infantry-division-e-1-draw-easy-red-sector-800.jpg 800w, /img/g/2nd-infantry-division-e-1-draw-easy-red-sector-1200.jpg 1200w" width="1200" height="829" alt="Omaha Beach, 7 giugno 1944" loading="lazy" decoding="async"></picture>
       <div class="cap">Omaha Beach, settore Easy Red — 7 giugno 1944 · U.S. Army Signal Corps</div>
     </div>
     <div class="scenes">
@@ -303,7 +349,7 @@
         </div>
       </div>
       <div class="scene">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Impact_in_reinforced_concrete_german_bunker_Pointe_du_Hoc_Normandy_Calvados.jpg/1920px-Impact_in_reinforced_concrete_german_bunker_Pointe_du_Hoc_Normandy_Calvados.jpg" alt="Bunker a Pointe du Hoc" loading="lazy">
+        <picture><source type="image/avif" sizes="(min-width:988px) 288px, (min-width:620px) 32vw, 100vw" srcset="/img/g/impact-in-reinforced-concrete-german-bunker-po-480.avif 480w, /img/g/impact-in-reinforced-concrete-german-bunker-po-800.avif 800w, /img/g/impact-in-reinforced-concrete-german-bunker-po-1200.avif 1200w, /img/g/impact-in-reinforced-concrete-german-bunker-po-1800.avif 1800w"><img src="/img/g/impact-in-reinforced-concrete-german-bunker-po-800.jpg" sizes="(min-width:988px) 288px, (min-width:620px) 32vw, 100vw" srcset="/img/g/impact-in-reinforced-concrete-german-bunker-po-480.jpg 480w, /img/g/impact-in-reinforced-concrete-german-bunker-po-800.jpg 800w, /img/g/impact-in-reinforced-concrete-german-bunker-po-1200.jpg 1200w" width="800" height="418" alt="Bunker a Pointe du Hoc" loading="lazy" decoding="async"></picture>
         <div class="sb">
           <div class="idx">Alba</div><h4>Utah Beach &amp; Pointe du Hoc</h4>
           <div class="ss">La duna e la falesia</div>
@@ -311,7 +357,7 @@
         </div>
       </div>
       <div class="scene">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Cimetiere_americain_Colleville-sur-Mer.jpg/1920px-Cimetiere_americain_Colleville-sur-Mer.jpg" alt="Cimitero Americano di Colleville-sur-Mer" loading="lazy">
+        <picture><source type="image/avif" sizes="(min-width:988px) 288px, (min-width:620px) 32vw, 100vw" srcset="/img/g/cimetiere-americain-colleville-sur-mer-480.avif 480w, /img/g/cimetiere-americain-colleville-sur-mer-800.avif 800w, /img/g/cimetiere-americain-colleville-sur-mer-1200.avif 1200w, /img/g/cimetiere-americain-colleville-sur-mer-1800.avif 1800w"><img src="/img/g/cimetiere-americain-colleville-sur-mer-800.jpg" sizes="(min-width:988px) 288px, (min-width:620px) 32vw, 100vw" srcset="/img/g/cimetiere-americain-colleville-sur-mer-480.jpg 480w, /img/g/cimetiere-americain-colleville-sur-mer-800.jpg 800w, /img/g/cimetiere-americain-colleville-sur-mer-1200.jpg 1200w" width="800" height="485" alt="Cimitero Americano di Colleville-sur-Mer" loading="lazy" decoding="async"></picture>
         <div class="sb">
           <div class="idx">Mattina</div><h4>Omaha, e il cimitero sopra la spiaggia</h4>
           <div class="ss">Il settore che pagò il prezzo più alto</div>
@@ -319,7 +365,7 @@
         </div>
       </div>
       <div class="scene">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Mulberry_Arromanches_beach.jpg/1920px-Mulberry_Arromanches_beach.jpg" alt="Resti del porto Mulberry ad Arromanches" loading="lazy">
+        <picture><source type="image/avif" sizes="(min-width:988px) 288px, (min-width:620px) 32vw, 100vw" srcset="/img/g/mulberry-arromanches-beach-480.avif 480w, /img/g/mulberry-arromanches-beach-800.avif 800w, /img/g/mulberry-arromanches-beach-1200.avif 1200w, /img/g/mulberry-arromanches-beach-1800.avif 1800w"><img src="/img/g/mulberry-arromanches-beach-800.jpg" sizes="(min-width:988px) 288px, (min-width:620px) 32vw, 100vw" srcset="/img/g/mulberry-arromanches-beach-480.jpg 480w, /img/g/mulberry-arromanches-beach-800.jpg 800w, /img/g/mulberry-arromanches-beach-1200.jpg 1200w" width="800" height="530" alt="Resti del porto Mulberry ad Arromanches" loading="lazy" decoding="async"></picture>
         <div class="sb">
           <div class="idx">I giorni dopo</div><h4>Arromanches</h4>
           <div class="ss">Il porto costruito in dodici giorni</div>
@@ -341,7 +387,7 @@
 <div class="wrap">
 
   <article class="day" id="g1">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Rouen_Cathedral_as_seen_from_Gros_Horloge_140215_4.jpg/1920px-Rouen_Cathedral_as_seen_from_Gros_Horloge_140215_4.jpg" alt="La cattedrale di Rouen" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.avif 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.avif 800w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.avif 1200w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1800.avif 1800w"><img src="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.jpg 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.jpg 800w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.jpg 1200w" width="1200" height="1921" alt="La cattedrale di Rouen" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 1 · Giovedì 6 agosto</div>
     <h2>Arrivo a Beauvais e prima tappa normanna</h2>
     <div class="loc">Beauvais (BVA) → Rouen · ~85 km / 1h30</div>
@@ -355,14 +401,14 @@
   </article>
 
   <article class="day" id="g2">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Porte_d%27Aval_%28Vue_depuis_la_Manneporte%29.jpg/1920px-Porte_d%27Aval_%28Vue_depuis_la_Manneporte%29.jpg" alt="Le falesie e gli archi di Étretat" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/porte-d-aval-vue-depuis-la-manneporte-480.avif 480w, /img/g/porte-d-aval-vue-depuis-la-manneporte-800.avif 800w, /img/g/porte-d-aval-vue-depuis-la-manneporte-1200.avif 1200w, /img/g/porte-d-aval-vue-depuis-la-manneporte-1800.avif 1800w"><img src="/img/g/porte-d-aval-vue-depuis-la-manneporte-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/porte-d-aval-vue-depuis-la-manneporte-480.jpg 480w, /img/g/porte-d-aval-vue-depuis-la-manneporte-800.jpg 800w, /img/g/porte-d-aval-vue-depuis-la-manneporte-1200.jpg 1200w" width="1200" height="644" alt="Le falesie e gli archi di Étretat" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 2 · Venerdì 7 agosto</div>
     <h2>Étretat e Honfleur, la Costa d'Alabastro</h2>
     <div class="loc">Rouen → Étretat → Honfleur → Bayeux · ~250 km</div>
     <p>Mattinata alle <b>falesie di Étretat</b>: archi di gesso bianco che si tuffano nel mare — la Porte d'Aval, l'Aiguille, la Manneporte — un paesaggio dipinto da Monet e reso celebre da Maupassant. Una passeggiata sul sentiero in cima regala vertigini e panorami. Nel pomeriggio, <b>Honfleur</b>, il porticciolo dalle case alte e strette riflesse nel Vieux Bassin, culla dell'impressionismo. In serata si raggiunge Bayeux, base per lo Sbarco.</p>
     <div class="photo-pair">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Old_port_in_Honfleur._France.jpg/1920px-Old_port_in_Honfleur._France.jpg" alt="Il Vieux Bassin di Honfleur" loading="lazy">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Porte_d%27Aval_%28Vue_depuis_la_Manneporte%29.jpg/1920px-Porte_d%27Aval_%28Vue_depuis_la_Manneporte%29.jpg" alt="Arco della Porte d'Aval, Étretat" loading="lazy">
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/old-port-in-honfleur-france-480.avif 480w, /img/g/old-port-in-honfleur-france-800.avif 800w, /img/g/old-port-in-honfleur-france-1200.avif 1200w, /img/g/old-port-in-honfleur-france-1800.avif 1800w"><img src="/img/g/old-port-in-honfleur-france-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/old-port-in-honfleur-france-480.jpg 480w, /img/g/old-port-in-honfleur-france-800.jpg 800w, /img/g/old-port-in-honfleur-france-1200.jpg 1200w" width="800" height="509" alt="Il Vieux Bassin di Honfleur" loading="lazy" decoding="async"></picture>
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/porte-d-aval-vue-depuis-la-manneporte-480.avif 480w, /img/g/porte-d-aval-vue-depuis-la-manneporte-800.avif 800w, /img/g/porte-d-aval-vue-depuis-la-manneporte-1200.avif 1200w, /img/g/porte-d-aval-vue-depuis-la-manneporte-1800.avif 1800w"><img src="/img/g/porte-d-aval-vue-depuis-la-manneporte-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/porte-d-aval-vue-depuis-la-manneporte-480.jpg 480w, /img/g/porte-d-aval-vue-depuis-la-manneporte-800.jpg 800w, /img/g/porte-d-aval-vue-depuis-la-manneporte-1200.jpg 1200w" width="800" height="430" alt="Arco della Porte d'Aval, Étretat" loading="lazy" decoding="async"></picture>
     </div>
     <div class="cards">
       <div class="infocard"><div class="cl">Spettacolare</div><div class="cv">Archi e falesie di Étretat</div></div>
@@ -373,7 +419,7 @@
   </article>
 
   <article class="day" id="g3">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Impact_in_reinforced_concrete_german_bunker_Pointe_du_Hoc_Normandy_Calvados.jpg/1920px-Impact_in_reinforced_concrete_german_bunker_Pointe_du_Hoc_Normandy_Calvados.jpg" alt="Pointe du Hoc" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/impact-in-reinforced-concrete-german-bunker-po-480.avif 480w, /img/g/impact-in-reinforced-concrete-german-bunker-po-800.avif 800w, /img/g/impact-in-reinforced-concrete-german-bunker-po-1200.avif 1200w, /img/g/impact-in-reinforced-concrete-german-bunker-po-1800.avif 1800w"><img src="/img/g/impact-in-reinforced-concrete-german-bunker-po-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/impact-in-reinforced-concrete-german-bunker-po-480.jpg 480w, /img/g/impact-in-reinforced-concrete-german-bunker-po-800.jpg 800w, /img/g/impact-in-reinforced-concrete-german-bunker-po-1200.jpg 1200w" width="1200" height="626" alt="Pointe du Hoc" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 3 · Sabato 8 agosto</div>
     <h2>Le spiagge dello Sbarco</h2>
     <div class="loc">Bayeux · le spiagge dello Sbarco · una giornata intera</div>
@@ -388,7 +434,7 @@
   </article>
 
   <article class="day" id="g4">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/MSM_sunset_02.JPG/1920px-MSM_sunset_02.JPG" alt="Il Mont-Saint-Michel al tramonto" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/msm-sunset-02-480.avif 480w, /img/g/msm-sunset-02-800.avif 800w, /img/g/msm-sunset-02-1200.avif 1200w, /img/g/msm-sunset-02-1800.avif 1800w"><img src="/img/g/msm-sunset-02-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/msm-sunset-02-480.jpg 480w, /img/g/msm-sunset-02-800.jpg 800w, /img/g/msm-sunset-02-1200.jpg 1200w" width="1200" height="791" alt="Il Mont-Saint-Michel al tramonto" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 4 · Domenica 9 agosto</div>
     <h2>Mont-Saint-Michel, la meraviglia sospesa</h2>
     <div class="loc">Bayeux → Mont-Saint-Michel → Saint-Malo · ~180 km</div>
@@ -402,14 +448,14 @@
   </article>
 
   <article class="day" id="g5">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Remparts_%28Saint-Malo%29_%282%29.jpg/1920px-Remparts_%28Saint-Malo%29_%282%29.jpg" alt="I bastioni di Saint-Malo" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/remparts-saint-malo-2-480.avif 480w, /img/g/remparts-saint-malo-2-800.avif 800w, /img/g/remparts-saint-malo-2-1200.avif 1200w, /img/g/remparts-saint-malo-2-1800.avif 1800w"><img src="/img/g/remparts-saint-malo-2-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/remparts-saint-malo-2-480.jpg 480w, /img/g/remparts-saint-malo-2-800.jpg 800w, /img/g/remparts-saint-malo-2-1200.jpg 1200w" width="1200" height="800" alt="I bastioni di Saint-Malo" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 5 · Lunedì 10 agosto</div>
     <h2>Saint-Malo corsara e il castello sul mare</h2>
     <div class="loc">Saint-Malo · Cap Fréhel · Fort la Latte</div>
     <p>Mattinata sulle mura di Saint-Malo, la città dei corsari, con la marea che cambia il volto della baia e l'Île du Grand Bé (tomba di Chateaubriand) raggiungibile a piedi. Nel pomeriggio, uno dei tratti più scenografici della Costa di Smeraldo: <b>Cap Fréhel</b> con le sue falesie rosse e il faro, e <b>Fort la Latte</b>, un vero castello medievale del XIV secolo su uno sperone di roccia proteso nell'oceano.</p>
     <div class="photo-pair">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Cote_Emeraude_Fort_La_Latte.jpg/1920px-Cote_Emeraude_Fort_La_Latte.jpg" alt="Fort la Latte" loading="lazy">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/.00_2803_Leuchtturm_am_Cap_Fr%C3%A9hel%2C_Frankreich.jpg" alt="Faro di Cap Fréhel" loading="lazy">
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/cote-emeraude-fort-la-latte-480.avif 480w, /img/g/cote-emeraude-fort-la-latte-800.avif 800w, /img/g/cote-emeraude-fort-la-latte-1200.avif 1200w, /img/g/cote-emeraude-fort-la-latte-1800.avif 1800w"><img src="/img/g/cote-emeraude-fort-la-latte-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/cote-emeraude-fort-la-latte-480.jpg 480w, /img/g/cote-emeraude-fort-la-latte-800.jpg 800w, /img/g/cote-emeraude-fort-la-latte-1200.jpg 1200w" width="800" height="357" alt="Fort la Latte" loading="lazy" decoding="async"></picture>
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-480.avif 480w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-800.avif 800w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-1200.avif 1200w"><img src="/img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-480.jpg 480w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-800.jpg 800w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-1200.jpg 1200w" width="800" height="1200" alt="Faro di Cap Fréhel" loading="lazy" decoding="async"></picture>
     </div>
     <div class="cards">
       <div class="infocard"><div class="cl">Attività</div><div class="cv">Giro delle mura, Grand Bé (bassa marea)</div></div>
@@ -420,7 +466,7 @@
   </article>
 
   <article class="day" id="g6">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Phare_de_Ploumanac%27h_04.jpg/1920px-Phare_de_Ploumanac%27h_04.jpg" alt="Il faro di Ploumanac'h tra le rocce rosa" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/phare-de-ploumanac-h-04-480.avif 480w, /img/g/phare-de-ploumanac-h-04-800.avif 800w, /img/g/phare-de-ploumanac-h-04-1200.avif 1200w, /img/g/phare-de-ploumanac-h-04-1800.avif 1800w"><img src="/img/g/phare-de-ploumanac-h-04-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/phare-de-ploumanac-h-04-480.jpg 480w, /img/g/phare-de-ploumanac-h-04-800.jpg 800w, /img/g/phare-de-ploumanac-h-04-1200.jpg 1200w" width="1200" height="800" alt="Il faro di Ploumanac'h tra le rocce rosa" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 6 · Martedì 11 agosto</div>
     <h2>La Côte de Granit Rose, verso ovest</h2>
     <div class="loc">Saint-Malo → Ploumanac'h → Finistère nord · ~230 km</div>
@@ -434,7 +480,7 @@
   </article>
 
   <article class="day" id="g7">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Pointe_du_Raz_bei_Sonnenuntergang.jpg/1920px-Pointe_du_Raz_bei_Sonnenuntergang.jpg" alt="La Pointe du Raz al tramonto" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/pointe-du-raz-bei-sonnenuntergang-480.avif 480w, /img/g/pointe-du-raz-bei-sonnenuntergang-800.avif 800w, /img/g/pointe-du-raz-bei-sonnenuntergang-1200.avif 1200w, /img/g/pointe-du-raz-bei-sonnenuntergang-1800.avif 1800w"><img src="/img/g/pointe-du-raz-bei-sonnenuntergang-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/pointe-du-raz-bei-sonnenuntergang-480.jpg 480w, /img/g/pointe-du-raz-bei-sonnenuntergang-800.jpg 800w, /img/g/pointe-du-raz-bei-sonnenuntergang-1200.jpg 1200w" width="1200" height="800" alt="La Pointe du Raz al tramonto" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 7 · Mercoledì 12 agosto</div>
     <h2>Il Finistère e l'eclissi solare sull'Atlantico</h2>
     <div class="loc">Pointe du Raz · Pays Bigouden · il giorno dell'eclissi</div>
@@ -442,8 +488,8 @@
     <h3>L'eclissi solare del 12 agosto 2026</h3>
     <p>Nel sud-ovest del Finistère la luna coprirà il <b>96,9%</b> del disco solare — il massimo di tutta la Bretagna — la copertura più alta di tutta la Bretagna (la fascia di totalità passa su Siberia artica, Groenlandia, Islanda, Spagna del nord e Baleari). Inizio verso le 19:22, massimo intorno alle 20:19, fine verso le 21:12 (CEST): il sole sarà basso sull'orizzonte occidentale (11,5° al massimo, azimut 279°: l'orizzonte da liberare è a <b>ovest-nordovest</b>) e non tramonta durante l'evento. Punto ideale: la <b>Pointe de Penmarc'h</b> (faro d'Eckmühl), oppure la Pointe du Raz o la Pointe du Van.</p>
     <div class="photo-pair">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/20120930_troisPhares_Penmarc'h_Bretagne_DSC09655_PtrQs.jpg/1920px-20120930_troisPhares_Penmarc'h_Bretagne_DSC09655_PtrQs.jpg" alt="I fari di Penmarc'h" loading="lazy">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pen%27Hir.jpg/1920px-Pen%27Hir.jpg" alt="Falesie del Finistère" loading="lazy">
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/20120930-troisphares-penmarch-bretagne-dsc09655-480.avif 480w, /img/g/20120930-troisphares-penmarch-bretagne-dsc09655-800.avif 800w, /img/g/20120930-troisphares-penmarch-bretagne-dsc09655-1200.avif 1200w, /img/g/20120930-troisphares-penmarch-bretagne-dsc09655-1800.avif 1800w"><img src="/img/g/20120930-troisphares-penmarch-bretagne-dsc09655-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/20120930-troisphares-penmarch-bretagne-dsc09655-480.jpg 480w, /img/g/20120930-troisphares-penmarch-bretagne-dsc09655-800.jpg 800w, /img/g/20120930-troisphares-penmarch-bretagne-dsc09655-1200.jpg 1200w" width="800" height="530" alt="I fari di Penmarc'h" loading="lazy" decoding="async"></picture>
+      <picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/pen-hir-480.avif 480w, /img/g/pen-hir-800.avif 800w, /img/g/pen-hir-1200.avif 1200w, /img/g/pen-hir-1800.avif 1800w"><img src="/img/g/pen-hir-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/pen-hir-480.jpg 480w, /img/g/pen-hir-800.jpg 800w, /img/g/pen-hir-1200.jpg 1200w" width="1200" height="412" alt="Falesie del Finistère" loading="lazy" decoding="async"></picture>
     </div>
     <div class="cards">
       <div class="infocard"><div class="cl">Copertura del sole</div><div class="cv">~96-97%, eclissi parziale</div></div>
@@ -454,14 +500,14 @@
   </article>
 
   <article class="day" id="g8">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pen%27Hir.jpg/1920px-Pen%27Hir.jpg" alt="La Pointe de Pen-Hir, Presqu'île de Crozon" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/pen-hir-480.avif 480w, /img/g/pen-hir-800.avif 800w, /img/g/pen-hir-1200.avif 1200w, /img/g/pen-hir-1800.avif 1800w"><img src="/img/g/pen-hir-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/pen-hir-480.jpg 480w, /img/g/pen-hir-800.jpg 800w, /img/g/pen-hir-1200.jpg 1200w" width="1200" height="412" alt="La Pointe de Pen-Hir, Presqu'île de Crozon" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 8 · Giovedì 13 agosto</div>
     <h2>La Presqu'île de Crozon e il borgo di Locronan</h2>
     <div class="loc">Pays Bigouden → Crozon → Locronan · ~2h di guida</div>
     <p>Il giorno dopo l'eclissi si risale verso la <b>Presqu'île de Crozon</b>, tra i panorami più belli del Finistère: alla Pointe de Pen-Hir, un anello del GR34 corre lungo falesie a picco con vista sui faraglioni "Tas de Pois". Sulla via del ritorno, sosta a <b>Locronan</b>, uno dei "borghi più belli di Francia", con la sua piazza di granito rinascimentale rimasta intatta — set di numerosi film in costume.</p>
     <div class="photo-pair">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Locronan_Village_View.jpg/1920px-Locronan_Village_View.jpg" alt="Il borgo di Locronan" loading="lazy">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/20100712_Tour_Vauban_-_4.jpg/1920px-20100712_Tour_Vauban_-_4.jpg" alt="Tour Vauban a Camaret" loading="lazy">
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/locronan-village-view-480.avif 480w, /img/g/locronan-village-view-800.avif 800w, /img/g/locronan-village-view-1200.avif 1200w, /img/g/locronan-village-view-1800.avif 1800w"><img src="/img/g/locronan-village-view-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/locronan-village-view-480.jpg 480w, /img/g/locronan-village-view-800.jpg 800w, /img/g/locronan-village-view-1200.jpg 1200w" width="800" height="534" alt="Il borgo di Locronan" loading="lazy" decoding="async"></picture>
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/20100712-tour-vauban-4-480.avif 480w, /img/g/20100712-tour-vauban-4-800.avif 800w, /img/g/20100712-tour-vauban-4-1200.avif 1200w, /img/g/20100712-tour-vauban-4-1800.avif 1800w"><img src="/img/g/20100712-tour-vauban-4-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/20100712-tour-vauban-4-480.jpg 480w, /img/g/20100712-tour-vauban-4-800.jpg 800w, /img/g/20100712-tour-vauban-4-1200.jpg 1200w" width="800" height="560" alt="Tour Vauban a Camaret" loading="lazy" decoding="async"></picture>
     </div>
     <div class="cards">
       <div class="infocard"><div class="cl">Trekking GR34</div><div class="cv">Pointe de Pen-Hir, Tas de Pois</div></div>
@@ -472,7 +518,7 @@
   </article>
 
   <article class="day" id="g9">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Ville_close_de_Concarneau_%281%29.jpg/1920px-Ville_close_de_Concarneau_%281%29.jpg" alt="La Ville Close di Concarneau" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/ville-close-de-concarneau-1-480.avif 480w, /img/g/ville-close-de-concarneau-1-800.avif 800w, /img/g/ville-close-de-concarneau-1-1200.avif 1200w, /img/g/ville-close-de-concarneau-1-1800.avif 1800w"><img src="/img/g/ville-close-de-concarneau-1-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/ville-close-de-concarneau-1-480.jpg 480w, /img/g/ville-close-de-concarneau-1-800.jpg 800w, /img/g/ville-close-de-concarneau-1-1200.jpg 1200w" width="1200" height="675" alt="La Ville Close di Concarneau" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 9 · Venerdì 14 agosto</div>
     <h2>Quimper, Concarneau, Pont-Aven — poi verso est</h2>
     <div class="loc">Quimper → Concarneau → Pont-Aven → Rennes · ~2h30 in totale</div>
@@ -486,14 +532,14 @@
   </article>
 
   <article class="day" id="g10">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Jardin_de_Claude_Monet-_Giverny-Bassin_aux_nymph%C3%A9as.jpg" alt="Il giardino delle ninfee di Monet a Giverny" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-480.avif 480w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-800.avif 800w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1200.avif 1200w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1800.avif 1800w"><img src="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-480.jpg 480w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-800.jpg 800w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1200.jpg 1200w" width="1200" height="662" alt="Il giardino delle ninfee di Monet a Giverny" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 10 · Sabato 15 agosto</div>
     <h2>Ritorno lungo la Senna: Château Gaillard e Giverny</h2>
     <div class="loc">Rennes → Les Andelys → Giverny · Normandia della Senna</div>
     <p>Il rientro attraversa la Normandia interna della Senna. Prima sosta ai <b>Les Andelys</b>, sotto le rovine spettacolari del <b>Château Gaillard</b>, la fortezza fatta costruire da Riccardo Cuor di Leone in appena un anno, a picco su un'ansa del fiume. Nel pomeriggio, il sogno di ogni amante dell'arte: <b>Giverny</b>, la casa e i giardini di Claude Monet, con lo stagno delle ninfee e il ponte giapponese che ispirarono le sue tele più famose. Notte a Vernon o Rouen.</p>
     <div class="photo-pair">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Les_Andelys_Ch%C3%A2teau_Gaillard_20.jpg/1920px-Les_Andelys_Ch%C3%A2teau_Gaillard_20.jpg" alt="Château Gaillard sulla Senna" loading="lazy">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Jardin_de_Claude_Monet-_Giverny-Bassin_aux_nymph%C3%A9as.jpg" alt="Stagno delle ninfee, Giverny" loading="lazy">
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/les-andelys-chateau-gaillard-20-480.avif 480w, /img/g/les-andelys-chateau-gaillard-20-800.avif 800w, /img/g/les-andelys-chateau-gaillard-20-1200.avif 1200w, /img/g/les-andelys-chateau-gaillard-20-1800.avif 1800w"><img src="/img/g/les-andelys-chateau-gaillard-20-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/les-andelys-chateau-gaillard-20-480.jpg 480w, /img/g/les-andelys-chateau-gaillard-20-800.jpg 800w, /img/g/les-andelys-chateau-gaillard-20-1200.jpg 1200w" width="800" height="592" alt="Château Gaillard sulla Senna" loading="lazy" decoding="async"></picture>
+      <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-480.avif 480w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-800.avif 800w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1200.avif 1200w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1800.avif 1800w"><img src="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-480.jpg 480w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-800.jpg 800w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1200.jpg 1200w" width="800" height="441" alt="Stagno delle ninfee, Giverny" loading="lazy" decoding="async"></picture>
     </div>
     <div class="cards">
       <div class="infocard"><div class="cl">Spettacolare</div><div class="cv">Château Gaillard sulla Senna (Les Andelys)</div></div>
@@ -504,7 +550,7 @@
   </article>
 
   <article class="day" id="g11">
-    <div class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Rouen_Cathedral_as_seen_from_Gros_Horloge_140215_4.jpg/1920px-Rouen_Cathedral_as_seen_from_Gros_Horloge_140215_4.jpg" alt="La cattedrale di Rouen" loading="lazy"></div>
+    <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.avif 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.avif 800w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.avif 1200w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1800.avif 1800w"><img src="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.jpg 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.jpg 800w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.jpg 1200w" width="1200" height="1921" alt="La cattedrale di Rouen" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 11 · Domenica 16 agosto</div>
     <h2>Ultima mattina e rientro a Parigi-Beauvais</h2>
     <div class="loc">Vernon / Rouen → Beauvais (BVA) · ~1h–1h15 · volo h 14:00</div>
@@ -567,33 +613,38 @@
     <div class="credits">
       <h4>Crediti foto &amp; video</h4>
       <ul>
-        <li>Mont-Saint-Michel al tramonto — Benh Lieu Song · CC BY 2.5</li>
-        <li>Cattedrale di Rouen — DXR · CC BY-SA 3.0</li>
-        <li>Falesie di Étretat (Porte d'Aval) — Jörg Braukmann · CC BY-SA 4.0</li>
-        <li>Vieux Bassin di Honfleur — Ввласенко · CC BY-SA 3.0</li>
-        <li>Pointe du Hoc (bunker) — Jebulon · CC0</li>
-        <li>Cimitero Americano di Colleville — Myrabella · CC BY-SA 3.0</li>
-        <li>Porto Mulberry, Arromanches — Jebulon · CC0</li>
-        <li>Omaha Beach, 1944 — U.S. Army Signal Corps · Pubblico dominio</li>
-        <li>Bastioni di Saint-Malo — Gzen92 · CC BY-SA 4.0</li>
-        <li>Fort la Latte — Benh Lieu Song · CC BY-SA 3.0</li>
-        <li>Faro di Cap Fréhel — W. Bulach · CC BY-SA 4.0</li>
-        <li>Faro di Ploumanac'h — Stephan Sprinz · CC BY 4.0</li>
-        <li>Pointe du Raz al tramonto — Stephan Sprinz · CC BY 4.0</li>
-        <li>Fari di Penmarc'h — PtrQs · CC BY-SA 4.0</li>
-        <li>Pointe de Pen-Hir — Diwall · CC BY-SA 3.0</li>
-        <li>Locronan — Julek · CC BY-SA 4.0</li>
-        <li>Tour Vauban, Camaret — Michael Rapp · CC BY-SA 3.0</li>
-        <li>Ville Close di Concarneau — Julien1978 · CC BY-SA 4.0</li>
-        <li>Château Gaillard, Les Andelys — Zairon · CC BY-SA 4.0</li>
-        <li>Giardino di Monet, Giverny — Anabase4 · CC BY-SA 3.0</li>
-        <li>Foto: Wikimedia Commons · Video: Mixkit (licenza gratuita)</li>
+        <li>Mont-Saint-Michel al tramonto — Benh LIEU SONG · <a href="https://creativecommons.org/licenses/by/2.5" rel="license noopener" target="_blank">CC BY 2.5</a> · <a href="https://commons.wikimedia.org/wiki/File:MSM_sunset_02.JPG" rel="noopener" target="_blank">file originale</a></li>
+        <li>Omaha Beach, 7 giugno 1944 — US Army Signal Corps · Public domain · <a href="https://commons.wikimedia.org/wiki/File:2nd_Infantry_Division,_E-1_draw,_Easy_Red_sector,_Omaha_Beach,_D%2B1,_June_7,_1944.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Bunker a Pointe du Hoc — Jebulon · <a href="https://creativecommons.org/publicdomain/zero/1.0" rel="license noopener" target="_blank">CC0</a> · <a href="https://commons.wikimedia.org/wiki/File:Impact_in_reinforced_concrete_german_bunker_Pointe_du_Hoc_Normandy_Calvados.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Cimitero Americano di Colleville-sur-Mer — Myrabella · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Cimetiere_americain_Colleville-sur-Mer.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Resti del porto Mulberry ad Arromanches — Jebulon · <a href="https://creativecommons.org/publicdomain/zero/1.0" rel="license noopener" target="_blank">CC0</a> · <a href="https://commons.wikimedia.org/wiki/File:Mulberry_Arromanches_beach.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>La cattedrale di Rouen — DXR · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Rouen_Cathedral_as_seen_from_Gros_Horloge_140215_4.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Le falesie e gli archi di Étretat — Jörg Braukmann · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Porte_d%27Aval_(Vue_depuis_la_Manneporte).jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Il Vieux Bassin di Honfleur — Ввласенко · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Old_port_in_Honfleur._France.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>I bastioni di Saint-Malo — Gzen92 · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Remparts_(Saint-Malo)_(2).jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Fort la Latte — Benh LIEU SONG · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Cote_Emeraude_Fort_La_Latte.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Faro di Cap Fréhel — W. Bulach · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:.00_2803_Leuchtturm_am_Cap_Fr%C3%A9hel,_Frankreich.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Il faro di Ploumanac&#x27;h tra le rocce rosa — Stephan Sprinz · <a href="https://creativecommons.org/licenses/by/4.0" rel="license noopener" target="_blank">CC BY 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Phare_de_Ploumanac%27h_04.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>La Pointe du Raz al tramonto — Stephan Sprinz · <a href="https://creativecommons.org/licenses/by/4.0" rel="license noopener" target="_blank">CC BY 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Pointe_du_Raz_bei_Sonnenuntergang.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>I fari di Penmarc&#x27;h — PtrQs · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:20120930_troisPhares_Penmarch_Bretagne_DSC09655_PtrQs.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Falesie del Finistère — Diwall · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Pen%27Hir.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Il borgo di Locronan — Julek · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Locronan_Village_View.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Tour Vauban a Camaret — Michael Rapp · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:20100712_Tour_Vauban_-_4.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>La Ville Close di Concarneau — Julien1978 · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Ville_close_de_Concarneau_(1).jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Il giardino delle ninfee di Monet a Giverny — Anabase4 · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Jardin_de_Claude_Monet-_Giverny-Bassin_aux_nymph%C3%A9as.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Château Gaillard sulla Senna — Zairon · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Les_Andelys_Ch%C3%A2teau_Gaillard_20.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li class="cnote">Tutte le fotografie provengono da <a href="https://commons.wikimedia.org/" rel="noopener" target="_blank">Wikimedia Commons</a> e sono state <b>ridimensionate e ricompresse</b> (AVIF e JPEG) per il web: nessun altro intervento sull'immagine. Le opere in licenza CC BY-SA restano disponibili alle stesse condizioni. Video: Mixkit (licenza gratuita).</li>
       </ul>
     </div>
   </div>
 </section>
 
+</main>
+
 <footer class="foot">Normandie &amp; Bretagne in 11 giorni · 6–16 agosto 2026 · guida di viaggio · calcaterra.casa</footer>
 
+<script>
+  document.getElementById("printBtn").addEventListener("click", ()=>window.print());
+</script>
 </body>
 </html>
