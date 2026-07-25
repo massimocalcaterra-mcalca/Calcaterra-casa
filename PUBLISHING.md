@@ -313,13 +313,30 @@ se esiste un namespace KV. Due strade, la prima è più semplice:
    progetto *Settings → Functions → KV namespace bindings* con nome esatto **`RATE_KV`**. Il
    codice lo usa se c'è e lo ignora se manca (fail-open: una KV assente non chiude fuori nessuno).
 
-### C. Alzare HSTS un passo per volta — **da fare con calma**
-In `public/_headers` e `public/viaggi/_headers` c'è `Strict-Transport-Security: max-age=300`,
-volutamente bassa: HSTS non è revocabile lato client prima della scadenza. Scaletta consigliata,
-un passo alla volta e **allineata sui due progetti**:
-`300` → `86400` (un giorno) → `2592000` (un mese) → `31536000` (un anno).
-Solo all'ultimo passo, e solo se tutti i sottodomini sono in HTTPS, si può valutare
-`includeSubDomains`. `preload` è una scelta quasi irreversibile: meglio non farla.
+### C. Alzare HSTS un passo per volta — **primo passo fatto il 25 luglio 2026**
+In `public/_headers` e `public/viaggi/_headers` c'è `Strict-Transport-Security`, che dice al
+browser di usare solo HTTPS per quel dominio per i secondi indicati. Serve a chiudere la
+finestra della **prima richiesta in chiaro**: chi digita `calcaterra.casa` senza `https://`
+manda un primo giro in HTTP che, su una rete ostile, si può intercettare prima che arrivi il
+redirect. Con HSTS attivo il browser converte da solo, senza mandare nulla in rete.
+
+Si sale piano perché **HSTS non è revocabile**: se pubblichi un anno e poi hai un problema di
+certificato, i browser di chi è già passato si rifiutano di connettersi e non hai modo di dire
+loro "fermati" — devi aspettare la scadenza.
+
+Scaletta, un passo alla volta e **allineata sui due progetti**:
+
+| valore | durata | stato |
+|---|---|---|
+| `300` | 5 minuti | iniziale, alla pubblicazione |
+| `86400` | 1 giorno | **attuale, dal 25 luglio 2026** |
+| `2592000` | 30 giorni | prossimo passo, dopo circa una settimana senza problemi |
+| `31536000` | 1 anno | traguardo |
+
+`includeSubDomains` si valuta solo a un anno stabile e con tutti i sottodomini in HTTPS:
+romperebbe qualunque sottodominio futuro non ancora servito in HTTPS. `preload` mette il
+dominio in una lista compilata dentro i browser e uscirne richiede mesi: su un sito personale
+non vale il rischio.
 
 ### D. Sessione foto revocabile subito — **opzionale**
 Aggiungendo la variabile `AUTH_VERSION` (un numero, es. `1`) fra le variabili d'ambiente del

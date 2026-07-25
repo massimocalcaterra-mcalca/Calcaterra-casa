@@ -38,15 +38,18 @@
 # ---------------------------------------------------------------------------
 # HSTS
 # ---------------------------------------------------------------------------
-# max-age=300 (5 minuti) e' volutamente basso: HSTS non e' reversibile lato client
-# prima della scadenza, quindi un errore con max-age lungo resterebbe impresso nei
-# browser dei visitatori per mesi. Niente includeSubDomains (romperebbe qualunque
-# futuro sottodominio non ancora in HTTPS) e niente preload (una volta nella
-# preload list di Chrome, l'uscita richiede settimane).
+# max-age=86400 (1 giorno) dal 25 luglio 2026. Il valore resta prudente perche'
+# HSTS non e' reversibile lato client prima della scadenza: un errore con max-age
+# lungo resterebbe impresso nei browser dei visitatori per mesi, e non esiste modo
+# di dire loro "fermati". Con un giorno, un problema si esaurisce in un giorno.
+# Niente includeSubDomains (romperebbe qualunque futuro sottodominio non ancora in
+# HTTPS) e niente preload (una volta nella preload list di Chrome, l'uscita
+# richiede settimane).
 # Scaletta di innalzamento, un passo alla volta verificando che tutto risponda in
-# HTTPS: 300 -> 86400 (1 giorno) -> 2592000 (30 giorni) -> 31536000 (1 anno).
+# HTTPS: 300 -> [86400 (1 giorno) <- SIAMO QUI] -> 2592000 (30 giorni) -> 31536000
+# (1 anno). Prossimo passo consigliato dopo circa una settimana senza problemi.
 # Solo a 1 anno stabile e con TUTTI i sottodomini in HTTPS (incluso
-# viaggi.calcaterra.casa) aggiungere includeSubDomains, e infine preload.
+# viaggi.calcaterra.casa) valutare includeSubDomains. preload: meglio di no.
 
 /*
   X-Content-Type-Options: nosniff
@@ -54,7 +57,7 @@
   X-Frame-Options: DENY
   Cross-Origin-Opener-Policy: same-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), display-capture=()
-  Strict-Transport-Security: max-age=300
+  Strict-Transport-Security: max-age=86400
   Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests
 
 # Area privata e API: mai in cache condivisa, mai negli indici.
