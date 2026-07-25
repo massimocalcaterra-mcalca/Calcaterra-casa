@@ -287,15 +287,20 @@ in `dash.cloudflare.com`:
 Queste quattro cose non si possono mettere nel repo: vanno cliccate nel pannello di Cloudflare.
 Sono elencate in ordine di importanza.
 
-### A. Disattivare la modalità SPA / catch-all — **necessario**, su ENTRAMBI i progetti
-Se il progetto Pages è in modalità *Single-page application*, ogni URL inesistente risponde
-`200` con la home invece di `404`, e persino `robots.txt` e `sitemap.xml` possono tornare HTML.
-Con quella modalità attiva i file `404.html` che stanno nel repo **non vengono mai usati**.
+### A. Modalità SPA / catch-all — **verificato il 25 luglio 2026: già a posto**
+Se un progetto Pages è in modalità *Single-page application*, ogni URL inesistente risponde
+`200` con la home invece di `404`, e persino `robots.txt` può tornare HTML: con quella modalità
+attiva i `404.html` del repo non vengono mai usati.
 
-*Workers & Pages → il progetto → Settings → Build & deployments*: se compare un'opzione di
-tipo *Single-page application* / *catch-all* o un redirect `/* → /index.html`, va disattivata.
-Verifica dopo il deploy: `curl -sI https://calcaterra.casa/xyz-non-esiste` deve dare `404`, e
-`curl -s https://calcaterra.casa/robots.txt` deve restituire testo, non HTML.
+Controllato in produzione il 25 luglio 2026: **entrambi i progetti si comportano correttamente**
+(404 vero su URL inesistenti, `robots.txt` servito come `text/plain`). Non c'è niente da
+cliccare. Se un giorno qualcuno tocca le impostazioni di build, il controllo è questo:
+
+```
+curl -sI https://calcaterra.casa/xyz-non-esiste | head -1      # deve dire 404
+curl -sI https://viaggi.calcaterra.casa/xyz-non-esiste | head -1
+curl -s  https://calcaterra.casa/robots.txt | head -1          # deve essere testo, non HTML
+```
 
 ### B. Limite di tentativi sul login — **consigliato**
 Le Functions hanno già un freno lato codice (`functions/_lib/ratelimit.js`), ma funziona solo
