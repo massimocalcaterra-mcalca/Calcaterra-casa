@@ -10,8 +10,8 @@ si prende alla revisione finale.
    di guida, link, nota. Serve la password del sito.
 2. La proposta finisce nel bucket R2 sotto il prefisso `proposte/`, ed è leggibile
    pubblicamente da `https://calcaterra.casa/api/proposte`.
-3. **Tre volte al giorno** (8:00, 14:00 e 20:00 ora italiana) un lavoro automatico legge
-   l'elenco, analizza le proposte nuove e aggiorna `analisi.md` in questa cartella.
+3. **Ogni ora**, al minuto :14, un lavoro automatico legge l'elenco, analizza le proposte
+   nuove e aggiorna `analisi.md` in questa cartella.
 4. Alla revisione finale si decide quali far entrare nella guida.
 
 ## Che cosa fa l'analisi
@@ -42,3 +42,6 @@ Se un dato non è verificabile, la scheda lo dice invece di inventarlo.
 
 - `analisi.md` — le schede, dalla più recente alla più vecchia.
 - `viste.json` — gli identificativi già analizzati, per non rifare due volte lo stesso lavoro.
+- `registro.md` — le tracce dei controlli automatici: i fallimenti e un battito quotidiano.
+  Serve a distinguere «non è arrivato niente» da «il lavoro non gira più», che senza registro
+  si assomigliano troppo. Se il registro è fermo da più di un giorno, qualcosa non va.
