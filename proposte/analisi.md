@@ -11,6 +11,55 @@ Legenda del giudizio:
 
 ---
 
+## Presqu'île de Crozon — dettagli da un articolo di viaggio
+
+**Arrivata come:** link dal modulo proposte (id `ms3i9mvs-662c615c`), 27 luglio 2026 alle 17:33.
+Fonte: <http://bretagna.com/vacanze-da-sogno-a-crozon/>
+**Giudizio: NON È UNA TAPPA NUOVA — è materiale per una giornata che c'è già.**
+
+Crozon è **già il Giorno 8** (giovedì 13 agosto), con la Pointe de Pen-Hir e Locronan. L'articolo
+non propone un posto nuovo: propone di *riempire meglio* quella giornata. Quindi la domanda non è
+«dove lo mettiamo» ma «cosa vale la pena aggiungere, e quanto costa».
+
+### Cosa cita, e quanto costerebbe
+
+| Aggiunta | Costo sul Giorno 8 | Giudizio |
+|---|---|---|
+| Giornata attuale (Penmarc'h → Pen-Hir → Locronan → Quimper) | **156 km / 3h00** | — |
+| **Cap de la Chèvre** | 175 km / 3h28 → **+19 km, +28 min** | Il più interessante: capo aperto sull'Iroise, panorama diverso da Pen-Hir |
+| **Morgat** (la marina di Crozon) | compreso nei 175 km sopra, è sulla strada del Cap | Gratis se si va al Cap |
+| **Ponte di Térénez** | 173 km / 3h24 → **+17 km, +24 min** | Alternativo al Cap, non cumulabile bene |
+
+Altri nomi citati (Plage de la Palue, Lostmarc'h, l'Aber, Pointe de Dinan, Pointe des Espagnols):
+sono spiagge e punte sparse sulla penisola. Prese una per una costano poco, tutte insieme sono
+un'altra giornata. Il Giorno 8 ne regge **una**, non cinque.
+
+### Due verifiche che cambiano le cose
+
+**La spiaggia dell'Île Vierge (Saint-Hernot) NON si può raggiungere.** L'articolo la cita come
+«spiaggetta con escursioni», ma **dal marzo 2020 la discesa alla spiaggia è vietata** per
+instabilità della falesia, con sanzioni. Resta consentito guardarla dall'alto: i punti panoramici
+sul GR34 da Saint-Hernot ci sono e sono belli. Se qualcuno programma la spiaggia sulla base di
+questo articolo, arriva e trova il divieto.
+
+**Il ponte di Térénez, invece, è vero ed è notevole.** Inaugurato il 16 aprile 2011, è il **primo
+ponte strallato a tracciato curvo al mondo**: 515 m di lunghezza, campata curva di 285 m — record
+mondiale per questa tipologia — 144 stralli, piloni a lambda alti 100 m. World Infrastructure
+Award nel 2013. Non è una leggenda da blog: è documentato.
+
+### Cosa consiglio
+
+Se volete arricchire il Giorno 8, **il Cap de la Chèvre a +28 minuti** è l'aggiunta con il miglior
+rapporto fra costo e resa, e passando prendete anche Morgat. Il ponte di Térénez si vede bene solo
+attraversandolo, e sta dalla parte opposta: o l'uno o l'altro.
+
+**Nulla di tutto questo è stato inserito nella guida.** Decisione alla revisione finale.
+
+Fonti: articolo segnalato; per l'Île Vierge, fonti locali francesi concordi sul divieto dal 2020;
+per Térénez, Le Moniteur e schede tecniche. Distanze: OSRM.
+
+---
+
 ## Menhir du Champ-Dolent — Dol-de-Bretagne
 
 **Arrivata come:** foto di una pagina di guida cartacea, 27 luglio 2026.
