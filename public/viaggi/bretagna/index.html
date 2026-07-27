@@ -224,6 +224,8 @@
     .mapbox{break-inside:avoid;page-break-inside:avoid}
     .mapbox{break-inside:avoid;page-break-inside:avoid}
     .mapbox{break-inside:avoid;page-break-inside:avoid}
+    .mapbox{break-inside:avoid;page-break-inside:avoid}
+    .mapbox{break-inside:avoid;page-break-inside:avoid}
     html{scroll-behavior:auto}
     body{background:#fff;color:#000;font-size:10.5pt;line-height:1.45}
     .hero{height:auto;overflow:visible;color:#000;page-break-after:avoid}
@@ -347,7 +349,7 @@
       <a class="key" href="#g7"><div class="gd">Mer 12 ago · Giorno 7</div><div class="gt">Quimper e l'eclissi</div><div class="gm">L'appuntamento fisso: 96,9% di sole coperto sull'oceano</div></a>
       <a href="#g8"><div class="gd">Gio 13 ago · Giorno 8</div><div class="gt">Concarneau, Pont-Aven, Lorient</div><div class="gm">Ville close, pittori, e il sottomarino nella base di Keroman</div></a>
       <a href="#g9"><div class="gd">Ven 14 ago · Giorno 9</div><div class="gt">Carnac e Golfo del Morbihan</div><div class="gm">Passeggiata guidata fra i menhir alle 10:30, da prenotare</div></a>
-      <a href="#g10"><div class="gd">Sab 15 ago · Giorno 10</div><div class="gt">Brocéliande, poi verso est</div><div class="gm">Giornata di trasferimento nel giorno di traffico peggiore dell'anno</div></a>
+      <a href="#g10"><div class="gd">Sab 15 ago · Giorno 10</div><div class="gt">Brocéliande, poi verso est</div><div class="gm">Trasferimento nel giorno peggiore · opzione Bécherel, il paese dei libri</div></a>
       <a href="#g11"><div class="gd">Dom 16 ago · Giorno 11</div><div class="gt">Rientro a Beauvais</div><div class="gm">1h15 · volo alle 14:00, in aeroporto per mezzogiorno</div></a>
     </nav>
     <figure class="mapbox">
@@ -367,6 +369,10 @@
 .mp-a{cursor:pointer}
 .mp-a:focus-visible .mp-stop,.mp-a:focus-visible .mp-eclipse{stroke:var(--map-focus,#0b4f8a);stroke-width:3.4}
 .mp-a:hover .mp-stop{fill:var(--map-route,#1f6f6b)}
+.mp-opt{fill:var(--map-stop,#f7fafa);stroke:var(--map-route,#1f6f6b);stroke-width:1.8;
+  stroke-dasharray:3 2.4}
+.mp-opt-label{fill:var(--map-label,#26332f);stroke:var(--map-halo,#eef4f5);stroke-width:3.2;
+  font-family:var(--map-font,system-ui,sans-serif);font-size:15px;font-weight:600;font-style:italic}
 .mp-t{fill:none;stroke:var(--map-target,#c4531d);stroke-width:0}
 .mp-t:target{stroke-width:3}
 .mp-legend{font-family:var(--map-font,system-ui,sans-serif);font-size:14px;fill:var(--map-label,#26332f)}
@@ -399,6 +405,9 @@
 <a class="mp-a" href="#g10" aria-label="Rouen — Giorno 10 · Brocéliande, poi verso est"><circle class="mp-stop" cx="814.3" cy="103.7" r="5"><title>Rouen — Giorno 10 · Brocéliande, poi verso est</title></circle></a>
 </g>
 <g>
+<a class="mp-a" href="#g10" aria-label="Becherel — opzione del Giorno 10: la prima Cite du Livre di Francia, +10 km e +25 minuti"><circle class="mp-opt" cx="417.2" cy="331.2" r="5.5"><title>Becherel — opzione del Giorno 10: la prima Cite du Livre di Francia, +10 km e +25 minuti</title></circle></a>
+</g>
+<g>
 <circle class="mp-t" id="g1-map" cx="946.4" cy="101.4" r="11"/>
 <circle class="mp-t" id="g2-map" cx="406.9" cy="261.6" r="11"/>
 <circle class="mp-t" id="g3-map" cx="404.1" cy="299.8" r="11"/>
@@ -427,17 +436,22 @@
 <text class="mp-label" x="387.8" y="371" text-anchor="middle">Brocéliande</text>
 <text class="mp-label" x="814.3" y="89.7" text-anchor="middle">Rouen</text>
 </g>
+<g class="mp-labels" paint-order="stroke" aria-hidden="true">
+<text class="mp-opt-label" x="430.2" y="336.2" text-anchor="start">Bécherel</text>
+</g>
 <g class="mp-legend" aria-hidden="true">
-<rect x="12" y="14" width="248" height="70" rx="10"/>
+<rect x="12" y="14" width="248" height="92" rx="10"/>
 <path class="mp-route" d="M28 32 L62 32"/>
 <text x="72" y="37">giornata sul posto</text>
 <path class="mp-route mp-transfer" d="M28 54 L62 54"/>
 <text x="72" y="59">trasferimento lungo</text>
 <circle class="mp-eclipse" cx="45" cy="74" r="6"/>
 <text x="72" y="79">eclissi del 12 agosto</text>
+<circle class="mp-opt" cx="45" cy="94" r="5.5"/>
+<text x="72" y="99">tappa opzionale</text>
 </g>
 </svg>
-      <figcaption><b>L'anello bretone.</b> Undici tappe fra Beauvais e il Finistère: la linea piena è la giornata sul posto, quella tratteggiata i due trasferimenti lunghi, il cerchio arancione il punto dell'eclissi del 12 agosto. Ogni cerchio porta alla giornata corrispondente.</figcaption>
+      <figcaption><b>L'anello bretone.</b> Undici tappe fra Beauvais e il Finistère: la linea piena è la giornata sul posto, quella tratteggiata i due trasferimenti lunghi, il cerchio arancione il punto dell'eclissi del 12 agosto. Il cerchio tratteggiato è opzionale: <b>Bécherel</b>, il paese delle librerie, deviazione del Giorno 10 che costa dieci chilometri. Ogni cerchio porta alla giornata corrispondente.</figcaption>
     </figure>
   </div>
 </section>
@@ -680,11 +694,27 @@
     <p>Ultima immersione bretone nella <b>foresta di Brocéliande</b> (Paimpont), teatro delle leggende di Re Artù: la cosiddetta tomba di Merlino, la Fontana di Barenton dove l'acqua "ribolle" senza scaldarsi, e il Val sans Retour della fata Morgana. Un bosco vero, umido e magico, dove la mitologia arturiana è di casa. Nel pomeriggio comincia il lungo rientro verso est: si punta la Normandia della Senna, con pernottamento a Rouen o nei dintorni per accorciare l'ultima tappa.</p>
     <div class="cards">
       <div class="infocard"><div class="cl">Leggenda</div><div class="cv">Tomba di Merlino, Val sans Retour, Barenton</div></div>
-      <div class="infocard"><div class="cl">Trasferimento</div><div class="cv">Brocéliande → Rouen, ~3h senza traffico</div></div>
+      <div class="infocard"><div class="cl">Trasferimento</div><div class="cv">Brocéliande → Rouen, 352 km · 3h55 senza traffico</div></div>
+      <div class="infocard"><div class="cl">Opzione</div><div class="cv">Bécherel, il paese delle librerie · +10 km, +25 min</div></div>
       <div class="infocard"><div class="cl">Allerta traffico</div><div class="cv">Bison Futé: rosso in entrambi i sensi</div></div>
       <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Rouen o dintorni</div></div>
     </div>
     <div class="tip"><b>Il giorno sbagliato per stare in autostrada:</b> sabato 15 agosto 2026 è <b>rosso in entrambi i sensi su tutta la Francia</b> nel calendario Bison Futé — è l'Assunzione, festa nazionale, in mezzo al mese di ferie. Sul rosso i tempi crescono del 50-80%: quelle 3 ore verso Rouen possono diventarne 5. Due contromosse: partire da Brocéliande <b>prima delle 8</b>, e passare per la <b>A84 fino a Caen</b>, che è gratuita e regge meglio della A13 nel pomeriggio. Terza, la migliore: ridurre l'ambizione della giornata — Brocéliande al mattino, poi guida, e niente altro in programma. Nota anche che il 15 è festivo: molti negozi chiudono, gli orari dei monumenti cambiano.</div>
+    <div class="curio"><b>Il paese delle librerie, a venticinque minuti di deviazione:</b>
+      trenta chilometri a nord di Paimpont c'è <b>Bécherel</b> — 650 abitanti su una collina a 176
+      metri, la <b>prima Cité du Livre di Francia</b> dal 1989 e la terza d'Europa, dopo Hay-on-Wye
+      in Galles e Redu nelle Ardenne belghe. Una quindicina di librerie di libri antichi e
+      d'occasione, tredici gallerie, laboratori di calligrafia e legatoria, tutti stretti fra la
+      piazza e la chiesa. Petite Cité de Caractère dal 1978, nata come progetto per rianimare un
+      borgo che si stava spopolando. <b>Il costo esatto:</b> Paimpont → Rouen diretto è 352 km e
+      3h55; passando per Bécherel diventa 362 km e 4h20. <b>Dieci chilometri e venticinque
+      minuti</b> — la sosta culturale più economica di tutto il viaggio.</div>
+    <div class="note"><b>Ma attenzione al giorno.</b> Il <b>mercato del libro</b>, che è la ragione
+      vera per andarci — 3.000-5.000 visitatori nelle strade — si tiene <b>la prima domenica del
+      mese</b>, da marzo a dicembre: nel 2026 cade domenica 2 agosto, quattro giorni prima del
+      vostro arrivo, e poi il 6 settembre. Il 15 agosto le librerie sono aperte normalmente, ma è
+      anche il sabato rosso: se scegliete Bécherel, uscite da Brocéliande entro le 10:30 e mettete
+      in conto che i venticinque minuti di deviazione, sul rosso, possono diventarne quaranta.</div>
     <div class="curio"><b>Insolito:</b> l'"Arbre d'Or", un albero dorato circondato da alberi anneriti, ricorda l'incendio del settembre 1990; l'opera è di François Davin, 1991 nel Val sans Retour ed è diventato una piccola opera d'arte nel bosco. In Bretagna, Brocéliande è identificata con la foresta di Paimpont da una tradizione erudita ottocentesca.</div>
   </article>
 

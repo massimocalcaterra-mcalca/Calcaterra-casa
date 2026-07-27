@@ -14,6 +14,10 @@
 .mp-a{cursor:pointer}
 .mp-a:focus-visible .mp-stop,.mp-a:focus-visible .mp-eclipse{stroke:var(--map-focus,#0b4f8a);stroke-width:3.4}
 .mp-a:hover .mp-stop{fill:var(--map-route,#1f6f6b)}
+.mp-opt{fill:var(--map-stop,#f7fafa);stroke:var(--map-route,#1f6f6b);stroke-width:1.8;
+  stroke-dasharray:3 2.4}
+.mp-opt-label{fill:var(--map-label,#26332f);stroke:var(--map-halo,#eef4f5);stroke-width:3.2;
+  font-family:var(--map-font,system-ui,sans-serif);font-size:15px;font-weight:600;font-style:italic}
 .mp-t{fill:none;stroke:var(--map-target,#c4531d);stroke-width:0}
 .mp-t:target{stroke-width:3}
 .mp-legend{font-family:var(--map-font,system-ui,sans-serif);font-size:14px;fill:var(--map-label,#26332f)}
@@ -46,6 +50,9 @@
 <a class="mp-a" href="#g10" aria-label="Rouen — Giorno 10 · Brocéliande, poi verso est"><circle class="mp-stop" cx="814.3" cy="103.7" r="5"><title>Rouen — Giorno 10 · Brocéliande, poi verso est</title></circle></a>
 </g>
 <g>
+<a class="mp-a" href="#g10" aria-label="Becherel — opzione del Giorno 10: la prima Cite du Livre di Francia, +10 km e +25 minuti"><circle class="mp-opt" cx="417.2" cy="331.2" r="5.5"><title>Becherel — opzione del Giorno 10: la prima Cite du Livre di Francia, +10 km e +25 minuti</title></circle></a>
+</g>
+<g>
 <circle class="mp-t" id="g1-map" cx="946.4" cy="101.4" r="11"/>
 <circle class="mp-t" id="g2-map" cx="406.9" cy="261.6" r="11"/>
 <circle class="mp-t" id="g3-map" cx="404.1" cy="299.8" r="11"/>
@@ -74,13 +81,18 @@
 <text class="mp-label" x="387.8" y="371" text-anchor="middle">Brocéliande</text>
 <text class="mp-label" x="814.3" y="89.7" text-anchor="middle">Rouen</text>
 </g>
+<g class="mp-labels" paint-order="stroke" aria-hidden="true">
+<text class="mp-opt-label" x="430.2" y="336.2" text-anchor="start">Bécherel</text>
+</g>
 <g class="mp-legend" aria-hidden="true">
-<rect x="12" y="14" width="248" height="70" rx="10"/>
+<rect x="12" y="14" width="248" height="92" rx="10"/>
 <path class="mp-route" d="M28 32 L62 32"/>
 <text x="72" y="37">giornata sul posto</text>
 <path class="mp-route mp-transfer" d="M28 54 L62 54"/>
 <text x="72" y="59">trasferimento lungo</text>
 <circle class="mp-eclipse" cx="45" cy="74" r="6"/>
 <text x="72" y="79">eclissi del 12 agosto</text>
+<circle class="mp-opt" cx="45" cy="94" r="5.5"/>
+<text x="72" y="99">tappa opzionale</text>
 </g>
 </svg>

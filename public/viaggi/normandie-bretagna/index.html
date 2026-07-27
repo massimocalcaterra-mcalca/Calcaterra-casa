@@ -241,6 +241,8 @@
     .mapbox{break-inside:avoid;page-break-inside:avoid}
     .mapbox{break-inside:avoid;page-break-inside:avoid}
     .mapbox{break-inside:avoid;page-break-inside:avoid}
+    .mapbox{break-inside:avoid;page-break-inside:avoid}
+    .mapbox{break-inside:avoid;page-break-inside:avoid}
     html{scroll-behavior:auto}
     body{background:#fff;color:#000;font-size:10.5pt;line-height:1.45}
     .hero{height:auto;overflow:visible;color:#000;page-break-after:avoid}
@@ -323,7 +325,7 @@
           <tr><td class="d">7</td><td>Mer 12/8</td><td>Finistère · <b>Eclissi solare</b></td><td class="th">Pointe du Raz · astronomia</td><td>Pays Bigouden</td></tr>
           <tr><td class="d">8</td><td>Gio 13/8</td><td>Presqu'île de Crozon · Locronan</td><td class="th">Scogliere · borgo da film</td><td>Quimper / dintorni</td></tr>
           <tr><td class="d">9</td><td>Ven 14/8</td><td>Concarneau · <b>Lorient</b> · <b>Carnac</b></td><td class="th">Ville close · base sottomarina · megaliti</td><td>Rennes</td></tr>
-          <tr><td class="d">10</td><td>Sab 15/8</td><td>Château Gaillard · Giverny</td><td class="th">Senna · giardini di Monet</td><td>Vernon / Rouen</td></tr>
+          <tr><td class="d">10</td><td>Sab 15/8</td><td>Giverny <b>oppure</b> Le Mans</td><td class="th">Ninfee di Monet o museo M24</td><td>Vernon / Rouen</td></tr>
           <tr><td class="d">11</td><td>Dom 16/8</td><td>→ Beauvais (volo 14:00)</td><td class="th">Rientro</td><td>—</td></tr>
         </tbody>
       </table>
@@ -364,7 +366,7 @@
       <a class="key" href="#g7"><div class="gd">Mer 12 ago · Giorno 7</div><div class="gt">Finistère e l'eclissi</div><div class="gm">Pointe du Raz e il 96,9% di sole coperto sull'Atlantico</div></a>
       <a href="#g8"><div class="gd">Gio 13 ago · Giorno 8</div><div class="gt">Crozon e Locronan</div><div class="gm">2h · Pen-Hir e la piazza di granito · notte delle Perseidi</div></a>
       <a href="#g9"><div class="gd">Ven 14 ago · Giorno 9</div><div class="gt">Concarneau, Lorient, Carnac</div><div class="gm">La giornata più densa: sottomarino e menhir, due orari prenotati</div></a>
-      <a href="#g10"><div class="gd">Sab 15 ago · Giorno 10</div><div class="gt">Château Gaillard e Giverny</div><div class="gm">Il giorno di traffico peggiore dell'anno: partenza all'alba</div></a>
+      <a href="#g10"><div class="gd">Sab 15 ago · Giorno 10</div><div class="gt">La Senna oppure Le Mans</div><div class="gm">Due varianti, gli stessi 365 km: Giverny o il museo M24</div></a>
       <a href="#g11"><div class="gd">Dom 16 ago · Giorno 11</div><div class="gt">Rientro a Beauvais</div><div class="gm">1h15 · volo alle 14:00, in aeroporto per mezzogiorno</div></a>
     </nav>
     <figure class="mapbox">
@@ -384,6 +386,10 @@
 .mp-a{cursor:pointer}
 .mp-a:focus-visible .mp-stop,.mp-a:focus-visible .mp-eclipse{stroke:var(--map-focus,#0b4f8a);stroke-width:3.4}
 .mp-a:hover .mp-stop{fill:var(--map-route,#1f6f6b)}
+.mp-opt{fill:var(--map-stop,#f7fafa);stroke:var(--map-route,#1f6f6b);stroke-width:1.8;
+  stroke-dasharray:3 2.4}
+.mp-opt-label{fill:var(--map-label,#26332f);stroke:var(--map-halo,#eef4f5);stroke-width:3.2;
+  font-family:var(--map-font,system-ui,sans-serif);font-size:15px;font-weight:600;font-style:italic}
 .mp-t{fill:none;stroke:var(--map-target,#c4531d);stroke-width:0}
 .mp-t:target{stroke-width:3}
 .mp-legend{font-family:var(--map-font,system-ui,sans-serif);font-size:14px;fill:var(--map-label,#26332f)}
@@ -421,6 +427,10 @@
 <a class="mp-a" href="#g10" aria-label="Giverny — Giorno 10 · ritorno lungo la Senna: Les Andelys e Giverny"><circle class="mp-stop" cx="870.9" cy="177.1" r="5"><title>Giverny — Giorno 10 · ritorno lungo la Senna: Les Andelys e Giverny</title></circle></a>
 </g>
 <g>
+<a class="mp-a" href="#g10" aria-label="Le Mans — variante B del Giorno 10: il museo M24 al posto di Giverny, stessi 365 km"><circle class="mp-opt" cx="697" cy="387.7" r="5.5"><title>Le Mans — variante B del Giorno 10: il museo M24 al posto di Giverny, stessi 365 km</title></circle></a>
+<a class="mp-a" href="#g4" aria-label="Bécherel — opzione del Giorno 4: la prima Cite du Livre di Francia, una quindicina di librerie"><circle class="mp-opt" cx="417.2" cy="331.2" r="5.5"><title>Bécherel — opzione del Giorno 4: la prima Cite du Livre di Francia, una quindicina di librerie</title></circle></a>
+</g>
+<g>
 <circle class="mp-t" id="g1-map" cx="946.4" cy="101.4" r="11"/>
 <circle class="mp-t" id="g2-map" cx="697.6" cy="50.6" r="11"/>
 <circle class="mp-t" id="g3-map" cx="579.4" cy="137.1" r="11"/>
@@ -449,17 +459,23 @@
 <text class="mp-label" x="452.3" y="352" text-anchor="middle">Rennes</text>
 <text class="mp-label" x="883.9" y="182.1" text-anchor="start">Giverny</text>
 </g>
+<g class="mp-labels" paint-order="stroke" aria-hidden="true">
+<text class="mp-opt-label" x="697" y="373.7" text-anchor="middle">Le Mans</text>
+<text class="mp-opt-label" x="417.2" y="317.2" text-anchor="middle">Bécherel</text>
+</g>
 <g class="mp-legend" aria-hidden="true">
-<rect x="12" y="14" width="248" height="70" rx="10"/>
+<rect x="12" y="14" width="248" height="92" rx="10"/>
 <path class="mp-route" d="M28 32 L62 32"/>
 <text x="72" y="37">giornata sul posto</text>
 <path class="mp-route mp-transfer" d="M28 54 L62 54"/>
 <text x="72" y="59">trasferimento lungo</text>
 <circle class="mp-eclipse" cx="45" cy="74" r="6"/>
 <text x="72" y="79">eclissi del 12 agosto</text>
+<circle class="mp-opt" cx="45" cy="94" r="5.5"/>
+<text x="72" y="99">tappa opzionale</text>
 </g>
 </svg>
-      <figcaption><b>L'arco Normandia-Bretagna.</b> Da Beauvais alla Costa d'Alabastro, giù per le spiagge dello Sbarco e il Mont-Saint-Michel, poi tutta la Bretagna fino al Finistère — cerchio arancione, l'eclissi del 12 agosto — e ritorno lungo la Senna. Ogni cerchio porta alla giornata corrispondente.</figcaption>
+      <figcaption><b>L'arco Normandia-Bretagna.</b> Da Beauvais alla Costa d'Alabastro, giù per le spiagge dello Sbarco e il Mont-Saint-Michel, poi tutta la Bretagna fino al Finistère — cerchio arancione, l'eclissi del 12 agosto — e ritorno lungo la Senna. I due cerchi tratteggiati sono opzionali: <b>Bécherel</b>, il paese delle librerie, deviazione del Giorno 4, e <b>Le Mans</b> con il museo M24, variante del Giorno 10 al posto di Giverny. Ogni cerchio porta alla giornata corrispondente.</figcaption>
     </figure>
   </div>
 </section>
@@ -578,6 +594,17 @@
     </div>
     <div class="curio"><b>Insolito:</b> le maree del Mont hanno un dislivello fino a circa 15 metri, il più ampio d'Europa continentale; il mare risale a passo d'uomo svelto, 4-6 km/h, ma <b>circonda da più lati</b> e per secoli ha reso il pellegrinaggio pericoloso — da cui il soprannome "San Michele in pericolo di mare".</div>
     <div class="note"><b>Le maree, con i numeri veri:</b> il calendario ufficiale delle maree del Mont dice che nel 2026 l'isola torna a essere <b>isola</b> — acqua tutt'intorno alla diga-passerella — soltanto due volte: la sera di <b>venerdì 14 agosto alle 21:28</b> (coefficiente 102, 12,79 m al porto di riferimento di Saint-Malo, cui va aggiunto circa un metro al Mont) e sabato 12 settembre alle 21:02. Domenica 9 agosto, il giorno di questa tappa, la passerella è quindi percorribile senza limitazioni di marea. Durante le grandi maree l'accesso all'interno delle mura può invece essere regolato da un'ora prima a tre ore dopo l'alta marea.</div>
+    <div class="curio"><b>Un'opzione per chi ama i libri:</b> fra il Mont-Saint-Michel e Saint-Malo,
+      leggermente fuori strada, c'è <b>Bécherel</b> — 650 abitanti su una collina a 176 metri, la
+      <b>prima Cité du Livre di Francia</b> dal 1989 e la terza d'Europa, dopo Hay-on-Wye in Galles
+      e Redu nelle Ardenne belghe. Una quindicina di librerie di libri antichi e d'occasione, tredici
+      gallerie, laboratori di calligrafia e legatoria, tutti stretti intorno alla piazza e alla chiesa.
+      Il costo della deviazione: il Mont-Saint-Michel dista <b>76 km e 1h28</b>, e da Bécherel a
+      Saint-Malo restano <b>50 km e 47 minuti</b> — circa cinquanta minuti in più rispetto alla strada
+      diretta, su una giornata che ne ha già 3h23. <b>Il mercato del libro</b>, che è la ragione vera
+      per andarci, si tiene <b>la prima domenica del mese</b> da marzo a dicembre: nel 2026 cade
+      domenica 2 agosto, quattro giorni prima del vostro arrivo, e poi il 6 settembre. Durante il
+      viaggio le librerie sono aperte, ma senza la festa che rende Bécherel quello che è.</div>
   </article>
 
   <article class="day" id="g5">
@@ -753,8 +780,25 @@
   <article class="day" id="g10">
     <div class="photo"><picture><source type="image/avif" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-480.avif 480w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-800.avif 800w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1200.avif 1200w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1800.avif 1800w"><img src="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1200.jpg" sizes="(min-width:988px) 892px, 100vw" srcset="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-480.jpg 480w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-800.jpg 800w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1200.jpg 1200w" width="1200" height="662" alt="Il giardino delle ninfee di Monet a Giverny" loading="lazy" decoding="async"></picture></div>
     <div class="daynum">Giorno 10 · Sabato 15 agosto</div>
-    <h2>Ritorno lungo la Senna: Château Gaillard e Giverny</h2>
-    <div class="loc">Rennes → Les Andelys → Giverny · ~350 km · 3h50 senza traffico, 5h45–7h su rosso</div>
+    <h2>Il rientro, in due strade: la Senna oppure Le Mans</h2>
+    <div class="loc">365 km e 4h08 in entrambi i casi · su rosso 6h–7h30</div>
+    <p>Questa giornata ha <b>due versioni che costano esattamente lo stesso</b>: 365 km e 4h08,
+      misurati sulla rete stradale, con un chilometro e un minuto di differenza fra loro. Non è
+      una tappa in più contro una in meno: è una scelta di gusto. Le ninfee di Monet, oppure
+      centoventi auto da corsa e una città romana.</p>
+
+    <div class="tbl">
+      <table>
+        <caption class="visually-hidden">Le due varianti del Giorno 10, a confronto</caption>
+        <thead><tr><th>Variante</th><th>Percorso</th><th>Km e tempo</th><th>Notte</th></tr></thead>
+        <tbody>
+          <tr><td class="d">A</td><td><b>La Senna</b> · Rennes → Les Andelys → Giverny</td><td>365 km · 4h08</td><td>Vernon o Rouen</td></tr>
+          <tr><td class="d">B</td><td><b>Le Mans</b> · Rennes → Le Mans (M24) → Rouen</td><td>365 km · 4h09</td><td>Rouen o Le Mans</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Variante A — la Senna: Château Gaillard e Giverny</h3>
     <p>Il rientro attraversa la Normandia interna della Senna. Prima sosta ai <b>Les Andelys</b>, sotto le rovine spettacolari del <b>Château Gaillard</b>, la fortezza fatta costruire da Riccardo Cuor di Leone in appena un anno, a picco su un'ansa del fiume. Nel pomeriggio, il sogno di ogni amante dell'arte: <b>Giverny</b>, la casa e i giardini di Claude Monet, con lo stagno delle ninfee e il ponte giapponese che ispirarono le sue tele più famose. Notte a Vernon o Rouen.</p>
     <div class="photo-pair">
       <picture><source type="image/avif" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/les-andelys-chateau-gaillard-20-480.avif 480w, /img/g/les-andelys-chateau-gaillard-20-800.avif 800w, /img/g/les-andelys-chateau-gaillard-20-1200.avif 1200w, /img/g/les-andelys-chateau-gaillard-20-1800.avif 1800w"><img src="/img/g/les-andelys-chateau-gaillard-20-800.jpg" sizes="(min-width:988px) 439px, (min-width:620px) 46vw, 100vw" srcset="/img/g/les-andelys-chateau-gaillard-20-480.jpg 480w, /img/g/les-andelys-chateau-gaillard-20-800.jpg 800w, /img/g/les-andelys-chateau-gaillard-20-1200.jpg 1200w" width="800" height="592" alt="Château Gaillard sulla Senna" loading="lazy" decoding="async"></picture>
@@ -765,6 +809,7 @@
       <div class="infocard"><div class="cl">Arte</div><div class="cv">Casa e giardini di Monet a Giverny</div></div>
       <div class="infocard"><div class="cl">Pernottamento</div><div class="cv">Vernon o Rouen</div></div>
       <div class="infocard"><div class="cl">Allerta traffico</div><div class="cv">Bison Futé: rosso in entrambi i sensi</div></div>
+      <div class="infocard"><div class="cl">Variante B</div><div class="cv">Le Mans e il museo M24, stessi km</div></div>
     </div>
     <div class="tip"><b>La giornata più a rischio dei due viaggi:</b> sabato 15 agosto 2026 è <b>rosso in entrambi
       i sensi su tutta la Francia</b> nel calendario Bison Futé — Assunzione, festa nazionale, nel cuore del mese di
@@ -781,6 +826,33 @@
       </ul>
       Il 15 è anche festivo: molti negozi chiudono e gli orari dei monumenti cambiano.</div>
     <div class="curio"><b>Curiosità:</b> il Château Gaillard fu costruito da Riccardo Cuor di Leone nel 1197-1198 in tempi record; cadde nel 1204 dopo un assedio in cui gli assalitori entrarono dalle basse finestre della cappella (la versione delle latrine è un'invenzione ottocentesca). A Giverny, Monet deviò un braccio del fiume Epte per creare lo stagno delle ninfee — un giardino "dipinto" prima ancora che sulla tela. Prenotate il biglietto di Giverny online per evitare le code.</div>
+
+    <h3>Variante B — Le Mans: il M24 e la Cité Plantagenêt</h3>
+    <p>Il museo delle 24 Ore che molti ricordano ha chiuso per lavori nel luglio 2025. Al suo posto,
+      dal <b>28 maggio 2026</b>, c'è il <b>M24 — Musée du Sport Automobile</b>: diecimila metri
+      quadri al circuito della Sarthe, <b>oltre 120 automobili</b> dagli anni Venti a oggi, dalla
+      Ford GT40 del 1967 alla Ferrari F2002 di Michael Schumacher. A metà luglio 2026 aveva già
+      superato i centomila visitatori. È <b>aperto anche il 15 agosto</b>, dalle 10:00 alle 19:00.</p>
+    <div class="cards">
+      <div class="infocard"><div class="cl">Museo</div><div class="cv">M24, da 12 € · 1h30</div></div>
+      <div class="infocard"><div class="cl">Museo + circuito</div><div class="cv">Da 14 € · 3 ore</div></div>
+      <div class="infocard"><div class="cl">Visita guidata</div><div class="cv">Paddock, sala stampa, podio · da 20 € · 2h</div></div>
+      <div class="infocard"><div class="cl">Gratis</div><div class="cv">Cité Plantagenêt, il centro medievale</div></div>
+    </div>
+    <p>E c'è un secondo motivo per fermarsi, che nessuno si aspetta: la <b>Cité Plantagenêt</b>,
+      venti ettari di vicoli lastricati, case a graticcio e palazzi rinascimentali racchiusi da una
+      delle <b>mura romane meglio conservate d'Europa</b>, con la cattedrale Saint-Julien. Non costa
+      nulla e si gira in un'ora e mezza.</p>
+    <div class="note"><b>Come si incastra:</b> partenza da Rennes alle 7:00 (154 km, 1h49), M24
+      alle 10:00 all'apertura, museo fino alle 11:30 — o fino alle 13 se prendete anche il circuito —
+      poi la Cité Plantagenêt nel primo pomeriggio e 211 km fino a Rouen, 2h19. In alternativa si
+      dorme a Le Mans e domani si va diretti a Beauvais: 282 km e 3h27, fattibili per il volo delle
+      14:00 partendo alle 8, ma senza margine. <b>Attenzione al pedaggio:</b> la A28 Alençon-Rouen
+      costa 30,30 €, il rincaro più alto di Francia.</div>
+    <div class="tip"><b>Cosa si guadagna e cosa si perde:</b> si guadagna un museo nuovo di due mesi
+      e mezzo e una città che non è su nessun itinerario turistico. Si perde <b>Giverny</b>, che è il
+      finale impressionista del viaggio, e Château Gaillard. Il sabato resta rosso in entrambe le
+      varianti: partire prima delle 7 vale per tutte e due.</div>
   </article>
 
   <article class="day" id="g11">
@@ -812,7 +884,7 @@
       <div class="pc"><h3>Cosa mangiare</h3><p>In Normandia: camembert, sidro, calvados, teurgoule. In Bretagna: galette e crêpes, ostriche, kouign-amann, caramello al burro salato.</p></div>
     </div>
     <h3 style="margin-top:34px" id="prenotazioni">Cosa prenotare, e quando</h3>
-    <p style="color:var(--body)">Sei cose in undici giorni hanno un <b>orario fisso o un tetto di
+    <p style="color:var(--body)">Sette cose in undici giorni hanno un <b>orario fisso o un tetto di
       posti</b>: se si arriva senza biglietto, non si entra. Tutto il resto si decide sul posto.</p>
     <div class="tbl">
       <table>
@@ -845,10 +917,18 @@
           </tr>
           <tr>
             <td class="d">Sab 15/8<br>mattina</td>
-            <td><b>Giverny</b>, casa e giardini di Monet</td>
+            <td><b>Giverny</b>, casa e giardini di Monet<br><span style="color:var(--muted)">variante A</span></td>
             <td>13 € circa</td>
             <td>Il 15 agosto è rosso in autostrada e festivo: prenotate una <b>fascia oraria del
               mattino</b> e partite da Rennes prima delle 7. È la giornata più a rischio del viaggio.</td>
+          </tr>
+          <tr>
+            <td class="d">Sab 15/8<br>10:00</td>
+            <td><b>M24</b>, Le Mans<br><span style="color:var(--muted)">variante B, alternativa a Giverny</span></td>
+            <td>da 12 €<br>+ circuito da 14 €</td>
+            <td>Biglietto online su ticket.m24-musee.com. Aperto 10:00-19:00 anche il 15 agosto.
+              La visita guidata del circuito (2h, da 20 €) si prenota a parte. Le due varianti
+              costano gli stessi 365 km: si sceglie, non si sommano.</td>
           </tr>
           <tr>
             <td class="d">Dom 9/8</td>

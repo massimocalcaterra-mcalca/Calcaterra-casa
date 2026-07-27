@@ -66,6 +66,20 @@ B_STOPS = [
     ("Les Andelys",               49.2417,  1.4108, "g10", ""),
     ("Giverny",                   49.0758,  1.5333, "g10", ""),
 ]
+
+# Tappe opzionali: disegnate ma NON collegate alla rotta, perche' sono alternative
+# o deviazioni, non tappe fisse. (nome, lat, lon, giornata, testo del tooltip)
+A_OPTIONS = [
+    ("Bécherel", 48.2953, -1.9469, "g10",
+     "Becherel — opzione del Giorno 10: la prima Cite du Livre di Francia, +10 km e +25 minuti"),
+]
+
+B_OPTIONS = [
+    ("Le Mans",  48.0061,  0.1996, "g10",
+     "Le Mans — variante B del Giorno 10: il museo M24 al posto di Giverny, stessi 365 km"),
+    ("Bécherel", 48.2953, -1.9469, "g4",
+     "Bécherel — opzione del Giorno 4: la prima Cite du Livre di Francia, una quindicina di librerie"),
+]
 B_TRANSFER = {0, 18, 19, 21}
 
 DAY_TITLES = {
@@ -135,10 +149,13 @@ def label_box(x, y, anc, dx, dy, w):
 def overlaps(a, b):
     return not (a[2] < b[0] or b[2] < a[0] or a[3] < b[1] or b[3] < a[1])
 
-def auto_labels(stops, pts, wanted, reserved):
-    """Restituisce {nome: (anchor, dx, dy)} evitando sovrapposizioni con le altre
-    etichette, con i cerchi delle tappe e con i rettangoli riservati (legenda)."""
-    boxes = list(reserved)
+def auto_labels(stops, pts, wanted, reserved, boxes=None):
+    """Restituisce {nome: (anchor, dx, dy, testo)} evitando sovrapposizioni con le altre
+    etichette, con i cerchi delle tappe e con i rettangoli riservati (legenda).
+    Se `boxes` e' una lista, viene riempita con i rettangoli occupati: serve a chi
+    disegna dopo (le tappe opzionali) per non finirci sopra."""
+    boxes = boxes if boxes is not None else []
+    boxes.extend(reserved)
     for (x, y) in pts:                       # i cerchi delle tappe sono ostacoli
         boxes.append((x - 9, y - 9, x + 9, y + 9))
     out = {}
@@ -415,6 +432,10 @@ STYLE = """
 .mp-a{cursor:pointer}
 .mp-a:focus-visible .mp-stop,.mp-a:focus-visible .mp-eclipse{stroke:var(--map-focus,#0b4f8a);stroke-width:3.4}
 .mp-a:hover .mp-stop{fill:var(--map-route,#1f6f6b)}
+.mp-opt{fill:var(--map-stop,#f7fafa);stroke:var(--map-route,#1f6f6b);stroke-width:1.8;
+  stroke-dasharray:3 2.4}
+.mp-opt-label{fill:var(--map-label,#26332f);stroke:var(--map-halo,#eef4f5);stroke-width:3.2;
+  font-family:var(--map-font,system-ui,sans-serif);font-size:15px;font-weight:600;font-style:italic}
 .mp-t{fill:none;stroke:var(--map-target,#c4531d);stroke-width:0}
 .mp-t:target{stroke-width:3}
 .mp-legend{font-family:var(--map-font,system-ui,sans-serif);font-size:14px;fill:var(--map-label,#26332f)}
@@ -427,7 +448,7 @@ def esc(s):
              .replace('"', "&quot;"))
 
 
-def build_svg(key, stops, transfers, labels, pid, title, desc, land_d, note):
+def build_svg(key, stops, transfers, labels, pid, title, desc, land_d, note, options=None):
     proj, _ = PROJ[key]
     pts = [proj(s[1], s[2]) for s in stops]
     days = DAY_TITLES[key]
@@ -483,6 +504,16 @@ def build_svg(key, stops, transfers, labels, pid, title, desc, land_d, note):
         L.append('<a class="mp-a" href="#%s" aria-label="%s">%s</a>' % (day, esc(tt), body))
     L.append('</g>')
 
+    # --- tappe opzionali: cerchio tratteggiato, non collegato alla rotta
+    if options:
+        L.append('<g>')
+        for name, lat, lon, day, tt in options:
+            x, y = proj(lat, lon)
+            L.append('<a class="mp-a" href="#%s" aria-label="%s">'
+                     '<circle class="mp-opt" cx="%s" cy="%s" r="5.5"><title>%s</title></circle></a>'
+                     % (day, esc(tt), fmt(x), fmt(y), esc(tt)))
+        L.append('</g>')
+
     # --- evidenziazione via :target (anello attorno alla tappa della giornata aperta)
     L.append('<g>')
     seen = set()
@@ -495,7 +526,9 @@ def build_svg(key, stops, transfers, labels, pid, title, desc, land_d, note):
     L.append('</g>')
 
     # --- etichette (posizioni calcolate, non a mano)
-    placed = auto_labels(stops, pts, labels, [(6, 6, 274, 92)])   # riquadro legenda
+    occupati = []
+    riservati = [(6, 6, 274, 106 if options else 92)]          # riquadro legenda
+    placed = auto_labels(stops, pts, labels, riservati, occupati)
     skipped = [n for n in labels if n not in placed]
     L.append('<g class="mp-labels" paint-order="stroke" aria-hidden="true">')
     for (name, lat, lon, day, kind), (x, y) in zip(stops, pts):
@@ -507,17 +540,45 @@ def build_svg(key, stops, transfers, labels, pid, title, desc, land_d, note):
     L.append('</g>')
     if skipped:
         print("   etichette senza spazio: %s" % ", ".join(skipped))
+    if options:
+        L.append('<g class="mp-labels" paint-order="stroke" aria-hidden="true">')
+        for name, lat, lon, day, tt in options:
+            x, y = proj(lat, lon)
+            occupati.append((x - 9, y - 9, x + 9, y + 9))
+        for name, lat, lon, day, tt in options:
+            x, y = proj(lat, lon)
+            w = text_w(name)
+            scelta = None
+            for anc, dx, dy in CANDIDATES:
+                bx = label_box(x, y, anc, dx, dy, w)
+                if bx[0] < 6 or bx[2] > VB_W - 6 or bx[1] < 4 or bx[3] > VB_H - 4:
+                    continue
+                if any(overlaps(bx, b) for b in occupati):
+                    continue
+                scelta = (anc, dx, dy, bx)
+                break
+            if scelta is None:
+                print("   etichetta opzionale senza spazio: %s" % name)
+                continue
+            occupati.append(scelta[3])
+            L.append('<text class="mp-opt-label" x="%s" y="%s" text-anchor="%s">%s</text>'
+                     % (fmt(x + scelta[1]), fmt(y + scelta[2]), scelta[0], esc(name)))
+        L.append('</g>')
 
     # --- legenda
     ly = 14
     L.append('<g class="mp-legend" aria-hidden="true">')
-    L.append('<rect x="12" y="%s" width="248" height="70" rx="10"/>' % fmt(ly))
+    L.append('<rect x="12" y="%s" width="248" height="%s" rx="10"/>'
+             % (fmt(ly), "92" if options else "70"))
     L.append('<path class="mp-route" d="M28 %s L62 %s"/>' % (fmt(ly + 18), fmt(ly + 18)))
     L.append('<text x="72" y="%s">giornata sul posto</text>' % fmt(ly + 23))
     L.append('<path class="mp-route mp-transfer" d="M28 %s L62 %s"/>' % (fmt(ly + 40), fmt(ly + 40)))
     L.append('<text x="72" y="%s">trasferimento lungo</text>' % fmt(ly + 45))
     L.append('<circle class="mp-eclipse" cx="45" cy="%s" r="6"/>' % fmt(ly + 60))
     L.append('<text x="72" y="%s">%s</text>' % (fmt(ly + 65), esc(note)))
+    if options:
+        L.append('<circle class="mp-opt" cx="45" cy="%s" r="5.5"/>' % fmt(ly + 80))
+        L.append('<text x="72" y="%s">tappa opzionale</text>' % fmt(ly + 85))
     L.append('</g>')
 
     L.append('</svg>')
@@ -591,7 +652,8 @@ def main():
 
     for key, fname, stops, tr, labels, pid, title, desc in specs:
         svg = build_svg(key, stops, tr, labels, pid, title, desc, land_d,
-                        "eclissi del 12 agosto")
+                        "eclissi del 12 agosto",
+                        options=(B_OPTIONS if key == "B" else A_OPTIONS))
         path = os.path.join(OUT, fname)
         with open(path, "w", encoding="utf-8") as fh:
             fh.write(svg)
