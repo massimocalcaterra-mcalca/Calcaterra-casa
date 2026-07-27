@@ -33,13 +33,14 @@ A_STOPS = [
     ("Quimper",                   47.9960, -4.1024, "g7",  ""),
     ("Concarneau",                47.8756, -3.9203, "g8",  ""),
     ("Pont-Aven",                 47.8556, -3.7472, "g8",  ""),
+    ("Lorient",                   47.7483, -3.3702, "g8",  ""),
     ("Carnac",                    47.5850, -3.0800, "g9",  ""),
     ("Vannes",                    47.6559, -2.7603, "g9",  ""),
     ("Brocéliande",          48.0197, -2.1725, "g10", ""),
     ("Rouen",                     49.4432,  1.0993, "g10", ""),
 ]
 # indici (0-based) dei segmenti "trasferimento" (i -> i+1); -1 = ultimo -> ritorno a Beauvais
-A_TRANSFER = {0, 16, 17}
+A_TRANSFER = {0, 17, 18}
 
 B_STOPS = [
     ("Beauvais",                  49.4544,  2.1128, "g1",  "gateway"),
@@ -58,9 +59,9 @@ B_STOPS = [
     ("Penmarc'h",                 47.7986, -4.3736, "g7",  "eclipse"),
     ("Pointe de Pen-Hir",         48.2569, -4.6236, "g8",  ""),
     ("Locronan",                  48.0972, -4.2081, "g8",  ""),
-    ("Quimper",                   47.9960, -4.1024, "g9",  ""),
     ("Concarneau",                47.8756, -3.9203, "g9",  ""),
-    ("Pont-Aven",                 47.8556, -3.7472, "g9",  ""),
+    ("Lorient",                   47.7483, -3.3702, "g9",  ""),
+    ("Carnac",                    47.5850, -3.0800, "g9",  ""),
     ("Rennes",                    48.1173, -1.6778, "g9",  ""),
     ("Les Andelys",               49.2417,  1.4108, "g10", ""),
     ("Giverny",                   49.0758,  1.5333, "g10", ""),
@@ -76,7 +77,7 @@ DAY_TITLES = {
         "g5": "Giorno 5 · la Presqu'île de Crozon",
         "g6": "Giorno 6 · Locronan e il Cap Sizun",
         "g7": "Giorno 7 · Quimper e l'eclissi sull'Atlantico",
-        "g8": "Giorno 8 · Concarneau e Pont-Aven",
+        "g8": "Giorno 8 · Concarneau, Pont-Aven e la base sottomarina di Lorient",
         "g9": "Giorno 9 · i megaliti di Carnac e il Golfo del Morbihan",
         "g10": "Giorno 10 · Brocéliande, poi verso est",
         "g11": "Giorno 11 · rientro a Parigi-Beauvais",
@@ -90,34 +91,21 @@ DAY_TITLES = {
         "g6": "Giorno 6 · la Côte de Granit Rose",
         "g7": "Giorno 7 · il Finistère e l'eclissi sull'Atlantico",
         "g8": "Giorno 8 · Crozon e Locronan",
-        "g9": "Giorno 9 · Quimper, Concarneau, Pont-Aven, poi verso est",
+        "g9": "Giorno 9 · Concarneau, i sottomarini di Lorient, i menhir di Carnac",
         "g10": "Giorno 10 · ritorno lungo la Senna: Les Andelys e Giverny",
         "g11": "Giorno 11 · rientro a Parigi-Beauvais",
     },
 }
 
-# etichette: nome -> (text-anchor, dx, dy)
 # nomi da etichettare, in ordine di priorità: chi viene prima si aggiudica
 # la posizione migliore, chi resta senza spazio semplicemente non compare
 A_LABELS = ["Beauvais", "Mont-Saint-Michel", "Penmarc'h", "Pointe du Raz",
-            "Saint-Malo", "Ploumanac'h", "Carnac", "Quimper", "Vannes",
+            "Saint-Malo", "Ploumanac'h", "Carnac", "Lorient", "Quimper", "Vannes",
             "Brocéliande", "Cap Fréhel", "Pointe de Pen-Hir", "Rouen", "Locronan"]
-B_LABELS = {
-    "Beauvais":            ("end",    -10,  -9),
-    "Rouen":               ("end",    -11,  16),
-    "Étretat":             ("middle",   0, -13),
-    "Honfleur":            ("start",   10,  16),
-    "Bayeux":              ("middle",   0,  21),
-    "Mont-Saint-Michel":   ("start",   10,  17),
-    "Saint-Malo":          ("middle",   0, -13),
-    "Ploumanac'h":         ("middle",   0, -13),
-    "Pointe de Pen-Hir":   ("start",   11, -10),
-    "Pointe du Raz":       ("start",   11,  17),
-    "Penmarc'h":           ("middle",   0,  27),
-    "Quimper":             ("start",   11,  15),
-    "Rennes":              ("start",   11,   5),
-    "Giverny":             ("start",   11,  15),
-}
+B_LABELS = ["Beauvais", "Étretat", "Mont-Saint-Michel", "Penmarc'h",
+            "Pointe du Raz", "Carnac", "Lorient", "Bayeux", "Saint-Malo",
+            "Ploumanac'h", "Giverny", "Rouen", "Honfleur", "Rennes",
+            "Pointe de Pen-Hir"]
 
 
 LABEL_FS = 16.0          # px, come .mp-label
@@ -185,6 +173,15 @@ def auto_labels(stops, pts, wanted, reserved):
         out[name] = (chosen[0], chosen[1], chosen[2], shown)
         boxes.append(chosen[3])
     return out
+
+
+def check_labels(nome, stops, labels):
+    """Un nome da etichettare che non e' fra le tappe e' un residuo: va segnalato,
+    altrimenti resta silenzioso come e' successo con Quimper sulla mappa B."""
+    assert isinstance(labels, list), nome + ": le etichette devono essere una lista ordinata"
+    noti = {s[0] for s in stops}
+    orfani = [n for n in labels if n not in noti]
+    assert not orfani, "%s: etichette che non corrispondono a nessuna tappa: %s" % (nome, orfani)
 
 # ---------------------------------------------------------------- proiezione
 
@@ -536,6 +533,9 @@ def main():
     src, gj = load_land()
     print("dati costa:", src)
 
+    check_labels("A", A_STOPS, A_LABELS)
+    check_labels("B", B_STOPS, B_LABELS)
+
     allstops = A_STOPS + B_STOPS
     proj, box = build_projection(allstops)   # STESSA proiezione per le due mappe
     PROJ["A"] = (proj, box)
@@ -562,8 +562,9 @@ def main():
          "sulla punta sud-occidentale, un cerchio più grande con anello concentrico "
          "segna il punto di osservazione dell'eclissi solare del 12 agosto 2026. "
          "La rotta risale poi verso est lungo la costa meridionale — Quimper, "
-         "Concarneau, Pont-Aven, i megaliti di Carnac e il Golfo del Morbihan a "
-         "Vannes, la foresta di Brocéliande — e si chiude con un secondo "
+         "Concarneau e Pont-Aven, la base sottomarina di Lorient, i megaliti di "
+         "Carnac e il Golfo del Morbihan a Vannes, la foresta di Brocéliande — e si "
+         "chiude con un secondo "
          "trasferimento tratteggiato via Rouen fino a Beauvais. In totale circa "
          "1.950 chilometri. Ogni cerchio è un collegamento alla giornata "
          "corrispondente della guida."),
@@ -580,7 +581,8 @@ def main():
          "Ploumanac'h, fino al Finistère con la Pointe du Raz. A Penmarc'h, sulla "
          "punta sud-occidentale, un cerchio più grande con anello concentrico segna "
          "il punto di osservazione dell'eclissi solare del 12 agosto 2026. Seguono "
-         "la Presqu'île de Crozon, Locronan, Quimper, Concarneau e Pont-Aven; poi "
+         "la Presqu'île de Crozon e Locronan, quindi Concarneau, la base sottomarina "
+         "di Lorient e i megaliti di Carnac; poi "
          "un lungo trasferimento tratteggiato verso est via Rennes porta a Les "
          "Andelys e Giverny, sulla Senna, e infine di nuovo a Beauvais. In totale "
          "circa 2.150 chilometri. Ogni cerchio è un collegamento alla giornata "
