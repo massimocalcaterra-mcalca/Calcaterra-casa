@@ -55,6 +55,7 @@
 <a class="mp-a" href="#g10" aria-label="Giverny — Giorno 10 · ritorno lungo la Senna: Les Andelys e Giverny"><circle class="mp-stop" cx="870.9" cy="177.1" r="5"><title>Giverny — Giorno 10 · ritorno lungo la Senna: Les Andelys e Giverny</title></circle></a>
 </g>
 <g>
+<a class="mp-a" href="#g4" aria-label="Menhir du Champ-Dolent — sulla strada del Giorno 4 fra il Mont e Saint-Malo: 9,3 metri di granito, deviazione di 7 km e 15 minuti"><circle class="mp-opt" cx="442.5" cy="285.2" r="5.5"><title>Menhir du Champ-Dolent — sulla strada del Giorno 4 fra il Mont e Saint-Malo: 9,3 metri di granito, deviazione di 7 km e 15 minuti</title></circle></a>
 <a class="mp-a" href="#g10" aria-label="Le Mans — variante B del Giorno 10: il museo M24 al posto di Giverny, stessi 365 km"><circle class="mp-opt" cx="697" cy="387.7" r="5.5"><title>Le Mans — variante B del Giorno 10: il museo M24 al posto di Giverny, stessi 365 km</title></circle></a>
 <a class="mp-a" href="#g4" aria-label="Bécherel — opzione del Giorno 4: la prima Cite du Livre di Francia, una quindicina di librerie"><circle class="mp-opt" cx="417.2" cy="331.2" r="5.5"><title>Bécherel — opzione del Giorno 4: la prima Cite du Livre di Francia, una quindicina di librerie</title></circle></a>
 </g>
@@ -88,6 +89,7 @@
 <text class="mp-label" x="883.9" y="182.1" text-anchor="start">Giverny</text>
 </g>
 <g class="mp-labels" paint-order="stroke" aria-hidden="true">
+<text class="mp-opt-label" x="455.5" y="290.2" text-anchor="start">Champ-Dolent</text>
 <text class="mp-opt-label" x="697" y="373.7" text-anchor="middle">Le Mans</text>
 <text class="mp-opt-label" x="417.2" y="317.2" text-anchor="middle">Bécherel</text>
 </g>

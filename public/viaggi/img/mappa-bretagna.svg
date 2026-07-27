@@ -50,6 +50,7 @@
 <a class="mp-a" href="#g10" aria-label="Rouen — Giorno 10 · Brocéliande, poi verso est"><circle class="mp-stop" cx="814.3" cy="103.7" r="5"><title>Rouen — Giorno 10 · Brocéliande, poi verso est</title></circle></a>
 </g>
 <g>
+<a class="mp-a" href="#g2" aria-label="Menhir du Champ-Dolent — opzione del Giorno 2: 9,3 metri di granito, il secondo menhir piu' alto della Bretagna, accesso libero"><circle class="mp-opt" cx="442.5" cy="285.2" r="5.5"><title>Menhir du Champ-Dolent — opzione del Giorno 2: 9,3 metri di granito, il secondo menhir piu' alto della Bretagna, accesso libero</title></circle></a>
 <a class="mp-a" href="#g10" aria-label="Becherel — opzione del Giorno 10: la prima Cite du Livre di Francia, +10 km e +25 minuti"><circle class="mp-opt" cx="417.2" cy="331.2" r="5.5"><title>Becherel — opzione del Giorno 10: la prima Cite du Livre di Francia, +10 km e +25 minuti</title></circle></a>
 </g>
 <g>
@@ -82,6 +83,7 @@
 <text class="mp-label" x="814.3" y="89.7" text-anchor="middle">Rouen</text>
 </g>
 <g class="mp-labels" paint-order="stroke" aria-hidden="true">
+<text class="mp-opt-label" x="455.5" y="290.2" text-anchor="start">Champ-Dolent</text>
 <text class="mp-opt-label" x="430.2" y="336.2" text-anchor="start">Bécherel</text>
 </g>
 <g class="mp-legend" aria-hidden="true">

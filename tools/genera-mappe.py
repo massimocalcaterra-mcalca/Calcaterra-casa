@@ -70,11 +70,17 @@ B_STOPS = [
 # Tappe opzionali: disegnate ma NON collegate alla rotta, perche' sono alternative
 # o deviazioni, non tappe fisse. (nome, lat, lon, giornata, testo del tooltip)
 A_OPTIONS = [
+    ("Champ-Dolent", 48.5292, -1.7525, "g2",
+     "Menhir du Champ-Dolent — opzione del Giorno 2: 9,3 metri di granito, il secondo menhir "
+     "piu' alto della Bretagna, accesso libero"),
     ("Bécherel", 48.2953, -1.9469, "g10",
      "Becherel — opzione del Giorno 10: la prima Cite du Livre di Francia, +10 km e +25 minuti"),
 ]
 
 B_OPTIONS = [
+    ("Champ-Dolent", 48.5292, -1.7525, "g4",
+     "Menhir du Champ-Dolent — sulla strada del Giorno 4 fra il Mont e Saint-Malo: 9,3 metri "
+     "di granito, deviazione di 7 km e 15 minuti"),
     ("Le Mans",  48.0061,  0.1996, "g10",
      "Le Mans — variante B del Giorno 10: il museo M24 al posto di Giverny, stessi 365 km"),
     ("Bécherel", 48.2953, -1.9469, "g4",
