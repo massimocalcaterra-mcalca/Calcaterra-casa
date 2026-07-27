@@ -73,6 +73,18 @@
   Cache-Control: private, no-store, must-revalidate
   X-Robots-Tag: noindex, nofollow, noarchive
 
+# Raccolta proposte per il viaggio. Fuori dagli indici come /foto: la pagina
+# non e' segreta (l'elenco si legge senza password, cosi' il lavoro automatico
+# che la analizza tre volte al giorno puo' leggerla) ma non ha motivo di stare
+# sui motori di ricerca. Aggiungere una proposta richiede comunque la password.
+/proposte
+  Cache-Control: private, no-store, must-revalidate
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/proposte/*
+  Cache-Control: private, no-store, must-revalidate
+  X-Robots-Tag: noindex, nofollow, noarchive
+
 # Asset immutabili. Attenzione: senza build step non c'e' hash nel nome file,
 # quindi per sostituire un'immagine serve un nome nuovo (oppure ?v=N come fa
 # gia' /img/foto.svg?v=2 in site.json).

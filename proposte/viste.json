@@ -1,0 +1,10 @@
+{
+  "nota": "Identificativi delle proposte gia' analizzate, per non rifare due volte lo stesso lavoro. Le voci senza id (arrivate prima che esistesse il modulo) sono registrate per titolo.",
+  "aggiornato": "2026-07-27",
+  "id": [],
+  "senza-id": [
+    "Menhir du Champ-Dolent",
+    "Le Mans e il museo M24",
+    "Becherel, la citta del libro"
+  ]
+}

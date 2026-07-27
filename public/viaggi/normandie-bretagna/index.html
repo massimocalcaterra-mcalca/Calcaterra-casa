@@ -59,6 +59,22 @@
     background:none;border:1px solid var(--line-strong);border-radius:8px;padding:6px 10px;
     margin-left:6px;cursor:pointer}
   .topprint:hover{border-color:var(--green-d);background:#EFF7F1}
+  /* proposta: si va a una pagina sull'apex, dove vivono le Functions e il bucket */
+  .topadd{font-family:Poppins,sans-serif;font-size:.74rem;font-weight:600;color:#fff;
+    background:var(--green-d);border:1px solid var(--green-d);border-radius:8px;
+    padding:6px 12px;margin-left:6px;white-space:nowrap}
+  .topadd:hover{background:#055c24;color:#fff}
+
+  /* --- richiamo in testa alla guida --- */
+  .proponi{margin-top:34px;background:var(--paper);border:1px solid var(--line);
+    border-left:4px solid var(--green);border-radius:0 14px 14px 0;padding:18px 22px;
+    display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+  .proponi .tx{flex:1;min-width:260px}
+  .proponi h3{font-family:Poppins,sans-serif;font-size:1.02rem;margin:0 0 4px}
+  .proponi p{margin:0;font-size:.9rem;color:var(--body);max-width:62ch}
+  .proponi .go{display:inline-block;font-family:Poppins,sans-serif;font-weight:600;font-size:.85rem;
+    background:var(--green-d);color:#fff;border-radius:10px;padding:11px 20px;white-space:nowrap}
+  .proponi .go:hover{background:#055c24}
 
   /* --- indice delle tappe: il colpo d'occhio --- */
   .glance{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:30px}
@@ -279,6 +295,7 @@
       <a href="#prenotazioni">Prenotazioni</a>
       <a href="#pratiche">Info pratiche</a>
       <button class="topprint" type="button" id="printBtn">Stampa</button>
+      <a class="topadd" href="https://calcaterra.casa/proposte/">+ Proposta</a>
     </nav>
   </div>
 </div>
@@ -349,6 +366,16 @@
       gratuita per intero fra Caen, Avranches e Rennes — sostituisce quasi sempre meglio.</div>
 
     <div class="tip"><b>Il vincolo del viaggio — il 12 in Finistère:</b> la sera di mercoledì 12 agosto 2026 la punta ovest del Finistère è tra i luoghi di Francia con la copertura solare più alta (~96-97%). Tutto l'itinerario è costruito per <b>essere in Finistère quel giorno</b>: Normandia e costa nord bretone nei primi cinque giorni, per avere l'oceano aperto a ovest la sera dell'eclissi. Dettagli al Giorno 7.</div>
+
+    <div class="proponi">
+      <div class="tx">
+        <h3>Hai visto qualcosa che potrebbe entrare nel viaggio?</h3>
+        <p>Manda la foto di una pagina di guida, un link o due righe di appunto. Non finisce
+          nell'itinerario da solo: viene analizzato — distanze reali, orari, dove starebbe — e
+          diventa una scheda da valutare alla revisione finale.</p>
+      </div>
+      <a class="go" href="https://calcaterra.casa/proposte/">Aggiungi una proposta →</a>
+    </div>
   </div>
 </section>
 

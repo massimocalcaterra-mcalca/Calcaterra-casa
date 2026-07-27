@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposte per il viaggio · Calcaterra Casa</title>
+<meta name="description" content="Raccolta di idee per il viaggio Normandia &amp; Bretagne: foto, link e note da valutare.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBFBFA">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📌</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBFBFA; --paper:#FFFFFF; --ink:#14261C; --body:#4B4F58; --muted:#6B6E67;
+    --line:#E7E6DF; --line-strong:#8E8C82; --green:#1BAE70; --green-d:#06752E;
+    --coral:#C8391A; --danger:#C1341F;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);line-height:1.6;
+    font-family:Lato,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:860px;margin:0 auto;padding:30px 24px 70px}
+
+  .visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+    clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+  .skip{position:absolute;left:-9999px;background:var(--paper);color:var(--ink);
+    border:1px solid var(--green-d);border-radius:10px;padding:10px 16px;font-weight:700}
+  .skip:focus{left:12px;top:12px;z-index:100}
+  :focus-visible{outline:3px solid var(--green-d);outline-offset:2px;border-radius:4px}
+
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .name{font-family:Poppins,sans-serif;font-weight:600;font-size:1rem;text-decoration:none}
+  .name .dot{color:var(--green-d)}
+  .nav .tag{font-size:.78rem;color:var(--muted)}
+
+  .head{margin:48px 0 8px}
+  .kicker{font-family:Poppins,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--green-d)}
+  h1{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3rem);
+    line-height:1.05;letter-spacing:-.02em;margin:.2em 0 0}
+  .lead{color:var(--body);max-width:60ch;margin:14px 0 0}
+
+  .btn{font-family:Poppins,sans-serif;font-weight:600;font-size:.85rem;cursor:pointer;
+    border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);
+    padding:10px 18px;border-radius:10px;transition:.2s}
+  .btn:hover{border-color:var(--green-d);color:var(--green-d)}
+  .btn.primary{background:var(--green-d);border-color:var(--green-d);color:#fff}
+  .btn.primary:hover{background:#055c24;color:#fff}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    padding:24px;margin-top:26px}
+  .login{max-width:420px;margin:8vh auto 0}
+  label{display:block;font-family:Poppins,sans-serif;font-size:.74rem;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--green-d);margin:16px 0 6px}
+  input[type=text],input[type=url],input[type=password],textarea{width:100%;font:inherit;
+    padding:11px 14px;border:1px solid var(--line-strong);border-radius:10px;background:#fff;color:var(--ink)}
+  textarea{min-height:96px;resize:vertical}
+  input:focus,textarea:focus{outline:none;border-color:var(--green-d);box-shadow:0 0 0 3px #dff0e5}
+  .hint{font-size:.8rem;color:var(--muted);margin-top:6px}
+  .err{color:var(--danger);font-size:.88rem;margin-top:12px;min-height:1.2em}
+  .field{display:flex;gap:10px}
+
+  .drop{border:2px dashed var(--line-strong);border-radius:14px;background:#fcfcfb;
+    padding:22px;text-align:center;transition:.2s}
+  .drop.over{border-color:var(--green-d);background:#F3FBF6}
+  .drop .big{font-size:1.7rem}
+  .thumb{margin-top:12px;max-height:200px;border-radius:10px;display:none}
+  .thumb.on{display:inline-block}
+
+  .row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:34px 0 0}
+  .row h2{font-family:Poppins,sans-serif;font-size:1.2rem;margin:0}
+  .count{font-size:.85rem;color:var(--muted)}
+
+  ul.lista{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:14px}
+  .prop{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+    display:flex;gap:16px;align-items:flex-start}
+  .prop img{width:104px;height:104px;object-fit:cover;border-radius:10px;flex-shrink:0;background:#eee}
+  .prop .b{flex:1;min-width:0}
+  .prop .t{font-family:Poppins,sans-serif;font-weight:600}
+  .prop .d{font-size:.78rem;color:var(--muted)}
+  .prop .n{font-size:.9rem;color:var(--body);margin-top:6px;white-space:pre-wrap;word-break:break-word}
+  .prop a.l{font-size:.85rem;color:var(--green-d);word-break:break-all}
+  .prop .stato{display:inline-block;font-family:Poppins,sans-serif;font-size:.68rem;font-weight:600;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--coral);border:1px solid #f0d3cb;
+    background:#fdf3f0;border-radius:20px;padding:3px 10px;margin-top:8px}
+  .del{border:none;background:none;color:var(--muted);cursor:pointer;font-size:1rem;padding:6px}
+  .del:hover{color:var(--danger)}
+  .vuoto{color:var(--muted);padding:26px 0}
+
+  .foot{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.8rem}
+  .hidden{display:none!important}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--ink);
+    color:#fff;padding:12px 20px;border-radius:12px;font-size:.9rem;max-width:90vw;
+    box-shadow:0 12px 30px -12px rgba(0,0,0,.5);opacity:0;transition:.25s;pointer-events:none}
+  .toast.show{opacity:1}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  @media(max-width:560px){.prop{flex-direction:column}.prop img{width:100%;height:auto;max-height:220px}}
+</style>
+</head>
+<body>
+  <a class="skip" href="#main">Vai al contenuto</a>
+  <div class="wrap">
+    <div class="nav">
+      <a class="name" href="/">calcaterra<span class="dot">.</span>casa</a>
+      <span class="tag">Proposte di viaggio</span>
+    </div>
+
+    <main id="main">
+
+    <!-- LOGIN -->
+    <section id="loginView" class="hidden" aria-labelledby="loginTitle">
+      <div class="card login">
+        <h2 id="loginTitle" style="font-family:Poppins,sans-serif;margin:0 0 6px">📌 Proposte — area riservata</h2>
+        <p style="color:var(--muted);font-size:.9rem;margin:0 0 8px">
+          Per <b>aggiungere</b> una proposta serve la password. L'elenco si legge senza.</p>
+        <form id="loginForm" class="field">
+          <label class="visually-hidden" for="pass">Password</label>
+          <input type="password" id="pass" placeholder="Password" autocomplete="current-password" required>
+          <button class="btn primary" type="submit">Entra</button>
+        </form>
+        <div class="err" id="loginErr" role="alert"></div>
+      </div>
+    </section>
+
+    <!-- SETUP MANCANTE -->
+    <section id="setupView" class="hidden">
+      <div class="card login">
+        <h2 style="font-family:Poppins,sans-serif;margin:0 0 6px">⚙️ Da configurare</h2>
+        <p id="setupMsg" style="color:var(--body);font-size:.92rem;margin:0"></p>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section id="formView" class="hidden">
+      <header class="head">
+        <div class="kicker">Normandie &amp; Bretagne · 6–16 agosto 2026</div>
+        <h1>Proposte per il viaggio</h1>
+        <p class="lead">Qui finiscono le idee: la foto di una pagina di guida, il link a un posto,
+          una nota buttata giù. Niente viene inserito nell'itinerario adesso — tre volte al giorno
+          le proposte vengono lette e analizzate (distanze reali, orari, dove starebbero), e la
+          decisione si prende alla revisione finale.</p>
+      </header>
+
+      <div class="card">
+        <form id="propForm">
+          <label for="titolo">Di cosa si tratta</label>
+          <input type="text" id="titolo" name="titolo" maxlength="200"
+                 placeholder="Es. Menhir du Champ-Dolent" autocomplete="off">
+
+          <label for="link">Link</label>
+          <input type="url" id="link" name="link" maxlength="600"
+                 placeholder="https://…" autocomplete="off">
+          <div class="hint">Sito ufficiale, mappa, articolo. Solo indirizzi http:// o https://.</div>
+
+          <label for="nota">Nota</label>
+          <textarea id="nota" name="nota" maxlength="2000"
+                    placeholder="Perché ti interessa, da dove viene, cosa vorresti sapere…"></textarea>
+
+          <label id="fotoLabel">Foto</label>
+          <div class="drop" id="drop">
+            <div class="big" aria-hidden="true">📷</div>
+            <p style="margin:8px 0 14px;color:var(--body)">Trascina qui una foto, oppure</p>
+            <button class="btn" id="pickBtn" type="button" aria-describedby="fotoLabel">Scegli dal dispositivo</button>
+            <input type="file" id="file" accept="image/*" class="hidden">
+            <div class="hint">Una foto per proposta, fino a 8 MB. Va bene anche la pagina di un libro fotografata.</div>
+            <img id="thumb" class="thumb" alt="Anteprima della foto scelta">
+          </div>
+
+          <div style="display:flex;gap:12px;align-items:center;margin-top:22px">
+            <button class="btn primary" id="sendBtn" type="submit">Aggiungi la proposta</button>
+            <button class="btn" id="resetBtn" type="button">Svuota</button>
+          </div>
+          <div class="err" id="formErr" role="alert"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ELENCO -->
+    <section id="listView">
+      <div class="row">
+        <h2>Proposte raccolte</h2>
+        <span class="count" id="count" role="status">—</span>
+      </div>
+      <ul class="lista" id="lista"></ul>
+      <p class="vuoto hidden" id="vuoto">Ancora nessuna proposta.</p>
+    </section>
+
+    </main>
+
+    <footer class="foot">
+      <p>L'elenco è leggibile senza password perché tre volte al giorno un lavoro automatico lo
+        legge per analizzarlo. Per <b>aggiungere</b> o <b>eliminare</b> serve la password.
+        Le proposte non finiscono nella guida da sole: restano qui finché non si decide.</p>
+      <p><a href="https://viaggi.calcaterra.casa/normandie-bretagna/">← Torna alla guida Normandia &amp; Bretagna</a></p>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const $ = (s)=>document.querySelector(s);
+let toastTimer;
+function toast(msg, ms){
+  const t=$("#toast"); t.textContent=msg; t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove("show"), ms || (msg.length>44?6500:2800));
+}
+function esc(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+let authed=false;
+
+async function boot(){
+  try{
+    const s = await (await fetch("/api/me",{cache:"no-store"})).json();
+    if(!s.configured || !s.storage){
+      const miss=[];
+      if(!s.storage) miss.push("bucket R2 (binding FOTO_BUCKET)");
+      if(!s.configured) miss.push("variabili SITE_PASSWORD e AUTH_SECRET");
+      $("#setupMsg").innerHTML = "Manca la configurazione lato Cloudflare: <b>"+miss.join(" · ")+
+        "</b>. Vedi PUBLISHING.md §11.";
+      $("#setupView").classList.remove("hidden");
+      return;
+    }
+    authed = !!s.authed;
+    $(authed ? "#formView" : "#loginView").classList.remove("hidden");
+  }catch(e){ $("#loginView").classList.remove("hidden"); }
+  carica();
+}
+
+$("#loginForm").addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  $("#loginErr").textContent="";
+  const password=$("#pass").value;
+  const r=await fetch("/api/login",{method:"POST",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({password})});
+  if(r.ok){
+    $("#pass").value=""; authed=true;
+    $("#loginView").classList.add("hidden");
+    $("#formView").classList.remove("hidden");
+    carica();
+  } else {
+    const d=await r.json().catch(()=>({}));
+    $("#loginErr").textContent = d.error || "Accesso negato.";
+  }
+});
+
+/* --- foto --- */
+const drop=$("#drop"), fileInput=$("#file");
+$("#pickBtn").addEventListener("click", ()=>fileInput.click());
+fileInput.addEventListener("change", anteprima);
+["dragenter","dragover"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add("over");}));
+["dragleave","drop"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove("over");}));
+drop.addEventListener("drop", e=>{
+  const f=[...(e.dataTransfer.files||[])].filter(x=>x.type.startsWith("image/"))[0];
+  if(f){ const dt=new DataTransfer(); dt.items.add(f); fileInput.files=dt.files; anteprima(); }
+});
+function anteprima(){
+  const f=fileInput.files[0], t=$("#thumb");
+  if(!f){ t.classList.remove("on"); t.removeAttribute("src"); return; }
+  t.src=URL.createObjectURL(f); t.classList.add("on");
+}
+
+$("#resetBtn").addEventListener("click", ()=>{
+  $("#propForm").reset(); fileInput.value=""; anteprima(); $("#formErr").textContent="";
+});
+
+$("#propForm").addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  $("#formErr").textContent="";
+  const fd=new FormData();
+  fd.append("titolo", $("#titolo").value);
+  fd.append("link", $("#link").value);
+  fd.append("nota", $("#nota").value);
+  if(fileInput.files[0]) fd.append("file", fileInput.files[0]);
+  if(!fileInput.files[0] && !$("#link").value.trim() && !$("#nota").value.trim()){
+    $("#formErr").textContent="Serve almeno una foto, un link o una nota."; return;
+  }
+  const b=$("#sendBtn"); b.disabled=true; toast("Invio…");
+  let r;
+  try{ r=await fetch("/api/proposte",{method:"POST",body:fd}); }
+  catch(err){ b.disabled=false; toast("Connessione interrotta: la proposta non è stata salvata."); return; }
+  b.disabled=false;
+  if(r.status===401){ toast("Sessione scaduta: rientra con la password."); location.reload(); return; }
+  const d=await r.json().catch(()=>({}));
+  if(!r.ok){ $("#formErr").textContent = d.error || "Errore nel salvataggio."; return; }
+  $("#propForm").reset(); fileInput.value=""; anteprima();
+  toast("Proposta salvata. Verrà analizzata al prossimo giro.");
+  carica();
+});
+
+/* --- elenco --- */
+async function carica(){
+  let d={};
+  try{ d=await (await fetch("/api/proposte",{cache:"no-store"})).json(); }
+  catch(e){ $("#count").textContent="elenco non disponibile"; return; }
+  const items=d.items||[];
+  $("#count").textContent = items.length===0 ? "nessuna proposta"
+    : (items.length===1 ? "1 proposta" : items.length+" proposte");
+  $("#vuoto").classList.toggle("hidden", items.length>0);
+  $("#lista").innerHTML = items.map(it=>{
+    const data = it.creata ? new Date(it.creata).toLocaleString("it-IT",
+      {day:"numeric",month:"long",year:"numeric",hour:"2-digit",minute:"2-digit"}) : "";
+    const img = it.file ? `<img src="/api/proposte/${encodeURIComponent(it.file)}" alt="" loading="lazy">` : "";
+    const link = it.link ? `<div><a class="l" href="${esc(it.link)}" rel="noopener noreferrer" target="_blank">${esc(it.link)}</a></div>` : "";
+    const nota = it.nota ? `<div class="n">${esc(it.nota)}</div>` : "";
+    const del = authed ? `<button class="del" title="Elimina" aria-label="Elimina la proposta ${esc(it.titolo||it.id)}" data-id="${esc(it.id)}">🗑</button>` : "";
+    return `<li class="prop">${img}
+      <div class="b">
+        <div class="t">${esc(it.titolo || "(senza titolo)")}</div>
+        <div class="d">${esc(data)}</div>
+        ${link}${nota}
+        <span class="stato">${esc(it.stato || "da valutare")}</span>
+      </div>${del}</li>`;
+  }).join("");
+  document.querySelectorAll(".del").forEach(b=>b.addEventListener("click", ()=>elimina(b.dataset.id)));
+}
+
+async function elimina(id){
+  if(!confirm("Eliminare questa proposta? L'operazione è definitiva.")) return;
+  const r=await fetch("/api/proposte/"+encodeURIComponent(id),{method:"DELETE"});
+  if(r.ok){ toast("Proposta eliminata"); carica(); }
+  else if(r.status===401){ toast("Sessione scaduta."); location.reload(); }
+  else toast("Errore durante l'eliminazione");
+}
+
+boot();
+</script>
+</body>
+</html>
