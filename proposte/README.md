@@ -33,6 +33,10 @@ Se un dato non è verificabile, la scheda lo dice invece di inventarlo.
 - Le distanze si misurano, non si stimano.
 - Se una proposta non sta in nessuna giornata senza rompere qualcos'altro, la scheda lo
   scrive chiaramente. Un «no» motivato vale più di un «forse».
+- **Il quaderno di viaggio in PDF si rigenera solo su richiesta esplicita di Massimo.**
+  Né l'analisi automatica né le modifiche alla guida lo aggiornano da sole: resta fermo
+  all'ultima versione consegnata finché non viene chiesto di rifarlo.
+- Da fine luglio 2026 si lavora **solo** sul viaggio Normandia & Bretagne.
 
 ## Stato
 
