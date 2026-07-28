@@ -11,6 +11,71 @@ Legenda del giudizio:
 
 ---
 
+## Penisola di Quiberon — tre nomi per la Côte Sauvage già in programma
+
+**Arrivata come:** link dal modulo (id `ms4gxeea-f24ba4ae`), 28 luglio 2026 alle 11:43.
+**Giudizio: DA VALUTARE — non è una tappa nuova.** Quiberon con la Côte Sauvage è già nel
+**Giorno 8** (giovedì 13 agosto), 14:30–16:30: «Pranzo e Pointe du Conguel con Côte Sauvage»,
+54 km / 56 min da Lorient. La pagina segnalata non propone un posto diverso: dà nomi precisi a
+tre punti della stessa costa selvaggia che la sosta già prevede in generale.
+
+La pagina descrive la penisola come «una spettacolare costa selvaggia a ovest, belle spiagge di
+sabbia fine a est» e cita, oltre alla Côte Sauvage in generale: il **Château Turpault**, il
+**Pointe du Percho** e la **Pointe de Beg-er-Goalennec**, più il sentiero GR34 e attività
+(surf, vela, kayak, kite-surf, cicloturismo). Non dà orari, prezzi né indicazioni su parcheggio
+o traffico: per quello serve altro.
+
+### I tre punti, verificati uno per uno
+
+- **Château Turpault** — un castello in stile anglo-medievale del 1904-1910, fatto costruire dal
+  filatore Georges Turpault, occupato e danneggiato dai tedeschi nella Seconda guerra mondiale,
+  restaurato dopo il 1946 e di nuovo dopo il 2014. **Oggi è proprietà privata**: si vede da fuori
+  (dalla strada o dal sentiero costiero), non si visita.
+- **Pointe de Beg-er-Goalennec** — punto panoramico vicino a Port Maria, a **1,7 km** dal castello:
+  praticamente la stessa tappa.
+- **Pointe du Percho** — più a nord, vicino a Portivy, quasi alla punta della penisola: il più
+  lontano dei tre.
+
+Nessuno dei tre ha un biglietto o un orario di apertura: sono punti panoramici all'aperto, come
+Pointe du Conguel.
+
+### Quanto costa aggiungere i tre punti
+
+Misurato con OSRM, tappa per tappa:
+
+| Percorso | Misurato |
+|---|---|
+| Pointe du Conguel → Carnac, diretto (come è adesso) | 21,4 km / **26 min** |
+| Conguel → Château Turpault | 4,2 km / 10 min |
+| → Beg-er-Goalennec | 1,7 km / 3 min |
+| → Pointe du Percho | 6,2 km / 10 min |
+| → Carnac | 15,9 km / 20 min |
+| **Totale con i tre punti** | **28,0 km / 43 min** |
+| **Differenza** | **+6,6 km, +17 min** — di sola guida, senza contare le soste |
+
+I 17 minuti si mangiano parte delle 2 ore già strette di Quiberon (pranzo compreso), perché
+Carnac alle 17:00 è **visita guidata a orario prenotato**: non si sposta. E ai 17 minuti di guida
+vanno aggiunti i minuti reali passati a ciascun punto — anche solo 5-10 a testa fanno un'altra
+mezz'ora.
+
+### Cosa consiglio
+
+**Solo il Château Turpault**, non tutti e tre. È il più vicino a dove ci si ferma già (4,2 km,
+10 min da Conguel, andata e ritorno sono circa 20 min di guida) ed è l'unico dei tre con qualcosa
+da raccontare oltre al panorama — un castello vero, con una storia. Beg-er-Goalennec aggiunge
+poco essendo a un passo da Turpault; Pointe du Percho è quello che costa di più (10 min in più
+di sola andata) proprio nella direzione dove il sito segnala il rischio di coda sulla D768, per
+un punto che dal mare non si distingue granché dagli altri.
+
+Non verificato: condizioni di traffico di agosto 2026 sul tratto verso Percho; se il Château
+Turpault sia visibile bene dalla strada pubblica o solo dal sentiero GR34 (la fonte non lo dice).
+Nessun costo di ingresso risulta in nessuno dei tre punti.
+
+Fonti: bretagna-vacanze.com (pagina segnalata), Wikipédia FR (Château Turpault), OpenStreetMap /
+Nominatim per le coordinate, la guida del viaggio per gli orari del Giorno 8. Distanze: OSRM.
+
+---
+
 ## Névez — la costa da Port-Manec'h a Raguénez
 
 **Arrivata come:** link dal modulo (id `ms4ci3zv-f78d0635`), 28 luglio 2026 alle 09:39.
