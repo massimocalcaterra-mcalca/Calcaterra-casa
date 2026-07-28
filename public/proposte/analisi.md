@@ -11,6 +11,52 @@ Legenda del giudizio:
 
 ---
 
+## Penisola di Quiberon — un nome per una sosta che c'è già
+
+**Arrivata come:** link dal modulo (id `ms4gxeea-f24ba4ae`), 28 luglio 2026 alle 11:43.
+**Giudizio: NON È UNA TAPPA NUOVA — è già nel Giorno 8**, giovedì 13 agosto, 14:30-16:30:
+"Quiberon: Penisola e Côte Sauvage". Il link non propone un posto in più: descrive quello che
+c'è già in agenda, ma senza dargli un punto preciso dove fermare l'auto.
+
+### Cosa dice la pagina
+
+La **Côte Sauvage**, il lato ovest della penisola, 8 km di scogliere frastagliate e archi
+scavati dalle onde: il punto panoramico che cita è la **Pointe de Beg-er-Goalennec**, «il
+panorama sul mare e su Belle-Île è splendido». Sul lato est, spiagge di sabbia bianca. Il
+sentiero costiero (GR34) gira tutta la penisola; la zona è nota per surf, vela, kayak,
+kite-surf. Borghi con case bianche e persiane blu, specialità locali (sardine in scatola,
+biscotti di Quiberon, salidou). Quiberon è anche il punto d'imbarco per Belle-Île, Houat e
+Hoëdic — non pertinente per questo viaggio, che non prevede le isole.
+
+### Cosa c'è già, e cosa aggiunge il link
+
+| | |
+|---|---|
+| Nell'itinerario | Giorno 8, 14:30-16:30: "Quiberon: Penisola e Côte Sauvage" — due ore, nessun punto preciso indicato |
+| Nella pagina | Lo stesso tratto di costa, con un nome: Pointe de Beg-er-Goalennec |
+| Dove sta il punto | Comune di Saint-Pierre-Quiberon, parcheggio sulla D186 Côte Sauvage, **circa 3 km** dal centro di Quiberon — dentro la stessa area già in programma, non una deviazione |
+
+Non serve misurare una deviazione con OSRM: non è una tappa fuori percorso, è dentro la sosta
+che il Giorno 8 ha già. La Côte Sauvage corre per 8 km sul lato ovest della penisola: senza un
+punto di riferimento si rischia di arrivare e girare in macchina lungo la costa senza fermarsi
+da nessuna parte in particolare.
+
+### Cosa consiglio
+
+Usare la **Pointe de Beg-er-Goalennec** come destinazione concreta delle due ore già previste:
+è un parcheggio segnalato sulla costa selvaggia, non un'aggiunta di tempo o di chilometri.
+Serve solo a dare un nome alla sosta generica che c'è in agenda.
+
+**Non verificato:** l'affollamento del parcheggio a metà agosto, e se il tratto di GR34 da lì
+sia comodo da percorrere a piedi nel tempo che resta. La pagina non dà orari perché è un tratto
+di costa libero, senza biglietto.
+
+Fonti: bretagna-vacanze.com (pagina segnalata) per la descrizione; ricerca web per la
+localizzazione della Pointe de Beg-er-Goalennec (monnuage.fr, sites.google.com/quiberondejlb7).
+Nessuna distanza da misurare: nessuna deviazione dal percorso già previsto.
+
+---
+
 ## Névez — la costa da Port-Manec'h a Raguénez
 
 **Arrivata come:** link dal modulo (id `ms4ci3zv-f78d0635`), 28 luglio 2026 alle 09:39.
