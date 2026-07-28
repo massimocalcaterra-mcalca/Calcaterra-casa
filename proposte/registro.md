@@ -52,6 +52,21 @@ giorno la scrittura tornasse a rompersi, il lavoro non sparirebbe di nuovo in si
 `main` ci si passa a mano, dopo aver letto. La spunta che toglierebbe la restrizione esiste
 (*Allow unrestricted branch pushes*) ma si è scelto di non attivarla.
 
+2026-07-28 10:10 · funziona · Il push automatico **riesce**. Due giri hanno scritto sul
+repository alle 09:53 e alle 09:54. La causa vera del blocco era che la routine non aveva il
+repository collegato: risolto da Massimo su claude.ai. In più la routine ha **un branch suo
+già assegnato** (`claude/fervent-galileo-vopdz6`, nome generato): il push passa solo su quello,
+non su un `claude/` qualunque — il mio `claude/proposte` era rifiutato per il nome. Il prompt ora
+non inventa più nomi: resta sul branch che trova e fa `git push -u origin HEAD`.
+
+2026-07-28 10:12 · doppione · La proposta `ms4ci3zv-f78d0635` (Névez) è stata analizzata **due
+volte**, da due giri partiti a due minuti di distanza, con giudizi diversi. Causa: il controllo
+dei duplicati legge `viste.json`, che però si aggiorna solo alla FINE del giro — due giri
+sovrapposti non si vedono a vicenda. Colpa mia: ho lanciato un giro a mano mentre ne stava
+girando uno automatico. Non è un guasto e non si ripete da solo; se dovesse ricapitare senza
+che nessuno forzi, servirà un segnale di «giro in corso». Le due schede sono state fuse in una
+dopo aver rimisurato le distanze.
+
 2026-07-28 09:45 · rimedio non confermato · Una prova tecnica lanciata alle 08:52 — solo
 `checkout -B claude/proposte`, una riga scritta qui, commit e push — non ha fatto comparire
 nessun branch dopo cinquanta minuti. Quindi il prefisso `claude/` da solo **non** basta.

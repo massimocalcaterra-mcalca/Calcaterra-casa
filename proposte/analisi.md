@@ -11,6 +11,77 @@ Legenda del giudizio:
 
 ---
 
+## Névez — la costa da Port-Manec'h a Raguénez
+
+**Arrivata come:** link dal modulo (id `ms4ci3zv-f78d0635`), 28 luglio 2026 alle 09:39.
+**Giudizio: DA VALUTARE**, ma con una condizione dura: ci sta solo rinunciando a Concarneau.
+
+Névez è una penisola del Finistère meridionale, fra Pont-Aven e Concarneau. Il tratto fra
+**Port-Manec'h**, borgo di pescatori alla foce dell'Aven, e la spiaggia di **Raguénez** — sabbia
+chiara e un isolotto che si raggiunge a piedi solo con la bassa marea — segue il GR34, il sentiero
+dei doganieri. Lungo la strada i porticcioli di Kerdruc e Rosbras, il mulino a marea del Hénan e
+gli hameaux in pietra di Kerascoët e Kercanic. Tutto all'aperto e gratuito: nessun orario da
+rispettare, nessun biglietto. **È un posto che vale per la camminata**, ed è questo il punto su cui
+si decide.
+
+### Quanto costa davvero
+
+Misurato con OSRM, e ricontrollato a mano dopo l'analisi automatica:
+
+| Percorso | Misurato |
+|---|---|
+| Concarneau → Lorient, come è adesso | 56,4 km / **47 min** |
+| Concarneau → Port-Manec'h → Raguénez → Lorient | 80,0 km / **89 min** |
+| **Differenza** | **+23,6 km, +42 min** — di sola guida |
+| Quimper → Port-Manec'h → Raguénez → Lorient (saltando Concarneau) | 105,8 km / **104 min** |
+
+Il Giorno 9 (venerdì 14 agosto) è l'unico che passa da queste parti, ed è il più rigido del
+viaggio: il sottomarino *Flore* a Keroman alle **11:20** è nominativo e a orario fisso, e Carnac
+alle 15:00 pure. L'ora d'arrivo a Lorient non si tocca. Quindi i 42 minuti non si «aggiungono»:
+vanno tolti a qualcosa che c'è già.
+
+### Le quattro configurazioni possibili
+
+Partenza da Quimper, dove si dorme. Il tempo a Névez è quello che resta prima delle 11:20.
+
+| | Si rinuncia a | Tempo a Névez |
+|---|---|---|
+| **A** — com'è ora | niente | — |
+| **B** | l'ora facoltativa a Quimper (8:00–9:00) | **20 minuti** |
+| **C** | la Ville Close di Concarneau (9:25–10:30) | **36 minuti** |
+| **D** | a tutte e due | **1 ora e 30** |
+
+### Cosa consiglio
+
+**Solo la D vale la pena, e la D costa cara.** Sotto i quaranta minuti Névez diventa una sosta
+fotografica: si parcheggia, si guarda il mare, si riparte — e per quello non si spostano due
+prenotazioni. Il senso del posto è camminare un pezzo di GR34 e scendere a Raguénez, e serve
+l'ora e mezza.
+
+Ma l'ora e mezza si compra saltando Concarneau **il 14 agosto**, cioè in pieno Festival des Filets
+Bleus (vedi la scheda qui sotto). Questo taglia in due modi opposti: o è un motivo in più per
+starne alla larga — la Ville Close in giorno di festa è una calca, e il parcheggio pure — oppure
+è esattamente la ragione per esserci.
+
+**Il mio parere:** lasciarla fuori da questo viaggio, a meno che la costa selvaggia non conti per
+voi più della cittadella fortificata. Névez non scappa, ed è una cosa da mezza giornata vera,
+magari dormendo a Pont-Aven, non da ritagli di venti minuti.
+
+**Non verificato:** l'orario della bassa marea del 14 agosto 2026, che decide se l'isolotto di
+Raguénez è raggiungibile a piedi; e se il biglietto del *Flore* sia spostabile su una partenza più
+tarda (ce n'è una ogni 40 minuti), il che cambierebbe tutti i conti qui sopra. Servirebbe
+richiamare la base di Keroman.
+
+Fonti: Tourisme Bretagne (pagina segnalata) per la descrizione dei luoghi; la guida del viaggio per
+gli orari del Giorno 9. Distanze: OSRM, ricontrollate.
+
+*Nota di servizio: questa proposta è stata analizzata due volte, da due giri automatici
+sovrapposti, con giudizi diversi — «da valutare» e «fuori». La scheda qui sopra è la sintesi dopo
+aver rimisurato le distanze: i numeri delle due analisi coincidevano, la differenza stava nel non
+essersi accorti che l'ora di Quimper e quella di Concarneau sono spendibili. Vedi `registro.md`.*
+
+---
+
 ## Festival des Filets Bleus — Concarneau, 12–16 agosto 2026
 
 **Arrivata come:** link dal modulo (id `ms3jt72f-30322d61`), 27 luglio 2026 alle 18:16.
