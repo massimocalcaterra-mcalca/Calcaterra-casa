@@ -75,3 +75,11 @@ repository non risulta *collegato* alla routine; il proxy di GitHub concede le c
 per i repository collegati, e allora il push cade a prescindere dal nome del branch. Si verifica
 aggiungendo `Calcaterra-casa` fra le Repositories della routine su claude.ai. Finché non è
 confermato, la consegna buona resta il messaggio finale.
+
+2026-07-28 16:20 · rivalutazione · L'itinerario è stato rifatto da capo, e i giudizi dati sul
+percorso precedente non valevano più: tutte e sette le schede riesaminate con le distanze
+rimisurate. Due si sono ribaltate. **Pointe Saint-Mathieu**, che era «fuori perché sta dall'altra
+parte del Finistère», ora è sulla linea del Giorno 6-7: spostando la notte da Porspoder a
+Le Conquet si guadagnano due tappe e si risparmiano sei minuti. **Concarneau**, uscita
+dall'itinerario, resta a undici minuti dalla strada della mattina del 13. È la ragione per cui le
+schede vanno ricontrollate quando cambia il percorso, non solo quando arriva una proposta nuova.
