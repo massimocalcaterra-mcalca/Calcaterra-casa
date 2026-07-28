@@ -29,24 +29,23 @@ il 27 alle 18:14 e 18:16, la routine è girata dieci volte fino alle 04:14 del 2
 analizzarle e senza scrivere qui. Il giro parte (lo conferma `last_fired_at`) ma non produce
 nulla: il guasto è nella sessione automatica, non nella raccolta. Analizzate a mano.
 
-2026-07-28 05:21 UTC · causa accertata · Un giro di diagnostica ha isolato **due guasti
-indipendenti**, entrambi nell'infrastruttura e non nel lavoro:
+2026-07-28 05:21 UTC · causa accertata · Un giro di diagnostica ha isolato il guasto. Le
+sessioni programmate **partono davvero** — girano però in un contenitore diverso da quello di
+lavoro, che è il motivo per cui prima sembravano non partire affatto. Facevano l'analisi, la
+committavano, e poi il push veniva rifiutato con **403**. Lavoro fatto, consegna impossibile.
 
-1. **Push negato.** La sessione programmata ha accesso al repository in **sola lettura**:
-   ogni `git push`, su qualunque branch, viene rifiutato con **403**.
-2. **Firma dei commit assente.** Il file della chiave di firma è vuoto (0 byte), quindi
-   con `commit.gpgsign=true` git non produce alcuna firma e il commit non passa.
+2026-07-28 06:40 UTC · causa precisata · Non era «repository in sola lettura», come avevo
+scritto qui sopra il 28 alle 05:21. La regola vera è che una routine può fare push **solo su
+branch il cui nome comincia per `claude/`**: la sessione provava a scrivere su `main`, e
+prendeva 403 per quello. Anche la chiave di firma vuota non stava bloccando niente — il commit
+di prova era stato creato, solo senza firma. Il guasto era uno, non due.
 
-Le sessioni programmate **partono davvero** — girano però in un contenitore diverso da quello
-di lavoro, che è il motivo per cui prima sembravano non partire affatto. Il lavoro che avevano
-prodotto restava committato lì e non arrivava mai al repository: analisi fatta, consegna
-impossibile. Nessuna proposta è andata persa: tutte quelle raccolte fino a qui sono state
-analizzate a mano e sono in `analisi.md`.
+Nessuna proposta è andata persa: tutte quelle raccolte fino a qui sono state analizzate a mano
+e sono in `analisi.md`.
 
-2026-07-28 05:52 UTC · rimedio · La routine oraria è stata **riscritta perché non usi git**.
-Ora legge le proposte dall'API del sito e `viste.json` da GitHub in sola lettura — le due cose
-che funzionano — e **consegna la scheda finita nel messaggio finale**, che arriva per notifica
-e per email. Le schede rientrano nel repository passando dalla sessione di lavoro, che ha
-accesso in scrittura. Se non c'è niente di nuovo la routine risponde con una riga sola e si
-ferma. Resta da fare, lato infrastruttura: dare accesso in scrittura e una chiave di firma
-valida alle sessioni programmate. Finché non succede, il percorso qui sopra è quello buono.
+2026-07-28 06:45 UTC · rimedio · La routine oraria ora lavora sul branch **`claude/proposte`**
+e consegna due volte: il commit sul branch, e la scheda per intero nel messaggio finale, che
+arriva per notifica ed email. Il messaggio si scrive sempre, anche quando il push riesce: se un
+giorno la scrittura tornasse a rompersi, il lavoro non sparirebbe di nuovo in silenzio. Su
+`main` ci si passa a mano, dopo aver letto. La spunta che toglierebbe la restrizione esiste
+(*Allow unrestricted branch pushes*) ma si è scelto di non attivarla.

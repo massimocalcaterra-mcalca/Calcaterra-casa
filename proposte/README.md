@@ -10,20 +10,28 @@ si prende alla revisione finale.
    di guida, link, nota. Serve la password del sito.
 2. La proposta finisce nel bucket R2 sotto il prefisso `proposte/`, ed è leggibile
    pubblicamente da `https://calcaterra.casa/api/proposte`.
-3. **Ogni ora**, al minuto :14, un lavoro automatico legge l'elenco, analizza le proposte
-   nuove e **manda la scheda finita per notifica ed email**.
-4. La scheda entra in `analisi.md` passando dalla sessione di lavoro.
+3. **Ogni ora**, al minuto :14, un lavoro automatico legge l'elenco e analizza le proposte
+   nuove. Consegna in due modi insieme: un commit sul branch **`claude/proposte`**, e la
+   scheda per intero nel messaggio finale, che arriva per notifica ed email.
+4. Le schede entrano in `main` quando il branch viene riletto e fuso a mano.
 5. Alla revisione finale si decide quali far entrare nella guida.
 
-### Perché la consegna passa da una notifica e non da un commit
+### Perché un branch separato e non `main`
 
-Le sessioni programmate girano in un contenitore separato che ha il repository in **sola
-lettura**: il push viene rifiutato con 403 e la chiave di firma dei commit è vuota. Per un
-giorno il lavoro è stato fatto e poi è rimasto lì, invisibile. La routine è quindi scritta
-perché **non usi git**: legge dall'API del sito e da GitHub in sola lettura, e consegna il
-risultato nel messaggio finale — l'unico canale che funziona. Quando l'infrastruttura darà
-accesso in scrittura e una chiave di firma, si potrà tornare al commit diretto; fino ad
-allora questo è il percorso buono, non un ripiego temporaneo da ricordarsi a memoria.
+Le sessioni programmate possono fare push **solo su branch il cui nome comincia per
+`claude/`**: è la regola predefinita delle routine, e serve a impedire che un lavoro non
+sorvegliato tocchi il branch pubblicato. Per un giorno la routine ha provato a scrivere su
+`main`, ha preso 403 a ogni giro, e il lavoro è rimasto chiuso nel contenitore: fatto e
+invisibile. Da qui vengono i tre giri a vuoto registrati in `registro.md`.
+
+La restrizione si potrebbe togliere (*Allow unrestricted branch pushes*, fra i permessi
+della routine su claude.ai), ma si è scelto di **tenerla**: il valore del lavoro automatico
+è che l'analisi venga fatta, non che finisca da sola sul sito. Il passaggio da `claude/proposte`
+è la stessa cosa che dice la regola qui sotto — niente entra nella guida in automatico —
+applicata anche al quaderno.
+
+La doppia consegna serve a questo: se un giorno il push smette di funzionare, il messaggio
+finale resta, e il lavoro non sparisce di nuovo in silenzio.
 
 ## Che cosa fa l'analisi
 
