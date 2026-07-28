@@ -17,7 +17,8 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 ## Pointe Saint-Mathieu e Le Conquet
 
 **Arrivata come:** link dal modulo (id `ms3jqrs9-6312f9b8`), 27 luglio 2026 alle 18:14.
-**Giudizio: ENTRA — anzi, si ripaga da sola.**
+**Giudizio: ENTRATA nella guida** il 28 luglio. È la fine del **Giorno 6**, martedì 11 agosto,
+e ci si dorme accanto.
 
 La punta a ovest di Brest dove stanno insieme tre cose: le **rovine dell'abbazia** benedettina del
 XII secolo, senza tetto e aperte sul mare; il **faro** del 1835 costruito dentro le rovine; e il
@@ -44,7 +45,8 @@ punti di vista, perché il nuovo percorso passa già di lì. Le Conquet è compr
 **Prendetela, e prendetela di sera.** Arrivando nel tardo pomeriggio del Giorno 6 la vedete al
 tramonto — che per una punta rivolta a ovest è l'unica ora che conta — e ci dormite accanto.
 
-**Cosa serve da voi:** cambiare la prenotazione della notte dell'11 agosto. Nient'altro.
+**Cosa serve da voi:** prenotare la notte dell'11 agosto a **Le Conquet o Plougonvelin**, non
+a Porspoder. È l'unica conseguenza pratica.
 
 Fonti: link segnalato. Distanze: OSRM.
 
@@ -88,7 +90,8 @@ Fonti: Tourisme Bretagne (pagina segnalata); horaire-maree.fr per i coefficienti
 ## Festival des Filets Bleus — Concarneau, 12–16 agosto 2026
 
 **Arrivata come:** link dal modulo (id `ms3jt72f-30322d61`), 27 luglio 2026 alle 18:16.
-**Giudizio: DA VALUTARE — costa undici minuti.**
+**Giudizio: DA VALUTARE — costa undici minuti.** Non è entrato in itinerario: resta segnato
+sulla mappa col cerchio tratteggiato.
 
 La 104ª edizione della più antica festa marittima di Bretagna: cerchi celtici, bagadoù, costumi,
 fest-noz. Concarneau **non è più una tappa** dell'itinerario, ma la strada della mattina del 13 le
@@ -171,7 +174,9 @@ Fonti: articolo segnalato, verificato punto per punto. Distanze: OSRM.
 ## Menhir du Champ-Dolent — Dol-de-Bretagne
 
 **Arrivata come:** foto di una pagina di guida cartacea, 27 luglio 2026.
-**Giudizio: ENTRA.** Già inserito nella guida come opzione del Giorno 4.
+**Giudizio: ENTRATO nella guida** il 28 luglio, non più come opzione ma come **tappa del
+Giorno 4**: la giornata ora è Bayeux → Mont-Saint-Michel → Champ-Dolent → Saint-Malo, 192 km e
+3h38.
 
 Nove metri e trenta di granito piantati in un campo, il secondo menhir più alto della Bretagna
 ancora in piedi. La leggenda dice che sprofonda di un pollice ogni secolo e che il mondo finirà
@@ -221,7 +226,8 @@ Fonti: lemans-musee24h.com, ufficio del turismo di Le Mans. Distanze: OSRM.
 ## Bécherel, la città del libro
 
 **Arrivata come:** ricerca su richiesta, 27 luglio 2026.
-**Giudizio: DA VALUTARE.** Inserito come opzione del Giorno 4.
+**Giudizio: DA VALUTARE.** Resta un'opzione del Giorno 4, segnata sulla mappa col cerchio
+tratteggiato. Non è entrato in itinerario.
 
 650 abitanti, prima Cité du Livre di Francia dal 1989: una quindicina di librerie di libri antichi,
 tredici gallerie, laboratori di calligrafia e legatoria.

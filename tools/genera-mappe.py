@@ -52,11 +52,13 @@ B_STOPS = [
     ("Colleville-sur-Mer",        49.3597, -0.8508, "g3",  ""),
     ("Arromanches",               49.3397, -0.6222, "g3",  ""),
     ("Mont-Saint-Michel",         48.6361, -1.5115, "g4",  ""),
+    ("Champ-Dolent",              48.5292, -1.7525, "g4",  ""),
     ("Saint-Malo",                48.6493, -2.0257, "g5",  ""),
     ("Cap Fréhel",                48.6853, -2.3153, "g5",  ""),
     ("Ploumanac'h",               48.8300, -3.4800, "g6",  ""),
     ("Roscoff",                   48.7261, -3.9847, "g6",  ""),
-    ("Porspoder",                 48.5000, -4.7667, "g6",  ""),
+    ("Le Conquet",                48.3606, -4.7708, "g6",  ""),
+    ("Pointe Saint-Mathieu",      48.3300, -4.7719, "g6",  ""),
     ("Pointe de Pen-Hir",         48.2569, -4.6236, "g7",  ""),
     ("Pointe du Raz",             48.0386, -4.7361, "g7",  ""),
     ("Pointe du Van",             48.0553, -4.7042, "g7",  "eclipse"),
@@ -82,16 +84,16 @@ A_OPTIONS = [
 ]
 
 B_OPTIONS = [
-    ("Champ-Dolent", 48.5292, -1.7525, "g4",
-     "Menhir du Champ-Dolent — sulla strada del Giorno 4 fra il Mont e Saint-Malo: 9,3 metri "
-     "di granito, deviazione di 7 km e 15 minuti"),
+    ("Concarneau", 47.8757, -3.9199, "g8",
+     "Concarneau — da valutare sul Giorno 8: la Ville Close costa +11 minuti sulla strada, "
+     "ma il 13 agosto e' in corso il Festival des Filets Bleus"),
     ("Bécherel", 48.2953, -1.9469, "g4",
      "Bécherel — opzione del Giorno 4: la prima Cite du Livre di Francia, una quindicina di librerie"),
     ("Baie des Trépassés", 48.0355, -4.6790, "g7",
      "Baie des Trépassés — piano B dell'eclissi: stesso orizzonte della Pointe du Van ma a livello "
      "del mare e riparata dal vento, 5 minuti di strada"),
 ]
-B_TRANSFER = {0, 23, 25}
+B_TRANSFER = {0, 25, 27}
 
 DAY_TITLES = {
     "A": {
@@ -111,9 +113,9 @@ DAY_TITLES = {
         "g1": "Giorno 1 · arrivo a Beauvais e prima tappa normanna",
         "g2": "Giorno 2 · Étretat e Le Havre, la Costa d'Alabastro",
         "g3": "Giorno 3 · le spiagge dello Sbarco",
-        "g4": "Giorno 4 · Mont-Saint-Michel",
+        "g4": "Giorno 4 · Mont-Saint-Michel e il Menhir du Champ-Dolent",
         "g5": "Giorno 5 · Cap Fréhel, Fort la Latte e la costa nord",
-        "g6": "Giorno 6 · Ploumanac'h, Roscoff e i fari del Finistère nord",
+        "g6": "Giorno 6 · Ploumanac'h, Roscoff e la Pointe Saint-Mathieu",
         "g7": "Giorno 7 · Crozon, la Pointe du Raz e l'eclissi alla Pointe du Van",
         "g8": "Giorno 8 · Raguénez, i sottomarini di Lorient, i menhir di Carnac",
         "g9": "Giorno 9 · Rochefort-en-Terre, Brocéliande e Le Mans",
@@ -130,8 +132,8 @@ A_LABELS = ["Beauvais", "Mont-Saint-Michel", "Penmarc'h", "Pointe du Raz",
 B_LABELS = ["Beauvais", "Étretat", "Mont-Saint-Michel", "Pointe du Van",
             "Pointe du Raz", "Carnac", "Lorient", "Bayeux", "Saint-Malo",
             "Ploumanac'h", "Giverny", "Rouen", "Le Havre", "Le Mans",
-            "Roscoff", "Brocéliande", "Pointe de Pen-Hir", "Locronan",
-            "Quiberon", "Porspoder"]
+            "Roscoff", "Brocéliande", "Pointe Saint-Mathieu", "Locronan",
+            "Quiberon", "Pointe de Pen-Hir", "Champ-Dolent", "Le Conquet"]
 
 
 LABEL_FS = 16.0          # px, come .mp-label
@@ -139,7 +141,7 @@ CHAR_W = 0.545           # larghezza media di un carattere in em, misurata sul f
 
 # nelle punte più affollate il nome per esteso non entra: si abbrevia
 ALIAS = {"Pointe du Raz": "Pte du Raz", "Pointe de Pen-Hir": "Pte de Pen-Hir",
-         "Pointe du Van": "Pte du Van", "Mont-Saint-Michel": "Mont-Saint-Michel"}
+         "Pointe du Van": "Pte du Van", "Pointe Saint-Mathieu": "Pte Saint-Mathieu"}
 
 
 def text_w(t):
@@ -650,9 +652,11 @@ def main():
          "verso nord-ovest lungo la Costa d'Alabastro fino a Étretat e a Le Havre, "
          "all'estuario della Senna. Segue il tratto normanno delle spiagge dello "
          "Sbarco — Bayeux, Arromanches, Colleville-sur-Mer e la Pointe du Hoc — "
-         "quindi il Mont-Saint-Michel al confine con la Bretagna. La rotta continua "
+         "quindi il Mont-Saint-Michel e il Menhir du Champ-Dolent, appena passato il "
+         "confine con la Bretagna. La rotta continua "
          "a ovest per Saint-Malo, Cap Fréhel e la Côte de Granit Rose a Ploumanac'h, "
-         "poi Roscoff e Porspoder, alla punta nordovest del Finistère. Scende quindi "
+         "poi Roscoff, Le Conquet e la Pointe Saint-Mathieu, alla punta estrema del "
+         "Finistère. Scende quindi "
          "lungo la costa atlantica alla Pointe de Pen-Hir e alla Pointe du Raz: alla "
          "Pointe du Van, accanto a quest'ultima, un cerchio più grande con anello "
          "concentrico segna il punto di osservazione dell'eclissi solare del 12 agosto "
