@@ -45,25 +45,29 @@ A_TRANSFER = {0, 17, 18}
 B_STOPS = [
     ("Beauvais",                  49.4544,  2.1128, "g1",  "gateway"),
     ("Rouen",                     49.4432,  1.0993, "g1",  ""),
-    ("Étretat",              49.7072,  0.2039, "g2",  ""),
-    ("Honfleur",                  49.4194,  0.2325, "g2",  ""),
+    ("Étretat",                   49.7072,  0.2039, "g2",  ""),
+    ("Le Havre",                  49.4944,  0.1079, "g2",  ""),
     ("Bayeux",                    49.2764, -0.7024, "g3",  ""),
     ("Pointe du Hoc",             49.3939, -0.9892, "g3",  ""),
     ("Colleville-sur-Mer",        49.3597, -0.8508, "g3",  ""),
     ("Arromanches",               49.3397, -0.6222, "g3",  ""),
     ("Mont-Saint-Michel",         48.6361, -1.5115, "g4",  ""),
     ("Saint-Malo",                48.6493, -2.0257, "g5",  ""),
-    ("Cap Fréhel",           48.6853, -2.3153, "g5",  ""),
+    ("Cap Fréhel",                48.6853, -2.3153, "g5",  ""),
     ("Ploumanac'h",               48.8300, -3.4800, "g6",  ""),
+    ("Roscoff",                   48.7261, -3.9847, "g6",  ""),
+    ("Porspoder",                 48.5000, -4.7667, "g6",  ""),
+    ("Pointe de Pen-Hir",         48.2569, -4.6236, "g7",  ""),
     ("Pointe du Raz",             48.0386, -4.7361, "g7",  ""),
-    ("Penmarc'h",                 47.7986, -4.3736, "g7",  "eclipse"),
-    ("Pointe de Pen-Hir",         48.2569, -4.6236, "g8",  ""),
-    ("Locronan",                  48.0972, -4.2081, "g8",  ""),
-    ("Concarneau",                47.8756, -3.9203, "g9",  ""),
-    ("Lorient",                   47.7483, -3.3702, "g9",  ""),
-    ("Carnac",                    47.5850, -3.0800, "g9",  ""),
-    ("Rennes",                    48.1173, -1.6778, "g9",  ""),
-    ("Les Andelys",               49.2417,  1.4108, "g10", ""),
+    ("Pointe du Van",             48.0553, -4.7042, "g7",  "eclipse"),
+    ("Locronan",                  48.0972, -4.2081, "g7",  ""),
+    ("Raguénez",                  47.7960, -3.7875, "g8",  ""),
+    ("Lorient",                   47.7483, -3.3702, "g8",  ""),
+    ("Quiberon",                  47.4830, -3.1210, "g8",  ""),
+    ("Carnac",                    47.5850, -3.0800, "g8",  ""),
+    ("Rochefort-en-Terre",        47.6944, -2.3392, "g9",  ""),
+    ("Brocéliande",               48.0186, -2.1725, "g9",  ""),
+    ("Le Mans",                   48.0061,  0.1996, "g9",  ""),
     ("Giverny",                   49.0758,  1.5333, "g10", ""),
 ]
 
@@ -81,12 +85,13 @@ B_OPTIONS = [
     ("Champ-Dolent", 48.5292, -1.7525, "g4",
      "Menhir du Champ-Dolent — sulla strada del Giorno 4 fra il Mont e Saint-Malo: 9,3 metri "
      "di granito, deviazione di 7 km e 15 minuti"),
-    ("Le Mans",  48.0061,  0.1996, "g10",
-     "Le Mans — variante B del Giorno 10: il museo M24 al posto di Giverny, stessi 365 km"),
     ("Bécherel", 48.2953, -1.9469, "g4",
      "Bécherel — opzione del Giorno 4: la prima Cite du Livre di Francia, una quindicina di librerie"),
+    ("Baie des Trépassés", 48.0355, -4.6790, "g7",
+     "Baie des Trépassés — piano B dell'eclissi: stesso orizzonte della Pointe du Van ma a livello "
+     "del mare e riparata dal vento, 5 minuti di strada"),
 ]
-B_TRANSFER = {0, 18, 19, 21}
+B_TRANSFER = {0, 23, 25}
 
 DAY_TITLES = {
     "A": {
@@ -104,15 +109,15 @@ DAY_TITLES = {
     },
     "B": {
         "g1": "Giorno 1 · arrivo a Beauvais e prima tappa normanna",
-        "g2": "Giorno 2 · Étretat e Honfleur, la Costa d'Alabastro",
+        "g2": "Giorno 2 · Étretat e Le Havre, la Costa d'Alabastro",
         "g3": "Giorno 3 · le spiagge dello Sbarco",
         "g4": "Giorno 4 · Mont-Saint-Michel",
-        "g5": "Giorno 5 · Saint-Malo e il castello sul mare",
-        "g6": "Giorno 6 · la Côte de Granit Rose",
-        "g7": "Giorno 7 · il Finistère e l'eclissi sull'Atlantico",
-        "g8": "Giorno 8 · Crozon e Locronan",
-        "g9": "Giorno 9 · Concarneau, i sottomarini di Lorient, i menhir di Carnac",
-        "g10": "Giorno 10 · ritorno lungo la Senna: Les Andelys e Giverny",
+        "g5": "Giorno 5 · Cap Fréhel, Fort la Latte e la costa nord",
+        "g6": "Giorno 6 · Ploumanac'h, Roscoff e i fari del Finistère nord",
+        "g7": "Giorno 7 · Crozon, la Pointe du Raz e l'eclissi alla Pointe du Van",
+        "g8": "Giorno 8 · Raguénez, i sottomarini di Lorient, i menhir di Carnac",
+        "g9": "Giorno 9 · Rochefort-en-Terre, Brocéliande e Le Mans",
+        "g10": "Giorno 10 · Giverny, il giardino di Monet",
         "g11": "Giorno 11 · rientro a Parigi-Beauvais",
     },
 }
@@ -122,17 +127,19 @@ DAY_TITLES = {
 A_LABELS = ["Beauvais", "Mont-Saint-Michel", "Penmarc'h", "Pointe du Raz",
             "Saint-Malo", "Ploumanac'h", "Carnac", "Lorient", "Quimper", "Vannes",
             "Brocéliande", "Cap Fréhel", "Pointe de Pen-Hir", "Rouen", "Locronan"]
-B_LABELS = ["Beauvais", "Étretat", "Mont-Saint-Michel", "Penmarc'h",
+B_LABELS = ["Beauvais", "Étretat", "Mont-Saint-Michel", "Pointe du Van",
             "Pointe du Raz", "Carnac", "Lorient", "Bayeux", "Saint-Malo",
-            "Ploumanac'h", "Giverny", "Rouen", "Honfleur", "Rennes",
-            "Pointe de Pen-Hir"]
+            "Ploumanac'h", "Giverny", "Rouen", "Le Havre", "Le Mans",
+            "Roscoff", "Brocéliande", "Pointe de Pen-Hir", "Locronan",
+            "Quiberon", "Porspoder"]
 
 
 LABEL_FS = 16.0          # px, come .mp-label
 CHAR_W = 0.545           # larghezza media di un carattere in em, misurata sul font di sistema
 
 # nelle punte più affollate il nome per esteso non entra: si abbrevia
-ALIAS = {"Pointe du Raz": "Pte du Raz", "Pointe de Pen-Hir": "Pte de Pen-Hir"}
+ALIAS = {"Pointe du Raz": "Pte du Raz", "Pointe de Pen-Hir": "Pte de Pen-Hir",
+         "Pointe du Van": "Pte du Van", "Mont-Saint-Michel": "Mont-Saint-Michel"}
 
 
 def text_w(t):
@@ -640,19 +647,20 @@ def main():
          "lungo la Manica e la costa bretone fino al Finistère e ritorno lungo la Senna",
          "Mappa schematica della Francia nord-occidentale. Dall'aeroporto di "
          "Parigi-Beauvais, in alto a destra, la rotta scende su Rouen e prosegue "
-         "verso nord-ovest lungo la Costa d'Alabastro fino a Étretat, poi Honfleur "
+         "verso nord-ovest lungo la Costa d'Alabastro fino a Étretat e a Le Havre, "
          "all'estuario della Senna. Segue il tratto normanno delle spiagge dello "
          "Sbarco — Bayeux, Arromanches, Colleville-sur-Mer e la Pointe du Hoc — "
          "quindi il Mont-Saint-Michel al confine con la Bretagna. La rotta continua "
-         "a ovest per Saint-Malo, Cap Fréhel e la Côte de Granit Rose a "
-         "Ploumanac'h, fino al Finistère con la Pointe du Raz. A Penmarc'h, sulla "
-         "punta sud-occidentale, un cerchio più grande con anello concentrico segna "
-         "il punto di osservazione dell'eclissi solare del 12 agosto 2026. Seguono "
-         "la Presqu'île de Crozon e Locronan, quindi Concarneau, la base sottomarina "
-         "di Lorient e i megaliti di Carnac; poi "
-         "un lungo trasferimento tratteggiato verso est via Rennes porta a Les "
-         "Andelys e Giverny, sulla Senna, e infine di nuovo a Beauvais. In totale "
-         "circa 2.150 chilometri. Ogni cerchio è un collegamento alla giornata "
+         "a ovest per Saint-Malo, Cap Fréhel e la Côte de Granit Rose a Ploumanac'h, "
+         "poi Roscoff e Porspoder, alla punta nordovest del Finistère. Scende quindi "
+         "lungo la costa atlantica alla Pointe de Pen-Hir e alla Pointe du Raz: alla "
+         "Pointe du Van, accanto a quest'ultima, un cerchio più grande con anello "
+         "concentrico segna il punto di osservazione dell'eclissi solare del 12 agosto "
+         "2026. Seguono Locronan, la spiaggia di Raguénez, la base sottomarina di "
+         "Lorient, la penisola di Quiberon e i megaliti di Carnac; poi Rochefort-en-Terre "
+         "e la foresta di Brocéliande, un trasferimento tratteggiato verso est fino a "
+         "Le Mans, e infine Giverny sulla Senna prima del rientro a Beauvais. In totale "
+         "circa 2.100 chilometri. Ogni cerchio è un collegamento alla giornata "
          "corrispondente della guida."),
     ]
 
