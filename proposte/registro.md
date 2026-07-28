@@ -75,3 +75,5 @@ repository non risulta *collegato* alla routine; il proxy di GitHub concede le c
 per i repository collegati, e allora il push cade a prescindere dal nome del branch. Si verifica
 aggiungendo `Calcaterra-casa` fra le Repositories della routine su claude.ai. Finché non è
 confermato, la consegna buona resta il messaggio finale.
+
+2026-07-28 11:15 · battito · nessuna proposta nuova; 4 in archivio.
