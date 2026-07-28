@@ -665,7 +665,7 @@ def main():
          "Lorient, la penisola di Quiberon e i megaliti di Carnac; poi Rochefort-en-Terre "
          "e la foresta di Brocéliande, un trasferimento tratteggiato verso est fino a "
          "Le Mans, e infine Giverny sulla Senna prima del rientro a Beauvais. In totale "
-         "circa 2.100 chilometri. Ogni cerchio è un collegamento alla giornata "
+         "2.011 chilometri misurati. Ogni cerchio è un collegamento alla giornata "
          "corrispondente della guida."),
     ]
 
