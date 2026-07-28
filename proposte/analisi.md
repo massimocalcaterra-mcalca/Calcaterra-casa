@@ -11,6 +11,60 @@ Legenda del giudizio:
 
 ---
 
+## Névez — da Port-Manec'h a Raguénez
+
+**Arrivata come:** link dal modulo (id `ms4ci3zv-f78d0635`), 28 luglio 2026 alle 09:39.
+**Giudizio: DA VALUTARE.** Ci sta solo scambiando la Ville Close di Concarneau con la costa di
+Névez — non è un'aggiunta gratuita.
+
+Névez è una piccola penisola del Finistère sud, fra Pont-Aven e Concarneau (47,819°N, 3,793°O).
+Il tratto costiero fra **Port-Manec'h** (foce dell'Aven) e **Raguénez** (spiaggia detta localmente
+«Tahiti», isolotto raggiungibile a piedi solo con la bassa marea) segue il GR34, il sentiero dei
+doganieri. Sulla strada anche gli hameaux di Kerascoët e Kercanic, il mulino ad acqua del XV
+secolo del Hénan, e i piccoli porti di Kerdruc e Rosbras. Ingresso libero ovunque, nessun
+biglietto: non ci sono orari di apertura da rispettare.
+
+### Dove sta, e cosa costa
+
+Il posto è direttamente sulla rotta fra due tappe già in programma, Concarneau e Lorient, nel
+Giorno 9 (venerdì 14 agosto). Il problema è che quel giorno ha due prenotazioni fisse — il
+sottomarino *Flore* a Lorient alle 11:20 (biglietto nominativo, orario fisso) e l'ingresso guidato
+di Carnac alle 15:00 — e il margine fra Concarneau e Lorient è quasi zero.
+
+| Tratta | Misurato (OSRM) |
+|---|---|
+| Concarneau → Lorient, diretto | **57 km / 48 min** |
+| Concarneau → Raguénez → Port-Manec'h → Lorient | **80 km / 86 min** → **+23 km, +38 min** |
+
+La Ville Close di Concarneau è in programma 9:25–10:30 (65 minuti). Partendo alle 9:25 e
+guidando diretti, a Lorient si arriverebbe alle 10:13 — quasi un'ora prima della prenotazione
+delle 11:20, perché quei 65 minuti sono lì per la visita alla cittadella, non per il viaggio.
+
+**Per far stare Névez servono proprio quei 65 minuti**, non tempo che avanza altrove: bisogna
+rinunciare alla Ville Close. Facendolo, restano 65 − 38 = **27 minuti** da spendere sulla costa di
+Névez prima di ripartire per Lorient e arrivare in orario alle 11:20. Ventisette minuti bastano
+per una sosta fotografica a Raguénez o Port-Manec'h, non per una camminata sul GR34 né per la
+spiaggia.
+
+### Cosa consiglio
+
+**Dipende da cosa vale di più fra i due.** La Ville Close è una cittadella fortificata su un
+isolotto, vicoli e spalti — registro storico. Névez è costa aperta, spiagge e sentiero costiero —
+registro diverso, non migliore né peggiore. Se il registro «costa selvaggia» conta più delle mura,
+lo scambio (Ville Close in cambio di una sosta breve a Névez) sta in piedi con i numeri sopra. Se
+la Ville Close resta preferibile, Névez non ci sta in questo viaggio senza toccare la
+prenotazione del sottomarino.
+
+Non verificato: se il biglietto nominativo del sottomarino *Flore* sia spostabile su una partenza
+successiva (ce n'è una ogni 40 minuti dalle 10:00) — se lo fosse, si guadagnerebbe più tempo a
+Névez senza toccare Concarneau, ma servirebbe ricontattare la base di Keroman. Non verificato
+neanche l'orario di bassa marea del 14 agosto 2026 per l'accesso a piedi all'isolotto di Raguénez.
+
+Fonti: tourismebretagne.com (descrizione del percorso), pagina del viaggio Normandia & Bretagna
+(orari e prenotazioni del Giorno 9). Distanze: OSRM.
+
+---
+
 ## Festival des Filets Bleus — Concarneau, 12–16 agosto 2026
 
 **Arrivata come:** link dal modulo (id `ms3jt72f-30322d61`), 27 luglio 2026 alle 18:16.
