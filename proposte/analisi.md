@@ -11,6 +11,89 @@ Legenda del giudizio:
 
 ---
 
+## Festival des Filets Bleus — Concarneau, 12–16 agosto 2026
+
+**Arrivata come:** link dal modulo (id `ms3jt72f-30322d61`), 27 luglio 2026 alle 18:16.
+**Giudizio: NON È UNA TAPPA — è un avviso. Ci finite dentro senza averlo scelto.**
+
+La 104ª edizione va **dal 12 al 16 agosto 2026**, e il **venerdì 14 agosto siete a Concarneau
+alle 9:25**. Non è una proposta da valutare: è un dato che cambia la giornata già programmata.
+
+### Cosa c'è venerdì 14, secondo il programma pubblicato
+
+| Ora | Cosa |
+|---|---|
+| **10:00–19:00** | Village de la mer: mostre (ritratti delle regine, costumi tradizionali), laboratori di acconciatura e ricamo |
+| 11:00 | Sfilata dei bambini con la Banda Arume de Malvas |
+| 13:00–14:30 | Cerchi celtici dei bambini |
+| 15:00–16:00 | Iniziazione alla danza bretone |
+| pomeriggio | Fest-deiz |
+| **19:00–00:00** | Concerti gratuiti sulla Scène Armor: Banda Arume, The Silencers, Jean-Charles Guichen |
+
+**La Grande Parade** — oltre 2.000 fra cerchi celtici e bagadoù, il pezzo forte — è **domenica 16
+agosto**, il giorno del volo di ritorno. Irraggiungibile: quel giorno alle 14:00 siete a Beauvais,
+settecento chilometri più a est.
+
+### Cosa significa per il Giorno 9
+
+- **Arrivate prima che cominci.** Alle 9:25 il Village de la mer non ha ancora aperto (10:00).
+  Vedete la Ville Close nell'ora dell'allestimento: meno folla, ma anche meno festa.
+- **Il parcheggio sarà peggio del normale.** Una cittadella murata piccola, in settimana di
+  festival, a metà agosto. Arrivare alle 9:25 aiuta; arrivare alle 11 no.
+- **Restare per la festa non sta in piedi.** I concerti cominciano alle 19:00, e quella sera
+  dovete essere a Rennes: da Concarneau sono **201 km e 2h32**. Dormire a Concarneau invece che a
+  Rennes sposterebbe il problema al sabato, che diventerebbe **552 km e 6h11 fino a Giverny** —
+  su un sabato già rosso in tutta la Francia. Non è una scelta, è una rinuncia al resto.
+
+### Cosa consiglio
+
+**Nessuna modifica all'itinerario, ma due accorgimenti:** arrivare a Concarneau **alle 9:00 invece
+che alle 9:25**, e mettere in conto di parcheggiare più lontano del solito. Se il festival vi
+interessa davvero come esperienza, allora è un altro viaggio: quello giusto arriva a Concarneau
+il 15 o il 16, e questo itinerario quel giorno è già sulla Senna.
+
+Non verificato: disposizioni su circolazione e chiusure stradali per il 14, che il sito non
+pubblica. Da chiedere allo 02 98 97 09 09 se volete essere sicuri del parcheggio.
+
+Fonti: festivaldesfiletsbleus.bzh (date e programma), Tourisme Bretagne (programma del 14).
+Distanze: OSRM.
+
+---
+
+## Pointe Saint-Mathieu e Le Conquet
+
+**Arrivata come:** link dal modulo (id `ms3jqrs9-6312f9b8`), 27 luglio 2026 alle 18:14.
+**Giudizio: FUORI.** Bellissima, ma sta dall'altra parte del Finistère.
+
+La punta con le rovine dell'abbazia e il faro, a ovest di Brest, è uno dei posti più fotografati
+di Bretagna. Il problema è dove si trova rispetto a questo viaggio: l'itinerario tocca il
+Finistère **a sud** (Crozon, Pays Bigouden, Pointe du Raz), Saint-Mathieu sta **a nord-ovest**,
+oltre la rada di Brest. Non è vicino: è dall'altra parte dell'acqua, e in auto si gira tutto intorno.
+
+| Come inserirla | Costo misurato |
+|---|---|
+| Giorno 8 così com'è (Penmarc'h → Pen-Hir → Locronan → Quimper) | **156 km / 3h00** |
+| Giorno 8 con Saint-Mathieu in mezzo | **307 km / 5h21** → **+151 km, +2h21** |
+| Giorno 6, deviando da Ploumanac'h verso Douarnenez | 156 km / 2h30 → **235 km / 3h52**, cioè **+79 km, +1h22** |
+
+Da Pen-Hir a Saint-Mathieu, che sulla carta sembrano affacciarsi sullo stesso mare, sono
+**102 km e 1h45** di strada.
+
+L'inserimento meno peggio sarebbe il **Giorno 6**, a +1h22 — ma il Giorno 6 è quello che vi porta
+verso il Finistère alla vigilia dell'eclissi, e su quella giornata avevo consigliato l'opposto:
+**scendere più a sud possibile** per non ritrovarvi con tre ore e mezza di guida il 12. Aggiungere
+un'ora e venti lì è muoversi nella direzione sbagliata nel giorno sbagliato.
+
+### Cosa consiglio
+
+**No, in questo viaggio.** Non perché non valga: perché costa più di due ore su una giornata già
+piena, oppure un'ora e venti sulla giornata che deve restare corta. Se un giorno farete il
+Finistère nord — Brest, Ouessant, la costa dei Abers — Saint-Mathieu è la prima tappa da mettere.
+
+Fonti: link segnalato. Distanze: OSRM.
+
+---
+
 ## Presqu'île de Crozon — dettagli da un articolo di viaggio
 
 **Arrivata come:** link dal modulo proposte (id `ms3i9mvs-662c615c`), 27 luglio 2026 alle 17:33.

@@ -1,8 +1,10 @@
 {
   "nota": "Identificativi delle proposte gia' analizzate, per non rifare due volte lo stesso lavoro. Le voci senza id (arrivate prima che esistesse il modulo) sono registrate per titolo.",
-  "aggiornato": "2026-07-27",
+  "aggiornato": "2026-07-28",
   "id": [
-    "ms3i9mvs-662c615c"
+    "ms3i9mvs-662c615c",
+    "ms3jt72f-30322d61",
+    "ms3jqrs9-6312f9b8"
   ],
   "senza-id": [
     "Menhir du Champ-Dolent",
