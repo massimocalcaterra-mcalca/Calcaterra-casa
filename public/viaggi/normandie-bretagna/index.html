@@ -210,8 +210,9 @@
   .foot{text-align:center;color:var(--muted);font-size:.8rem;padding:30px 0 60px}
 
   /* --- correzioni di leggibilità e accessibilità --- */
-  .day p,.note,.tip,.curio{max-width:72ch}
-  .lead{max-width:64ch}
+  .day p,.note,.tip,.curio{max-width:none}
+  .day p,.note,.tip,.curio,.lead{line-height:1.72}
+  .lead{max-width:none}
   .visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;
     overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
   .skip{position:absolute;left:-9999px}
