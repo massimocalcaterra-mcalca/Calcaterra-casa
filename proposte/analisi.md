@@ -11,6 +11,65 @@ Legenda del giudizio:
 
 ---
 
+## Névez, da Port-Manec'h a Raguenez — Finistère meridionale
+
+**Arrivata come:** link dal modulo (id `ms4ci3zv-f78d0635`), 28 luglio 2026 alle 09:39.
+**Giudizio: FUORI.** Costa 39 minuti di guida in più esattamente nel giorno che non ne ha nemmeno uno.
+
+### Cos'è
+
+Non un singolo luogo ma una piccola penisola del comune di Névez, fra Pont-Aven e Concarneau:
+le spiagge di Raguenez (sabbia bianca, isolotto raggiungibile a piedi solo con la bassa marea) e
+dell'Anse de Rospico, il borgo di pescatori di Port-Manec'h alla foce dell'Aven, i porticcioli di
+Kerdruc, Rosbras e Hénan (quest'ultimo con un mulino a marea del XV secolo), un tratto di GR34 e
+i due hameaux in pierres debout di Kerascoët e Kercanic. È un posto da percorrere a piedi con
+calma, non da vedere passando in auto.
+
+### Dov'è rispetto all'itinerario
+
+Il Giorno 9 (venerdì 14 agosto) passa proprio accanto: Concarneau (9:25–10:30) e poi dritti a
+Lorient, base di Keroman (11:20–13:35). Névez sta a sud di quella strada, verso Pont-Aven — non
+sulla via, ma a una deviazione da essa.
+
+| Percorso | Distanza misurata |
+|---|---|
+| Concarneau → Lorient (diretto, quello attuale) | **56,4 km / 47 min** |
+| Concarneau → Port-Manec'h → Raguenez → Lorient | **81,0 km / 86 min** |
+| Differenza | **+24,6 km, +39 min** — e solo per attraversarla in auto, senza scendere a camminare |
+
+### Perché il Giorno 9 non lo regge
+
+Il Giorno 9 è, testuali parole della guida, "la giornata più densa del viaggio", con **due
+prenotazioni a orario fisso e biglietto nominativo**: la base di Keroman alle 11:20 (partenze
+ogni 40 minuti, max 35 persone, non recuperabile se si arriva tardi) e Carnac alle 15:00
+(presentarsi 30 minuti prima). Il margine fra Concarneau (10:30) e Keroman (11:20) è di 50
+minuti per un tragitto che ne richiede 47: zero cuscinetto. Inserire i 39 minuti in più — che
+sono solo guida, non la passeggiata che giustificherebbe la sosta — sposta l'arrivo a Lorient
+verso le 11:55, oltre la partenza prenotata delle 11:20.
+
+Ho controllato anche l'alternativa di infilarla prima di Concarneau, partendo da Quimper: il
+costo aggiuntivo è lo stesso, **+24,6 km / +39 min**, perché la deviazione è la stessa a
+prescindere da dove la si aggancia. Nessun altro giorno del viaggio passa da queste parti: è
+il Giorno 9 o niente.
+
+### Cosa consiglio
+
+**No, in questo viaggio.** Non per il posto — le spiagge e i porticcioli meritano — ma perché
+l'unico giorno che ci passa vicino è anche l'unico che non ha un minuto di margine, con due
+biglietti nominativi in ballo. Se un giorno tornate su Pont-Aven con più calma (magari
+pernottando lì invece che a Quimper), Névez-Port-Manec'h-Raguenez è la prima cosa da mettere
+in giornata.
+
+Non verificato: orari e tariffe, perché l'area è costiera aperta (spiagge, sentieri, porticcioli)
+e la fonte non ne cita — non risulta che ce ne siano. Coefficiente di marea per l'isolotto di
+Raguenez ad agosto 2026 non controllato: da verificare a ridosso della data se qualcuno volesse
+comunque tentare una tappa dedicata in un altro viaggio.
+
+Fonti: Tourisme Bretagne (pagina segnalata), guida del viaggio (viaggi.calcaterra.casa) per gli
+orari del Giorno 9. Coordinate: OpenStreetMap/Nominatim. Distanze: OSRM.
+
+---
+
 ## Festival des Filets Bleus — Concarneau, 12–16 agosto 2026
 
 **Arrivata come:** link dal modulo (id `ms3jt72f-30322d61`), 27 luglio 2026 alle 18:16.
