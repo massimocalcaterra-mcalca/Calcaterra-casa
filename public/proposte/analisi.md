@@ -11,6 +11,76 @@ Legenda del giudizio:
 
 ---
 
+## Presqu'île de Quiberon
+
+**Arrivata come:** link dal modulo (id `ms4gxeea-f24ba4ae`), 28 luglio 2026 alle 11:43.
+**Giudizio: FUORI**, per questo viaggio e per questo giorno. Non per la distanza — è la più
+piccola misurata finora fra le proposte scartate — ma per il rischio che corre contro una
+tappa a orario fisso e non recuperabile.
+
+La penisola si allunga per 14 km a sud di Carnac, nel Morbihan: la **Côte Sauvage** a ovest,
+8 km di scogliere e archi di roccia affacciati su Belle-Île; spiagge di sabbia chiara a est;
+villaggi di case bianche con imposte blu; il GR34 che la percorre tutta. Punto di partenza
+per i traghetti verso Belle-Île, Houat e Hoëdic. La fonte segnalata è una pagina di
+presentazione turistica generica — **non cita un singolo sito con orari, biglietti o
+chiusure**: è un'area da girare, non un monumento da visitare in venti minuti.
+
+### Quanto costa in più, misurato
+
+Il Giorno 9 (venerdì 14 agosto) è: Concarneau → Lorient (base di Keroman) → Carnac →
+Rennes.
+
+| Percorso | Misurato |
+|---|---|
+| Concarneau → Lorient → Carnac → Rennes, com'è ora | **256,4 km / 3h33** |
+| Stessa giornata, con Quiberon **fra Lorient e Carnac** | 276,8 km / 4h06 → **+20,4 km, +33 min** |
+| Stessa giornata, con Quiberon **dopo Carnac**, prima di Rennes | 288,9 km / 4h09 → **+32,5 km, +36 min** |
+| Lorient → Carnac diretto (per confronto) | 54,6 km / 49 min |
+| Lorient → Quiberon → Carnac | 74,8 km / 81 min |
+
+L'ordine migliore è passare da Quiberon **prima** di Carnac, non dopo: costa dieci minuti in
+meno ed evita di allontanarsi da Rennes proprio nell'ultimo tratto della giornata.
+
+### Il problema non è il chilometraggio, è l'orario
+
+Quel giorno ci sono due prenotazioni nominative a orario fisso, secondo la guida: **Keroman
+alle 10:50** (sottomarino Flore e bunker) e **Carnac alle 14:30** (visita di un'ora, tetto di
+400 persone al giorno, prenotata online). Fra le due passa la sola strada che porta alla
+penisola — l'istmo di Penthièvre — ed è nota per gli ingorghi estivi: è il motivo per cui dal
+1985 esiste un treno di soccorso, il **Tire-Bouchon**, pensato apposta per scavalcarli in
+auto. Una fonte parla di code fino a due ore nei giorni di punta; non l'ho trovata confermata
+altrove, quindi la riporto come non verificata nella misura esatta, ma il fenomeno in sé —
+l'unica strada d'accesso che si blocca d'estate — è documentato da più fonti indipendenti.
+
+Il 14 agosto 2026 è un venerdì, la vigilia di Ferragosto: uno dei fine settimana di
+spostamenti più intensi dell'anno in Francia (vedi anche la scheda sul Festival des Filets
+Bleus, stesso giorno). Un ritardo imprevisto sull'istmo, quel giorno, rischia di far saltare
+l'appuntamento delle 14:30 a Carnac — che non è recuperabile: tetto giornaliero, biglietto
+nominativo.
+
+### Cosa consiglio
+
+**No, in questo viaggio.** I 20-33 minuti misurati sarebbero un costo accettabile da soli, ma
+si giocano contro una prenotazione a orario fisso e tetto di posti, nell'unico giorno che ha
+già due appuntamenti così, su una strada nota per gli ingorghi estivi proprio nel weekend di
+Ferragosto. Il rischio non è simmetrico: se va bene si risparmiano 33 minuti di margine, se va
+male si perde Carnac. Quiberon merita una visita vera — Côte Sauvage a piedi, una spiaggia,
+magari il traghetto per Belle-Île — non un attraversamento fra due orari fissi. Se in futuro
+capita un viaggio con una giornata libera nel Morbihan, è la prima da mettere in lista.
+
+**Non verificato:** la durata esatta della visita a Keroman (la guida dà solo l'orario di
+inizio, non quello di fine, quindi non so quanto margine reale ci sia prima delle 14:30);
+l'entità precisa dei ritardi sull'istmo di Penthièvre nell'agosto 2026 specifico; orari,
+prezzi o chiusure di qualunque sito puntuale sulla penisola, perché la fonte segnalata non ne
+cita nessuno.
+
+Fonti: pagina segnalata (bretagna-vacanze.com) per la descrizione della penisola; ricerca web
+per la congestione estiva sull'istmo e il treno Tire-Bouchon (espace-indigo-auray.fr,
+ville-quiberon.fr, voyagerentrain.fr); la guida del viaggio per gli orari del Giorno 9.
+Distanze: OSRM.
+
+---
+
 ## Névez — la costa da Port-Manec'h a Raguénez
 
 **Arrivata come:** link dal modulo (id `ms4ci3zv-f78d0635`), 28 luglio 2026 alle 09:39.
