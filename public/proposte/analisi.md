@@ -14,6 +14,89 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dove si fa il bagno, davvero
+
+**Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
+Titolo dato da Massimo: «Posti per surf» — nota: «per fare bagno in mare / oceano».
+**Giudizio: NON SERVE UNA TAPPA NUOVA — ma c'è un avviso di sicurezza che conta.**
+
+La domanda vera dietro la proposta non è dove si fa surf: è **dove ci si può bagnare** lungo questo
+itinerario. Ecco la risposta, giornata per giornata.
+
+| Quando | Dove | Come è |
+|---|---|---|
+| **Giorno 8, mattina** | **Raguénez** (Névez) | Già in programma, **8:53–10:30**. È il bagno vero del viaggio: sabbia chiara, un'ora e mezza. Non sorvegliato a quell'ora |
+| **Giorno 8, pomeriggio** | **Quiberon, spiagge a est** | Possibile: siete lì 14:30–16:30. La Grande Plage è **sorvegliata**, riparata, acqua calma |
+| Giorno 7 | Baie des Trépassés | Solo se scegliete il piano B dell'eclissi, e comunque non c'è tempo per l'acqua |
+
+### L'avviso, e non è un dettaglio
+
+Sulla **Côte Sauvage di Quiberon la balneazione è vietata**, e non per burocrazia: correnti e
+*baïnes* pericolose anche per ottimi nuotatori, onde che si alzano di colpo sul fondale basso,
+punti di uscita rari e falesie da cui non si risale a piedi. **Ogni anno qualcuno ci muore.**
+
+È esattamente il tratto più bello da vedere e il peggiore in cui entrare in acqua. Guardatelo,
+fotografatelo, e per il bagno spostatevi sul lato est della penisola, dove le spiagge sono
+sorvegliate.
+
+### Sul surf in senso stretto
+
+Il posto da surf più famoso di Bretagna, **La Torche**, sta nel Pays Bigouden, che questo
+itinerario **non tocca più**. Non c'è modo di infilarlo senza rompere una giornata. Se il surf è
+un obiettivo e non una curiosità, è un altro viaggio.
+
+Non verificato: gli orari esatti della sorveglianza sulle spiagge di Quiberon ad agosto 2026 — la
+regola generale in Bretagna è pomeriggio, all'incirca 13-19, ma il calendario comunale va guardato
+sul posto.
+
+Fonti: ville-quiberon.fr e saintpierrequiberon.fr (avvisi sulla Côte Sauvage); articolo segnalato.
+
+---
+
+## Penisola di Quiberon
+
+**Arrivata come:** link dal modulo (id `ms4gxeea-f24ba4ae`), 28 luglio 2026 alle 11:43.
+**Giudizio: È GIÀ NELL'ITINERARIO — ma una cosa dell'articolo vale la pena prenderla.**
+
+Quiberon è nel **Giorno 8**, giovedì 13 agosto, fra Lorient e Carnac: ci arrivate verso le 14:30 e
+ripartite alle 16:30 per la visita guidata di Carnac. Quindi non è una tappa da aggiungere. La
+domanda è cosa farne, in quelle due ore.
+
+### La Côte Sauvage costa nove minuti
+
+L'articolo insiste sul lato ovest della penisola, quello aperto sull'Atlantico. In guida è previsto
+il lato est e la **Pointe du Conguel**; passare invece dalla Côte Sauvage costa quasi niente:
+
+| Pomeriggio del 13 | Misurato |
+|---|---|
+| Lorient → Quiberon → Conguel → Carnac, come è in guida | 78,7 km / **1h31** |
+| Lorient → **Côte Sauvage** (Port Blanc) → Conguel → Carnac | 80,5 km / **1h40** |
+| Lorient → Penthièvre → Côte Sauvage → Conguel → Carnac | 83,8 km / **1h51** |
+
+**Nove minuti** per la versione breve: la strada costiera della Côte Sauvage è di fatto un'
+alternativa alla strada normale, non una deviazione. È il pezzo più scenografico della penisola —
+falesie basse, rocce nere, mare che rompe — e si percorre in auto fermandosi ai belvedere.
+
+**Attenzione però:** lì **non ci si bagna**, la balneazione è vietata e pericolosa. Vedi la scheda
+qui sopra.
+
+### Cosa non ci sta
+
+**Belle-Île.** Il traghetto da Quiberon impiega **45 minuti per lato**: con due ore a disposizione
+e Carnac prenotato alle 17:00, non è una possibilità, è una rinuncia al resto della giornata.
+
+### Cosa consiglio
+
+**Prendete la Côte Sauvage all'andata e il Conguel alla fine**, spendendo i nove minuti. Se
+qualcuno vuole il bagno, si sta sul lato est: la Grande Plage è sorvegliata e a due passi.
+
+Non verificato: eventuali chiusure della route côtière per mareggiata, che d'estate sono rare ma
+possibili.
+
+Fonti: articolo segnalato; ville-quiberon.fr. Distanze: OSRM.
+
+---
+
 ## Pointe Saint-Mathieu e Le Conquet
 
 **Arrivata come:** link dal modulo (id `ms3jqrs9-6312f9b8`), 27 luglio 2026 alle 18:14.

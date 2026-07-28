@@ -83,3 +83,18 @@ parte del Finistère», ora è sulla linea del Giorno 6-7: spostando la notte da
 Le Conquet si guadagnano due tappe e si risparmiano sei minuti. **Concarneau**, uscita
 dall'itinerario, resta a undici minuti dalla strada della mattina del 13. È la ragione per cui le
 schede vanno ricontrollate quando cambia il percorso, non solo quando arriva una proposta nuova.
+
+2026-07-28 18:25 · otto giri a vuoto · Due proposte arrivate alle 11:43 e alle 17:54 sono rimaste
+non analizzate. La routine **è partita regolarmente** ogni ora — l'ultimo giro alle 18:14 — ma il
+suo branch è fermo alle 9:54: nessun commit, nessuna scheda, nessun messaggio. Non ho visibilità
+dentro quelle sessioni, quindi il perché resta ignoto.
+
+Un difetto però l'ho trovato ed è mio: il prompt faceva ripartire la routine **dal proprio branch**
+con `merge --ff-only`, che non porta mai dentro `main`. Il branch è rimasto indietro di otto ore,
+cioè di tutta la riscrittura dell'itinerario: anche se avesse funzionato, avrebbe analizzato le
+proposte contro un percorso che non esiste più. Ora il primo passo è `git merge origin/main`, ed è
+dichiarato obbligatorio. Aggiunta anche una regola in testa al prompt: se non riesci, **dillo nel
+messaggio finale** invece di uscire in silenzio.
+
+Le due proposte sono state analizzate a mano.
+
