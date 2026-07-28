@@ -11,8 +11,19 @@ si prende alla revisione finale.
 2. La proposta finisce nel bucket R2 sotto il prefisso `proposte/`, ed è leggibile
    pubblicamente da `https://calcaterra.casa/api/proposte`.
 3. **Ogni ora**, al minuto :14, un lavoro automatico legge l'elenco, analizza le proposte
-   nuove e aggiorna `analisi.md` in questa cartella.
-4. Alla revisione finale si decide quali far entrare nella guida.
+   nuove e **manda la scheda finita per notifica ed email**.
+4. La scheda entra in `analisi.md` passando dalla sessione di lavoro.
+5. Alla revisione finale si decide quali far entrare nella guida.
+
+### Perché la consegna passa da una notifica e non da un commit
+
+Le sessioni programmate girano in un contenitore separato che ha il repository in **sola
+lettura**: il push viene rifiutato con 403 e la chiave di firma dei commit è vuota. Per un
+giorno il lavoro è stato fatto e poi è rimasto lì, invisibile. La routine è quindi scritta
+perché **non usi git**: legge dall'API del sito e da GitHub in sola lettura, e consegna il
+risultato nel messaggio finale — l'unico canale che funziona. Quando l'infrastruttura darà
+accesso in scrittura e una chiave di firma, si potrà tornare al commit diretto; fino ad
+allora questo è il percorso buono, non un ripiego temporaneo da ricordarsi a memoria.
 
 ## Che cosa fa l'analisi
 
