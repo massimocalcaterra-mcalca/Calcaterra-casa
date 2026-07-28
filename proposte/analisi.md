@@ -14,7 +14,9 @@ Legenda del giudizio:
 ## Névez — la costa da Port-Manec'h a Raguénez
 
 **Arrivata come:** link dal modulo (id `ms4ci3zv-f78d0635`), 28 luglio 2026 alle 09:39.
-**Giudizio: DA VALUTARE**, ma con una condizione dura: ci sta solo rinunciando a Concarneau.
+**Giudizio: ENTRATA nella guida** il 28 luglio, come *variante mare* del Giorno 9, su decisione
+di Massimo: «se si può fare il bagno e ne vale la pena la metterei». Si può, e ne vale la pena —
+ma solo rinunciando sia a Quimper sia alla Ville Close. Sotto il perché, e i numeri.
 
 Névez è una penisola del Finistère meridionale, fra Pont-Aven e Concarneau. Il tratto fra
 **Port-Manec'h**, borgo di pescatori alla foce dell'Aven, e la spiaggia di **Raguénez** — sabbia
@@ -51,7 +53,24 @@ Partenza da Quimper, dove si dorme. Il tempo a Névez è quello che resta prima 
 | **C** | la Ville Close di Concarneau (9:25–10:30) | **36 minuti** |
 | **D** | a tutte e due | **1 ora e 30** |
 
-### Cosa consiglio
+### Come è finita
+
+Scelta la **D**, con una correzione: puntando dritti a Raguénez senza passare da Port-Manec'h in
+auto, il conto migliora. Quimper → Raguénez sono **42,8 km / 41 min**, Raguénez → Keroman
+**55,3 km / 50 min**: partendo alle 8:00 si è in spiaggia alle **8:41** e si riparte alle 10:30
+per essere a Lorient alle 11:20. Fanno **un'ora e cinquanta di mare**, non un'ora e mezza —
+abbastanza per il bagno, l'isolotto e un pezzo di GR34 verso Port-Manec'h a piedi, che è il modo
+giusto di vederlo.
+
+La giornata passa da 261 km / 3h43 a **277 km / 4h03**. L'arrivo a Rennes non cambia.
+
+Verificato in più, dopo la decisione: il **14 agosto 2026 la marea è di vive-eau, coefficiente
+102-103** — fra i più alti dell'anno. L'isolotto si raggiunge a piedi, ma il mare rientra in
+fretta. **L'ora esatta della bassa marea resta non verificata**: le fonti consultate danno il
+coefficiente e non l'orario. Va guardata prima di partire. E a quell'ora **non c'è sorveglianza**:
+dove esiste, in Finistère copre grosso modo le 13-19.
+
+### Il ragionamento che ha portato lì
 
 **Solo la D vale la pena, e la D costa cara.** Sotto i quaranta minuti Névez diventa una sosta
 fotografica: si parcheggia, si guarda il mare, si riparte — e per quello non si spostano due
