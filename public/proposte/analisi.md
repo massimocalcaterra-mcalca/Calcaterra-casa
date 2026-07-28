@@ -3,6 +3,13 @@
 Analizzate ma **non inserite**: la decisione si prende alla revisione finale.
 Dalla più recente alla più vecchia.
 
+> **Tutte rivalutate il 28 luglio 2026.** L'itinerario è stato rifatto da capo — Le Havre al posto
+> di Honfleur, i fari del Finistère nord, l'eclissi alla Pointe du Van, Quiberon, Brocéliande,
+> Le Mans — e i giudizi dati sul percorso precedente non valevano più. Due si sono ribaltati:
+> **Pointe Saint-Mathieu**, che era *fuori*, ora è praticamente gratis; e **Concarneau**, che era
+> uscita dal viaggio, torna a portata di undici minuti. Ogni scheda dice come stava prima e come
+> sta adesso.
+
 Legenda del giudizio:
 
 - **Entra** — costo basso, incastro pulito, nessun sacrificio.
@@ -14,9 +21,15 @@ Legenda del giudizio:
 ## Névez — la costa da Port-Manec'h a Raguénez
 
 **Arrivata come:** link dal modulo (id `ms4ci3zv-f78d0635`), 28 luglio 2026 alle 09:39.
-**Giudizio: ENTRATA nella guida** il 28 luglio, come *variante mare* del Giorno 9, su decisione
-di Massimo: «se si può fare il bagno e ne vale la pena la metterei». Si può, e ne vale la pena —
-ma solo rinunciando sia a Quimper sia alla Ville Close. Sotto il perché, e i numeri.
+**Giudizio: ENTRATA nella guida.** È la mattina del **Giorno 8** (giovedì 13 agosto), non più una
+variante: si parte da Locronan alle 8:00, si è in spiaggia alle 8:53 e si riparte alle 10:30 per
+Lorient. Un'ora e mezza di mare dentro la giornata, senza rinunciare a niente.
+
+> **Rivalutata sul nuovo itinerario.** Quando questa scheda è nata, Névez costava la Ville Close di
+> Concarneau *e* l'ora di Quimper: era uno scambio doloroso. Nel percorso rifatto la giornata parte
+> da Locronan e non più da Quimper, e Concarneau non è più una tappa fissa: quel prezzo non si paga
+> più. Il ragionamento originale resta sotto perché spiega come ci si è arrivati, ma i suoi conti
+> si riferiscono a un itinerario che non esiste più.
 
 Névez è una penisola del Finistère meridionale, fra Pont-Aven e Concarneau. Il tratto fra
 **Port-Manec'h**, borgo di pescatori alla foce dell'Aven, e la spiaggia di **Raguénez** — sabbia
@@ -104,10 +117,29 @@ essersi accorti che l'ora di Quimper e quella di Concarneau sono spendibili. Ved
 ## Festival des Filets Bleus — Concarneau, 12–16 agosto 2026
 
 **Arrivata come:** link dal modulo (id `ms3jt72f-30322d61`), 27 luglio 2026 alle 18:16.
-**Giudizio: NON È UNA TAPPA — è un avviso. Ci finite dentro senza averlo scelto.**
+**Giudizio: DA VALUTARE — e adesso costa pochissimo.**
 
-La 104ª edizione va **dal 12 al 16 agosto 2026**, e il **venerdì 14 agosto siete a Concarneau
-alle 9:25**. Non è una proposta da valutare: è un dato che cambia la giornata già programmata.
+> **Rivalutata sul nuovo itinerario.** Prima era un avviso: a Concarneau ci finivate dentro senza
+> averlo scelto, il 14 agosto alle 9:25. Ora Concarneau **non è più una tappa** — la mattina del 13
+> si va dritti da Locronan a Raguénez. Ma la strada passa comunque di lì, e questo cambia la
+> domanda: non più «come sopravvivere alla folla» ma «vale la pena fermarsi?».
+>
+> | Percorso della mattina del 13 | Misurato |
+> |---|---|
+> | Locronan → Raguénez, come è adesso | 56,3 km / **53 min** |
+> | Locronan → **Concarneau** → Raguénez | 57,5 km / **1h05** |
+> | Differenza | **+1,2 km, +11 minuti** |
+>
+> Undici minuti. Concarneau è di fatto sulla strada. Il tempo però va trovato nella giornata, che
+> ha il sottomarino prenotato alle 11:20: **partendo da Locronan alle 7:45** si è alla Ville Close
+> alle 8:23, ci si sta tre quarti d'ora, si è a Raguénez alle 9:36 e restano cinquanta minuti di
+> mare prima di ripartire. Ci sta, al prezzo di una sveglia presta.
+>
+> **E l'ora è quella giusta**: alle 8:30 la cittadella è vuota, mentre il festival riempie
+> Concarneau dal pomeriggio in poi. Vedreste il posto nel suo momento migliore, e ve ne andreste
+> prima che diventi impraticabile.
+
+La 104ª edizione va **dal 12 al 16 agosto 2026**. Ecco cosa succede in città mentre voi passate.
 
 ### Cosa c'è venerdì 14, secondo il programma pubblicato
 
@@ -153,7 +185,36 @@ Distanze: OSRM.
 ## Pointe Saint-Mathieu e Le Conquet
 
 **Arrivata come:** link dal modulo (id `ms3jqrs9-6312f9b8`), 27 luglio 2026 alle 18:14.
-**Giudizio: FUORI.** Bellissima, ma sta dall'altra parte del Finistère.
+**Giudizio: ENTRA — anzi, si ripaga da sola.**
+
+> **Rivalutata sul nuovo itinerario, ed è il ribaltamento più netto di tutti.** Il vecchio percorso
+> toccava il Finistère solo a sud, e Saint-Mathieu stava dalla parte sbagliata: da qui il «fuori».
+> Il percorso rifatto **dorme a Porspoder**, cioè a mezz'ora di strada da lì, e il giorno dopo
+> scende a Crozon passando da Brest. Saint-Mathieu non è più una deviazione: è sulla linea.
+>
+> La mossa buona non è aggiungerla al Giorno 7, che è già il più pesante. È **spostare la notte da
+> Porspoder a Le Conquet o Plougonvelin**, venti chilometri più a sud:
+>
+> | | Km e tempo di guida |
+> |---|---|
+> | Giorno 6 con notte a Porspoder (come è adesso) | 150,6 km / **2h50** |
+> | Giorno 6 con notte a Saint-Mathieu | 162,1 km / **2h47** |
+> | Giorno 7 partendo da Porspoder | 102,4 km / **1h47** |
+> | Giorno 7 partendo da Saint-Mathieu | 101,5 km / **1h44** |
+>
+> **Sei minuti in meno in totale, e due tappe in più.** Non è un compromesso: è meglio da tutti i
+> punti di vista. E Le Conquet, il porto da cui partono i traghetti per Ouessant, sta sulla stessa
+> strada — cinque minuti prima della punta, e nei conti qui sopra è già compreso.
+>
+> **Il momento giusto è la sera del Giorno 6.** Saint-Mathieu guarda a ovest: rovine dell'abbazia
+> del XII secolo, faro e memoriale dei marinai, tutto affacciato sull'oceano aperto. Arrivandoci
+> nel tardo pomeriggio ci si dorme accanto e la si vede al tramonto, invece di attraversarla di
+> corsa la mattina dopo.
+>
+> **Cosa serve da voi:** cambiare la prenotazione della notte dell'11 agosto da Porspoder a
+> Le Conquet o Plougonvelin. Nient'altro.
+
+Sotto, il ragionamento di quando la risposta era no.
 
 La punta con le rovine dell'abbazia e il faro, a ovest di Brest, è uno dei posti più fotografati
 di Bretagna. Il problema è dove si trova rispetto a questo viaggio: l'itinerario tocca il
@@ -188,9 +249,23 @@ Fonti: link segnalato. Distanze: OSRM.
 
 **Arrivata come:** link dal modulo proposte (id `ms3i9mvs-662c615c`), 27 luglio 2026 alle 17:33.
 Fonte: <http://bretagna.com/vacanze-da-sogno-a-crozon/>
-**Giudizio: NON È UNA TAPPA NUOVA — è materiale per una giornata che c'è già.**
+**Giudizio: NON È UNA TAPPA NUOVA — ma la giornata che la ospita è cambiata in peggio.**
 
-Crozon è **già il Giorno 8** (giovedì 13 agosto), con la Pointe de Pen-Hir e Locronan. L'articolo
+> **Rivalutata sul nuovo itinerario.** Crozon non è più una giornata a sé: è stata **assorbita nel
+> Giorno 7**, quello dell'eclissi, che porta da Porspoder a Pen-Hir, poi alla Pointe du Raz e alla
+> Pointe du Van, e finisce a Locronan alle 22. Sono **4h26 di guida** con un appuntamento
+> astronomico che non aspetta.
+>
+> Quindi tutto quello che l'articolo propone di aggiungere va misurato contro un orario rigido. Il
+> **Cap de la Chèvre** costa **+27 minuti** rispetto all'andare dritti da Pen-Hir alla Pointe du
+> Raz (Pen-Hir → Cap de la Chèvre 21,4 km/29 min, poi 85,6 km/1h42 fino al Raz, contro 88,5 km/1h44
+> diretti). Ventisette minuti su quella giornata **non ci sono**: si prenderebbero dall'ora e mezza
+> a Pen-Hir, che è l'unica sosta vera prima di sera.
+>
+> **Il mio parere: lasciare il Giorno 7 com'è.** Crozon la vedete a Pen-Hir, che è il pezzo migliore
+> della penisola. Il resto dell'articolo resta un buon elenco per un viaggio futuro.
+
+L'articolo
 non propone un posto nuovo: propone di *riempire meglio* quella giornata. Quindi la domanda non è
 «dove lo mettiamo» ma «cosa vale la pena aggiungere, e quanto costa».
 
@@ -236,7 +311,12 @@ per Térénez, Le Moniteur e schede tecniche. Distanze: OSRM.
 ## Menhir du Champ-Dolent — Dol-de-Bretagne
 
 **Arrivata come:** foto di una pagina di guida cartacea, 27 luglio 2026.
-**Giudizio: ENTRA.** *(già inserita nella guida il 27 luglio — vedi Giorno 4)*
+**Giudizio: ENTRA — invariato, ed è pure migliorato.**
+
+> **Rivalutata sul nuovo itinerario:** il Giorno 4 non è cambiato, quindi la deviazione di 7 km
+> resta quella. In più adesso c'è un motivo in più per fermarsi: **il menhir è la prima cosa che
+> incontrate in Bretagna**. Il confine con la Normandia è il fiume Couesnon, che si attraversa
+> uscendo dal Mont-Saint-Michel; Dol-de-Bretagne è subito dopo.
 
 Un unico blocco di granito rosato alto **9,3 m** fuori terra, il secondo menhir più alto
 ancora in piedi di Bretagna, 100–120 tonnellate stimate. La cava più vicina di quel granito
@@ -263,7 +343,15 @@ Mont-Saint-Michel. Distanze: OSRM.
 ## Le Mans e il museo M24
 
 **Arrivata come:** richiesta in chat, 27 luglio 2026.
-**Giudizio: DA VALUTARE.** *(inserita come variante B del Giorno 10)*
+**Giudizio: ENTRATA nella guida.** Non è più una variante alternativa a Giverny: nel percorso
+rifatto ci sono **tutti e due**. Le Mans è la sera del **Giorno 9** (venerdì 14), con il museo
+visitato fra le 16:30 e le 19:00, e Giverny è il giorno dopo.
+
+> **Rivalutata sul nuovo itinerario.** L'orario di apertura fino alle 19:00 — che nella prima
+> scheda era un dettaglio — è diventato il perno di due giornate: visitando l'M24 il venerdì sera
+> invece che il sabato mattina, il sabato si parte da Le Mans alle 8 e si arriva a Giverny prima
+> che il traffico del 15 agosto blocchi tutto. Il museo non è più una scelta *contro* qualcosa: è
+> la cosa che rende possibile il resto.
 
 Il museo delle 24 Ore ha chiuso per lavori nel luglio 2025 e ha riaperto il **28 maggio 2026**
 come **M24 — Musée du Sport Automobile**: 10.000 m², oltre 120 auto dagli anni Venti a oggi.
@@ -286,8 +374,11 @@ Fonti: 24h-lemans.com, m24-musee.com. Distanze: OSRM.
 ## Bécherel, la città del libro
 
 **Arrivata come:** ricerca su richiesta, 27 luglio 2026.
-**Giudizio: DA VALUTARE nella guida Normandia, ENTRA nella guida Bretagna.**
-*(inserita come opzione in entrambe)*
+**Giudizio: DA VALUTARE — invariato.**
+
+> **Rivalutata sul nuovo itinerario:** nessun cambiamento. Bécherel dipende dal Giorno 4
+> (Bayeux → Mont-Saint-Michel → Saint-Malo), che è una delle tre giornate rimaste identiche. Vale
+> quello che valeva.
 
 650 abitanti, prima Cité du Livre di Francia dal 1989, una quindicina di librerie di libri
 antichi, tredici gallerie, laboratori di calligrafia e legatoria.
