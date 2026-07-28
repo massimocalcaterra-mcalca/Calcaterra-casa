@@ -11,6 +11,79 @@ Legenda del giudizio:
 
 ---
 
+## Penisola di Quiberon
+
+**Arrivata come:** link dal modulo (id `ms4gxeea-f24ba4ae`), 28 luglio 2026 alle 11:43.
+**Giudizio: DA VALUTARE.** Non compare da nessuna parte nell'itinerario: è un'aggiunta vera, non
+uno scambio. Il posto vale la deviazione, ma costa guida in più a fine della giornata più fitta
+del viaggio, senza però rompere nessuna prenotazione.
+
+La penisola di Quiberon, in fondo al Golfo del Morbihan a sud di Carnac, è una lingua di terra
+di 14 km: **costa selvaggia** (Côte Sauvage) per 8 km sul lato ovest, dal castello di Turpault —
+una fantasia neomedievale costruita nel 1904 da un industriale, non visitabile all'interno — alla
+Pointe du Percho, e spiagge di sabbia fine sul lato est, verso Quiberon paese. Il sentiero GR34 fa
+il giro della penisola. Dalla Pointe de Beg-er-Goalennec, a metà costa, la vista arriva fino a
+Belle-Île. Tutto all'aperto e gratuito: nessun biglietto, nessun orario da rispettare — è una
+costa, non un monumento.
+
+### Quanto costa davvero
+
+Misurato con OSRM da Carnac, dove il Giorno 9 ha già una tappa fissa (15:00–16:00):
+
+| Percorso | Misurato |
+|---|---|
+| Carnac → Rennes, diretto (come è adesso) | 142 km / **1h51** |
+| Carnac → Quiberon (il paese) → Rennes | 176,3 km / **2h32** |
+| Carnac → Pointe du Percho (la costa selvaggia) → Rennes | 179,4 km / **2h38** |
+| **Differenza, solo guida, rispetto al diretto** | **da +37 a +43 min**, **+35/+38 km** |
+
+Questi numeri sono solo il tragitto, calcolato punto a punto: non contano il tempo speso a
+guardare la costa una volta arrivati, che per valere la deviazione ne serve almeno un'altra
+mezz'ora.
+
+### Dove starebbe e cosa si sacrifica
+
+Il Giorno 9 (venerdì 14 agosto) è l'unico che passa qui vicino, ed è già "la giornata più densa
+del viaggio": Keroman alle 11:20 e Carnac alle 15:00 sono entrambi orari prenotati e
+nominativi, e non si toccano. Ma finita la visita guidata di Carnac (16:00) non c'è più nulla di
+fisso fino all'arrivo a Rennes — la deviazione non romperebbe nessuna prenotazione, sposterebbe
+solo l'orario di arrivo.
+
+Con la sola guida, Rennes si raggiungerebbe verso le **18:30** invece delle 18:00 previste;
+contando anche una sosta reale sulla costa (una passeggiata corta, una foto dalla Pointe de
+Beg-er-Goalennec) l'arrivo scivola verso le **19:00–19:15**. Non si perde nessuna tappa: si
+accorcia la serata a Rennes.
+
+### Il ragionamento
+
+Il viaggio ha già tre coste selvagge con scogliere e panorama sull'oceano: Cap Fréhel (Giorno 5),
+la Côte de Granit Rose (Giorno 6) e la Pointe du Raz (Giorno 7, il giorno dell'eclissi). Quiberon
+aggiungerebbe una quarta, con lo stesso repertorio — scogliere frastagliate, mare che si infrange
+sulle rocce, un sentiero costiero — alla fine di una giornata che ha già avuto due orari da
+rispettare e più di tre ore di guida prima ancora di arrivare qui. Non è un posto che delude: è
+un posto che somiglia a quelli già visti, mentre il conto in tempo si fa sentire di più a fine
+giornata che a inizio.
+
+### Cosa consiglio
+
+**Da valutare, non da inserire di default.** Se il ritmo del Giorno 9 regge bene fino a Carnac e
+c'è voglia di un'ultima costa prima di chiudere in macchina la giornata, i 35-45 minuti scarsi di
+sola guida sono un prezzo onesto per la Côte Sauvage — ma è l'ultima cosa da aggiungere a una
+giornata già piena, non la prima. Se invece l'idea è arrivare a Rennes con margine per la sera,
+va lasciata fuori: non toglie niente al viaggio, perché nessun'altra tappa vede questo tratto di
+costa.
+
+**Non verificato:** se i siti megalitici citati genericamente dalla pagina di Tourisme Bretagne
+sulla penisola rientrino nell'iscrizione UNESCO dei "Megaliti di Carnac e delle rive del
+Morbihan" del luglio 2025 — la fonte non lo specifica e non ho trovato conferma. Non verificati
+anche orari e prezzi di eventuali parcheggi a pagamento sulla costa selvaggia in alta stagione,
+che la pagina segnalata non cita.
+
+Fonti: Tourisme Bretagne (pagina segnalata) per la descrizione del luogo; la guida del viaggio
+per gli orari del Giorno 9. Distanze: OSRM.
+
+---
+
 ## Névez — la costa da Port-Manec'h a Raguénez
 
 **Arrivata come:** link dal modulo (id `ms4ci3zv-f78d0635`), 28 luglio 2026 alle 09:39.
