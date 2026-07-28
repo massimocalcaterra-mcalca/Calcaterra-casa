@@ -130,10 +130,11 @@ A_LABELS = ["Beauvais", "Mont-Saint-Michel", "Penmarc'h", "Pointe du Raz",
             "Saint-Malo", "Ploumanac'h", "Carnac", "Lorient", "Quimper", "Vannes",
             "Brocéliande", "Cap Fréhel", "Pointe de Pen-Hir", "Rouen", "Locronan"]
 B_LABELS = ["Beauvais", "Étretat", "Mont-Saint-Michel", "Pointe du Van",
+            "Pointe Saint-Mathieu",
             "Pointe du Raz", "Carnac", "Lorient", "Bayeux", "Saint-Malo",
             "Ploumanac'h", "Giverny", "Rouen", "Le Havre", "Le Mans",
-            "Roscoff", "Brocéliande", "Pointe Saint-Mathieu", "Locronan",
-            "Quiberon", "Pointe de Pen-Hir", "Champ-Dolent", "Le Conquet"]
+            "Roscoff", "Brocéliande", "Locronan",
+            "Quiberon", "Pointe de Pen-Hir", "Champ-Dolent"]
 
 
 LABEL_FS = 16.0          # px, come .mp-label
@@ -141,7 +142,7 @@ CHAR_W = 0.545           # larghezza media di un carattere in em, misurata sul f
 
 # nelle punte più affollate il nome per esteso non entra: si abbrevia
 ALIAS = {"Pointe du Raz": "Pte du Raz", "Pointe de Pen-Hir": "Pte de Pen-Hir",
-         "Pointe du Van": "Pte du Van", "Pointe Saint-Mathieu": "Pte Saint-Mathieu"}
+         "Pointe du Van": "Pte du Van", "Pointe Saint-Mathieu": "St-Mathieu"}
 
 
 def text_w(t):
