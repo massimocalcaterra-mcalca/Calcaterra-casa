@@ -66,8 +66,8 @@
   .topnav a.topadd:hover{background:#055c24;color:#fff}
 
   /* --- richiamo in testa alla guida --- */
-  .proponi{margin-top:34px;background:var(--paper);border:1px solid var(--line);
-    border-left:4px solid var(--green);border-radius:0 14px 14px 0;padding:18px 22px;
+  .proponi{margin-top:34px;background:var(--paper);border:2px solid var(--green-d);
+    border-radius:14px;padding:20px 24px;
     display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
   .proponi .tx{flex:1;min-width:260px}
   .proponi h3{font-family:Poppins,sans-serif;font-size:1.02rem;margin:0 0 4px}
@@ -113,6 +113,9 @@
   .stat .n{font-family:Poppins,sans-serif;font-size:1.8rem;font-weight:700;color:var(--green-d)}
   .stat .l{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:4px}
 
+  .gday{color:var(--green-d);text-decoration:underline;text-decoration-color:var(--line-strong);
+    text-underline-offset:3px}
+  .gday:hover{text-decoration-color:var(--green-d)}
   .tbl{margin-top:34px;border:1px solid var(--line);border-radius:14px;overflow:hidden;overflow-x:auto}
   table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:580px}
   thead th{font-family:Poppins,sans-serif;text-align:left;background:var(--ink);color:#fff;
@@ -153,8 +156,10 @@
   .day .loc{color:var(--muted);font-size:.86rem;font-family:Poppins,sans-serif;font-weight:500}
   .day p{color:var(--body);margin:16px 0 0}
   .day h3{font-size:1.05rem;color:var(--green-d);margin:22px 0 0}
-  .photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
-  .photo-pair img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block}
+  .photo-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:14px;margin-top:18px}
+  .photo-pair img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;
+    border-radius:12px;display:block}
   @media(max-width:620px){.photo-pair{grid-template-columns:1fr}}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:22px}
   .infocard{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
@@ -172,7 +177,7 @@
     color:rgba(255,255,255,.9);background:linear-gradient(0deg,rgba(6,12,16,.8),transparent)}
   .scenes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:22px}
   .scene{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden}
-  .scene img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+  .scene img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;display:block}
   .scene .sb{padding:16px 18px}
   .scene .idx{font-family:Poppins,sans-serif;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:#9fc0bb}
   .scene h4{font-family:Poppins,sans-serif;font-size:1.05rem;margin:6px 0 2px;color:#fff}
@@ -228,16 +233,16 @@
   .hero .inner{background:linear-gradient(0deg,rgba(20,38,28,.82),rgba(20,38,28,0));
     padding-top:72px}
 
-  /* --- video: verticale, senza autoplay, si avvia solo al comando --- */
-  .videoband figure{max-width:320px;padding:0 24px}
-  .videoband video{width:100%;height:auto;aspect-ratio:9/16;max-height:70vh;
-    object-fit:cover;background:#0d150f;border-radius:14px;
+  /* --- video: fascia a tutta colonna, parte da solo e senza audio --- */
+  .videoband figure{max-width:1180px;padding:0 24px}
+  .videoband video{width:100%;height:min(62vh,540px);object-fit:cover;display:block;
+    background:#0d150f;border-radius:16px;
     box-shadow:0 22px 44px -26px rgba(20,38,28,.7)}
-  .videoband figcaption{position:static;padding:14px 0 0;color:var(--body);background:none}
-  .videoband figcaption .vk{color:var(--green-d);opacity:1}
-  .videoband figcaption .vt{color:var(--ink);font-size:1.1rem}
-  .videoband figcaption .vh{font-size:.8rem;color:var(--muted);margin-top:5px}
-  @media (prefers-reduced-motion:reduce){.videoband video{display:none}}
+  .videoband figcaption{position:absolute;left:24px;right:24px;bottom:0;
+    padding:24px 28px;color:#fff;background:linear-gradient(0deg,rgba(13,21,15,.74),transparent);
+    border-radius:0 0 16px 16px;pointer-events:none}
+  .videoband figcaption .vk{color:#cfe6d6;opacity:1}
+  .videoband figcaption .vt{color:#fff;font-size:1.25rem}
 
   /* --- mappa dell'itinerario (SVG inline, zero JS) --- */
   .mapbox{margin-top:34px;border:1px solid var(--line);border-radius:16px;overflow:hidden;
@@ -295,6 +300,7 @@
       <a href="#g7">Eclissi</a>
       <a href="#prenotazioni">Prenotazioni</a>
       <a href="#pratiche">Info pratiche</a>
+      <a href="#glossario">Bretone</a>
       <button class="topprint" type="button" id="printBtn">Stampa</button>
       <a class="topadd" href="https://calcaterra.casa/proposte/">+ Proposta</a>
     </nav>
@@ -335,17 +341,17 @@
       <table>
         <thead><tr><th>Giorno</th><th>Data</th><th>Tappa</th><th>Tema</th><th>Pernottamento</th></tr></thead>
         <tbody>
-          <tr><td class="d">1</td><td>Gio 6/8</td><td>Beauvais → Rouen</td><td class="th">Arrivo · Normandia gotica</td><td>Rouen</td></tr>
-          <tr><td class="d">2</td><td>Ven 7/8</td><td>Étretat · <b>Le Havre</b></td><td class="th">Falesie · UNESCO di Perret</td><td>Bayeux</td></tr>
-          <tr><td class="d">3</td><td>Sab 8/8</td><td>Spiagge dello Sbarco</td><td class="th">Memoria · D-Day</td><td>Bayeux</td></tr>
-          <tr><td class="d">4</td><td>Dom 9/8</td><td>Mont-Saint-Michel → Saint-Malo</td><td class="th">Abbazia · maree</td><td>Saint-Malo</td></tr>
-          <tr><td class="d">5</td><td>Lun 10/8</td><td>Cap Fréhel · Fort la Latte</td><td class="th">Corsari · castello sul mare</td><td><b>Perros-Guirec</b></td></tr>
-          <tr><td class="d">6</td><td>Mar 11/8</td><td>Ploumanac'h · <b>Roscoff</b> → Porspoder</td><td class="th">Granito rosa · Côte des Légendes</td><td>Porspoder</td></tr>
-          <tr><td class="d">7</td><td>Mer 12/8</td><td><b>Crozon · Pointe du Raz · Eclissi</b></td><td class="th">Pen-Hir · Pointe du Van</td><td>Locronan</td></tr>
-          <tr><td class="d">8</td><td>Gio 13/8</td><td><b>Raguénez</b> · Lorient · <b>Quiberon</b> · Carnac</td><td class="th">Bagno · sottomarino · megaliti</td><td>Carnac</td></tr>
-          <tr><td class="d">9</td><td>Ven 14/8</td><td><b>Rochefort-en-Terre</b> · <b>Brocéliande</b> · Le Mans</td><td class="th">Borgo · foresta di Artù · M24</td><td>Le Mans</td></tr>
-          <tr><td class="d">10</td><td>Sab 15/8</td><td><b>Giverny</b></td><td class="th">Le ninfee di Monet</td><td>Vernon / Rouen</td></tr>
-          <tr><td class="d">11</td><td>Dom 16/8</td><td>→ Beauvais (volo 14:00)</td><td class="th">Rientro</td><td>—</td></tr>
+          <tr><td class="d">1</td><td>Gio 6/8</td><td><a class="gday" href="#g1">Beauvais → Rouen</a></td><td class="th">Arrivo · Normandia gotica</td><td>Rouen</td></tr>
+          <tr><td class="d">2</td><td>Ven 7/8</td><td><a class="gday" href="#g2">Étretat · <b>Le Havre</b></a></td><td class="th">Falesie · UNESCO di Perret</td><td>Bayeux</td></tr>
+          <tr><td class="d">3</td><td>Sab 8/8</td><td><a class="gday" href="#g3">Spiagge dello Sbarco</a></td><td class="th">Memoria · D-Day</td><td>Bayeux</td></tr>
+          <tr><td class="d">4</td><td>Dom 9/8</td><td><a class="gday" href="#g4">Mont-Saint-Michel → Saint-Malo</a></td><td class="th">Abbazia · maree</td><td>Saint-Malo</td></tr>
+          <tr><td class="d">5</td><td>Lun 10/8</td><td><a class="gday" href="#g5">Cap Fréhel · Fort la Latte</a></td><td class="th">Corsari · castello sul mare</td><td><b>Perros-Guirec</b></td></tr>
+          <tr><td class="d">6</td><td>Mar 11/8</td><td><a class="gday" href="#g6">Ploumanac'h · <b>Roscoff</b> → Porspoder</a></td><td class="th">Granito rosa · Côte des Légendes</td><td>Porspoder</td></tr>
+          <tr><td class="d">7</td><td>Mer 12/8</td><td><a class="gday" href="#g7"><b>Crozon · Pointe du Raz · Eclissi</b></a></td><td class="th">Pen-Hir · Pointe du Van</td><td>Locronan</td></tr>
+          <tr><td class="d">8</td><td>Gio 13/8</td><td><a class="gday" href="#g8"><b>Raguénez</b> · Lorient · <b>Quiberon</b> · Carnac</a></td><td class="th">Bagno · sottomarino · megaliti</td><td>Carnac</td></tr>
+          <tr><td class="d">9</td><td>Ven 14/8</td><td><a class="gday" href="#g9"><b>Rochefort-en-Terre</b> · <b>Brocéliande</b> · Le Mans</a></td><td class="th">Borgo · foresta di Artù · M24</td><td>Le Mans</td></tr>
+          <tr><td class="d">10</td><td>Sab 15/8</td><td><a class="gday" href="#g10"><b>Giverny</b></a></td><td class="th">Le ninfee di Monet</td><td>Vernon / Rouen</td></tr>
+          <tr><td class="d">11</td><td>Dom 16/8</td><td><a class="gday" href="#g11">→ Beauvais (volo 14:00)</a></td><td class="th">Rientro</td><td>—</td></tr>
         </tbody>
       </table>
     </div>
@@ -538,10 +544,11 @@
     </div>
     <div class="scenes">
       <div class="scene">
+        <picture><source type="image/avif" sizes="(min-width:900px) 270px, (min-width:620px) 46vw, 100vw" srcset="/img/g/sainte-mere-eglise-parachute-john-steele-480.avif 480w, /img/g/sainte-mere-eglise-parachute-john-steele-800.avif 800w, /img/g/sainte-mere-eglise-parachute-john-steele-1200.avif 1200w, /img/g/sainte-mere-eglise-parachute-john-steele-1800.avif 1800w"><img src="/img/g/sainte-mere-eglise-parachute-john-steele-1200.jpg" sizes="(min-width:900px) 270px, (min-width:620px) 46vw, 100vw" srcset="/img/g/sainte-mere-eglise-parachute-john-steele-480.jpg 480w, /img/g/sainte-mere-eglise-parachute-john-steele-800.jpg 800w, /img/g/sainte-mere-eglise-parachute-john-steele-1200.jpg 1200w" width="1200" height="800" alt="Il paracadute di John Steele sul campanile di Sainte-Mère-Église" loading="lazy" decoding="async"></picture>
         <div class="sb">
           <div class="idx">Notte</div><h4>Sainte-Mère-Église</h4>
           <div class="ss">Il primo paese liberato di Francia</div>
-          <p>Nella notte i paracadutisti scesero su questi campi. Sul campanile resta il manichino ricorda John Steele, il paracadutista rimasto appeso al campanile per due ore; il Museo Airborne conserva velivoli e cimeli originali.</p>
+          <p>Nella notte i paracadutisti scesero su questi campi. Sul campanile resta il manichino che ricorda John Steele, il paracadutista rimasto appeso al campanile per due ore; il Museo Airborne conserva velivoli e cimeli originali.</p>
         </div>
       </div>
       <div class="scene">
@@ -574,8 +581,9 @@
 
 <section class="videoband" aria-label="Il respiro dell'Atlantico">
   <figure>
-    <video src="../bretagna/video/coste-onde.mp4" muted loop playsinline preload="none" controls></video>
-    <figcaption><div class="vk">Dall'Atlantico normanno a quello bretone</div><div class="vt">Il respiro dell'oceano sulle scogliere</div><div class="vh">Girato in verticale, senza audio. Parte solo se lo avvii tu.</div></figcaption>
+    <video src="../bretagna/video/coste-onde.mp4" autoplay muted loop playsinline
+           preload="metadata" controls></video>
+    <figcaption><div class="vk">Dall'Atlantico normanno a quello bretone</div><div class="vt">Il respiro dell'oceano sulle scogliere</div></figcaption>
   </figure>
 </section>
 
@@ -694,6 +702,7 @@
     <div class="photo-pair">
       <picture><source type="image/avif" sizes="(min-width:1228px) 558px, (min-width:620px) 46vw, 100vw" srcset="/img/g/cote-emeraude-fort-la-latte-480.avif 480w, /img/g/cote-emeraude-fort-la-latte-800.avif 800w, /img/g/cote-emeraude-fort-la-latte-1200.avif 1200w, /img/g/cote-emeraude-fort-la-latte-1800.avif 1800w"><img src="/img/g/cote-emeraude-fort-la-latte-800.jpg" sizes="(min-width:1228px) 558px, (min-width:620px) 46vw, 100vw" srcset="/img/g/cote-emeraude-fort-la-latte-480.jpg 480w, /img/g/cote-emeraude-fort-la-latte-800.jpg 800w, /img/g/cote-emeraude-fort-la-latte-1200.jpg 1200w" width="800" height="357" alt="Fort la Latte" loading="lazy" decoding="async"></picture>
       <picture><source type="image/avif" sizes="(min-width:1228px) 558px, (min-width:620px) 46vw, 100vw" srcset="/img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-480.avif 480w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-800.avif 800w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-1200.avif 1200w"><img src="/img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-800.jpg" sizes="(min-width:1228px) 558px, (min-width:620px) 46vw, 100vw" srcset="/img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-480.jpg 480w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-800.jpg 800w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-1200.jpg 1200w" width="800" height="1200" alt="Faro di Cap Fréhel" loading="lazy" decoding="async"></picture>
+      <picture><source type="image/avif" sizes="(min-width:1228px) 368px, (min-width:620px) 30vw, 100vw" srcset="/img/g/cap-frehel-falesie-e-mare-480.avif 480w, /img/g/cap-frehel-falesie-e-mare-800.avif 800w, /img/g/cap-frehel-falesie-e-mare-1200.avif 1200w, /img/g/cap-frehel-falesie-e-mare-1800.avif 1800w"><img src="/img/g/cap-frehel-falesie-e-mare-1200.jpg" sizes="(min-width:1228px) 368px, (min-width:620px) 30vw, 100vw" srcset="/img/g/cap-frehel-falesie-e-mare-480.jpg 480w, /img/g/cap-frehel-falesie-e-mare-800.jpg 800w, /img/g/cap-frehel-falesie-e-mare-1200.jpg 1200w" width="1200" height="800" alt="Le falesie del Cap Fréhel sul mare" loading="lazy" decoding="async"></picture>
     </div>
     <div class="cards">
       <div class="infocard"><div class="cl">Attività</div><div class="cv">Giro delle mura, Grand Bé (bassa marea)</div></div>
@@ -801,6 +810,8 @@
           stare sopra la nebbia costiera. Panorama a 360°, si arriva in auto quasi in cima.</li>
         <li><b>Verso sud-est</b> — una fascia di sereno in movimento si insegue in auto: guardate
           le mappe satellitari del pomeriggio, non le previsioni del giorno prima.</li>
+        <li>Il paracadute di John Steele a Sainte-Mère-Église — Jarosław Baranowski · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File%3AChurch_with_Parachute_Memorial_to_John_Steele%2C_Sainte-M%C3%A8re-%C3%89glise_-_panoramio.jpg" rel="noopener" target="_blank">file originale</a></li>
+        <li>Le falesie del Cap Fréhel — W. Bulach · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File%3A00_3608_Blick_auf_das_Cap_Fr%C3%A9hel%2C_Frankreich.jpg" rel="noopener" target="_blank">file originale</a></li>
       </ul></div>
     <div class="tip"><b>Non esiste l'istante sicuro.</b> In un'eclissi totale c'è un momento in cui
       si può togliere il filtro, perché il disco è coperto del tutto. Qui no: al massimo resta
@@ -1054,29 +1065,58 @@
     <div class="note"><b>Un ordine sensato:</b> prima l'alloggio del 12 agosto, poi Keroman, Carnac e
       Giverny (hanno un tetto di posti o una fascia oraria), poi tutto il resto. I prezzi qui sopra
       sono quelli pubblicati a luglio 2026: verificateli alla prenotazione.</div>
-    <h3 style="margin-top:34px">Budget, per voci</h3>
-    <p style="color:var(--body)">Stima per <b>una persona in un gruppo di quattro</b>, undici giorni, chambre d'hôtes o hotel tre stelle, pasti in crêperie e bistrot. <b>Escluso il volo.</b></p>
-    <div class="tbl">
-      <table>
-        <caption class="visually-hidden">Stima di budget per persona, gruppo di quattro, undici giorni</caption>
-        <thead><tr><th>Voce</th><th>Da</th><th>A</th><th>Nota</th></tr></thead>
-        <tbody>
-          <tr><td>Alloggio</td><td>450 €</td><td>700 €</td><td>10 notti, camera doppia divisa</td></tr>
-          <tr><td>Auto a noleggio</td><td>120 €</td><td>175 €</td><td>quota a testa, 11 giorni da Beauvais</td></tr>
-          <tr><td>Carburante</td><td>60 €</td><td>80 €</td><td>~2.100 km, quota a testa</td></tr>
-          <tr><td>Pedaggi</td><td>25 €</td><td>35 €</td><td>A13 e Pont de Normandie; in Bretagna zero</td></tr>
-          <tr><td>Pasti</td><td>440 €</td><td>600 €</td><td>40-55 € al giorno</td></tr>
-          <tr><td>Ingressi e attività</td><td>170 €</td><td>230 €</td><td>Mont 28 € di parcheggio + 16 € abbazia, Giverny 13 €</td></tr>
-          <tr><td><b>Totale</b></td><td><b>1.265 €</b></td><td><b>1.820 €</b></td><td>per persona, volo escluso</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="tip"><b>Perché non «poche centinaia di euro»:</b> in agosto, in alta stagione, undici giorni con auto e alloggi non stanno sotto i mille euro a testa. Meglio una cifra scomoda e vera che una ottimista: verificate comunque i prezzi alla prenotazione, e bloccate per tempo l'alloggio della notte del 12 agosto, quella dell'eclissi.</div>
+    
   </div>
 </section>
 
 <section>
   <div class="wrap">
+    <h3 style="margin-top:34px" id="glossario">Un po' di bretone, quello che serve davvero</h3>
+    <p style="color:var(--body)">Il bretone è una lingua celtica, cugina del gallese e del cornico,
+      non un dialetto del francese. Parlarlo non serve — in Bretagna si parla francese — ma
+      <b>leggerlo sì</b>: metà dei nomi sui cartelli è bretone, e capirli cambia il paesaggio. Quando
+      trovate <em>Penmarc'h</em> smettete di vedere un nome e cominciate a vedere «testa di cavallo».</p>
+    <div class="tbl">
+      <table>
+        <caption class="visually-hidden">Parole bretoni ricorrenti nei nomi di luogo</caption>
+        <thead><tr><th>Bretone</th><th>Vuol dire</th><th>Dove lo incontrate</th></tr></thead>
+        <tbody>
+          <tr><td class="d">ker</td><td>villaggio, casa</td><td>Il più diffuso di tutti: <b>Ker</b>ascoët, <b>Ker</b>druc, <b>Ker</b>oman — la base di Lorient. Se un nome comincia per Ker, lì c'era un insediamento.</td></tr>
+          <tr><td class="d">penn</td><td>testa, capo, punta</td><td><b>Pen</b>marc'h («testa di cavallo»), <b>Pen</b>-Hir («punta lunga»), la <b>Pen</b>-ty, la casetta in fondo al terreno.</td></tr>
+          <tr><td class="d">mor</td><td>mare</td><td><b>Mor</b>bihan è «mare piccolo», il golfo. E <em>Ar Mor</em>, «il mare», ha dato Armorica, il nome antico della Bretagna.</td></tr>
+          <tr><td class="d">enez</td><td>isola</td><td>Rag<b>uén</b>ez, la spiaggia del Giorno 8, e tutte le <em>enez</em> della costa.</td></tr>
+          <tr><td class="d">traezh</td><td>spiaggia, sabbia</td><td>Sui cartelli di ogni accesso al mare: <em>Traezh</em> seguito dal nome del posto.</td></tr>
+          <tr><td class="d">menez</td><td>monte, altura</td><td><b>Ménez</b>-Hom, i 330 metri del piano B dell'eclissi.</td></tr>
+          <tr><td class="d">men / maen</td><td>pietra</td><td><b>Men</b> Ruz è «pietra rossa», il faro di Ploumanac'h. E <em>maen hir</em>, «pietra lunga», è il menhir: la parola è entrata in italiano da qui.</td></tr>
+          <tr><td class="d">dol</td><td>tavola</td><td><em>Taol maen</em>, «tavola di pietra», è il dolmen. Stessa strada del menhir.</td></tr>
+          <tr><td class="d">lann</td><td>landa, brughiera</td><td>La distesa bassa e spinosa attorno ai megaliti di Carnac: è quella che la visita guidata protegge.</td></tr>
+          <tr><td class="d">aber</td><td>estuario, ria</td><td>Gli <b>Aber</b> Wrac'h e Benoît, i fiordi del Finistère nord che si costeggiano il Giorno 6.</td></tr>
+          <tr><td class="d">c'h</td><td>—</td><td>Non è una parola: è un suono. Si pronuncia come la <em>ch</em> tedesca di <em>Bach</em>, raschiata in gola. Penmarc'h finisce così.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tbl">
+      <table>
+        <caption class="visually-hidden">Parole ed espressioni da usare</caption>
+        <thead><tr><th>Si dice</th><th>Vuol dire</th><th>Quando</th></tr></thead>
+        <tbody>
+          <tr><td class="d">Demat</td><td>Buongiorno</td><td>Si pronuncia «de-<em>mat</em>». Entrando in una crêperie di paese fa il suo effetto.</td></tr>
+          <tr><td class="d">Trugarez</td><td>Grazie</td><td>«tru-<em>ga</em>-res». Letteralmente è «misericordia», e vale un sorriso in più.</td></tr>
+          <tr><td class="d">Kenavo</td><td>Arrivederci</td><td>La più conosciuta anche fuori dalla Bretagna.</td></tr>
+          <tr><td class="d">Yec'hed mat!</td><td>Salute!</td><td>Il brindisi. «<em>ie</em>-hed mat», col raschio in mezzo. Da usare col sidro, che qui si beve in scodella.</td></tr>
+          <tr><td class="d">Krampouezh</td><td>Crêpes</td><td>Sulle insegne delle <em>crêperies</em> vere. Le salate di grano saraceno sono le <em>galettes</em>.</td></tr>
+          <tr><td class="d">Chouchen</td><td>Idromele</td><td>Miele fermentato, la bevanda celtica. Buono e più forte di quel che sembra.</td></tr>
+          <tr><td class="d">Gwenn ha du</td><td>«Bianco e nero»</td><td>Il nome della bandiera bretone, quella a strisce con gli ermellini. La vedrete ovunque.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="curio"><b>Perché sui cartelli c'è scritto due volte.</b> I nomi in bretone accanto a
+      quelli francesi sono una scelta recente: la lingua è passata da circa un milione di parlanti nel
+      1950 a poche decine di migliaia oggi, quasi tutti anziani, dopo decenni in cui a scuola era
+      proibita. Le scuole <em>Diwan</em>, nate nel 1977, la insegnano di nuovo ai bambini. Quei
+      cartelli bilingui non sono folclore per turisti: sono il segno di una lingua che qualcuno sta
+      cercando di non far morire.</div>
+
     <div class="closing">
       <div class="veil"></div>
       <div class="inner">
