@@ -14,6 +14,51 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Penisola di Quiberon
+
+**Arrivata come:** link dal modulo (id `ms4gxeea-f24ba4ae`), 28 luglio 2026 alle 11:43.
+**Giudizio: NON È UNA TAPPA NUOVA — Quiberon è già nel Giorno 8, e quello che il link
+aggiunge ci ENTRA quasi gratis.**
+
+La penisola è già in guida: **Giovedì 13 agosto**, fra Lorient (11:20-13:35, sottomarino) e
+Carnac (arrivo verso le 17:00, visita guidata prenotata), c'è una sosta di **due ore, dalle
+14:30 alle 16:30**, a Quiberon. Il link segnalato è una pagina generica sulla penisola — spiagge,
+il GR34, vela e kitesurf, specialità locali — e non propone un posto preciso che non ci sia già.
+La cosa utile che nomina è il **Château Turpault**, e da lì la **Côte Sauvage**.
+
+### Cosa sono, e cosa costano
+
+Il Château Turpault è un maniero anglo-normanno del 1904-1910, **proprietà privata**: non si
+visita, si vede da fuori. Segna l'inizio della Côte Sauvage, gli otto chilometri di scogliera
+frastagliata sul lato ovest della penisola, percorsi dal GR34. Per vederli bisogna scegliere,
+uscendo da Quiberon verso Carnac, la strada costiera (la D186A, verso Portivy) invece di quella
+diretta (la D768).
+
+| | Misurato |
+|---|---|
+| Quiberon (centro) → Carnac, diretta | 17,9 km / **20 min** |
+| Quiberon (centro) → Château Turpault → Portivy → Carnac, per la Côte Sauvage | 22,1 km / **29 min** |
+| **Differenza** | **+4,2 km, +9 minuti** |
+
+Nove minuti su una sosta di due ore già prevista: non si sacrifica nulla. Chi volesse solo
+affacciarsi al castello senza risalire fino a Portivy se la cava con **6 minuti** andata e
+ritorno da Quiberon centro.
+
+### Cosa consiglio
+
+**Uscire da Quiberon verso Carnac per la Côte Sauvage invece che per la strada diretta.** Costa
+nove minuti su due ore libere e mostra il tratto di costa più duro della penisola, con il
+castello a farvi da cancello d'ingresso. Nessun orario da rispettare: è una strada pubblica e un
+punto panoramico gratuito, non un sito con biglietto.
+
+Non verificato: parcheggio e disposizioni per il traffico del 13 agosto in centro a Quiberon
+(il sito ufficiale non pubblica informazioni specifiche per quella data).
+
+Fonti: bretagna-vacanze.com (link segnalato); ville-quiberon.fr e fr.wikipedia.org sul Château
+Turpault. Distanze: OSRM. Coordinate: OpenStreetMap/Nominatim.
+
+---
+
 ## Pointe Saint-Mathieu e Le Conquet
 
 **Arrivata come:** link dal modulo (id `ms3jqrs9-6312f9b8`), 27 luglio 2026 alle 18:14.
