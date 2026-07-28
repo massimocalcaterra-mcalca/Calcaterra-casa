@@ -90,6 +90,33 @@
   .del:hover{color:var(--danger)}
   .vuoto{color:var(--muted);padding:26px 0}
 
+  /* Schede: il Markdown di analisi.md reso leggibile. Nessuna libreria esterna
+     (la CSP non le consente e non c'e' build step): il lettore e' in fondo alla pagina. */
+  .scheda{background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    padding:22px 24px;margin-top:16px}
+  .scheda h3{font-family:Poppins,sans-serif;font-size:1.15rem;line-height:1.25;margin:0 0 4px;
+    scroll-margin-top:16px}
+  .scheda h4{font-family:Poppins,sans-serif;font-size:.94rem;margin:22px 0 0;color:var(--green-d)}
+  .scheda p{margin:10px 0 0;color:var(--body)}
+  .scheda p strong,.scheda li strong{color:var(--ink)}
+  .scheda ul{margin:10px 0 0;padding-left:20px;color:var(--body)}
+  .scheda li{margin:4px 0}
+  .scheda a{color:var(--green-d);word-break:break-word}
+  .scheda code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;
+    background:#f4f4f1;border-radius:5px;padding:1px 5px}
+  .scheda em{color:var(--muted)}
+  .scheda .tw{overflow-x:auto;margin:12px 0 0}
+  .scheda table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:min(100%,420px)}
+  .scheda th,.scheda td{border-bottom:1px solid var(--line);padding:8px 12px;text-align:left;
+    vertical-align:top}
+  .scheda th{font-family:Poppins,sans-serif;font-size:.72rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--green-d);white-space:nowrap}
+  .giudizio{display:inline-block;font-family:Poppins,sans-serif;font-size:.68rem;font-weight:600;
+    letter-spacing:.1em;text-transform:uppercase;border-radius:20px;padding:3px 10px;margin-bottom:8px;
+    color:var(--coral);border:1px solid #f0d3cb;background:#fdf3f0}
+  .giudizio.entra{color:var(--green-d);border-color:#bfe3cd;background:#f1faf4}
+  .giudizio.fuori{color:var(--danger);border-color:#e8cdc7;background:#fcf1ee}
+
   .foot{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);
     color:var(--muted);font-size:.8rem}
   .hidden{display:none!important}
@@ -177,6 +204,19 @@
           <div class="err" id="formErr" role="alert"></div>
         </form>
       </div>
+    </section>
+
+    <!-- SCHEDE -->
+    <section id="schedeView" aria-labelledby="schedeTitle">
+      <div class="row">
+        <h2 id="schedeTitle">Schede, già analizzate</h2>
+        <span class="count" id="schedeCount" role="status">—</span>
+      </div>
+      <p class="lead" style="font-size:.92rem;margin:8px 0 0">Ogni proposta viene misurata sulla
+        rete stradale vera, non a occhio: quanto costa la deviazione, in che giornata starebbe,
+        cosa andrebbe sacrificato. Dalla più recente alla più vecchia.</p>
+      <div id="schede"></div>
+      <p class="vuoto hidden" id="schedeVuoto">Le schede non sono raggiungibili in questo momento.</p>
     </section>
 
     <!-- ELENCO -->
@@ -327,7 +367,158 @@ async function elimina(id){
   else toast("Errore durante l'eliminazione");
 }
 
+/* ------------------------------------------------------------------
+   Schede — lettore Markdown minimo per /proposte/analisi.md
+
+   Perche' esiste: le schede le scrive un lavoro automatico, in Markdown,
+   e il sito non ha un passaggio di compilazione che possa trasformarle in
+   HTML. La pagina se le legge da sola a ogni visita, cosi' una scheda nuova
+   compare senza che nessuno rigeneri niente.
+
+   Perche' e' scritto cosi': il testo delle schede non passa MAI da innerHTML.
+   Ogni pezzo diventa un nodo di testo creato a mano, quindi nemmeno una scheda
+   scritta male (o manomessa nel repository) puo' iniettare codice nella pagina.
+   Riconosce quello che le schede usano davvero: titoli, grassetto, corsivo,
+   codice, link, elenchi e tabelle. Il resto lo mostra come testo semplice.
+   ------------------------------------------------------------------ */
+
+/* Inline: **grassetto**, *corsivo*, `codice`, [testo](url). */
+function inlineMd(testo, dove){
+  const re=/(\*\*[^*]+\*\*|\*[^*\n]+\*|`[^`]+`|\[[^\]\n]+\]\([^)\s]+\)|<https?:\/\/[^>\s]+>)/g;
+  let i=0, m;
+  while((m=re.exec(testo))!==null){
+    if(m.index>i) dove.appendChild(document.createTextNode(testo.slice(i,m.index)));
+    const t=m[0];
+    let el;
+    if(t.startsWith("**"))      { el=document.createElement("strong"); el.textContent=t.slice(2,-2); }
+    else if(t.startsWith("`"))  { el=document.createElement("code");   el.textContent=t.slice(1,-1); }
+    else if(t.startsWith("<"))  {
+      const href=t.slice(1,-1);
+      el=document.createElement("a"); el.href=href; el.rel="noopener noreferrer";
+      el.target="_blank"; el.textContent=href;
+    }
+    else if(t.startsWith("["))  {
+      const s=t.indexOf("]");
+      const href=t.slice(s+2,-1);
+      /* solo http/https: un link "javascript:" nel Markdown non deve diventare cliccabile */
+      if(/^https?:\/\//i.test(href)){
+        el=document.createElement("a"); el.href=href; el.rel="noopener noreferrer";
+        el.target="_blank"; el.textContent=t.slice(1,s);
+      } else { el=document.createElement("span"); el.textContent=t.slice(1,s); }
+    }
+    else                        { el=document.createElement("em");     el.textContent=t.slice(1,-1); }
+    dove.appendChild(el);
+    i=m.index+t.length;
+  }
+  if(i<testo.length) dove.appendChild(document.createTextNode(testo.slice(i)));
+  return dove;
+}
+
+function slug(s){
+  return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+    .replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,60);
+}
+
+/* Una scheda: dalle righe Markdown ai nodi. */
+function rendiScheda(righe){
+  const box=document.createElement("article");
+  box.className="scheda";
+  let i=0;
+  while(i<righe.length){
+    const r=righe[i];
+
+    if(/^#{2,4}\s/.test(r)){                                  /* titoli */
+      const liv=r.match(/^#+/)[0].length;
+      const testo=r.replace(/^#+\s*/,"");
+      const h=document.createElement(liv<=2?"h3":"h4");
+      if(liv<=2) h.id="scheda-"+slug(testo);
+      inlineMd(testo,h); box.appendChild(h); i++; continue;
+    }
+
+    if(/^\s*\|/.test(r)){                                     /* tabella */
+      const blocco=[];
+      while(i<righe.length && /^\s*\|/.test(righe[i])) blocco.push(righe[i++]);
+      const celle=(x)=>x.trim().replace(/^\||\|$/g,"").split("|").map(c=>c.trim());
+      const tw=document.createElement("div"); tw.className="tw";
+      const tab=document.createElement("table");
+      blocco.forEach((riga,n)=>{
+        if(n===1 && /^[\s|:-]+$/.test(riga)) return;           /* riga separatrice */
+        const tr=document.createElement("tr");
+        celle(riga).forEach(c=>{
+          const cel=document.createElement(n===0?"th":"td");
+          inlineMd(c,cel); tr.appendChild(cel);
+        });
+        (n===0 ? tab.createTHead() : (tab.tBodies[0]||tab.createTBody())).appendChild(tr);
+      });
+      tw.appendChild(tab); box.appendChild(tw); continue;
+    }
+
+    if(/^\s*[-*]\s+/.test(r)){                                /* elenco puntato */
+      const ul=document.createElement("ul");
+      while(i<righe.length && /^\s*[-*]\s+/.test(righe[i])){
+        const li=document.createElement("li");
+        inlineMd(righe[i].replace(/^\s*[-*]\s+/,""),li); ul.appendChild(li); i++;
+      }
+      box.appendChild(ul); continue;
+    }
+
+    if(r.trim()===""){ i++; continue; }
+
+    const par=[];                                             /* paragrafo */
+    while(i<righe.length && righe[i].trim()!=="" && !/^#{2,4}\s/.test(righe[i])
+          && !/^\s*\|/.test(righe[i]) && !/^\s*[-*]\s+/.test(righe[i])) par.push(righe[i++]);
+    const p=document.createElement("p");
+    inlineMd(par.join(" "),p); box.appendChild(p);
+  }
+
+  /* Etichetta del giudizio, se la scheda ne dichiara uno. */
+  const testoIntero=box.textContent;
+  const g=testoIntero.match(/Giudizio:\s*([^.,;\u2014\n]{1,60})/);
+  if(g){
+    /* Il giudizio e' scritto in maiuscolo nelle schede (ENTRA, FUORI, DA VALUTARE...):
+       si tiene la sequenza iniziale di parole maiuscole e si scarta la spiegazione che segue. */
+    let parole=g[1].trim().split(/\s+/);
+    const maiuscole=[];
+    for(const w of parole){ if(/[a-z\u00e0-\u00ff]/.test(w)) break; maiuscole.push(w); }
+    let frase=(maiuscole.length?maiuscole:parole.slice(0,3)).join(" ");
+    const primaParola=frase.split(/\s+/)[0].toLowerCase();
+    const tag=document.createElement("div");
+    tag.className="giudizio"+(primaParola.startsWith("entra")?" entra":
+                              primaParola.startsWith("fuori")?" fuori":"");
+    tag.textContent=frase;
+    const primo=box.querySelector("h3");
+    if(primo) primo.after(tag); else box.prepend(tag);
+  }
+  return box;
+}
+
+async function caricaSchede(){
+  let testo;
+  try{
+    const r=await fetch("/proposte/analisi.md",{cache:"no-store"});
+    if(!r.ok) throw new Error(r.status);
+    testo=await r.text();
+  }catch(e){
+    $("#schedeCount").textContent="non disponibili";
+    $("#schedeVuoto").classList.remove("hidden");
+    return;
+  }
+  /* Si tiene solo da "## " in poi: l'intestazione del file non serve qui. */
+  const blocchi=testo.split(/\n---+\n/).map(b=>b.split("\n")).filter(b=>b.some(r=>/^##\s/.test(r)));
+  const cont=$("#schede");
+  cont.textContent="";
+  blocchi.forEach(b=>cont.appendChild(rendiScheda(b)));
+  $("#schedeCount").textContent = blocchi.length===1 ? "1 scheda" : blocchi.length+" schede";
+  $("#schedeVuoto").classList.add("hidden");
+  /* Se si arriva con un'ancora (#scheda-...), portacisi ora che esiste. */
+  if(location.hash){
+    const t=document.getElementById(location.hash.slice(1));
+    if(t) t.scrollIntoView();
+  }
+}
+
 boot();
+caricaSchede();
 </script>
 </body>
 </html>
