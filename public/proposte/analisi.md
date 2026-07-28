@@ -11,6 +11,61 @@ Legenda del giudizio:
 
 ---
 
+## Penisola di Quiberon — la Côte Sauvage invece della sola Pointe du Conguel
+
+**Arrivata come:** link dal modulo (id `ms4gxeea-f24ba4ae`), 28 luglio 2026 alle 11:43.
+**Giudizio: NON È UNA TAPPA NUOVA, ma DA VALUTARE per come cambiare quella che c'è già.**
+Quiberon è già nel **Giorno 8** (giovedì 13 agosto): «Quiberon e Pointe du Conguel», 14:30–16:30,
+prima di Carnac alle 17:00. La fonte segnalata non propone la penisola: propone di vederne
+un pezzo diverso.
+
+Pointe du Conguel è la punta estrema a sud, quella che guarda verso Belle-Île e il porto dei
+traghetti — il lato riparato. La pagina segnalata parla invece della **Côte Sauvage**, il lato
+ovest, quello aperto sull'Atlantico: 8 km di scogliere, con il Château Turpault (1904), la
+Pointe de Beg-er-Goalennec (vista su Belle-Île) e la Pointe du Percho, tutti percorribili a
+piedi sul GR34. La guida attuale la cita solo di sfuggita, come panorama visto da lontano
+(«con la Côte Sauvage a ovest»): non ci si mette piede.
+
+### Quanto costa davvero
+
+Misurato con OSRM, coordinate da OpenStreetMap/Nominatim (nessun indirizzo ufficiale per
+questi punti naturali, quindi coordinate del nodo più vicino):
+
+| Percorso | Misurato |
+|---|---|
+| Keroman → Pointe du Conguel (come è ora) | 55,7 km / 61 min |
+| Pointe du Conguel → Carnac (come è ora) | 21,1 km / 25 min |
+| **Totale, itinerario attuale** | **76,8 km / 86 min** |
+| Keroman → Château Turpault (inizio della Côte Sauvage, 1,7 km dal paese) | 54,2 km / 57 min |
+| Château Turpault → Carnac | 19,4 km / 22 min |
+| **Totale sostituendo Conguel con Turpault** | **73,6 km / 79 min — 3,2 km e 7 minuti in meno** |
+| Keroman → Pointe du Percho (Côte Sauvage più a nord, Saint-Pierre-Quiberon) | 50,3 km / 54 min |
+| Pointe du Percho → Carnac | 15,4 km / 19 min |
+| **Totale sostituendo Conguel con Percho** | **65,7 km / 73 min — 11,1 km e 13 minuti in meno** |
+
+I miei numeri per la tappa attuale (55,7 km/61 min e 21,1 km/25 min) sono vicini a quelli già
+scritti nella guida (54 km/56 min e 22 km/27 min): le coordinate usate sono coerenti con quelle
+del percorso pianificato. La Côte Sauvage, essendo sulla strada fra Lorient e Carnac invece che
+alla punta estrema della penisola, **non costa di più: costa uguale o meno**.
+
+### Cosa consiglio
+
+Sostituire, o affiancare, la sosta di Pointe du Conguel con una camminata sul tratto sud della
+Côte Sauvage (si parcheggia vicino al paese, il Château Turpault è a 3 minuti): stesso budget di
+tempo, paesaggio diverso e più impressionante — scogliere aperte sull'Atlantico invece del lato
+riparato verso Belle-Île. Nessun sacrificio da fare altrove: il rischio di coda sulla D768 già
+segnalato in guida resta identico, qualunque punto della penisola si scelga.
+
+**Non verificato:** se il Château Turpault sia visibile solo dal sentiero o accessibile
+(potrebbe essere proprietà privata — l'edificio del 1904 non risulta aperto al pubblico nelle
+fonti consultate); orari e disponibilità di parcheggio specifici per la Côte Sauvage rispetto a
+Pointe du Conguel; condizioni del tratto di GR34 in agosto 2026.
+
+Fonti: bretagna-vacanze.com (pagina segnalata); guida del viaggio per il Giorno 8; OpenStreetMap
+Nominatim per le coordinate. Distanze: OSRM.
+
+---
+
 ## Névez — la costa da Port-Manec'h a Raguénez
 
 **Arrivata come:** link dal modulo (id `ms4ci3zv-f78d0635`), 28 luglio 2026 alle 09:39.
