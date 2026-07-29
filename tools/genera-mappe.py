@@ -62,7 +62,8 @@ B_STOPS = [
     ("Pointe de Pen-Hir",         48.2569, -4.6236, "g7",  ""),
     ("Pointe du Raz",             48.0386, -4.7361, "g7",  ""),
     ("Pointe du Van",             48.0553, -4.7042, "g7",  "eclipse"),
-    ("Locronan",                  48.0972, -4.2081, "g7",  ""),
+    ("Baie des Trépassés",        48.0355, -4.6790, "g7",  ""),
+    ("Locronan",                  48.0972, -4.2081, "g8",  ""),
     ("Raguénez",                  47.7960, -3.7875, "g8",  ""),
     ("Lorient",                   47.7483, -3.3702, "g8",  ""),
     ("Quiberon",                  47.4830, -3.1210, "g8",  ""),
@@ -89,11 +90,8 @@ B_OPTIONS = [
      "ma il 13 agosto e' in corso il Festival des Filets Bleus"),
     ("Bécherel", 48.2953, -1.9469, "g4",
      "Bécherel — opzione del Giorno 4: la prima Cite du Livre di Francia, una quindicina di librerie"),
-    ("Baie des Trépassés", 48.0355, -4.6790, "g7",
-     "Baie des Trépassés — piano B dell'eclissi: stesso orizzonte della Pointe du Van ma a livello "
-     "del mare e riparata dal vento, 5 minuti di strada"),
 ]
-B_TRANSFER = {0, 25, 27}
+B_TRANSFER = {0, 26, 28}
 
 DAY_TITLES = {
     "A": {
@@ -665,7 +663,7 @@ def main():
          "Lorient, la penisola di Quiberon e i megaliti di Carnac; poi Rochefort-en-Terre "
          "e la foresta di Brocéliande, un trasferimento tratteggiato verso est fino a "
          "Le Mans, e infine Giverny sulla Senna prima del rientro a Beauvais. In totale "
-         "2.011 chilometri misurati. Ogni cerchio è un collegamento alla giornata "
+         "2.016 chilometri misurati. Ogni cerchio è un collegamento alla giornata "
          "corrispondente della guida."),
     ]
 
