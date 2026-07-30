@@ -95,6 +95,19 @@
 .lmenu li b{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink)}
 .lmenu .lfonte{font-size:.74rem;color:var(--muted);margin:10px 0 0;font-style:italic}
 
+/* --- "apri in mappe" ---------------------------------------------------
+   Sul telefono il link viene raccolto dall'app delle mappe; sul computer
+   apre la mappa nel browser. Sta sotto l'indirizzo, dove uno lo cerca. */
+.gmaps{display:inline-flex;align-items:center;gap:5px;margin-top:7px;
+  font-family:Poppins,sans-serif;font-size:.76rem;font-weight:600;
+  color:var(--green-d);text-decoration:underline;
+  text-decoration-color:var(--line-strong);text-underline-offset:2px}
+.gmaps::before{content:"◎";font-size:.9em;text-decoration:none}
+.gmaps:hover{text-decoration-color:var(--green-d)}
+/* nelle tabelle e in mezzo al testo scorrevole sta su una riga sua */
+td .gmaps,p .gmaps{margin-top:4px}
+.attrmaps{margin:12px 0 0}
+
 /* il fumetto sulla mappa, con lo stesso estratto di menu della scheda */
 .daymap .leaflet-popup-content{margin:12px 14px}
 .daymap .popnome{font-family:Poppins,sans-serif;font-weight:600;font-size:.92rem}
@@ -102,5 +115,6 @@
 .daymap .popmenu{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:4px}
 .daymap .popmenu li{display:flex;justify-content:space-between;gap:10px;font-size:.82rem}
 .daymap .popmenu b{white-space:nowrap;font-variant-numeric:tabular-nums}
+.daymap .gmaps{margin-top:9px}
 
 @media(max-width:620px){.daymap{height:300px}}

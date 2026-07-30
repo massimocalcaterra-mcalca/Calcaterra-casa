@@ -17,6 +17,18 @@ function haversine(lat1,lon1,lat2,lon2){
 
 function fmtKm(km){ return km<1 ? Math.round(km*1000)+" m" : km.toFixed(km<10?1:0)+" km"; }
 
+/* Link "apri in mappe". Usa il formato ufficiale di Google Maps, che i
+   telefoni riconoscono come link dell'applicazione: su Android apre (o
+   propone) l'app, su iPhone apre Google Maps se e' installato, altrimenti
+   la mappa nel browser. Con le coordinate invece del nome il punto non
+   puo' finire sulla citta' sbagliata. */
+function urlMappe(lat,lon){
+  return "https://www.google.com/maps/search/?api=1&query="+lat+","+lon;
+}
+function linkMappe(href){
+  return '<a class="gmaps" href="'+href+'" target="_blank" rel="noopener">Apri in mappe</a>';
+}
+
 /* --- mappa ------------------------------------------------------------ */
 function initMap(containerId, opts){
   const el=document.getElementById(containerId);
@@ -34,9 +46,12 @@ function initMap(containerId, opts){
        noi in pagina: e' l'unico caso in cui non ri-scappiamo il contenuto. */
     let popup=s.popupHtml;
     if(!popup){
-      popup="<strong>"+esc(s.name)+"</strong>";
-      if(s.note) popup+="<br>"+esc(s.note);
+      popup='<div class="popnome">'+esc(s.name)+"</div>";
+      if(s.note) popup+='<div class="popmeta">'+esc(s.note)+"</div>";
     }
+    /* ogni fumetto porta il link per aprire il punto nelle mappe del
+       telefono. Le schede dei locali il loro l'hanno gia' dentro. */
+    if(!/class="gmaps"/.test(popup)) popup+=linkMappe(s.maps || urlMappe(s.lat,s.lon));
     m.bindPopup(popup);
     markers[s.id]=m;
   });
@@ -54,9 +69,11 @@ function localiDalDOM(sel){
     const testo=c=>{ const n=el.querySelector(c); return n?n.textContent.trim():""; };
     const nome=testo(".lnome"), meta=testo(".lmeta");
     const menu=el.querySelector(".lmenu ul");
+    const gm=el.querySelector("a.gmaps");
     let html='<div class="popnome">'+esc(nome)+'</div>';
     if(meta) html+='<div class="popmeta">'+esc(meta)+'</div>';
     if(menu) html+='<ul class="popmenu">'+menu.innerHTML+'</ul>';
+    if(gm) html+=linkMappe(gm.getAttribute("href"));
     return {id:el.id||("locale-"+i), name:nome, kind:"cibo",
             lat:parseFloat(el.dataset.lat), lon:parseFloat(el.dataset.lon),
             popupHtml:html};
@@ -243,5 +260,5 @@ function dataBreve(iso,n){
   return d.getUTCDate()+" "+MESI[d.getUTCMonth()];
 }
 
-window.DayGuide={initMap, wireGeolocation, initWeather, haversine, localiDalDOM};
+window.DayGuide={initMap, wireGeolocation, initWeather, haversine, localiDalDOM, urlMappe};
 })();
