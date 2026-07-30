@@ -27,11 +27,28 @@
 @media(prefers-reduced-motion:reduce){.pin.vicino{animation:none}}
 
 .daybar{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;align-items:center}
-.locbtn{font-family:Poppins,sans-serif;font-weight:600;font-size:.82rem;
-  color:var(--green-d);background:var(--paper);border:1px solid var(--line-strong);
-  border-radius:10px;padding:9px 16px;cursor:pointer;transition:.2s}
+/* senza messaggio la barra non deve lasciare un vuoto */
+.daybar:has(.locmsg:empty){margin-top:0}
+/* Il riquadro attorno alla sola mappa: e' lui il riferimento del tasto della
+   posizione. Ancorarlo a .daymap-wrap era sbagliato — quel contenitore
+   comprende anche legenda e messaggio, che sul telefono vanno a capo, e il
+   tasto finiva 24px sotto la mappa. */
+.mapbox{position:relative}
+
+/* Il tasto della posizione sta dove si e' abituati a trovarlo: nell'angolo
+   in basso a destra della mappa, appena sopra la riga delle attribuzioni di
+   Leaflet. Solo il simbolo, senza scritta — il nome resta nell'aria-label per
+   chi usa un lettore di schermo e nel title come suggerimento al passaggio.
+   Sta fuori da .daymap, che ha overflow:hidden, quindi non viene tagliato. */
+.locbtn{position:absolute;right:12px;bottom:40px;z-index:600;
+  width:44px;height:44px;padding:0;border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--green-d);background:var(--paper);
+  border:1px solid var(--line-strong);
+  box-shadow:0 2px 8px rgba(20,38,28,.28);transition:.2s}
 .locbtn:hover{border-color:var(--green-d);background:#F1FAF4}
 .locbtn:disabled{opacity:.55;cursor:default}
+.locbtn:focus-visible{outline:2px solid var(--green-d);outline-offset:2px}
 .locmsg{font-size:.84rem;color:var(--muted)}
 .locmsg.err{color:var(--coral,#C8391A)}
 
