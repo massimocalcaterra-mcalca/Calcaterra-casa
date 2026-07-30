@@ -310,6 +310,19 @@ una posizione prima del vero (dentro la fascetta `.attesa`), e il blocco
 sostituito è rimasto con un `</div>` di troppo fuori. **Contare le aperture e
 le chiusure dopo ogni sostituzione**, e comunque ripassare il parser.
 
+**Fidarsi di uno screenshot a pagina intera.** Le pagine di giornata superano
+i 17.000 px di altezza: a `deviceScaleFactor: 2` sono oltre 34.000 px, sopra il
+limite di texture di Chromium, e nel `fullPage` le fotografie escono **bianche**
+pur essendo caricate e impaginate giuste. Ho creduto per un momento che la
+riga di foto di Le Havre non funzionasse. **Per guardare un elemento si
+fotografa l'elemento** (`locator.screenshot`), e per sapere se un'immagine
+dipinge davvero la si disegna su una `<canvas>` e si legge un pixel.
+
+**Ricordarsi l'autore di una fotografia.** Scrivendo i crediti del Giorno 2
+avevo messo a memoria due nomi per foto che erano gia' in archivio: sbagliati
+tutti e due, e con la licenza sbagliata. **L'autore si rilegge da Commons**
+(`prop=imageinfo&iiprop=extmetadata`) ogni volta, anche per un file vecchio.
+
 **Riusare un nome di classe che c'e' gia'.** `.mapbox` in `base.css` e' la
 mappa schematica dell'itinerario, e si porta dietro
 `.mapbox svg{width:100%;height:auto}`. Chiamando `.mapbox` anche il riquadro
@@ -335,7 +348,7 @@ piccole: per il Giorno 3, le croci di Colleville.
 | | giornata | pagina |
 |---|---|---|
 | 1 | Rouen | **fatta** |
-| 2 | Étretat e Le Havre | ricerche finite, pagina da scrivere |
+| 2 | Étretat e Le Havre | **fatta** |
 | 3 | Le spiagge dello Sbarco | **fatta** |
 | 4-11 | dal Mont-Saint-Michel al rientro | da fare |
 

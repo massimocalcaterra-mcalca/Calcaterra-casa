@@ -1,0 +1,29 @@
+{
+ "name": "Giorno 2 · Étretat e Le Havre",
+ "short_name": "Étretat",
+ "description": "La giornata di Étretat e Le Havre, con mappa e meteo",
+ "start_url": "/normandie-bretagna/giorno-02/",
+ "scope": "/normandie-bretagna/giorno-02/",
+ "display": "standalone",
+ "background_color": "#FBFBFA",
+ "theme_color": "#FBFBFA",
+ "lang": "it",
+ "icons": [
+  {
+   "src": "/normandie-bretagna/giorno-02/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/normandie-bretagna/giorno-02/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "/normandie-bretagna/giorno-02/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}
