@@ -1,0 +1,29 @@
+{
+ "name": "Giorno 10 · Giverny",
+ "short_name": "Giverny",
+ "description": "Il giardino di Monet e il giorno più trafficato dell'anno, con mappa e meteo",
+ "start_url": "/normandie-bretagna/giorno-10/",
+ "scope": "/normandie-bretagna/giorno-10/",
+ "display": "standalone",
+ "background_color": "#FBFBFA",
+ "theme_color": "#FBFBFA",
+ "lang": "it",
+ "icons": [
+  {
+   "src": "/normandie-bretagna/giorno-10/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/normandie-bretagna/giorno-10/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "/normandie-bretagna/giorno-10/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}

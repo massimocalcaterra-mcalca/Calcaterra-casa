@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giorno 9 — Rochefort-en-Terre, Brocéliande e Le Mans · Normandie &amp; Bretagne</title>
+<meta name="description" content="Guida dettagliata del Giorno 9: il borgo fiorito di Rochefort-en-Terre alle nove del mattino, la foresta di Brocéliande, il museo delle 24 Ore e la Cité Plantagenêt del Mans con La Nuit des Chimères.">
+<link rel="canonical" href="https://viaggi.calcaterra.casa/normandie-bretagna/giorno-09/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calcaterra Casa">
+<meta property="og:locale" content="it_IT">
+<meta property="og:url" content="https://viaggi.calcaterra.casa/normandie-bretagna/giorno-09/">
+<meta property="og:title" content="Giorno 9 — Rochefort-en-Terre, Brocéliande e Le Mans">
+<meta property="og:description" content="Un borgo prima della folla, la foresta di Artù, e la sera nel centro storico meno visitato di Francia.">
+<meta property="og:image" content="https://calcaterra.casa/img/og/og-normandie.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="Massimo Calcaterra">
+<meta name="theme-color" content="#FBFBFA">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚓</text></svg>">
+<link rel="apple-touch-icon" href="/normandie-bretagna/giorno-09/apple-touch-icon.png">
+<link rel="manifest" href="/normandie-bretagna/giorno-09/site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Brocéliande">
+<meta name="application-name" content="Brocéliande">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/base.css?v=999fa4d7">
+<link rel="stylesheet" href="../assets/day.css?v=5f83dd4b">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+<style>
+  /* Solo cio' che questa pagina aggiunge al foglio comune. */
+  .dayhero{position:relative;min-height:46vh;display:flex;align-items:flex-end;
+    color:#fff;overflow:hidden}
+  .dayhero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .dayhero .veil{position:absolute;inset:0;
+    background:linear-gradient(0deg,rgba(20,38,28,.88),rgba(20,38,28,.2) 60%,rgba(20,38,28,.12))}
+  .dayhero .inner{position:relative;max-width:1180px;margin:0 auto;width:100%;padding:28px 24px 40px}
+  .dayhero .backlink{color:rgba(255,255,255,.85);font-family:Poppins,sans-serif;font-weight:600;
+    font-size:.84rem}
+  .dayhero .eyebrow{font-family:Poppins,sans-serif;font-size:.76rem;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;color:#cfe6d6;margin-top:18px}
+  .dayhero h1{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3.1rem);
+    line-height:1.05;letter-spacing:-.02em;margin:.2em 0 0}
+  .dayhero .sub{max-width:66ch;margin-top:12px;font-size:1.02rem;color:rgba(255,255,255,.92)}
+  .daydata{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:20px}
+  .daydata div{font-size:.86rem;color:rgba(255,255,255,.78)}
+  .daydata b{display:block;color:#fff;font-family:Poppins,sans-serif;font-weight:600;font-size:.98rem}
+
+  .allerta{margin-top:24px;background:#FFF6F2;border:2px solid var(--coral);
+    border-radius:14px;padding:20px 22px}
+  .allerta h3{font-family:Poppins,sans-serif;font-size:1rem;margin:0 0 4px;color:var(--coral-text)}
+  .allerta p{margin:12px 0 0;font-size:.92rem;color:#5a3d33}
+  .allerta p:first-of-type{margin-top:10px}
+  .allerta .quando{font-family:Poppins,sans-serif;font-size:.66rem;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--coral-text)}
+
+  .ore{margin-top:22px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .ore .r{display:flex;gap:16px;padding:11px 16px;border-top:1px solid var(--line);
+    background:var(--paper);font-size:.9rem;align-items:baseline}
+  .ore .r:first-child{border-top:0}
+  .ore .r.forte{background:#F1FAF4}
+  .ore .h{font-family:Poppins,sans-serif;font-weight:700;color:var(--green-d);
+    min-width:5.6em;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
+
+<div class="topbar">
+  <div class="row">
+    <a href="/"><span class="brand">home</span></a>
+    <nav class="topnav" aria-label="Sezioni della pagina">
+      <a href="#nove">Le nove del mattino</a>
+      <a href="#giornata">La giornata</a>
+      <a href="#rochefort">Rochefort</a>
+      <a href="#broceliande">Brocéliande</a>
+      <a href="#lemans">Le Mans</a>
+      <a href="#mangiare">Dove mangiare</a>
+      <a href="#mappa">Mappa</a>
+      <a href="../#g9">Nella guida</a>
+    </nav>
+  </div>
+</div>
+
+<main id="contenuto">
+<header class="dayhero">
+  <picture>
+    <source type="image/avif" sizes="100vw" srcset="/img/g/la-foret-de-broceliande-octobre-2020-480.avif 480w, /img/g/la-foret-de-broceliande-octobre-2020-800.avif 800w, /img/g/la-foret-de-broceliande-octobre-2020-1200.avif 1200w, /img/g/la-foret-de-broceliande-octobre-2020-1800.avif 1800w">
+    <img class="bg" src="/img/g/la-foret-de-broceliande-octobre-2020-1200.jpg" sizes="100vw" srcset="/img/g/la-foret-de-broceliande-octobre-2020-480.jpg 480w, /img/g/la-foret-de-broceliande-octobre-2020-800.jpg 800w, /img/g/la-foret-de-broceliande-octobre-2020-1200.jpg 1200w" width="1200" height="344" alt="La foresta di Brocéliande" fetchpriority="high" decoding="async">
+  </picture>
+  <div class="veil"></div>
+  <div class="inner">
+    <a class="backlink" href="../#g9">← Guida completa · Giorno 9 di 11</a>
+    <div class="eyebrow">Giorno 9 · Venerdì 14 agosto 2026</div>
+    <h1>Rochefort, Brocéliande e Le Mans</h1>
+    <div class="sub">La giornata che riporta verso est, e che ha una sola regola: cominciare
+      presto. Un borgo fiorito prima che si riempia, la foresta in cui la Francia ha messo re
+      Artù, e la sera in un centro storico romano e medievale che quasi nessuno viene a vedere
+      perché la città è famosa per le automobili.</div>
+    <div class="daydata">
+      <div>Il percorso<br><b>260 km · 3h27 di guida</b></div>
+      <div>Il vincolo<br><b>Il museo M24 chiude alle 19:00</b></div>
+      <div>Si dorme<br><b>Le Mans, dentro la Cité</b></div>
+      <div id="dayweather" class="meteo loading">Meteo…</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<article class="day" style="border-top:0;padding-top:34px">
+
+<h2 id="nove">Alle nove del mattino, e non alle undici</h2>
+<p>Questa giornata è costruita attorno a un'ora sola. <b>Rochefort-en-Terre</b> è uno dei borghi
+  più visitati di Bretagna, e a metà agosto verso le undici il vicolo principale si percorre in
+  fila indiana. <b>Alle nove è vuoto.</b></p>
+<p>È per questo che la notte si dorme a <b>Pluherlin</b> e non a Carnac: da lì al borgo sono
+  <b>5 km e 7 minuti</b>, quindi le nove si fanno senza sveglia all'alba. Chi arriva da Carnac
+  parte un'ora e mezza prima per stare alla stessa ora.</p>
+
+<div class="note"><b>E la sera ha un vincolo vero.</b> Il <b>museo delle 24 Ore</b> chiude alle
+  <b>19:00</b>, e va fatto stasera: domani è sabato 15 agosto, il giorno più trafficato dell'anno
+  sulle strade francesi, e la mattina serve per intero ad arrivare a Giverny. Visitandolo adesso,
+  domattina si parte da Le Mans alle sette con una cosa sola da fare.</div>
+
+<h2 id="giornata">Come far quadrare la giornata</h2>
+<p>Il percorso è <b>Pluherlin → Rochefort-en-Terre → Paimpont → Le Mans</b>. Il primo tratto è di
+  cinque chilometri, il secondo di <b>57,6 km e 56 minuti</b>, e poi c'è il trasferimento lungo
+  che chiude la Bretagna: <b>196,9 km e 2h23</b> fino alla Sarthe.</p>
+
+<div class="ore">
+  <div class="r"><span class="h">9:00<br>–10:30</span><span><b>Rochefort-en-Terre</b> — 5 km, 7 minuti. Il borgo, ancora vuoto</span></div>
+  <div class="r"><span class="h">11:30<br>–14:00</span><span><b>Brocéliande</b>, Paimpont — 57,6 km, 56 minuti. Pranzo qui</span></div>
+  <div class="r"><span class="h">16:25<br>–18:45</span><span><b>Museo M24</b>, Le Mans — 196,9 km, 2h23. <b>Chiude alle 19:00</b></span></div>
+  <div class="r"><span class="h">19:05</span><span><b>L'Hôtel Particulier</b> — 8,3 km, 17 minuti. Dentro la Cité Plantagenêt</span></div>
+  <div class="r"><span class="h">20:00</span><span>Cena nel centro storico, e le mura romane con la luce lunga</span></div>
+  <div class="r forte"><span class="h">~22:00</span><span><b>La Nuit des Chimères</b> — gratuita, a piedi dall'albergo</span></div>
+</div>
+
+<div class="tip"><b>Se volete il Val sans Retour, va deciso adesso.</b> La valle della fata
+  Morgana sta a <b>Tréhorenteuc</b>, non a Paimpont: passando di lì il percorso diventa
+  <b>267 km e 3h44</b> — da Rochefort sono 50,8 km e 50 minuti, e da Tréhorenteuc a Paimpont
+  altri 14,2 km e 25 minuti. Ci sta, ma toglie mezz'ora al pranzo o alla sera del Mans.</div>
+
+<h2 id="rochefort">Rochefort-en-Terre, e perché è così fiorito</h2>
+<figure class="photo ph"><picture>
+  <source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/rochefort-en-terre-rues-480.avif 480w, /img/g/rochefort-en-terre-rues-800.avif 800w, /img/g/rochefort-en-terre-rues-1200.avif 1200w, /img/g/rochefort-en-terre-rues-1800.avif 1800w">
+  <img src="/img/g/rochefort-en-terre-rues-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/rochefort-en-terre-rues-480.jpg 480w, /img/g/rochefort-en-terre-rues-800.jpg 800w, /img/g/rochefort-en-terre-rues-1200.jpg 1200w" width="1200" height="900" alt="Una via di Rochefort-en-Terre sotto le mura del castello" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>Case di scisto e granito sotto le mura del castello. Il paese ha meno di
+    settecento abitanti e vince premi per i fiori da un secolo.</figcaption>
+</figure>
+<p>Rochefort-en-Terre sta su uno <b>sperone di roccia</b> fra due valli, ed è uno dei «più bei
+  villaggi di Francia»: case in pietra del Cinquecento e del Seicento, vicoli in salita, gerani e
+  ortensie a ogni finestra e su ogni davanzale.</p>
+<div class="curio"><b>I fiori non sono spontanei: sono un'idea di un pittore americano.</b> Nel
+  1907 <b>Alfred Klots</b>, pittore di New York, comprò le rovine del castello e le ricostruì.
+  Per rimettere in sesto anche il paese lanciò un <b>concorso di balconi fioriti</b>, con un
+  premio in denaro agli abitanti. L'abitudine è rimasta, e da allora Rochefort-en-Terre colleziona
+  riconoscimenti come «villaggio fiorito»: quello che sembra folclore bretone secolare ha
+  poco più di cent'anni e un inventore preciso.</div>
+<div class="cards">
+  <div class="infocard"><div class="cl">Il borgo</div><div class="cv"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Rochefort-en-Terre%2C%20Morbihan" target="_blank" rel="noopener">Sempre visitabile</a>, gratuito</div></div>
+  <div class="infocard"><div class="cl">L'ora giusta</div><div class="cv"><b>Le nove</b>. Alle undici è pieno</div></div>
+  <div class="infocard"><div class="cl">Quanto basta</div><div class="cv">Un'ora e mezza, con calma</div></div>
+  <div class="infocard"><div class="cl">Da dove si dorme</div><div class="cv">5 km, 7 minuti da Pluherlin</div></div>
+</div>
+
+<h2 id="broceliande">Brocéliande, che è una foresta e una decisione</h2>
+<p>La <b>foresta di Paimpont</b> è il bosco che la tradizione francese identifica con
+  <b>Brocéliande</b>, la selva dei romanzi arturiani: la tomba di Merlino, la fontana di Barenton
+  che ribolle, il Val sans Retour dove la fata Morgana tratteneva gli amanti infedeli. Nessuno di
+  questi luoghi ha una prova archeologica dietro — sono <b>identificazioni ottocentesche</b>,
+  fatte quando la Bretagna cercava le proprie radici celtiche e le trovò anche dove non c'erano.</p>
+<p>Sapendolo, la visita migliora invece di peggiorare: si smette di cercare la storia e si guarda
+  quello che c'è davvero, cioè settemila ettari di faggi, querce e castagni, un lago con
+  l'<b>abbazia di Paimpont</b> che ci si specchia dentro, e sentieri che in un'ora portano
+  ovunque.</p>
+<div class="cards">
+  <div class="infocard"><div class="cl">L'abbazia</div><div class="cv"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Abbaye%20de%20Paimpont%2C%20Ille-et-Vilaine" target="_blank" rel="noopener">Paimpont</a>, sul lago · libera</div></div>
+  <div class="infocard"><div class="cl">Val sans Retour</div><div class="cv"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Val%20sans%20Retour%2C%20Tr%C3%A9horenteuc" target="_blank" rel="noopener">Tréhorenteuc</a> · 25 minuti da Paimpont</div></div>
+  <div class="infocard"><div class="cl">Quanto</div><div class="cv">Due ore e mezza, pranzo compreso</div></div>
+  <div class="infocard"><div class="cl">Poi</div><div class="cv">Le Mans a 196,9 km e 2h23</div></div>
+</div>
+<div class="curio"><b>La chiesa del Graal, se ci si spinge a Tréhorenteuc.</b> Il parroco del
+  paese, negli anni Quaranta, fece decorare la chiesa mescolando i santi cristiani con i
+  cavalieri della Tavola Rotonda — un mosaico del Graal, una vetrata con Lancillotto. La
+  gerarchia non gradì e lo spostarono altrove. La chiesa è rimasta, ed è l'unica in Francia in
+  cui Artù sta sull'altare.</div>
+
+<h2 id="lemans">Le Mans, la sera che quasi nessuno fa</h2>
+<p>La fama di Le Mans è al cento per cento motoristica, e questo ha un effetto curioso: il suo
+  centro storico è fra i <b>meno visitati di Francia</b> rispetto a quello che è. Tre cose, e non
+  sono di consolazione.</p>
+<p>Le <b>mura gallo-romane</b> sono considerate, <b>insieme a quelle di Roma e di
+  Costantinopoli</b>, fra le cinte tardo-romane meglio conservate d'Europa. Inizio del IV secolo,
+  con i corsi alternati di mattone e pietra che disegnano motivi geometrici sulla facciata: non
+  un rudere, una parete decorata. Corrono sopra la Sarthe per mezzo chilometro.</p>
+<p>Nella navata sud della cattedrale di <b>Saint-Julien</b> c'è la <b>verrière dell'Ascensione</b>,
+  inizio XII secolo: è <b>la vetrata più antica al mondo ancora al suo posto</b>. Non una delle
+  più antiche — quella, ancora nel muro per cui fu fatta, da novecento anni. La cattedrale
+  intorno vale da sola: navata romanica, coro gotico, e quella doppia fila di archi rampanti a Y
+  che non somiglia a nient'altro.</p>
+<p>Il resto è un centro di case a graticcio e palazzi rinascimentali in cui è stato girato mezzo
+  cinema francese in costume, il <em>Cyrano de Bergerac</em> di Rappeneau compreso.</p>
+
+<div class="allerta">
+  <div class="quando">Ogni sera, dal 2 luglio al 20 settembre 2026</div>
+  <h3>La Nuit des Chimères, ed è gratuita</h3>
+  <p>Proiezioni sulla <b>cattedrale</b> e sulle <b>mura romane</b>, ogni sera <b>dal calare del
+    buio</b>, senza biglietto. Il tramonto al Mans il 14 agosto è alle <b>21:16</b>, quindi lo
+    spettacolo comincia verso le 22:00.</p>
+  <p>Dormendo <b>dentro la Cité Plantagenêt</b> — l'albergo è a quattrocento metri dalla
+    cattedrale — si fa tutto a piedi, e l'auto resta ferma dal ritorno del museo fino alla
+    mattina dopo. <b>L'ora esatta si fa confermare</b> all'ufficio del turismo: 02 43 28 17 22.</p>
+</div>
+
+<div class="tbl">
+  <table>
+    <caption class="visually-hidden">Cosa vedere a Le Mans, e quanto costa</caption>
+    <thead><tr><th>Cosa</th><th>Orari e prezzo</th><th>Perché</th></tr></thead>
+    <tbody>
+      <tr><td><b><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Mus%C3%A9e%20des%2024%20Heures%20du%20Mans%20M24" target="_blank" rel="noopener">Museo M24</a></b></td><td>Fino alle <b>19:00</b> · <b>14 €</b>, 10-17 anni 11 €</td><td>Il museo delle 24 Ore, dentro il circuito. Va fatto stasera</td></tr>
+      <tr><td><b><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Cath%C3%A9drale%20Saint-Julien%2C%20Le%20Mans" target="_blank" rel="noopener">Cattedrale Saint-Julien</a></b></td><td>Gratuita</td><td>La vetrata più antica al mondo ancora al suo posto</td></tr>
+      <tr><td><b><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Enceinte%20romaine%20du%20Mans" target="_blank" rel="noopener">Le mura gallo-romane</a></b></td><td>Sempre · gratuite</td><td>Con Roma e Costantinopoli, fra le meglio conservate d'Europa</td></tr>
+      <tr><td><b>La Nuit des Chimères</b></td><td>Dal buio, verso le 22:00 · <b>gratuita</b></td><td>Proiezioni sulla cattedrale e sulle mura, ogni sera</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="curio"><b>Il circuito non è tutto pista.</b> Oltre metà del tracciato delle 24 Ore
+  sono <b>strade pubbliche</b> — la D338 e la D140 — chiuse solo per la gara. Il resto dell'anno
+  ci si passa in auto normalmente, compreso il rettilineo delle Hunaudières, dove nel 1988 una
+  Peugeot toccò i 405 km/h prima che ci mettessero due chicane.</div>
+
+<h2 id="mangiare">Dove mangiare</h2>
+<p>Il pranzo è a Brocéliande e la cena nella Cité Plantagenêt, a piedi dall'albergo. Nessuna delle
+  due chiede di rimettersi in auto.</p>
+
+<h3>Il pranzo, nella foresta</h3>
+<div class="locali">
+  <div class="locale" id="loc-paimpont" data-lat="48.01910" data-lon="-2.17392" data-cat="pranzo">
+    <div class="lcat">Pranzo · sul lago</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Abbaye%20de%20Paimpont%2C%20Paimpont" target="_blank" rel="noopener">Il borgo di Paimpont</a></div>
+    <div class="lmeta">Attorno all'abbazia e al lago · aperto tutti i giorni in agosto</div>
+    <p class="lperche">Paimpont è un paese di quarantacinque case attorno a un'abbazia e a uno
+      stagno, e le tavole sono tutte lì: crêperie, un paio di ristoranti, una bottega. Non si
+      viene qui per mangiare, ma mangiare guardando l'abbazia riflessa nell'acqua è il modo
+      giusto di fare la sosta lunga della giornata.</p>
+    <details class="lmenu"><summary>Cosa cercare</summary>
+      <ul>
+        <li><span>Galettes di grano saraceno e sidro, che qui è la norma</span></li>
+        <li><span>Il kouign-amann, se lo fanno in casa</span></li>
+        <li><span>Un tavolo fuori, sul lato dello stagno</span></li>
+      </ul>
+    </details>
+  </div>
+</div>
+
+<h3>La cena, nella Cité Plantagenêt</h3>
+<div class="locali">
+  <div class="locale" id="loc-cite" data-lat="48.00930" data-lon="0.19880" data-cat="cena">
+    <div class="lcat">Cena · a piedi</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Cit%C3%A9%20Plantagen%C3%AAt%2C%20Le%20Mans" target="_blank" rel="noopener">Le strade della Cité Plantagenêt</a></div>
+    <div class="lmeta">Attorno a Place Saint-Pierre · quattrocento metri dall'albergo</div>
+    <p class="lperche">Il centro storico è piccolo e denso di tavole, dalle crêperie ai bistrot,
+      quasi tutte fra la cattedrale e Place Saint-Pierre. Cenando qui si è già dove alle dieci
+      cominciano le proiezioni: si esce da tavola e si è al posto giusto, senza spostarsi.</p>
+    <details class="lmenu"><summary>Cosa cercare</summary>
+      <ul>
+        <li><span>Rillettes du Mans, che di qui sono originarie</span></li>
+        <li><span>Poulet de Loué, il pollo a denominazione della Sarthe</span></li>
+        <li><span>Un tavolo all'aperto su Place Saint-Pierre</span></li>
+      </ul>
+      <p class="lfonte">Il venerdì sera di metà agosto conviene prenotare nel pomeriggio.</p>
+    </details>
+  </div>
+</div>
+
+<h2 id="mappa">La mappa del giorno</h2>
+<p style="color:var(--body)">Le tappe di oggi, su una mappa vera. Se leggete questa pagina già in
+  viaggio, il tasto nell'angolo della mappa vi dice quali sono più vicine a dove siete in questo
+  momento — la posizione resta nel telefono, non viene inviata da nessuna parte. I quadratini
+  arancioni sono i locali della sezione qui sopra.</p>
+
+<div class="daymap-wrap">
+  <div class="daymapbox">
+  <div id="daymap" class="daymap"></div>
+    <button class="locbtn" id="locBtn" type="button" aria-label="Dove sono rispetto alle tappe" title="Dove sono rispetto alle tappe"><svg class="ico" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A9 9 0 0013 3.06V1h-2v2.06A9 9 0 003.06 11H1v2h2.06A9 9 0 0011 20.94V23h2v-2.06A9 9 0 0020.94 13H23v-2h-2.06zM12 19a7 7 0 110-14 7 7 0 010 14z"/></svg></button>
+  </div>
+  <ul class="mappalegenda">
+    <li><span class="pin tappa"></span>Tappa del giorno</li>
+    <li><span class="pin opzionale"></span>Se avanza tempo</li>
+    <li><span class="pin cibo"></span>Dove mangiare</li>
+    <li><span class="pin notte"></span>Le Mans, dove si dorme</li>
+  </ul>
+  <div class="daybar">
+    <span class="locmsg" id="locMsg"></span>
+  </div>
+  <div class="vicini" id="vicini">
+    <h4>Le più vicine a te ora</h4>
+    <ul id="viciniList"></ul>
+  </div>
+</div>
+
+<h2 id="prenotazioni-oggi">Prenotazione di questa notte</h2>
+<div class="cards">
+  <div class="infocard"><div class="cl">Dove</div><div class="cv"><b><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=L%27H%C3%B4tel%20Particulier%2C%2017%20rue%20Montauban%2C%20Le%20Mans" target="_blank" rel="noopener">L'Hôtel Particulier</a></b>, 17 rue Montauban — dentro la Cité</div></div>
+  <div class="infocard"><div class="cl">Fatta</div><div class="cv">Prenotazione confermata</div></div>
+  <div class="infocard"><div class="cl">Da chiedere</div><div class="cv">Il posto auto, 15 € al giorno</div></div>
+  <div class="infocard"><div class="cl">Domattina</div><div class="cv"><b>Sveglia presto:</b> si parte alle 7:00</div></div>
+</div>
+
+</article>
+</div>
+
+<footer class="foot" style="max-width:1180px;margin:40px auto 0;padding:20px 24px 50px">
+  <div class="credits">
+    <h4>Crediti foto</h4>
+    <ul>
+      <li>La foresta di Brocéliande — Erwan Corre · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:La-For%C3%AAt-de-Broceliande-Octobre-2020.jpg" rel="noopener" target="_blank">file originale</a></li>
+      <li>Una via di Rochefort-en-Terre — Hadonos · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Rochefort-en-Terre_-_rues_10.JPG" rel="noopener" target="_blank">file originale</a></li>
+      <li class="cnote">Immagini ridimensionate e ricompresse per il web: nessun altro intervento. Le opere in licenza CC BY-SA restano disponibili alle stesse condizioni. Mappa: dati © <a href="https://www.openstreetmap.org/copyright" rel="noopener" target="_blank">contributori di OpenStreetMap</a>, tessere © <a href="https://carto.com/attributions" rel="noopener" target="_blank">CARTO</a> (stile Voyager). Meteo: <a href="https://open-meteo.com/" rel="noopener" target="_blank">Open-Meteo</a>. Date e orari de <a href="https://www.lemans-tourisme.com/" rel="noopener" target="_blank">La Nuit des Chimères</a> verificati a luglio 2026.</li>
+    </ul>
+  </div>
+  <p style="margin-top:24px"><a href="../#g9">← Torna alla guida completa</a> · Giornata 9 di 11.</p>
+</footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="../assets/day.js?v=9a7bf918"></script>
+<script src="../assets/nav.js?v=09c6a6ee" defer></script>
+<script>
+const TAPPE = [
+  {id:"rochefort", name:"Rochefort-en-Terre", lat:47.69906, lon:-2.33726, kind:"tappa", note:"Alle nove è vuoto · gratuito", maps:DayGuide.urlPosto("Rochefort-en-Terre, Morbihan")},
+  {id:"valsansretour", name:"Val sans Retour", lat:48.00840, lon:-2.28684, kind:"opzionale", note:"Tréhorenteuc · la valle della fata Morgana", maps:DayGuide.urlPosto("Val sans Retour, Tréhorenteuc")},
+  {id:"paimpont",  name:"Abbazia di Paimpont", lat:48.01910, lon:-2.17392, kind:"tappa", note:"Brocéliande: l'abbazia sul lago", maps:DayGuide.urlPosto("Abbaye de Paimpont, Ille-et-Vilaine")},
+  {id:"m24",       name:"Museo M24",           lat:47.95714, lon:0.20904, kind:"tappa", note:"Chiude alle 19:00 · 14 €", maps:DayGuide.urlPosto("Musée des 24 Heures du Mans M24")},
+  {id:"cattedrale",name:"Cattedrale Saint-Julien", lat:48.00930, lon:0.19880, kind:"tappa", note:"La vetrata più antica al mondo ancora in situ", maps:DayGuide.urlPosto("Cathédrale Saint-Julien, Le Mans")},
+  {id:"lemans",    name:"L'Hôtel Particulier", lat:48.00577, lon:0.20073, kind:"notte", note:"Dentro la Cité Plantagenêt", maps:DayGuide.urlPosto("L'Hôtel Particulier, 17 rue Montauban, Le Mans")}
+];
+
+const LOCALI = DayGuide.localiDalDOM();
+const PUNTI = TAPPE.concat(LOCALI);
+
+const mappa = DayGuide.initMap("daymap", {
+  center:[47.86, -1.07], zoom:8, stops: PUNTI
+});
+if(!mappa){
+  const el=document.getElementById("daymap");
+  if(el) el.innerHTML='<p style="padding:20px;color:var(--muted)">Mappa non disponibile al momento.</p>';
+}
+
+DayGuide.wireGeolocation({
+  btnId:"locBtn", msgId:"locMsg", panelId:"vicini", listId:"viciniList",
+  stops: PUNTI, markers: mappa ? mappa.markers : {}
+});
+
+DayGuide.initWeather("dayweather", {
+  lat:48.0058, lon:0.2007, dateISO:"2026-08-14",
+  dataLeggibile:"14 agosto", label:"Le Mans"
+});
+</script>
+</body>
+</html>

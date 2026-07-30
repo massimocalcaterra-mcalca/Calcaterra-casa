@@ -370,3 +370,44 @@
   @media(prefers-reduced-motion:no-preference){
     .topnav a.qui::after{transition:width .12s linear}
   }
+
+  /* --- testo giustificato ------------------------------------------------
+     I paragrafi di lettura vanno a bandiera doppia. Perche' un testo
+     giustificato senza sillabazione apre buchi bianchi fra le parole — in
+     italiano, che ha parole lunghe, sono voragini — `hyphens:auto` e'
+     obbligatorio e non facoltativo: il browser sillaba secondo l'attributo
+     `lang` della pagina, che qui e' `it`.
+     `text-wrap:pretty` evita in piu' che l'ultima riga resti con una parola
+     sola; dove non e' supportato non fa danno.
+     Restano NON giustificati: tutto cio' che e' breve o tabellare — voci di
+     menu, etichette, celle, didascalie, caselle — dove la giustificazione
+     produrrebbe righe stiracchiate invece di un blocco compatto. */
+  .wrap p, .day p, .day li, .allerta p, .note, .tip, .curio,
+  .dayhero .sub, .lead, .locale .lperche{
+    text-align:justify;
+    text-justify:inter-word;
+    hyphens:auto;
+    -webkit-hyphens:auto;
+    /* niente spezzature con meno di sei lettere, o con meno di tre da una
+       parte: sono quelle che fanno sembrare il testo sbagliato */
+    -webkit-hyphenate-limit-before:3; -webkit-hyphenate-limit-after:3;
+    hyphenate-limit-chars:6 3 3;
+    text-wrap:pretty;
+  }
+  /* NOTA. La sillabazione automatica dipende dal dizionario della lingua nel
+     browser: Safari (iPhone) e Firefox hanno l'italiano, Chrome lo scarica a
+     parte e in certi ambienti non ce l'ha. Dove manca, la giustificazione
+     resta ma gli spazi fra le parole si allargano. E' il motivo per cui la
+     colonna non deve mai scendere sotto i ~340px: sotto quella misura, senza
+     sillabazione, i buchi diventano voragini. */
+  /* Solo sui telefoni piu' stretti (sotto i 340px, cioe' i vecchi SE) la
+     colonna e' davvero troppo corta perche' la giustificazione regga: li' si
+     torna a bandiera a sinistra. Su un telefono normale la colonna e' sui
+     345px, che con la sillabazione si giustifica bene. */
+  @media(max-width:339px){
+    .wrap p, .day p, .day li, .allerta p, .note, .tip, .curio,
+    .dayhero .sub, .lead, .locale .lperche{text-align:left}
+  }
+  /* Mai giustificati: righe corte, dove aprirebbe buchi invece di chiuderli. */
+  .ph figcaption, .credits li, .infocard .cv, .lmenu li, .vicini li,
+  td, th, .mappalegenda li, .topnav a, .glance a{text-align:initial;hyphens:manual}

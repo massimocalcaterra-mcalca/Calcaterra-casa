@@ -1,0 +1,29 @@
+{
+ "name": "Giorno 11 · Beauvais e il rientro",
+ "short_name": "Rientro",
+ "description": "L'ultima mattina, la cattedrale di Beauvais e il volo, con mappa e meteo",
+ "start_url": "/normandie-bretagna/giorno-11/",
+ "scope": "/normandie-bretagna/giorno-11/",
+ "display": "standalone",
+ "background_color": "#FBFBFA",
+ "theme_color": "#FBFBFA",
+ "lang": "it",
+ "icons": [
+  {
+   "src": "/normandie-bretagna/giorno-11/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/normandie-bretagna/giorno-11/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "/normandie-bretagna/giorno-11/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}

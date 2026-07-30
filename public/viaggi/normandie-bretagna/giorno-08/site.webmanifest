@@ -1,0 +1,29 @@
+{
+ "name": "Giorno 8 · Raguénez, Lorient e Carnac",
+ "short_name": "Carnac",
+ "description": "La giornata del bagno, dei sottomarini e dei menhir, con mappa e meteo",
+ "start_url": "/normandie-bretagna/giorno-08/",
+ "scope": "/normandie-bretagna/giorno-08/",
+ "display": "standalone",
+ "background_color": "#FBFBFA",
+ "theme_color": "#FBFBFA",
+ "lang": "it",
+ "icons": [
+  {
+   "src": "/normandie-bretagna/giorno-08/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/normandie-bretagna/giorno-08/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "/normandie-bretagna/giorno-08/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}
