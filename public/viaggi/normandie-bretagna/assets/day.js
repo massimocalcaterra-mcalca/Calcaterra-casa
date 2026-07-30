@@ -38,6 +38,12 @@ function initMap(containerId, opts){
   const el=document.getElementById(containerId);
   if(!el || typeof L==="undefined") return null;
   const map=L.map(containerId,{scrollWheelZoom:false}).setView(opts.center, opts.zoom||14);
+  /* Il credito a Leaflet resta, la bandiera no. Dalla 1.9 Leaflet infila di
+     suo una bandiera ucraina accanto al proprio nome nell'attribuzione: e'
+     una presa di posizione della libreria, non nostra, e su una guida di
+     viaggio non ci sta. setPrefix e' il modo previsto per sostituirla. */
+  map.attributionControl.setPrefix(
+    '<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');
   /* Sfondo CARTO Voyager: gli stessi dati di OpenStreetMap, disegnati con
      uno stile piu' pulito e vicino a quello a cui siamo abituati. Gratuito
      con l'attribuzione, senza chiave e senza cookie. {r} lo riempie Leaflet

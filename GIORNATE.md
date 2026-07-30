@@ -310,6 +310,19 @@ una posizione prima del vero (dentro la fascetta `.attesa`), e il blocco
 sostituito è rimasto con un `</div>` di troppo fuori. **Contare le aperture e
 le chiusure dopo ogni sostituzione**, e comunque ripassare il parser.
 
+**Riusare un nome di classe che c'e' gia'.** `.mapbox` in `base.css` e' la
+mappa schematica dell'itinerario, e si porta dietro
+`.mapbox svg{width:100%;height:auto}`. Chiamando `.mapbox` anche il riquadro
+attorno alla mappa Leaflet delle giornate, quella regola ha investito ogni SVG
+lì dentro: l'icona del tasto della posizione ha riempito il tasto, e soprattutto
+la **bandiera ucraina che Leaflet 1.9 infila nella propria attribuzione** e'
+diventata un rettangolo alto un terzo della mappa. Restava invisibile in prova
+perche' qui il browser non ha rete e Leaflet non si carica affatto. Due
+lezioni: **prima di battezzare una classe, `grep` sul foglio condiviso**, e
+**per provare la mappa servire Leaflet e le tessere da disco** con un route di
+Playwright, altrimenti non si sta provando la mappa. La bandiera in se' si
+toglie con `map.attributionControl.setPrefix(...)`.
+
 **Una foto-texture come dorso sullo scaffale.** Il cemento crivellato della
 Pointe du Hoc funziona a piena larghezza in testa alla pagina e non dice nulla
 a 84×126 px. Per i dorsi e per le icone servono immagini che si riconoscano

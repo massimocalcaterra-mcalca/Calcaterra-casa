@@ -32,8 +32,14 @@
 /* Il riquadro attorno alla sola mappa: e' lui il riferimento del tasto della
    posizione. Ancorarlo a .daymap-wrap era sbagliato — quel contenitore
    comprende anche legenda e messaggio, che sul telefono vanno a capo, e il
-   tasto finiva 24px sotto la mappa. */
-.mapbox{position:relative}
+   tasto finiva 24px sotto la mappa.
+   Si chiama .daymapbox e non .mapbox perche' quel nome e' gia' preso in
+   base.css dalla mappa schematica dell'itinerario, che porta con se'
+   `.mapbox svg{width:100%}`. Applicata qui dentro, quella regola gonfiava
+   ogni SVG della mappa Leaflet: la bandierina ucraina che Leaflet 1.9 mette
+   nella sua attribuzione diventava un rettangolo alto un terzo della mappa,
+   e l'icona del tasto della posizione riempiva tutto il tasto. */
+.daymapbox{position:relative}
 
 /* Il tasto della posizione sta dove si e' abituati a trovarlo: nell'angolo
    in basso a destra della mappa, appena sopra la riga delle attribuzioni di
