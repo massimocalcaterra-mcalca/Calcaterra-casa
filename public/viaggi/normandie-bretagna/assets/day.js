@@ -34,9 +34,14 @@ function initMap(containerId, opts){
   const el=document.getElementById(containerId);
   if(!el || typeof L==="undefined") return null;
   const map=L.map(containerId,{scrollWheelZoom:false}).setView(opts.center, opts.zoom||14);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
-    maxZoom:19,
-    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
+  /* Sfondo CARTO Voyager: gli stessi dati di OpenStreetMap, disegnati con
+     uno stile piu' pulito e vicino a quello a cui siamo abituati. Gratuito
+     con l'attribuzione, senza chiave e senza cookie. {r} lo riempie Leaflet
+     con @2x sugli schermi ad alta densita', cosi' resta nitido sul telefono. */
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",{
+    maxZoom:20, subdomains:"abcd",
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors, '
+      +'&copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>'
   }).addTo(map);
   const markers={};
   (opts.stops||[]).forEach(s=>{
