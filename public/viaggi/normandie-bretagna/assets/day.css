@@ -66,6 +66,15 @@
 .meteo .t{font-weight:700;color:var(--ink);font-size:1.02rem}
 .meteo .lbl{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .meteo.loading,.meteo.off{color:var(--muted)}
+/* Sopra la foto di apertura i colori di .meteo — pensati per il fondo chiaro
+   della pagina — sparivano: il grado era in verde scuro su un cielo chiaro e
+   l'etichetta in grigio. Qui prende un velo scuro sfocato e testo bianco,
+   così si legge su qualunque fotografia. */
+.dayhero .meteo{background:rgba(20,38,28,.62);border-color:rgba(255,255,255,.34);
+  color:#fff;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.dayhero .meteo .t{color:#fff}
+.dayhero .meteo .lbl{color:rgba(255,255,255,.85)}
+.dayhero .meteo.loading,.dayhero .meteo.off{color:rgba(255,255,255,.88)}
 
 /* legenda dei segnaposti: gli stessi .pin, ma fermi nel testo */
 .mappalegenda{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px;
