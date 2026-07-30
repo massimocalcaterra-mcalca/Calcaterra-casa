@@ -167,6 +167,31 @@ tratteggiato), `cibo` (quadrato arancione), `notte` (cerchio scuro).
 Il link usa **nome e indirizzo veri**, non le coordinate: si arriva alla scheda
 del posto invece che a uno spillo anonimo.
 
+### Quando arriva una prenotazione
+
+Un albergo confermato non si scrive in un posto solo. Il 30 luglio, entrato
+Le Manoir de Mathan a Crépon al posto del generico «Bayeux», hanno dovuto
+cambiare **undici punti**. La lista, che vale per ogni prossima:
+
+1. la tabella `#prenotazioni` — riga con `class="fatto"`, spunta `.ok`,
+   indirizzo e telefono sotto il nome, e nelle note le distanze vere
+2. il conteggio in testa alla tabella («Dieci notti, *sette* chiuse») e la
+   nota che spiega perché alcune sono chiuse e altre no
+3. la tabella riassuntiva delle undici tappe, colonna «dove si dorme»
+4. le schede del colpo d'occhio delle giornate coinvolte
+5. la riga `.loc` di ogni `article.day` che parte o arriva da lì
+6. la casella «Pernottamento» di quelle stesse giornate
+7. **tutte le distanze che cambiano**: il punto di partenza si è spostato, il
+   giro va rimisurato con OSRM — inclusa la giornata *dopo*, che parte da lì
+8. nella pagina della giornata: sottotitolo, `.daydata`, scaletta oraria
+9. la legenda della mappa e la tappa `kind:"notte"` nell'array `TAPPE`
+10. il ristorante dell'albergo fra i posti dove mangiare, se c'è
+11. le sezioni che davano per scontata la vecchia base («Bayeux, la sera e il
+    mattino» non aveva più senso: si dorme altrove)
+
+`grep -n -i "<vecchia base>"` sui due file, alla fine, per non lasciarne
+indietro nessuno.
+
 ---
 
 ## 7. Gli asset condivisi, e la loro versione
@@ -273,6 +298,23 @@ testo bianco.
 **Non usare artwork altrui.** Una copertina trovata in rete è quasi sempre di
 una guida in commercio: si rifà la composizione con le nostre foto licenziate.
 
+**`<picture>` lasciato aperto.** Scrivendo a mano tre `<figure>` del Giorno 3
+il `</picture>` prima della `<figcaption>` era stato dimenticato: la didascalia
+finiva dentro `<picture>` invece che dentro `<figure>`. Non si vede a occhio,
+perché `picture{display:contents}` la fa comunque impaginare giusta. **Passare
+sempre il file in un parser** prima di pubblicare (§8).
+
+**Tagliare un blocco cercando `</div></div></div>`.** Accendendo il volume del
+Giorno 3 sullo scaffale, la ricerca della tripletta di chiusura l'ha trovata
+una posizione prima del vero (dentro la fascetta `.attesa`), e il blocco
+sostituito è rimasto con un `</div>` di troppo fuori. **Contare le aperture e
+le chiusure dopo ogni sostituzione**, e comunque ripassare il parser.
+
+**Una foto-texture come dorso sullo scaffale.** Il cemento crivellato della
+Pointe du Hoc funziona a piena larghezza in testa alla pagina e non dice nulla
+a 84×126 px. Per i dorsi e per le icone servono immagini che si riconoscano
+piccole: per il Giorno 3, le croci di Colleville.
+
 ---
 
 ## 10. Lo stato
@@ -280,6 +322,11 @@ una guida in commercio: si rifà la composizione con le nostre foto licenziate.
 | | giornata | pagina |
 |---|---|---|
 | 1 | Rouen | **fatta** |
-| 2 | Étretat e Le Havre | in lavorazione |
-| 3 | Le spiagge dello Sbarco | in lavorazione |
+| 2 | Étretat e Le Havre | ricerche finite, pagina da scrivere |
+| 3 | Le spiagge dello Sbarco | **fatta** |
 | 4-11 | dal Mont-Saint-Michel al rientro | da fare |
+
+Sullo scaffale di `/viaggi/` i volumi accesi sono quelli con la pagina fatta:
+il Giorno 3 è passato da `.book.giorno.futuro` (un `<div>` grigio) a
+`<a class="book giorno">`. Chi ne accende un altro tolga anche la fascetta
+`.attesa` e rimetta «Apri →» al posto di «Presto».

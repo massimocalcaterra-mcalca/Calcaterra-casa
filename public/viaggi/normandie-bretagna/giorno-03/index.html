@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giorno 3 — Le spiagge dello Sbarco · Normandie &amp; Bretagne</title>
+<meta name="description" content="Guida dettagliata del Giorno 3: la Pointe du Hoc, Omaha Beach, il Cimitero Americano di Colleville e il porto Mulberry di Arromanches. Cosa è cambiato nel 2026, come far quadrare la giornata, dove mangiare.">
+<link rel="canonical" href="https://viaggi.calcaterra.casa/normandie-bretagna/giorno-03/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calcaterra Casa">
+<meta property="og:locale" content="it_IT">
+<meta property="og:url" content="https://viaggi.calcaterra.casa/normandie-bretagna/giorno-03/">
+<meta property="og:title" content="Giorno 3 — Le spiagge dello Sbarco">
+<meta property="og:description" content="Pointe du Hoc, Omaha, Colleville e Arromanches. Cosa è cambiato nel 2026 e come far quadrare la giornata.">
+<meta property="og:image" content="https://calcaterra.casa/img/og/og-normandie.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="Massimo Calcaterra">
+<meta name="theme-color" content="#FBFBFA">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚓</text></svg>">
+<link rel="apple-touch-icon" href="/normandie-bretagna/giorno-03/apple-touch-icon.png">
+<link rel="manifest" href="/normandie-bretagna/giorno-03/site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Sbarco">
+<meta name="application-name" content="Sbarco">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/base.css?v=6cbc266f">
+<link rel="stylesheet" href="../assets/day.css?v=c3d812e8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+<style>
+  /* Solo cio' che questa pagina aggiunge al foglio comune. */
+  .dayhero{position:relative;min-height:46vh;display:flex;align-items:flex-end;
+    color:#fff;overflow:hidden}
+  .dayhero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .dayhero .veil{position:absolute;inset:0;
+    background:linear-gradient(0deg,rgba(20,38,28,.88),rgba(20,38,28,.2) 60%,rgba(20,38,28,.12))}
+  .dayhero .inner{position:relative;max-width:1180px;margin:0 auto;width:100%;padding:28px 24px 40px}
+  .dayhero .backlink{color:rgba(255,255,255,.85);font-family:Poppins,sans-serif;font-weight:600;
+    font-size:.84rem}
+  .dayhero .eyebrow{font-family:Poppins,sans-serif;font-size:.76rem;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;color:#cfe6d6;margin-top:18px}
+  .dayhero h1{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3.1rem);
+    line-height:1.05;letter-spacing:-.02em;margin:.2em 0 0}
+  .dayhero .sub{max-width:66ch;margin-top:12px;font-size:1.02rem;color:rgba(255,255,255,.92)}
+  .daydata{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:20px}
+  .daydata div{font-size:.86rem;color:rgba(255,255,255,.78)}
+  .daydata b{display:block;color:#fff;font-family:Poppins,sans-serif;font-weight:600;font-size:.98rem}
+
+  /* l'avviso su cio' che nel 2026 non c'e' piu': deve saltare all'occhio */
+  .allerta{margin-top:24px;background:#FFF6F2;border:2px solid var(--coral);
+    border-radius:14px;padding:20px 22px}
+  .allerta h3{font-family:Poppins,sans-serif;font-size:1rem;margin:0 0 4px;color:var(--coral-text)}
+  .allerta p{margin:12px 0 0;font-size:.92rem;color:#5a3d33}
+  .allerta p:first-of-type{margin-top:10px}
+  .allerta .quando{font-family:Poppins,sans-serif;font-size:.66rem;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--coral-text)}
+
+  /* la scaletta oraria */
+  .ore{margin-top:22px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .ore .r{display:flex;gap:16px;padding:11px 16px;border-top:1px solid var(--line);
+    background:var(--paper);font-size:.9rem;align-items:baseline}
+  .ore .r:first-child{border-top:0}
+  .ore .r.forte{background:#F1FAF4}
+  .ore .h{font-family:Poppins,sans-serif;font-weight:700;color:var(--green-d);
+    min-width:5.6em;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
+
+<div class="topbar">
+  <div class="row">
+    <a href="/"><span class="brand">home</span></a>
+    <nav class="topnav" aria-label="Sezioni della pagina">
+      <a href="#cambiato">Cosa è cambiato</a>
+      <a href="#giornata">La giornata</a>
+      <a href="#tappe">Le tappe</a>
+      <a href="#bayeux">Bayeux</a>
+      <a href="#dormire">Dove si dorme</a>
+      <a href="#mangiare">Dove mangiare</a>
+      <a href="#mappa">Mappa</a>
+      <a href="../#g3">Nella guida</a>
+    </nav>
+  </div>
+</div>
+
+<main id="contenuto">
+<header class="dayhero">
+  <picture>
+    <source type="image/avif" sizes="100vw" srcset="/img/g/impact-in-reinforced-concrete-german-bunker-po-480.avif 480w, /img/g/impact-in-reinforced-concrete-german-bunker-po-800.avif 800w, /img/g/impact-in-reinforced-concrete-german-bunker-po-1200.avif 1200w">
+    <img class="bg" src="/img/g/impact-in-reinforced-concrete-german-bunker-po-1200.jpg" sizes="100vw" srcset="/img/g/impact-in-reinforced-concrete-german-bunker-po-480.jpg 480w, /img/g/impact-in-reinforced-concrete-german-bunker-po-800.jpg 800w, /img/g/impact-in-reinforced-concrete-german-bunker-po-1200.jpg 1200w" width="1200" height="627" alt="Lo squarcio di un colpo di grosso calibro nel cemento di un bunker alla Pointe du Hoc" fetchpriority="high" decoding="async">
+  </picture>
+  <div class="veil"></div>
+  <div class="inner">
+    <a class="backlink" href="../#g3">← Guida completa · Giorno 3 di 11</a>
+    <div class="eyebrow">Giorno 3 · Sabato 8 agosto 2026</div>
+    <h1>Le spiagge dello Sbarco</h1>
+    <div class="sub">Una giornata intera sui luoghi del 6 giugno 1944, nell'ordine in cui le cose
+      accaddero: prima i paracadutisti nella notte, poi la falesia dei Rangers, poi la spiaggia dove
+      morirono in più, infine il porto che fece vincere la campagna. Si parte da Crépon e si torna a
+      Crépon.</div>
+    <div class="daydata">
+      <div>Il giro<br><b>166 km · 2h59 di guida</b></div>
+      <div>Il vincolo<br><b>Il Cimitero chiude alle 17:00</b></div>
+      <div>Si dorme<br><b>Crépon, seconda notte</b></div>
+      <div id="dayweather" class="meteo loading">Meteo…</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<article class="day" style="border-top:0;padding-top:34px">
+
+<h2 id="cambiato">Cosa è cambiato, e che nessuna guida stampata dice</h2>
+<p>Tre cose sono successe nel 2026 e cambiano concretamente questa giornata. Le ho verificate una
+  per una sul sito dell'<b>American Battle Monuments Commission</b>, l'ente del governo americano
+  che gestisce sia il cimitero sia la Pointe du Hoc.</p>
+
+<div class="allerta">
+  <div class="quando">Comunicato del 28 luglio 2026</div>
+  <h3>Al Cimitero Americano non si cammina fra le croci</h3>
+  <p>Il cimitero è sotto <b>restrizione idrica per siccità</b> e, per non rovinare ulteriormente il
+    terreno, <b>tutti i campi di tombe sono temporaneamente chiusi ai visitatori</b>. Restano aperti
+    il centro visitatori, il memoriale, la cappella, il Giardino dei Dispersi e le visite guidate
+    quotidiane: le file di croci si vedranno dai vialetti e dall'Overlook, non camminandoci in
+    mezzo. È l'immagine per cui si va lì, ed è quella che manca.</p>
+  <p>L'ABMC non ha comunicato una data di riapertura. <b>Va ricontrollato il 6 o 7 agosto</b> su
+    <a href="https://www.abmc.gov/normandy" rel="noopener" target="_blank">abmc.gov/normandy</a>.</p>
+</div>
+
+<div class="allerta">
+  <div class="quando">Comunicato del 18 giugno 2026</div>
+  <h3>Alla Pointe du Hoc il monumento dei Rangers non c'è più</h3>
+  <p>Il <b>17 giugno</b> il pilone di granito a forma di pugnale piantato sul bunker — il monumento
+    che tutti si aspettano di trovare — <b>è stato smontato con una gru</b> e portato in deposito
+    insieme ai due elementi laterali e a un cannone. Sarà rimontato in futuro in una nuova piazza
+    memoriale. Il sito è dal febbraio 2026 un cantiere di restauro: <b>il centro visitatori è chiuso
+    da marzo</b>, il parcheggio è ridotto e temporaneo, e si accede al campo di battaglia
+    <b>da un solo sentiero, quello ovest</b>.</p>
+  <p>Quello che resta è però la ragione vera per andarci: i <b>crateri delle bombe</b>, le casematte
+    spaccate e la falesia. Il terreno non è mai stato ripulito.</p>
+</div>
+
+<div class="allerta">
+  <div class="quando">Verificato il 30 luglio 2026</div>
+  <h3>Non serve prenotare il Cimitero — la notizia che gira è vecchia</h3>
+  <p>Nel 2025 l'ABMC annunciò che dal 1° aprile 2026 sarebbe servita una pre-registrazione
+    obbligatoria, e decine di siti la riportano ancora così. <b>La pagina ufficiale oggi dice
+    un'altra cosa:</b> il sistema arriverà «alla fine del 2026, per prenotazioni a partire
+    dall'estate 2027». L'8 agosto 2026 <b>si entra liberamente, e l'ingresso è gratuito</b>, come in
+    tutti i siti dell'ABMC.</p>
+</div>
+
+<div class="note"><b>Una quarta cosa, già in guida ma che vale ripetere:</b> il
+  <b>Museo dell'Arazzo di Bayeux è chiuso</b> dal 1° settembre 2025 e riapre nell'autunno 2027.
+  L'Arazzo è in riserva climatizzata e non è visibile in alcun modo.</div>
+
+<h2 id="giornata">Come far quadrare la giornata</h2>
+<p>Questa è la parte che serve più di ogni descrizione, perché <b>l'itinerario completo non ci
+  sta</b>. Sommando i tempi di visita <em>dichiarati dai musei stessi</em> si arriva a circa nove
+  ore e un quarto, a cui vanno aggiunte quasi tre ore di trasferimenti e il pranzo: quasi quattordici
+  ore. Ma soprattutto <b>il Cimitero chiude alle 17:00</b>, con ultimo ingresso alle 16:30. Tutta la
+  giornata va costruita a ritroso da quell'ora.</p>
+
+<div class="tip"><b>Attenzione all'orario del Cimitero.</b> Molte fonti — comprese pagine turistiche
+  francesi — indicano ancora «9-18 da aprile a settembre». <b>È sbagliato:</b> la pagina ABMC dice
+  <b>9:00-17:00</b>, ultimo ingresso 16:30. Chi arriva alle 17:15 trova chiuso.</div>
+
+<h3>Il giro, e la sua versione corta</h3>
+<p>Da Crépon si può fare l'anello completo, nell'ordine cronologico dei fatti, oppure concentrarsi
+  sul settore centrale. Sono due giornate diverse:</p>
+<div class="tbl">
+  <table>
+    <caption class="visually-hidden">Le due versioni del giro delle spiagge</caption>
+    <thead><tr><th>Versione</th><th>Cosa comprende</th><th>Distanza e tempo di guida</th></tr></thead>
+    <tbody>
+      <tr><td><b>Completa</b></td><td>Sainte-Mère-Église, Utah, Pointe du Hoc, Omaha, Colleville, Arromanches</td><td><b>166 km · 2h59</b></td></tr>
+      <tr><td><b>Corta</b></td><td>Pointe du Hoc, Omaha, Colleville, Arromanches</td><td><b>85 km · 1h49</b></td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="note"><b>Sono tempi a strada libera.</b> Un sabato di agosto sulla costiera D514 e negli
+  attraversamenti dei paesi vanno maggiorati di un quarto abbondante. Il tratto
+  <b>Colleville → Arromanches</b> è il più insidioso: venti chilometri che chiedono mezz'ora anche
+  senza traffico, perché è tutta strada secondaria.</div>
+
+<h3>Una scaletta che sta in piedi</h3>
+<p>Con partenza alle 8:00 da Crépon e <b>rinunciando all'Airborne Museum</b> — che da solo chiede
+  due ore — la giornata si chiude senza corse:</p>
+<div class="ore">
+  <div class="r"><span class="h">8:00</span><span>Partenza da Crépon</span></div>
+  <div class="r"><span class="h">8:55</span><span>Sainte-Mère-Église: la chiesa, il campanile, la piazza</span></div>
+  <div class="r"><span class="h">9:45</span><span>Utah Beach, il museo dentro il bunker</span></div>
+  <div class="r"><span class="h">12:05</span><span>Pointe du Hoc</span></div>
+  <div class="r"><span class="h">13:15</span><span>Pranzo a Grandcamp-Maisy o a Port-en-Bessin</span></div>
+  <div class="r"><span class="h">14:30</span><span>Omaha Beach e <em>Les Braves</em></span></div>
+  <div class="r forte"><span class="h">15:25</span><span><b>Cimitero Americano</b> — ammaina-bandiera verso le 16:00, chiusura 17:00</span></div>
+  <div class="r"><span class="h">17:35</span><span>Arromanches: i cassoni dalla falesia, e il museo se si arriva entro le 18:15</span></div>
+  <div class="r"><span class="h">19:10</span><span>Rientro a Crépon — sette chilometri, dieci minuti</span></div>
+  <div class="r forte"><span class="h">19:30</span><span><b>Cena alla Rançonnière</b>, seicento metri dall'albergo. <b>Ultimo servizio 20:30</b></span></div>
+</div>
+<div class="note"><b>Cosa cade per primo, se si è in ritardo:</b> l'Arromanches 360, che chiude alle
+  18:00 — i cassoni si vedono comunque, gratis, dalla falesia. Poi i musei, nell'ordine: Airborne,
+  Utah, Arromanches. <b>Non tagliate mai</b> la Pointe du Hoc, il Cimitero e Les Braves: sono i tre
+  luoghi senza sostituto, e sono tutti e tre gratuiti.</div>
+
+<h3>Le maree dell'8 agosto contano solo per Omaha</h3>
+<p>Ad Arromanches la bassa marea è intorno alle <b>13:00</b> e l'alta intorno alle <b>18:45</b>, con
+  coefficiente 45: una marea di quadratura, il mare si ritira poco. <b>I cassoni del porto Mulberry
+  si vedono a qualunque ora</b> — sono blocchi alti venti metri, non spariscono.</p>
+<p>Il punto delicato è un altro. <b><em>Les Braves</em>, la scultura sulla sabbia di Omaha, è
+  piantata nella battigia:</b> con l'alta marea l'acqua le arriva intorno e si guarda da lontano.
+  Passando nel primo pomeriggio, come nella scaletta qui sopra, si arriva a piedi fino alle lame
+  d'acciaio e si capisce quanto era larga la spiaggia da attraversare allo scoperto.
+  <b>Non spostate Omaha oltre le 16:30.</b></p>
+
+<h2 id="tappe">Le tappe</h2>
+
+<h3>Sainte-Mère-Église, il paese caduto dal cielo</h3>
+<p>Nella notte fra il 5 e il 6 giugno due carichi di paracadutisti del <b>505° reggimento della 82ª
+  Aviotrasportata</b> furono lanciati per errore proprio sopra il paese, dove un incendio aveva
+  illuminato la piazza e radunato tedeschi e civili a spegnerlo. Il soldato <b>John Steele</b> restò
+  impigliato con il paracadute al campanile, si finse morto e rimase appeso circa due ore prima di
+  essere catturato; riuscì poi a fuggire e a ricongiungersi alla divisione. Il manichino appeso oggi
+  al campanile è permanente.</p>
+<div class="note"><b>Sul manichino, una precisazione onesta:</b> il film <em>Il giorno più lungo</em>
+  ha consolidato dettagli che gli storici contestano — a partire da <b>quale lato</b> del campanile
+  Steele restò appeso. Il manichino sta sul lato che fa scena, non necessariamente su quello vero.
+  Il fatto centrale è documentato; i contorni no.</div>
+<div class="cards">
+  <div class="infocard"><div class="cl">Chiesa e piazza</div><div class="cv">Ingresso libero · 15-20 minuti</div></div>
+  <div class="infocard"><div class="cl">Airborne Museum</div><div class="cv">9:00-19:00 · adulti 11,50 €, 6-16 anni 7,50 € · circa 2 ore</div></div>
+  <div class="infocard"><div class="cl">Dove</div><div class="cv"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%89glise%20Notre-Dame-de-l%27Assomption%2C%20Sainte-M%C3%A8re-%C3%89glise" target="_blank" rel="noopener">Chiesa di Sainte-Mère-Église</a></div></div>
+</div>
+<div class="note"><b>È l'unica prenotazione davvero consigliata della giornata:</b> l'Airborne Museum
+  raccomanda esplicitamente di prenotare a luglio e agosto. Tutto il resto si fa presentandosi.</div>
+
+<h3>Utah Beach, dove sbagliare strada salvò la giornata</h3>
+<p>La 4ª Divisione di Fanteria approdò <b>circa un chilometro e ottocento metri a sud</b> del punto
+  previsto, spinta dalla corrente. L'errore si rivelò una fortuna: lì le difese erano molto più
+  deboli. Il generale <b>Theodore Roosevelt Jr.</b>, resosi conto dello sbaglio, decise di far
+  affluire tutte le ondate successive nel punto sbagliato — «cominceremo la guerra da qui», nella
+  formulazione che le fonti riportano con qualche variante. <b>Le perdite della 4ª Divisione a Utah
+  furono 197</b>, contro le migliaia di Omaha lo stesso giorno.</p>
+<p>Il museo è costruito <b>sopra un punto d'appoggio tedesco</b>, il W5, e conserva un
+  <b>bombardiere B-26 Marauder originale</b>: ne restano pochissimi al mondo.</p>
+<div class="cards">
+  <div class="infocard"><div class="cl">Orari</div><div class="cv">9:30-19:00 · biglietteria chiusa un'ora prima</div></div>
+  <div class="infocard"><div class="cl">Ingresso</div><div class="cv">Adulti 10 €, studenti 7,50 €, 6-15 anni 6,50 €</div></div>
+  <div class="infocard"><div class="cl">Tempo</div><div class="cv">1h30-2h secondo il museo</div></div>
+  <div class="infocard"><div class="cl">Dove</div><div class="cv"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Mus%C3%A9e%20du%20D%C3%A9barquement%20Utah%20Beach%2C%20Sainte-Marie-du-Mont" target="_blank" rel="noopener">Musée du Débarquement Utah Beach</a></div></div>
+</div>
+
+<h3>Pointe du Hoc, e i cannoni che non c'erano</h3>
+<p>Il 2° Battaglione Rangers del tenente colonnello <b>James Earl Rudder</b> scalò una falesia di
+  <b>circa trenta metri</b> sotto il fuoco, per distruggere una batteria di sei cannoni da 155 mm
+  che poteva battere sia Utah sia Omaha. <b>I cannoni non c'erano.</b> I tedeschi li avevano spostati
+  oltre un chilometro nell'entroterra, lasciando al loro posto <b>pali di legno</b> che avevano
+  ingannato la ricognizione aerea alleata.</p>
+<p>Verso le nove del mattino una pattuglia di <b>due soli uomini</b> — il primo sergente Leonard
+  Lomell e il sergente Jack Kuhn — trovò cinque dei sei cannoni camuffati in un frutteto a circa
+  duecento metri dalla strada costiera, e li distrusse. <b>Il sesto non fu mai ritrovato.</b> Dei
+  circa 225 Rangers impegnati, 135 furono uccisi, feriti o dispersi.</p>
+<div class="curio"><b>I crateri si stavano consumando sotto i piedi dei visitatori.</b> Nel 2019
+  l'ABMC constatò un degrado marcato del sito, causato soprattutto dal calpestio fuori dai sentieri,
+  con erosione e deformazione dei crateri stessi. Da lì la chiusura di molti percorsi per lasciare al
+  terreno il tempo di ripararsi. Nel 2023 una frana ha imposto la chiusura del sentiero fra il
+  bunker Rudder e quello osservatorio, e in novembre quella della piattaforma sul bunker
+  Flakstellung. <b>Restare sui camminamenti non è una formalità.</b></div>
+<div class="cards">
+  <div class="infocard"><div class="cl">Ingresso</div><div class="cv">Gratuito, nessuna prenotazione · sito aperto tutti i giorni</div></div>
+  <div class="infocard"><div class="cl">Tempo</div><div class="cv">40-60 minuti, con il percorso ridotto a un sentiero</div></div>
+  <div class="infocard"><div class="cl">Nel 2026</div><div class="cv">Cantiere: niente monumento, centro visitatori chiuso, parcheggio ridotto</div></div>
+  <div class="infocard"><div class="cl">Dove</div><div class="cv"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Pointe%20du%20Hoc%2C%20Cricqueville-en-Bessin" target="_blank" rel="noopener">Pointe du Hoc</a></div></div>
+</div>
+
+<h3>Omaha Beach</h3>
+<figure class="photo ph"><picture>
+  <source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/2nd-infantry-division-e-1-draw-easy-red-sector-480.avif 480w, /img/g/2nd-infantry-division-e-1-draw-easy-red-sector-800.avif 800w, /img/g/2nd-infantry-division-e-1-draw-easy-red-sector-1200.avif 1200w">
+  <img src="/img/g/2nd-infantry-division-e-1-draw-easy-red-sector-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/2nd-infantry-division-e-1-draw-easy-red-sector-480.jpg 480w, /img/g/2nd-infantry-division-e-1-draw-easy-red-sector-800.jpg 800w, /img/g/2nd-infantry-division-e-1-draw-easy-red-sector-1200.jpg 1200w" width="1200" height="829" alt="Omaha Beach il 7 giugno 1944, il settore Easy Red" loading="lazy" decoding="async"></picture>
+  <figcaption>Omaha Beach il 7 giugno 1944, il giorno dopo lo sbarco: il settore Easy Red, dove
+    risalì la 2ª Divisione di Fanteria. Fotografia del Signal Corps dell'esercito americano.</figcaption>
+</figure>
+<p>Omaha è lunga otto chilometri e non esiste «un» punto dove fermarsi: ci sono soste precise. La
+  principale è <b><em>Les Braves</em></b>, la scultura di <b>Anilore Banon</b> piantata nella sabbia
+  di Saint-Laurent-sur-Mer per il sessantesimo anniversario, nel 2004. Quasi tutti la citano come
+  un'opera sola: in realtà sono <b>tre elementi</b>, e l'artista li ha battezzati uno per uno —
+  <em>Le ali della Speranza</em>, <em>In piedi, Libertà!</em>, <em>Le ali della Fraternità</em>.</p>
+<div class="note"><b>Sulle cifre di Omaha, meglio essere precisi.</b> Il numero più ripetuto è
+  «circa 2.400»: sono <b>le perdite complessive</b> — morti, feriti e dispersi — non i morti. È
+  l'errore più comune nelle guide italiane. Il National WWII Museum avverte che <b>nessuna cifra
+  esatta è possibile</b> per il solo D-Day, né degli sbarcati né delle perdite: i furieri che
+  tenevano i conti furono uccisi e i registri andarono persi. Negli anni Novanta le stime dei caduti
+  alleati del D-Day oscillavano ancora fra cinquemila e dodicimila.</div>
+
+<h3>Il Cimitero Americano, e il porto di Arromanches</h3>
+<div class="photo-row" style="grid-template-columns:1.649fr 1.509fr;aspect-ratio:3.158">
+  <figure class="ph"><picture>
+    <source type="image/avif" sizes="(min-width:1228px) 591px, (min-width:620px) 50vw, 100vw" srcset="/img/g/cimetiere-americain-colleville-sur-mer-480.avif 480w, /img/g/cimetiere-americain-colleville-sur-mer-800.avif 800w, /img/g/cimetiere-americain-colleville-sur-mer-1200.avif 1200w">
+    <img src="/img/g/cimetiere-americain-colleville-sur-mer-800.jpg" sizes="(min-width:1228px) 591px, (min-width:620px) 50vw, 100vw" srcset="/img/g/cimetiere-americain-colleville-sur-mer-480.jpg 480w, /img/g/cimetiere-americain-colleville-sur-mer-800.jpg 800w, /img/g/cimetiere-americain-colleville-sur-mer-1200.jpg 1200w" width="1200" height="728" alt="Le croci del Cimitero Americano di Colleville-sur-Mer" loading="lazy" decoding="async"></picture>
+    <figcaption>Le 9.389 sepolture di Colleville. Nel 2026 i campi sono chiusi per la siccità: si
+      guardano dai vialetti.</figcaption>
+  </figure>
+  <figure class="ph"><picture>
+    <source type="image/avif" sizes="(min-width:1228px) 541px, (min-width:620px) 46vw, 100vw" srcset="/img/g/mulberry-arromanches-beach-480.avif 480w, /img/g/mulberry-arromanches-beach-800.avif 800w, /img/g/mulberry-arromanches-beach-1200.avif 1200w">
+    <img src="/img/g/mulberry-arromanches-beach-800.jpg" sizes="(min-width:1228px) 541px, (min-width:620px) 46vw, 100vw" srcset="/img/g/mulberry-arromanches-beach-480.jpg 480w, /img/g/mulberry-arromanches-beach-800.jpg 800w, /img/g/mulberry-arromanches-beach-1200.jpg 1200w" width="1200" height="795" alt="I cassoni di calcestruzzo del porto Mulberry sulla spiaggia di Arromanches" loading="lazy" decoding="async"></picture>
+    <figcaption>I cassoni Phoenix del porto Mulberry, arenati davanti ad Arromanches. I più grandi
+      erano lunghi sessanta metri e pesavano seimila tonnellate.</figcaption>
+  </figure>
+</div>
+
+<p>Il cimitero di <b>Colleville-sur-Mer</b> sorge dove l'8 giugno 1944 — <b>due giorni dopo lo
+  sbarco, con la battaglia ancora in corso a poche centinaia di metri</b> — la 1ª Armata americana
+  aprì un cimitero provvisorio: il primo cimitero americano sul suolo europeo della Seconda guerra
+  mondiale. Oggi custodisce <b>9.389 sepolture</b> su settanta ettari, e <b>1.557 nomi</b> sul Muro
+  dei Dispersi, dove le rosette segnano chi è stato poi ritrovato e identificato.</p>
+<div class="note"><b>Dal cimitero non si scende sulla spiaggia.</b> Il sentiero che collegava i due
+  luoghi è chiuso al pubblico <b>dal 2016</b> per motivi di sicurezza, ma molte guide lo descrivono
+  ancora come percorribile. Per andare su Omaha bisogna riprendere l'auto.</div>
+<div class="cards">
+  <div class="infocard"><div class="cl">Orari</div><div class="cv">9:00-17:00 · ultimo ingresso 16:30 · ingresso e parcheggio gratuiti</div></div>
+  <div class="infocard"><div class="cl">Visite guidate</div><div class="cv">In inglese 11:00 e 14:00 · gratuite, senza prenotazione, partenza dall'Overlook</div></div>
+  <div class="infocard"><div class="cl">Tempo</div><div class="cv">1h30-2h, di cui 45-60 minuti solo per il centro visitatori</div></div>
+  <div class="infocard"><div class="cl">Dove</div><div class="cv"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Normandy%20American%20Cemetery%2C%20Colleville-sur-Mer" target="_blank" rel="noopener">Normandy American Cemetery</a></div></div>
+</div>
+<div class="tip"><b>Calibrate l'arrivo sull'ammaina-bandiera.</b> Si tiene <b>un'ora prima della
+  chiusura</b>, quindi verso le 16:00, ed è il momento più intenso della visita.</div>
+
+<p>Ad <b>Arromanches</b>, davanti al paese, il semicerchio di blocchi scuri in mare è quel che resta
+  del <b>porto Mulberry B</b>, montato pezzo per pezzo dopo lo sbarco perché gli Alleati avevano
+  bisogno di scaricare senza conquistare un porto. Il suo gemello, il Mulberry A davanti a Omaha,
+  fu <b>distrutto dalla tempesta del 19 giugno 1944</b>, tredici giorni dopo lo sbarco, e giudicato
+  irreparabile. Quello di Arromanches invece restò in servizio <b>fino al 19 novembre</b>, cinque
+  mesi contro i novanta giorni previsti.</p>
+<div class="curio"><b>Furono costruiti in Inghilterra da oltre quarantamila persone.</b> I cassoni
+  Phoenix — i più grandi <b>sessanta metri di lunghezza per venti di altezza, fino a seimila
+  tonnellate</b> — furono assemblati nell'estuario del Tamigi e a Southampton fra l'ottobre 1943 e
+  il maggio 1944, poi rimorchiati attraverso la Manica. Sono quelli che si vedono ancora oggi.
+  <em>Le cifre del Mulberry variano molto fra le fonti — quanti cassoni, quanti chilometri di
+  frangiflutti — e alcune attribuiscono al solo Arromanches i totali dei due porti insieme.</em></div>
+<div class="cards">
+  <div class="infocard"><div class="cl">Museo del Débarquement</div><div class="cv">9:00-19:00, ultimo ingresso 18:15 · adulti 12,90 €, 6-18 anni 8,30 € · 1h30</div></div>
+  <div class="infocard"><div class="cl">Arromanches 360</div><div class="cv">10:00-18:00 · 7 € intero, 6 € ridotto · film di 20 minuti, sedute ogni mezz'ora</div></div>
+  <div class="infocard"><div class="cl">Il punto migliore</div><div class="cv">La falesia est, presso l'Arromanches 360: da lì si legge l'arco intero</div></div>
+  <div class="infocard"><div class="cl">Dove</div><div class="cv"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Mus%C3%A9e%20du%20D%C3%A9barquement%2C%20Arromanches-les-Bains" target="_blank" rel="noopener">Musée du Débarquement</a></div></div>
+</div>
+<div class="note"><b>Il parcheggio peggiore della giornata è qui.</b> Arromanches è un paese piccolo
+  incassato fra le falesie, con una sola strada d'accesso. Un sabato d'agosto nel tardo pomeriggio
+  si possono perdere venti minuti solo per posteggiare: mettetelo in conto nella scaletta.</div>
+
+<h3>Se si fa un museo solo</h3>
+<p>Fra i quattro possibili, la scelta vera è fra due.</p>
+<div class="tbl">
+  <table>
+    <caption class="visually-hidden">Airborne Museum e Overlord Museum a confronto</caption>
+    <thead><tr><th></th><th>Airborne Museum</th><th>Overlord Museum</th></tr></thead>
+    <tbody>
+      <tr><td><b>Dove</b></td><td>Sainte-Mère-Église</td><td>Alla rotonda del Cimitero Americano</td></tr>
+      <tr><td><b>Racconta</b></td><td>Gli aviotrasportati, la notte del 5-6 giugno</td><td>Dallo sbarco alla liberazione di Parigi</td></tr>
+      <tr><td><b>Com'è</b></td><td>Scenografico: aliante Waco, un C-47, percorso immersivo</td><td>Collezione: oltre 10.000 pezzi, più di 40 fra mezzi e cannoni</td></tr>
+      <tr><td><b>Ingresso</b></td><td>11,50 €</td><td>9,90 €</td></tr>
+      <tr><td><b>Tempo</b></td><td>Circa 2 ore</td><td>1h-1h30</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>L'<b>Overlord</b> sta letteralmente alla rotonda d'ingresso del cimitero: si incastra senza
+  spostamenti, costa meno e chiede metà tempo. L'<b>Airborne</b> è l'unico che spiega la notte dei
+  paracadutisti, ma è anche quello che consuma le due ore migliori della mattina. <b>Più di due
+  musei in giornata non si reggono</b>, con Utah e Arromanches già in programma.</p>
+
+<h2 id="bayeux">Bayeux, quando ci si passa</h2>
+<p>Non è più la base — si dorme a Crépon, dodici chilometri e mezzo più a nord — ma resta sulla
+  strada verso ovest, e il sabato mattina ha il mercato. Con il Museo dell'Arazzo chiuso fino al
+  2027, restano aperti due musei con lo stesso biglietto e la cattedrale — che in questi due anni è
+  il posto giusto dove pensare all'Arazzo.</p>
+<div class="curio"><b>L'Arazzo fu fatto per la cattedrale, non per un museo.</b> Lo commissionò il
+  vescovo <b>Odone di Conteville</b>, fratellastro di Guglielmo il Conquistatore, per decorare la
+  navata della cattedrale che fu consacrata nel <b>1077</b> alla presenza di Guglielmo stesso. Con
+  il museo chiuso, entrare in cattedrale è il modo più diretto di capire per cosa quell'opera era
+  stata pensata.</div>
+<div class="tbl">
+  <table>
+    <caption class="visually-hidden">Cosa è aperto a Bayeux</caption>
+    <thead><tr><th>Cosa</th><th>Orari e prezzo</th><th>Perché</th></tr></thead>
+    <tbody>
+      <tr><td><b><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Cath%C3%A9drale%20Notre-Dame%20de%20Bayeux" target="_blank" rel="noopener">Cattedrale Notre-Dame</a></b></td><td>Sabato 9:00-18:00 · gratuita</td><td>Romanico e gotico, consacrata nel 1077. Il luogo per cui l'Arazzo fu tessuto</td></tr>
+      <tr><td><b><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Mus%C3%A9e%20M%C3%A9morial%20de%20la%20Bataille%20de%20Normandie%2C%20Bayeux" target="_blank" rel="noopener">Musée Mémorial de la Bataille</a></b></td><td>9:30-18:30, ultimo ingresso 17:45 · 8,50 €</td><td>Tutta la battaglia di Normandia, non solo il D-Day. Di fronte al cimitero militare britannico</td></tr>
+      <tr><td><b><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Mus%C3%A9e%20d%27Art%20et%20d%27Histoire%20Baron%20G%C3%A9rard%2C%20Bayeux" target="_blank" rel="noopener">Musée Baron Gérard</a></b></td><td>9:30-18:30 · 8,50 €, combinato con l'altro 14 €</td><td>Nell'ex palazzo vescovile a fianco della cattedrale: porcellane e merletti di Bayeux</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="note"><b>Biglietti solo in loco:</b> i due musei non vendono online.</div>
+
+<h2 id="dormire">Dove si dorme, tutte e due le notti</h2>
+<p><b><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Le%20Manoir%20de%20Mathan%2C%20Cr%C3%A9pon" target="_blank" rel="noopener">Le Manoir de Mathan</a></b>
+  sta a <b>Crépon</b>, duecento abitanti, in mezzo ai campi del Bessin. È un maniero del Seicento
+  costruito dalla famiglia Hue de Mathan attorno a una corte quadrata: il corpo padronale e le
+  dipendenze, oggi ventuno camere fra cui quattro suite, travi a vista e mobili d'epoca. Dietro c'è
+  un parco alberato con lo stagno e il vecchio forno del pane.</p>
+<p>Non è un albergo isolato ma <b>l'ala seicentesca della
+  <a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Ferme%20de%20la%20Ran%C3%A7onni%C3%A8re%2C%209%20route%20de%20Creully%2C%20Cr%C3%A9pon" target="_blank" rel="noopener">Ferme de la Rançonnière</a></b>,
+  la fattoria fortificata del Duecento che sta <b>seicento metri più avanti</b>, dieci minuti a
+  piedi: lì si fa colazione e lì c'è il ristorante. Ricevimento, chiavi e prenotazioni della cena
+  passano da quella corte.</p>
+<div class="cards">
+  <div class="infocard"><div class="cl">Dove</div><div class="cv">Route de Bayeux, 14480 Crépon · +33 2 31 21 38 66</div></div>
+  <div class="infocard"><div class="cl">Arromanches</div><div class="cv">6,9 km · 10 minuti</div></div>
+  <div class="infocard"><div class="cl">Bayeux</div><div class="cv">12,5 km · 16 minuti</div></div>
+  <div class="infocard"><div class="cl">Parcheggio</div><div class="cv">Privato e gratuito, dentro la proprietà</div></div>
+</div>
+<div class="note"><b>Perché conviene alla giornata di oggi.</b> L'ultima tappa è Arromanches, e da
+  lì restano <b>sette chilometri, dieci minuti</b>: si rientra alle 19:10 con il tempo di lavarsi
+  prima della cena delle 19:30. Il rovescio è la mattina — Sainte-Mère-Église è a 67 km e
+  cinquantacinque minuti, quindi la sveglia va presa sul serio.</div>
+
+<h2 id="mangiare">Dove mangiare</h2>
+<p>Solo indirizzi indipendenti. La giornata è lunga e i luoghi sono turistici: qui sotto ci sono
+  quelli che reggono, e la segnalazione di quello che è meglio evitare.</p>
+
+<div class="tip"><b>Le Saint-Jacques, in agosto, no.</b> La pesca delle capesante in Manica è aperta
+  <b>dal 1° ottobre al 15 maggio</b>: qualunque coquille Saint-Jacques servita l'8 agosto è
+  surgelata o d'importazione, anche dove è in carta. In questa stagione il pesce giusto sono
+  <b>ostriche, cozze, sogliola, branzino, razza, bulots</b>.</div>
+
+<h3>Colazione</h3>
+<p>La colazione più comoda è quella dell'albergo: il buffet si serve alla
+  <a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Ferme%20de%20la%20Ran%C3%A7onni%C3%A8re%2C%209%20route%20de%20Creully%2C%20Cr%C3%A9pon" target="_blank" rel="noopener">Ferme de la Rançonnière</a>,
+  seicento metri dal Manoir de Mathan, <b>dalle 7:30 alle 10:00</b> — <b>18 € a persona, circa 10 €
+  per i bambini</b>, in supplemento. Con partenza alle 8:00 ci si sta, ma senza calma. Le tre righe
+  qui sotto sono per chi preferisce partire prima e fare colazione a Bayeux: passando di lì,
+  Sainte-Mère-Église resta a 68,5 km e un'ora tonda.</p>
+<div class="locali">
+  <div class="locale" id="loc-ducs" data-lat="49.27698" data-lon="-0.70191" data-cat="colazione">
+    <div class="lcat">Colazione · panificio</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=La%20Boulangerie%20des%20Ducs%2C%2015%20rue%20Saint-Martin%2C%20Bayeux" target="_blank" rel="noopener">La Boulangerie des Ducs</a></div>
+    <div class="lmeta">15 rue Saint-Martin · mer-dom 7:00-19:00 · chiusa lun e mar</div>
+    <p class="lperche">Apre alle sette: è la partenza più mattiniera del centro, e sta a quattrocento
+      metri da Place Saint-Patrice. Baguette firmata da un Meilleur Ouvrier de France.</p>
+  </div>
+  <div class="locale" id="loc-bisette" data-lat="49.27673" data-lon="-0.70112" data-cat="colazione">
+    <div class="lcat">Colazione · caffè</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Bisette%20Caf%C3%A9%20Cantine%2C%204%20rue%20Saint-Jean%2C%20Bayeux" target="_blank" rel="noopener">Bisette — Café &amp; Cantine</a></div>
+    <div class="lmeta">4 rue Saint-Jean · tutti i giorni 7:30-18:00</div>
+    <p class="lperche">Caffè di specialità biologico, tutto fatto in casa, produttori del circuito
+      corto. L'unico aperto presto con una cucina vera.</p>
+    <details class="lmenu"><summary>Cosa prendere</summary>
+      <ul>
+        <li><span>Breakfast roll: uovo biologico, cheddar, bacon, maionese alla sriracha</span></li>
+        <li><span>Tartine di pane a lievito naturale con confettura della casa</span></li>
+        <li><span>Granola fatta in casa, fromage blanc, frutta di stagione</span></li>
+      </ul>
+    </details>
+  </div>
+  <div class="locale" id="loc-mercato-bayeux" data-lat="49.27948" data-lon="-0.70841" data-cat="colazione">
+    <div class="lcat">Sabato · mercato</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Place%20Saint-Patrice%2C%20Bayeux" target="_blank" rel="noopener">Marché Saint-Patrice</a></div>
+    <div class="lmeta">Place Saint-Patrice · sabato 7:30-14:00 · una sessantina di banchi</div>
+    <p class="lperche">L'8 agosto è sabato, e questo è il mercato grande della settimana. È anche la
+      soluzione più elegante al problema del pranzo: si compra e si mangia sulle spiagge.</p>
+    <details class="lmenu"><summary>Cosa comprare</summary>
+      <ul>
+        <li><span>Camembert de Normandie, Pont-l'Évêque e Livarot, tutti AOP</span></li>
+        <li><span>Burro d'Isigny AOP, da chiedere demi-sel</span></li>
+        <li><span>Andouille de Vire affumicata, si mangia fredda</span></li>
+        <li><span>Ostriche, bulots già cotti, gamberi rosa</span></li>
+        <li><span>Teurgoule nella sua cocotte di terracotta, caramelle d'Isigny</span></li>
+      </ul>
+      <p class="lfonte">Il banco del pesce e i formaggi migliori vanno via presto: meglio essere lì
+        verso le 8:00.</p>
+    </details>
+  </div>
+</div>
+
+<h3>Pranzo lungo le spiagge</h3>
+<p><b>Port-en-Bessin</b> è il primo porto peschereccio del Calvados, e sta esattamente fra Colleville
+  e Arromanches: è l'unico punto del percorso in cui il pesce è locale per struttura e non per
+  insegna.</p>
+<div class="locali">
+  <div class="locale" id="loc-bistrot" data-lat="49.34893" data-lon="-0.75580" data-cat="pranzo">
+    <div class="lcat">Pranzo · pesce</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Le%20Bistrot%20d%27%C3%A0%20C%C3%B4t%C3%A9%2C%2012%20rue%20Michel%20Lefournier%2C%20Port-en-Bessin" target="_blank" rel="noopener">Le Bistrot d'à Côté</a></div>
+    <div class="lmeta">12 rue Michel Lefournier, Port-en-Bessin · 12-14 e 19-21 · chiuso dom e lun</div>
+    <p class="lperche">Fuori dal fronte-porto, in una via laterale. Gestione familiare, pesce dei
+      pescatori locali, tutto trasformato sul posto. Il piatto della casa è l'<b>ala di razza ai
+      capperi con la crema d'Isigny</b>.</p>
+    <details class="lmenu"><summary>Menù e prezzi</summary>
+      <ul>
+        <li><span>Plateau de fruits de mer, una persona</span><b>35,00 €</b></li>
+        <li><span>Assiette de fruits de mer</span><b>23,00 €</b></li>
+        <li><span>Menu bambini fino a 10 anni</span><b>12,00 €</b></li>
+        <li><span>Piccolo camembert al forno, patate al vapore, prosciutto affumicato</span></li>
+        <li><span>Pesce del mercato, sulla lavagna</span></li>
+      </ul>
+      <p class="lfonte">Prenotare: 02 31 51 79 12. I piatti si preparano al momento, può esserci
+        attesa.</p>
+    </details>
+  </div>
+  <div class="locale" id="loc-maree" data-lat="49.38856" data-lon="-1.04690" data-cat="pranzo">
+    <div class="lcat">Pranzo · pesce</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Restaurant%20La%20Mar%C3%A9e%2C%205%20quai%20Henri%20Ch%C3%A9ron%2C%20Grandcamp-Maisy" target="_blank" rel="noopener">La Marée</a></div>
+    <div class="lmeta">5 quai Henri Chéron, Grandcamp-Maisy · tutti i giorni · sul porto</div>
+    <p class="lperche">Fra Utah e la Pointe du Hoc. Lo chef ha il titolo di <b>Maître
+      Restaurateur</b>, che in Francia certifica prodotti freschi e cucina fatta sul posto. Le
+      ostriche portano il nome di chi le alleva.</p>
+    <details class="lmenu"><summary>Menù e prezzi</summary>
+      <ul>
+        <li><span>Menu du terroir, due portate</span><b>21 €</b></li>
+        <li><span>Menu du terroir, tre portate</span><b>25 €</b></li>
+        <li><span>Menu con ostriche di Grandcamp e pesce</span><b>36 €</b></li>
+        <li><span>Sei ostriche di pieno mare</span><b>14 €</b></li>
+        <li><span>Assiette di bulots con maionese</span><b>12 €</b></li>
+        <li><span>Crème brûlée al pommeau di Normandia</span></li>
+      </ul>
+      <p class="lfonte">Non accettano gruppi nei fine settimana d'estate. Prenotare: 02 31 21 41 00.</p>
+    </details>
+  </div>
+  <div class="locale" id="loc-cauquigny" data-lat="49.40788" data-lon="-1.31720" data-cat="pranzo">
+    <div class="lcat">Pranzo veloce · crêperie</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Cr%C3%AAperie%20Cauquigny%2C%2031%20rue%20du%20G%C3%A9n%C3%A9ral%20de%20Gaulle%2C%20Sainte-M%C3%A8re-%C3%89glise" target="_blank" rel="noopener">Crêperie Cauquigny</a></div>
+    <div class="lmeta">31 rue du Général de Gaulle, Sainte-Mère-Église · mar-sab 12-14 · 26 coperti</div>
+    <p class="lperche">Grano saraceno <b>biologico del Cotentin</b>, macinato lì vicino. Dentro, un
+      muro coperto dalle firme dei veterani e delle loro famiglie: è l'unico pranzo del percorso che
+      è anche una tappa di memoria.</p>
+    <details class="lmenu"><summary>Cosa prendere</summary>
+      <ul>
+        <li><span>Galette Sword, Utah, Fortitude</span></li>
+        <li><span>Crêpe Mae West, crêpe D-Day</span></li>
+        <li><span>Sidro alla spina</span></li>
+        <li><span>Menu bambini</span><b>8,50 €</b></li>
+      </ul>
+      <p class="lfonte">Ventisei coperti nel paese più visitato del percorso: prenotare è
+        indispensabile. 02 33 41 36 63.</p>
+    </details>
+  </div>
+</div>
+<div class="note"><b>Da evitare, se si può:</b> il ristorante che sta al centro di Omaha Beach, fra
+  il cimitero e la Pointe du Hoc, ha servizio continuo dalle 12 alle 18, si definisce brasserie e
+  snack, e <b>non pubblica né carta né prezzi</b>. Posizione monopolistica sul punto di massimo
+  passaggio: è il profilo del locale che vive di transito. Torna utile solo se si arriva alle 15:30,
+  quando le cucine degli altri hanno chiuso — ma non è lì che si mangia il pesce del giorno.</div>
+
+<h3>La cena</h3>
+<p>La prima riga è a seicento metri dal letto: si torna da Arromanches, si posa la macchina e non la
+  si riprende più. Le altre quattro sono a Bayeux, sedici minuti di strada — vale la pena solo se si
+  vuole passare la sera in città.</p>
+<div class="locali">
+  <div class="locale" id="loc-ranconniere" data-lat="49.31180" data-lon="-0.54733" data-cat="cena">
+    <div class="lcat">Cena · dove si dorme</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Ferme%20de%20la%20Ran%C3%A7onni%C3%A8re%2C%209%20route%20de%20Creully%2C%20Cr%C3%A9pon" target="_blank" rel="noopener">Ferme de la Rançonnière</a></div>
+    <div class="lmeta">9 route de Creully, Crépon · sabato 12-13:30 e <b>19-20:30</b> · a piedi dall'albergo</div>
+    <p class="lperche">È la fattoria fortificata del Duecento a cui appartiene il Manoir de Mathan:
+      torre merlata, corte quadrata, e in fondo la sala del ristorante. Cucina normanna dello chef
+      David su prodotti di stagione — che l'8 agosto vuol dire pesce e ortaggi, non capesante.
+      <b>L'ultimo servizio è alle 20:30</b>: rientrando da Arromanches verso le 19:10 si arriva
+      comodi, ma non si può indugiare.</p>
+    <details class="lmenu"><summary>Menù e prezzi</summary>
+      <ul>
+        <li><span>Lingot di foie gras</span><b>22 €</b></li>
+        <li><span>Ceviche di branzino</span><b>18 €</b></li>
+        <li><span>Uovo perfetto alle lenticchie beluga</span><b>14 €</b></li>
+        <li><span>Medaglioni di rana pescatrice</span><b>27 €</b></li>
+        <li><span>Dorso di merluzzo</span><b>25 €</b></li>
+        <li><span>Cocotte di animelle di vitello</span><b>29 €</b></li>
+        <li><span>Côte de bœuf normanna, per due</span><b>85 €</b></li>
+        <li><span>Tre formaggi della regione</span><b>12 €</b></li>
+        <li><span>Dessert, tutti</span><b>12 €</b></li>
+      </ul>
+      <p class="lfonte">C'è anche il menu «Petit Gastronome» per i bambini fino a 10 anni.
+        Prenotare al ricevimento o al 02 31 22 21 73.</p>
+    </details>
+  </div>
+  <div class="locale" id="loc-volet" data-lat="49.27646" data-lon="-0.70123" data-cat="cena">
+    <div class="lcat">Cena informale</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Le%20Volet%20qui%20Penche%2C%203%20impasse%20de%20l%27Islet%2C%20Bayeux" target="_blank" rel="noopener">Le Volet qui Penche</a></div>
+    <div class="lmeta">3 impasse de l'Islet · sabato 18:30-21 · chiuso domenica</div>
+    <p class="lperche">In fondo a un vicolo cieco, con la terrazza sull'Aure. È dove si ritrovano
+      la sera quelli di Bayeux. Cantina notevole: i titolari conoscono i vignaioli uno per uno.</p>
+    <details class="lmenu"><summary>Menù e prezzi</summary>
+      <ul>
+        <li><span>Tagliere di salumi e formaggi</span><b>18,50 €</b></li>
+        <li><span>Lumache dell'Odon all'aglio orsino, sei pezzi</span><b>14,00 €</b></li>
+        <li><span>Tartare di manzo, patate saltate, pickles</span><b>19,50 €</b></li>
+        <li><span>Carpaccio di pomodori antichi con caprino fresco</span><b>12,00 €</b></li>
+        <li><span>Côte de bœuf, ogni 100 grammi</span><b>7,50 €</b></li>
+      </ul>
+      <p class="lfonte">Chiude per ferie dal 24 al 30 agosto. Locale piccolo: prenotare.</p>
+    </details>
+  </div>
+  <div class="locale" id="loc-alchimie" data-lat="49.27616" data-lon="-0.69892" data-cat="cena">
+    <div class="lcat">Cena · qualità-prezzo</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=L%27Alchimie%2C%2049%20rue%20Saint-Jean%2C%20Bayeux" target="_blank" rel="noopener">L'Alchimie</a></div>
+    <div class="lmeta">49 rue Saint-Jean · sabato 19:00-21:00 · chiuso giovedì e domenica</div>
+    <p class="lperche">Cucina tradizionale rivisitata, carta stagionale su prodotti freschi, sapori
+      locali mescolati a quelli di fuori — da cui il nome. È il compromesso migliore della città.</p>
+    <details class="lmenu"><summary>Menù e prezzi</summary>
+      <ul>
+        <li><span>Menu</span><b>da 23,00 a 48,90 €</b></li>
+        <li><span>Formula di mezzogiorno</span><b>da 16,90 €</b></li>
+      </ul>
+      <p class="lfonte">Prenotare: 02 14 08 03 97.</p>
+    </details>
+  </div>
+  <div class="locale" id="loc-pommier" data-lat="49.27636" data-lon="-0.70378" data-cat="cena">
+    <div class="lcat">Cena · normanna</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Le%20Pommier%2C%2038%20rue%20des%20Cuisiniers%2C%20Bayeux" target="_blank" rel="noopener">Le Pommier</a></div>
+    <div class="lmeta">38-40 rue des Cuisiniers · 12-14 e 18:30-20:30 · sabato aperto</div>
+    <p class="lperche">Il riferimento della cucina normanna tradizionale in città: manzo normanno,
+      e i quattro formaggi della regione — Camembert, Pont-l'Évêque, Livarot, Neufchâtel. Tre sale,
+      due con il camino d'epoca.</p>
+    <details class="lmenu"><summary>Menù e prezzi</summary>
+      <ul>
+        <li><span>Menu</span><b>da 28 a 42 €</b></li>
+      </ul>
+      <p class="lfonte">È anche il più capiente: centocinque coperti, quindi il più probabile ad
+        avere posto. 02 31 21 52 10.</p>
+    </details>
+  </div>
+  <div class="locale" id="loc-rapiere" data-lat="49.27631" data-lon="-0.69927" data-cat="cena">
+    <div class="lcat">Cena · la più bella</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=La%20Rapi%C3%A8re%2C%2053%20rue%20Saint-Jean%2C%20Bayeux" target="_blank" rel="noopener">La Rapière</a></div>
+    <div class="lmeta">53 rue Saint-Jean · solo cena, sabato dalle 18:30 · chiuso domenica</div>
+    <p class="lperche">Sala del Cinquecento, pietra e travi a vista, cucina contemporanea su prodotti
+      freschi di stagione. Citata dalla Guida Michelin. Trentacinque coperti e un solo servizio: è
+      la più intima delle quattro di Bayeux.</p>
+    <details class="lmenu"><summary>Menù e prezzi</summary>
+      <ul>
+        <li><span>Menu d'Artagnan</span><b>42 €</b></li>
+        <li><span>Menu Athos, Porthos et Aramis</span><b>55 €</b></li>
+        <li><span>Bambini fino a 10 anni</span><b>−25%</b></li>
+      </ul>
+      <p class="lfonte">Chiude per ferie la seconda metà di agosto: l'8 rientra per pochi giorni.
+        Prenotare appena possibile, 02 31 21 05 45.</p>
+    </details>
+  </div>
+</div>
+
+<h2 id="mappa">La mappa del giorno</h2>
+<p style="color:var(--body)">Le tappe di oggi, su una mappa vera. Se leggete questa pagina già in
+  viaggio, il tasto nell'angolo della mappa vi dice quali sono più vicine a dove siete in questo
+  momento — la posizione resta nel telefono, non viene inviata da nessuna parte. I quadratini
+  arancioni sono i locali della sezione qui sopra.</p>
+
+<div class="daymap-wrap">
+  <div class="mapbox">
+  <div id="daymap" class="daymap"></div>
+    <button class="locbtn" id="locBtn" type="button" aria-label="Dove sono rispetto alle tappe" title="Dove sono rispetto alle tappe"><svg class="ico" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A9 9 0 0013 3.06V1h-2v2.06A9 9 0 003.06 11H1v2h2.06A9 9 0 0011 20.94V23h2v-2.06A9 9 0 0020.94 13H23v-2h-2.06zM12 19a7 7 0 110-14 7 7 0 010 14z"/></svg></button>
+  </div>
+  <ul class="mappalegenda">
+    <li><span class="pin tappa"></span>Tappa del giorno</li>
+    <li><span class="pin opzionale"></span>Se avanza tempo</li>
+    <li><span class="pin cibo"></span>Dove mangiare</li>
+    <li><span class="pin notte"></span>Crépon, dove si dorme</li>
+  </ul>
+  <div class="daybar">
+    <span class="locmsg" id="locMsg"></span>
+  </div>
+  <div class="vicini" id="vicini">
+    <h4>Le più vicine a te ora</h4>
+    <ul id="viciniList"></ul>
+  </div>
+</div>
+
+<h2 id="prenotazioni-oggi">Prenotazione di questa notte</h2>
+<div class="cards">
+  <div class="infocard"><div class="cl">Dove</div><div class="cv"><b><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Le%20Manoir%20de%20Mathan%2C%20Cr%C3%A9pon" target="_blank" rel="noopener">Le Manoir de Mathan</a></b>, Crépon — seconda delle due notti</div></div>
+  <div class="infocard"><div class="cl">Fatta</div><div class="cv">Prenotazione confermata · +33 2 31 21 38 66</div></div>
+  <div class="infocard"><div class="cl">Da prenotare</div><div class="cv">La cena — e l'Airborne Museum, se lo si fa</div></div>
+  <div class="infocard"><div class="cl">Tutte le notti</div><div class="cv"><a href="../#prenotazioni">Vedi la tabella completa →</a></div></div>
+</div>
+
+</article>
+</div>
+
+<footer class="foot" style="max-width:1180px;margin:40px auto 0;padding:20px 24px 50px">
+  <div class="credits">
+    <h4>Crediti foto</h4>
+    <ul>
+      <li>Bunker alla Pointe du Hoc — Jebulon · <a href="https://creativecommons.org/publicdomain/zero/1.0" rel="license noopener" target="_blank">CC0</a> · <a href="https://commons.wikimedia.org/wiki/File:Impact_in_reinforced_concrete_german_bunker_Pointe_du_Hoc_Normandy_Calvados.jpg" rel="noopener" target="_blank">file originale</a></li>
+      <li>Omaha Beach, 7 giugno 1944 — US Army Signal Corps · pubblico dominio · <a href="https://commons.wikimedia.org/wiki/File:2nd_Infantry_Division,_E-1_draw,_Easy_Red_sector,_Omaha_Beach,_D%2B1,_June_7,_1944.jpg" rel="noopener" target="_blank">file originale</a></li>
+      <li>Cimitero Americano di Colleville-sur-Mer — Myrabella · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Cimetiere_americain_Colleville-sur-Mer.jpg" rel="noopener" target="_blank">file originale</a></li>
+      <li>Resti del porto Mulberry ad Arromanches — Jebulon · <a href="https://creativecommons.org/publicdomain/zero/1.0" rel="license noopener" target="_blank">CC0</a> · <a href="https://commons.wikimedia.org/wiki/File:Mulberry_Arromanches_beach.jpg" rel="noopener" target="_blank">file originale</a></li>
+      <li class="cnote">Mappa: dati © <a href="https://www.openstreetmap.org/copyright" rel="noopener" target="_blank">contributori di OpenStreetMap</a>, tessere © <a href="https://carto.com/attributions" rel="noopener" target="_blank">CARTO</a> (stile Voyager). Meteo: <a href="https://open-meteo.com/" rel="noopener" target="_blank">Open-Meteo</a>. Chiusure e orari dei siti americani: <a href="https://www.abmc.gov/normandy" rel="noopener" target="_blank">American Battle Monuments Commission</a>, verificati il 30 luglio 2026.</li>
+    </ul>
+  </div>
+  <p style="margin-top:24px"><a href="../#g3">← Torna alla guida completa</a> · Giornata 3 di 11.</p>
+</footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="../assets/day.js?v=7f4b3dae"></script>
+<script src="../assets/nav.js?v=09c6a6ee" defer></script>
+<script>
+const TAPPE = [
+  {id:"smeglise", name:"Sainte-Mère-Église", lat:49.40882, lon:-1.31626, kind:"tappa", note:"Il paracadutista sul campanile", maps:DayGuide.urlPosto("Église Notre-Dame-de-l'Assomption, Sainte-Mère-Église")},
+  {id:"airborne", name:"Airborne Museum",    lat:49.40804, lon:-1.31423, kind:"opzionale", note:"Gli aviotrasportati, circa 2 ore", maps:DayGuide.urlPosto("Airborne Museum, Sainte-Mère-Église")},
+  {id:"utah",     name:"Utah Beach",         lat:49.41536, lon:-1.17463, kind:"tappa", note:"Museo dentro il bunker W5, con un B-26", maps:DayGuide.urlPosto("Musée du Débarquement Utah Beach, Sainte-Marie-du-Mont")},
+  {id:"hoc",      name:"Pointe du Hoc",      lat:49.39782, lon:-0.98941, kind:"tappa", note:"Crateri e casematte. Nel 2026 senza il monumento", maps:DayGuide.urlPosto("Pointe du Hoc, Cricqueville-en-Bessin")},
+  {id:"braves",   name:"Les Braves, Omaha",  lat:49.37094, lon:-0.87951, kind:"tappa", note:"Sulla sabbia: da vedere nel primo pomeriggio", maps:DayGuide.urlPosto("Les Braves, Omaha Beach, Saint-Laurent-sur-Mer")},
+  {id:"colleville",name:"Cimitero Americano",lat:49.35725, lon:-0.85199, kind:"tappa", note:"9:00-17:00, ultimo ingresso 16:30", maps:DayGuide.urlPosto("Normandy American Cemetery, Colleville-sur-Mer")},
+  {id:"overlord", name:"Overlord Museum",    lat:49.34784, lon:-0.85650, kind:"opzionale", note:"Alla rotonda del cimitero, 1h-1h30", maps:DayGuide.urlPosto("Overlord Museum, Colleville-sur-Mer")},
+  {id:"arromanches",name:"Arromanches",      lat:49.34021, lon:-0.62103, kind:"tappa", note:"Il museo del Débarquement e i cassoni", maps:DayGuide.urlPosto("Musée du Débarquement, Arromanches-les-Bains")},
+  {id:"a360",     name:"Arromanches 360",    lat:49.33864, lon:-0.61781, kind:"opzionale", note:"Sulla falesia: il punto migliore sull'arco", maps:DayGuide.urlPosto("Arromanches 360, Arromanches-les-Bains")},
+  {id:"cattedrale",name:"Cattedrale di Bayeux",lat:49.27559,lon:-0.70368, kind:"opzionale", note:"Consacrata nel 1077, gratuita", maps:DayGuide.urlPosto("Cathédrale Notre-Dame de Bayeux")},
+  {id:"crepon",   name:"Le Manoir de Mathan", lat:49.31464, lon:-0.55235, kind:"notte", note:"Crépon, seconda delle due notti", maps:DayGuide.urlPosto("Le Manoir de Mathan, Crépon")}
+];
+
+const LOCALI = DayGuide.localiDalDOM();
+const PUNTI = TAPPE.concat(LOCALI);
+
+const mappa = DayGuide.initMap("daymap", {
+  center:[49.375, -0.95], zoom:10, stops: PUNTI
+});
+if(!mappa){
+  const el=document.getElementById("daymap");
+  if(el) el.innerHTML='<p style="padding:20px;color:var(--muted)">Mappa non disponibile al momento.</p>';
+}
+
+DayGuide.wireGeolocation({
+  btnId:"locBtn", msgId:"locMsg", panelId:"vicini", listId:"viciniList",
+  stops: PUNTI, markers: mappa ? mappa.markers : {}
+});
+
+DayGuide.initWeather("dayweather", {
+  lat:49.3586, lon:-0.8547, dateISO:"2026-08-08",
+  dataLeggibile:"8 agosto", label:"Colleville"
+});
+</script>
+</body>
+</html>
