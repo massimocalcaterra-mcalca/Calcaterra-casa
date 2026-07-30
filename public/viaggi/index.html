@@ -111,6 +111,49 @@
 
   .foot{margin-top:72px;text-align:center;color:var(--muted);font-size:.8rem}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+  /* --- i volumi delle giornate -----------------------------------------
+     Libretti sottili accanto alla guida madre: stesso linguaggio dei libri
+     grandi, ma piu' stretti, perche' sono capitoli e non guide. Quelli non
+     ancora scritti restano visibili e spenti: si vede dove si sta andando. */
+  .volumi{display:flex;flex-wrap:wrap;align-items:flex-end;gap:9px;max-width:620px}
+  .book.giorno{width:min(84px,20vw)}
+  .book.giorno .cover{border-radius:2px 5px 5px 2px}
+  .book.giorno .cover .spine{width:6px}
+  .book.giorno .cover .edge{width:3px}
+  .book.giorno .cover .band{padding:8px 6px 9px}
+  .book.giorno .cover .ck{font-size:.46rem;letter-spacing:.1em}
+  .book.giorno .cover h2{font-size:.62rem;margin-top:.2em;line-height:1.08}
+  .book.giorno .pages{padding:8px;border-radius:2px 5px 5px 2px}
+  .book.giorno .pages .pk{font-size:.44rem;letter-spacing:.1em}
+  .book.giorno .pages .pt{font-size:.6rem;margin:.3em 0}
+  .book.giorno .pages .go{font-size:.5rem;margin-top:5px}
+
+  /* le giornate non ancora scritte: non si aprono e non fingono di poterlo fare */
+  .book.futuro{cursor:default}
+  .book.futuro:hover{transform:none}
+  .book.futuro .cover img{filter:grayscale(.9) contrast(.92) brightness(.9)}
+  .book.futuro .cover .band{opacity:.55}
+  .book.futuro .attesa{position:absolute;left:5px;right:5px;top:7px;text-align:center;
+    font-family:Poppins,sans-serif;font-size:.42rem;font-weight:600;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:rgba(20,38,28,.6);
+    border-radius:20px;padding:3px 2px}
+
+  /* --- lo scaffale d'archivio, in basso --------------------------------- */
+  .shelf.archivio{margin-top:56px}
+  .ripiano{font-family:Poppins,sans-serif;font-size:.68rem;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+    text-align:center;margin:0 0 20px}
+  .shelf.archivio .book{width:min(150px,38vw)}
+  .shelf.archivio .book .cover h2{font-size:.92rem}
+  .shelf.archivio .book .cover .ck{font-size:.5rem}
+  .shelf.archivio .book .cover .meta{font-size:.62rem}
+  .shelf.archivio .book .pages .pt{font-size:.86rem}
+
+  @media(max-width:620px){
+    .books{gap:28px}
+    .volumi{gap:7px;justify-content:center}
+  }
 </style>
 </head>
 <body>
@@ -129,7 +172,6 @@
 
     <section class="shelf">
       <div class="books">
-
         <a class="book" href="/normandie-bretagna" data-title="Normandie &amp; Bretagne">
           <div class="stack">
             <div class="pages"><div class="pk">Guida</div><div class="pt">Normandie &amp; Bretagne</div><div class="go">Apri →</div></div>
@@ -144,7 +186,26 @@
             </div>
           </div>
         </a>
+        <div class="volumi">
+          <a class="book giorno" href="/normandie-bretagna/giorno-01/" data-title="Giorno 1 · Rouen"><div class="stack"><div class="pages"><div class="pk">Giorno 1</div><div class="pt">Rouen</div><div class="go">Apri →</div></div><div class="cover"><picture><source type="image/avif" sizes="120px" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.avif 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.avif 800w"><img src="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.jpg" sizes="120px" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.jpg 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.jpg 800w" alt="La cattedrale di Rouen" loading="lazy" decoding="async"></picture><div class="grad"></div><div class="spine"></div><div class="edge"></div><div class="band"><div class="ck">Giorno 1</div><h2>Rouen</h2></div></div></div></a>
+          <div class="book giorno futuro" aria-disabled="true"><div class="stack"><div class="pages"><div class="pk">Giorno 2</div><div class="pt">Étretat</div><div class="go">Presto</div></div><div class="cover"><picture><source type="image/avif" sizes="120px" srcset="/img/g/porte-d-aval-vue-depuis-la-manneporte-480.avif 480w, /img/g/porte-d-aval-vue-depuis-la-manneporte-800.avif 800w"><img src="/img/g/porte-d-aval-vue-depuis-la-manneporte-480.jpg" sizes="120px" srcset="/img/g/porte-d-aval-vue-depuis-la-manneporte-480.jpg 480w, /img/g/porte-d-aval-vue-depuis-la-manneporte-800.jpg 800w" alt="Arco della Porte d'Aval, Étretat" loading="lazy" decoding="async"></picture><div class="grad"></div><div class="spine"></div><div class="edge"></div><div class="band"><div class="ck">Giorno 2</div><h2>Étretat</h2></div><div class="attesa">In preparazione</div></div></div></div>
+          <div class="book giorno futuro" aria-disabled="true"><div class="stack"><div class="pages"><div class="pk">Giorno 3</div><div class="pt">Lo Sbarco</div><div class="go">Presto</div></div><div class="cover"><picture><source type="image/avif" sizes="120px" srcset="/img/g/impact-in-reinforced-concrete-german-bunker-po-480.avif 480w, /img/g/impact-in-reinforced-concrete-german-bunker-po-800.avif 800w"><img src="/img/g/impact-in-reinforced-concrete-german-bunker-po-480.jpg" sizes="120px" srcset="/img/g/impact-in-reinforced-concrete-german-bunker-po-480.jpg 480w, /img/g/impact-in-reinforced-concrete-german-bunker-po-800.jpg 800w" alt="Pointe du Hoc" loading="lazy" decoding="async"></picture><div class="grad"></div><div class="spine"></div><div class="edge"></div><div class="band"><div class="ck">Giorno 3</div><h2>Lo Sbarco</h2></div><div class="attesa">In preparazione</div></div></div></div>
+          <div class="book giorno futuro" aria-disabled="true"><div class="stack"><div class="pages"><div class="pk">Giorno 4</div><div class="pt">Mont-St-Michel</div><div class="go">Presto</div></div><div class="cover"><picture><source type="image/avif" sizes="120px" srcset="/img/g/msm-sunset-02-480.avif 480w, /img/g/msm-sunset-02-800.avif 800w"><img src="/img/g/msm-sunset-02-480.jpg" sizes="120px" srcset="/img/g/msm-sunset-02-480.jpg 480w, /img/g/msm-sunset-02-800.jpg 800w" alt="Il Mont-Saint-Michel al tramonto" loading="lazy" decoding="async"></picture><div class="grad"></div><div class="spine"></div><div class="edge"></div><div class="band"><div class="ck">Giorno 4</div><h2>Mont-St-Michel</h2></div><div class="attesa">In preparazione</div></div></div></div>
+          <div class="book giorno futuro" aria-disabled="true"><div class="stack"><div class="pages"><div class="pk">Giorno 5</div><div class="pt">Saint-Malo</div><div class="go">Presto</div></div><div class="cover"><picture><source type="image/avif" sizes="120px" srcset="/img/g/remparts-saint-malo-2-480.avif 480w, /img/g/remparts-saint-malo-2-800.avif 800w"><img src="/img/g/remparts-saint-malo-2-480.jpg" sizes="120px" srcset="/img/g/remparts-saint-malo-2-480.jpg 480w, /img/g/remparts-saint-malo-2-800.jpg 800w" alt="I bastioni di Saint-Malo" loading="lazy" decoding="async"></picture><div class="grad"></div><div class="spine"></div><div class="edge"></div><div class="band"><div class="ck">Giorno 5</div><h2>Saint-Malo</h2></div><div class="attesa">In preparazione</div></div></div></div>
+          <div class="book giorno futuro" aria-disabled="true"><div class="stack"><div class="pages"><div class="pk">Giorno 6</div><div class="pt">Saint-Mathieu</div><div class="go">Presto</div></div><div class="cover"><picture><source type="image/avif" sizes="120px" srcset="/img/g/phare-de-ploumanac-h-04-480.avif 480w, /img/g/phare-de-ploumanac-h-04-800.avif 800w"><img src="/img/g/phare-de-ploumanac-h-04-480.jpg" sizes="120px" srcset="/img/g/phare-de-ploumanac-h-04-480.jpg 480w, /img/g/phare-de-ploumanac-h-04-800.jpg 800w" alt="Il faro di Ploumanac'h tra le rocce rosa" loading="lazy" decoding="async"></picture><div class="grad"></div><div class="spine"></div><div class="edge"></div><div class="band"><div class="ck">Giorno 6</div><h2>Saint-Mathieu</h2></div><div class="attesa">In preparazione</div></div></div></div>
+          <div class="book giorno futuro" aria-disabled="true"><div class="stack"><div class="pages"><div class="pk">Giorno 7</div><div class="pt">L'eclissi</div><div class="go">Presto</div></div><div class="cover"><picture><source type="image/avif" sizes="120px" srcset="/img/g/pointe-du-raz-bei-sonnenuntergang-480.avif 480w, /img/g/pointe-du-raz-bei-sonnenuntergang-800.avif 800w"><img src="/img/g/pointe-du-raz-bei-sonnenuntergang-480.jpg" sizes="120px" srcset="/img/g/pointe-du-raz-bei-sonnenuntergang-480.jpg 480w, /img/g/pointe-du-raz-bei-sonnenuntergang-800.jpg 800w" alt="La Pointe du Raz al tramonto" loading="lazy" decoding="async"></picture><div class="grad"></div><div class="spine"></div><div class="edge"></div><div class="band"><div class="ck">Giorno 7</div><h2>L'eclissi</h2></div><div class="attesa">In preparazione</div></div></div></div>
+          <div class="book giorno futuro" aria-disabled="true"><div class="stack"><div class="pages"><div class="pk">Giorno 8</div><div class="pt">Raguénez</div><div class="go">Presto</div></div><div class="cover"><picture><source type="image/avif" sizes="120px" srcset="/img/g/alignement-menec-carnac-480.avif 480w, /img/g/alignement-menec-carnac-800.avif 800w"><img src="/img/g/alignement-menec-carnac-480.jpg" sizes="120px" srcset="/img/g/alignement-menec-carnac-480.jpg 480w, /img/g/alignement-menec-carnac-800.jpg 800w" alt="Gli allineamenti megalitici di Carnac" loading="lazy" decoding="async"></picture><div class="grad"></div><div class="spine"></div><div class="edge"></div><div class="band"><div class="ck">Giorno 8</div><h2>Raguénez</h2></div><div class="attesa">In preparazione</div></div></div></div>
+          <div class="book giorno futuro" aria-disabled="true"><div class="stack"><div class="pages"><div class="pk">Giorno 9</div><div class="pt">Brocéliande</div><div class="go">Presto</div></div><div class="cover"><picture><source type="image/avif" sizes="120px" srcset="/img/g/la-foret-de-broceliande-octobre-2020-480.avif 480w, /img/g/la-foret-de-broceliande-octobre-2020-800.avif 800w"><img src="/img/g/la-foret-de-broceliande-octobre-2020-480.jpg" sizes="120px" srcset="/img/g/la-foret-de-broceliande-octobre-2020-480.jpg 480w, /img/g/la-foret-de-broceliande-octobre-2020-800.jpg 800w" alt="La foresta di Brocéliande" loading="lazy" decoding="async"></picture><div class="grad"></div><div class="spine"></div><div class="edge"></div><div class="band"><div class="ck">Giorno 9</div><h2>Brocéliande</h2></div><div class="attesa">In preparazione</div></div></div></div>
+          <div class="book giorno futuro" aria-disabled="true"><div class="stack"><div class="pages"><div class="pk">Giorno 10</div><div class="pt">Giverny</div><div class="go">Presto</div></div><div class="cover"><picture><source type="image/avif" sizes="120px" srcset="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-480.avif 480w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-800.avif 800w"><img src="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-480.jpg" sizes="120px" srcset="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-480.jpg 480w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-800.jpg 800w" alt="Stagno delle ninfee, Giverny" loading="lazy" decoding="async"></picture><div class="grad"></div><div class="spine"></div><div class="edge"></div><div class="band"><div class="ck">Giorno 10</div><h2>Giverny</h2></div><div class="attesa">In preparazione</div></div></div></div>
+          <div class="book giorno futuro" aria-disabled="true"><div class="stack"><div class="pages"><div class="pk">Giorno 11</div><div class="pt">Rientro</div><div class="go">Presto</div></div><div class="cover"><picture><source type="image/avif" sizes="120px" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.avif 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.avif 800w"><img src="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.jpg" sizes="120px" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.jpg 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.jpg 800w" alt="La cattedrale di Rouen" loading="lazy" decoding="async"></picture><div class="grad"></div><div class="spine"></div><div class="edge"></div><div class="band"><div class="ck">Giorno 11</div><h2>Rientro</h2></div><div class="attesa">In preparazione</div></div></div></div>
+        </div>
+      </div>
+      <div class="plank"></div>
+    </section>
 
+    <section class="shelf archivio">
+      <h2 class="ripiano">Archivio</h2>
+      <div class="books">
         <a class="book" href="/bretagna" data-title="Bretagna">
           <div class="stack">
             <div class="pages"><div class="pk">Guida</div><div class="pt">Bretagna</div><div class="go">Apri →</div></div>
@@ -159,7 +220,6 @@
             </div>
           </div>
         </a>
-
       </div>
       <div class="plank"></div>
     </section>
@@ -172,7 +232,7 @@
 
 <script>
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  document.querySelectorAll(".book").forEach(book=>{
+  document.querySelectorAll("a.book").forEach(book=>{
     book.addEventListener("click",e=>{
       const href = book.getAttribute("href");
       if (reduce){ return; }              // niente animazione: naviga subito
