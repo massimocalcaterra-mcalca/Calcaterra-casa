@@ -369,3 +369,42 @@ Sullo scaffale di `/viaggi/` i volumi accesi sono quelli con la pagina fatta:
 il Giorno 3 è passato da `.book.giorno.futuro` (un `<div>` grigio) a
 `<a class="book giorno">`. Chi ne accende un altro tolga anche la fascetta
 `.attesa` e rimetta «Apri →» al posto di «Presto».
+
+**Il totale di una giornata deve arrivare fino al letto.** Il Giorno 9 si
+fermava al museo e lasciava fuori gli 8,3 km fino all'albergo, mentre tutte le
+altre giornate contavano fino al pernottamento. Il totale del viaggio ne usciva
+sbagliato di otto chilometri. **La base di misura va scelta una volta e poi
+usata uguale per tutte e undici**, altrimenti la somma non è una somma.
+
+**Le maree vanno guardate per il giorno preciso, non in generale.** Il Grand Bé
+era in programma alle 10:00 «se la marea lo consente». Per lunedì 10 agosto
+2026 l'alta marea a Saint-Malo è alle 5:40 e la bassa verso mezzogiorno: alle
+10:00 il passaggio è ancora sott'acqua, e la frase generica non lo diceva.
+**Se un luogo dipende dalla marea, la data del viaggio va cercata a fonte** —
+tide-forecast.com e marine.meteoconsult.fr danno i numeri (attenzione: la prima
+richiesta a tide-forecast ha restituito i dati del giorno prima con l'etichetta
+del giorno dopo — chiedere due date insieme e confrontare).
+
+**L'ultimo ingresso non è l'ora in cui si entra.** Ad Arromanches l'ultimo
+ingresso è alle 18:15, la visita dura un'ora e mezza e il museo chiude alle
+19:00. Erano tutti e tre scritti giusti, in tre punti diversi, e nessuno diceva
+che insieme non stanno in piedi. **Quando ci sono ultimo ingresso, durata e
+chiusura, vanno sommati sulla pagina** e il risultato scritto.
+
+**I revisori sbagliano.** In due giri di controllo, tre segnalazioni «gravi» su
+quattro erano false: gli orari del cimitero di Colleville (9-17, non 9-18), il
+biglietto di Carnac (13 € e 6 €, non 7,50 €), il giro del Giorno 3 (166 km,
+riconfermati con OSRM). **Ogni segnalazione va verificata alla fonte prima di
+toccare il testo**, esattamente come una scritta di prima mano.
+
+**Le schede riassuntive invecchiano per prime.** Ogni volta che una misura
+cambia va aggiornata in tre posti: la scheda `.gm` in cima alla guida, la riga
+`.loc` del giorno, e l'intestazione della pagina della giornata. Le prime due
+erano rimaste indietro su cinque giorni su undici. **Dopo ogni rimisurazione,
+grep di tutte e tre le forme.**
+
+**La sillabazione non c'è in questo Chromium.** Provato con
+`precipitevolissimevolmente` in `lang=it` e `hyphens:auto`: altezza identica con
+e senza. Le voragini fra le parole negli screenshot del test **non sono quello
+che si vede su iPhone**, dove Safari ha il dizionario italiano. Non correggere
+la giustificazione basandosi su queste immagini.
