@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giorno 5 — Saint-Malo, Cap Fréhel e Fort la Latte · Normandie &amp; Bretagne</title>
+<meta name="description" content="Guida dettagliata del Giorno 5: le mura di Saint-Malo e l'Île du Grand Bé con la bassa marea, le falesie del Cap Fréhel e il castello di Fort la Latte, poi la Côte de Granit Rose. Orari, prezzi, dove mangiare.">
+<link rel="canonical" href="https://viaggi.calcaterra.casa/normandie-bretagna/giorno-05/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calcaterra Casa">
+<meta property="og:locale" content="it_IT">
+<meta property="og:url" content="https://viaggi.calcaterra.casa/normandie-bretagna/giorno-05/">
+<meta property="og:title" content="Giorno 5 — Saint-Malo, Cap Fréhel e Fort la Latte">
+<meta property="og:description" content="La città dei corsari la mattina, le falesie rosse e un castello sullo scoglio il pomeriggio. Si dorme sul granito rosa.">
+<meta property="og:image" content="https://calcaterra.casa/img/og/og-normandie.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="Massimo Calcaterra">
+<meta name="theme-color" content="#FBFBFA">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚓</text></svg>">
+<link rel="apple-touch-icon" href="/normandie-bretagna/giorno-05/apple-touch-icon.png">
+<link rel="manifest" href="/normandie-bretagna/giorno-05/site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Cap Fréhel">
+<meta name="application-name" content="Cap Fréhel">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/base.css?v=6cbc266f">
+<link rel="stylesheet" href="../assets/day.css?v=5f83dd4b">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+<style>
+  /* Solo cio' che questa pagina aggiunge al foglio comune. */
+  .dayhero{position:relative;min-height:46vh;display:flex;align-items:flex-end;
+    color:#fff;overflow:hidden}
+  .dayhero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .dayhero .veil{position:absolute;inset:0;
+    background:linear-gradient(0deg,rgba(20,38,28,.88),rgba(20,38,28,.2) 60%,rgba(20,38,28,.12))}
+  .dayhero .inner{position:relative;max-width:1180px;margin:0 auto;width:100%;padding:28px 24px 40px}
+  .dayhero .backlink{color:rgba(255,255,255,.85);font-family:Poppins,sans-serif;font-weight:600;
+    font-size:.84rem}
+  .dayhero .eyebrow{font-family:Poppins,sans-serif;font-size:.76rem;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;color:#cfe6d6;margin-top:18px}
+  .dayhero h1{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3.1rem);
+    line-height:1.05;letter-spacing:-.02em;margin:.2em 0 0}
+  .dayhero .sub{max-width:66ch;margin-top:12px;font-size:1.02rem;color:rgba(255,255,255,.92)}
+  .daydata{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:20px}
+  .daydata div{font-size:.86rem;color:rgba(255,255,255,.78)}
+  .daydata b{display:block;color:#fff;font-family:Poppins,sans-serif;font-weight:600;font-size:.98rem}
+
+  .allerta{margin-top:24px;background:#FFF6F2;border:2px solid var(--coral);
+    border-radius:14px;padding:20px 22px}
+  .allerta h3{font-family:Poppins,sans-serif;font-size:1rem;margin:0 0 4px;color:var(--coral-text)}
+  .allerta p{margin:12px 0 0;font-size:.92rem;color:#5a3d33}
+  .allerta p:first-of-type{margin-top:10px}
+  .allerta .quando{font-family:Poppins,sans-serif;font-size:.66rem;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--coral-text)}
+
+  .ore{margin-top:22px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .ore .r{display:flex;gap:16px;padding:11px 16px;border-top:1px solid var(--line);
+    background:var(--paper);font-size:.9rem;align-items:baseline}
+  .ore .r:first-child{border-top:0}
+  .ore .r.forte{background:#F1FAF4}
+  .ore .h{font-family:Poppins,sans-serif;font-weight:700;color:var(--green-d);
+    min-width:5.6em;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
+
+<div class="topbar">
+  <div class="row">
+    <a href="/"><span class="brand">home</span></a>
+    <nav class="topnav" aria-label="Sezioni della pagina">
+      <a href="#marea">La marea</a>
+      <a href="#giornata">La giornata</a>
+      <a href="#saintmalo">Saint-Malo</a>
+      <a href="#frehel">Cap Fréhel</a>
+      <a href="#latte">Fort la Latte</a>
+      <a href="#mangiare">Dove mangiare</a>
+      <a href="#mappa">Mappa</a>
+      <a href="../#g5">Nella guida</a>
+    </nav>
+  </div>
+</div>
+
+<main id="contenuto">
+<header class="dayhero">
+  <picture>
+    <source type="image/avif" sizes="100vw" srcset="/img/g/cote-emeraude-fort-la-latte-480.avif 480w, /img/g/cote-emeraude-fort-la-latte-800.avif 800w, /img/g/cote-emeraude-fort-la-latte-1200.avif 1200w, /img/g/cote-emeraude-fort-la-latte-1800.avif 1800w">
+    <img class="bg" src="/img/g/cote-emeraude-fort-la-latte-1200.jpg" sizes="100vw" srcset="/img/g/cote-emeraude-fort-la-latte-480.jpg 480w, /img/g/cote-emeraude-fort-la-latte-800.jpg 800w, /img/g/cote-emeraude-fort-la-latte-1200.jpg 1200w" width="1200" height="536" alt="Fort la Latte sullo sperone di roccia, sulla Costa di Smeraldo" fetchpriority="high" decoding="async">
+  </picture>
+  <div class="veil"></div>
+  <div class="inner">
+    <a class="backlink" href="../#g5">← Guida completa · Giorno 5 di 11</a>
+    <div class="eyebrow">Giorno 5 · Lunedì 10 agosto 2026</div>
+    <h1>Saint-Malo corsara e il castello sul mare</h1>
+    <div class="sub">La mattina dentro le mura di una città che visse di guerra di corsa e ne è
+      ancora fiera; il pomeriggio sulle falesie rosse del Cap Fréhel e in un castello del
+      Trecento piantato su uno sperone di roccia. Poi centoventi chilometri verso ovest, che
+      sembrano una fatica in più e sono invece quella tolta a domani.</div>
+    <div class="daydata">
+      <div>Il percorso<br><b>171 km · 2h52 di guida</b></div>
+      <div>Il vincolo<br><b>Fort la Latte chiude alle 18:30</b></div>
+      <div>Si dorme<br><b>Perros-Guirec, sul granito rosa</b></div>
+      <div id="dayweather" class="meteo loading">Meteo…</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<article class="day" style="border-top:0;padding-top:34px">
+
+<h2 id="marea">La prima cosa da guardare stamattina è la marea</h2>
+<p>Non il meteo: la marea. Da Saint-Malo si va a piedi sull'<b>Île du Grand Bé</b>, dove è
+  sepolto <b>Chateaubriand</b> — tomba senza nome, girata verso il mare aperto, com'era la sua
+  richiesta. Ma il passaggio è una lingua di sabbia che <b>esiste solo con la bassa marea</b>,
+  e per il resto del tempo l'isola è un'isola.</p>
+
+<div class="allerta">
+  <div class="quando">Da controllare al risveglio</div>
+  <h3>Il Grand Bé si raggiunge solo con l'acqua bassa</h3>
+  <p>All'imbocco del passaggio, sulla <b>Plage de Bon-Secours</b>, c'è un cartello con gli orari
+    di apertura e chiusura del giorno: è quello che conta, non le previsioni generiche. La
+    finestra utile si apre circa <b>tre ore prima</b> della bassa marea e si chiude circa
+    <b>tre ore dopo</b>.</p>
+  <p>La regola pratica è brutale e va presa sul serio: <b>chi resta bloccato sull'isola ci resta
+    per ore</b>, perché non c'è altro modo di tornare. Traversata e visita chiedono tre quarti
+    d'ora scarsi — si va, si guarda, si torna. E si guarda l'orologio all'andata, non al ritorno.</p>
+</div>
+
+<h2 id="giornata">Come far quadrare la giornata</h2>
+<p>Il percorso è <b>Saint-Malo → Cap Fréhel → Fort la Latte → Perros-Guirec</b>. I due capi
+  stanno a quattro chilometri l'uno dall'altro e si fanno di seguito: da Saint-Malo al Cap Fréhel
+  sono <b>44,8 km e 56 minuti</b>, dal capo al forte <b>3,9 km e 6 minuti</b>, e poi il
+  trasferimento lungo, <b>122,9 km e 1h50</b> fino a Perros-Guirec.</p>
+
+<div class="ore">
+  <div class="r"><span class="h">9:00</span><span>Il giro delle mura, prima che la città si riempia</span></div>
+  <div class="r forte"><span class="h">10:00</span><span><b>Grand Bé</b>, se la marea lo consente — tre quarti d'ora</span></div>
+  <div class="r"><span class="h">11:00</span><span>Partenza da Saint-Malo</span></div>
+  <div class="r"><span class="h">12:00</span><span><b>Cap Fréhel</b>: il faro, le falesie rosse, il sentiero sul ciglio</span></div>
+  <div class="r"><span class="h">13:15</span><span>Pranzo — sul capo o a Plévenon</span></div>
+  <div class="r forte"><span class="h">14:30</span><span><b>Fort la Latte</b> — chiude alle 18:30, ultimo ingresso prima</span></div>
+  <div class="r"><span class="h">16:15</span><span>Partenza: 122,9 km verso ovest</span></div>
+  <div class="r"><span class="h">18:10</span><span>Perros-Guirec, <b>Logis Hôtel Ker Mor</b>, sulla spiaggia di Trestraou</span></div>
+  <div class="r"><span class="h">21:40</span><span>Tramonto. Il Sentier des Douaniers comincia sotto l'albergo</span></div>
+</div>
+
+<div class="note"><b>Perché stasera si dorme a Perros-Guirec e non a Saint-Malo.</b> Da Fort la
+  Latte sono <b>122,9 km e 1h50</b> nel tardo pomeriggio, e sembrano una fatica in più.
+  Restando a Saint-Malo, però, il Giorno 6 partirebbe con <b>167 km e 2h12</b> solo per arrivare
+  a Ploumanac'h, prima ancora di camminare — e domani è la vigilia dell'eclissi. Spostata qui,
+  quella distanza cade nella giornata più leggera delle due.</div>
+
+<h2 id="saintmalo">Saint-Malo, in tre ore</h2>
+<div class="photo-row" style="grid-template-columns:1.501fr 1.501fr;aspect-ratio:3.002">
+  <figure class="ph"><picture>
+    <source type="image/avif" sizes="(min-width:1228px) 559px, (min-width:620px) 48vw, 100vw" srcset="/img/g/remparts-saint-malo-2-480.avif 480w, /img/g/remparts-saint-malo-2-800.avif 800w, /img/g/remparts-saint-malo-2-1200.avif 1200w">
+    <img src="/img/g/remparts-saint-malo-2-800.jpg" sizes="(min-width:1228px) 559px, (min-width:620px) 48vw, 100vw" srcset="/img/g/remparts-saint-malo-2-480.jpg 480w, /img/g/remparts-saint-malo-2-800.jpg 800w, /img/g/remparts-saint-malo-2-1200.jpg 1200w" width="800" height="533" alt="I bastioni di Saint-Malo" loading="lazy" decoding="async">
+    </picture>
+    <figcaption>Un chilometro e settecento metri di cammino sopra i tetti da una parte e la
+      marea dall'altra. Gratis, sempre aperto.</figcaption>
+  </figure>
+  <figure class="ph"><picture>
+    <source type="image/avif" sizes="(min-width:1228px) 559px, (min-width:620px) 48vw, 100vw" srcset="/img/g/cap-frehel-falesie-e-mare-480.avif 480w, /img/g/cap-frehel-falesie-e-mare-800.avif 800w, /img/g/cap-frehel-falesie-e-mare-1200.avif 1200w">
+    <img src="/img/g/cap-frehel-falesie-e-mare-800.jpg" sizes="(min-width:1228px) 559px, (min-width:620px) 48vw, 100vw" srcset="/img/g/cap-frehel-falesie-e-mare-480.jpg 480w, /img/g/cap-frehel-falesie-e-mare-800.jpg 800w, /img/g/cap-frehel-falesie-e-mare-1200.jpg 1200w" width="800" height="533" alt="Le falesie rosse del Cap Fréhel sul mare" loading="lazy" decoding="async">
+    </picture>
+    <figcaption>Al Cap Fréhel l'arenaria rossa cade a picco per settanta metri. Il sentiero
+      corre sul ciglio, senza parapetti.</figcaption>
+  </figure>
+</div>
+<p>Il giro dei bastioni si fa in un'ora buona con le soste, e non si paga. Dal lato ovest si
+  vedono le isole — il Grand Bé e, più in là, il <b>Petit Bé</b> con il suo forte di Vauban — e
+  con l'acqua bassa la spiaggia si allarga fino a sembrare un'altra città.</p>
+<div class="curio"><b>Quello che si guarda è quasi tutto rifatto.</b> Nell'agosto 1944 Saint-Malo
+  intra-muros bruciò per una settimana e ne restò in piedi meno di un quinto. La ricostruzione,
+  finita negli anni Sessanta, fu fatta con il granito delle stesse cave e sulle stesse piante:
+  il risultato inganna quasi tutti i visitatori, che la credono medievale.</div>
+<div class="cards">
+  <div class="infocard"><div class="cl">Le mura</div><div class="cv"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Remparts%20de%20Saint-Malo" target="_blank" rel="noopener">Sempre aperte</a>, gratuite · 1,7 km</div></div>
+  <div class="infocard"><div class="cl">Grand Bé</div><div class="cv"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%8Ele%20du%20Grand%20B%C3%A9%2C%20Saint-Malo" target="_blank" rel="noopener">Solo con la bassa marea</a> · gratis</div></div>
+  <div class="infocard"><div class="cl">Chateaubriand</div><div class="cv">Tomba senza nome, rivolta al mare aperto</div></div>
+  <div class="infocard"><div class="cl">Da dove si parte</div><div class="cv"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Plage%20de%20Bon-Secours%2C%20Saint-Malo" target="_blank" rel="noopener">Plage de Bon-Secours</a>, sotto le mura</div></div>
+</div>
+
+<h2 id="frehel">Cap Fréhel, e il sentiero senza parapetti</h2>
+<p>Il <b>Cap Fréhel</b> è un promontorio di arenaria rossa e scisto che cade a picco per una
+  settantina di metri sull'acqua, dentro un <b>Grand Site de France</b> di quattrocento ettari di
+  landa — eriche, ginestre, e in agosto il viola e il giallo insieme. Il <b>faro</b> del 1950 sta
+  in cima; quello vecchio di Vauban, del Seicento, è ancora lì accanto.</p>
+<p>Il tratto di GR34 che gira attorno al capo corre <b>sul ciglio, senza protezioni</b>: è
+  spettacolare e va preso per quello che è. Con i bambini si sta all'interno del sentiero e si
+  guarda dove si mettono i piedi.</p>
+<div class="curio"><b>Le falesie sono una riserva di uccelli marini.</b> Sulle pareti nidificano
+  gabbiani tridattili, urie e gazze marine — è una delle colonie più importanti della costa
+  bretone. La zona protetta di Fauconnière si osserva dal sentiero: da fine luglio molti giovani
+  hanno già lasciato il nido, ma il viavai continua.</div>
+<div class="cards">
+  <div class="infocard"><div class="cl">Il sito</div><div class="cv"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Cap%20Fr%C3%A9hel%2C%20Pl%C3%A9venon" target="_blank" rel="noopener">Sempre accessibile</a>, gratuito</div></div>
+  <div class="infocard"><div class="cl">Parcheggio</div><div class="cv"><b>3 €</b> per l'auto, pagamento con carta</div></div>
+  <div class="infocard"><div class="cl">Il faro</div><div class="cv">Visitabile da aprile a ottobre</div></div>
+  <div class="infocard"><div class="cl">Quanto basta</div><div class="cv">Un'ora e un quarto per il giro del capo</div></div>
+</div>
+
+<h2 id="latte">Fort la Latte, che è un castello vero</h2>
+<p>Quattro chilometri più a est, su uno sperone di roccia separato dalla terraferma da due
+  fenditure, sta il <b>Château de la Roche Goyon</b> — che tutti chiamano <b>Fort la Latte</b>.
+  È del <b>XIV secolo</b>, rimaneggiato da Vauban, e non è una rovina scenografica: si
+  attraversano due ponti levatoi, si sale al mastio, e dalla cima si vede il Cap Fréhel di
+  profilo.</p>
+<div class="curio"><b>Lo avete già visto al cinema.</b> Fort la Latte fu il set de <em>I
+  Vichinghi</em> (1958) con Kirk Douglas e Tony Curtis: la scena dell'assalto al castello è
+  girata su questi ponti. Da allora è tornato più volte sullo schermo, ma quella resta la sua
+  parte più famosa.</div>
+<div class="cards">
+  <div class="infocard"><div class="cl">Orari</div><div class="cv"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Fort%20la%20Latte%2C%20Pl%C3%A9venon" target="_blank" rel="noopener">Luglio e agosto 10:00-18:30</a></div></div>
+  <div class="infocard"><div class="cl">Ingresso</div><div class="cv"><b>8,50 €</b> · studenti 7,50 € · 5-12 anni 6 € · gratis sotto i 5</div></div>
+  <div class="infocard"><div class="cl">Parcheggio</div><div class="cv">Libero, ma <b>600 metri</b> dal castello</div></div>
+  <div class="infocard"><div class="cl">Quanto basta</div><div class="cv">Un'ora e mezza, camminata compresa</div></div>
+</div>
+<div class="tip"><b>I seicento metri dal parcheggio non sono piani.</b> Si scende verso il mare
+  all'andata e si risale al ritorno, su un sentiero di terra battuta. Con il caldo di agosto
+  portatevi l'acqua da qui: dentro il forte non c'è granché, e la salita di ritorno arriva a fine
+  visita, quando si è già stanchi.</div>
+
+<h2 id="mangiare">Dove mangiare</h2>
+<p>Fra i due capi non c'è nulla di indipendente che valga il nome, e ci si arrangia bene: quello
+  che segue tiene conto di dove si è alle ore giuste, non di dove si mangia meglio in assoluto.</p>
+
+<h3>La colazione, e il pranzo da portarsi</h3>
+<div class="locali">
+  <div class="locale" id="loc-bordier2" data-lat="48.64884" data-lon="-2.02566" data-cat="colazione">
+    <div class="lcat">Bottega · intra-muros</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=La%20Maison%20du%20Beurre%20Bordier%2C%209%20rue%20de%20l%27Orme%2C%20Saint-Malo" target="_blank" rel="noopener">La Maison du Beurre Bordier</a></div>
+    <div class="lmeta">9 rue de l'Orme, dentro le mura · bottega</div>
+    <p class="lperche">Il burro di <b>Jean-Yves Bordier</b>, latte crudo e impasto a mano, è
+      quello che i ristoranti stellati si fanno spedire. Con una baguette e un pezzo di questo si
+      pranza sul ciglio del Cap Fréhel meglio che in qualunque tavola dei dintorni.</p>
+    <details class="lmenu"><summary>Cosa comprare</summary>
+      <ul>
+        <li><span>Beurre demi-sel, e le versioni alle alghe e al pepe di Timut</span></li>
+        <li><span>Formaggi affinati nella stessa bottega</span></li>
+      </ul>
+    </details>
+  </div>
+  <div class="locale" id="loc-frehel" data-lat="48.68139" data-lon="-2.31899" data-cat="pranzo">
+    <div class="lcat">Pranzo · sul capo</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Restaurant%20du%20Cap%20Fr%C3%A9hel%2C%20Pl%C3%A9venon" target="_blank" rel="noopener">Il ristorante del Cap Fréhel</a></div>
+    <div class="lmeta">Accanto al parcheggio del faro · aperto in stagione</div>
+    <p class="lperche">L'unica tavola del promontorio, e sta esattamente dove serve: si esce dal
+      sentiero e si è arrivati. Galettes, insalate e piatti di mare senza pretese. Vale per la
+      posizione, che a mezzogiorno con quel panorama non è poco.</p>
+    <details class="lmenu"><summary>Cosa aspettarsi</summary>
+      <ul>
+        <li><span>Galettes di grano saraceno e sidro</span></li>
+        <li><span>Insalate di granchio e di gamberi</span></li>
+        <li><span>Terrazza affacciata sulla landa</span></li>
+      </ul>
+    </details>
+  </div>
+</div>
+
+<h3>La cena a Perros-Guirec</h3>
+<div class="locali">
+  <div class="locale" id="loc-trestraou" data-lat="48.81829" data-lon="-3.45259" data-cat="cena">
+    <div class="lcat">Cena · sulla spiaggia</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Boulevard%20Joseph%20Le%20Bihan%2C%20plage%20de%20Trestraou%2C%20Perros-Guirec" target="_blank" rel="noopener">Il fronte di Trestraou</a></div>
+    <div class="lmeta">Boulevard Joseph Le Bihan · sotto l'albergo</div>
+    <p class="lperche">Il lungomare di Trestraou è a cento metri dal Ker Mor, e ad agosto è
+      tutto aperto: crêperie, brasserie, pesce. Arrivando alle 18:10 c'è il tempo di scendere a
+      guardare le insegne e le carte esposte prima di scegliere — che in una località di mare in
+      alta stagione è più affidabile di qualunque elenco.</p>
+    <details class="lmenu"><summary>Cosa cercare</summary>
+      <ul>
+        <li><span>Cozze della baia, ostriche di Paimpol</span></li>
+        <li><span>Galettes complètes, e il far breton</span></li>
+        <li><span>Una carta corta e scritta a mano: è il segno che cambia col pescato</span></li>
+      </ul>
+    </details>
+  </div>
+</div>
+<div class="tip"><b>Domani si cammina prima di colazione, se volete.</b> Il Sentier des Douaniers
+  parte dalla spiaggia sotto l'albergo. Chiedete stasera al ricevimento a che ora servono la
+  colazione: partire alle 7:30 sul granito rosa con la luce bassa è la cosa migliore di tutta la
+  Côte de Granit Rose, e alle 9:00 il sentiero è già pieno.</div>
+
+<h2 id="mappa">La mappa del giorno</h2>
+<p style="color:var(--body)">Le tappe di oggi, su una mappa vera. Se leggete questa pagina già in
+  viaggio, il tasto nell'angolo della mappa vi dice quali sono più vicine a dove siete in questo
+  momento — la posizione resta nel telefono, non viene inviata da nessuna parte. I quadratini
+  arancioni sono i locali della sezione qui sopra.</p>
+
+<div class="daymap-wrap">
+  <div class="daymapbox">
+  <div id="daymap" class="daymap"></div>
+    <button class="locbtn" id="locBtn" type="button" aria-label="Dove sono rispetto alle tappe" title="Dove sono rispetto alle tappe"><svg class="ico" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A9 9 0 0013 3.06V1h-2v2.06A9 9 0 003.06 11H1v2h2.06A9 9 0 0011 20.94V23h2v-2.06A9 9 0 0020.94 13H23v-2h-2.06zM12 19a7 7 0 110-14 7 7 0 010 14z"/></svg></button>
+  </div>
+  <ul class="mappalegenda">
+    <li><span class="pin tappa"></span>Tappa del giorno</li>
+    <li><span class="pin opzionale"></span>Se avanza tempo</li>
+    <li><span class="pin cibo"></span>Dove mangiare</li>
+    <li><span class="pin notte"></span>Perros-Guirec, dove si dorme</li>
+  </ul>
+  <div class="daybar">
+    <span class="locmsg" id="locMsg"></span>
+  </div>
+  <div class="vicini" id="vicini">
+    <h4>Le più vicine a te ora</h4>
+    <ul id="viciniList"></ul>
+  </div>
+</div>
+
+<h2 id="prenotazioni-oggi">Prenotazione di questa notte</h2>
+<div class="cards">
+  <div class="infocard"><div class="cl">Dove</div><div class="cv"><b><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Logis%20H%C3%B4tel%20Ker%20Mor%2C%2038%20rue%20du%20Mar%C3%A9chal%20Foch%2C%20Perros-Guirec" target="_blank" rel="noopener">Logis Hôtel Ker Mor</a></b>, Perros-Guirec — sulla spiaggia di Trestraou</div></div>
+  <div class="infocard"><div class="cl">Fatta</div><div class="cv">Prenotazione confermata</div></div>
+  <div class="infocard"><div class="cl">Da chiedere</div><div class="cv">L'ora della colazione, per la camminata di domani mattina</div></div>
+  <div class="infocard"><div class="cl">Tutte le notti</div><div class="cv"><a href="../#prenotazioni">Vedi la tabella completa →</a></div></div>
+</div>
+
+</article>
+</div>
+
+<footer class="foot" style="max-width:1180px;margin:40px auto 0;padding:20px 24px 50px">
+  <div class="credits">
+    <h4>Crediti foto</h4>
+    <ul>
+      <li>Fort la Latte sulla Costa di Smeraldo — Benh LIEU SONG · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Cote_Emeraude_Fort_La_Latte.jpg" rel="noopener" target="_blank">file originale</a></li>
+      <li>I bastioni di Saint-Malo — Gzen92 · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Remparts_(Saint-Malo)_(2).jpg" rel="noopener" target="_blank">file originale</a></li>
+      <li>Le falesie del Cap Fréhel — W. Bulach · <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File%3A00_3608_Blick_auf_das_Cap_Fr%C3%A9hel%2C_Frankreich.jpg" rel="noopener" target="_blank">file originale</a></li>
+      <li class="cnote">Immagini ridimensionate e ricompresse per il web: nessun altro intervento. Le opere in licenza CC BY-SA restano disponibili alle stesse condizioni. Mappa: dati © <a href="https://www.openstreetmap.org/copyright" rel="noopener" target="_blank">contributori di OpenStreetMap</a>, tessere © <a href="https://carto.com/attributions" rel="noopener" target="_blank">CARTO</a> (stile Voyager). Meteo: <a href="https://open-meteo.com/" rel="noopener" target="_blank">Open-Meteo</a>. Orari e prezzi verificati il 30 luglio 2026 sul sito di <a href="https://www.lefortlalatte.com/" rel="noopener" target="_blank">Fort la Latte</a> e sulle pagine turistiche di Dinan-Cap Fréhel.</li>
+    </ul>
+  </div>
+  <p style="margin-top:24px"><a href="../#g5">← Torna alla guida completa</a> · Giornata 5 di 11.</p>
+</footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="../assets/day.js?v=9a7bf918"></script>
+<script src="../assets/nav.js?v=09c6a6ee" defer></script>
+<script>
+const TAPPE = [
+  {id:"remparts", name:"Le mura di Saint-Malo", lat:48.65030, lon:-2.02650, kind:"tappa", note:"1,7 km di giro, gratis e sempre aperte", maps:DayGuide.urlPosto("Remparts de Saint-Malo")},
+  {id:"grandbe",  name:"Île du Grand Bé",     lat:48.65226, lon:-2.03326, kind:"tappa", note:"Solo con la bassa marea. La tomba di Chateaubriand", maps:DayGuide.urlPosto("Île du Grand Bé, Saint-Malo")},
+  {id:"frehel",   name:"Cap Fréhel",          lat:48.68139, lon:-2.31899, kind:"tappa", note:"Falesie e faro · parcheggio 3 €", maps:DayGuide.urlPosto("Cap Fréhel, Plévenon")},
+  {id:"latte",    name:"Fort la Latte",       lat:48.66820, lon:-2.28487, kind:"tappa", note:"10:00-18:30 · 8,50 € · 600 m dal parcheggio", maps:DayGuide.urlPosto("Fort la Latte, Plévenon")},
+  {id:"kermor",   name:"Logis Hôtel Ker Mor", lat:48.81829, lon:-3.45259, kind:"notte", note:"Perros-Guirec, sulla spiaggia di Trestraou", maps:DayGuide.urlPosto("Logis Hôtel Ker Mor, Perros-Guirec")}
+];
+
+const LOCALI = DayGuide.localiDalDOM();
+const PUNTI = TAPPE.concat(LOCALI);
+
+const mappa = DayGuide.initMap("daymap", {
+  center:[48.73, -2.74], zoom:9, stops: PUNTI
+});
+if(!mappa){
+  const el=document.getElementById("daymap");
+  if(el) el.innerHTML='<p style="padding:20px;color:var(--muted)">Mappa non disponibile al momento.</p>';
+}
+
+DayGuide.wireGeolocation({
+  btnId:"locBtn", msgId:"locMsg", panelId:"vicini", listId:"viciniList",
+  stops: PUNTI, markers: mappa ? mappa.markers : {}
+});
+
+DayGuide.initWeather("dayweather", {
+  lat:48.6814, lon:-2.3190, dateISO:"2026-08-10",
+  dataLeggibile:"10 agosto", label:"Cap Fréhel"
+});
+</script>
+</body>
+</html>

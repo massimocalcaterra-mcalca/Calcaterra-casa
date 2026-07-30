@@ -319,9 +319,18 @@ fotografa l'elemento** (`locator.screenshot`), e per sapere se un'immagine
 dipinge davvero la si disegna su una `<canvas>` e si legge un pixel.
 
 **Ricordarsi l'autore di una fotografia.** Scrivendo i crediti del Giorno 2
-avevo messo a memoria due nomi per foto che erano gia' in archivio: sbagliati
-tutti e due, e con la licenza sbagliata. **L'autore si rilegge da Commons**
-(`prop=imageinfo&iiprop=extmetadata`) ogni volta, anche per un file vecchio.
+avevo messo a memoria due nomi per foto gia' in archivio: sbagliati tutti e
+due, licenza compresa. Rifatto identico sul Giorno 4, con altre due.
+**L'autore non si ricorda: si copia.** La fonte piu' rapida e' il blocco
+crediti della guida principale, che li ha gia' tutti con il link al file su
+Commons — `grep` li'. Per una foto nuova, `prop=imageinfo&iiprop=extmetadata`
+dalle API di Commons. Mai a memoria, nemmeno per un file che sta gia' in
+`/img/g/`.
+
+**Inventare un nome di file su Commons.** Il nostro slug non e' il titolo del
+file: `cap-frehel-falesie-e-mare` sta su Commons come
+`00_3608_Blick_auf_das_Cap_Fréhel,_Frankreich.jpg`. Ricostruire l'URL dallo
+slug produce un link rotto che sembra giusto.
 
 **Riusare un nome di classe che c'e' gia'.** `.mapbox` in `base.css` e' la
 mappa schematica dell'itinerario, e si porta dietro
@@ -350,7 +359,11 @@ piccole: per il Giorno 3, le croci di Colleville.
 | 1 | Rouen | **fatta** |
 | 2 | Étretat e Le Havre | **fatta** |
 | 3 | Le spiagge dello Sbarco | **fatta** |
-| 4-11 | dal Mont-Saint-Michel al rientro | da fare |
+| 4 | Mont-Saint-Michel e Saint-Malo | **fatta** |
+| 5 | Cap Fréhel e Fort la Latte | **fatta** |
+| 6 | Ploumanac'h e Saint-Mathieu | **fatta** |
+| 7 | L'eclissi dalla Pointe du Van | **fatta** |
+| 8-11 | da Carnac al rientro | da fare |
 
 Sullo scaffale di `/viaggi/` i volumi accesi sono quelli con la pagina fatta:
 il Giorno 3 è passato da `.book.giorno.futuro` (un `<div>` grigio) a

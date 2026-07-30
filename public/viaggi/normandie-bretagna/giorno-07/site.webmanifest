@@ -1,0 +1,29 @@
+{
+ "name": "Giorno 7 · L'eclissi del 12 agosto",
+ "short_name": "Eclissi",
+ "description": "L'eclissi solare del 12 agosto 2026 dalla Pointe du Van, con mappa e meteo",
+ "start_url": "/normandie-bretagna/giorno-07/",
+ "scope": "/normandie-bretagna/giorno-07/",
+ "display": "standalone",
+ "background_color": "#FBFBFA",
+ "theme_color": "#FBFBFA",
+ "lang": "it",
+ "icons": [
+  {
+   "src": "/normandie-bretagna/giorno-07/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/normandie-bretagna/giorno-07/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "/normandie-bretagna/giorno-07/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}

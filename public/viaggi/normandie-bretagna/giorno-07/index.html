@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giorno 7 — Crozon, la Pointe du Raz e l'eclissi · Normandie &amp; Bretagne</title>
+<meta name="description" content="Guida dettagliata del Giorno 7: l'eclissi solare del 12 agosto 2026 dalla Pointe du Van, con altezza e azimut del sole ora per ora, il piano B se il cielo si copre, e la giornata sulle due penisole di Crozon e del Cap Sizun.">
+<link rel="canonical" href="https://viaggi.calcaterra.casa/normandie-bretagna/giorno-07/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Calcaterra Casa">
+<meta property="og:locale" content="it_IT">
+<meta property="og:url" content="https://viaggi.calcaterra.casa/normandie-bretagna/giorno-07/">
+<meta property="og:title" content="Giorno 7 — L'eclissi del 12 agosto 2026">
+<meta property="og:description" content="Il 96% del sole coperto, dalla Pointe du Van. Con gli orari veri, l'azimut e il piano B.">
+<meta property="og:image" content="https://calcaterra.casa/img/og/og-normandie.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="Massimo Calcaterra">
+<meta name="theme-color" content="#FBFBFA">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚓</text></svg>">
+<link rel="apple-touch-icon" href="/normandie-bretagna/giorno-07/apple-touch-icon.png">
+<link rel="manifest" href="/normandie-bretagna/giorno-07/site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Eclissi">
+<meta name="application-name" content="Eclissi">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/base.css?v=6cbc266f">
+<link rel="stylesheet" href="../assets/day.css?v=5f83dd4b">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+<style>
+  /* Solo cio' che questa pagina aggiunge al foglio comune. */
+  .dayhero{position:relative;min-height:46vh;display:flex;align-items:flex-end;
+    color:#fff;overflow:hidden}
+  .dayhero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .dayhero .veil{position:absolute;inset:0;
+    background:linear-gradient(0deg,rgba(20,38,28,.88),rgba(20,38,28,.2) 60%,rgba(20,38,28,.12))}
+  .dayhero .inner{position:relative;max-width:1180px;margin:0 auto;width:100%;padding:28px 24px 40px}
+  .dayhero .backlink{color:rgba(255,255,255,.85);font-family:Poppins,sans-serif;font-weight:600;
+    font-size:.84rem}
+  .dayhero .eyebrow{font-family:Poppins,sans-serif;font-size:.76rem;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;color:#cfe6d6;margin-top:18px}
+  .dayhero h1{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3.1rem);
+    line-height:1.05;letter-spacing:-.02em;margin:.2em 0 0}
+  .dayhero .sub{max-width:66ch;margin-top:12px;font-size:1.02rem;color:rgba(255,255,255,.92)}
+  .daydata{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:20px}
+  .daydata div{font-size:.86rem;color:rgba(255,255,255,.78)}
+  .daydata b{display:block;color:#fff;font-family:Poppins,sans-serif;font-weight:600;font-size:.98rem}
+
+  .allerta{margin-top:24px;background:#FFF6F2;border:2px solid var(--coral);
+    border-radius:14px;padding:20px 22px}
+  .allerta h3{font-family:Poppins,sans-serif;font-size:1rem;margin:0 0 4px;color:var(--coral-text)}
+  .allerta p{margin:12px 0 0;font-size:.92rem;color:#5a3d33}
+  .allerta p:first-of-type{margin-top:10px}
+  .allerta .quando{font-family:Poppins,sans-serif;font-size:.66rem;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--coral-text)}
+
+  .ore{margin-top:22px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .ore .r{display:flex;gap:16px;padding:11px 16px;border-top:1px solid var(--line);
+    background:var(--paper);font-size:.9rem;align-items:baseline}
+  .ore .r:first-child{border-top:0}
+  .ore .r.forte{background:#F1FAF4}
+  .ore .h{font-family:Poppins,sans-serif;font-weight:700;color:var(--green-d);
+    min-width:5.6em;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
+
+<div class="topbar">
+  <div class="row">
+    <a href="/"><span class="brand">home</span></a>
+    <nav class="topnav" aria-label="Sezioni della pagina">
+      <a href="#occhiali">Gli occhiali</a>
+      <a href="#eclissi">L'eclissi</a>
+      <a href="#pianob">Il piano B</a>
+      <a href="#giornata">La giornata</a>
+      <a href="#penhir">Pen-Hir</a>
+      <a href="#raz">La Pointe du Raz</a>
+      <a href="#mangiare">La cena</a>
+      <a href="#mappa">Mappa</a>
+      <a href="../#g7">Nella guida</a>
+    </nav>
+  </div>
+</div>
+
+<main id="contenuto">
+<header class="dayhero">
+  <picture>
+    <source type="image/avif" sizes="100vw" srcset="/img/g/pointe-du-raz-bei-sonnenuntergang-480.avif 480w, /img/g/pointe-du-raz-bei-sonnenuntergang-800.avif 800w, /img/g/pointe-du-raz-bei-sonnenuntergang-1200.avif 1200w, /img/g/pointe-du-raz-bei-sonnenuntergang-1800.avif 1800w">
+    <img class="bg" src="/img/g/pointe-du-raz-bei-sonnenuntergang-1200.jpg" sizes="100vw" srcset="/img/g/pointe-du-raz-bei-sonnenuntergang-480.jpg 480w, /img/g/pointe-du-raz-bei-sonnenuntergang-800.jpg 800w, /img/g/pointe-du-raz-bei-sonnenuntergang-1200.jpg 1200w" width="1200" height="800" alt="La Pointe du Raz al tramonto" fetchpriority="high" decoding="async">
+  </picture>
+  <div class="veil"></div>
+  <div class="inner">
+    <a class="backlink" href="../#g7">← Guida completa · Giorno 7 di 11</a>
+    <div class="eyebrow">Giorno 7 · Mercoledì 12 agosto 2026</div>
+    <h1>L'eclissi, dalla Pointe du Van</h1>
+    <div class="sub">Il giorno fissato del viaggio, e il più lungo. Si scende dalla punta
+      estrema del Finistère toccando le due penisole più belle di Bretagna, per arrivare al
+      tramonto nel punto in cui l'orizzonte a ovest-nordovest è completamente libero. La
+      tabella di oggi non è un suggerimento: alle 19:22 il fenomeno comincia, e non aspetta.</div>
+    <div class="daydata">
+      <div>Il percorso<br><b>198 km · 3h41 di guida</b></div>
+      <div>L'eclissi<br><b>19:22 → 21:12 · massimo 20:19</b></div>
+      <div>Si dorme<br><b>Baie des Trépassés</b></div>
+      <div id="dayweather" class="meteo loading">Meteo…</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<article class="day" style="border-top:0;padding-top:34px">
+
+<h2 id="occhiali">Gli occhiali non si tolgono mai</h2>
+<p>È la prima cosa perché è l'unica che può fare un danno permanente, e perché l'errore è facile
+  da commettere in buona fede: molti hanno in mente il racconto di un'eclissi <b>totale</b>, dove
+  c'è un istante in cui il filtro si può togliere. <b>Qui quell'istante non esiste.</b></p>
+
+<div class="allerta">
+  <div class="quando">Da portare, uno a testa</div>
+  <h3>Non esiste l'istante sicuro</h3>
+  <p>Al massimo dell'eclissi resta scoperto circa il <b>3-4% del disco solare</b>: una falce
+    sottile, ma piena di luce, e sufficiente a bruciare la retina senza che si senta dolore —
+    la retina non ha recettori del dolore, il danno lo si scopre dopo.</p>
+  <p>Servono occhiali certificati <b>ISO 12312-2</b>, e vanno tenuti <b>dalle 19:22 alle
+    21:12</b>, senza eccezioni. Occhiali da sole normali, lastre radiografiche, vetri affumicati
+    e CD non servono a niente: filtrano la luce visibile e lasciano passare l'infrarosso.</p>
+  <p>Vale anche per <b>la macchina fotografica e il telefono</b>: senza un filtro solare davanti
+    all'obiettivo il sensore si rovina in pochi secondi, e non si ripara.</p>
+</div>
+
+<h2 id="eclissi">L'eclissi del 12 agosto 2026, con i numeri</h2>
+<p>La luna coprirà circa il <b>96-97%</b> del disco solare. La fascia di totalità passa lontano —
+  Siberia artica, Groenlandia, Islanda, Spagna del nord e Baleari — e qui resta una falce
+  sottile. Non è la stessa cosa di una totale, e vale la pena saperlo prima: quello che si vede
+  è <b>il cielo che cala di luce</b> in un modo che non somiglia al tramonto e non si dimentica.</p>
+
+<div class="tbl">
+  <table>
+    <caption class="visually-hidden">Posizione del sole durante l'eclissi alla Pointe du Van</caption>
+    <thead><tr><th>Momento</th><th>Ora</th><th>Altezza del sole</th><th>Azimut</th></tr></thead>
+    <tbody>
+      <tr><td><b>Inizio</b></td><td>19:22</td><td>21,2°</td><td>268,7° — ovest</td></tr>
+      <tr><td><b>Massimo</b></td><td>20:19</td><td>11,7°</td><td>279,2° — ovest-nordovest</td></tr>
+      <tr><td><b>Fine</b></td><td>21:12</td><td>3,1°</td><td>288,7°</td></tr>
+      <tr><td>Tramonto</td><td>21:38</td><td>—</td><td>294°</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="note"><b>Il sole non tramonta durante l'evento:</b> l'eclissi finisce ventisei minuti
+  prima che il disco tocchi il mare. L'orizzonte da tenere libero è a <b>ovest-nordovest</b>, e
+  da qui lo è: dalla Pointe du Van la Pointe du Raz sta ad azimut 234°, cioè a sudovest, fuori
+  dalla scena. Da ovest fino a nord c'è solo oceano aperto.</div>
+
+<div class="curio"><b>Perché la Pointe du Van e non la Pointe du Raz.</b> Alla Pointe du Raz il
+  parcheggio è a pagamento da fine marzo a inizio novembre e la <b>navetta smette alle
+  17:45</b> — cioè prima ancora che l'eclissi cominci — lasciando 800 metri a piedi per lato.
+  Alla Pointe du Van il parcheggio è <b>gratuito e sempre accessibile</b>, senza navetta e senza
+  orari: è la ragione pratica, oltre all'orizzonte più pulito.</div>
+
+<h2 id="pianob">Il piano B, da decidere alle 17:00 di quel giorno</h2>
+<p>In Bretagna, ad agosto, un cielo velato alle sette di sera è probabile quanto uno sereno. E
+  con il sole a <b>11,7 gradi</b> al massimo, basta un banco di nubi basse a ovest per cancellare
+  tutto: non serve che sia coperto ovunque, basta che lo sia sull'orizzonte giusto.</p>
+<p>Per questo la decisione si prende <b>nel pomeriggio, guardando le mappe satellitari</b> — non
+  la sera prima sulle previsioni, che a quella scala non dicono niente di utile.</p>
+<div class="tbl">
+  <table>
+    <caption class="visually-hidden">Le alternative alla Pointe du Van</caption>
+    <thead><tr><th>Dove</th><th>Distanza</th><th>Perché</th></tr></thead>
+    <tbody>
+      <tr><td><b><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Baie%20des%20Tr%C3%A9pass%C3%A9s%2C%20Cl%C3%A9den-Cap-Sizun" target="_blank" rel="noopener">Baie des Trépassés</a></b></td><td>3,7 km · 5 minuti</td><td>Stesso sole e stesso orizzonte, ma a livello del mare e riparata dal vento. Si parcheggia e si è arrivati — ed è sotto l'albergo. La Pointe du Raz entra nell'inquadratura ad azimut 274°, appena sotto il sole: per una fotografia è un regalo</td></tr>
+      <tr><td><b><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=M%C3%A9nez-Hom%2C%20Plomodiern" target="_blank" rel="noopener">Ménez-Hom</a></b></td><td>330 m di quota, verso Crozon</td><td>Se la costa è nella foschia, un rilievo può stare sopra la nebbia costiera. Panorama a 360°, e si arriva in auto quasi in cima</td></tr>
+      <tr><td><b>Verso sud-est</b></td><td>Quanto serve</td><td>Una fascia di sereno in movimento si insegue in auto. Ma va deciso entro le 17:30, non alle 19</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="tip"><b>Il vantaggio vero di dormire sulla baia.</b> Il Relais de la Pointe du Van sta
+  <b>sulla Baie des Trépassés</b>, cioè a cinque minuti dal punto di osservazione e <em>dentro</em>
+  il piano B. Se alle 19:00 il cielo sopra la Pointe du Van è coperto, si scende in spiaggia sotto
+  l'albergo e si guarda da lì. Nessuna decisione da prendere in auto, al buio, con il fenomeno
+  già cominciato.</div>
+
+<h2 id="giornata">Come far quadrare la giornata</h2>
+<p>Il percorso è <b>Pointe Saint-Mathieu → Pen-Hir → Pointe du Raz → Pointe du Van → Baie des
+  Trépassés</b>. I due trasferimenti sono lunghi e quasi uguali: <b>101,5 km e 1h45</b> per
+  scendere sulla penisola di Crozon, <b>88,1 km e 1h45</b> per passare a quella del Cap Sizun.
+  Poi tutto si stringe: dal Raz al Van sono 5,4 km, dal Van all'albergo 2,7.</p>
+
+<div class="ore">
+  <div class="r"><span class="h">10:30</span><span>Partenza da Saint-Mathieu. Colazione con calma: è l'ultima ora tranquilla</span></div>
+  <div class="r"><span class="h">12:15</span><span><b>Pointe de Pen-Hir</b>, Crozon. Pranzo e l'anello del GR34 sulle falesie</span></div>
+  <div class="r"><span class="h">15:15</span><span>Partenza — 88,1 km verso il Cap Sizun</span></div>
+  <div class="r"><span class="h">17:00</span><span><b>Pointe du Raz</b>: 800 m dal parcheggio, navetta fino alle 17:45</span></div>
+  <div class="r"><span class="h">18:40</span><span>Rientro al parcheggio, a piedi</span></div>
+  <div class="r forte"><span class="h">18:49</span><span><b>Pointe du Van</b>: si parcheggia e ci si sistema. Mezz'ora di margine</span></div>
+  <div class="r forte"><span class="h">19:22</span><span><b>L'ECLISSI COMINCIA</b> — un'ora e cinquanta di fenomeno</span></div>
+  <div class="r forte"><span class="h">20:19</span><span><b>Il massimo.</b> Sole a 11,7° sopra l'orizzonte, a ovest-nordovest</span></div>
+  <div class="r"><span class="h">21:12</span><span>Fine. Il sole tramonta ventisei minuti dopo</span></div>
+  <div class="r"><span class="h">21:20</span><span>Baie des Trépassés, 2,7 km. Nessuna strada al buio</span></div>
+</div>
+
+<h2 id="penhir">Pen-Hir, e i faraglioni in fila</h2>
+<figure class="photo ph"><picture>
+  <source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/pen-hir-480.avif 480w, /img/g/pen-hir-800.avif 800w, /img/g/pen-hir-1200.avif 1200w, /img/g/pen-hir-1800.avif 1800w">
+  <img src="/img/g/pen-hir-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/pen-hir-480.jpg 480w, /img/g/pen-hir-800.jpg 800w, /img/g/pen-hir-1200.jpg 1200w" width="1200" height="412" alt="Le falesie della Pointe de Pen-Hir con i faraglioni Tas de Pois" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>I <em>Tas de Pois</em>, «i mucchi di piselli»: cinque isolotti allineati che
+    continuano la punta sott'acqua per un chilometro e mezzo.</figcaption>
+</figure>
+<p>La <b>Pointe de Pen-Hir</b> è il naso della penisola di Crozon: falesie di arenaria a picco per
+  settanta metri, e davanti i <b>Tas de Pois</b>, cinque scogli in fila che sono il proseguimento
+  sommerso del promontorio. L'anello del GR34 si fa in un'ora e mezza e resta sempre in vista del
+  mare.</p>
+<p>Tre ore comprensive di pranzo sono la sosta giusta: è l'unico momento della giornata in cui si
+  può stare senza guardare l'orologio, e conviene sfruttarlo perché dalle 15:15 in poi la
+  giornata diventa una tabella.</p>
+<div class="curio"><b>Sulla punta c'è un monumento che sorprende.</b> La <b>Croix de Pen-Hir</b>,
+  un obelisco di granito alto una ventina di metri, è il memoriale dei bretoni della Francia
+  Libera: fu inaugurato da de Gaulle nel 1960. Si vede da lontano e da vicino è più imponente di
+  quanto le fotografie facciano pensare.</div>
+
+<h2 id="raz">La Pointe du Raz, e gli ottocento metri che si dimenticano</h2>
+<p>La <b>Pointe du Raz</b> è il <em>finis terrae</em> della Francia atlantica: l'<b>Enfer de
+  Plogoff</b>, cioè il canale fra la punta e l'isola di Sein dove le correnti si scontrano, e in
+  mezzo il faro della <b>Vieille</b>, piantato su uno scoglio. È un <b>Grand Site de France</b>,
+  e questo si traduce in una cosa concreta: <b>l'auto resta lontana</b>.</p>
+<div class="tip"><b>Il conto dei minuti che quasi tutti sbagliano.</b> Dal parcheggio alla punta
+  ci sono <b>800 metri</b>, cioè un quarto d'ora a piedi <b>per lato</b>. La navetta li copre a
+  1 € a corsa, ma <b>smette alle 17:45</b>: arrivando alle 17:00 si va con quella e si torna a
+  piedi. Chi non li conta arriva alla Pointe du Van in ritardo, e oggi il ritardo non si
+  recupera.</div>
+<div class="cards">
+  <div class="infocard"><div class="cl">Parcheggio</div><div class="cv"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Maison%20de%20Site%2C%20Pointe%20du%20Raz%2C%20Plogoff" target="_blank" rel="noopener">Maison de Site</a> · <b>8 €</b> per l'auto</div></div>
+  <div class="infocard"><div class="cl">Navetta</div><div class="cv">1 € · 10:15-13:00 e 14:00-17:45</div></div>
+  <div class="infocard"><div class="cl">A piedi</div><div class="cv">800 m per lato · un quarto d'ora</div></div>
+  <div class="infocard"><div class="cl">Pointe du Van</div><div class="cv"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Pointe%20du%20Van%2C%20Cl%C3%A9den-Cap-Sizun" target="_blank" rel="noopener">Parcheggio libero</a>, nessun orario</div></div>
+</div>
+
+<h2 id="mangiare">La cena è il problema vero della serata</h2>
+<p>L'eclissi va dalle <b>19:22 alle 21:12</b>, cioè esattamente sopra l'orario di cena francese.
+  O si mangia <b>prima delle 19</b>, o si arriva a tavola <b>dopo le 21:15</b>, quando molte
+  cucine di campagna hanno già chiuso. Non è un dettaglio: è la cosa che va risolta con una
+  telefonata, giorni prima.</p>
+<div class="locali">
+  <div class="locale" id="loc-relais" data-lat="48.04360" data-lon="-4.70290" data-cat="cena">
+    <div class="lcat">Cena · dove si dorme</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Le%20Relais%20de%20la%20Pointe%20du%20Van%2C%20Baie%20des%20Tr%C3%A9pass%C3%A9s%2C%20Cl%C3%A9den-Cap-Sizun" target="_blank" rel="noopener">Le Relais de la Pointe du Van</a></div>
+    <div class="lmeta">Baie des Trépassés, Cléden-Cap-Sizun · affacciato sulla baia</div>
+    <p class="lperche">Sta sulla spiaggia, a cinque minuti dal punto di osservazione, ed è dentro
+      il piano B: la stessa terrazza da cui si mangia guarda l'orizzonte giusto. <b>Chiedete al
+      telefono fino a che ora servono il 12 agosto</b> — e se la risposta non convince, la
+      soluzione è banale e forse migliore: cena leggera prima delle 19 e qualcosa da mangiare in
+      spiaggia durante.</p>
+    <details class="lmenu"><summary>Cosa chiedere al telefono</summary>
+      <ul>
+        <li><span>Fino a che ora servono la cena mercoledì 12 agosto</span></li>
+        <li><span>Se è possibile un servizio anticipato, prima delle 19:00</span></li>
+        <li><span>Se preparano qualcosa da portare via per la spiaggia</span></li>
+      </ul>
+      <p class="lfonte">02 98 70 62 79.</p>
+    </details>
+  </div>
+  <div class="locale" id="loc-camaret" data-lat="48.27780" data-lon="-4.59280" data-cat="pranzo">
+    <div class="lcat">Pranzo · Crozon</div>
+    <div class="lnome"><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Port%20de%20Camaret-sur-Mer%2C%20Finist%C3%A8re" target="_blank" rel="noopener">Il porto di Camaret-sur-Mer</a></div>
+    <div class="lmeta">Quai Gustave Toudouze · dieci minuti da Pen-Hir</div>
+    <p class="lperche">Il porto più vicino alla punta, con la <b>Tour Vauban</b> — patrimonio
+      UNESCO — in fondo al molo e i relitti di legno arenati accanto. Il fronte è tutto di
+      tavole di pesce. È la sosta che rende le tre ore di Pen-Hir una sosta vera e non un
+      transito.</p>
+    <details class="lmenu"><summary>Cosa cercare</summary>
+      <ul>
+        <li><span>Aragosta blu di Camaret, quando c'è</span></li>
+        <li><span>Ostriche, cozze, e il pescato sulla lavagna</span></li>
+        <li><span>Una carta corta: qui cambia con la barca</span></li>
+      </ul>
+    </details>
+  </div>
+</div>
+
+<div class="curio"><b>Il regalo della notte.</b> Le <b>Perseidi</b> hanno il massimo proprio
+  intorno al 12-13 agosto, e nel 2026 cadono nella condizione migliore possibile: cielo
+  <b>senza Luna</b>. Non è fortuna — un'eclissi di Sole avviene per definizione a Luna nuova,
+  quindi la stessa Luna che alle 20:19 passa davanti al Sole quella notte non illumina niente.
+  Bastano un tratto di costa lontano dai lampioni, venti minuti perché l'occhio si adatti, e la
+  pazienza di stare fermi a guardare in su.</div>
+
+<h2 id="mappa">La mappa del giorno</h2>
+<p style="color:var(--body)">Le tappe di oggi, su una mappa vera. Se leggete questa pagina già in
+  viaggio, il tasto nell'angolo della mappa vi dice quali sono più vicine a dove siete in questo
+  momento — la posizione resta nel telefono, non viene inviata da nessuna parte. I quadratini
+  arancioni sono i locali della sezione qui sopra.</p>
+
+<div class="daymap-wrap">
+  <div class="daymapbox">
+  <div id="daymap" class="daymap"></div>
+    <button class="locbtn" id="locBtn" type="button" aria-label="Dove sono rispetto alle tappe" title="Dove sono rispetto alle tappe"><svg class="ico" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A9 9 0 0013 3.06V1h-2v2.06A9 9 0 003.06 11H1v2h2.06A9 9 0 0011 20.94V23h2v-2.06A9 9 0 0020.94 13H23v-2h-2.06zM12 19a7 7 0 110-14 7 7 0 010 14z"/></svg></button>
+  </div>
+  <ul class="mappalegenda">
+    <li><span class="pin tappa"></span>Tappa del giorno</li>
+    <li><span class="pin opzionale"></span>Il piano B</li>
+    <li><span class="pin cibo"></span>Dove mangiare</li>
+    <li><span class="pin notte"></span>Baie des Trépassés, dove si dorme</li>
+  </ul>
+  <div class="daybar">
+    <span class="locmsg" id="locMsg"></span>
+  </div>
+  <div class="vicini" id="vicini">
+    <h4>Le più vicine a te ora</h4>
+    <ul id="viciniList"></ul>
+  </div>
+</div>
+
+<h2 id="prenotazioni-oggi">Prenotazione di questa notte</h2>
+<div class="cards">
+  <div class="infocard"><div class="cl">Dove</div><div class="cv"><b><a class="luogo" href="https://www.google.com/maps/search/?api=1&amp;query=Le%20Relais%20de%20la%20Pointe%20du%20Van%2C%20Cl%C3%A9den-Cap-Sizun" target="_blank" rel="noopener">Le Relais de la Pointe du Van</a></b>, Baie des Trépassés</div></div>
+  <div class="infocard"><div class="cl">Fatta</div><div class="cv">Prenotazione confermata · 02 98 70 62 79</div></div>
+  <div class="infocard"><div class="cl">Da chiedere</div><div class="cv">Fino a che ora servono la cena il 12 agosto</div></div>
+  <div class="infocard"><div class="cl">Da portare</div><div class="cv">Occhiali <b>ISO 12312-2</b>, uno a testa</div></div>
+</div>
+
+</article>
+</div>
+
+<footer class="foot" style="max-width:1180px;margin:40px auto 0;padding:20px 24px 50px">
+  <div class="credits">
+    <h4>Crediti foto</h4>
+    <ul>
+      <li>La Pointe du Raz al tramonto — Stephan Sprinz · <a href="https://creativecommons.org/licenses/by/4.0" rel="license noopener" target="_blank">CC BY 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Pointe_du_Raz_bei_Sonnenuntergang.jpg" rel="noopener" target="_blank">file originale</a></li>
+      <li>Le falesie della Pointe de Pen-Hir — Diwall · <a href="https://creativecommons.org/licenses/by-sa/3.0" rel="license noopener" target="_blank">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Pen%27Hir.jpg" rel="noopener" target="_blank">file originale</a></li>
+      <li class="cnote">Immagini ridimensionate e ricompresse per il web: nessun altro intervento. Le opere in licenza CC BY-SA restano disponibili alle stesse condizioni. Mappa: dati © <a href="https://www.openstreetmap.org/copyright" rel="noopener" target="_blank">contributori di OpenStreetMap</a>, tessere © <a href="https://carto.com/attributions" rel="noopener" target="_blank">CARTO</a> (stile Voyager). Meteo: <a href="https://open-meteo.com/" rel="noopener" target="_blank">Open-Meteo</a>. Tariffe e orari della navetta della Pointe du Raz verificati il 30 luglio 2026 su <a href="https://pointeduraz.com/infos-pratiques/informations-pratiques" rel="noopener" target="_blank">pointeduraz.com</a>.</li>
+    </ul>
+  </div>
+  <p style="margin-top:24px"><a href="../#g7">← Torna alla guida completa</a> · Giornata 7 di 11.</p>
+</footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="../assets/day.js?v=9a7bf918"></script>
+<script src="../assets/nav.js?v=09c6a6ee" defer></script>
+<script>
+const TAPPE = [
+  {id:"penhir",  name:"Pointe de Pen-Hir",   lat:48.25599, lon:-4.62174, kind:"tappa", note:"Falesie e i Tas de Pois · anello del GR34", maps:DayGuide.urlPosto("Pointe de Pen-Hir, Camaret-sur-Mer")},
+  {id:"raz",     name:"Pointe du Raz",       lat:48.03992, lon:-4.73672, kind:"tappa", note:"Parcheggio 8 € · navetta 1 € fino alle 17:45", maps:DayGuide.urlPosto("Pointe du Raz, Plogoff")},
+  {id:"van",     name:"Pointe du Van",       lat:48.06504, lon:-4.71441, kind:"tappa", note:"IL PUNTO DELL'ECLISSI · parcheggio libero", maps:DayGuide.urlPosto("Pointe du Van, Cléden-Cap-Sizun")},
+  {id:"menezhom",name:"Ménez-Hom",           lat:48.20237, lon:-4.23428, kind:"opzionale", note:"Piano B: 330 m, sopra la foschia costiera", maps:DayGuide.urlPosto("Ménez-Hom, Plomodiern")},
+  {id:"relais",  name:"Le Relais de la Pointe du Van", lat:48.04360, lon:-4.70290, kind:"notte", note:"Baie des Trépassés · piano B a livello del mare", maps:DayGuide.urlPosto("Le Relais de la Pointe du Van, Cléden-Cap-Sizun")}
+];
+
+const LOCALI = DayGuide.localiDalDOM();
+const PUNTI = TAPPE.concat(LOCALI);
+
+const mappa = DayGuide.initMap("daymap", {
+  center:[48.17, -4.63], zoom:9, stops: PUNTI
+});
+if(!mappa){
+  const el=document.getElementById("daymap");
+  if(el) el.innerHTML='<p style="padding:20px;color:var(--muted)">Mappa non disponibile al momento.</p>';
+}
+
+DayGuide.wireGeolocation({
+  btnId:"locBtn", msgId:"locMsg", panelId:"vicini", listId:"viciniList",
+  stops: PUNTI, markers: mappa ? mappa.markers : {}
+});
+
+DayGuide.initWeather("dayweather", {
+  lat:48.0650, lon:-4.7144, dateISO:"2026-08-12",
+  dataLeggibile:"12 agosto", label:"Pointe du Van"
+});
+</script>
+</body>
+</html>

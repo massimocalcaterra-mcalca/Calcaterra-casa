@@ -1,0 +1,29 @@
+{
+ "name": "Giorno 5 · Cap Fréhel e Fort la Latte",
+ "short_name": "Cap Fréhel",
+ "description": "La giornata di Saint-Malo, Cap Fréhel e Fort la Latte, con mappa e meteo",
+ "start_url": "/normandie-bretagna/giorno-05/",
+ "scope": "/normandie-bretagna/giorno-05/",
+ "display": "standalone",
+ "background_color": "#FBFBFA",
+ "theme_color": "#FBFBFA",
+ "lang": "it",
+ "icons": [
+  {
+   "src": "/normandie-bretagna/giorno-05/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/normandie-bretagna/giorno-05/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "/normandie-bretagna/giorno-05/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}
