@@ -160,19 +160,81 @@
   .videoband figcaption .vt{font-family:Poppins,sans-serif;font-size:1.4rem;font-weight:600;margin-top:4px}
 
   .day{padding:54px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
-  .day .photo{border-radius:16px;overflow:hidden;box-shadow:0 20px 40px -24px rgba(20,38,28,.5);margin-bottom:8px}
-  .day .photo img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
   .daynum{font-family:Poppins,sans-serif;font-size:.74rem;font-weight:600;letter-spacing:.18em;
     text-transform:uppercase;color:var(--coral);margin-top:26px}
   .day h2{font-size:clamp(1.5rem,3.6vw,2.1rem);font-weight:700;margin:8px 0 4px}
   .day .loc{color:var(--muted);font-size:.86rem;font-family:Poppins,sans-serif;font-weight:500}
   .day p{color:var(--body);margin:16px 0 0}
   .day h3{font-size:1.05rem;color:var(--green-d);margin:22px 0 0}
-  .photo-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:14px;margin-top:18px}
-  .photo-pair img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;
-    border-radius:12px;display:block}
-  @media(max-width:620px){.photo-pair{grid-template-columns:1fr}}
+  /* --- composizioni fotografiche --------------------------------------
+     Ogni foto sta dentro un .ph: e' lui la cella della composizione, e
+     porta la didascalia che compare passandoci sopra il mouse. Dove il
+     mouse non c'e' — telefono, tablet — la didascalia resta sempre visibile.
+     Quattro modi di montare le foto; in tutti l'immagine riempie per intero
+     il proprio riquadro e le foto affiancate hanno la stessa altezza, cosi'
+     il gruppo forma un rettangolo pieno senza gradini ne' spazi vuoti:
+       .photo        una sola, a piena larghezza. Nessuna proporzione
+                     imposta: ognuna tiene la sua, cosi' un panorama resta
+                     un panorama e non perde meta' inquadratura. Ai
+                     verticali si aggiunge .ritratto, che li tiene in una
+                     colonna centrata invece di farne un lastrone.
+       .photo-row    due o piu' in fila. Ogni gruppo dichiara in pagina le
+                     proporzioni di colonne e riquadro, ricavate dai lati
+                     veri delle foto: cosi' non taglia nemmeno un verticale
+                     accostato a un orizzontale.
+       .photo-mosaic una verticale a tutta altezza accanto a due orizzontali
+                     impilate. La verticale va per terza nel codice.
+       .photo-stack  una grande, con una seconda sovrapposta a filo.
+     height:auto e' obbligatorio ovunque si dichiari un aspect-ratio:
+     l'attributo height dell'<img> e' un hint di presentazione e senza
+     height:auto vince lui, ignorando la proporzione dichiarata.
+     Sotto i 620px ogni gruppo si impila alle proporzioni naturali; le
+     misure scritte in pagina sono stili inline, servono gli !important. */
+  .ph{position:relative;display:block;overflow:hidden;border-radius:12px;margin:0;
+    min-width:0;min-height:0}
+  .ph img{display:block;width:100%}
+  .ph figcaption{position:absolute;left:0;right:0;bottom:0;pointer-events:none;
+    font-family:Poppins,sans-serif;font-size:.78rem;line-height:1.35;color:#fff;
+    padding:28px 14px 11px;
+    background:linear-gradient(0deg,rgba(20,38,28,.94),rgba(20,38,28,.6) 55%,rgba(20,38,28,0));
+    opacity:0;transform:translateY(10px);transition:opacity .25s,transform .25s}
+  .ph:hover figcaption,.ph:focus-within figcaption{opacity:1;transform:none}
+  @media(hover:none){.ph figcaption{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.ph figcaption{transition:none}}
+
+  .day .photo{border-radius:16px;box-shadow:0 20px 40px -24px rgba(20,38,28,.5);margin-bottom:8px}
+  .day .photo img{width:100%;height:auto;object-fit:cover}
+  .day .photo.ritratto{max-width:600px;margin-left:auto;margin-right:auto}
+
+  .photo-row{display:grid;grid-template-rows:1fr;gap:14px;margin-top:18px}
+  .photo-row .ph{height:100%}
+  .photo-row .ph img{height:100%;object-fit:cover}
+
+  .photo-mosaic{display:grid;grid-template-columns:1.32fr 1fr;gap:14px;margin-top:18px}
+  .photo-mosaic .ph img{height:auto;object-fit:cover}
+  .photo-mosaic .ph:nth-child(3){grid-column:2;grid-row:1/span 2}
+  .photo-mosaic .ph:nth-child(3) img{position:absolute;inset:0;height:100%}
+
+  .photo-stack{position:relative;margin:18px 0 clamp(34px,6vw,72px)}
+  .photo-stack .grande{border-radius:16px;box-shadow:0 20px 40px -24px rgba(20,38,28,.5)}
+  .photo-stack .grande img{width:100%;height:auto;object-fit:cover}
+  .photo-stack .sopra{position:absolute;right:2.5%;width:34%;
+    bottom:clamp(-60px,-5vw,-26px);border:5px solid var(--bg);
+    box-shadow:0 18px 38px -16px rgba(20,38,28,.7)}
+  .photo-stack .sopra img{width:100%;height:auto;object-fit:cover}
+
+  @media(max-width:620px){
+    .photo-row,.photo-mosaic{grid-template-columns:1fr!important;
+      grid-template-rows:none;aspect-ratio:auto!important}
+    .photo-row .ph,.photo-mosaic .ph{height:auto}
+    .photo-row .ph img,.photo-mosaic .ph img{height:auto;aspect-ratio:auto}
+    .photo-mosaic .ph:nth-child(3){grid-column:1;grid-row:auto}
+    .photo-mosaic .ph:nth-child(3) img{position:static;height:auto}
+    .day .photo.ritratto{max-width:none}
+    .photo-stack{margin-bottom:18px}
+    .photo-stack .sopra{position:static;width:100%;border:0;margin-top:12px;
+      box-shadow:none}
+  }
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:22px}
   .infocard{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
   .infocard .cl{font-family:Poppins,sans-serif;font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;
@@ -287,7 +349,7 @@
     .hero .sub,.hero .meta b{color:#000}
     section{padding:12pt 0}
     .day{page-break-before:always;padding:0;border:0}
-    .day .photo,.photo-pair,.dday .banner,.scene img{display:none}
+    .day .photo,.photo-row,.photo-mosaic,.photo-stack,.dday .banner,.scene img{display:none}
     .tbl{overflow:visible;page-break-inside:avoid}
     table{min-width:0;font-size:9pt}
     .note,.tip,.curio,.infocard,.stat,.prac .pc{border:1px solid #bbb;background:#fff!important;color:#000}
@@ -606,7 +668,7 @@
 <div class="wrap">
 
   <article class="day" id="g1">
-    <div class="photo"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.avif 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.avif 800w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.avif 1200w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1800.avif 1800w"><img src="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.jpg 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.jpg 800w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.jpg 1200w" width="1200" height="1921" alt="La cattedrale di Rouen" loading="lazy" decoding="async"></picture></div>
+    <figure class="photo ph ritratto"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.avif 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.avif 800w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.avif 1200w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1800.avif 1800w"><img src="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.jpg 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.jpg 800w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.jpg 1200w" width="1200" height="1921" alt="La cattedrale di Rouen" loading="lazy" decoding="async"></picture><figcaption>La cattedrale di Rouen vista dal Gros-Horloge: la guglia in ghisa, alta 151 metri, è ottocentesca, e fra il 1876 e il 1880 fu l'edificio più alto del mondo.</figcaption></figure>
     <div class="daynum">Giorno 1 · Giovedì 6 agosto</div>
     <h2>Arrivo a Beauvais e prima tappa normanna</h2>
     <div class="loc">Beauvais (BVA) → Rouen · ~85 km / 1h30</div>
@@ -628,7 +690,7 @@
   </article>
 
   <article class="day" id="g2">
-<div class="photo"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/porte-d-aval-vue-depuis-la-manneporte-480.avif 480w, /img/g/porte-d-aval-vue-depuis-la-manneporte-800.avif 800w, /img/g/porte-d-aval-vue-depuis-la-manneporte-1200.avif 1200w, /img/g/porte-d-aval-vue-depuis-la-manneporte-1800.avif 1800w"><img src="/img/g/porte-d-aval-vue-depuis-la-manneporte-800.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/porte-d-aval-vue-depuis-la-manneporte-480.jpg 480w, /img/g/porte-d-aval-vue-depuis-la-manneporte-800.jpg 800w, /img/g/porte-d-aval-vue-depuis-la-manneporte-1200.jpg 1200w" width="800" height="430" alt="Arco della Porte d'Aval, Étretat" loading="lazy" decoding="async"></picture></div>
+<figure class="photo ph"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/porte-d-aval-vue-depuis-la-manneporte-480.avif 480w, /img/g/porte-d-aval-vue-depuis-la-manneporte-800.avif 800w, /img/g/porte-d-aval-vue-depuis-la-manneporte-1200.avif 1200w, /img/g/porte-d-aval-vue-depuis-la-manneporte-1800.avif 1800w"><img src="/img/g/porte-d-aval-vue-depuis-la-manneporte-800.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/porte-d-aval-vue-depuis-la-manneporte-480.jpg 480w, /img/g/porte-d-aval-vue-depuis-la-manneporte-800.jpg 800w, /img/g/porte-d-aval-vue-depuis-la-manneporte-1200.jpg 1200w" width="800" height="430" alt="Arco della Porte d'Aval, Étretat" loading="lazy" decoding="async"></picture><figcaption>Étretat: l'arco della Porte d'Aval e l'Aiguille, settanta metri di guglia calcarea piantata in mare. Monet tornò a dipingerle una ventina di volte.</figcaption></figure>
     <div class="daynum">Giorno 2 · Venerdì 7 agosto</div>
     <h2>Étretat e Le Havre, la Costa d'Alabastro</h2>
     <div class="loc">Rouen → Étretat → Le Havre → Bayeux · 242 km · 3h20 di guida</div>
@@ -660,7 +722,7 @@
   </article>
 
   <article class="day" id="g3">
-    <div class="photo"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/impact-in-reinforced-concrete-german-bunker-po-480.avif 480w, /img/g/impact-in-reinforced-concrete-german-bunker-po-800.avif 800w, /img/g/impact-in-reinforced-concrete-german-bunker-po-1200.avif 1200w, /img/g/impact-in-reinforced-concrete-german-bunker-po-1800.avif 1800w"><img src="/img/g/impact-in-reinforced-concrete-german-bunker-po-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/impact-in-reinforced-concrete-german-bunker-po-480.jpg 480w, /img/g/impact-in-reinforced-concrete-german-bunker-po-800.jpg 800w, /img/g/impact-in-reinforced-concrete-german-bunker-po-1200.jpg 1200w" width="1200" height="626" alt="Pointe du Hoc" loading="lazy" decoding="async"></picture></div>
+    <figure class="photo ph"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/impact-in-reinforced-concrete-german-bunker-po-480.avif 480w, /img/g/impact-in-reinforced-concrete-german-bunker-po-800.avif 800w, /img/g/impact-in-reinforced-concrete-german-bunker-po-1200.avif 1200w, /img/g/impact-in-reinforced-concrete-german-bunker-po-1800.avif 1800w"><img src="/img/g/impact-in-reinforced-concrete-german-bunker-po-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/impact-in-reinforced-concrete-german-bunker-po-480.jpg 480w, /img/g/impact-in-reinforced-concrete-german-bunker-po-800.jpg 800w, /img/g/impact-in-reinforced-concrete-german-bunker-po-1200.jpg 1200w" width="1200" height="626" alt="Pointe du Hoc" loading="lazy" decoding="async"></picture><figcaption>Alla Pointe du Hoc il cemento è rimasto come nel giugno 1944: crateri, casematte spaccate, il campo di battaglia non ripulito.</figcaption></figure>
     <div class="daynum">Giorno 3 · Sabato 8 agosto</div>
     <h2>Le spiagge dello Sbarco</h2>
     <div class="loc">Bayeux · le spiagge dello Sbarco · una giornata intera</div>
@@ -675,7 +737,7 @@
   </article>
 
   <article class="day" id="g4">
-    <div class="photo"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/msm-sunset-02-480.avif 480w, /img/g/msm-sunset-02-800.avif 800w, /img/g/msm-sunset-02-1200.avif 1200w, /img/g/msm-sunset-02-1800.avif 1800w"><img src="/img/g/msm-sunset-02-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/msm-sunset-02-480.jpg 480w, /img/g/msm-sunset-02-800.jpg 800w, /img/g/msm-sunset-02-1200.jpg 1200w" width="1200" height="791" alt="Il Mont-Saint-Michel al tramonto" loading="lazy" decoding="async"></picture></div>
+    <figure class="photo ph"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/msm-sunset-02-480.avif 480w, /img/g/msm-sunset-02-800.avif 800w, /img/g/msm-sunset-02-1200.avif 1200w, /img/g/msm-sunset-02-1800.avif 1800w"><img src="/img/g/msm-sunset-02-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/msm-sunset-02-480.jpg 480w, /img/g/msm-sunset-02-800.jpg 800w, /img/g/msm-sunset-02-1200.jpg 1200w" width="1200" height="791" alt="Il Mont-Saint-Michel al tramonto" loading="lazy" decoding="async"></picture><figcaption>Il Mont-Saint-Michel al tramonto, quando le corriere sono già ripartite e la baia resta a chi si è fermato a dormire vicino.</figcaption></figure>
     <div class="daynum">Giorno 4 · Domenica 9 agosto</div>
     <h2>Mont-Saint-Michel, la meraviglia sospesa</h2>
     <div class="loc">Bayeux → Mont-Saint-Michel → Menhir du Champ-Dolent → Saint-Malo · 192 km · 3h38 di guida</div>
@@ -721,15 +783,15 @@
   </article>
 
   <article class="day" id="g5">
-    <div class="photo"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/remparts-saint-malo-2-480.avif 480w, /img/g/remparts-saint-malo-2-800.avif 800w, /img/g/remparts-saint-malo-2-1200.avif 1200w, /img/g/remparts-saint-malo-2-1800.avif 1800w"><img src="/img/g/remparts-saint-malo-2-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/remparts-saint-malo-2-480.jpg 480w, /img/g/remparts-saint-malo-2-800.jpg 800w, /img/g/remparts-saint-malo-2-1200.jpg 1200w" width="1200" height="800" alt="I bastioni di Saint-Malo" loading="lazy" decoding="async"></picture></div>
+    <figure class="photo ph"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/remparts-saint-malo-2-480.avif 480w, /img/g/remparts-saint-malo-2-800.avif 800w, /img/g/remparts-saint-malo-2-1200.avif 1200w, /img/g/remparts-saint-malo-2-1800.avif 1800w"><img src="/img/g/remparts-saint-malo-2-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/remparts-saint-malo-2-480.jpg 480w, /img/g/remparts-saint-malo-2-800.jpg 800w, /img/g/remparts-saint-malo-2-1200.jpg 1200w" width="1200" height="800" alt="I bastioni di Saint-Malo" loading="lazy" decoding="async"></picture><figcaption>I bastioni di Saint-Malo. La città intra-muros fu distrutta nell'agosto 1944 e ricostruita pietra su pietra, com'era.</figcaption></figure>
     <div class="daynum">Giorno 5 · Lunedì 10 agosto</div>
     <h2>Saint-Malo corsara e il castello sul mare</h2>
     <div class="loc">Saint-Malo · Cap Fréhel · Fort la Latte → Perros-Guirec · 164 km · 2h43 di guida</div>
     <p>Mattinata sulle mura di Saint-Malo, la città dei corsari, con la marea che cambia il volto della baia e l'Île du Grand Bé (tomba di Chateaubriand) raggiungibile a piedi. Nel pomeriggio, uno dei tratti più scenografici della Costa di Smeraldo: <b>Cap Fréhel</b> con le sue falesie rosse e il faro, e <b>Fort la Latte</b>, un vero castello medievale del XIV secolo su uno sperone di roccia proteso nell'oceano.</p>
-    <div class="photo-pair">
-      <picture><source type="image/avif" sizes="(min-width:1228px) 558px, (min-width:620px) 46vw, 100vw" srcset="/img/g/cote-emeraude-fort-la-latte-480.avif 480w, /img/g/cote-emeraude-fort-la-latte-800.avif 800w, /img/g/cote-emeraude-fort-la-latte-1200.avif 1200w, /img/g/cote-emeraude-fort-la-latte-1800.avif 1800w"><img src="/img/g/cote-emeraude-fort-la-latte-800.jpg" sizes="(min-width:1228px) 558px, (min-width:620px) 46vw, 100vw" srcset="/img/g/cote-emeraude-fort-la-latte-480.jpg 480w, /img/g/cote-emeraude-fort-la-latte-800.jpg 800w, /img/g/cote-emeraude-fort-la-latte-1200.jpg 1200w" width="800" height="357" alt="Fort la Latte" loading="lazy" decoding="async"></picture>
-      <picture><source type="image/avif" sizes="(min-width:1228px) 558px, (min-width:620px) 46vw, 100vw" srcset="/img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-480.avif 480w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-800.avif 800w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-1200.avif 1200w"><img src="/img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-800.jpg" sizes="(min-width:1228px) 558px, (min-width:620px) 46vw, 100vw" srcset="/img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-480.jpg 480w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-800.jpg 800w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-1200.jpg 1200w" width="800" height="1200" alt="Faro di Cap Fréhel" loading="lazy" decoding="async"></picture>
-      <picture><source type="image/avif" sizes="(min-width:1228px) 368px, (min-width:620px) 30vw, 100vw" srcset="/img/g/cap-frehel-falesie-e-mare-480.avif 480w, /img/g/cap-frehel-falesie-e-mare-800.avif 800w, /img/g/cap-frehel-falesie-e-mare-1200.avif 1200w, /img/g/cap-frehel-falesie-e-mare-1800.avif 1800w"><img src="/img/g/cap-frehel-falesie-e-mare-1200.jpg" sizes="(min-width:1228px) 368px, (min-width:620px) 30vw, 100vw" srcset="/img/g/cap-frehel-falesie-e-mare-480.jpg 480w, /img/g/cap-frehel-falesie-e-mare-800.jpg 800w, /img/g/cap-frehel-falesie-e-mare-1200.jpg 1200w" width="1200" height="800" alt="Le falesie del Cap Fréhel sul mare" loading="lazy" decoding="async"></picture>
+    <div class="photo-mosaic">
+      <figure class="ph"><picture><source type="image/avif" sizes="(min-width:1228px) 636px, (min-width:620px) 53vw, 100vw" srcset="/img/g/cote-emeraude-fort-la-latte-480.avif 480w, /img/g/cote-emeraude-fort-la-latte-800.avif 800w, /img/g/cote-emeraude-fort-la-latte-1200.avif 1200w, /img/g/cote-emeraude-fort-la-latte-1800.avif 1800w"><img src="/img/g/cote-emeraude-fort-la-latte-800.jpg" sizes="(min-width:1228px) 636px, (min-width:620px) 53vw, 100vw" srcset="/img/g/cote-emeraude-fort-la-latte-480.jpg 480w, /img/g/cote-emeraude-fort-la-latte-800.jpg 800w, /img/g/cote-emeraude-fort-la-latte-1200.jpg 1200w" width="800" height="357" alt="Fort la Latte" loading="lazy" decoding="async"></picture><figcaption>Fort la Latte, a picco sul mare fra Saint-Malo e il Cap Fréhel.</figcaption></figure>
+      <figure class="ph"><picture><source type="image/avif" sizes="(min-width:1228px) 636px, (min-width:620px) 53vw, 100vw" srcset="/img/g/cap-frehel-falesie-e-mare-480.avif 480w, /img/g/cap-frehel-falesie-e-mare-800.avif 800w, /img/g/cap-frehel-falesie-e-mare-1200.avif 1200w, /img/g/cap-frehel-falesie-e-mare-1800.avif 1800w"><img src="/img/g/cap-frehel-falesie-e-mare-800.jpg" sizes="(min-width:1228px) 636px, (min-width:620px) 53vw, 100vw" srcset="/img/g/cap-frehel-falesie-e-mare-480.jpg 480w, /img/g/cap-frehel-falesie-e-mare-800.jpg 800w, /img/g/cap-frehel-falesie-e-mare-1200.jpg 1200w" width="1200" height="800" alt="Le falesie del Cap Fréhel sul mare" loading="lazy" decoding="async"></picture><figcaption>Le falesie di arenaria rossa del Cap Fréhel, settanta metri sopra la Manica.</figcaption></figure>
+      <figure class="ph"><picture><source type="image/avif" sizes="(min-width:1228px) 482px, (min-width:620px) 40vw, 100vw" srcset="/img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-480.avif 480w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-800.avif 800w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-1200.avif 1200w"><img src="/img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-800.jpg" sizes="(min-width:1228px) 482px, (min-width:620px) 40vw, 100vw" srcset="/img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-480.jpg 480w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-800.jpg 800w, /img/g/00-2803-leuchtturm-am-cap-frehel-frankreich-1200.jpg 1200w" width="800" height="1200" alt="Faro di Cap Fréhel" loading="lazy" decoding="async"></picture><figcaption>Il faro del Cap Fréhel, in servizio dal 1950 sulla punta più esposta della Côte d'Émeraude.</figcaption></figure>
     </div>
     <div class="cards">
       <div class="infocard"><div class="cl">Attività</div><div class="cv">Giro delle mura, Grand Bé (bassa marea)</div></div>
@@ -745,7 +807,7 @@
   </article>
 
   <article class="day" id="g6">
-<div class="photo"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/phare-de-ploumanac-h-04-480.avif 480w, /img/g/phare-de-ploumanac-h-04-800.avif 800w, /img/g/phare-de-ploumanac-h-04-1200.avif 1200w, /img/g/phare-de-ploumanac-h-04-1800.avif 1800w"><img src="/img/g/phare-de-ploumanac-h-04-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/phare-de-ploumanac-h-04-480.jpg 480w, /img/g/phare-de-ploumanac-h-04-800.jpg 800w, /img/g/phare-de-ploumanac-h-04-1200.jpg 1200w" width="1200" height="800" alt="Il faro di Ploumanac'h tra le rocce rosa" loading="lazy" decoding="async"></picture></div>
+<figure class="photo ph"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/phare-de-ploumanac-h-04-480.avif 480w, /img/g/phare-de-ploumanac-h-04-800.avif 800w, /img/g/phare-de-ploumanac-h-04-1200.avif 1200w, /img/g/phare-de-ploumanac-h-04-1800.avif 1800w"><img src="/img/g/phare-de-ploumanac-h-04-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/phare-de-ploumanac-h-04-480.jpg 480w, /img/g/phare-de-ploumanac-h-04-800.jpg 800w, /img/g/phare-de-ploumanac-h-04-1200.jpg 1200w" width="1200" height="800" alt="Il faro di Ploumanac'h tra le rocce rosa" loading="lazy" decoding="async"></picture><figcaption>Il faro di Ploumanac'h, incastrato fra i graniti rosa della Côte de Granit Rose.</figcaption></figure>
     <div class="daynum">Giorno 6 · Martedì 11 agosto</div>
     <h2>Da Ploumanac'h alla Pointe Saint-Mathieu</h2>
     <div class="loc">Ploumanac'h → Roscoff → Le Conquet → Pointe Saint-Mathieu · 162 km · 2h47 di guida</div>
@@ -817,7 +879,7 @@
   </article>
 
   <article class="day key" id="g7">
-<div class="photo"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/pointe-du-raz-bei-sonnenuntergang-480.avif 480w, /img/g/pointe-du-raz-bei-sonnenuntergang-800.avif 800w, /img/g/pointe-du-raz-bei-sonnenuntergang-1200.avif 1200w, /img/g/pointe-du-raz-bei-sonnenuntergang-1800.avif 1800w"><img src="/img/g/pointe-du-raz-bei-sonnenuntergang-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/pointe-du-raz-bei-sonnenuntergang-480.jpg 480w, /img/g/pointe-du-raz-bei-sonnenuntergang-800.jpg 800w, /img/g/pointe-du-raz-bei-sonnenuntergang-1200.jpg 1200w" width="1200" height="800" alt="La Pointe du Raz al tramonto" loading="lazy" decoding="async"></picture></div>
+<figure class="photo ph"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/pointe-du-raz-bei-sonnenuntergang-480.avif 480w, /img/g/pointe-du-raz-bei-sonnenuntergang-800.avif 800w, /img/g/pointe-du-raz-bei-sonnenuntergang-1200.avif 1200w, /img/g/pointe-du-raz-bei-sonnenuntergang-1800.avif 1800w"><img src="/img/g/pointe-du-raz-bei-sonnenuntergang-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/pointe-du-raz-bei-sonnenuntergang-480.jpg 480w, /img/g/pointe-du-raz-bei-sonnenuntergang-800.jpg 800w, /img/g/pointe-du-raz-bei-sonnenuntergang-1200.jpg 1200w" width="1200" height="800" alt="La Pointe du Raz al tramonto" loading="lazy" decoding="async"></picture><figcaption>La Pointe du Raz, l'estremità della Cornovaglia bretone, con la corrente del Raz de Sein che ribolle sotto la scogliera.</figcaption></figure>
     <div class="daynum">Giorno 7 · Mercoledì 12 agosto</div>
     <h2>Crozon, la Pointe du Raz e l'eclissi alla Pointe du Van</h2>
     <div class="loc">Pointe Saint-Mathieu → Pen-Hir → Pointe du Raz → Pointe du Van → Baie des Trépassés · 200 km · 3h43 di guida</div>
@@ -900,7 +962,7 @@
       <div class="infocard"><div class="cl">Punto scelto</div><div class="cv">Pointe du Van — parcheggio gratuito, niente navetta</div></div>
       <div class="infocard"><div class="cl">Pernottamento</div><div class="cv"><b>Relais de la Pointe du Van</b>, Baie des Trépassés — prenotato</div></div>
     </div>
-    <div class="photo"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/pen-hir-480.avif 480w, /img/g/pen-hir-800.avif 800w, /img/g/pen-hir-1200.avif 1200w, /img/g/pen-hir-1800.avif 1800w"><img src="/img/g/pen-hir-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/pen-hir-480.jpg 480w, /img/g/pen-hir-800.jpg 800w, /img/g/pen-hir-1200.jpg 1200w" width="1200" height="412" alt="La Pointe de Pen-Hir, Presqu'île de Crozon" loading="lazy" decoding="async"></picture></div>
+    <figure class="photo ph"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/pen-hir-480.avif 480w, /img/g/pen-hir-800.avif 800w, /img/g/pen-hir-1200.avif 1200w, /img/g/pen-hir-1800.avif 1800w"><img src="/img/g/pen-hir-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/pen-hir-480.jpg 480w, /img/g/pen-hir-800.jpg 800w, /img/g/pen-hir-1200.jpg 1200w" width="1200" height="412" alt="La Pointe de Pen-Hir, Presqu'île de Crozon" loading="lazy" decoding="async"></picture><figcaption>La Pointe de Pen-Hir e i Tas de Pois, gli scogli allineati che continuano la punta dentro il mare.</figcaption></figure>
     <div class="curio"><b>Il regalo della notte:</b> le <b>Perseidi</b> hanno il massimo proprio
       intorno al 12-13 agosto, e nel 2026 cadono nella condizione migliore possibile — cielo senza
       Luna. Non è fortuna: un'eclissi di Sole avviene per definizione a Luna nuova, quindi la stessa
@@ -910,7 +972,7 @@
   </article>
 
   <article class="day" id="g8">
-<div class="photo"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/alignement-menec-carnac-480.avif 480w, /img/g/alignement-menec-carnac-800.avif 800w, /img/g/alignement-menec-carnac-1200.avif 1200w, /img/g/alignement-menec-carnac-1800.avif 1800w"><img src="/img/g/alignement-menec-carnac-800.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/alignement-menec-carnac-480.jpg 480w, /img/g/alignement-menec-carnac-800.jpg 800w, /img/g/alignement-menec-carnac-1200.jpg 1200w" width="800" height="532" alt="Gli allineamenti megalitici di Carnac" loading="lazy" decoding="async"></picture></div>
+<figure class="photo ph"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/alignement-menec-carnac-480.avif 480w, /img/g/alignement-menec-carnac-800.avif 800w, /img/g/alignement-menec-carnac-1200.avif 1200w, /img/g/alignement-menec-carnac-1800.avif 1800w"><img src="/img/g/alignement-menec-carnac-800.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/alignement-menec-carnac-480.jpg 480w, /img/g/alignement-menec-carnac-800.jpg 800w, /img/g/alignement-menec-carnac-1200.jpg 1200w" width="800" height="532" alt="Gli allineamenti megalitici di Carnac" loading="lazy" decoding="async"></picture><figcaption>L'allineamento di Ménec a Carnac: file di menhir lunghe più di un chilometro, il più grande complesso megalitico d'Europa.</figcaption></figure>
     <div class="daynum">Giorno 8 · Giovedì 13 agosto</div>
     <h2>Il bagno a Raguénez, i sottomarini di Lorient, i menhir di Carnac</h2>
     <div class="loc">Baie des Trépassés → Locronan → Raguénez → Lorient → Quiberon → Carnac · 232 km · 4h10 di guida</div>
@@ -973,7 +1035,7 @@
   </article>
 
   <article class="day" id="g9">
-<div class="photo"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/la-foret-de-broceliande-octobre-2020-480.avif 480w, /img/g/la-foret-de-broceliande-octobre-2020-800.avif 800w, /img/g/la-foret-de-broceliande-octobre-2020-1200.avif 1200w, /img/g/la-foret-de-broceliande-octobre-2020-1800.avif 1800w"><img src="/img/g/la-foret-de-broceliande-octobre-2020-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/la-foret-de-broceliande-octobre-2020-480.jpg 480w, /img/g/la-foret-de-broceliande-octobre-2020-800.jpg 800w, /img/g/la-foret-de-broceliande-octobre-2020-1200.jpg 1200w" width="1200" height="343" alt="La foresta di Brocéliande" loading="lazy" decoding="async"></picture></div>
+<figure class="photo ph"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/la-foret-de-broceliande-octobre-2020-480.avif 480w, /img/g/la-foret-de-broceliande-octobre-2020-800.avif 800w, /img/g/la-foret-de-broceliande-octobre-2020-1200.avif 1200w, /img/g/la-foret-de-broceliande-octobre-2020-1800.avif 1800w"><img src="/img/g/la-foret-de-broceliande-octobre-2020-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/la-foret-de-broceliande-octobre-2020-480.jpg 480w, /img/g/la-foret-de-broceliande-octobre-2020-800.jpg 800w, /img/g/la-foret-de-broceliande-octobre-2020-1200.jpg 1200w" width="1200" height="343" alt="La foresta di Brocéliande" loading="lazy" decoding="async"></picture><figcaption>La foresta di Brocéliande, dove la tradizione bretone colloca Merlino, la fata Viviana e la Valle senza Ritorno.</figcaption></figure>
     <div class="daynum">Giorno 9 · Venerdì 14 agosto</div>
     <h2>Rochefort-en-Terre, Brocéliande e Le Mans</h2>
     <div class="loc">Carnac → Rochefort-en-Terre → Paimpont → Le Mans · 323 km · 4h20 di guida</div>
@@ -1010,7 +1072,7 @@
   </article>
 
   <article class="day" id="g10">
-<div class="photo"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-480.avif 480w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-800.avif 800w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1200.avif 1200w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1800.avif 1800w"><img src="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-800.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-480.jpg 480w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-800.jpg 800w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1200.jpg 1200w" width="800" height="441" alt="Stagno delle ninfee, Giverny" loading="lazy" decoding="async"></picture></div>
+<figure class="photo ph"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-480.avif 480w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-800.avif 800w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1200.avif 1200w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1800.avif 1800w"><img src="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-800.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-480.jpg 480w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-800.jpg 800w, /img/g/jardin-de-claude-monet-giverny-bassin-aux-nymp-1200.jpg 1200w" width="800" height="441" alt="Stagno delle ninfee, Giverny" loading="lazy" decoding="async"></picture><figcaption>Il bacino delle ninfee a Giverny: Monet lo fece scavare e piantare per averlo da dipingere, il giardino prima del quadro.</figcaption></figure>
     <div class="daynum">Giorno 10 · Sabato 15 agosto</div>
     <h2>Giverny, il giardino di Monet</h2>
     <div class="loc">Le Mans → Giverny → Vernon o Rouen · 254 km · 2h49 di guida <b>a strada libera</b></div>
@@ -1047,7 +1109,7 @@
   </article>
 
   <article class="day" id="g11">
-<div class="photo"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.avif 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.avif 800w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.avif 1200w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1800.avif 1800w"><img src="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.jpg 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.jpg 800w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.jpg 1200w" width="1200" height="1921" alt="La cattedrale di Rouen" loading="lazy" decoding="async"></picture></div>
+<figure class="photo ph ritratto"><picture><source type="image/avif" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.avif 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.avif 800w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.avif 1200w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1800.avif 1800w"><img src="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.jpg" sizes="(min-width:1228px) 1132px, 100vw" srcset="/img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-480.jpg 480w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-800.jpg 800w, /img/g/rouen-cathedral-as-seen-from-gros-horloge-1402-1200.jpg 1200w" width="1200" height="1921" alt="La cattedrale di Rouen" loading="lazy" decoding="async"></picture><figcaption>La cattedrale di Rouen vista dal Gros-Horloge: la guglia in ghisa, alta 151 metri, è ottocentesca, e fra il 1876 e il 1880 fu l'edificio più alto del mondo.</figcaption></figure>
     <div class="daynum">Giorno 11 · Domenica 16 agosto</div>
     <h2>Ultima mattina e rientro a Parigi-Beauvais</h2>
     <div class="loc">Vernon / Rouen → Beauvais (BVA) · 1h25-1h30 · volo h 14:00</div>

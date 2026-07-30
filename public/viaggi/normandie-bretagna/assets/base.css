@@ -130,19 +130,81 @@
   .videoband figcaption .vt{font-family:Poppins,sans-serif;font-size:1.4rem;font-weight:600;margin-top:4px}
 
   .day{padding:54px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
-  .day .photo{border-radius:16px;overflow:hidden;box-shadow:0 20px 40px -24px rgba(20,38,28,.5);margin-bottom:8px}
-  .day .photo img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
   .daynum{font-family:Poppins,sans-serif;font-size:.74rem;font-weight:600;letter-spacing:.18em;
     text-transform:uppercase;color:var(--coral);margin-top:26px}
   .day h2{font-size:clamp(1.5rem,3.6vw,2.1rem);font-weight:700;margin:8px 0 4px}
   .day .loc{color:var(--muted);font-size:.86rem;font-family:Poppins,sans-serif;font-weight:500}
   .day p{color:var(--body);margin:16px 0 0}
   .day h3{font-size:1.05rem;color:var(--green-d);margin:22px 0 0}
-  .photo-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:14px;margin-top:18px}
-  .photo-pair img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;
-    border-radius:12px;display:block}
-  @media(max-width:620px){.photo-pair{grid-template-columns:1fr}}
+  /* --- composizioni fotografiche --------------------------------------
+     Ogni foto sta dentro un .ph: e' lui la cella della composizione, e
+     porta la didascalia che compare passandoci sopra il mouse. Dove il
+     mouse non c'e' — telefono, tablet — la didascalia resta sempre visibile.
+     Quattro modi di montare le foto; in tutti l'immagine riempie per intero
+     il proprio riquadro e le foto affiancate hanno la stessa altezza, cosi'
+     il gruppo forma un rettangolo pieno senza gradini ne' spazi vuoti:
+       .photo        una sola, a piena larghezza. Nessuna proporzione
+                     imposta: ognuna tiene la sua, cosi' un panorama resta
+                     un panorama e non perde meta' inquadratura. Ai
+                     verticali si aggiunge .ritratto, che li tiene in una
+                     colonna centrata invece di farne un lastrone.
+       .photo-row    due o piu' in fila. Ogni gruppo dichiara in pagina le
+                     proporzioni di colonne e riquadro, ricavate dai lati
+                     veri delle foto: cosi' non taglia nemmeno un verticale
+                     accostato a un orizzontale.
+       .photo-mosaic una verticale a tutta altezza accanto a due orizzontali
+                     impilate. La verticale va per terza nel codice.
+       .photo-stack  una grande, con una seconda sovrapposta a filo.
+     height:auto e' obbligatorio ovunque si dichiari un aspect-ratio:
+     l'attributo height dell'<img> e' un hint di presentazione e senza
+     height:auto vince lui, ignorando la proporzione dichiarata.
+     Sotto i 620px ogni gruppo si impila alle proporzioni naturali; le
+     misure scritte in pagina sono stili inline, servono gli !important. */
+  .ph{position:relative;display:block;overflow:hidden;border-radius:12px;margin:0;
+    min-width:0;min-height:0}
+  .ph img{display:block;width:100%}
+  .ph figcaption{position:absolute;left:0;right:0;bottom:0;pointer-events:none;
+    font-family:Poppins,sans-serif;font-size:.78rem;line-height:1.35;color:#fff;
+    padding:28px 14px 11px;
+    background:linear-gradient(0deg,rgba(20,38,28,.94),rgba(20,38,28,.6) 55%,rgba(20,38,28,0));
+    opacity:0;transform:translateY(10px);transition:opacity .25s,transform .25s}
+  .ph:hover figcaption,.ph:focus-within figcaption{opacity:1;transform:none}
+  @media(hover:none){.ph figcaption{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.ph figcaption{transition:none}}
+
+  .day .photo{border-radius:16px;box-shadow:0 20px 40px -24px rgba(20,38,28,.5);margin-bottom:8px}
+  .day .photo img{width:100%;height:auto;object-fit:cover}
+  .day .photo.ritratto{max-width:600px;margin-left:auto;margin-right:auto}
+
+  .photo-row{display:grid;grid-template-rows:1fr;gap:14px;margin-top:18px}
+  .photo-row .ph{height:100%}
+  .photo-row .ph img{height:100%;object-fit:cover}
+
+  .photo-mosaic{display:grid;grid-template-columns:1.32fr 1fr;gap:14px;margin-top:18px}
+  .photo-mosaic .ph img{height:auto;object-fit:cover}
+  .photo-mosaic .ph:nth-child(3){grid-column:2;grid-row:1/span 2}
+  .photo-mosaic .ph:nth-child(3) img{position:absolute;inset:0;height:100%}
+
+  .photo-stack{position:relative;margin:18px 0 clamp(34px,6vw,72px)}
+  .photo-stack .grande{border-radius:16px;box-shadow:0 20px 40px -24px rgba(20,38,28,.5)}
+  .photo-stack .grande img{width:100%;height:auto;object-fit:cover}
+  .photo-stack .sopra{position:absolute;right:2.5%;width:34%;
+    bottom:clamp(-60px,-5vw,-26px);border:5px solid var(--bg);
+    box-shadow:0 18px 38px -16px rgba(20,38,28,.7)}
+  .photo-stack .sopra img{width:100%;height:auto;object-fit:cover}
+
+  @media(max-width:620px){
+    .photo-row,.photo-mosaic{grid-template-columns:1fr!important;
+      grid-template-rows:none;aspect-ratio:auto!important}
+    .photo-row .ph,.photo-mosaic .ph{height:auto}
+    .photo-row .ph img,.photo-mosaic .ph img{height:auto;aspect-ratio:auto}
+    .photo-mosaic .ph:nth-child(3){grid-column:1;grid-row:auto}
+    .photo-mosaic .ph:nth-child(3) img{position:static;height:auto}
+    .day .photo.ritratto{max-width:none}
+    .photo-stack{margin-bottom:18px}
+    .photo-stack .sopra{position:static;width:100%;border:0;margin-top:12px;
+      box-shadow:none}
+  }
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:22px}
   .infocard{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
   .infocard .cl{font-family:Poppins,sans-serif;font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;
@@ -257,7 +319,7 @@
     .hero .sub,.hero .meta b{color:#000}
     section{padding:12pt 0}
     .day{page-break-before:always;padding:0;border:0}
-    .day .photo,.photo-pair,.dday .banner,.scene img{display:none}
+    .day .photo,.photo-row,.photo-mosaic,.photo-stack,.dday .banner,.scene img{display:none}
     .tbl{overflow:visible;page-break-inside:avoid}
     table{min-width:0;font-size:9pt}
     .note,.tip,.curio,.infocard,.stat,.prac .pc{border:1px solid #bbb;background:#fff!important;color:#000}

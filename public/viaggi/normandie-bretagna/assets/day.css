@@ -15,6 +15,10 @@
 .pin.tappa{background:var(--green-d)}
 .pin.opzionale{background:var(--paper);border:2.5px dashed var(--coral,#C8391A)}
 .pin.notte{background:var(--ink);width:17px;height:17px}
+/* dove mangiare: quadrato smussato e colore caldo. Cambia la forma, non
+   solo la tinta, cosi' si distingue dalle tappe anche per chi non vede
+   bene i colori. */
+.pin.cibo{background:var(--coral-tip,#B93A1B);border-radius:4px;width:14px;height:14px}
 .pin.vicino{outline:3px solid #ffffff00;animation:pinPulse 1.6s ease-out infinite}
 @keyframes pinPulse{
   0%{box-shadow:0 1px 4px rgba(20,38,28,.45),0 0 0 0 rgba(6,117,46,.55)}
@@ -45,5 +49,52 @@
 .meteo .t{font-weight:700;color:var(--ink);font-size:1.02rem}
 .meteo .lbl{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .meteo.loading,.meteo.off{color:var(--muted)}
+
+/* legenda dei segnaposti: gli stessi .pin, ma fermi nel testo */
+.mappalegenda{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px;
+  margin:14px 0 0;padding:0;font-size:.82rem;color:var(--body)}
+.mappalegenda li{display:flex;align-items:center;gap:8px}
+.mappalegenda .pin{position:static;transform:none;flex:none}
+
+.vicini .vcibo{display:inline-block;font-family:Poppins,sans-serif;font-size:.58rem;
+  font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;
+  background:var(--coral-tip,#B93A1B);border-radius:20px;padding:2px 7px;
+  margin-right:6px;vertical-align:1px}
+
+/* --- i locali dove mangiare -------------------------------------------
+   Ogni scheda porta le sue coordinate negli attributi data-, e il menu
+   dentro un <details> che si apre senza bisogno di JavaScript. La mappa
+   rilegge queste stesse schede: prezzi e indirizzi stanno scritti una
+   volta sola, non possono divergere fra il testo e i segnaposti. */
+.locali{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));
+  gap:14px;margin-top:20px}
+.locale{background:var(--paper);border:1px solid var(--line);border-radius:14px;
+  padding:16px 18px}
+.locale .lcat{display:inline-block;font-family:Poppins,sans-serif;font-size:.6rem;
+  font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--coral-tip,#B93A1B);background:#FFF1EC;border-radius:20px;
+  padding:3px 9px;margin-bottom:9px}
+.locale .lnome{font-family:Poppins,sans-serif;font-weight:600;font-size:.98rem;line-height:1.25}
+.locale .lmeta{font-size:.8rem;color:var(--muted);margin-top:3px}
+.locale .lperche{font-size:.88rem;color:var(--body);margin:10px 0 0}
+.lmenu{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+.lmenu summary{font-family:Poppins,sans-serif;font-size:.8rem;font-weight:600;
+  color:var(--green-d);cursor:pointer;list-style:none}
+.lmenu summary::-webkit-details-marker{display:none}
+.lmenu summary::before{content:"+ ";font-weight:700}
+.lmenu[open] summary::before{content:"– "}
+.lmenu ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:5px}
+.lmenu li{display:flex;justify-content:space-between;gap:12px;font-size:.86rem;
+  align-items:baseline}
+.lmenu li b{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink)}
+.lmenu .lfonte{font-size:.74rem;color:var(--muted);margin:10px 0 0;font-style:italic}
+
+/* il fumetto sulla mappa, con lo stesso estratto di menu della scheda */
+.daymap .leaflet-popup-content{margin:12px 14px}
+.daymap .popnome{font-family:Poppins,sans-serif;font-weight:600;font-size:.92rem}
+.daymap .popmeta{font-size:.78rem;color:#6B6E67;margin-top:2px}
+.daymap .popmenu{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:4px}
+.daymap .popmenu li{display:flex;justify-content:space-between;gap:10px;font-size:.82rem}
+.daymap .popmenu b{white-space:nowrap;font-variant-numeric:tabular-nums}
 
 @media(max-width:620px){.daymap{height:300px}}
