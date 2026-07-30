@@ -66,17 +66,23 @@
    dentro un <details> che si apre senza bisogno di JavaScript. La mappa
    rilegge queste stesse schede: prezzi e indirizzi stanno scritti una
    volta sola, non possono divergere fra il testo e i segnaposti. */
-.locali{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));
-  gap:14px;margin-top:20px}
+.locali{display:grid;grid-template-columns:repeat(auto-fit,minmax(236px,1fr));
+  gap:12px;margin-top:18px}
+/* caselle affiancate e alte uguali: il menu si appoggia in fondo, cosi' le
+   righe restano allineate anche quando un locale ha due parole in meno */
 .locale{background:var(--paper);border:1px solid var(--line);border-radius:14px;
-  padding:16px 18px}
-.locale .lcat{display:inline-block;font-family:Poppins,sans-serif;font-size:.6rem;
+  padding:15px 16px;display:flex;flex-direction:column}
+.locale .lmenu{margin-top:auto}
+/* align-self: dentro un flex column l'etichetta si allargherebbe a tutta
+   la casella invece di restare una pastiglia */
+.locale .lcat{display:inline-block;align-self:flex-start;
+  font-family:Poppins,sans-serif;font-size:.6rem;
   font-weight:600;letter-spacing:.12em;text-transform:uppercase;
   color:var(--coral-tip,#B93A1B);background:#FFF1EC;border-radius:20px;
   padding:3px 9px;margin-bottom:9px}
 .locale .lnome{font-family:Poppins,sans-serif;font-weight:600;font-size:.98rem;line-height:1.25}
 .locale .lmeta{font-size:.8rem;color:var(--muted);margin-top:3px}
-.locale .lperche{font-size:.88rem;color:var(--body);margin:10px 0 0}
+.locale .lperche{font-size:.86rem;color:var(--body);margin:9px 0 13px;line-height:1.5}
 .lmenu{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
 .lmenu summary{font-family:Poppins,sans-serif;font-size:.8rem;font-weight:600;
   color:var(--green-d);cursor:pointer;list-style:none}
