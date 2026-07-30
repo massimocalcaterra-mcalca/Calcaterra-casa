@@ -1,0 +1,29 @@
+{
+ "name": "Normandie & Bretagne",
+ "short_name": "Normandie",
+ "description": "Undici giorni fra Normandia e Bretagna, 6–16 agosto 2026",
+ "start_url": "/normandie-bretagna/",
+ "scope": "/normandie-bretagna/",
+ "display": "standalone",
+ "background_color": "#FBFBFA",
+ "theme_color": "#FBFBFA",
+ "lang": "it",
+ "icons": [
+  {
+   "src": "/normandie-bretagna/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/normandie-bretagna/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "/normandie-bretagna/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}
