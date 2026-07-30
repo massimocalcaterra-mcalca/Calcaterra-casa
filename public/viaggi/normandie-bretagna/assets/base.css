@@ -130,6 +130,9 @@
   .videoband figcaption .vt{font-family:Poppins,sans-serif;font-size:1.4rem;font-weight:600;margin-top:4px}
 
   .day{padding:54px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
+  /* la barra in alto e' fissa e alta una sessantina di pixel: senza questo i
+     titoli raggiunti dal menu finivano nascosti sotto di essa */
+  h2[id],h3[id],[id^="loc-"]{scroll-margin-top:76px}
   .daynum{font-family:Poppins,sans-serif;font-size:.74rem;font-weight:600;letter-spacing:.18em;
     text-transform:uppercase;color:var(--coral);margin-top:26px}
   .day h2{font-size:clamp(1.5rem,3.6vw,2.1rem);font-weight:700;margin:8px 0 4px}
@@ -160,10 +163,17 @@
      height:auto vince lui, ignorando la proporzione dichiarata.
      Sotto i 620px ogni gruppo si impila alle proporzioni naturali; le
      misure scritte in pagina sono stili inline, servono gli !important. */
-  .ph{position:relative;display:block;overflow:hidden;border-radius:12px;margin:0;
-    min-width:0;min-height:0}
-  .ph img{display:block;width:100%}
-  .ph figcaption{position:absolute;left:0;right:0;bottom:0;pointer-events:none;
+  /* Le foto sono stampe: cornice bianca sottile, angoli appena smussati e
+     un'ombra leggera che le stacca dalla pagina. --cornice e' la larghezza
+     della cornice, e la riusano la didascalia e l'immagine in posizione
+     assoluta del mosaico: cambiandola qui restano allineate da sole. */
+  .ph{--cornice:8px;position:relative;display:block;margin:0;
+    min-width:0;min-height:0;background:var(--paper);padding:var(--cornice);
+    border-radius:6px;
+    box-shadow:0 1px 3px rgba(20,38,28,.10),0 8px 20px -12px rgba(20,38,28,.30)}
+  .ph img{display:block;width:100%;border-radius:3px}
+  .ph figcaption{position:absolute;left:var(--cornice);right:var(--cornice);
+    bottom:var(--cornice);pointer-events:none;border-radius:0 0 3px 3px;
     font-family:Poppins,sans-serif;font-size:.78rem;line-height:1.35;color:#fff;
     padding:28px 14px 11px;
     background:linear-gradient(0deg,rgba(20,38,28,.94),rgba(20,38,28,.6) 55%,rgba(20,38,28,0));
@@ -172,7 +182,8 @@
   @media(hover:none){.ph figcaption{opacity:1;transform:none}}
   @media(prefers-reduced-motion:reduce){.ph figcaption{transition:none}}
 
-  .day .photo{border-radius:16px;box-shadow:0 20px 40px -24px rgba(20,38,28,.5);margin-bottom:8px}
+  /* le foto grandi hanno la cornice un po' piu' larga, come una stampa grande */
+  .day .photo{--cornice:10px;margin-bottom:8px}
   .day .photo img{width:100%;height:auto;object-fit:cover}
   .day .photo.ritratto{max-width:600px;margin-left:auto;margin-right:auto}
 
@@ -183,14 +194,16 @@
   .photo-mosaic{display:grid;grid-template-columns:1.32fr 1fr;gap:14px;margin-top:18px}
   .photo-mosaic .ph img{height:auto;object-fit:cover}
   .photo-mosaic .ph:nth-child(3){grid-column:2;grid-row:1/span 2}
-  .photo-mosaic .ph:nth-child(3) img{position:absolute;inset:0;height:100%}
+  .photo-mosaic .ph:nth-child(3) img{position:absolute;inset:var(--cornice);height:auto}
 
   .photo-stack{position:relative;margin:18px 0 clamp(34px,6vw,72px)}
-  .photo-stack .grande{border-radius:16px;box-shadow:0 20px 40px -24px rgba(20,38,28,.5)}
+  .photo-stack .grande{--cornice:10px}
   .photo-stack .grande img{width:100%;height:auto;object-fit:cover}
+  /* la cartolina sovrapposta: ombra piu' marcata, perche' deve staccarsi
+     dalla foto grande e non dalla pagina */
   .photo-stack .sopra{position:absolute;right:2.5%;width:34%;
-    bottom:clamp(-60px,-5vw,-26px);border:5px solid var(--bg);
-    box-shadow:0 18px 38px -16px rgba(20,38,28,.7)}
+    bottom:clamp(-60px,-5vw,-26px);
+    box-shadow:0 2px 6px rgba(20,38,28,.16),0 16px 34px -12px rgba(20,38,28,.55)}
   .photo-stack .sopra img{width:100%;height:auto;object-fit:cover}
 
   @media(max-width:620px){
@@ -202,8 +215,7 @@
     .photo-mosaic .ph:nth-child(3) img{position:static;height:auto}
     .day .photo.ritratto{max-width:none}
     .photo-stack{margin-bottom:18px}
-    .photo-stack .sopra{position:static;width:100%;border:0;margin-top:12px;
-      box-shadow:none}
+    .photo-stack .sopra{position:static;width:100%;margin-top:12px}
   }
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:22px}
   .infocard{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
@@ -330,3 +342,10 @@
   }
 
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+  /* --- leggibilita' su schermo piccolo ---------------------------------
+     Va in fondo al foglio di proposito: le regole base di .infocard .cl
+     stanno piu' sopra e, a pari specificita', vincerebbero loro. */
+  @media(max-width:620px){
+    .infocard .cl{font-size:.75rem}
+  }

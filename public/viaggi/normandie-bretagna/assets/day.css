@@ -117,4 +117,15 @@ td .gmaps,p .gmaps{margin-top:4px}
 .daymap .popmenu b{white-space:nowrap;font-variant-numeric:tabular-nums}
 .daymap .gmaps{margin-top:9px}
 
-@media(max-width:620px){.daymap{height:300px}}
+@media(max-width:620px){
+  .daymap{height:320px}
+  /* etichette e note: sul telefono salgono, sotto i 10px non si leggono */
+  .locale .lcat{font-size:.75rem}
+  .lmenu .lfonte{font-size:.8rem}
+}
+/* Dove non c'e' il mouse il link va toccato con un dito: gli si da' l'altezza
+   minima consigliata da Apple, 44px, invece dei 19 del solo testo. */
+@media(hover:none){
+  .gmaps{min-height:44px;padding:3px 0}
+  .lmenu summary{min-height:40px;display:flex;align-items:center}
+}

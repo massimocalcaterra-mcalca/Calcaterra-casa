@@ -39,6 +39,11 @@
 #                               Scelto invece delle API di Google Maps, che
 #                               avrebbero richiesto una chiave con fatturazione
 #                               e un banner di consenso per i loro cookie.
+#   - *.tile.openstreetmap.org -> TRANSITORIO, dal 30 luglio 2026. Serve solo a
+#                               chi ha ancora in cache il day.js precedente al
+#                               passaggio a CARTO: quel codice chiede le tile
+#                               di OSM, e senza questa voce vedrebbe la mappa
+#                               vuota. Si puo' togliere dopo qualche giorno.
 #   - api.open-meteo.com     -> meteo del giorno (connect-src): previsione per
 #                               la data della tappa, oppure il tempo in tempo
 #                               reale se la pagina si legge in quel giorno.
@@ -83,7 +88,7 @@
   Cross-Origin-Opener-Policy: same-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(self), payment=(), usb=(), display-capture=()
   Strict-Transport-Security: max-age=86400
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.basemaps.cartocdn.com; media-src 'self'; connect-src 'self' https://api.open-meteo.com https://archive-api.open-meteo.com; manifest-src 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.basemaps.cartocdn.com https://*.tile.openstreetmap.org; media-src 'self'; connect-src 'self' https://api.open-meteo.com https://archive-api.open-meteo.com; manifest-src 'self'; upgrade-insecure-requests
 
 # Copertine delle guide (public/viaggi/img/).
 /img/*
@@ -100,6 +105,18 @@
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Gli asset condivisi delle pagine di giornata (base.css, day.css, day.js) NON
+# possono restare in cache a lungo: i loro nomi non contengono un hash, e il
+# codice che ci sta dentro e' accoppiato alla CSP di questo stesso file, che
+# viene servita sempre fresca. Il 30 luglio 2026 questo ha rotto la mappa in
+# produzione: la CSP nuova ammetteva solo le tile CARTO mentre i browser
+# usavano ancora il day.js vecchio, che chiedeva quelle di OpenStreetMap.
+# Rivalidare sempre costa una richiesta condizionale da poche centinaia di
+# byte e rende impossibile quel disallineamento. Se un giorno i nomi
+# porteranno un hash, si potra' tornare a max-age lungo.
+/normandie-bretagna/assets/*
+  Cache-Control: public, max-age=0, must-revalidate
 
 # HTML: sempre rivalidato. I percorsi sono elencati uno per uno invece di usare
 # /*.html perche' quando piu' regole combaciano Cloudflare Pages UNISCE gli header,
