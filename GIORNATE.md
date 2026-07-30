@@ -76,6 +76,17 @@ richiesta al secondo:
 > vera, non in linea d'aria»: non aggiunge niente per chi legge. Si scrive il
 > numero e basta.
 
+> **Delle deviazioni si dà solo la distanza e il tempo, mai il confronto con il
+> percorso di partenza.** Si scrive «passando da Gerberoy, 87 km e 1h40», non
+> «+0,4 km e +3 minuti», non «quasi gratis», non «la deviazione costa», e non si
+> mette in tabella la riga del percorso diretto per farci il paragone. Chi legge
+> vuole sapere quanto ci mette a fare quella strada, non quanto ci perde
+> rispetto a un'altra che non farà.
+>
+> Il confronto resta uno strumento di lavoro: serve a **me** per decidere se una
+> tappa entra in itinerario, e in quella forma può stare nelle note interne
+> (`proposte/`). In guida, no.
+
 Quando Nominatim non trova un locale, spesso è la filiale a mancare, non
 l'indirizzo: verificare sul sito dell'attività prima di dichiararlo incerto.
 
