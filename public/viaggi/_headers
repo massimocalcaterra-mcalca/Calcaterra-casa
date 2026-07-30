@@ -113,8 +113,14 @@
 # produzione: la CSP nuova ammetteva solo le tile CARTO mentre i browser
 # usavano ancora il day.js vecchio, che chiedeva quelle di OpenStreetMap.
 # Rivalidare sempre costa una richiesta condizionale da poche centinaia di
-# byte e rende impossibile quel disallineamento. Se un giorno i nomi
-# porteranno un hash, si potra' tornare a max-age lungo.
+# byte e rende impossibile quel disallineamento.
+# ATTENZIONE: al 30 luglio 2026 questa regola NON viene applicata — Cloudflare
+# continua a servire quei file con max-age=14400, mentre la regola su /img/*
+# funziona. Non ho capito perche'. Percio' il meccanismo su cui contiamo
+# davvero e' un altro: nelle pagine i link agli asset portano ?v=<hash del
+# contenuto>. L'HTML e' sempre fresco, quindi appena l'hash cambia il browser
+# scarica il file nuovo, qualunque cosa dica la cache. Chi modifica base.css,
+# day.css, day.js o nav.js DEVE aggiornare quell'hash nelle pagine.
 /normandie-bretagna/assets/*
   Cache-Control: public, max-age=0, must-revalidate
 
