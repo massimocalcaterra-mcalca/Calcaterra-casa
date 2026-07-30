@@ -344,8 +344,29 @@
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
   /* --- leggibilita' su schermo piccolo ---------------------------------
-     Va in fondo al foglio di proposito: le regole base di .infocard .cl
-     stanno piu' sopra e, a pari specificita', vincerebbero loro. */
+     Le etichette in maiuscoletto stavano fra i 9,9 e gli 11,8 px: su un
+     telefono non si leggono. Qui vanno a 12px, che e' il minimo sensato per
+     un maiuscoletto spaziato. Sta in fondo al foglio di proposito, perche' a
+     pari specificita' vincerebbero le regole di sopra. Escluso .ok, che non
+     e' testo da leggere ma il pallino di spunta delle prenotazioni. */
   @media(max-width:620px){
-    .infocard .cl{font-size:.75rem}
+    .infocard .cl,.tag,.daynum,.glance .gd,.stat .l,.hero .eyebrow,
+    .dday .idx,.vk,.sign,thead th,.credits h4{font-size:.75rem}
+    .daynum,.glance .gd{letter-spacing:.1em}
+  }
+
+  /* --- la voce della sezione che si sta leggendo -------------------------
+     Si accende da sola scorrendo (assets/nav.js), non solo al clic. Il bordo
+     sotto la voce e' in due strati: il binario grigio e' tutta la sezione, il
+     riempimento verde e' quanto ne e' passato — cosi' si vede a che punto
+     della sezione ci si trova, non solo in quale sezione si e'. */
+  .topnav a{position:relative}
+  .topnav a.qui{color:var(--green-d);background:#EFF7F1}
+  .topnav a.qui::before,.topnav a.qui::after{content:"";position:absolute;
+    left:10px;bottom:3px;height:2px;border-radius:2px}
+  .topnav a.qui::before{right:10px;background:var(--line-strong);opacity:.3}
+  .topnav a.qui::after{background:var(--green-d);
+    width:calc((100% - 20px) * var(--avanzamento,0))}
+  @media(prefers-reduced-motion:no-preference){
+    .topnav a.qui::after{transition:width .12s linear}
   }

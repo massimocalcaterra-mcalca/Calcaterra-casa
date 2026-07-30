@@ -514,11 +514,33 @@
 .mp-t:target{stroke-width:3}
 .mp-legend{font-family:var(--map-font,system-ui,sans-serif);font-size:14px;fill:var(--map-label,#26332f)}
 .mp-legend rect{fill:var(--map-halo,#eef4f5);opacity:.86}
+
   /* --- leggibilita' su schermo piccolo ---------------------------------
-     Va in fondo al foglio di proposito: le regole base di .infocard .cl
-     stanno piu' sopra e, a pari specificita', vincerebbero loro. */
+     Le etichette in maiuscoletto stavano fra i 9,9 e gli 11,8 px: su un
+     telefono non si leggono. Qui vanno a 12px, che e' il minimo sensato per
+     un maiuscoletto spaziato. Sta in fondo al foglio di proposito, perche' a
+     pari specificita' vincerebbero le regole di sopra. Escluso .ok, che non
+     e' testo da leggere ma il pallino di spunta delle prenotazioni. */
   @media(max-width:620px){
-    .infocard .cl{font-size:.75rem}
+    .infocard .cl,.tag,.daynum,.glance .gd,.stat .l,.hero .eyebrow,
+    .dday .idx,.vk,.sign,thead th,.credits h4{font-size:.75rem}
+    .daynum,.glance .gd{letter-spacing:.1em}
+  }
+
+  /* --- la voce della sezione che si sta leggendo -------------------------
+     Si accende da sola scorrendo (assets/nav.js), non solo al clic. Il bordo
+     sotto la voce e' in due strati: il binario grigio e' tutta la sezione, il
+     riempimento verde e' quanto ne e' passato — cosi' si vede a che punto
+     della sezione ci si trova, non solo in quale sezione si e'. */
+  .topnav a{position:relative}
+  .topnav a.qui{color:var(--green-d);background:#EFF7F1}
+  .topnav a.qui::before,.topnav a.qui::after{content:"";position:absolute;
+    left:10px;bottom:3px;height:2px;border-radius:2px}
+  .topnav a.qui::before{right:10px;background:var(--line-strong);opacity:.3}
+  .topnav a.qui::after{background:var(--green-d);
+    width:calc((100% - 20px) * var(--avanzamento,0))}
+  @media(prefers-reduced-motion:no-preference){
+    .topnav a.qui::after{transition:width .12s linear}
   }
 </style>
 <defs><clipPath id="mbbc"><rect width="1000" height="520"/></clipPath></defs>
@@ -1343,5 +1365,6 @@
 <script>
   document.getElementById("printBtn").addEventListener("click", ()=>window.print());
 </script>
+<script src="assets/nav.js" defer></script>
 </body>
 </html>

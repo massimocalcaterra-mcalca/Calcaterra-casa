@@ -17,11 +17,15 @@ function haversine(lat1,lon1,lat2,lon2){
 
 function fmtKm(km){ return km<1 ? Math.round(km*1000)+" m" : km.toFixed(km<10?1:0)+" km"; }
 
-/* Link "apri in mappe". Usa il formato ufficiale di Google Maps, che i
-   telefoni riconoscono come link dell'applicazione: su Android apre (o
-   propone) l'app, su iPhone apre Google Maps se e' installato, altrimenti
-   la mappa nel browser. Con le coordinate invece del nome il punto non
-   puo' finire sulla citta' sbagliata. */
+/* Link a un posto su Google Maps, nel formato ufficiale che i telefoni
+   riconoscono come link dell'applicazione: su Android apre (o propone)
+   l'app, su iPhone apre Google Maps se e' installato, altrimenti la mappa
+   nel browser. Con il nome e l'indirizzo si arriva alla scheda del posto —
+   foto, orari, recensioni, indicazioni — invece che a uno spillo anonimo.
+   Le coordinate restano la via di riserva quando il nome non c'e'. */
+function urlPosto(nome){
+  return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(nome);
+}
 function urlMappe(lat,lon){
   return "https://www.google.com/maps/search/?api=1&query="+lat+","+lon;
 }
@@ -74,7 +78,7 @@ function localiDalDOM(sel){
     const testo=c=>{ const n=el.querySelector(c); return n?n.textContent.trim():""; };
     const nome=testo(".lnome"), meta=testo(".lmeta");
     const menu=el.querySelector(".lmenu ul");
-    const gm=el.querySelector("a.gmaps");
+    const gm=el.querySelector(".lnome a[href]") || el.querySelector("a.gmaps");
     let html='<div class="popnome">'+esc(nome)+'</div>';
     if(meta) html+='<div class="popmeta">'+esc(meta)+'</div>';
     if(menu) html+='<ul class="popmenu">'+menu.innerHTML+'</ul>';
@@ -265,5 +269,5 @@ function dataBreve(iso,n){
   return d.getUTCDate()+" "+MESI[d.getUTCMonth()];
 }
 
-window.DayGuide={initMap, wireGeolocation, initWeather, haversine, localiDalDOM, urlMappe};
+window.DayGuide={initMap, wireGeolocation, initWeather, haversine, localiDalDOM, urlMappe, urlPosto};
 })();
