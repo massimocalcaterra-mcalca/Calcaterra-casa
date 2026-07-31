@@ -408,3 +408,28 @@ grep di tutte e tre le forme.**
 e senza. Le voragini fra le parole negli screenshot del test **non sono quello
 che si vede su iPhone**, dove Safari ha il dizionario italiano. Non correggere
 la giustificazione basandosi su queste immagini.
+
+**Il giorno della settimana viene prima del ristorante.** Rifacendo le
+sezioni «Dove mangiare», tre chiusure cadevano esattamente sulle nostre date:
+Autour du Beurre a Saint-Malo chiude domenica e lunedì (le nostre due sere),
+L'Écume des Jours a Roscoff chiude il martedì (il nostro giorno), il panificio
+di Rochefort-en-Terre apre alle 10:00 e noi ci arriviamo alle 9:00. **Prima di
+cercare il locale si guarda che giorno è**: dimezza la lista e salva la serata.
+Il calendario del viaggio: G1 gio, G2 ven, G3 sab, G4 dom, G5 lun, G6 mar,
+G7 mer, G8 gio, G9 ven, G10 sab (**15 agosto, festa nazionale in Francia**),
+G11 dom.
+
+**Un locale citato può non esistere più.** Al Cap Fréhel la guida indicava «il
+ristorante del capo»: la crêperie di Plévenon ha chiuso e la Fauconnière è
+stata demolita. **Le schede generiche — «il fronte del porto», «le strade
+della Cité» — sono il posto dove si nascondono gli errori**, perché non
+essendo verificabili sembrano sempre giuste. Un nome proprio si può
+controllare; «le tavole del porto» no.
+
+**Ricette per la ricerca dei locali.** Le ricerche generiche («migliori
+ristoranti a X») restituiscono liste di aggregatori senza orari né indirizzi.
+Quello che funziona: cercare il **nome proprio** del locale insieme alla via,
+poi aprire il **sito dell'insegna** o la scheda **Gault&Millau / guida
+Michelin**, che hanno orari e giorni di chiusura. Gli uffici del turismo
+locali (roscoff-tourisme, perros-guirec.com, crozon-tourisme) hanno gli
+indirizzi ma spesso rispondono 403 o 503.
