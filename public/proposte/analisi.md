@@ -14,6 +14,66 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: FUORI — non c'è un momento del viaggio dove infilarla senza rompere qualcos'altro.**
+
+Dinan è una città murata sulla Rance, fra Saint-Malo e Rennes: bastioni del Duecento con 14 torri,
+il castello-donjon della duchessa Anna, la basilica di Saint-Sauveur, e soprattutto la Rue du
+Jerzual, la discesa a ciottoli fra case a graticcio che porta al porto fluviale. Non è una tappa
+da mezz'ora: è un centro storico che chiede almeno due ore buone fra città alta e porto basso.
+
+### Dove starebbe, e perché non ci sta
+
+Le uniche due giornate che passano vicino sono il Giorno 4 (arrivo a Saint-Malo) e il Giorno 5
+(Saint-Malo → Cap Fréhel → Fort la Latte → Perros-Guirec), e in tutte e due Dinan è una deviazione
+a sud, non una tappa sulla strada.
+
+| Tratta | Misurata (OSRM) |
+|---|---|
+| Menhir du Champ-Dolent → Saint-Malo, diretto (percorso di guida) | 33,1 km / 31 min |
+| Menhir du Champ-Dolent → Dinan → Saint-Malo | 35,2 km + 33,4 km = 68,6 km / 66 min |
+| Saint-Malo → Cap Fréhel, diretto (percorso di guida) | 45,0 km / 58 min |
+| Saint-Malo → Dinan → Cap Fréhel | 33,4 km + 44,4 km = 77,8 km / 1h35 |
+
+Sul **Giorno 4**, infilare Dinan al posto del Menhir costerebbe circa 35 minuti di guida in più
+(66 contro 31), prima ancora di contare le due ore di visita: la giornata arriva già a Saint-Malo
+alle 19:55 con il tramonto dai bastioni fissato alle 21:35, e il biglietto orario dell'abbazia del
+Mont non si sposta.
+
+Sul **Giorno 5** costerebbe anche di più — quasi un'ora di guida in più (1h35 contro 58 min) prima
+della visita — e quel giorno ha due vincoli che non si spostano: il passaggio per l'Île du Grand Bé
+si apre solo con la bassa marea di mezzogiorno, e Fort la Latte chiude alle 18:30. La sera si parte
+comunque per Perros-Guirec, 122,9 km più a ovest: aggiungere Dinan a sud vorrebbe dire rinunciare
+o al Grand Bé o a uno dei due capi.
+
+L'unico modo per farcela sarebbe dormire a Dinan invece che a Saint-Malo la notte del Giorno 4 —
+ma è un rifacimento del confine fra Giorno 4 e Giorno 5, non un'aggiunta, e toglierebbe la sera e
+il tramonto dentro le mura di Saint-Malo che oggi chiudono il Giorno 4.
+
+### I dati, per quando servirà
+
+| | |
+|---|---|
+| Castello-donjon (Duchessa Anne) | Aperto tutti i giorni **10:30–19:00** in luglio-agosto-settembre 2026 · **8 €** adulti, gratis sotto i 12 anni |
+| Bastioni e Rue du Jerzual | Accesso libero, sempre |
+| Porto della Rance | Gite fluviali, orari da verificare sul posto |
+
+Non verificato: orari esatti della basilica Saint-Sauveur e disponibilità del parcheggio nella
+città alta ad agosto (mese di alta stagione, centro storico stretto).
+
+### Cosa consiglio
+
+Non entra in questo viaggio senza toccare un vincolo già fissato (marea, orario di chiusura, o la
+notte a Saint-Malo). È materiale per un viaggio futuro con una notte in più in quest'area, non per
+un'aggiunta a questo.
+
+Fonti: bretagna-vacanze.com (link della proposta); chateaudedinan.fr (orari e prezzo del castello,
+consultato 1 agosto 2026); distanze OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
