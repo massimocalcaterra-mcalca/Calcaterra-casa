@@ -14,6 +14,87 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan, la città murata sulla Rance
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: DA VALUTARE — non è nell'itinerario, ma non c'è un buco libero: entra solo
+mangiando il margine di un'altra giornata.**
+
+Dinan sta a sud di Saint-Malo e Dinard, sull'estuario della Rance: quasi tre chilometri di
+bastioni con quattordici torri, il castello del XIV secolo, la basilica Saint-Sauveur, la
+Tour de l'Horloge del Quattrocento e la Rue du Jerzual, una discesa a ciottoli fra case a
+graticchio che porta al vecchio porto fluviale. **Non è già in guida**: né come tappa né come
+menzione, nella riscrittura del 28 luglio non compare.
+
+### Dove potrebbe stare, e quanto costa — misurato
+
+Non ha una casella vuota accanto: le due giornate che le passano vicino sono già scritte ora
+per ora, e in entrambe l'aggiunta si mangia il margine, non un buco.
+
+| Opzione | Percorso | Diretto (come in guida) | Con Dinan | Differenza |
+|---|---|---|---|---|
+| **Giorno 4** | Menhir du Champ-Dolent → Saint-Malo | 33,1 km / **32 min** | 69,1 km / **67 min** | **+36 km, +35 min** di sola guida |
+| **Giorno 5** | Saint-Malo (mura) → Cap Fréhel | 45,0 km / **58 min** | 77,4 km / **90 min** | **+32 km, +32 min** di sola guida |
+
+(Coordinate prese dagli script della guida dettagliata: menhir 48.53504,-1.73912; mura di
+Saint-Malo 48.65030,-2.02650; Cap Fréhel 48.68139,-2.31899; centro di Dinan, place
+Duguesclin/château, 48.4530,-2.0463 — approssimata, non dalla guida.)
+
+A questo va sommato il tempo della visita vera: anche una sosta rapida — vista dai bastioni,
+un pezzo di Rue du Jerzual, senza il castello — non sta sotto i 45 minuti-1 ora.
+
+**Giorno 4 esce peggio.** La giornata è scritta apposta per arrivare a Saint-Malo la sera e
+vedere «il tramonto dai bastioni, senza rimettersi in auto» alle 21:35: è l'orario 18:55
+(menhir) → 19:55 (Saint-Malo) → 21:35 (tramonto), con un margine di un'ora e quaranta già
+destinato alla cena. Aggiungere Dinan lì vuol dire arrivare a Saint-Malo verso le 21:00-21:15
+con appena il castello ancora aperto (chiude alle 19:00) e nessun tempo per cenare prima del
+tramonto: si romperebbe proprio il momento per cui quella giornata è costruita così.
+
+**Giorno 5 regge, ma senza margine.** Lo schema è: 11:45 si parte da Saint-Malo, 12:45 Cap
+Fréhel, 14:00 pranzo, 15:15 Fort la Latte (**chiude alle 18:30**), 16:45 si riparte per
+Perros-Guirec, arrivo 18:40, tramonto 21:40. Infilando Dinan fra Saint-Malo e Cap Fréhel, con
+32 minuti di guida in più e una sosta di tre quarti d'ora, Cap Fréhel si sposta verso le
+14:00-14:15: pranzo verso le 15:00, Fort la Latte verso le 16:15-16:30, appena due ore
+scarse prima della chiusura invece delle tre attuali, e la partenza per Perros-Guirec slitta
+a circa le 18:00. Si arriverebbe comunque prima del tramonto delle 21:40 — con un'ora e mezza
+di margine anziché tre — ma il castello di Fort la Latte si vedrebbe di corsa, all'ultimo
+ingresso utile.
+
+### Cosa non è verificato
+
+- Le coordinate del centro di Dinan sono una stima (place Duguesclin), non prese dalla guida:
+  l'ordine di grandezza dei minuti è affidabile, il singolo minuto no.
+- Parcheggio e traffico di Dinan ad agosto: la Rue du Jerzual è pedonale e ripida, i parcheggi
+  stanno ai due estremi (place Duguesclin in alto, port de Dinan in basso) — non ho trovato un
+  numero di posti o una tariffa oraria per il 2026.
+- Nessun divieto o pericolo noto per Dinan in sé, a differenza di altre schede di questo file:
+  è un borgo di pietra su un pendio, non una costa pericolosa.
+
+### Un vincolo che NON c'è, verificato apposta
+
+La **Fête des Remparts**, la festa medievale biennale di Dinan, **non cade nel 2026**: la
+prossima edizione è il 24-25 luglio **2027**. Quindi il 6-16 agosto 2026 Dinan è in giornata
+normale, non in festa — né vantaggio né ostacolo.
+
+| | |
+|---|---|
+| Château de Dinan | Tutti i giorni **10:30-19:00** ad agosto · 8 € adulti, 5 € ridotto, gratis sotto i 6 |
+| Tour de l'Horloge | Aprile-settembre tutti i giorni **10:30-18:30**, lunedì e mercoledì con pausa 13:00-14:00 |
+| Fête des Remparts | **Non nel 2026** — prossima edizione 24-25 luglio 2027 |
+
+### Cosa consiglio
+
+**Non entra in questo viaggio senza rompere qualcosa.** Se qualcuno la vuole comunque, la via
+meno peggio è il Giorno 5, appena dopo Saint-Malo, accettando di vedere Fort la Latte più in
+fretta e di perdere quasi tutto il margine serale. Il Giorno 4 costa di più ed entra in
+conflitto diretto con il tramonto dai bastioni, che è il pezzo forte della giornata: da
+scartare.
+
+Fonti: link segnalato; chateaudedinan.fr; dinan.fr; fete-remparts-dinan.com. Distanze: OSRM,
+coordinate dalla guida dettagliata dei Giorni 4 e 5.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
