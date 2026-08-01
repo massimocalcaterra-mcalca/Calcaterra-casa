@@ -14,6 +14,58 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: FUORI — bella, ma non c'è un posto per lei senza scavare in due giornate già piene.**
+
+Città medievale sulla Rance, quasi tre chilometri di bastioni intorno al centro storico, castello
+del XIV secolo, la ripida Rue du Jerzual con le case a graticcio che scende fino al porticciolo
+turistico sul fiume. Non è nell'itinerario attuale: il percorso da Champ-Dolent a Saint-Malo (Giorno
+4) e da Saint-Malo a Cap Fréhel (Giorno 5) passa a nord, e Dinan sta a sud di entrambi i tratti.
+
+### Il costo, misurato
+
+| Tratta | Diretta (come in guida) | Con Dinan in mezzo | Differenza |
+|---|---|---|---|
+| Champ-Dolent → Saint-Malo (Giorno 4) | 33,1 km / 31 min | Champ-Dolent → Dinan → Saint-Malo: 68,3 km / 63 min | **+35,2 km / +32 min** |
+| Saint-Malo → Cap Fréhel (Giorno 5) | 45,1 km / 57 min | Saint-Malo → Dinan → Cap Fréhel: 76,6 km / 85 min | **+31,5 km / +28 min** |
+
+A questo va aggiunto il tempo della visita vera e propria — le vie a graticcio, i bastioni, il porto
+— che per una città di questa scala non sta sotto le due ore.
+
+### Perché non entra in nessuna delle due giornate
+
+Il Giorno 4 arriva già a Saint-Malo in serata dopo l'Abbazia del Mont-Saint-Michel e la sosta al
+Menhir du Champ-Dolent: la visita a Saint-Malo stessa è rimandata al mattino del Giorno 5 apposta
+per non stringere questa giornata. Aggiungere 32 minuti di guida più un paio d'ore a Dinan sposta
+l'arrivo in albergo (Hôtel de la Cité, con parcheggio solo su richiesta) parecchio più tardi la sera.
+
+Il Giorno 5 è, per ammissione della guida stessa, la giornata in cui si "toglie fatica a domani":
+dopo le mura di Saint-Malo, Cap Fréhel e Fort la Latte c'è già un trasferimento serale di 122,9 km
+e 1h50 fino a Perros-Guirec, pensato apposta per alleggerire la vigilia dell'eclissi (Giorno 6). Un
+andirivieni a sud fino a Dinan e ritorno (Dinan è quasi sulla verticale di Saint-Malo, quindi si
+tornerebbe sui propri passi) userebbe proprio il margine che quella scelta aveva creato.
+
+Inoltre Dinan sta a sud, in direzione quasi opposta a Cap Fréhel: inserirla nel Giorno 5 significa
+allontanarsi dalla costa per poi tornarci, non seguire una linea.
+
+### Cosa consiglio
+
+Non entra in questo viaggio senza sacrificare qualcos'altro di già deciso — il tempo a Saint-Malo,
+oppure il margine costruito apposta prima dell'eclissi. Se un giorno si rifà un viaggio più
+incentrato sulla Côte d'Émeraude e la valle della Rance, con meno tappe da coprire, è un candidato
+naturale.
+
+Non verificato: orari di apertura di castello e monumenti a Dinan per agosto 2026, eventuali giorni
+di mercato o chiusure. Non risultano pericoli o divieti particolari: è una città, non una costa a
+rischio.
+
+Fonti: tourismebretagne.com (link segnalato); Nominatim (OpenStreetMap) per le coordinate; OSRM per
+le distanze.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
