@@ -14,6 +14,63 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: FUORI — bella, ma nessuna delle due giornate vicine ha lo spazio per prenderla senza
+rompersi.**
+
+Dinan non è nell'itinerario: l'ho verificato sulla guida definitiva, nessuna delle undici giornate
+la tocca. È la città murata più intera di Bretagna — bastioni, la salita acciottolata di Rue du
+Jerzual verso il porto sulla Rance, il castello-donjon — ma sta 20 km a sud di Saint-Malo, fuori
+dalle due rotte che passano più vicino.
+
+### La deviazione, misurata
+
+| Tratta | Diretta | Passando da Dinan | Costo |
+|---|---|---|---|
+| **Giorno 4** pomeriggio: Mont-Saint-Michel → Champ-Dolent → Saint-Malo | 60,6 km / 1h31 | 96,2 km / 2h05 | **+35,6 km, +34 min** |
+| **Giorno 5**: Saint-Malo → Cap Fréhel | 44,7 km / 0h56 | 76,9 km / 1h27 | **+32,2 km, +31 min** |
+
+(Distanze OSRM, solo guida — non contano le soste.)
+
+### Perché non entra in nessuna delle due
+
+**Giorno 4** non ha margine: la guida tiene il gruppo al Mont-Saint-Michel fino al tardo pomeriggio
+apposta per il tramonto senza folla, poi si passa il confine e ci si sistema a Saint-Malo la sera.
+Infilarci Dinan vorrebbe dire arrivare a Saint-Malo a cena inoltrata, con zero tempo per le mura la
+sera dell'arrivo.
+
+**Giorno 5** è già pieno: mattina alle mura di Saint-Malo (con l'Île du Grand Bé alla bassa marea di
+mezzogiorno), poi Cap Fréhel e Fort la Latte nel pomeriggio, e ancora 171 km fino a Perros-Guirec la
+sera. Mezz'ora e passa di deviazione, più il tempo per vedere davvero Dinan — che non è una sosta di
+dieci minuti, è una città vecchia intera — vorrebbe dire sacrificare Fort la Latte o arrivare tardi
+alla tappa serale.
+
+### Se un giorno ci si tornasse
+
+| | |
+|---|---|
+| Castello-donjon | Aperto tutti i giorni **10:30–19:00** in agosto 2026. 8 € intero, 5 € ridotto, gratis sotto i 6 anni |
+| Mercato | Il giovedì mattina, **8:00–13:00**, Place Duguesclin e Place du Champ Clos — non compatibile con una visita di domenica o lunedì |
+| Parcheggio | A pagamento **9:00–19:00** nel centro storico; diverse vie del centro sono pedonalizzate **11:00–19:00** (fino alle 23:00 nei weekend di luglio-agosto) |
+| Fête des Remparts | **22–25 luglio 2026** — prima del vostro arrivo, nessuna sovrapposizione |
+
+### Cosa consiglio
+
+Lasciarla fuori da questo viaggio. Non c'è un modo di prenderla senza rompere una serata o una
+giornata già equilibrata. Resta una buona idea per un viaggio futuro incentrato sulla Rance, magari
+insieme a Bécherel (già segnata come opzione del Giorno 4) e alla Côte d'Émeraude.
+
+Non verificato: orari di eventuali altri siti minori (basilica Saint-Sauveur, giardino inglese),
+disponibilità di parcheggio nei giorni effettivi del viaggio.
+
+Fonti: guida ufficiale del viaggio (viaggi.calcaterra.casa); chateaudedinan.fr (orari e tariffe del
+castello); dinan.fr (mercato, parcheggio, vie pedonali); fete-remparts-dinan.com (date 2026).
+Distanze: OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
