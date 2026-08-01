@@ -14,6 +14,68 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: FUORI — bella, ma non c'è uno spazio che non rompa un equilibrio già pensato.**
+
+Dinan non è nell'itinerario attuale: è una tappa nuova, non una variante di qualcosa che già c'è.
+Città murata sulla Rance, quasi 3 km di bastioni del XIII secolo con 14 torri, case a graticcio del
+XV-XVII secolo, la Rue du Jerzual che scende ripida dal centro al porto, un castello del XIV secolo
+(Tour de Coëtquen) e la basilica Saint-Sauveur. Da vedere sul serio: la stessa fonte che l'ha
+segnalata dice che serve "almeno mezza giornata".
+
+| Dato | Valore |
+|---|---|
+| Comune | Dinan, Côtes-d'Armor |
+| Coordinate centro storico | 48,4547 N / 2,0450 O |
+| Château de Dinan, agosto 2026 | tutti i giorni 10:30–19:00, adulto 8 €, ridotto 5 € |
+| Visite notturne al castello | mercoledì e venerdì alle 21:00, dall'8 luglio al 28 agosto (esclusa la sera del 12 agosto) — nessuna cade nei due giorni di passaggio (9-10 agosto) |
+| Fête des Remparts (festa medievale biennale) | 22–25 luglio 2026 — **finita due settimane prima dell'arrivo**, non 2026 in coincidenza col viaggio |
+
+### Dove starebbe, e quanto costa
+
+Il posto naturale è fra il Giorno 4 (Mont-Saint-Michel → Menhir du Champ-Dolent → Saint-Malo) e il
+Giorno 5 (Saint-Malo → Cap Fréhel → Fort la Latte → Perros-Guirec), perché Dinan sta proprio in
+mezzo, una trentina di chilometri a sud di Saint-Malo. Ho misurato entrambe le opzioni su OSRM:
+
+| Percorso | Come è ora | Con Dinan | Differenza |
+|---|---|---|---|
+| Giorno 4: Mont-Saint-Michel → Champ-Dolent → Saint-Malo | 61,9 km / 1h33 | → Champ-Dolent → **Dinan** → Saint-Malo: 97,6 km / 2h08 | **+35,7 km / +35 min** di sola guida |
+| Giorno 5: Saint-Malo → Cap Fréhel | 44,7 km / 56 min | Saint-Malo → **Dinan** → Cap Fréhel: 76,9 km / 1h28 | **+32,2 km / +32 min** di sola guida |
+
+Nessuna delle due è "nove minuti in più", come per la Côte Sauvage di Quiberon: qui parliamo di
+mezz'ora abbondante di guida in più **prima ancora di essere entrati in città** — e Dinan, per come
+la descrive la fonte, ne merita almeno due o tre di visita vera, non una foto dall'auto.
+
+- **Giorno 4 non regge**: la guida dice esplicitamente che il momento migliore al Mont è "il tardo
+  pomeriggio e il tramonto, senza folla" (tramonto verso le 21:40 in quei giorni), e che *poi* si
+  parte per Saint-Malo — quindi si arriva già a sera inoltrata. Infilarci Dinan vorrebbe dire o
+  rinunciare al tramonto al Mont (il momento che la guida stessa segnala come il più magico) o
+  arrivare a Saint-Malo passata mezzanotte, con Dinan chiusa e buia: nessuna delle due ha senso.
+- **Giorno 5 non regge meglio**: la mattina a Saint-Malo è già vincolata dalla bassa marea verso
+  mezzogiorno per raggiungere l'Île du Grand Bé, il pomeriggio è Cap Fréhel + Fort la Latte, e la
+  scheda del Giorno 5 esiste apposta per scaricare tempo dal Giorno 6, il giorno prima dell'eclissi.
+  Aggiungere un'ora abbondante fra guida e visita a Dinan va contro il motivo stesso per cui quella
+  tappa è organizzata così.
+
+### Cosa consiglio
+
+Non inserirla in questo viaggio. Se conta qualcosa: Saint-Malo copre già, in parte, lo stesso
+bisogno — città fortificata, bastioni percorribili, atmosfera medievale — anche se lo stile è
+diverso (corsaro e di pietra grigia a Saint-Malo, case a graticcio e Rue du Jerzual a Dinan). Se un
+giorno si allunga il viaggio o si toglie una notte da qualche altra parte, Dinan è la prima
+candidata da riconsiderare: non ha controindicazioni, solo bisogno di uno spazio che oggi non c'è.
+
+Non verificato: gli orari di apertura di agosto 2026 per la basilica Saint-Sauveur e per la
+passeggiata sui bastioni (di norma accesso libero, ma da controllare sul posto); la disponibilità
+di parcheggio nell'alta stagione vicino al centro storico.
+
+Fonti: bretagna-vacanze.com (pagina segnalata); chateaudedinan.fr (orari e tariffe 2026);
+fete-remparts-dinan.com (date 2026); distanze misurate con OSRM (router.project-osrm.org).
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
