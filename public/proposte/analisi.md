@@ -14,6 +14,66 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: FUORI — bella, ma non c'è un buco nella giornata dove infilarla senza sacrificare
+qualcosa già deciso.**
+
+Dinan è una città murata medievale sulla Rance, a **32 km da Saint-Malo**. Non è nell'itinerario
+attuale: né la guida né le tappe dei Giorni 4-5 la citano.
+
+### Il costo, misurato
+
+| Tratta | Km e guida |
+|---|---|
+| Giorno 4 come è in guida: Crépon → Mont-Saint-Michel → Champ-Dolent → Saint-Malo | 201,0 km / 3h37 |
+| Giorno 4 con Dinan inserita fra Champ-Dolent e Saint-Malo | 236,4 km / 4h10 |
+| Giorno 5 come è in guida: Saint-Malo → Cap Fréhel → Fort la Latte → Perros-Guirec | 167,6 km / 2h53 |
+| Giorno 5 con Dinan inserita fra Saint-Malo e Cap Fréhel | 199,5 km / 3h23 |
+| Saint-Malo ↔ Dinan, solo andata | 32,3 km / 33 min |
+
+In auto costa poco — mezz'ora abbondante come tappa intermedia in entrambi i casi. Il problema non
+è la strada: è il tempo da passarci una volta arrivati.
+
+### Perché non entra
+
+Le fonti turistiche (compreso il sito da cui arriva la proposta) sono concordi: **mezza giornata è
+il minimo** per bastioni, Rue du Jerzual, basilica di Saint-Sauveur e porto sulla Rance; una
+giornata intera se si aggiunge una passeggiata sul fiume. Il sito segnalato suggerisce addirittura
+"un week-end".
+
+E in nessuna delle due giornate vicine c'è mezza giornata libera:
+
+- **Giorno 4** — il "tardo pomeriggio e il tramonto senza folla" al Mont-Saint-Michel sono già
+  descritti come il momento più magico della giornata, prima del trasferimento serale a
+  Saint-Malo. Aggiungere Dinan lì vuol dire accorciare proprio quella finestra.
+- **Giorno 5** — la mattina è occupata dalle mura di Saint-Malo ed è vincolata dalla marea (bassa
+  marea verso mezzogiorno, per l'Île du Grand Bé): un orario che non si sposta. Il pomeriggio ha
+  già due tappe, Cap Fréhel e Fort la Latte, prima di un trasferimento serale di quasi tre ore fino
+  a Perros-Guirec.
+
+Infilare Dinan non costerebbe trenta minuti di guida: costerebbe la marea a Saint-Malo, il tramonto
+al Mont-Saint-Michel, oppure una fra Cap Fréhel e Fort la Latte. E anche sacrificando una di
+queste, la visita a Dinan resterebbe una passeggiata affrettata, non la mezza giornata che serve
+davvero.
+
+### Cosa consiglio
+
+Non aggiungerla a questo viaggio. Se interessa, è candidata più onesta per un giorno extra dedicato
+a Saint-Malo/Dinard/Dinan insieme, non per un incastro in giornate già piene.
+
+**Non verificato:** gli orari del Château de Dinan per agosto 2026 (da fonti aggregate risultano
+10:30-19:00 tutti i giorni, ma non ho raggiunto direttamente chateaudedinan.fr per confermarlo) e i
+prezzi del biglietto singolo (trovato solo il pass famiglia, 21€). Eventuali chiusure per eventi
+specifici di agosto 2026 vanno controllate sul posto.
+
+Fonti: link segnalato (bretagna-vacanze.com); cotesdarmor.com e francethisway.com (tempo di visita
+consigliato); risultati di ricerca su chateaudedinan.fr (orari, non verificati direttamente);
+guida di riferimento (viaggi.calcaterra.casa/normandie-bretagna/). Distanze: OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
