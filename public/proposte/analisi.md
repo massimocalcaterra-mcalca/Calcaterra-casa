@@ -14,6 +14,67 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04, senza nota.
+**Giudizio: FUORI — bella, ma non c'è un giorno che la regga senza rompersi.**
+
+Dinan è una cittadina medievale sul fiume Rance, quasi tre chilometri di mura del Duecento con
+quattordici torri, la via del Jerzual acciottolata con le case a graticcio, il castello-donjon
+del Trecento. Un posto vero, non un posto da opuscolo. Il problema non è cosa sia: è dove
+starebbe.
+
+### Dov'è, rispetto alla strada che fate davvero
+
+Il percorso in quella zona è **Mont-Saint-Michel → Menhir du Champ-Dolent → Saint-Malo** (Giorno
+4) e poi **Saint-Malo → Cap Fréhel → Fort la Latte** (Giorno 5). Dinan sta **a sud** di
+Saint-Malo, fuori da entrambe le linee: non è sulla strada, è una deviazione a scendere e poi
+risalire.
+
+| Tratto | Come è in guida | Passando da Dinan | Costo |
+|---|---|---|---|
+| Menhir → Saint-Malo (fine Giorno 4) | 33,1 km / **32 min** | 68,2 km / **64 min** | **+35 km, +32 min** |
+| Saint-Malo → Cap Fréhel (inizio Giorno 5) | 45,0 km / **58 min** | 76,6 km / **86 min** | **+32 km, +28 min** |
+| Andata e ritorno da Saint-Malo, come gita a sé | — | 65,7 km / **67 min** | non c'è un giorno libero per farla |
+
+E questo è solo il tempo di guida in più: vedere Dinan sul serio — le mura, il Jerzual, il porto
+sulla Rance — vuole almeno un'ora e mezza, due, non una tappa fotografica di dieci minuti.
+
+### Perché nessuno dei due giorni la regge
+
+**Giorno 4** è già il più pesante di guida del viaggio, **196 km e 3h39**, con il parcheggio del
+Mont a scaglioni orari (uscire entro le 17:00 per restare nei 24 € invece di 28) e il tramonto
+dai bastioni di Saint-Malo alle 21:35 come chiusura della giornata. Mezz'ora e mezzo passata a
+Dinan si mangia il margine fra l'arrivo previsto (19:55) e il tramonto, e lascia meno di un'ora
+per cena e riposo prima del Giorno 5.
+
+**Giorno 5** non ha margine da mangiare: **zero slack**. La mattina è vincolata dalla marea per
+il Grand Bé (si apre verso le 10:30-11:00, si parte da Saint-Malo alle 11:45), il pomeriggio da
+un orario di chiusura vero — **Fort la Latte chiude alle 18:30**, ultimo ingresso prima — e la
+partenza delle 11:45 arriva al Cap Fréhel alle 12:45 usando esattamente i 56 minuti di guida
+misurati, senza un minuto di riserva. Un'ora e mezzo in più qui non si assorbe: si scavalca
+Fort la Latte, o si arriva a Perros-Guirec troppo tardi per il sentiero della sera.
+
+Nessun altro giorno del viaggio passa vicino a Dinan: il ritorno (Giorni 10-11) va verso
+Le Mans, Giverny e Beauvais, cioè nella direzione opposta.
+
+### Cosa consiglio
+
+Non entra senza sacrificare qualcosa che già funziona — o il tramonto sui bastioni di Saint-Malo,
+o la chiusura di Fort la Latte. Se un giorno emerge tempo in più nel viaggio (una tappa cancellata,
+un imprevisto), Dinan è la prima candidata a sostituirla: è a mezz'ora da Saint-Malo, non fuori
+percorso in senso assoluto, solo fuori dal margine di **questo** itinerario.
+
+Non verificato: orari e prezzi del castello-donjon sono quelli 2026 dal sito ufficiale (vedi
+sotto) — parcheggio e afflusso turistico ad agosto non sono stati controllati.
+
+Fonti: link segnalato (bretagna-vacanze.com); chateaudedinan.fr (orari: tutti i giorni
+10:30-19:00 in luglio-agosto-settembre; ingresso adulto 8 €, ridotto 5 €, family pass 21 €).
+Distanze: OSRM sulle coordinate della guida (Menhir 48,53504/-1,73912; Saint-Malo, mura,
+48,65030/-2,02650; Cap Fréhel 48,68139/-2,31899; Dinan centro 48,4540/-2,0477).
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
