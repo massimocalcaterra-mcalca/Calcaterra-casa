@@ -98,3 +98,4 @@ messaggio finale** invece di uscire in silenzio.
 
 Le due proposte sono state analizzate a mano.
 
+2026-08-01 05:14 · battito · nessuna proposta nuova; 6 in archivio.
