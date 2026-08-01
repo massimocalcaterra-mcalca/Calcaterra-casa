@@ -14,6 +14,62 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: FUORI — la deviazione costa quanto tutto il resto della giornata, e duplica Saint-Malo.**
+
+Dinan è una città murata medievale sulla Rance, a sud di Saint-Malo: quasi 3 km di bastioni, la Rue
+du Jerzual con le case a graticcio del Quattro-Seicento, il castello del XIV secolo, la basilica
+Saint-Sauveur. Nell'itinerario cadrebbe nel **Giorno 4**, martedì 9 agosto (Mont-Saint-Michel →
+Menhir du Champ-Dolent → Saint-Malo).
+
+### La misura
+
+| Tratta | Misurata (OSRM) |
+|---|---|
+| Menhir du Champ-Dolent → Saint-Malo, come è in guida | 33,1 km / **32 minuti** |
+| Menhir du Champ-Dolent → **Dinan** → Saint-Malo | 70,0 km / **1h11** |
+| **Deviazione per passare da Dinan** | **+36,9 km / +39 minuti** |
+
+Anche prendendo come base la variante già proposta in guida come «deviazione per chi ama i libri»
+(Bécherel, non scelta nell'orario effettivo del Giorno 4), il conto resta pesante:
+
+| Tratta | Misurata (OSRM) |
+|---|---|
+| Bécherel → Saint-Malo diretto | 50,2 km / **47 minuti** |
+| Bécherel → **Dinan** → Saint-Malo | 57,4 km / **1h10** |
+| Deviazione | **+7,2 km / +23 minuti** |
+
+Punto usato per Dinan: Rue du Jerzual, 48,4548 / -2,0418 (centro storico, presa da Nominatim/OSM —
+il sito propone la pagina generica sulla destinazione, senza un punto preciso).
+
+### Perché fuori
+
+Il Giorno 4 è già stretto: colazione 7:45, partenza 9:00, Mont-Saint-Michel dalle 11:15 alle 18:00
+(abbazia con biglietto orario alle 14:00), poi Menhir alle 18:55 e arrivo a Saint-Malo alle 19:55
+per il tramonto dai bastioni alle 21:35. Inserire Dinan sulla strada del ritorno da solo (senza
+Bécherel) aggiunge 39 minuti di guida — più del doppio del tempo già previsto per l'intera tratta
+Menhir-Saint-Malo — e non lascia margine per visitarla sul serio: il castello (10:30-19:00, 8 €,
+visite guidate alle 11:00 e alle 15:00) sarebbe già chiuso o quasi all'arrivo. O si rinuncia al
+tramonto sui bastioni di Saint-Malo, o si accorcia il Mont-Saint-Michel: nessuno dei due sacrifici
+sembra ragionevole per una tappa che **duplica** ciò che il viaggio offre già — Saint-Malo è
+anch'essa una città murata medievale, con bastioni gratuiti e sempre aperti, già nel programma
+della stessa serata.
+
+Non verificato: parcheggio e accessibilità del centro storico di Dinan (la pagina ufficiale del
+castello non li specifica); orari della basilica Saint-Sauveur e della Rue du Jerzual (presumibilmente
+libera come strada pubblica, ma non controllato).
+
+Nessun divieto o pericolo segnalato: è una città normale, senza avvisi di sicurezza rilevanti per un
+visitatore.
+
+Fonti: bretagna-vacanze.com (pagina proposta); chateaudedinan.fr/informations-pratiques (orari e
+prezzi verificati direttamente); Nominatim/OpenStreetMap (coordinate); OSRM (distanze); pagine del
+Giorno 4 dell'itinerario pubblicato.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
