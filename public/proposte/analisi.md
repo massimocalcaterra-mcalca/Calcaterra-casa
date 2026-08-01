@@ -14,6 +14,70 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: DA VALUTARE — entra solo se si accetta di arrivare più tardi a Saint-Malo.**
+
+Dinan è una delle città medievali meglio conservate della Bretagna: bastioni intatti che si
+percorrono a piedi, la Rue du Jerzual (ciottoli, forte pendenza) che scende dalla città alta al
+porto sulla Rance, case a graticcio, e il castello ducale (torre di Coëtquen, sotterraneo
+Mercoeur, donjon). Non è nell'itinerario attuale.
+
+### Dove starebbe
+
+Non c'entra nulla con il Giorno 5 (Saint-Malo → Cap Fréhel → Fort la Latte → Perros-Guirec):
+Dinan è a sud, gli altri punti sono tutti a ovest lungo la costa, e infilarcela vorrebbe dire
+tornare indietro. L'unico punto dell'itinerario da cui è raggiungibile senza stravolgere la
+rotta è il **Giorno 4**, tra il menhir di Champ-Dolent e l'arrivo serale a Saint-Malo.
+
+### Distanze misurate (OSRM, percorso più diretto)
+
+| Tratto | Km | Tempo |
+|---|---|---|
+| Menhir di Champ-Dolent → Saint-Malo, diretto | 33,7 km | 32 min |
+| Menhir di Champ-Dolent → Dinan | 35,8 km | 32 min |
+| Dinan → Saint-Malo | 33,5 km | 33 min |
+| **Totale via Dinan** | **69,3 km** | **65 min** |
+
+**Deviazione: +35,6 km, +33 minuti di sola guida**, a cui va aggiunto il tempo della visita vera
+e propria — per vedere bastioni, Rue du Jerzual e porto senza correre servono almeno 1h30-2h.
+Costo totale realistico: **circa due ore e mezza in più** sul Giorno 4.
+
+Nota sulla distanza di guida: la guida attuale riporta per il tratto menhir → Saint-Malo **62,7 km
+e 1h26**, un valore che il calcolo diretto con OSRM non riproduce (33,7 km / 32 min): è probabile
+che il percorso di guida passi per la costa (zona di Cancale) invece che per la strada interna più
+breve. Non ho verificato quale sia il tragitto realmente previsto — lo segnalo perché cambia quanto
+"pesa" la deviazione. Il confronto sopra è comunque coerente, perché uso lo stesso motore e lo
+stesso tipo di percorso su entrambi i lati.
+
+### Vincoli per agosto 2026
+
+Il Château de Dinan (torri e donjon) è aperto **tutti i giorni 10:30-19:00** in luglio-agosto-settembre
+2026, biglietto adulto **8€**, ridotto 5€. Nessuna chiusura settimanale nel periodo. Non verificato:
+orari di apertura di negozi e ristoranti della città alta, disponibilità parcheggi ad agosto (mese
+di alta stagione, la Rue du Jerzual è pedonale e ripida — poco adatta a chi ha difficoltà di
+deambulazione).
+
+### Cosa sacrificare
+
+Il Giorno 4 arriva già a Saint-Malo "in serata" dopo mattina al Mont-Saint-Michel e sosta al
+menhir: con Dinan si arriverebbe 2-2h30 più tardi, riducendo il tempo libero serale dentro le mura
+di Saint-Malo (che comunque si visitano di nuovo la mattina del Giorno 5, con Grand Bé a bassa
+marea verso mezzogiorno). Non si tocca nulla di vincolato a un orario fisso.
+
+### Cosa consiglio
+
+Se il ritmo lo permette, **vale la deviazione**: è un centro storico di prim'ordine e il costo
+aggiuntivo è quasi tutto tempo di visita, non guida persa. Se invece si preferisce arrivare a
+Saint-Malo con calma e godersi la sera dentro le mura, è corretto lasciarla fuori — non è un "no"
+per demerito del posto, ma per il ritmo della giornata.
+
+Fonti: sortir-en-bretagne.fr; dinan-tourisme.fr (orari e tariffe Château de Dinan 2026). Distanze:
+OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
