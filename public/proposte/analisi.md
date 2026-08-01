@@ -14,6 +14,65 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: DA VALUTARE — una sosta breve ci sta, una visita vera no senza toccare il Giorno 5.**
+
+Città murata sulla Rance, nell'entroterra a sud di Saint-Malo e Dinard: quasi 3 km di **bastioni**
+del XIII secolo con 14 torri e 4 porte, le **case a graticcio** dei secoli XV-XVII lungo la ripida
+**Rue du Jerzual** che scende al porto, la basilica Saint-Sauveur, la torre dell'orologio e il
+**castello** (il donjon della duchessa Anna, XIV secolo) che si affaccia sul fiume. Non è nell'
+itinerario attuale: è una tappa nuova, non una variante di qualcosa già previsto.
+
+### Dove starebbe, e cosa costa
+
+Non c'è un giorno "vuoto" per infilarcela. L'unico punto dell'itinerario da cui è vicina è il
+**Giorno 5**, lunedì 10 agosto (mattina a Saint-Malo, pomeriggio Cap Fréhel e Fort la Latte, poi
+122,9 km fino a Perros-Guirec) — ed è comunque una deviazione verso sud, in direzione opposta a
+Cap Fréhel che sta a nord-ovest:
+
+| Tratta | Misurato |
+|---|---|
+| Saint-Malo → Cap Fréhel, diretto (come in guida) | 45,1 km / **57 min** |
+| Saint-Malo → **Dinan** → Cap Fréhel | 32,5 km (32 min) + 44,1 km (53 min) = 76,6 km / **1h25** |
+
+**Ventotto minuti e 31,5 km in più** solo di guida, prima ancora di scendere dall'auto a Dinan. E
+scendere dall'auto è il punto: le mura, il Jerzual e il porto meritano almeno un'ora e mezza-due
+ore per avere senso, non una foto al volo. Sommando visita e deviazione, il Giorno 5 cresce di
+**circa due ore e mezza** — proprio il giorno che la guida ha costruito apposta più leggero, per
+arrivare riposati alla vigilia dell'eclissi (vedi il `tip` nel Giorno 5 e nel Giorno 6: spostare la
+notte a Perros-Guirec serve esattamente a togliere ore di guida prima del Giorno 7). Aggiungerle
+qui va nella direzione sbagliata.
+
+### Cosa consiglio
+
+**Se conta il tempo:** lasciarla fuori questo viaggio. Non è un compromesso da nove minuti come la
+Côte Sauvage di Quiberon — è un pezzo di giornata vero, e il Giorno 5 non ha margine da dare senza
+toglierlo a Cap Fréhel, a Fort la Latte o al riposo prima del Giorno 6-7.
+
+**Se invece si accetta la deviazione:** i 28 minuti extra per arrivarci si possono spendere in una
+sosta corta — 30-40 minuti, il tratto di bastioni vicino a Place du Guesclin e la discesa del
+Jerzual fino al porto, senza entrare nel castello — rinunciando però a una visita vera. In quel
+caso qualcosa nel pomeriggio va accorciato: il candidato più naturale è il tempo a Fort la Latte,
+che è comunque a 4 minuti da Cap Fréhel e meno esteso da visitare.
+
+### Orari e prezzi, per agosto 2026
+
+Le mura e le strade del centro sono all'aperto e libere in ogni momento, senza orari. Il **Château
+de Dinan** (il donjon, unica parte con biglietto) è aperto tutti i giorni **10:30-19:00** a luglio,
+agosto e settembre; **8€** l'ingresso adulto, esiste un pass di due giorni a 10€ valido anche per la
+Torre dell'Orologio.
+
+Non verificato: orari e prezzo di ingresso della Torre dell'Orologio da sola; eventuali eventi o
+mercati a Dinan nella settimana del 10 agosto 2026, che potrebbero cambiare affollamento e
+parcheggio.
+
+Fonti: bretagna-vacanze.com (link segnalato); chateaudedinan.fr/informations-pratiques. Distanze:
+OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
