@@ -14,6 +14,68 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+Titolo dato da Massimo: «Dinan».
+**Giudizio: FUORI — non ci sta senza rompere una giornata già piena.**
+
+Dinan è una città medievale dei Côtes-d'Armor, sull'estuario della Rance: bastioni del XIII secolo
+con 14 torri, case a graticcio del XV-XVII secolo, la rue du Jerzual che scende ripida verso il
+porto fluviale, la basilica Saint-Sauveur. Non è un posto qualunque — è il genere di città che
+merita almeno un'ora e mezza a piedi, non una fermata veloce. Il problema è dov'è rispetto al
+percorso: **non è sulla strada, è una deviazione a sud.**
+
+Non è già nell'itinerario: l'unica menzione di «Dinan» nella guida è il nome dell'ufficio turistico
+regionale («Dinan-Cap Fréhel») citato nei crediti del Giorno 5 — non è una tappa.
+
+### Dove potrebbe stare, e quanto costa — misurato con OSRM
+
+I due giorni che passano più vicino sono il 4 (Mont-Saint-Michel → Saint-Malo) e il 5 (Saint-Malo →
+Cap Fréhel → Fort la Latte → Perros-Guirec):
+
+| Ipotesi | Percorso diretto (guida) | Percorso con Dinan | Differenza |
+|---|---|---|---|
+| **Giorno 4**, fine giornata | Mont-Saint-Michel → Saint-Malo: 56,5 km / 1h16 | Mont-Saint-Michel → Dinan → Saint-Malo: 58,7 + 32,8 = 91,5 km / 1h48 | **+35 km, +32 min di sola guida** |
+| **Giorno 5**, mattina | Saint-Malo → Fort la Latte: 43,1 km / 55 min | Saint-Malo → Dinan → Fort la Latte: 32,1 + 42,5 = 74,6 km / 1h23 | **+31,5 km, +28 min di sola guida** |
+
+A questo va aggiunta la visita vera e propria — a piedi, fra bastioni, rue du Jerzual e centro
+storico, difficile farla in meno di un'ora e mezza. In totale la deviazione costa **due ore
+abbondanti**, non trenta minuti come i casi già entrati in guida (Concarneau, Pointe
+Saint-Mathieu).
+
+### Perché non c'è spazio in nessuno dei due giorni
+
+**Giorno 4** è già scandito da un vincolo rigido: il biglietto orario dell'abbazia (14:00-16:15,
+due ore piene) e le fasce di parcheggio del Mont, dove uscire entro le 17:00 fa risparmiare 4 €.
+La giornata finisce alle 19:55 a Saint-Malo apposta per il tramonto dai bastioni alle 21:35, senza
+rimettersi in auto. Due ore in più a Dinan spostano l'arrivo a Saint-Malo dopo il tramonto.
+
+**Giorno 5** è ancora più stretto: parte al mattino legato alla marea (il Grand Bé si visita solo a
+bassa marea, verso mezzogiorno), passa per Cap Fréhel e per **Fort la Latte, che chiude alle
+18:30**, e finisce con un trasferimento di **122,9 km e 1h50** verso Perros-Guirec — la guida stessa
+spiega che quella notte non si dorme a Saint-Malo proprio per non appesantire il Giorno 6, che è la
+vigilia dell'eclissi. Non c'è dove prendere due ore senza toccare uno di questi vincoli.
+
+### Cosa consiglio
+
+**Lasciare fuori Dinan da questo viaggio.** Non perché non valga — vale — ma perché nessuno dei due
+giorni candidati ha le due ore che servono senza sacrificare un vincolo fisso (biglietto orario,
+marea, orario di chiusura, o il tramonto sui bastioni). Se un giorno l'itinerario cambiasse rotta
+— per esempio pernottando a Dinan invece che a Saint-Malo la notte del Giorno 4 — varrebbe la pena
+riconsiderarla: ma è una ristrutturazione della giornata, non un'aggiunta.
+
+Non verificato: orari e prezzi del Château de Dinan / Tour de l'Horloge per agosto 2026 — il sito
+ufficiale indicato dalla pagina segnalata (chateau-dinan.fr) non risulta raggiungibile, e la pagina
+dell'ente turistico (dinan-capfrehel.com) non pubblica online orari specifici. Il centro storico e
+i bastioni, comunque, sono a accesso libero. Nessun divieto o pericolo particolare risulta per
+questa città, a differenza di altre proposte già valutate.
+
+Fonti: pagina segnalata (bretagna-vacanze.com); dinan-capfrehel.com. Distanze: OSRM, coordinate
+Nominatim/OpenStreetMap.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
