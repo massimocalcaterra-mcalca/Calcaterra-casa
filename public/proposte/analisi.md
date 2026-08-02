@@ -14,6 +14,72 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan, la città murata sulla Rance
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: DA VALUTARE.** Non entra gratis in nessuna giornata, ma nel Giorno 5 il conto torna
+con un sacrificio preciso e misurato.
+
+Dinan è una città murata del XIII secolo su un promontorio sopra la Rance: quasi tre chilometri
+di bastioni (un tratto, il chemin de ronde della Porte du Jerzual, è riaperto dal 4 luglio 2026),
+la **Rue du Jerzual** — case a graticcio del Quattro-Cinquecento, pendenza 12-15% — che scende
+fino al porticciolo, e un castello-museo con il donjon della duchessa Anna di Bretagna.
+
+| | |
+|---|---|
+| Dove | Città murata sulla Rance, Côtes-d'Armor — 48,4540 N, 2,0477 O |
+| Castello | 10:30–19:00 tutti i giorni a luglio-agosto-settembre · 8 € adulti |
+| Bastioni e Rue du Jerzual | Gratis, sempre aperti |
+| Mercato | Il giovedì mattina, 8:00–13:00, piazza Duguesclin e Champ Clos — non il lunedì 10/8 |
+| Parcheggio | A pagamento 9:00–19:00 in agosto nei parcheggi centrali (Duguesclin, Champ Clos) |
+
+### Nel Giorno 4 non ci sta
+
+Dal Mont-Saint-Michel a Dinan sono **58,7 km e 76 minuti** — più del doppio del Menhir du
+Champ-Dolent (29,4 km, 54 min) — e da Dinan a Saint-Malo altri **32,9 km e 32 minuti**. Il
+Giorno 4 arriva già a Saint-Malo alle 19:55 dopo l'abbazia; aggiungendo Dinan al posto del menhir
+l'arrivo scivolerebbe oltre le 21, con la città vecchia in gran parte chiusa e il tramonto delle
+21:35 dai bastioni saltato.
+
+### Nel Giorno 5 il conto torna, con un cambio preciso
+
+Il Giorno 5 comincia con le mura di Saint-Malo e il Grand Bé (9:00–11:45, legato alla bassa marea
+di mezzogiorno), poi si parte per Cap Fréhel, dove si arriva alle 12:45. Sostituendo quel blocco
+con una visita a Dinan, i tempi tornano quasi uguali:
+
+| Percorso alternativo | Misurato |
+|---|---|
+| Saint-Malo → Dinan | 32,9 km / 32 min |
+| Dinan → Cap Fréhel | 44,1 km / 53 min |
+| Totale sulla ruota | 77 km / 1h25 (contro 44,8 km / 56 min diretti Saint-Malo → Cap Fréhel) |
+
+Partendo alle 9:00 da Saint-Malo si è a Dinan alle 9:32: restano circa **2h20 per la visita**
+prima di dover ripartire alle 11:52 e arrivare a Cap Fréhel alle 12:45, come da programma
+attuale. Il resto della giornata — Fort la Latte, la partenza delle 16:45, l'arrivo a
+Perros-Guirec alle 18:40 — non cambia.
+
+**Cosa si sacrifica:** il Grand Bé e la tomba di Chateaubriand, raggiungibili solo con la bassa
+marea di quel lunedì (praticabile indicativamente dalle 10:30 al primo pomeriggio), e la
+passeggiata mattutina nel centro di Saint-Malo — le mura restano comunque viste al tramonto del
+Giorno 4.
+
+### Cosa consiglio
+
+Dipende da quanto conta il Grand Bé: è un'esperienza rara e legata alla marea di quel giorno
+preciso, mentre Dinan è una città murata vera ma non un'unicità del genere. Se il Grand Bé non è
+una priorità, lo scambio è pulito: costa solo **29 minuti di guida in più** (1h25 contro 56 min)
+e libera comunque oltre due ore per la visita.
+
+Non verificato: gli orari delle botteghe artigiane di Rue du Jerzual ad agosto 2026 (probabilmente
+in linea con il resto del centro, ma da controllare sul posto); il tempo di attesa nei
+parcheggi centrali nel weekend a ridosso di Ferragosto.
+
+Fonti: chateaudedinan.fr (orari e prezzo del castello), dinan.fr (parcheggi, chemin de ronde,
+mercato), bretagna-vacanze.com (articolo segnalato nella proposta). Distanze: OSRM.
+
+---
+
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
