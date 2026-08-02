@@ -14,6 +14,56 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: DA VALUTARE — ma senza spazio libero nei giorni 4 e 5 così come sono.**
+
+Dinan è una città murata sulla Rance, non lontana dall'itinerario: quasi tre chilometri di
+bastioni del XIII secolo, la Rue du Jerzual a ciottoli in discesa verso il porto, il castello
+ducale del XIV secolo, la basilica Saint-Sauveur.
+
+| | |
+|---|---|
+| Dove | Fra Saint-Malo e Rennes, sulla Rance — non è mai stata nell'itinerario |
+| Menhir du Champ-Dolent → Dinan | 34,6 km / 29 min (misurato OSRM) |
+| Dinan → Saint-Malo | 32,9 km / 33 min |
+| Deviazione sul Giorno 4 | Menhir → Dinan → Saint-Malo: 67,6 km / 62 min, contro i 33,1 km / 32 min diretti: **+30 minuti di sola guida** |
+| Castello di Dinan | 10:30–19:00 tutti i giorni a luglio-agosto-settembre 2026 · 8 € intero, 5 € ridotto |
+| Fêtes des Remparts (festival medievale) | 22-25 luglio 2026: **finita prima del vostro arrivo**, non pertinente |
+
+### Perché non entra, per ora
+
+Il Giorno 4 (domenica 9 agosto) è già pieno dalla colazione delle 7:45 al tramonto di Saint-Malo
+alle 21:35: Mont-Saint-Michel fino alle 18:00, Menhir du Champ-Dolent 18:55-19:25, arrivo a
+Saint-Malo alle 19:55. I 30 minuti di guida in più per passare da Dinan si sommerebbero al tempo
+per vedere davvero qualcosa — il solo giro del centro storico a piedi, senza castello, non sta
+sotto l'ora e mezza — e in quella giornata non c'è un buco di quella misura.
+
+Il Giorno 5 (Cap Fréhel e Fort la Latte) è altrettanto stretto: il Grand Bé legato alla marea fino
+alle 11:15, poi Cap Fréhel, pranzo, Fort la Latte che chiude alle 18:30, e 122,9 km verso ovest
+fino a Perros-Guirec. Anche lì non c'è margine.
+
+**Il confronto con Bécherel**, già segnata come opzione non entrata sul Giorno 4: la deviazione per
+Dinan costa meno in pura guida (+30 min contro i +56 min misurati per Bécherel sullo stesso
+percorso Menhir-Saint-Malo), ma la visita in sé chiede più tempo — Bécherel si gira in fretta,
+Dinan ha un centro storico vero e un castello a pagamento. Il costo totale finisce per essere
+simile: nessuna delle due entra senza sacrificare qualcosa di già fissato.
+
+### Se si volesse comunque
+
+L'unico modo è rinunciare a qualcosa di certo: il giro serale delle mura di Saint-Malo (16:15-18:00,
+dopo il Mont) o il Menhir stesso. Nessuna delle due sostituzioni è ovvia — le mura sono gratis e il
+tramonto delle 21:35 è già un punto fermo della giornata.
+
+Non verificato: l'affollamento reale del centro di Dinan ad agosto e la disponibilità dei
+parcheggi a pagamento vicino al castello — è una delle mete più turistiche della zona.
+
+Fonti: bretagna-vacanze.com (proposta), dinan-capfrehel.com e chateaudedinan.fr (castello, orari),
+fete-remparts-dinan.com (date del festival). Distanze: OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
