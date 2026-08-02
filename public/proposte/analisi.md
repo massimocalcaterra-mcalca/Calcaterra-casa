@@ -14,6 +14,48 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: FUORI — bella ma non c'è un buco per infilarla, in nessuno dei due giorni possibili.**
+
+Dinan non è nell'itinerario attuale. È una città murata sulla Rance, a sud di Saint-Malo: case a
+graticcio, mura del Trecento con quattordici torri, la Rue du Jerzual che scende ripida dalla città
+alta al porto. I due soli giorni da cui è raggiungibile senza grandi giri sono il Giorno 4 (arrivo
+a Saint-Malo) e il Giorno 5 (partenza da Saint-Malo), ed entrambi sono già pieni di vincoli orari
+veri, non riempitivi.
+
+| | |
+|---|---|
+| Dove | Città vecchia sulla Rance, 22100 Dinan |
+| Deviazione dal Giorno 4 | Champ-Dolent → Saint-Malo diretto **30,3 km / 34 min**; passando da Dinan **65,6 km / 68 min** → **+35 km, +34 min** |
+| Deviazione dal Giorno 5 | Saint-Malo → Cap Fréhel diretto **44,7 km / 56 min**; via Dinan **76,7 km / 87 min** → **+32 km, +31 min** |
+| Cosa si sacrificherebbe (Giorno 4) | Il tramonto dai bastioni di Saint-Malo alle 21:35, o il tempo per cena e check-in |
+| Cosa si sacrificherebbe (Giorno 5) | Margine sulla finestra di bassa marea per il Grand Bé, oppure minuti sul Fort la Latte, che chiude alle 18:30 con ultimo ingresso prima |
+
+**Perché non ci sta.** Il Giorno 4 (Crépon → Mont-Saint-Michel → Champ-Dolent → Saint-Malo, 196 km
+e 3h39) è già scandito da un biglietto orario per l'abbazia (14:00-16:00) e da una tabella di
+marcia che porta a Saint-Malo alle 19:55, con il tramonto dai bastioni alle 21:35 come unico
+margine libero: mezz'ora in più a Dinan lo mangia. Il Giorno 5 (Saint-Malo → Cap Fréhel → Fort la
+Latte → Perros-Guirec, 171 km e 2h52) dipende dalla marea per il Grand Bé la mattina (finestra
+stretta, apertura verso le 10:30-11:00) e dall'orario di chiusura di Fort la Latte il pomeriggio,
+prima di un trasferimento lungo di 122,9 km fino a Perros-Guirec per non perdere il tramonto delle
+21:40. In entrambi i casi la deviazione — circa mezz'ora a tratta — cade proprio dove non c'è
+elastico.
+
+**L'unico modo per farla entrare davvero** sarebbe cambiare la notte del Giorno 4 da Saint-Malo a
+Dinan stessa, ma è una riscrittura di itinerario, non un'aggiunta: fuori dalla portata di questa
+scheda.
+
+Non verificato: orari e prezzo del castello/torre dell'orologio di Dinan ad agosto 2026 — il sito
+dell'ufficio del turismo non li riporta nella pagina consultata, e andrebbero chiesti direttamente
+(02 96 876 976). Il centro storico e le mura si visitano comunque a piedi senza biglietto.
+
+Fonti: bretagna-vacanze.com (link segnalato); dinan-capfrehel.com; pagine `giorno-04` e `giorno-05`
+della guida. Distanze: OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
