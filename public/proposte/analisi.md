@@ -14,6 +14,74 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: FUORI — bella, ma costa più di quel che sembra, e quel che costerebbe è il momento
+migliore della giornata.**
+
+La città murata sul fiume Rance, dell'entroterra fra Saint-Malo e Dinard: quasi tre chilometri di
+bastioni con 14 torri, la Rue du Jerzual che scende a scalini fra case a graticcio del Quattro-
+Cinquecento fino al porticciolo sulla Rance, la basilica di Saint-Sauveur, la torre dell'orologio
+del 1502 con la vista a 360° dall'alto. Non è sul mare: è a circa mezz'ora d'auto a sud di
+Saint-Malo, dall'altra parte dell'estuario.
+
+### Il conto, misurato
+
+L'unico punto d'aggancio possibile è il Giorno 4, che già finisce a Saint-Malo passando dal Menhir
+du Champ-Dolent. Confronto fra il percorso in guida e la stessa tratta deviata su Dinan:
+
+| Tratta | Km e guida |
+|---|---|
+| Mont-Saint-Michel → Menhir du Champ-Dolent | 28,0 km / **27 min** |
+| Menhir → Saint-Malo, diretto (come è in guida) | 33,1 km / **32 min** |
+| Menhir → **Dinan** | 35,3 km / **31 min** |
+| Dinan → Saint-Malo | 33,5 km / **34 min** |
+
+Diretto: 61,1 km / 59 min. Passando da Dinan: 96,6 km / 92 min. **+35,5 km, +33 minuti di sola
+guida** — senza contare un solo minuto fermi in città. Non è un'aggiunta come il Menhir (+7 km, +15
+min): è più del doppio della tratta che dovrebbe allungare.
+
+### Cosa costerebbe davvero
+
+Il Giorno 4 arriva già tirato: partenza da Crépon alle 9:00, abbazia del Mont con biglietto orario
+alle 14:00, navetta di ritorno alle 18:00, Menhir alle 18:55, e l'arrivo a Saint-Malo previsto per
+le 19:55 con il **tramonto dai bastioni alle 21:35** segnato come la chiusura della giornata —
+l'unica sera intra-muros del viaggio.
+
+Inserire Dinan sposterebbe l'arrivo a Saint-Malo verso le 20:30 di sola guida, e Dinan da vedere
+sul serio — non attraversata in auto — vuole almeno un'ora e mezza fra i bastioni e la Rue du
+Jerzual. Fatto per bene, si arriva a Saint-Malo dopo le 22:00: niente cena con calma, niente
+tramonto dai bastioni. E il conto è pure sbilanciato dall'altra parte: la Tour de l'Horloge di
+Dinan chiude alle **18:30** ad agosto 2026, quindi arrivandoci nel tardo pomeriggio del Giorno 4
+non si salirebbe nemmeno in cima.
+
+### Perché non un'altra giornata
+
+Il Giorno 5 (Saint-Malo → Cap Fréhel → Fort la Latte → Perros-Guirec) va verso nord e poi verso
+ovest, nella direzione opposta a Dinan, e chiude con 122,9 km di trasferimento serale già
+pianificato per alleggerire il Giorno 6. Nessun altro giorno tocca quest'area: si dorme a
+Saint-Malo una sola notte.
+
+C'è anche la via d'acqua — la Compagnie Corsaire fa una crociera sulla Rance fra Saint-Malo/Dinard
+e Dinan — ma impiega **2h45 a tratta** ed è legata alla marea: non è un'alternativa più veloce,
+è un'altra giornata intera.
+
+### Cosa consiglio
+
+**Lasciare il Giorno 4 com'è.** Dinan merita una visita con calma, non l'ultima ora di un pomeriggio
+già pieno da Mont-Saint-Michel. Se un giorno si rifà questo viaggio con una notte in più
+nell'area di Saint-Malo, è la prima candidata.
+
+Non verificato: gli orari di agosto 2026 del castello/donjon di Dinan e del mercato del giovedì in
+Place du Guesclin — comunque non rilevanti qui, perché i due giorni del viaggio in zona sono
+domenica 9 e lunedì 10 agosto.
+
+Fonti: link segnalato; dinan.fr (Tour de l'Horloge, orari 2026); compagniecorsaire.com (crociera
+sulla Rance). Distanze: OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
