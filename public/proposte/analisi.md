@@ -14,6 +14,72 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: FUORI — la giornata in cui starebbe è già la più fragile del viaggio, e non ha spazio.**
+
+Dinan non è nell'itinerario attuale. Il borgo medievale sulla Rance — quasi 3 km di bastioni
+trecenteschi, la Rue du Jerzual che scende ripida verso il porto, la Basilica di Saint-Sauveur, il
+castello — è vero materiale da guida, ma il punto in cui si incastrerebbe è il **Giorno 5**
+(lunedì 10 agosto), fra Saint-Malo e Cap Fréhel: ed è proprio la giornata che meno può assorbirlo.
+
+### Perché il Giorno 5 è quello sbagliato per un'aggiunta
+
+Due vincoli già la tengono tesa:
+
+- la mattina dipende dalla marea (il passaggio per l'**Île du Grand Bé** apre solo verso le
+  10:30-11:00, e se alle 11:15 non è aperto si rinuncia e si parte);
+- il pomeriggio ha una chiusura vera, **Fort la Latte alle 18:30**.
+
+La sera a Perros-Guirec (arrivo previsto 18:40) è stata scelta apposta per assorbire un
+trasferimento lungo — 122,9 km — proprio per non appesantire il Giorno 6, vigilia dell'eclissi:
+è l'unica giornata del viaggio con del margine vero, e infilarci Dinan glielo toglie.
+
+### La deviazione, misurata
+
+| Tratta | Km e tempo (OSRM) |
+|---|---|
+| Saint-Malo → Cap Fréhel, diretto (come in guida) | 44,7 km / 56 min |
+| Saint-Malo → Dinan | 32,5 km / 33 min |
+| Dinan → Cap Fréhel | 44,3 km / 54 min |
+| **Deviazione netta per passare da Dinan** | **+32,1 km / +31 min di sola guida** |
+
+A cui va sommato il tempo della visita: anche limitandosi ai bastioni e alla Rue du Jerzual, senza
+entrare nel castello, **un'ora è la stima minima perché valga la pena fermarsi**. Sommando i 31
+minuti di deviazione, l'arrivo a Perros-Guirec slitterebbe da 18:40 a circa **19:55-20:15** —
+mangiandosi quasi tutto il margine prima del tramonto delle 21:40 e il tempo per il Sentier des
+Douaniers sotto l'albergo, che è il motivo per cui si dorme lì. E se la marea del Grand Bé ritarda
+la partenza da Saint-Malo, come è già previsto possa succedere, non resta più cuscinetto per
+rispettare la chiusura di Fort la Latte alle 18:30.
+
+### Cosa consiglio
+
+Non aggiungerla a questo viaggio. Se un giorno ci sarà un ritorno in Bretagna con meno vincoli
+orari, Dinan da sola vale una mezza giornata buona — ma qui il costo cade sull'unica giornata che
+il percorso aveva pensato per riprendere fiato.
+
+### Curiosità
+
+Dinan compariva nel Giorno 3 di una versione precedente della guida, prima della riscrittura
+completa dell'itinerario del 28 luglio 2026 (vedi `public/viaggi/bretagna/`, non più in uso). Non
+è documentato il motivo preciso per cui fu tolta, ma è coerente con quanto trovato ora: non c'era
+il tempo per farcela stare.
+
+### Dati verificati e non verificati
+
+Verificato sul sito ufficiale del castello (chateaudedinan.fr, consultato il 2 agosto 2026):
+**Château de Dinan aperto tutti i giorni 10:30-19:00** a luglio-agosto-settembre, **8 € l'ingresso
+adulti**. Non verificato: gli orari di accesso ai bastioni e a Rue du Jerzual (sono vie e camminamenti
+pubblici, presumibilmente sempre aperti, ma non trovato un orario ufficiale); la disponibilità di
+parcheggio in agosto, mese di forte afflusso turistico; eventuali eventi o mercati che potrebbero
+affollare il centro nel periodo del soggiorno.
+
+Fonti: bretagna-vacanze.com (link segnalato); chateaudedinan.fr/informations-pratiques; distanze
+misurate con OSRM (router.project-osrm.org); guida propria, Giorno 5.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
