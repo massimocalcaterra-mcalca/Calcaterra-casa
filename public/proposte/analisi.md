@@ -14,6 +14,79 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1° agosto 2026 alle 15:04.
+Nessun titolo dato da Massimo, nessuna nota; il link punta alla scheda di Dinan su
+bretagna-vacanze.com.
+
+**Giudizio: DA VALUTARE — sta in piedi solo come tappa breve, e va tolto qualcosa.**
+
+Dinan **non è nell'itinerario attuale**: la guida, dopo il Mont-Saint-Michel, va dritta a
+Saint-Malo (Giorno 4, domenica 9 agosto) e da lì a Cap Fréhel (Giorno 5, lunedì 10 agosto). Dinan
+sta a sud di Saint-Malo, fuori dalla linea retta fra le due tappe che già esistono.
+
+### Le distanze misurate (OSRM, rete stradale)
+
+| Tratta | Km | Tempo di guida |
+|---|---|---|
+| Menhir du Champ-Dolent → Saint-Malo (come è oggi, diretto) | 33,2 km | 30 min |
+| Menhir du Champ-Dolent → Dinan | 35,4 km | 31 min |
+| Dinan → Saint-Malo | 33,7 km | 34 min |
+| **Passando da Dinan invece che diretto** | **69,1 km** | **65 min** |
+| **Deviazione netta per la sola guida** | **+35,9 km** | **+35 min** |
+
+Come confronto, l'alternativa di infilarla il mattino del Giorno 5 (Saint-Malo → Dinan → Cap
+Fréhel invece di Saint-Malo → Cap Fréhel diretto) costa quasi lo stesso: +33 km, +31 minuti di sola
+guida, sopra ai 45 km/57 min già previsti per arrivare a Cap Fréhel.
+
+In nessuno dei due casi la deviazione è "gratis": è mezz'ora abbondante di guida in più, a cui va
+sommato il tempo per vedere qualcosa a Dinan (non un semplice belvedere sulla strada).
+
+### Dove starebbe, se entra
+
+**Giorno 4, tardo pomeriggio**, fra il Menhir du Champ-Dolent (~18:00) e l'arrivo a Saint-Malo. È
+lo slot meno rigido dei due: la sera del 9 agosto in guida ha solo "arrivo e check-in" all'Hôtel de
+la Cité, nessun orario fisso da rispettare. Con la deviazione misurata, il check-in slitterebbe di
+circa 35 minuti di sola guida più il tempo della visita — realisticamente un'ora, un'ora e mezza
+dopo rispetto a oggi, per una visita rapida: le mura, uno sguardo su Rue du Jerzual verso il porto
+sulla Rance, senza scendere fino in fondo e senza il castello.
+
+Il Giorno 5 mattina è più rigido — mura di Saint-Malo e Île du Grand Bé sono legate alla bassa
+marea verso mezzogiorno — quindi è la scelta peggiore per infilarci Dinan.
+
+### Cosa si sacrifica
+
+Non c'è un buco libero: o si allunga la giornata (check-in più tardi, meno margine dopo un giorno
+già pieno di Mont-Saint-Michel), oppure si accetta una visita ridotta a mezz'ora scarsa — solo le
+mura viste dall'esterno, niente Rue du Jerzual né castello. Con la seconda opzione la deviazione
+netta si avvicina più a un'ora totale (guida + sosta) che a un pomeriggio di visita vera.
+
+### Orari e vincoli per agosto 2026
+
+| Cosa | Dato |
+|---|---|
+| Château de Dinan (donjon) | Aperto tutti i giorni **10:30–19:00** in luglio-agosto-settembre; adulto 8€ |
+| Visite guidate del castello | Martedì e giovedì alle 11:00, fino al 29 agosto, 1h30, 10€ — **non compatibile** con un passaggio di tardo pomeriggio |
+| Mura e Rue du Jerzual | Libere, nessun orario |
+| Parcheggio intra-muros | A pagamento **9:00–19:00** (esclusi festivi); parcheggi gratuiti fuori le mura a 10-15 minuti a piedi |
+
+Non verificato: se il parcheggio a pagamento fosse ancora attivo all'orario di un eventuale
+passaggio serale (dopo le 19:00 il pagamento cessa, secondo la fonte, ma va controllato sul posto);
+eventuali codici di allerta canicola o restrizioni locali per agosto 2026, che al momento
+dell'analisi non sono ancora pubblicati.
+
+### Pericoli
+
+Nessuno di rilievo segnalato per le zone pedonali; Rue du Jerzual è ripida e acciottolata (dal
+centro storico scende al porto sulla Rance) — attenzione se si cammina con poco tempo o poca luce,
+ma non è un divieto, solo un dislivello da mettere in conto.
+
+Fonti: bretagna-vacanze.com (link della proposta); dinan-capfrehel.com (parcheggi); châteaudedinan.fr
+(orari e tariffe agosto 2026); misure OSRM proprie.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
