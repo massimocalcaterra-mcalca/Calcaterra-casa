@@ -14,6 +14,64 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan, la città murata
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 13:04.
+**Giudizio: DA VALUTARE — costa meno di Bécherel in guida, ma solo di poco, e mangia la sera di Saint-Malo.**
+
+Il centro storico murato sul fiume Rance, fra Dol-de-Bretagne e Saint-Malo: **quasi tre chilometri
+di bastioni** duecenteschi con quattordici torri e quattro porte, case a graticcio dal Quattrocento
+al Seicento, la ripida **Rue du Jerzual** che scende dalla città al porticciolo sulla Rance, il
+**castello ducale** del Trecento (torre di Coëtquen e mastio), la basilica di Saint-Sauveur.
+
+**Non è già nell'itinerario.** Compare solo come fonte in una nota a piè di pagina del Giorno 5
+(orari verificati «sulle pagine turistiche di Dinan-Cap Fréhel»), non come tappa.
+
+### Dove entrerebbe, misurato
+
+Non sta sulla strada diretta di nessuna delle due giornate che le passano vicino: è a sud, fuori
+dal percorso costiero.
+
+| Giornata | Tratto in guida | Con la deviazione a Dinan | Differenza |
+|---|---|---|---|
+| Giorno 4 (Menhir du Champ-Dolent → Saint-Malo) | 33,3 km / 32 min | Menhir → Dinan 31,0 km/29 min + Dinan → Saint-Malo 33,2 km/34 min = **64,2 km / 63 min** | **+30,9 km / +31 min** |
+| Giorno 5 (Saint-Malo → Cap Fréhel) | 44,8 km / 56 min | Saint-Malo → Dinan 32,1 km/32 min + Dinan → Cap Fréhel 44,0 km/52 min = **76,1 km / 84 min** | **+31,3 km / +28 min** |
+
+Il Giorno 5 è il candidato peggiore: la mattina dipende dalla marea del Grand Bé, Fort la Latte
+chiude alle 18:30 e dopo c'è già un trasferimento di 122,9 km fino a Perros-Guirec — non c'è
+margine da spendere. Il Giorno 4 è l'unico che regge sulla carta: costa **un minuto in meno di
+Bécherel** (già segnato come «da valutare» e mai inserito, proprio su questa giornata), ma il
+confronto si ferma alla sola guida in auto.
+
+### Il problema è la visita, non la strada
+
+I 31 minuti di deviazione sono la parte facile. «Quasi tre chilometri di bastioni», la Rue du
+Jerzual e il porto non si vedono in dieci minuti: una visita che valga la pena — anche solo
+bastioni e Jerzual, senza il castello — chiede realisticamente **45 minuti-un'ora**. Il Giorno 4
+arriva a Saint-Malo alle **19:55** con il tramonto dai bastioni fissato alle **21:35**: un'ora e
+quaranta di margine, che i 31 minuti di strada in più riducono a un'ora e nove, e che una vera
+visita a Dinan azzererebbe o farebbe saltare del tutto.
+
+Se si aggiunge anche il castello ducale (10:30-19:00 tutti i giorni ad agosto 2026, **8 €**
+adulti), il conto peggiora e basta.
+
+### Cosa consiglio
+
+**Non inserirla così com'è, né sul Giorno 4 né sul Giorno 5.** Se Massimo la vuole davvero, l'unico
+modo che non cannibalizza il tramonto ai bastioni di Saint-Malo è accorciare qualcos'altro nel
+Giorno 4 — il giro esterno dell'abbazia (16:15-18:00) o la mezz'ora al Menhir — per liberare i 45-60
+minuti che una tappa a Dinan chiede davvero. È una rinuncia vera, non un incastro gratuito, e va
+decisa da voi.
+
+Non verificato: l'orario di ultimo ingresso al castello di Dinan (il sito ufficiale non lo indica);
+gli orari dei battelli sulla Rance ad agosto 2026; il traffico e i parcheggi nel centro storico in
+alta stagione.
+
+Fonti: bretagna-vacanze.com (link segnalato); chateaudedinan.fr (orari e prezzi del castello);
+dinan-capfrehel.com. Distanze: OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
