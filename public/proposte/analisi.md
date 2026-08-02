@@ -14,6 +14,51 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: FUORI — bella, ma nessuna giornata dell'itinerario riesce a starci senza sacrificare
+qualcosa di già fissato.**
+
+Dinan non è nella guida attuale: verificato che il nome non compare in nessuna delle undici
+giornate. È una città murata sulla Rance, quasi tre chilometri di bastioni intorno al centro
+storico, un castello del XIV secolo (il Donjon de la Duchesse Anne), un porticciolo turistico più
+in basso e le case a graticcio di Rue du Jerzual a collegare le due quote. Il tipo di posto che
+merita almeno un'ora e mezza, non una fermata al volo.
+
+Il problema è dove metterla. Dinan sta a sud di Saint-Malo, fuori dalla strada costiera che
+l'itinerario segue in quei giorni: non è "sulla via" di nessuna tappa, è sempre una deviazione.
+
+| Percorso | Diretto (misurato) | Passando da Dinan (misurato) | Costo della deviazione |
+|---|---|---|---|
+| **Giorno 4**: Champ-Dolent → Saint-Malo | 29,9 km / 32 min | 25,7 + 33,4 = 59,1 km / 1h07 | **+29,2 km, +35 min** |
+| **Giorno 5**: Saint-Malo → Cap Fréhel | 45,0 km / 58 min | 32,7 + 44,4 = 77,1 km / 1h28 | **+32,1 km, +30 min** |
+
+Sono solo i minuti di guida in più: non contano l'ora e mezza-due che una visita vera a Dinan
+chiede una volta scesi dall'auto.
+
+**Giorno 4** arriva a Saint-Malo con 192 km e 3h38 di guida già in programma (Bayeux →
+Mont-Saint-Michel → Champ-Dolent → Saint-Malo): aggiungere 35 minuti di deviazione più la visita
+vuol dire arrivare a Saint-Malo tardi la sera, proprio prima di una notte che deve essere corta —
+il **Giorno 5** comincia legato alla marea del Grand Bé (bassa marea verso mezzogiorno, ma il
+giro delle mura va fatto presto, alle 9). **Giorno 5** ha già i suoi vincoli fissi: la finestra di
+marea al mattino, Fort la Latte che chiude alle 18:30, e poi un trasferimento di 122,9 km e 1h50
+verso Perros-Guirec nel tardo pomeriggio. Infilarci Dinan costerebbe Cap Fréhel, Fort la Latte, o
+il margine che tiene in piedi l'arrivo a Perros-Guirec prima di sera.
+
+In nessuno dei due casi è un incastro pulito: è sempre un altro pezzo di giornata a pagare il
+conto.
+
+Non verificato: orari e prezzo d'ingresso del Donjon de la Duchesse Anne per agosto 2026 — il
+sito ufficiale dell'ufficio del turismo (dinan-capfrehel.com) non li ha restituiti in una
+consultazione generica; la biglietteria online è su billetterie.dinan-capfrehel.com, telefono
+02 96 87 69 76. Nessun divieto o pericolo specifico trovato per il sito.
+
+Fonti: tourismebretagne.com (pagina Dinan); dinan-capfrehel.com (ufficio del turismo). Distanze:
+OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
