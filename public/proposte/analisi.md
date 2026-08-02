@@ -14,6 +14,63 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04. Titolo dato
+da Massimo: «Dinan». Nessuna immagine allegata.
+**Giudizio: FUORI — bella, ma non ci sta senza rompere il Giorno 5.**
+
+Città murata sulla Rance, 32 km a sud di Saint-Malo: quasi tre chilometri di bastioni, un castello
+ducale del XIV secolo, e la ripida **Rue du Jerzual** che scende fra case a graticcio fino al
+porticciolo fluviale. Dal 4 luglio 2026 è riaperto anche il **chemin de ronde della Porte du
+Jerzual**, quasi un chilometro di cammino di ronda restaurato, ad accesso libero.
+
+### Il costo, misurato
+
+Non è sulla strada di nessun trasferimento di questo viaggio: è una deviazione a sé, verso sud.
+L'unico punto dove si potrebbe agganciare è il Giorno 5, fra Saint-Malo e il Cap Fréhel.
+
+| Percorso | Km e guida |
+|---|---|
+| Saint-Malo → Cap Fréhel diretto (come è in guida) | 45,0 km / **58 min** |
+| Saint-Malo → **Dinan** → Cap Fréhel | 76,6 km / **1h26** |
+| Menhir du Champ-Dolent → Saint-Malo diretto (Giorno 4, come è in guida) | 33,1 km / **32 min** |
+| Menhir du Champ-Dolent → **Dinan** → Saint-Malo | 67,5 km / **1h03** |
+
+In entrambi i casi la sola guida costa **28-31 minuti in più** rispetto al percorso in guida. E
+quello è solo l'andirivieni: una visita vera — le mura, la Rue du Jerzual, il porto, e volendo il
+castello — non si fa in meno di **due ore**, non è una tappa da mezz'ora come il Menhir.
+
+### Perché non ci sta
+
+Il Giorno 4 arriva a Saint-Malo già alle 19:55: zero margine. Il Giorno 5 è l'unico candidato, ma è
+già pieno: si parte da Saint-Malo alle 11:45 (dopo Grand Bé, vincolato alla marea), si pranza e si
+visita il **Cap Fréhel**, si passa a **Fort la Latte**, e poi c'è il trasferimento lungo di **122,9
+km e 1h50** fino a Perros-Guirec per cena — la stessa guida lo definisce «una fatica in più».
+Infilare Dinan (28 min di guida + almeno 2 ore di visita, circa **2h30** in tutto) vuol dire
+tagliare Cap Fréhel o Fort la Latte, che sono i due motivi per cui quella giornata esiste, oppure
+arrivare a Perros-Guirec a sera inoltrata con la cena saltata. Anche eliminando del tutto Fort la
+Latte (che vale da solo un'ora buona fra visita e strada) non si recupera abbastanza tempo.
+
+Non è nemmeno un doppione di Saint-Malo, anche se il tema è vicino — Dinan è un porto fluviale
+murato nell'entroterra, Saint-Malo una città corsara sul mare, case a graticcio contro bastioni di
+granito. Il problema è solo il tempo, non la sovrapposizione.
+
+### Cosa consiglio
+
+**Non entra in questo viaggio.** È un candidato pulito per un altro itinerario in Bretagna Nord,
+magari abbinato a Rennes, o per un giorno intero dedicato apposta invece che rubato al Giorno 5.
+
+Non verificato: gli orari esatti di apertura del chemin de ronde (la fonte conferma l'accesso
+gratuito ma non un orario giornaliero); la disponibilità di parcheggio nell'area della città vecchia
+ad agosto, mese di alta stagione.
+
+Fonti: link segnalato (bretagna-vacanze.com); chateaudedinan.fr (orari e tariffe del castello,
+verificati il 2 agosto 2026: tutti i giorni 10:30-19:00, adulto 8€, ridotto 5€, gratis sotto i 6
+anni); dinan.fr (riapertura del chemin de ronde della Porte du Jerzual). Distanze: OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
