@@ -14,6 +14,95 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: DA VALUTARE — ci sta, ma qualcosa va sacrificato: o la sera a Perros-Guirec, o parte
+del tempo su Cap Fréhel/Fort la Latte.**
+
+Non è nell'itinerario attuale. Dinan è una città murata sul fiume Rance, in Côtes-d'Armor: quasi
+tre chilometri di bastioni medievali ben conservati, il castello ducale del Trecento, e la Rue du
+Jerzual — una discesa acciottolata di case a graticcio fino al porto sul fiume. È una delle città
+meglio conservate di Bretagna, ma **non è sulla costa**: sta a sud della rotta che il viaggio segue
+fra Saint-Malo e Cap Fréhel.
+
+### Dove starebbe
+
+Geograficamente è a metà fra le due giornate che le passano vicino: il **Giorno 4** (Mont-Saint-Michel
+→ Saint-Malo) e il **Giorno 5** (Saint-Malo → Cap Fréhel → Fort la Latte → Perros-Guirec). Ho
+misurato entrambi gli inserimenti con OSRM.
+
+| Inserimento | Diretto | Via Dinan | Differenza |
+|---|---|---|---|
+| Giorno 4: Mont-Saint-Michel → Saint-Malo | 56,9 km / 1h18 | 91,9 km / 1h50 | **+35,0 km / +32 min** |
+| Giorno 5: Saint-Malo → Cap Fréhel | 45,0 km / 58 min | 76,6 km / 1h26 | **+31,6 km / +28 min** |
+
+**Il Giorno 4 è fuori discussione.** Quel giorno arriva già a Saint-Malo alle 19:55, con il
+biglietto orario dell'abbazia fissato alle 14:00 e la tariffa del parcheggio a scaglioni (24 € se
+si esce entro le 17:00, 28 € oltre) a scandire tutto il pomeriggio. Non c'è margine per 32 minuti
+di guida in più, tanto meno per una visita.
+
+**Il Giorno 5 ha del margine, ed è dove la metterei.** Oggi il giro arriva a Perros-Guirec alle
+18:40 con il tramonto — e la passeggiata sul Sentier des Douaniers — fissato alle 21:40: **tre ore
+di cuscinetto** già previste in guida.
+
+### Come inserirla senza rompere la giornata
+
+Il punto giusto è dopo la mattina a Saint-Malo, prima di puntare verso il Cap Fréhel: si esce
+dalle mura alle 11:45 come previsto, ma si passa da Dinan (33 min) prima di risalire verso la
+costa (53 min da Dinan al Cap Fréhel, contro i 56 min della strada diretta da Saint-Malo).
+
+Il costo netto è di circa **28 minuti di guida in più** rispetto a oggi, più il tempo vero della
+visita — che per bastioni e Rue du Jerzual, senza il castello, è realisticamente **un'ora, un'ora
+e mezza**. In tutto la giornata si allunga di **un'ora e mezza-due ore**.
+
+C'è dove prenderle: spostando l'arrivo a Perros-Guirec verso le **20:00-20:30** — restano comunque
+più di un'ora prima della passeggiata delle 21:40 — **senza toccare** Cap Fréhel o Fort la Latte,
+che restano ai tempi di oggi. L'alternativa, per chi non vuole erodere la serata, è accorciare il
+giro del Cap Fréhel (oggi un'ora e un quarto) di altrettanto.
+
+Quello che **non si tocca in nessun caso**: la mattina a Saint-Malo e il Grand Bé, legati alla
+marea, e l'**ultimo ingresso a Fort la Latte, alle 18:00** — con la deviazione da Dinan e senza
+tagliare nulla si arriverebbe al forte verso le 16:50-17:15, ancora dentro il margine.
+
+### Cosa c'è da vedere, e quanto costa
+
+| | Orari agosto 2026 | Prezzo |
+|---|---|---|
+| Bastioni (esterno) | sempre accessibili | gratis |
+| Rue du Jerzual, porto sul Rance | sempre accessibile | gratis |
+| Château de Dinan (donjon + torre Coëtquen) | tutti i giorni 10:30-19:00 | 8 € adulti |
+
+Con un'ora, un'ora e mezza a disposizione **il castello non ci sta per intero** — solo l'interno
+vale un'ora buona — quindi lo lascerei fuori: bastioni, Jerzual, e basta. Chi vuole entrare deve
+sacrificare altro sul resto della giornata.
+
+Parcheggio più comodo per il centro storico: quello dietro il castello (Place du Duc Jean IV),
+gratuito a luglio-agosto secondo il sito del Comune — non verificato di persona, e ad agosto,
+con folla turistica, potrebbe riempirsi presto.
+
+### Cosa non è verificato
+
+- Il prezzo del castello: la fonte ufficiale (chateaudedinan.fr) dà 8 €; un'altra pagina trovata
+  in rete indica 5,30 €, forse una tariffa ridotta o un dato non aggiornato. Da controllare prima
+  di contarci.
+- La reale disponibilità del parcheggio gratuito dietro il castello ad agosto.
+- Nessun divieto o pericolo noto sul percorso: la Rue du Jerzual è una discesa ripida su ciottoli,
+  faticosa con caldo ma non pericolosa.
+
+### Cosa consiglio
+
+**Vale il tentativo, come tappa "leggera":** bastioni e discesa del Jerzual, niente castello. Se
+la mattina a Saint-Malo va per le lunghe — il Grand Bé che apre tardi, per esempio — Dinan è la
+prima cosa da tagliare: è l'unica parte della giornata senza un orario di chiusura o una marea a
+vincolarla.
+
+Fonti: chateaudedinan.fr (orari e prezzo castello); lefortlalatte.com (orari Fort la Latte, per il
+confronto); dinan.fr e dinan-capfrehel.com (parcheggi); nominatim.openstreetmap.org (coordinate).
+Distanze: OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
