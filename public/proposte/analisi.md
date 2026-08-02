@@ -14,6 +14,65 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04. Nessun
+titolo né nota inseriti da Massimo — il link punta a una pagina generale di bretagna-vacanze.com
+sulla città.
+**Giudizio: DA VALUTARE — ma è un'alternativa a Bécherel, non un'aggiunta.**
+
+Dinan sta sulla collina sopra la Rance, in Côtes-d'Armor, ed è uno dei borghi medievali meglio
+conservati di Bretagna: quasi 3 km di mura dei secoli XIII-XV, percorribili gratuitamente; il
+centro a graticcio intorno a Place des Merciers e Place des Cordeliers; la ripida **Rue du
+Jerzual**, botteghe di artigiani in discesa fino al **Port de Dinan** sulla Rance; la basilica di
+Saint-Sauveur, romanico-gotica, che custodisce il cuore di Bertrand du Guesclin; e il **Château de
+Dinan**, con il donjon della duchessa Anna, XIV secolo.
+
+### Il costo, misurato
+
+Non c'è modo di infilarla senza deviare: Dinan non sta sulla strada fra nessuna coppia di tappe
+consecutive dell'itinerario.
+
+| Percorso | Misurato |
+|---|---|
+| Giorno 4: Mont-Saint-Michel → Champ-Dolent → Saint-Malo, come è in guida | 62,7 km / 1h26 |
+| Giorno 4: Mont-Saint-Michel → Champ-Dolent → **Dinan** → Saint-Malo | 97,7 km / 1h57 |
+| Giorno 4: Mont-Saint-Michel → **Bécherel** → Saint-Malo, opzione già in guida | 126 km / 2h15 |
+| Giorno 5: Saint-Malo → Cap Fréhel diretto | 44,8 km / 57 min |
+| Giorno 5: Saint-Malo → **Dinan** → Cap Fréhel | 76,3 km / 1h25 |
+
+Sul Giorno 4 la deviazione costa **31 minuti** sopra il percorso diretto via Champ-Dolent — meno
+della deviazione per Bécherel, che è già proposta in guida come opzione per chi ama i libri. Sul
+Giorno 5 costa di più (28 minuti) e cade nel giorno sbagliato: quel pomeriggio porta già Cap
+Fréhel, Fort la Latte e poi una tappa di **122,9 km e 1h50** fino a Perros-Guirec, messa lì apposta
+per alleggerire la vigilia dell'eclissi. Aggiungere Dinan lì rimetterebbe fatica esattamente dove
+la guida l'ha tolta.
+
+### Cosa non ci sta
+
+Il numero sopra è solo la deviazione stradale. Per rendere giustizia a Dinan — mura, Rue du
+Jerzual, il porto sulla Rance — servono almeno **un'ora e mezza, meglio due**, che il Giorno 4 non
+ha di scorta: arriva già a Saint-Malo in serata per il tramonto sul Mont-Saint-Michel, il momento
+che la guida esplicitamente non vuole perdere.
+
+### Cosa consiglio
+
+Se Dinan entra, entra **al posto di Bécherel** sul Giorno 4, non insieme: sono due opzioni per lo
+stesso spazio di tempo libero del pomeriggio, e Dinan costa meno strada. Ma è comunque un
+compromesso vero — o si rinuncia al tramonto al Mont, o si arriva a Saint-Malo molto più tardi la
+sera. Non la aggiungerei senza una di queste due rinunce, dette esplicitamente.
+
+Non verificato: i giorni di chiusura estivi delle singole botteghe artigiane di Rue du Jerzual (in
+alta stagione probabilmente tutte aperte, ma non controllato negozio per negozio).
+
+Fonti: chateaudedinan.fr (Château: agosto 2026 aperto tutti i giorni 10:30-19:00, adulto 8 €,
+ridotto 5 €); dinan.fr (mura: aprile-settembre 8-21, accesso libero; il tratto nord, chiuso per
+lavori a inizio 2026, ha riaperto il 4 luglio 2026); dinan-capfrehel.com (parcheggio: a pagamento
+in centro 9-19, gratuito fuori le mura a 10-15 minuti a piedi, o Place Duguesclin/Promenade des
+Petits-Fossés vicino a Rue du Jerzual); link segnalato. Distanze: OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
