@@ -14,6 +14,44 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: DA VALUTARE — sta in piedi, ma costa due ore alla sera del Giorno 4.**
+
+Città medievale sulla Rance, quasi 3 km di bastioni con 14 torri e 4 porte del XIII secolo,
+case a graticcio del XV-XVII secolo lungo Rue du Jerzual (che scende ripida dal porto alla
+città alta), un castello del XIV secolo e un porticciolo sul fiume. Non è nell'itinerario:
+la guida attuale passa a ovest, per il Menhir du Champ-Dolent, e scende verso Saint-Malo senza
+toccare Dinan, che sta più a sud.
+
+| | |
+|---|---|
+| Dove | Côtes-d'Armor, sulla Rance, 25 km a sud di Dinard/Saint-Malo |
+| Distanza dalla rotta del Giorno 4 | Mont-Saint-Michel → Champ-Dolent → Saint-Malo, come è ora: **64,8 km / 1h36**. Passando da Dinan: **94,2 km / 2h09** → **+29,4 km, +33 minuti** di sola guida |
+| Castello (donjon + Tour de Coëtquen) | Aperto tutti i giorni, orario estivo **10:30–19:00**, **8 €** adulti, **5 €** ridotto |
+| Centro storico e bastioni | Accesso libero — Rue du Jerzual, place des Cordeliers, giro delle mura |
+| Dove starebbe | **Giorno 4** (domenica 9 agosto), fra il Menhir du Champ-Dolent e Saint-Malo |
+| Cosa si sacrifica | Non un'altra tappa, ma tempo: la sera a Saint-Malo (Hôtel de la Cité) si accorcia di circa due ore fra guida e visita |
+
+### Cosa consiglio
+
+**Solo come tappa breve, senza castello.** Il Giorno 4 è già lungo — Crépon, Mont-Saint-Michel
+con visita all'abbazia, Champ-Dolent — e i 33 minuti in più di guida sono il costo minore: quello
+vero è il tempo per vedere qualcosa. Un giro a piedi di 45-60 minuti (Rue du Jerzual, il porto,
+un tratto di bastioni) basta per l'essenziale e lascia fuori il castello a pagamento (10:30-19:00,
+8 €), che da solo vale un'altra ora. Il Giorno 5 non ha margine per assorbirla: la mattina è
+legata alla bassa marea di mezzogiorno per l'Île du Grand Bé, e il pomeriggio è già Cap Fréhel più
+Fort la Latte prima del trasferimento a Perros-Guirec.
+
+Non verificato: disponibilità e prezzo dei parcheggi nel centro storico ad agosto, quando
+l'afflusso turistico è alto.
+
+Fonti: bretagna-vacanze.com (articolo segnalato); chateaudedinan.fr (orari e prezzi castello).
+Distanze: OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
