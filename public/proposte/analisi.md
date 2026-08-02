@@ -14,6 +14,78 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04. Titolo dato
+da Massimo: «Dinan» — nota assente.
+**Giudizio: DA VALUTARE — entra come sosta di mezzogiorno nel Giorno 5, a costo di una ventina di
+minuti sulla giornata, non di tempo tolto alle tappe già previste.**
+
+Città murata sulla Rance, non ancora nell'itinerario: nella guida "Dinan" compare solo come nome
+della zona turistica citata in fondo alla pagina del Giorno 5, non come tappa. Dentro quasi 3 km di
+bastioni del XIII secolo (14 torri, 4 porte): la **Rue du Jerzual**, ripida, a case a graticcio dei
+secc. XV-XVII, che scende verso il porticciolo sulla Rance; il **Château de Dinan** (donjon della
+duchessa Anna, XIV secolo, oggi museo civico); la basilica **Saint-Sauveur**; la **Tour de
+l'Horloge**. Un registro diverso da tutto il resto del viaggio — non costa, non litorale — ma
+affine a Saint-Malo e al Mont-Saint-Michel, già amati in questo itinerario.
+
+### Dove starebbe: Giorno 5, lunedì 10 agosto
+
+Il Giorno 5 va da Saint-Malo (mura, 9:00-11:45) a Cap Fréhel (12:45) e Fort la Latte (15:15-16:45,
+chiude alle 18:30), poi 122,9 km fino a Perros-Guirec (arrivo 18:40). Dinan sta a sud di
+Saint-Malo, nella direzione opposta a Cap Fréhel: non è una tappa "sulla strada", è una vera
+deviazione.
+
+| Tratta | Misurato (OSRM) |
+|---|---|
+| Saint-Malo → Cap Fréhel, diretto (come in guida) | 44,7 km / 56 min |
+| Saint-Malo → Dinan | 32,2 km / 32 min |
+| Dinan → Cap Fréhel | 44,0 km / 52 min |
+| **Saint-Malo → Dinan → Cap Fréhel** | **76,2 km / 1h24** |
+
+Il costo netto della deviazione è **+31,5 km e +28 minuti** di guida rispetto alla strada diretta,
+prima ancora di contare il tempo speso a Dinan. Ho controllato anche l'alternativa di infilarla nel
+Giorno 4 (dal Menhir du Champ-Dolent verso Saint-Malo): costa di più, +35 km/+32 min, perché il
+menhir è più a est. Il Giorno 5 resta l'opzione meno cara.
+
+### Come si assorbe
+
+Il modo più pulito: **sostituire la sosta pranzo con Dinan**, invece di aggiungerla. Si parte da
+Saint-Malo alle 11:45 come ora, si arriva a Dinan alle 12:17, si pranza e si cammina un'ora e mezza
+nella città vecchia (Jerzual, bastioni, un colpo d'occhio al castello — non è tempo per entrarci),
+si riparte alle 13:47 e si arriva a Cap Fréhel alle 14:39 invece che alle 12:45. Da lì il resto
+della giornata regge senza tagli: Fort la Latte ha comunque ampio margine prima della chiusura
+delle 18:30, e i 122,9 km finali verso Perros-Guirec restano uguali. **L'unico effetto è arrivare a
+Perros-Guirec verso le 19:05-19:10 invece che alle 18:40** — venticinque minuti più tardi, dentro
+le tre ore di margine prima del tramonto delle 21:40. Non serve accorciare Cap Fréhel né Fort la
+Latte.
+
+### Cosa non è verificato
+
+Il Château de Dinan (donjon) è aperto **10:30-19:00** tutti i giorni a luglio-agosto-settembre,
+biglietto adulto 8€ — orari confermati sul sito ufficiale, ma con una sola ora e mezza a
+disposizione non c'è comunque tempo per entrarci, solo per vederlo da fuori. Il mercato settimanale
+di Dinan, che è un'istituzione (quasi 200 bancarelle, Place Duguesclin, 8:00-13:00), **è di
+giovedì**: lunedì 10 agosto non c'è, né bene né male, semplicemente non capita quel giorno. La
+**Fête des Remparts**, biennale, non cade nel 2026: la prossima edizione è il 24-25 luglio 2027,
+fuori sia dall'anno che dalla finestra del viaggio — nessun affollamento da festival da aspettarsi.
+Non verificato: dove parcheggiare per una sosta breve. Il centro storico ha strade strette e
+traffico limitato come ogni città vecchia francese; conviene lasciare l'auto ai margini e
+proseguire a piedi, ma non ho un parcheggio preciso da consigliare.
+
+### Cosa consiglio
+
+**Prendetela come pranzo del Giorno 5**, non come tappa a sé: il conto è chiaro, un quarto d'ora
+scarso di deviazione più un'ora e mezzo che oggi va comunque spesa per pranzare da qualche parte.
+Il prezzo è arrivare a Perros-Guirec un po' più tardi la sera, non rinunciare a niente di ciò che è
+già in programma.
+
+Fonti: link segnalato; bretagna-vacanze.com (pagina Dinan); chateaudedinan.fr/informations-pratiques
+(orari e prezzi del castello); fete-remparts-dinan.com (date della festa); cotesdarmor.com (mercato
+del giovedì). Distanze: OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
