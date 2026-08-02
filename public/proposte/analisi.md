@@ -14,6 +14,68 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan — la città murata sulla Rance
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1° agosto 2026 alle 15:04.
+**Giudizio: FUORI — non c'è dove metterla senza allungare una sera o un pomeriggio già stretti,
+e fa lo stesso mestiere di Saint-Malo, che è già in programma quel giorno.**
+
+Città medievale sulla Rance, nel dipartimento delle Côtes-d'Armor: quasi tre chilometri di
+bastioni del XIII secolo con quattordici torri e quattro porte, il castello del XIV secolo, la
+ripida Rue du Jerzual con le case a graticcio del XV-XVII secolo che scendono fino al porticciolo
+turistico, la basilica Saint-Sauveur (XII-XVIII secolo, stili misti) dove riposa il cuore di
+Bertrand Du Guesclin. Anna di Bretagna vi si ritirò dopo la morte del marito Carlo VIII.
+
+| | |
+|---|---|
+| Comune | Dinan, Côtes-d'Armor |
+| Coordinate | 48,4540 N, 2,0477 O |
+| Cosa vedere | Bastioni, castello, Rue du Jerzual, basilica Saint-Sauveur, porto sulla Rance |
+
+### Il costo, misurato
+
+Sta fra il Mont-Saint-Michel e Saint-Malo (Giorno 4) e fra Saint-Malo e Cap Fréhel (Giorno 5), i
+due unici momenti in cui l'itinerario le passa vicino:
+
+| Tratto | Diretto (come è in guida) | Passando da Dinan |
+|---|---|---|
+| Giorno 4, Menhir du Champ-Dolent → Saint-Malo | 32,7 km / **30 min** | Menhir → Dinan 35,0 km/30 min + Dinan → Saint-Malo 32,8 km/32 min = **67,8 km / 62 min** |
+| Giorno 5, Saint-Malo → Cap Fréhel | 44,6 km / **56 min** | Saint-Malo → Dinan 32,1 km/32 min + Dinan → Cap Fréhel 44,0 km/52 min = **76,1 km / 84 min** |
+
+Un'ora in più su entrambi i tratti, senza contare il tempo dentro la città — che per bastioni,
+castello e Rue du Jerzual non è meno di un'ora e mezza.
+
+### Perché non è solo un problema di orario
+
+Il Giorno 4 arriva a Saint-Malo apposta la sera, per il tramonto delle 21:35 dai bastioni: il
+Menhir du Champ-Dolent chiude alle 18:55 e già così l'arrivo alle mura è alle 19:55. Un'ora in
+più cadrebbe dopo il tramonto.
+
+Il Giorno 5 è vincolato dalla marea al mattino (il Grand Bé apre solo verso le 10:30-11:00) e
+dalla chiusura di Fort la Latte alle 18:30 nel pomeriggio, con 122,9 km ancora da fare fino a
+Perros-Guirec dopo. Non c'è un'ora libera da nessuna parte, tanto meno a metà giornata.
+
+**E anche trovando l'ora, Dinan farebbe la stessa cosa che fa già Saint-Malo**: bastioni,
+città murata, case antiche, un castello. Saint-Malo è più grande, è gratuita a ogni ora ed è
+già il fulcro serale del Giorno 4. Dinan aggiungerebbe una seconda città-fortezza nello stesso
+weekend, non un genere di tappa diverso — cosa che invece fa Bécherel, già segnalata nella
+pagina del Giorno 4 come deviazione alternativa per chi ama i libri.
+
+### Cosa consiglio
+
+Nessuna modifica all'itinerario. Se in futuro salta un'altra tappa e si libera mezza giornata,
+Dinan è il primo ripiego da considerare — ma non entra spostando qualcos'altro.
+
+### Non verificato
+
+Orari e prezzo del castello di Dinan per agosto 2026: la pagina ufficiale dell'ufficio del
+turismo (dinan-capfrehel.com) restituisce **pagina non trovata** all'indirizzo del castello.
+Giorno di mercato e eventuali chiusure di agosto: non cercati, dato che la tappa non entra.
+
+Fonti: tourismebretagne.com (pagina segnalata). Distanze: OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
