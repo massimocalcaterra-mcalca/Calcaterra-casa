@@ -14,6 +14,69 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+**Giudizio: FUORI — la giornata dove starebbe non ha spazio, e mancherebbe comunque il tempo per
+visitarla davvero.**
+
+Dinan è una città murata sulla Rance, quasi tre chilometri di bastioni intorno al centro
+medievale, con un castello ducale del XIV secolo e la ripida Rue du Jerzual a case a graticcio
+che scende verso il porticciolo. È già citata nella guida, ma solo come fonte per gli orari di
+Cap Fréhel e Fort la Latte (Giorno 5, nei crediti): non è una tappa dell'itinerario.
+
+### Dove starebbe, e quanto costa
+
+L'unico punto sensato è il **Giorno 5** (lunedì 10 agosto: Saint-Malo → Cap Fréhel → Fort la
+Latte → Perros-Guirec), perché Dinan sta a sud di Saint-Malo, sulla strada verso l'interno.
+
+| Tratta | Misurato (OSRM) |
+|---|---|
+| Saint-Malo → Cap Fréhel, diretto (come da guida) | 44,7 km / 56 min |
+| Saint-Malo → Dinan | 32,3 km / 32 min |
+| Dinan → Cap Fréhel | 44,3 km / 54 min |
+| **Totale via Dinan** | **76,6 km / 86 min** |
+
+**Deviazione: +31,9 km e +30 minuti di sola guida**, prima ancora di scendere dall'auto. E quel
+giorno non ha slack da spendere:
+
+- la mattina è governata dalla marea (il Grand Bé si apre solo verso le 10:30-11:00, e la guida
+  prevede di lasciar perdere e ripartire se alle 11:15 non è ancora aperto);
+- **Fort la Latte chiude alle 18:30**, ultimo ingresso prima;
+- dopo Fort la Latte c'è già un trasferimento di **122,9 km e 1h50** fino a Perros-Guirec, con
+  arrivo previsto alle 18:40 e tramonto alle 21:40.
+
+Aggiungere 30 minuti di guida in più, più il tempo vero per camminare a Dinan (bastioni, Rue du
+Jerzual, eventualmente il castello: **non meno di un'ora**), vuol dire rompere uno dei due vincoli
+fissi — o si perde Fort la Latte, o si arriva a Perros-Guirec vicino al buio dopo una giornata già
+lunga.
+
+Anche il **Giorno 4** (Mont-Saint-Michel → Saint-Malo, 196 km / 3h39, abbazia che chiude alle
+19:00, si dorme a Saint-Malo) è già pieno: non c'è margine per infilarci una deviazione da un'ora
+e mezza in più.
+
+### Cosa consiglio
+
+Niente, per questo viaggio: non c'è una giornata dove Dinan entri senza sacrificare qualcosa già
+deciso (la marea al Grand Bé, l'orario di Fort la Latte, o un arrivo ragionevole a Perros-Guirec).
+Se un giorno la marea dovesse impedire il Grand Bé fin dal mattino, l'ora liberata **non basta**
+comunque: coprirebbe a malapena i 30 minuti di guida in più, non anche la visita.
+
+### Dati verificati
+
+Il castello (torre ducale, sotterraneo di Mercoeur, torre di Coëtquen) è aperto **tutti i giorni
+10:30-19:00** a luglio-agosto-settembre 2026; visite guidate martedì e giovedì alle 11:00 dal 9
+luglio al 29 agosto. Biglietto adulto **8 €**, ridotto **5 €**, pass famiglia (2+2) **21 €**,
+gratis sotto i 6 anni.
+
+Non verificato: parcheggi nei dintorni del centro storico, giorni di mercato, tempi reali di
+visita per famiglie con bambini.
+
+Fonti: chateaudedinan.fr (orari e prezzi); bretagna-vacanze.com (link segnalato); distanze
+misurate con OSRM il 2 agosto 2026.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
