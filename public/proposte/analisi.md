@@ -14,6 +14,61 @@ sono misurate sulla rete stradale con OSRM, non stimate.
 
 ---
 
+## Dinan
+
+**Arrivata come:** link dal modulo (id `msadv6z9-68d50794`), 1 agosto 2026 alle 15:04.
+Fonte: <https://www.bretagna-vacanze.com/destinazioni/alla-scoperta-delle-destinazioni/capo-frehel-saint-malo-baiai-del-mont-saint-michel/dinan/>
+**Giudizio: FUORI — non ci sta né nel Giorno 4 né nel Giorno 5, in entrambi i casi rompe il vincolo dell'orologio.**
+
+Dinan è una città vera, non un capriccio: tre chilometri di bastioni duecenteschi con quattordici
+torri, la Rue du Jerzual a graticcio che scende ripida verso il porto sulla Rance, il castello
+(donjon dei duchi e torre di Coëtquen), la basilica Saint-Sauveur. Ci vorrebbero **almeno un'ora e
+mezza** solo per il centro storico e il porto, di più se si entra nel castello. Il problema non è
+il posto: è che sta fuori mano rispetto a entrambe le giornate che passano vicino.
+
+| Percorso | Misurato (OSRM) |
+|---|---|
+| Saint-Malo → Cap Fréhel, diretto (Giorno 5) | 45,0 km / 58 min |
+| Saint-Malo → Dinan → Cap Fréhel | 32,7 km + 44,3 km = 77,0 km / 1h28 |
+| **Costo della deviazione sul Giorno 5** | **+32 km / +30 min di sola guida**, prima di contare la visita |
+| Menhir du Champ-Dolent → Saint-Malo, diretto (Giorno 4) | 33,1 km / 32 min |
+| Menhir → Dinan → Saint-Malo | 35,2 km + 33,4 km = 68,6 km / 1h06 |
+| **Costo della deviazione sul Giorno 4** | **+35,5 km / +34 min di sola guida** |
+
+Nessuna delle due giornate ha margine per assorbirlo:
+
+- **Giorno 5** è vincolato due volte: la mattina dal **Grand Bé**, raggiungibile solo con la
+  bassa marea (il cartello si apre verso le 10:30-11:00 e va rispettato, non è spostabile), e il
+  pomeriggio da **Fort la Latte, che chiude alle 18:30**. Mezz'ora di sola guida in più, prima
+  della visita vera, o si prende dal capo o si prende dal forte — o si arriva a Perros-Guirec
+  oltre le 20:00, saltando il senso della tappa lì (il tramonto delle 21:40 sotto l'albergo).
+- **Giorno 4** finisce già all'ultimo minuto: l'abbazia chiude alle 19:00, il menhir è previsto
+  alle 18:55 per mezz'ora scarsa, e l'arrivo a Saint-Malo è fissato per le 19:55 in modo da vedere
+  il tramonto dai bastioni alle 21:35. Trentaquattro minuti in più di sola guida, senza contare la
+  visita, spostano l'arrivo oltre le 21:00: il tramonto salta.
+
+### Cosa consiglio
+
+**Lasciarla fuori.** Non è un "forse": nessuna delle due giornate assorbe un'ora e mezza-due di
+deviazione senza sacrificare qualcosa che è già nel programma per un motivo preciso (la marea, un
+orario di chiusura, il tramonto). Se un giorno si volesse comunque vederla, l'unico modo pulito è
+un giorno extra fra Saint-Malo e Cap Fréhel, non un innesto in uno di questi due.
+
+Non verificato: giorni di chiusura del castello (il sito ufficiale, per luglio-agosto-settembre,
+dice aperto tutti i giorni, ma non ho trovato conferma di eventuali eccezioni per agosto 2026);
+orari della basilica Saint-Sauveur; disponibilità del parcheggio nella stagione alta.
+
+| Dato | Valore |
+|---|---|
+| Château de Dinan (donjon + torre di Coëtquen) | 10:30-19:00 tutti i giorni, luglio-settembre 2026 · 8 € intero, 5 € ridotto, gratis sotto i 6 anni |
+| Bastioni e centro storico | Accesso libero, sempre |
+| Rue du Jerzual, porto | Accesso libero, sempre |
+
+Fonti: articolo segnalato; chateaudedinan.fr/informations-pratiques/ per orari e prezzi del
+castello (verificato il 2 agosto 2026). Distanze: OSRM.
+
+---
+
 ## Dove si fa il bagno, davvero
 
 **Arrivata come:** link dal modulo (id `ms4u5x40-eb80e308`), 28 luglio 2026 alle 17:54.
