@@ -433,3 +433,19 @@ poi aprire il **sito dell'insegna** o la scheda **Gault&Millau / guida
 Michelin**, che hanno orari e giorni di chiusura. Gli uffici del turismo
 locali (roscoff-tourisme, perros-guirec.com, crozon-tourisme) hanno gli
 indirizzi ma spesso rispondono 403 o 503.
+
+**Un sito online non è la prova che un locale sia aperto.** Ho scritto una scheda
+intera per «La Taverne de Thor» di Rouen leggendo il suo sito, che risponde,
+ha la lista delle spine e l'indirizzo. Il locale ha chiuso: dal 1° ottobre 2025
+allo stesso civico c'è Le Fury Défendu. L'indizio c'era e l'ho visto senza
+capirlo — **il geocoding restituiva un altro nome commerciale a quell'indirizzo**,
+e il copyright del sito era fermo al 2020. Due segnali, entrambi ignorati.
+D'ora in poi: se Nominatim dà un'insegna diversa da quella che sto scrivendo,
+o se il copyright ha più di due anni, si verifica che il locale esista ancora
+prima di scriverne.
+
+**Il pranzo va messo solo dove si pranza davvero.** Il Giorno 1 aveva una
+sezione «Pranzo veloce» con tre indirizzi, ma si atterra alle 13:15 e fra
+ritiro dell'auto e strada si arriva a Rouen nel tardo pomeriggio: quel pranzo
+non esiste. **Prima di scrivere una fascia oraria, guardare l'orario di arrivo
+in città**, non la struttura della pagina precedente.
