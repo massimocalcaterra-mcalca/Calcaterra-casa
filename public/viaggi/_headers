@@ -50,6 +50,11 @@
 #   - archive-api.open-meteo.com -> il tempo che c'e' stato davvero, per le
 #                               giornate gia' passate da piu' di tre mesi
 #                               (connect-src). Stesso servizio, archivio ERA5.
+#   - marine-api.open-meteo.com -> temperatura del mare e altezza delle onde
+#                               accanto al meteo, sulle sette giornate di costa
+#                               (connect-src). Stesso servizio, modello marino.
+#                               L'orizzonte e' piu' corto di quello atmosferico:
+#                               quando manca il dato la casella si nasconde.
 #   Entrambe senza chiave e senza account: chiamata pubblica con le sole
 #   coordinate della tappa e la data.
 # La posizione del dispositivo (per evidenziare le tappe vicine) usa l'API di
@@ -88,7 +93,7 @@
   Cross-Origin-Opener-Policy: same-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(self), payment=(), usb=(), display-capture=()
   Strict-Transport-Security: max-age=86400
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.basemaps.cartocdn.com https://*.tile.openstreetmap.org; media-src 'self'; connect-src 'self' https://api.open-meteo.com https://archive-api.open-meteo.com; manifest-src 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.basemaps.cartocdn.com https://*.tile.openstreetmap.org; media-src 'self'; connect-src 'self' https://api.open-meteo.com https://archive-api.open-meteo.com https://marine-api.open-meteo.com; manifest-src 'self'; upgrade-insecure-requests
 
 # Copertine delle guide (public/viaggi/img/).
 /img/*

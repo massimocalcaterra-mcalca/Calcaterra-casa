@@ -275,5 +275,46 @@ function dataBreve(iso,n){
   return d.getUTCDate()+" "+MESI[d.getUTCMonth()];
 }
 
-window.DayGuide={initMap, wireGeolocation, initWeather, haversine, localiDalDOM, urlMappe, urlPosto};
+/* ---------------------------------------------------------------------------
+   Mare: temperatura dell'acqua e altezza delle onde, accanto al meteo.
+   Solo per le giornate sulla costa — nell'entroterra l'elemento non esiste
+   nemmeno e la funzione esce subito.
+   L'orizzonte della previsione marina e' piu' corto di quello atmosferico:
+   quando il giorno e' ancora troppo lontano l'API restituisce valori nulli, e
+   in quel caso si nasconde l'elemento invece di scrivere un errore. Un dato
+   sul mare che manca non e' una notizia; una riga di errore sotto la foto di
+   apertura sarebbe rumore.
+--------------------------------------------------------------------------- */
+async function initSea(containerId, opts){
+  const el=document.getElementById(containerId);
+  if(!el) return;
+  el.className="meteo mare loading"; el.textContent="Mare…";
+  try{
+    const u=new URL("https://marine-api.open-meteo.com/v1/marine");
+    u.searchParams.set("latitude",opts.lat);
+    u.searchParams.set("longitude",opts.lon);
+    u.searchParams.set("daily","sea_surface_temperature_max,wave_height_max");
+    u.searchParams.set("timezone","Europe/Paris");
+    u.searchParams.set("start_date",opts.dateISO);
+    u.searchParams.set("end_date",opts.dateISO);
+    const d=await chiediJSON(u);
+    const i=(d.daily && d.daily.time) ? d.daily.time.indexOf(opts.dateISO) : -1;
+    const t=i>=0 ? d.daily.sea_surface_temperature_max[i] : null;
+    const h=i>=0 ? d.daily.wave_height_max[i] : null;
+    if(t==null && h==null){ el.style.display="none"; return; }
+
+    el.className="meteo mare";
+    let pezzi="";
+    if(t!=null) pezzi+='<span class="t">'+Math.round(t)+'°C</span>';
+    if(h!=null){
+      const m=h.toFixed(1).replace(".",",");
+      pezzi+='<span>onde '+m+' m'+(h<0.5?" · piatto":h<1?"":" · mosso")+'</span>';
+    }
+    el.innerHTML='<span class="lbl">Mare a '+esc(opts.label)+'</span>'+pezzi;
+  }catch(e){
+    el.style.display="none";
+  }
+}
+
+window.DayGuide={initMap, wireGeolocation, initWeather, initSea, haversine, localiDalDOM, urlMappe, urlPosto};
 })();
