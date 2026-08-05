@@ -21,10 +21,15 @@
 // Facoltative:
 //   CHIEDI_MODELLO    = id del modello, se si vuole cambiarlo senza toccare il codice
 //   CHIEDI_MAX_GIORNO = tetto di richieste al giorno per IP (default 40)
-import { sameOrigin, forbidden, json } from "../_lib/auth.js";
+import { sameOrigin, forbidden, json, isAuthed } from "../_lib/auth.js";
 import { tooManyAttempts } from "../_lib/ratelimit.js";
 
-const MODELLO_DEFAULT = "claude-sonnet-5";
+// Opus 5 e' il modello piu' capace: una domanda fatta dalla strada, con poco
+// contesto e nessuna possibilita' di verificare la risposta, e' esattamente il
+// caso in cui conviene. Costa circa il doppio di Sonnet 5 — dell'ordine di un
+// paio di centesimi a domanda — e con il tetto di CHIEDI_MAX_GIORNO resta una
+// spesa trascurabile. Si cambia senza toccare il codice con CHIEDI_MODELLO.
+const MODELLO_DEFAULT = "claude-opus-5";
 const MAX_DOMANDA = 400; // caratteri
 const MAX_TOKEN_RISPOSTA = 700;
 
@@ -54,6 +59,22 @@ COSA SAPERE DEL VIAGGIO
 
 export async function onRequestPost({ request, env }) {
   if (!sameOrigin(request)) return forbidden();
+
+  // Da quando la sezione viaggi ha una password (functions/_middleware.js),
+  // anche la domanda dalla strada la richiede. Senza questo controllo /api/chiedi
+  // resterebbe l'unica porta aperta di un sito per il resto chiuso — e ogni
+  // chiamata costa soldi veri. Se la password non è configurata si prosegue lo
+  // stesso: sarebbe assurdo rompere la funzione su un progetto che l'accesso non
+  // ce l'ha ancora.
+  // Il messaggio è quello che si legge davvero nel pannello della guida: la
+  // sessione dura dodici ore e scade tipicamente mentre la pagina è ancora
+  // aperta sul telefono, quindi deve dire cosa fare, non "unauthorized".
+  if (env.SITE_PASSWORD && env.AUTH_SECRET && !(await isAuthed(request, env))) {
+    return json(
+      { error: "L'accesso è scaduto. Ricarica la pagina e reinserisci la password." },
+      401,
+    );
+  }
 
   // Il contatore è suo, separato da quello del login: una domanda dalla strada
   // non deve consumare i tentativi di accesso e viceversa.

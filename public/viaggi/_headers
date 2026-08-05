@@ -86,7 +86,12 @@
 # Scaletta: 300 -> [86400 <- SIAMO QUI] -> 2592000 -> 31536000, un passo per volta.
 # Da alzare in parallelo su entrambi i progetti, tenendoli allineati.
 
+# X-Robots-Tag accompagna il Disallow di robots.txt da quando il sito e'
+# riservato (5 agosto 2026). I due strumenti fanno cose diverse: robots.txt
+# chiede di non passare, questo header dice di non indicizzare cio' che si e'
+# comunque letto. Se un giorno la password viene tolta, vanno tolti insieme.
 /*
+  X-Robots-Tag: noindex, nofollow
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
@@ -171,3 +176,12 @@
 
 /404.html
   Cache-Control: public, max-age=0, must-revalidate
+
+# Pagina di accesso. Non deve finire in nessuna cache: e' l'unica pagina che il
+# middleware lascia passare senza sessione, e una copia conservata mostrerebbe
+# il modulo a chi e' gia' entrato (o, peggio, la schermata "sei gia' dentro" a
+# chi non lo e').
+/accesso/
+  Cache-Control: private, no-store
+/accesso/index.html
+  Cache-Control: private, no-store

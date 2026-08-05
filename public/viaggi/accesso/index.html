@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accesso · Viaggi</title>
+<meta name="description" content="Area riservata: le guide di viaggio di Massimo Calcaterra.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBFBFA">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBFBFA; --paper:#FFFFFF; --ink:#14261C; --body:#4B4F58; --muted:#6B6E67;
+    --line:#E7E6DF; --green:#1BAE70; --green-d:#06752E; --rosso:#B3261E;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Lato,system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+    min-height:100dvh;display:flex;flex-direction:column}
+  .wrap{width:100%;max-width:32rem;margin:0 auto;padding:1.5rem 1.25rem 3rem;
+    flex:1;display:flex;flex-direction:column;justify-content:center}
+  .marchio{font-family:Poppins,system-ui,sans-serif;font-weight:600;
+    font-size:.95rem;letter-spacing:.01em;color:var(--muted);
+    text-align:center;margin:0 0 1.5rem;text-decoration:none;display:block}
+  .marchio .dot{color:var(--green)}
+  .scheda{background:var(--paper);border:1px solid var(--line);border-radius:18px;
+    padding:1.75rem 1.5rem;box-shadow:0 18px 40px -28px rgba(20,38,28,.45)}
+  .lucchetto{font-size:2rem;line-height:1;text-align:center;margin:0 0 .75rem}
+  .occhiello{font-family:Poppins,system-ui,sans-serif;font-weight:600;font-size:.72rem;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+    text-align:center;margin:0 0 .35rem}
+  h1{font-family:Poppins,system-ui,sans-serif;font-weight:600;font-size:1.35rem;
+    line-height:1.25;margin:0 0 .6rem;text-align:center}
+  h1 .g{color:var(--green-d)}
+  p{margin:0 0 1.15rem;color:var(--body);font-size:.97rem;line-height:1.6;
+    text-align:justify;text-justify:inter-word;hyphens:auto}
+  form{display:flex;flex-direction:column;gap:.7rem}
+  label{font-size:.85rem;font-weight:700;color:var(--muted)}
+  input[type=password]{font:inherit;width:100%;padding:.8rem .9rem;
+    border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+  input[type=password]:focus{outline:none;border-color:var(--green);
+    box-shadow:0 0 0 3px rgba(27,174,112,.18)}
+  button{font-family:Poppins,system-ui,sans-serif;font-weight:600;font-size:1rem;
+    padding:.8rem 1rem;border-radius:12px;border:1px solid var(--green-d);
+    background:var(--green-d);color:#fff;cursor:pointer}
+  button:hover{background:#055e25;border-color:#055e25}
+  button[disabled]{opacity:.6;cursor:progress}
+  button.secondaria{background:#fff;color:var(--ink);border-color:var(--line)}
+  button.secondaria:hover{background:#F4F4F1}
+  .avviso{margin:.9rem 0 0;padding:.7rem .85rem;border-radius:10px;font-size:.9rem;
+    line-height:1.5;text-align:left}
+  .avviso.errore{background:#FDECEA;color:var(--rosso);border:1px solid #F5C7C3}
+  .avviso.nota{background:#F2F7F4;color:var(--body);border:1px solid #DDEBE3}
+  .avviso:empty{display:none;padding:0;border:0;margin:0}
+  .dentro{display:none}
+  .dentro a.vai{display:block;text-align:center;font-family:Poppins,system-ui,sans-serif;
+    font-weight:600;padding:.8rem 1rem;border-radius:12px;background:var(--green-d);
+    color:#fff;text-decoration:none;margin-bottom:.7rem}
+  .dentro button{width:100%}
+  .piede{text-align:center;font-size:.82rem;color:var(--muted);margin:1.4rem 0 0}
+  .nascosto{display:none!important}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="marchio" href="https://calcaterra.casa/">calcaterra<span class="dot">.</span>casa</a>
+
+    <main class="scheda">
+      <div class="lucchetto" aria-hidden="true">🔒</div>
+
+      <!-- Ingresso: il caso normale. -->
+      <section id="vistaLogin">
+        <div class="occhiello">Area riservata</div>
+        <h1>Guide di <span class="g">viaggio</span></h1>
+        <p>Queste pagine sono private. La password è la stessa dell'area foto e
+          l'accesso resta valido dodici ore.</p>
+        <form id="modulo" autocomplete="on">
+          <label for="pw">Password</label>
+          <input type="password" id="pw" name="password" placeholder="Password"
+                 autocomplete="current-password" required autofocus>
+          <button type="submit" id="invia">Entra</button>
+        </form>
+        <div class="avviso errore" id="errore" role="alert"></div>
+      </section>
+
+      <!-- Sessione già aperta: si evita di far ridigitare la password. -->
+      <section id="vistaDentro" class="dentro">
+        <h1>Sei già <span class="g">dentro</span></h1>
+        <p>Questo dispositivo ha una sessione aperta. Puoi proseguire, oppure
+          chiuderla se stai passando il telefono a qualcun altro.</p>
+        <a class="vai" id="vai" href="/">Vai alle guide</a>
+        <button class="secondaria" type="button" id="esci">Esci</button>
+      </section>
+
+      <!-- Password non ancora configurata sul progetto Pages. -->
+      <section id="vistaSetup" class="dentro">
+        <h1>Da <span class="g">configurare</span></h1>
+        <p>La protezione non è attiva: nel progetto Cloudflare Pages dei viaggi
+          mancano le variabili <b>SITE_PASSWORD</b> e <b>AUTH_SECRET</b>. Finché
+          non ci sono, le guide restano pubbliche. Vedi PUBLISHING.md §14.</p>
+        <a class="vai" href="/">Vai alle guide</a>
+      </section>
+    </main>
+
+    <p class="piede">Undici giorni fra Normandia e Bretagna, agosto 2026.</p>
+  </div>
+
+<script>
+(function(){
+  var $ = function(s){ return document.querySelector(s); };
+
+  // La destinazione arriva dal middleware come ?da=<percorso>. Va ripulita:
+  // accettare un valore qualunque significherebbe trasformare questa pagina in
+  // un trampolino verso siti terzi (open redirect). Si ammette solo un percorso
+  // assoluto di questo stesso sito, e "//" e' escluso perche' i browser lo
+  // leggono come inizio di un URL con host.
+  function destinazione(){
+    var raw = "";
+    try{ raw = new URLSearchParams(location.search).get("da") || ""; }catch(e){}
+    if(!raw || raw.charAt(0) !== "/" || raw.charAt(1) === "/" || raw.charAt(1) === "\\") return "/";
+    if(raw.indexOf("/accesso") === 0) return "/";
+    return raw;
+  }
+  var meta = destinazione();
+
+  function mostra(quale){
+    $("#vistaLogin").style.display = quale === "login" ? "" : "none";
+    $("#vistaDentro").style.display = quale === "dentro" ? "block" : "none";
+    $("#vistaSetup").style.display  = quale === "setup"  ? "block" : "none";
+  }
+
+  // Stato iniziale. Se /api/me non risponde si mostra comunque il modulo: e' il
+  // ripiego giusto, perche' l'unica cosa che si perde e' la scorciatoia per chi
+  // era gia' entrato.
+  fetch("/api/me", {cache:"no-store"})
+    .then(function(r){ return r.json(); })
+    .then(function(s){
+      if(!s.configured){ mostra("setup"); return; }
+      if(s.authed){ $("#vai").setAttribute("href", meta); mostra("dentro"); return; }
+      mostra("login");
+    })
+    .catch(function(){ mostra("login"); });
+
+  $("#modulo").addEventListener("submit", function(e){
+    e.preventDefault();
+    var err = $("#errore"), bottone = $("#invia");
+    err.textContent = "";
+    bottone.disabled = true;
+    bottone.textContent = "Un attimo…";
+    fetch("/api/login", {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify({ password: $("#pw").value })
+    })
+    .then(function(r){
+      if(r.ok){ location.replace(meta); return null; }
+      return r.json().catch(function(){ return {}; });
+    })
+    .then(function(d){
+      if(!d) return; // gia' in navigazione verso la destinazione
+      err.textContent = d.error || "Accesso negato.";
+      $("#pw").value = "";
+      $("#pw").focus();
+    })
+    .catch(function(){
+      err.textContent = "Non sono riuscito a contattare il sito. Riprova.";
+    })
+    .then(function(){
+      bottone.disabled = false;
+      bottone.textContent = "Entra";
+    });
+  });
+
+  $("#esci").addEventListener("click", function(){
+    fetch("/api/logout", {method:"POST"}).then(function(){ location.replace("/accesso/"); });
+  });
+})();
+</script>
+</body>
+</html>

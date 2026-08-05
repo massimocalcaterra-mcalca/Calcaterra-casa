@@ -1,4 +1,11 @@
+# viaggi.calcaterra.casa e' un'area riservata dal 5 agosto 2026: ogni pagina
+# passa dal cancello di functions/_middleware.js e chi non ha la sessione viene
+# mandato su /accesso/. Un motore di ricerca non vedrebbe altro che quella
+# pagina, quindi tanto vale dirglielo qui e non fargli sprecare visite.
+#
+# Conseguenza da conoscere: le guide gia' indicizzate usciranno dai risultati di
+# Google nel giro di qualche settimana. Per rimetterle pubbliche basta togliere
+# SITE_PASSWORD dal progetto Pages dei viaggi e riportare qui "Allow: /" con la
+# riga Sitemap.
 User-agent: *
-Allow: /
-
-Sitemap: https://viaggi.calcaterra.casa/sitemap.xml
+Disallow: /

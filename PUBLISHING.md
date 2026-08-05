@@ -382,8 +382,17 @@ Production e Preview), variabile **cifrata**:
 
 Facoltative, in chiaro:
 
-    CHIEDI_MODELLO    = claude-sonnet-5   (default se assente)
+    CHIEDI_MODELLO    = claude-opus-5     (default se assente)
     CHIEDI_MAX_GIORNO = 40                (domande al giorno per IP)
+
+Il modello di default è **Opus 5**, il più capace: una domanda fatta dalla
+strada non è verificabile sul momento, quindi conviene la risposta migliore.
+Costa circa due centesimi a domanda contro il centesimo scarso di
+`claude-sonnet-5`, che resta l'alternativa se un giorno il volume crescesse.
+
+Da agosto 2026 l'endpoint **richiede anche la sessione** del sito (§14), non
+solo la stessa origine: se il progetto ha `SITE_PASSWORD` e `AUTH_SECRET`, una
+domanda senza cookie valido riceve 401.
 
 Il tetto giornaliero funziona solo se il progetto ha il binding KV `RATE_KV`,
 lo stesso del login. Senza, il limitatore è fail-open — cioè non limita: è la
@@ -392,3 +401,102 @@ per una svista di configurazione. **Con una chiave a fatturazione e senza
 RATE_KV l'endpoint è aperto a chiunque conosca l'indirizzo**, protetto solo dal
 controllo di stessa origine. Se il KV non c'è, conviene mettere un tetto di
 spesa sulla console Anthropic.
+
+---
+
+## 14. Sezione Viaggi — password all'ingresso
+
+Da agosto 2026 `viaggi.calcaterra.casa` è **privata**: ogni pagina passa da un
+cancello e chi non ha la sessione finisce su `/accesso/`. La password è **la
+stessa dell'area foto** (§11): stessa `SITE_PASSWORD`, stesso cookie firmato,
+stessa durata di dodici ore.
+
+### Come è fatta
+
+```
+functions/_middleware.js            ← il cancello: gira PRIMA che Pages serva l'HTML
+public/viaggi/accesso/index.html    ← la pagina della password
+public/_routes.json                 ← APEX: le Functions girano solo su /api/*
+public/viaggi/_routes.json          ← VIAGGI: le Functions girano su tutto
+```
+
+Il punto delicato è che **`functions/` è condivisa dai due progetti Pages**
+(l'apex ha output `public/`, i viaggi hanno output `public/viaggi/`, ma la
+cartella delle Functions è la stessa alla radice del repo). Un middleware
+distratto chiuderebbe fuori anche `calcaterra.casa`. Ci sono quindi due difese
+indipendenti, e vanno mantenute entrambe:
+
+1. **`public/_routes.json`** limita le Functions dell'apex a `/api/*`. Su
+   `calcaterra.casa` il middleware non viene proprio invocato per le pagine, e i
+   redirect di `public/_redirects` (`/viaggi/*` → sottodominio) restano intatti.
+2. **Il controllo dell'hostname** dentro `_middleware.js`: protegge solo ciò che
+   sta sotto `viaggi.`, e lascia passare tutto il resto.
+
+### L'interruttore è la password stessa
+
+La protezione si accende **solo quando nel progetto Pages dei viaggi esistono
+`SITE_PASSWORD` e `AUTH_SECRET`**. Finché non ci sono, il sito resta pubblico
+come prima. È voluto: il deploy è automatico a ogni push, e un cancello
+fail-closed manderebbe offline le guide nell'intervallo fra la pubblicazione e
+il momento in cui si impostano le variabili a mano nel dashboard.
+
+> Il rovescio della medaglia: **il push non basta**. Finché le due variabili non
+> sono sul progetto viaggi, il sito è pubblico e non lo segnala. Per verificare:
+> `curl -s https://viaggi.calcaterra.casa/api/me` deve rispondere
+> `"configured":true`.
+
+### Setup una-tantum (2 minuti)
+
+Progetto Pages **viaggi** → *Settings → Environment variables → Production*
+(e Preview, se le anteprime servono), entrambe come **Secret / Encrypt**:
+
+| Variabile | Valore |
+|---|---|
+| `SITE_PASSWORD` | **la stessa** già usata per `/foto` sull'apex |
+| `AUTH_SECRET` | **la stessa** già usata per `/foto` sull'apex |
+
+Poi *Deployments → Retry deployment* (oppure un push qualsiasi).
+
+Copiare gli stessi valori dell'apex serve a non avere due password da
+ricordare. Non li rende però la stessa sessione: il cookie **non ha
+l'attributo `Domain`**, quindi resta legato all'host che lo emette. Si entra una
+volta su `calcaterra.casa/foto` e una volta su `viaggi.calcaterra.casa` — con la
+stessa password. È la scelta prudente: un cookie valido su tutto
+`*.calcaterra.casa` viaggerebbe verso ogni sottodominio presente e futuro.
+
+Facoltativa, in chiaro:
+
+    VIAGGI_PRIVATO = 1   forza la protezione anche fuori da viaggi.* (anteprime *.pages.dev)
+                   = 0   la disattiva del tutto, per un'emergenza
+
+### Cosa passa senza password
+
+`/api/*` (che si difende da sé — `/api/login` deve restare aperto per
+definizione), `/accesso/`, `/robots.txt`, `/favicon.ico`, `/site.webmanifest` e
+le icone della schermata Home. Tutto il resto — HTML, CSS, JS, immagini, PDF —
+è chiuso: una navigazione riceve un 302 verso `/accesso/?da=<pagina cercata>`,
+così dopo la password si atterra dove si voleva andare; un asset riceve un 401
+secco, perché dirottare un foglio di stile su una pagina HTML farebbe solo
+sbagliare il tipo MIME al browser.
+
+### Conseguenze da conoscere
+
+- **Le guide escono da Google.** `public/viaggi/robots.txt` ora dice
+  `Disallow: /` e `_headers` aggiunge `X-Robots-Tag: noindex, nofollow`. Le
+  pagine già indicizzate spariranno dai risultati in qualche settimana.
+  Per tornare pubblici: togliere `SITE_PASSWORD` dal progetto viaggi e rimettere
+  `Allow: /` con la riga `Sitemap:` in robots.txt.
+- **I link condivisi non funzionano più per gli altri.** Chi riceve l'indirizzo
+  di una giornata vede la richiesta della password.
+- **Ogni richiesta a un asset è un'invocazione di Function.** Su un sito
+  personale è ampiamente dentro il piano gratuito, ma non è più zero.
+- **`/api/chiedi` ora richiede la sessione**, non solo la stessa origine. È il
+  guadagno più concreto: l'endpoint che spende soldi non è più raggiungibile da
+  chiunque conosca l'indirizzo.
+
+### Cambiare la password
+
+Aggiornare `SITE_PASSWORD` **su entrambi i progetti** e ripubblicare. Le
+sessioni già aperte restano valide fino alla scadenza: per buttarle fuori
+subito, cambiare anche `AUTH_SECRET` (oppure incrementare `AUTH_VERSION`, che
+esiste apposta e non invalida nient'altro).
