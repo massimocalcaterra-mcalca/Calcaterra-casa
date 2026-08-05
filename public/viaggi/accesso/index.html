@@ -101,8 +101,10 @@
       <section id="vistaSetup" class="dentro">
         <h1>Da <span class="g">configurare</span></h1>
         <p>La protezione non è attiva: nel progetto Cloudflare Pages dei viaggi
-          mancano le variabili <b>SITE_PASSWORD</b> e <b>AUTH_SECRET</b>. Finché
-          non ci sono, le guide restano pubbliche. Vedi PUBLISHING.md §14.</p>
+          manca <b id="mancanti">SITE_PASSWORD / AUTH_SECRET</b>. Finché non
+          c'è, le guide restano pubbliche. Attenzione al progetto giusto
+          (<i>viaggi-calcaterra</i>, non <i>calcaterra-casa</i>) e
+          all'ambiente <i>Production</i>. Vedi PUBLISHING.md §14.</p>
         <a class="vai" href="/">Vai alle guide</a>
       </section>
     </main>
@@ -140,7 +142,10 @@
   fetch("/api/me", {cache:"no-store"})
     .then(function(r){ return r.json(); })
     .then(function(s){
-      if(!s.configured){ mostra("setup"); return; }
+      if(!s.configured){
+        if(s.manca && s.manca.length) $("#mancanti").textContent = s.manca.join(" e ");
+        mostra("setup"); return;
+      }
       if(s.authed){ $("#vai").setAttribute("href", meta); mostra("dentro"); return; }
       mostra("login");
     })

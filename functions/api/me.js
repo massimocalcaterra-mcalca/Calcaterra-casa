@@ -9,5 +9,14 @@ import { isAuthed, json } from "../_lib/auth.js";
 export async function onRequestGet({ request, env }) {
   const configured = !!(env.SITE_PASSWORD && env.AUTH_SECRET);
   const storage = !!env.FOTO_BUCKET;
-  return json({ authed: await isAuthed(request, env), configured, storage });
+  // Quali variabili mancano, per nome. Serve a diagnosticare in dieci secondi
+  // l'errore piu' comune del pannello Cloudflare: la variabile salvata su
+  // Preview invece che su Production, o sul progetto sbagliato dei due che
+  // leggono questo repo. Senza, si sa solo che "qualcosa" manca e si tira a
+  // indovinare. Non rivela nulla di piu' di quanto gia' dica /api/login, che
+  // annuncia esplicitamente la configurazione incompleta.
+  const manca = [];
+  if (!env.SITE_PASSWORD) manca.push("SITE_PASSWORD");
+  if (!env.AUTH_SECRET) manca.push("AUTH_SECRET");
+  return json({ authed: await isAuthed(request, env), configured, storage, manca });
 }
