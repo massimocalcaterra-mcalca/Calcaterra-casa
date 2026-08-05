@@ -363,3 +363,32 @@ Le fotografie delle guide sono self-hosted in `public/viaggi/img/g/` (varianti A
 - **Video:** i due `.mp4` sotto `public/viaggi/bretagna/video/` sono H.264 e non hanno `poster`.
   Un poster ricavato da un'altra fotografia sarebbe una copertina che non corrisponde al
   contenuto: meglio nessuno.
+
+## Il pulsante «Chiedi» — configurazione
+
+Le pagine della guida hanno in alto un pulsante **Chiedi**: apre un pannello,
+prende la posizione dal telefono, e manda a `/api/chiedi` la posizione, l'ora,
+la giornata e le dieci tappe della pagina più vicine. La risposta arriva
+dall'API Anthropic.
+
+**Senza chiave il pulsante non si rompe**: risponde 503 e il pannello mostra
+«manca la chiave API nelle impostazioni del sito». Tutto il resto della guida
+funziona identico. Quindi si può pubblicare prima e configurare dopo.
+
+Per accenderlo, nel progetto Pages **viaggi** (Settings → Environment variables,
+Production e Preview), variabile **cifrata**:
+
+    ANTHROPIC_API_KEY = sk-ant-...
+
+Facoltative, in chiaro:
+
+    CHIEDI_MODELLO    = claude-sonnet-5   (default se assente)
+    CHIEDI_MAX_GIORNO = 40                (domande al giorno per IP)
+
+Il tetto giornaliero funziona solo se il progetto ha il binding KV `RATE_KV`,
+lo stesso del login. Senza, il limitatore è fail-open — cioè non limita: è la
+scelta già in uso nel resto del sito, per non chiudere fuori il proprietario
+per una svista di configurazione. **Con una chiave a fatturazione e senza
+RATE_KV l'endpoint è aperto a chiunque conosca l'indirizzo**, protetto solo dal
+controllo di stessa origine. Se il KV non c'è, conviene mettere un tetto di
+spesa sulla console Anthropic.

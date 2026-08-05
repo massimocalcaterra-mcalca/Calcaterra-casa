@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/base.css?v=999fa4d7">
-<link rel="stylesheet" href="../assets/day.css?v=4eca9351">
+<link rel="stylesheet" href="../assets/day.css?v=31759b2c">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <style>
   /* Solo cio' che questa pagina aggiunge al foglio comune. */
@@ -83,7 +83,27 @@
       <a href="#mappa">Mappa</a>
       <a href="../#g9">Nella guida</a>
     </nav>
+  <button class="chbtn" id="chBtn" aria-expanded="false" aria-controls="chPanel">Chiedi</button>
   </div>
+</div>
+
+<div class="chpanel" id="chPanel" hidden role="dialog" aria-label="Chiedi qualcosa dalla strada">
+  <div class="chtitolo">Dove sei adesso
+    <button class="chchiudi" type="button" aria-label="Chiudi">&times;</button>
+  </div>
+  <div class="chrapide">
+    <button type="button" data-chiedi="Dove sono e cosa ho intorno? Dammi le indicazioni per la prossima tappa della giornata.">Indicazioni</button>
+    <button type="button" data-chiedi="Raccontami una curiosità vera su dove mi trovo adesso, qualcosa che non sta sui cartelli.">Curiosità</button>
+    <button type="button" data-chiedi="Dove faccio colazione qui vicino?">Colazione</button>
+    <button type="button" data-chiedi="Dove pranzo qui vicino, senza perdere il pomeriggio?">Pranzo</button>
+    <button type="button" data-chiedi="Dove ceno qui vicino stasera?">Cena</button>
+  </div>
+  <form>
+    <input class="chinput" type="text" maxlength="400" placeholder="Oppure scrivi la domanda" aria-label="La tua domanda">
+    <button class="chinvia" type="submit">Invia</button>
+  </form>
+  <div class="chrisp" role="status" aria-live="polite"></div>
+  <div class="chnota">Uso la posizione del telefono solo per rispondere, e non la salvo. Gli orari dei locali vanno sempre confermati sul posto.</div>
 </div>
 
 <main id="contenuto">
@@ -443,7 +463,7 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="../assets/day.js?v=e5580d84"></script>
+<script src="../assets/day.js?v=e3e28ea2"></script>
 <script src="../assets/nav.js?v=09c6a6ee" defer></script>
 <script>
 const TAPPE = [
@@ -475,6 +495,12 @@ DayGuide.wireGeolocation({
 DayGuide.initWeather("dayweather", {
   lat:48.0058, lon:0.2007, dateISO:"2026-08-14",
   dataLeggibile:"14 agosto", label:"Le Mans"
+});
+
+DayGuide.initChiedi({
+  btnId:"chBtn", panelId:"chPanel",
+  giorno:'Giorno 9 — Rochefort-en-Terre, Brocéliande e Le Mans',
+  stops: (typeof PUNTI!=="undefined") ? PUNTI : (typeof TAPPE!=="undefined" ? TAPPE : [])
 });
 </script>
 </body>

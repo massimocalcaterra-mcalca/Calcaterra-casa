@@ -178,3 +178,42 @@ td .gmaps,p .gmaps{margin-top:4px}
   .gmaps{min-height:44px;padding:3px 0}
   .lmenu summary{min-height:40px;display:flex;align-items:center}
 }
+
+/* --- il pulsante "Chiedi" e il suo pannello -------------------------------
+   Sta nella barra in alto, che segue lo scorrimento: e' pensato per essere
+   raggiungibile con il pollice mentre si e' fermi da qualche parte, non per
+   essere cercato in fondo alla pagina. */
+.chbtn{margin-left:auto;flex:0 0 auto;font-family:Poppins,sans-serif;font-weight:600;
+  font-size:.82rem;border:1px solid var(--green-d);background:var(--green-d);color:#fff;
+  border-radius:999px;padding:6px 14px;cursor:pointer;line-height:1.3}
+.chbtn:hover{filter:brightness(1.08)}
+.chpanel{position:fixed;left:0;right:0;bottom:0;z-index:1200;background:var(--paper);
+  border-top:2px solid var(--green-d);border-radius:16px 16px 0 0;
+  box-shadow:0 -10px 40px rgba(0,0,0,.22);padding:16px 18px 22px;
+  max-height:76vh;overflow:auto}
+@media(min-width:760px){
+  .chpanel{left:auto;right:24px;bottom:24px;width:420px;border-radius:16px;border:2px solid var(--green-d)}
+}
+.chpanel[hidden]{display:none}
+.chtitolo{display:flex;align-items:baseline;gap:10px;font-family:Poppins,sans-serif;
+  font-weight:600;font-size:.95rem;color:var(--green-d)}
+.chchiudi{margin-left:auto;background:none;border:0;font-size:1.4rem;line-height:1;
+  color:var(--muted);cursor:pointer;padding:0 4px}
+.chrapide{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chrapide button{font-family:Poppins,sans-serif;font-weight:600;font-size:.8rem;
+  border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;
+  padding:7px 13px;cursor:pointer}
+.chrapide button:hover{border-color:var(--green-d);color:var(--green-d)}
+.chpanel form{display:flex;gap:8px}
+.chinput{flex:1;min-width:0;font:inherit;font-size:.92rem;padding:9px 12px;
+  border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.chinput:focus{outline:2px solid var(--green-d);outline-offset:1px}
+.chinvia{font-family:Poppins,sans-serif;font-weight:600;font-size:.85rem;border:0;
+  background:var(--green-d);color:#fff;border-radius:10px;padding:9px 15px;cursor:pointer}
+.chrisp{margin-top:12px;font-size:.93rem;line-height:1.55;white-space:pre-wrap;
+  color:var(--body)}
+.chrisp:empty{display:none}
+.chrisp.attesa{color:var(--muted);font-style:italic}
+.chrisp.errore{color:var(--coral-text);background:#FFF6F2;border:1px solid var(--coral);
+  border-radius:10px;padding:10px 12px}
+.chnota{margin-top:10px;font-size:.76rem;color:var(--muted)}

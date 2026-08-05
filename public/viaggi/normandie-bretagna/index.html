@@ -396,7 +396,27 @@
       <button class="topprint" type="button" id="printBtn">Stampa</button>
       <a class="topadd" href="https://calcaterra.casa/proposte/">+ Proposta</a>
     </nav>
+  <button class="chbtn" id="chBtn" aria-expanded="false" aria-controls="chPanel">Chiedi</button>
   </div>
+</div>
+
+<div class="chpanel" id="chPanel" hidden role="dialog" aria-label="Chiedi qualcosa dalla strada">
+  <div class="chtitolo">Dove sei adesso
+    <button class="chchiudi" type="button" aria-label="Chiudi">&times;</button>
+  </div>
+  <div class="chrapide">
+    <button type="button" data-chiedi="Dove sono e cosa ho intorno? Dammi le indicazioni per la prossima tappa della giornata.">Indicazioni</button>
+    <button type="button" data-chiedi="Raccontami una curiosità vera su dove mi trovo adesso, qualcosa che non sta sui cartelli.">Curiosità</button>
+    <button type="button" data-chiedi="Dove faccio colazione qui vicino?">Colazione</button>
+    <button type="button" data-chiedi="Dove pranzo qui vicino, senza perdere il pomeriggio?">Pranzo</button>
+    <button type="button" data-chiedi="Dove ceno qui vicino stasera?">Cena</button>
+  </div>
+  <form>
+    <input class="chinput" type="text" maxlength="400" placeholder="Oppure scrivi la domanda" aria-label="La tua domanda">
+    <button class="chinvia" type="submit">Invia</button>
+  </form>
+  <div class="chrisp" role="status" aria-live="polite"></div>
+  <div class="chnota">Uso la posizione del telefono solo per rispondere, e non la salvo. Gli orari dei locali vanno sempre confermati sul posto.</div>
 </div>
 
 <main id="contenuto">
@@ -1458,6 +1478,12 @@
 <script>
   document.getElementById("printBtn").addEventListener("click", ()=>window.print());
 </script>
-<script src="assets/nav.js?v=09c6a6ee" defer></script>
+<script src="assets/nav.js?v=09c6a6ee" defer>
+DayGuide.initChiedi({
+  btnId:"chBtn", panelId:"chPanel",
+  giorno:'Normandie &amp; Bretagne in 11 giorni',
+  stops: (typeof PUNTI!=="undefined") ? PUNTI : (typeof TAPPE!=="undefined" ? TAPPE : [])
+});
+</script>
 </body>
 </html>

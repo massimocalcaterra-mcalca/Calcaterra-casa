@@ -11,11 +11,15 @@ export function clientIp(request) {
 export async function tooManyAttempts(env, request, opts = {}) {
   const max = opts.max || 5;
   const windowSec = opts.windowSec || 300;
+  // Prefisso della chiave: serve a tenere separati i contatori di endpoint
+  // diversi. Senza, una richiesta alla guida consumerebbe i tentativi del
+  // login e viceversa.
+  const prefix = opts.prefix || "login";
   if (!env || !env.RATE_KV) return false; // fail-open: binding assente
 
   // Finestra fissa: la chiave cambia da sola allo scadere del periodo.
   const bucket = Math.floor(Date.now() / 1000 / windowSec);
-  const key = `login:${clientIp(request)}:${bucket}`;
+  const key = `${prefix}:${clientIp(request)}:${bucket}`;
   try {
     const n = parseInt((await env.RATE_KV.get(key)) || "0", 10) || 0;
     if (n >= max) return true;

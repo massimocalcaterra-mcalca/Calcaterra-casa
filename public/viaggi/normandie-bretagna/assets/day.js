@@ -316,5 +316,99 @@ async function initSea(containerId, opts){
   }
 }
 
-window.DayGuide={initMap, wireGeolocation, initWeather, initSea, haversine, localiDalDOM, urlMappe, urlPosto};
+/* ---------------------------------------------------------------------------
+   Il pulsante "Chiedi": una domanda dalla strada, con la posizione.
+   Manda a /api/chiedi la posizione del telefono, l'ora, la giornata che si sta
+   leggendo e le tappe della pagina piu' vicine — che sono verificate e sono il
+   contesto migliore disponibile — e mostra la risposta.
+   Degrada bene per scelta: se la posizione viene negata si chiede lo stesso,
+   dicendo che manca; se il servizio non e' configurato si vede il perche' e la
+   guida resta intera. Niente qui e' indispensabile per usare la pagina.
+--------------------------------------------------------------------------- */
+function initChiedi(cfg){
+  const btn=document.getElementById(cfg.btnId);
+  const pan=document.getElementById(cfg.panelId);
+  if(!btn||!pan) return;
+  const out=pan.querySelector(".chrisp");
+  const inp=pan.querySelector(".chinput");
+  let posizione=null, inCorso=false;
+
+  function apri(v){
+    pan.hidden=!v; btn.setAttribute("aria-expanded", v?"true":"false");
+    if(v && inp) setTimeout(()=>inp.focus(),50);
+  }
+  btn.addEventListener("click", ()=>apri(pan.hidden));
+  const chiudi=pan.querySelector(".chchiudi");
+  if(chiudi) chiudi.addEventListener("click", ()=>{apri(false); btn.focus();});
+  pan.addEventListener("keydown", e=>{ if(e.key==="Escape"){apri(false); btn.focus();} });
+
+  /* La posizione si chiede una volta sola e si tiene per la sessione: al
+     secondo "dove mangio" il telefono non deve ridomandare il permesso. */
+  function posizioneOra(){
+    return new Promise(res=>{
+      if(posizione) return res(posizione);
+      if(!navigator.geolocation) return res(null);
+      navigator.geolocation.getCurrentPosition(
+        p=>{ posizione={lat:p.coords.latitude, lon:p.coords.longitude}; res(posizione); },
+        ()=>res(null),
+        {enableHighAccuracy:true, timeout:8000, maximumAge:120000});
+    });
+  }
+
+  /* Le tappe piu' vicine, calcolate qui dalla pagina: cosi' la risposta e'
+     ancorata a quello che la guida dice davvero, non alla memoria del modello. */
+  function viciniA(pos){
+    if(!pos || !Array.isArray(cfg.stops)) return [];
+    return cfg.stops
+      .filter(s=>isFinite(s.lat)&&isFinite(s.lon))
+      .map(s=>({nome:s.name, nota:s.note||"", km:haversine(pos.lat,pos.lon,s.lat,s.lon)}))
+      .sort((a,b)=>a.km-b.km).slice(0,10);
+  }
+
+  async function chiedi(domanda){
+    if(inCorso||!domanda) return;
+    inCorso=true;
+    out.className="chrisp attesa"; out.textContent="Sto guardando dove sei…";
+    const pos=await posizioneOra();
+    out.textContent="Un momento…";
+    try{
+      const r=await fetch("/api/chiedi",{
+        method:"POST", headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+          domanda:domanda,
+          lat:pos?pos.lat:null, lon:pos?pos.lon:null,
+          quando:new Date().toLocaleString("it-IT",{weekday:"long",hour:"2-digit",minute:"2-digit"}),
+          giorno:cfg.giorno||document.title,
+          vicini:viciniA(pos)
+        })
+      });
+      const d=await r.json().catch(()=>({}));
+      if(!r.ok||!d.risposta){
+        out.className="chrisp errore";
+        out.textContent=d.error||"Non sono riuscito a rispondere adesso.";
+      }else{
+        out.className="chrisp";
+        /* Testo, non HTML: quello che torna dal modello non si inietta mai. */
+        out.textContent=d.risposta;
+        if(!pos) out.textContent+="\n\n(Senza la posizione del telefono: ho risposto in generale.)";
+      }
+    }catch(e){
+      out.className="chrisp errore";
+      out.textContent="Manca la rete, o il servizio non risponde.";
+    }
+    inCorso=false;
+  }
+
+  pan.querySelectorAll("[data-chiedi]").forEach(b=>{
+    b.addEventListener("click", ()=>chiedi(b.getAttribute("data-chiedi")));
+  });
+  const form=pan.querySelector("form");
+  if(form) form.addEventListener("submit", e=>{
+    e.preventDefault();
+    const v=inp.value.trim();
+    if(v){ chiedi(v); inp.value=""; }
+  });
+}
+
+window.DayGuide={initMap, wireGeolocation, initWeather, initSea, initChiedi, haversine, localiDalDOM, urlMappe, urlPosto};
 })();
