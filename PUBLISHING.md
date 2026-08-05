@@ -432,6 +432,17 @@ indipendenti, e vanno mantenute entrambe:
 2. **Il controllo dell'hostname** dentro `_middleware.js`: protegge solo ciò che
    sta sotto `viaggi.`, e lascia passare tutto il resto.
 
+> ⚠️ **`_routes.json` vuole sempre anche `exclude`, pure se vuoto.** La
+> documentazione di Cloudflare non lo dice; il codice di validazione sì:
+> `Array.isArray(data.include) && Array.isArray(data.exclude)`. Un file con il
+> solo `include` fa **fallire la build all'istante**, su tutti i progetti che lo
+> contengono, con il solo messaggio «Build failed» sul check di GitHub. Il sito
+> resta online sulla versione precedente, quindi il guasto è silenzioso: si vede
+> solo che le modifiche non arrivano. Nell'agosto 2026 è costato mezz'ora.
+> Le altre regole: almeno un `include`, massimo 100 regole in tutto, massimo 100
+> caratteri per regola, ogni regola deve iniziare con `/`, e due regole non
+> possono sovrapporsi (`/api/*` insieme a `/api/foto` è un errore).
+
 ### L'interruttore è la password stessa
 
 La protezione si accende **solo quando nel progetto Pages dei viaggi esistono
