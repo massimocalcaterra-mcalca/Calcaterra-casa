@@ -463,17 +463,20 @@ Progetto Pages **viaggi** → *Settings → Environment variables → Production
 
 | Variabile | Valore |
 |---|---|
-| `SITE_PASSWORD` | **la stessa** già usata per `/foto` sull'apex |
-| `AUTH_SECRET` | **la stessa** già usata per `/foto` sull'apex |
+| `SITE_PASSWORD` | **la stessa** già usata per `/foto` sull'apex — è il punto di tutto |
+| `AUTH_SECRET` | una stringa lunga e casuale **qualsiasi**, es. `openssl rand -hex 32` |
 
 Poi *Deployments → Retry deployment* (oppure un push qualsiasi).
 
-Copiare gli stessi valori dell'apex serve a non avere due password da
-ricordare. Non li rende però la stessa sessione: il cookie **non ha
-l'attributo `Domain`**, quindi resta legato all'host che lo emette. Si entra una
-volta su `calcaterra.casa/foto` e una volta su `viaggi.calcaterra.casa` — con la
-stessa password. È la scelta prudente: un cookie valido su tutto
-`*.calcaterra.casa` viaggerebbe verso ogni sottodominio presente e futuro.
+`AUTH_SECRET` **non deve** coincidere con quella dell'apex, e tanto vale saperlo
+perché una variabile salvata come Secret su Cloudflare **non si può più
+rileggere**: si può solo sostituire. Le due sezioni non condividono la sessione,
+solo la password. Il cookie infatti **non ha l'attributo `Domain`**, quindi
+resta legato all'host che lo emette: si entra una volta su
+`calcaterra.casa/foto` e una volta su `viaggi.calcaterra.casa`, digitando la
+stessa password. È la scelta prudente — un cookie valido su tutto
+`*.calcaterra.casa` viaggerebbe verso ogni sottodominio presente e futuro — ed è
+anche il motivo per cui ogni progetto firma con la propria chiave.
 
 Facoltativa, in chiaro:
 
@@ -507,7 +510,8 @@ sbagliare il tipo MIME al browser.
 
 ### Cambiare la password
 
-Aggiornare `SITE_PASSWORD` **su entrambi i progetti** e ripubblicare. Le
+Aggiornare `SITE_PASSWORD` **su entrambi i progetti** e ripubblicare — se si
+cambia solo su uno, le due sezioni finiscono con due password diverse. Le
 sessioni già aperte restano valide fino alla scadenza: per buttarle fuori
-subito, cambiare anche `AUTH_SECRET` (oppure incrementare `AUTH_VERSION`, che
-esiste apposta e non invalida nient'altro).
+subito, incrementare `AUTH_VERSION` sul progetto interessato (esiste apposta e
+non invalida nient'altro), oppure sostituire `AUTH_SECRET`.
