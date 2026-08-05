@@ -33,6 +33,36 @@ const MODELLO_DEFAULT = "claude-opus-5";
 const MAX_DOMANDA = 400; // caratteri
 const MAX_TOKEN_RISPOSTA = 700;
 
+// Lo storico della conversazione arriva dalla pagina a ogni richiesta: qui non
+// si conserva niente fra una chiamata e l'altra, non c'è sessione da tenere né
+// database da svuotare. Il tetto è tre domande e tre risposte — oltre, il testo
+// in ingresso cresce senza che la risposta migliori, perché quello che conta
+// davvero è il contesto di adesso, che viaggia sempre con l'ultima domanda.
+const MAX_BATTUTE = 6;
+const MAX_TESTO_STORICO = 1200; // caratteri per battuta
+
+// Lo storico è dato che arriva dal browser, quindi non ci si fida: si accetta
+// solo se è esattamente della forma attesa — pari, alternato, che comincia con
+// una domanda — e altrimenti si butta via tutto invece di provare a ripararlo.
+// Un ripiego silenzioso qui produrrebbe un 400 dall'API Anthropic, che rifiuta
+// due messaggi di fila con lo stesso ruolo, e l'utente vedrebbe un errore
+// generico senza capire perché.
+function storicoPulito(grezzo) {
+  if (!Array.isArray(grezzo)) return [];
+  const battute = grezzo.slice(-MAX_BATTUTE);
+  if (battute.length % 2 !== 0) return [];
+  const messaggi = [];
+  for (let i = 0; i < battute.length; i++) {
+    const b = battute[i];
+    const atteso = i % 2 === 0 ? "utente" : "guida";
+    if (!b || b.ruolo !== atteso) return [];
+    const testo = String(b.testo || "").slice(0, MAX_TESTO_STORICO).trim();
+    if (!testo) return [];
+    messaggi.push({ role: atteso === "utente" ? "user" : "assistant", content: testo });
+  }
+  return messaggi;
+}
+
 const SISTEMA = `Sei la guida di viaggio di Massimo, in strada in Normandia e Bretagna
 fra il 6 e il 16 agosto 2026. Ti scrive dal telefono, fermo da qualche parte, e
 ha bisogno di una risposta che si legge in piedi.
@@ -55,7 +85,15 @@ COSA SAPERE DEL VIAGGIO
 - Il limite alcolemico è 0,5 g/l e chi guida non assaggia.
 - Ad agosto molti locali chiudono per ferie senza preavviso, e il giorno di
   chiusura settimanale taglia fuori più tavole di quanto si creda: se consigli
-  un posto, ricorda di far controllare che sia aperto.`;
+  un posto, ricorda di far controllare che sia aperto.
+
+SE LA CONVERSAZIONE CONTINUA
+- Le domande dopo la prima sono il seguito: "e a che ora chiude?" riguarda il
+  posto di cui stavate parlando. Non ricominciare da capo e non ripetere quello
+  che hai già detto.
+- La posizione, l'ora e le tappe vicine che trovi in cima all'ultima domanda
+  sono quelle di ADESSO: se non corrispondono a quelle di prima vuol dire che
+  si è spostato, e valgono quelle nuove.`;
 
 export async function onRequestPost({ request, env }) {
   if (!sameOrigin(request)) return forbidden();
@@ -147,7 +185,7 @@ export async function onRequestPost({ request, env }) {
         model: env.CHIEDI_MODELLO || MODELLO_DEFAULT,
         max_tokens: MAX_TOKEN_RISPOSTA,
         system: SISTEMA,
-        messages: [{ role: "user", content: messaggio }],
+        messages: [...storicoPulito(corpo.storico), { role: "user", content: messaggio }],
       }),
     });
 

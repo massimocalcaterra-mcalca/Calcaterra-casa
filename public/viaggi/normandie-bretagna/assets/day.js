@@ -324,14 +324,29 @@ async function initSea(containerId, opts){
    Degrada bene per scelta: se la posizione viene negata si chiede lo stesso,
    dicendo che manca; se il servizio non e' configurato si vede il perche' e la
    guida resta intera. Niente qui e' indispensabile per usare la pagina.
+
+   LA CONVERSAZIONE. Le domande successive sono il seguito delle precedenti:
+   "dove ceno qui vicino" e poi "a che ora chiude" devono parlare dello stesso
+   posto. Lo storico pero' NON sta sul server, che resta senza memoria fra una
+   chiamata e l'altra: vive qui, nella pagina, e riparte con ogni domanda.
+   Costa qualche centesimo di piu' per il testo in ingresso, e in cambio non
+   serve ne' un database ne' un identificativo di sessione da conservare.
+   Cambiare giornata azzera tutto, ed e' giusto: la conversazione riguarda dove
+   sei adesso.
 --------------------------------------------------------------------------- */
 function initChiedi(cfg){
   const btn=document.getElementById(cfg.btnId);
   const pan=document.getElementById(cfg.panelId);
   if(!btn||!pan) return;
-  const out=pan.querySelector(".chrisp");
+  const filo=pan.querySelector(".chfilo");
   const inp=pan.querySelector(".chinput");
+  const reset=pan.querySelector(".chreset");
+  if(!filo) return;
   let posizione=null, inCorso=false;
+
+  /* Tre domande e tre risposte. Oltre, il testo in ingresso cresce senza che la
+     risposta migliori: quello che conta davvero e' il contesto di adesso. */
+  const storico=[], MAX_BATTUTE=6, MAX_CARATTERI=1200;
 
   function apri(v){
     pan.hidden=!v; btn.setAttribute("aria-expanded", v?"true":"false");
@@ -365,12 +380,31 @@ function initChiedi(cfg){
       .sort((a,b)=>a.km-b.km).slice(0,10);
   }
 
+  /* Testo, non HTML: quello che torna dal modello non si inietta mai. */
+  function blocco(classe, testo){
+    const d=document.createElement("div");
+    d.className=classe; d.textContent=testo;
+    filo.appendChild(d);
+    return d;
+  }
+  function inFondo(){ pan.scrollTop=pan.scrollHeight; }
+  function aggiornaReset(){ if(reset) reset.hidden=!filo.firstChild; }
+
+  if(reset) reset.addEventListener("click", ()=>{
+    storico.length=0;
+    filo.textContent="";
+    aggiornaReset();
+    if(inp) inp.focus();
+  });
+
   async function chiedi(domanda){
     if(inCorso||!domanda) return;
     inCorso=true;
-    out.className="chrisp attesa"; out.textContent="Sto guardando dove sei…";
+    blocco("chq", domanda);
+    const out=blocco("chrisp attesa","Sto guardando dove sei…");
+    aggiornaReset(); inFondo();
     const pos=await posizioneOra();
-    out.textContent="Un momento…";
+    out.textContent="Un momento…"; inFondo();
     try{
       const r=await fetch("/api/chiedi",{
         method:"POST", headers:{"Content-Type":"application/json"},
@@ -379,24 +413,32 @@ function initChiedi(cfg){
           lat:pos?pos.lat:null, lon:pos?pos.lon:null,
           quando:new Date().toLocaleString("it-IT",{weekday:"long",hour:"2-digit",minute:"2-digit"}),
           giorno:cfg.giorno||document.title,
-          vicini:viciniA(pos)
+          vicini:viciniA(pos),
+          storico:storico
         })
       });
       const d=await r.json().catch(()=>({}));
       if(!r.ok||!d.risposta){
         out.className="chrisp errore";
         out.textContent=d.error||"Non sono riuscito a rispondere adesso.";
+        /* Una domanda rimasta senza risposta non entra nello storico: alla
+           prossima il modello vedrebbe una battuta sospesa nel vuoto, e l'API
+           rifiuta comunque due messaggi di fila con lo stesso ruolo. */
       }else{
         out.className="chrisp";
-        /* Testo, non HTML: quello che torna dal modello non si inietta mai. */
         out.textContent=d.risposta;
         if(!pos) out.textContent+="\n\n(Senza la posizione del telefono: ho risposto in generale.)";
+        storico.push({ruolo:"utente", testo:domanda.slice(0,MAX_CARATTERI)},
+                     {ruolo:"guida",  testo:d.risposta.slice(0,MAX_CARATTERI)});
+        /* Si tolgono a coppie: lo storico deve restare pari e cominciare da una
+           domanda, altrimenti i ruoli non si alternano piu'. */
+        while(storico.length>MAX_BATTUTE) storico.splice(0,2);
       }
     }catch(e){
       out.className="chrisp errore";
       out.textContent="Manca la rete, o il servizio non risponde.";
     }
-    inCorso=false;
+    inCorso=false; inFondo();
   }
 
   pan.querySelectorAll("[data-chiedi]").forEach(b=>{

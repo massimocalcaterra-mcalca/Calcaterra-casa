@@ -394,6 +394,12 @@ Da agosto 2026 l'endpoint **richiede anche la sessione** del sito (§14), non
 solo la stessa origine: se il progetto ha `SITE_PASSWORD` e `AUTH_SECRET`, una
 domanda senza cookie valido riceve 401.
 
+La conversazione ha memoria: le domande successive portano con sé le ultime
+tre battute. Lo storico **non sta sul server**, che resta senza memoria fra una
+chiamata e l'altra — vive nella pagina e riparte a ogni domanda. Cambiare
+giornata azzera tutto, e il pulsante «Ricomincia» lo azzera a mano. Costa circa
+mezzo centesimo in più a domanda, perché cresce solo il testo in ingresso.
+
 Il tetto giornaliero funziona solo se il progetto ha il binding KV `RATE_KV`,
 lo stesso del login. Senza, il limitatore è fail-open — cioè non limita: è la
 scelta già in uso nel resto del sito, per non chiudere fuori il proprietario

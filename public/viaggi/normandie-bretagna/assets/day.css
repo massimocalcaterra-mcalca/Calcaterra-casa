@@ -190,14 +190,30 @@ td .gmaps,p .gmaps{margin-top:4px}
 .chpanel{position:fixed;left:0;right:0;bottom:0;z-index:1200;background:var(--paper);
   border-top:2px solid var(--green-d);border-radius:16px 16px 0 0;
   box-shadow:0 -10px 40px rgba(0,0,0,.22);padding:16px 18px 22px;
-  max-height:76vh;overflow:auto}
+  max-height:76vh;overflow:auto;
+  /* Sul telefono il pannello e' incollato al bordo inferiore, dove sull'iPhone
+     passa la barra del gesto Home: senza questo la nota finale ci finisce
+     sotto. In verticale gli inset laterali valgono 0 e max() lascia i 18px di
+     sempre; in orizzontale, con il notch, li allarga quanto serve. */
+  padding-left:max(18px, env(safe-area-inset-left));
+  padding-right:max(18px, env(safe-area-inset-right));
+  padding-bottom:calc(22px + env(safe-area-inset-bottom))}
+/* dvh e' l'altezza della finestra davvero visibile: con 76vh, quando Safari
+   ritira la barra degli indirizzi, il fondo del pannello finisce fuori schermo. */
+@supports(height:100dvh){ .chpanel{max-height:76dvh} }
 @media(min-width:760px){
   .chpanel{left:auto;right:24px;bottom:24px;width:420px;border-radius:16px;border:2px solid var(--green-d)}
 }
 .chpanel[hidden]{display:none}
 .chtitolo{display:flex;align-items:baseline;gap:10px;font-family:Poppins,sans-serif;
   font-weight:600;font-size:.95rem;color:var(--green-d)}
-.chchiudi{margin-left:auto;background:none;border:0;font-size:1.4rem;line-height:1;
+.chazioni{margin-left:auto;display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.chreset{font-family:Poppins,sans-serif;font-weight:600;font-size:.74rem;
+  border:1px solid var(--line);background:#fff;color:var(--muted);
+  border-radius:999px;padding:4px 10px;cursor:pointer;white-space:nowrap}
+.chreset:hover{border-color:var(--green-d);color:var(--green-d)}
+.chreset[hidden]{display:none}
+.chchiudi{background:none;border:0;font-size:1.4rem;line-height:1;
   color:var(--muted);cursor:pointer;padding:0 4px}
 .chrapide{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
 .chrapide button{font-family:Poppins,sans-serif;font-weight:600;font-size:.8rem;
@@ -210,10 +226,21 @@ td .gmaps,p .gmaps{margin-top:4px}
 .chinput:focus{outline:2px solid var(--green-d);outline-offset:1px}
 .chinvia{font-family:Poppins,sans-serif;font-weight:600;font-size:.85rem;border:0;
   background:var(--green-d);color:#fff;border-radius:10px;padding:9px 15px;cursor:pointer}
-.chrisp{margin-top:12px;font-size:.93rem;line-height:1.55;white-space:pre-wrap;
-  color:var(--body)}
+/* Il filo della conversazione: domande a destra, risposte a sinistra, in ordine.
+   Prima c'era una risposta sola che si sovrascriveva, e la domanda precedente
+   spariva dallo schermo insieme al suo contesto. */
+.chfilo{margin-top:14px;display:flex;flex-direction:column;gap:10px}
+.chfilo:empty{display:none}
+.chq{align-self:flex-end;max-width:88%;background:var(--green-d);color:#fff;
+  border-radius:14px 14px 4px 14px;padding:8px 12px;font-size:.88rem;line-height:1.45}
+.chrisp{font-size:.93rem;line-height:1.55;white-space:pre-wrap;color:var(--body)}
 .chrisp:empty{display:none}
 .chrisp.attesa{color:var(--muted);font-style:italic}
 .chrisp.errore{color:var(--coral-text);background:#FFF6F2;border:1px solid var(--coral);
   border-radius:10px;padding:10px 12px}
-.chnota{margin-top:10px;font-size:.76rem;color:var(--muted)}
+/* La risposta la scrive il modello e puo' contenere un indirizzo web o un nome
+   lunghissimo senza spazi: senza questo si porta via il bordo destro del
+   pannello — misurato, 29px fuori su iPhone SE con una parola di 45 lettere.
+   anywhere spezza dove capita solo se non c'e' altro modo di far stare la riga. */
+.chq,.chrisp{overflow-wrap:anywhere;word-break:break-word;min-width:0}
+.chnota{margin-top:12px;font-size:.76rem;color:var(--muted)}
