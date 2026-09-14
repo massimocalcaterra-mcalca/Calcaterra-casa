@@ -29,16 +29,26 @@ La planimetria è una fotografia di una stampa, quindi storta e sbiadita. Il pro
 2. **Estrazione dei muri.** Sottrazione del fondo con un filtro a media mobile, poi ricerca
    dei picchi sui profili di densità limitati a ciascuna stanza. Le posizioni dei muri sono
    numeri letti da un profilo, non stime a occhio.
-3. **Scala.** Due riscontri indipendenti che coincidono:
-   - il passo dei gradini del vano scale misura 11,8 px, cioè una pedata di 29 cm → **40,7 px/m**;
-   - la larghezza del foglio A4 alla scala dichiarata 1:100 → **~41 px/m**.
+3. **Scala.** Qui sta il punto debole, e va detto chiaro. Sul disegno c'è un solo oggetto di
+   dimensione nota: la scala condominiale. Il suo passo misura 11,8 px; con una pedata di 29 cm
+   fa **40,7 px/m**, ed è il valore adottato nel modello.
 
-   Prova del nove: con questa scala le tramezze vengono 15–17 cm, il muro di spina 57 cm,
-   i muri esterni 66–74 cm e le rampe 1,37 m. Sono tutti valori normali per una casa in
-   muratura dell'Ottocento triestino. Alla scala sbagliata (il doppio) le tramezze verrebbero
-   7 cm, cioè un valore impossibile.
+   Il riscontro sul foglio A4 che avevo scritto nella prima versione **non vale**: nella fotografia
+   il foglio esce dall'inquadratura su tutti e due i lati, quindi la sua larghezza non era misurabile.
+   Ritirato.
 
-**Errore atteso: 3%.** Su cinque metri sono quindici centimetri. Va bene per capire la casa,
+   Una seconda lettura, ricavata dalle fotografie invece che dal disegno — elementi dei radiatori,
+   conteggio delle piastrelle — dà **44,9 px/m**: stanze più piccole dell'8%, **54 m² invece di 60,6**.
+   A favore della seconda gioca il bagno, che in foto sembra largo 1,7 m più che 2,0. A favore della
+   prima gioca il fatto di nascere da una misura presa sul disegno stesso. Con queste immagini le due
+   letture non si riescono a separare.
+
+   Prova del nove sugli spessori: con 40,7 px/m le tramezze vengono 15–17 cm, il muro di spina 57 cm,
+   i muri esterni 66–74 cm e le rampe 1,37 m. Tutti valori normali per una casa in muratura
+   dell'Ottocento triestino — ma lo sono anche a 44,9 px/m, quindi questo controllo conferma l'ordine
+   di grandezza e non sceglie fra le due letture.
+
+**Errore atteso: 8%.** Su cinque metri sono quaranta centimetri. Va bene per capire la casa,
 **non** per ordinare mobili su misura né per un progetto.
 
 ## Quello che non torna, e va verificato in loco

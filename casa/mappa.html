@@ -76,7 +76,8 @@
 <div class="wrap">
   <p class="kicker">Ricostruzione</p>
   <h1>Via Caprin 10 — primo piano</h1>
-  <p class="sub">Mappa virtuale ricavata dalla planimetria catastale e dalle fotografie. Le quote sono misurate sul disegno, non rilevate in loco.</p>
+  <p class="sub">Mappa virtuale ricavata dalla planimetria catastale e dalle fotografie. Le quote sono misurate
+  sul disegno, non rilevate in loco: le proporzioni tengono, la scala assoluta porta un'incertezza dell'8%.</p>
 
   <ul class="cifre" id="cifre"></ul>
 
@@ -398,6 +399,21 @@
 
     if (s.nota){ var p = document.createElement("p"); p.textContent = s.nota; pannello.appendChild(p); }
 
+    if (s.dettagli && s.dettagli.length){
+      var dt0 = document.createElement("dt");
+      dt0.style.cssText = "color:var(--muted);font-size:.74rem;text-transform:uppercase;" +
+        "letter-spacing:.1em;font-family:Poppins,sans-serif;margin-top:14px";
+      dt0.textContent = "Visto nelle foto";
+      pannello.appendChild(dt0);
+      var ulD = document.createElement("ul");
+      ulD.style.cssText = "margin:6px 0 0;padding-left:18px;font-size:.85rem";
+      s.dettagli.forEach(function(d){
+        var li = document.createElement("li"); li.style.margin = "4px 0";
+        li.textContent = d; ulD.appendChild(li);
+      });
+      pannello.appendChild(ulD);
+    }
+
     var foto = M.foto.filter(function(f){ return f.stanza === id; });
     if (foto.length){
       var dt = document.createElement("dt"); dt.textContent = "Fotografie"; dl.appendChild(dt);
@@ -511,7 +527,7 @@
                ["Altezza interna", "3,20 m"],
                ["Volume netto", num(netto*3.2,0) + " m³"],
                ["Finestre", M.aperture.filter(function(a){ return a.tipo === "finestra"; }).length + ""],
-               ["Scala del rilievo", "1:100"]];
+               ["Incertezza", "± 8%"]];
   var ul = document.getElementById("cifre");
   cifre.forEach(function(c){
     var li = document.createElement("li");
@@ -556,19 +572,33 @@
   tabella("Muri", ["Muro", "Spessore (m)", "Certezza"],
     M.muri.map(function(w){ return [w.descrizione, num(w.spessore_m), w.certezza]; }));
 
+  tabella("Le due letture della scala", ["Da dove viene", "px/m", "Camera (m)", "Cucina (m)", "Bagno (m)", "Netto (m²)"],
+    M.letture_alternative.map(function(l){
+      return [l.fonte, num(l.px_per_m,1), l.camera, l.cucina, l.bagno, num(l.netto_mq,1)];
+    }));
+  tabella("Cosa manca", ["#", "Serve", "Perché"],
+    M.da_rilevare.map(function(d){ return [d.priorita, d.cosa, d.perche]; }));
+
   var nota = document.getElementById("nota-metodo");
   var h3 = document.createElement("h3"); h3.textContent = "Come sono state ricavate le misure";
   nota.appendChild(h3);
   var pM = document.createElement("p");
-  pM.textContent = "La planimetria fotografata è stata raddrizzata di 1,75° e ripulita dal fondo; " +
-    "le linee dei muri sono state individuate sui profili di densità, non a occhio. La scala viene da due " +
-    "riscontri indipendenti che coincidono: il passo dei gradini del vano scale (11,8 px, cioè una pedata " +
-    "di 29 cm) e la larghezza del foglio A4 alla scala 1:100. Ne esce 40,7 pixel per metro, con un errore " +
-    "atteso del 3%: su cinque metri, quindici centimetri.";
+  pM.textContent = "La planimetria fotografata è stata raddrizzata di 1,75° e ripulita dal fondo; le linee " +
+    "dei muri sono state individuate sui profili di densità, non a occhio. Le proporzioni che ne escono sono " +
+    "solide. La scala assoluta no: l'unico oggetto di dimensione nota sul disegno è la scala condominiale, " +
+    "il cui passo misura 11,8 pixel. Con una pedata di 29 cm fa 40,7 pixel per metro, ed è il valore adottato qui.";
   nota.appendChild(pM);
+  var pM2 = document.createElement("p");
+  pM2.textContent = "Una seconda lettura, ricavata dalle fotografie invece che dal disegno — elementi dei " +
+    "radiatori, conteggio delle piastrelle — dà 44,9 pixel per metro: stanze più piccole dell'8%, 54 m² invece " +
+    "di 60,6. Con queste immagini le due letture non si riescono a separare, e il modello porta quindi un'incertezza " +
+    "dell'8%: su cinque metri, quaranta centimetri. Una sola fotografia con il metro srotolato contro una parete " +
+    "chiude la questione per sempre.";
+  nota.appendChild(pM2);
   var ulN = document.createElement("ul");
   ["Le posizioni delle porte vengono dai simboli di battente, non da interruzioni nei muri: su questo disegno le linee dei muri sono continue anche dove c'è un vano. Sono segnate in rosso, da confermare in loco.",
-   "Il tratteggio che divide la camera è stampato sul disegno: le foto mostrano una stanza con una sola finestra, quindi oggi la divisione c'è. Anche questo va confermato.",
+   "Il tratteggio che divide la camera è stampato sul disegno, ma la divisione non sembra ancora costruita: dalla porta si vede quasi tutta la stanza. Sulla mazzetta della porta ci sono però intonaco fresco e scatole elettriche nuove: un lavoro in corso proprio lì.",
+   "Il riscontro sul foglio A4, usato nella prima versione di questa pagina, è stato ritirato: nella fotografia il foglio esce dall'inquadratura su tutti e due i lati, quindi non era misurabile.",
    "Il nord viene dalla rosa disegnata a mano in calce alla planimetria: tolleranza ±15°.",
    "Le superfici sono nette, misurate dentro l'intonaco. La superficie lorda, muri compresi, è di circa 77 m²."
   ].forEach(function(s){ var li = document.createElement("li"); li.textContent = s; ulN.appendChild(li); });
