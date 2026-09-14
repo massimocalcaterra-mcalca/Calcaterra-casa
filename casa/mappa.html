@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Via Caprin 10 · mappa virtuale</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBFBFA; --paper:#FFFFFF; --ink:#14261C; --body:#4B4F58; --muted:#6B6E67;
+    --line:#E7E6DF; --green:#1BAE70; --green-d:#06752E; --line-strong:#8E8C82;
+    --mass:#2B3A33;           /* muri */
+    --room:#FFFFFF;           /* pavimento */
+    --room-hi:#E8F7EF;        /* stanza selezionata */
+    --warn:#C8391A;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--body);font-family:Lato,system-ui,sans-serif;line-height:1.55}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 70px}
+  .kicker{font-family:Poppins,system-ui,sans-serif;font-size:.72rem;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--green-d);margin:0 0 6px}
+  h1{font-family:Poppins,system-ui,sans-serif;color:var(--ink);font-size:1.9rem;margin:0 0 6px;line-height:1.15}
+  .sub{margin:0 0 18px;color:var(--muted);font-size:.95rem}
+  .cifre{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px;padding:0;list-style:none}
+  .cifre li{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:.85rem}
+  .cifre b{font-family:Poppins,sans-serif;color:var(--ink);display:block;font-size:1.05rem}
+  .tabs{display:flex;gap:6px;margin:0 0 14px;flex-wrap:wrap}
+  .tabs button{font-family:Poppins,sans-serif;font-size:.85rem;border:1px solid var(--line);
+    background:var(--paper);color:var(--body);border-radius:999px;padding:8px 16px;cursor:pointer}
+  .tabs button[aria-selected="true"]{background:var(--green-d);border-color:var(--green-d);color:#fff}
+  .tabs button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--green-d);outline-offset:2px}
+  .griglia{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:18px;align-items:start}
+  @media (max-width:860px){.griglia{grid-template-columns:1fr}}
+  .tela{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:10px;overflow:hidden}
+  .tela svg{display:block;width:100%;height:auto;touch-action:manipulation}
+  .pannello{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .pannello h2{font-family:Poppins,sans-serif;color:var(--ink);font-size:1.15rem;margin:0 0 2px}
+  .pannello .area{font-family:Poppins,sans-serif;color:var(--green-d);font-size:.9rem;margin:0 0 10px}
+  .pannello dl{margin:0 0 12px;font-size:.88rem}
+  .pannello dt{color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;
+    font-family:Poppins,sans-serif;margin-top:10px}
+  .pannello dd{margin:2px 0 0;color:var(--ink)}
+  .pannello p{font-size:.88rem;margin:10px 0 0}
+  .tag{display:inline-block;font-size:.7rem;font-family:Poppins,sans-serif;border-radius:999px;
+    padding:2px 9px;border:1px solid var(--line);color:var(--muted);margin:0 4px 4px 0}
+  .tag.misurato{border-color:#BEE6D2;background:#F1FBF6;color:var(--green-d)}
+  .tag.dedotto{border-color:#E4DFC4;background:#FBF8EC;color:#8A6D1F}
+  .tag.verifica{border-color:#F0CFC6;background:#FDF2EF;color:var(--warn)}
+  .legenda{display:flex;flex-wrap:wrap;gap:14px;margin:12px 2px 0;font-size:.78rem;color:var(--muted)}
+  .legenda span{display:flex;align-items:center;gap:6px}
+  .sw{width:16px;height:10px;border-radius:2px;display:inline-block}
+  .nota{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--green);
+    border-radius:10px;padding:14px 16px;margin:20px 0 0;font-size:.88rem}
+  .nota h3{font-family:Poppins,sans-serif;color:var(--ink);font-size:.95rem;margin:0 0 6px}
+  .nota ul{margin:6px 0 0;padding-left:18px}
+  .nota li{margin:3px 0}
+  table{width:100%;border-collapse:collapse;font-size:.86rem;background:var(--paper)}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+  th{font-family:Poppins,sans-serif;color:var(--ink);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  .foot{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
+  .stanza{cursor:pointer}
+  .stanza:hover .pav{fill:var(--room-hi)}
+  .stanza.sel .pav{fill:var(--room-hi)}
+  .etichetta{font-family:Poppins,sans-serif;pointer-events:none}
+  .controlli{display:flex;gap:14px;flex-wrap:wrap;margin:10px 2px 0;font-size:.82rem;color:var(--muted)}
+  .controlli label{display:flex;align-items:center;gap:6px;cursor:pointer}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">Ricostruzione</p>
+  <h1>Via Caprin 10 — primo piano</h1>
+  <p class="sub">Mappa virtuale ricavata dalla planimetria catastale e dalle fotografie. Le quote sono misurate sul disegno, non rilevate in loco.</p>
+
+  <ul class="cifre" id="cifre"></ul>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-vista="pianta">Pianta</button>
+    <button role="tab" aria-selected="false" data-vista="assonometria">Assonometria</button>
+    <button role="tab" aria-selected="false" data-vista="dati">Dati e misure</button>
+  </div>
+
+  <div id="vista-pianta">
+    <div class="griglia">
+      <div>
+        <div class="tela"><svg id="svg-pianta" role="img" aria-label="Pianta dell'appartamento in scala"></svg></div>
+        <div class="controlli">
+          <label><input type="checkbox" id="q-quote" checked> Quote</label>
+          <label><input type="checkbox" id="q-nomi" checked> Nomi e superfici</label>
+          <label><input type="checkbox" id="q-foto" checked> Punti di ripresa</label>
+        </div>
+        <div class="legenda">
+          <span><i class="sw" style="background:#2B3A33"></i> muratura</span>
+          <span><i class="sw" style="background:#fff;border:1px solid #8E8C82"></i> vano</span>
+          <span><i class="sw" style="background:#9AD9BB"></i> finestra</span>
+          <span><i class="sw" style="background:#E7E6DF"></i> porta / passaggio</span>
+          <span><i class="sw" style="background:repeating-linear-gradient(90deg,#C8391A 0 3px,transparent 3px 6px)"></i> da verificare</span>
+        </div>
+      </div>
+      <div class="pannello" id="pannello"></div>
+    </div>
+  </div>
+
+  <div id="vista-assonometria" hidden>
+    <div class="tela"><svg id="svg-asso" role="img" aria-label="Vista assonometrica dell'appartamento"></svg></div>
+    <p class="controlli">Vista a scatola aperta: i muri rivolti verso chi guarda sono tagliati, l'altezza interna è di 3,20 m. Stessa origine e stessa scala della pianta.</p>
+  </div>
+
+  <div id="vista-dati" hidden>
+    <div id="tabelle"></div>
+  </div>
+
+  <div class="nota" id="nota-metodo"></div>
+
+  <p class="foot">Ricostruzione da planimetria catastale prot. TS0057578 del 14/07/2005 · documento di lavoro, non un rilievo.</p>
+</div>
+
+<script src="modello.js"></script>
+<script>
+(function(){
+  "use strict";
+  var M = window.MODELLO, NS = "http://www.w3.org/2000/svg";
+
+  /* ---------- utilità ---------- */
+  function el(tag, attrs, parent){
+    var n = document.createElementNS(NS, tag);
+    for (var k in attrs) if (attrs[k] !== null && attrs[k] !== undefined) n.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+  function txt(node, s){ node.appendChild(document.createTextNode(s)); return node; }
+  function area(p){
+    var a = 0;
+    for (var i = 0; i < p.length; i++){ var q = p[i], r = p[(i+1) % p.length]; a += q[0]*r[1] - r[0]*q[1]; }
+    return Math.abs(a/2);
+  }
+  function centro(p){
+    var x = 0, y = 0;
+    for (var i = 0; i < p.length; i++){ x += p[i][0]; y += p[i][1]; }
+    return [x/p.length, y/p.length];
+  }
+  function num(v, d){ return v.toFixed(d === undefined ? 2 : d).replace(".", ","); }
+  var stanzaDi = {};
+  M.stanze.forEach(function(s){ stanzaDi[s.id] = s; });
+
+  /* ---------- sagoma dell'edificio (muri pieni, vani scavati) ---------- */
+  var SAGOMA = [[0.73,0],[8.74,0],[8.74,7.37],[5.57,7.37],[5.57,14.50],[0,14.50],[0,2.09],[0.73,2.09]];
+
+  /* ---------- PIANTA ---------- */
+  var S = 46;                       /* px per metro sul disegno */
+  var MX = 74, MT = 70, MB = 104;   /* margini: quote fuori dalla sagoma */
+  var W = 8.74 * S + MX * 2, H = 14.50 * S + MT + MB;
+  var svg = document.getElementById("svg-pianta");
+  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+  function X(m){ return MX + m * S; }
+  function Y(m){ return MT + m * S; }
+  function poly(p){ return p.map(function(q){ return X(q[0]) + "," + Y(q[1]); }).join(" "); }
+
+  var defs = el("defs", {}, svg);
+  var pat = el("pattern", {id:"tratto", width:6, height:6, patternUnits:"userSpaceOnUse",
+                           patternTransform:"rotate(45)"}, defs);
+  el("rect", {width:6, height:6, fill:"#2B3A33"}, pat);
+  el("line", {x1:0, y1:0, x2:0, y2:6, stroke:"#3C4E45", "stroke-width":2}, pat);
+
+  /* muratura = sagoma con i vani come buchi (fill-rule evenodd) */
+  var d = "M " + SAGOMA.map(function(q){ return X(q[0]) + " " + Y(q[1]); }).join(" L ") + " Z";
+  M.stanze.forEach(function(s){
+    d += " M " + s.poligono.map(function(q){ return X(q[0]) + " " + Y(q[1]); }).join(" L ") + " Z";
+  });
+  el("path", {d:d, "fill-rule":"evenodd", fill:"url(#tratto)", stroke:"#1B2621", "stroke-width":1.2}, svg);
+
+  /* pavimenti + interazione */
+  var gStanze = el("g", {}, svg);
+  M.stanze.forEach(function(s){
+    var g = el("g", {class:"stanza", "data-id":s.id, tabindex:0, role:"button",
+                     "aria-label":s.nome + ", " + num(s.area_mq,1) + " metri quadri"}, gStanze);
+    el("polygon", {class:"pav", points:poly(s.poligono),
+                   fill:s.comune ? "#F2F1EC" : "#FFFFFF", stroke:"none"}, g);
+    g.addEventListener("click", function(){ seleziona(s.id); });
+    g.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " "){ e.preventDefault(); seleziona(s.id); } });
+  });
+
+  /* rampe del vano scale: servono a capire da che parte si sale */
+  var gSc = el("g", {opacity:.55}, svg);
+  (function(){
+    var x0 = 5.57, x1 = 8.51, muro = [6.93, 7.10], y0 = 0.90, passo = 0.29;
+    el("rect", {x:X(muro[0]), y:Y(y0), width:(muro[1]-muro[0])*S, height:5.2*S,
+                fill:"#DCDACF", stroke:"#B4B2A6", "stroke-width":.8}, gSc);
+    for (var k = 0; k <= 17; k++){
+      var y = y0 + k * passo;
+      if (y > 5.9) break;
+      el("line", {x1:X(x0), y1:Y(y), x2:X(muro[0]), y2:Y(y), stroke:"#B4B2A6", "stroke-width":.7}, gSc);
+      el("line", {x1:X(muro[1]), y1:Y(y), x2:X(x1), y2:Y(y), stroke:"#B4B2A6", "stroke-width":.7}, gSc);
+    }
+  })();
+
+  /* aperture: si disegnano sopra la muratura, tagliandola */
+  var gAp = el("g", {}, svg);
+  function disegnaApertura(a){
+    var p = a.da, q = a.a;
+    var orizz = Math.abs(p[1] - q[1]) < 0.02;
+    var spess = {nord:0.74, sud:0.66, ovest:0.30, est:0.23, spina:0.57,
+                 "tramezza-cucina-bagno":0.17, "tramezza-bagno-ingresso":0.15}[a.muro] || 0.20;
+    var x0, y0, w, h;
+    if (orizz){                                   /* apertura in un muro orizzontale */
+      x0 = Math.min(p[0], q[0]); w = Math.abs(q[0] - p[0]);
+      y0 = p[1] - (a.muro === "nord" ? spess : (a.muro === "sud" ? 0 : spess/2));
+      if (a.muro === "sud") y0 = p[1];
+      if (a.muro === "tramezza-bagno-ingresso") y0 = p[1] - spess/2;
+      if (a.muro === "spina") y0 = p[1] - spess/2;
+      h = spess;
+    } else {                                      /* muro verticale */
+      y0 = Math.min(p[1], q[1]); h = Math.abs(q[1] - p[1]);
+      x0 = p[0] - (a.muro === "ovest" ? spess : 0);
+      if (a.muro === "est") x0 = p[0];
+      if (a.muro === "tramezza-cucina-bagno") x0 = p[0];
+      w = spess;
+    }
+    var finestra = a.tipo === "finestra";
+    el("rect", {x:X(x0), y:Y(y0), width:w*S, height:h*S,
+                fill:"#FFFFFF", stroke:"none"}, gAp);
+    if (finestra){
+      /* vetro: una banda sottile a metà spessore */
+      if (orizz) el("rect", {x:X(x0), y:Y(y0 + h/2) - 2, width:w*S, height:4, fill:"#9AD9BB", stroke:"#3E9C74", "stroke-width":.6}, gAp);
+      else       el("rect", {x:X(x0 + w/2) - 2, y:Y(y0), width:4, height:h*S, fill:"#9AD9BB", stroke:"#3E9C74", "stroke-width":.6}, gAp);
+    } else {
+      /* soglia + arco di apertura */
+      var incerta = a.certezza === "da-verificare";
+      var col = incerta ? "#C8391A" : "#8E8C82";
+      var dash = incerta ? "4 3" : null;
+      el("rect", {x:X(x0), y:Y(y0), width:w*S, height:h*S, fill:"#F4F3EE",
+                  stroke:col, "stroke-width":1, "stroke-dasharray":dash}, gAp);
+      var L = (orizz ? w : h) * S;
+      var cx = orizz ? X(x0) : X(x0 + w), cy = orizz ? Y(y0 + h) : Y(y0);
+      var arco = orizz
+        ? "M " + cx + " " + cy + " a " + L + " " + L + " 0 0 0 " + L + " " + (-L)
+        : "M " + cx + " " + cy + " a " + L + " " + L + " 0 0 1 " + (-L) + " " + L;
+      el("path", {d:arco, fill:"none", stroke:col, "stroke-width":.8,
+                  "stroke-dasharray":dash || "3 3", opacity:.75}, gAp);
+    }
+  }
+  M.aperture.forEach(disegnaApertura);
+
+  /* annotazioni (tratteggio della divisione in camera) */
+  var gAnn = el("g", {}, svg);
+  M.annotazioni.forEach(function(a){
+    if (!a.da) return;
+    el("line", {x1:X(a.da[0]), y1:Y(a.da[1]), x2:X(a.a[0]), y2:Y(a.a[1]),
+                stroke:"#C8391A", "stroke-width":1.4, "stroke-dasharray":"9 6", opacity:.8}, gAnn);
+  });
+
+  /* etichette */
+  var gNomi = el("g", {class:"etichetta"}, svg);
+  M.stanze.forEach(function(s){
+    var c = centro(s.poligono);
+    var t = el("text", {x:X(c[0]), y:Y(c[1]), "text-anchor":"middle",
+                        "font-size":13, "font-weight":600,
+                        fill:s.comune ? "#8E8C82" : "#14261C"}, gNomi);
+    txt(t, s.nome.toUpperCase());
+    var t2 = el("text", {x:X(c[0]), y:Y(c[1]) + 16, "text-anchor":"middle",
+                         "font-size":11, fill:"#6B6E67"}, gNomi);
+    txt(t2, num(s.area_mq, 1) + " m²");
+  });
+
+  /* quote principali */
+  var gQ = el("g", {}, svg);
+  var GRI = "#A8A69B";
+  function quotaH(x1, x2, yLinea, yDa, testo){
+    var yy = Y(yLinea);
+    el("line", {x1:X(x1), y1:yy, x2:X(x2), y2:yy, stroke:GRI, "stroke-width":.8}, gQ);
+    [x1, x2].forEach(function(x){
+      el("line", {x1:X(x), y1:yy-4, x2:X(x), y2:yy+4, stroke:GRI, "stroke-width":.8}, gQ);
+      el("line", {x1:X(x), y1:Y(yDa), x2:X(x), y2:yy, stroke:GRI, "stroke-width":.5,
+                  "stroke-dasharray":"2 3"}, gQ);
+    });
+    var t = el("text", {x:X((x1+x2)/2), y:yy - 5, "text-anchor":"middle", "font-size":11,
+                        fill:"#6B6E67", "font-family":"Lato, sans-serif"}, gQ);
+    txt(t, testo);
+  }
+  function quotaV(y1, y2, xLinea, xDa, testo, yTesto){
+    var xx = X(xLinea);
+    el("line", {x1:xx, y1:Y(y1), x2:xx, y2:Y(y2), stroke:GRI, "stroke-width":.8}, gQ);
+    [y1, y2].forEach(function(y){
+      el("line", {x1:xx-4, y1:Y(y), x2:xx+4, y2:Y(y), stroke:GRI, "stroke-width":.8}, gQ);
+      if (xDa !== null) el("line", {x1:X(xDa), y1:Y(y), x2:xx, y2:Y(y), stroke:GRI,
+                                    "stroke-width":.5, "stroke-dasharray":"2 3"}, gQ);
+    });
+    var yt = Y(yTesto === undefined ? (y1+y2)/2 : yTesto);
+    var t = el("text", {x:xx - 5, y:yt, "text-anchor":"middle", "font-size":11,
+                        fill:"#6B6E67", transform:"rotate(-90 " + (xx-5) + " " + yt + ")"}, gQ);
+    txt(t, testo);
+  }
+  quotaH(0.31, 3.17, -0.42, 0.74, "2,86");     /* larghezza cucina */
+  quotaH(3.34, 5.34, -0.42, 0.74, "2,00");     /* larghezza bagno  */
+  quotaH(0.31, 5.34, 15.05, 13.84, "5,03");    /* larghezza camera */
+  quotaV(0.74, 7.05, -0.42, 0.31, "6,31");     /* profondità cucina */
+  quotaV(7.63, 13.84, -0.42, 0.31, "6,21");    /* profondità camera */
+  quotaV(0.74, 5.23, 3.60, null, "4,49", 1.75); /* profondità bagno, dentro la stanza */
+
+  /* scala grafica + nord */
+  var gS = el("g", {}, svg);
+  var bx = MX, by = H - 26;
+  el("rect", {x:bx, y:by, width:S, height:6, fill:"#2B3A33"}, gS);
+  el("rect", {x:bx + S, y:by, width:S, height:6, fill:"#FFFFFF", stroke:"#2B3A33", "stroke-width":.8}, gS);
+  el("rect", {x:bx + 2*S, y:by, width:2*S, height:6, fill:"#2B3A33"}, gS);
+  txt(el("text", {x:bx, y:by - 5, "font-size":10, fill:"#6B6E67"}, gS), "0");
+  txt(el("text", {x:bx + 4*S, y:by - 5, "text-anchor":"middle", "font-size":10, fill:"#6B6E67"}, gS), "4 m");
+  var nx = W - 40, ny = H - 60, ang = M.nord.azimut_alto_disegno_gradi;
+  var gNbox = el("g", {transform:"translate(" + nx + " " + ny + ")"}, gS);
+  el("circle", {cx:0, cy:0, r:22, fill:"#FFFFFF", stroke:"#E7E6DF", "stroke-width":1}, gNbox);
+  var gN = el("g", {transform:"rotate(" + (-ang) + ")"}, gNbox);
+  el("path", {d:"M 0 -15 L 5 7 L 0 2 L -5 7 Z", fill:"#14261C"}, gN);
+  txt(el("text", {x:0, y:-17, "text-anchor":"middle", "font-size":10, "font-weight":700,
+                  fill:"#14261C", "font-family":"Poppins, sans-serif"}, gN), "N");
+
+  /* affacci */
+  txt(el("text", {x:X(6.9), y:Y(0) - 12, "text-anchor":"middle", "font-size":11,
+                  fill:"#6B6E67", "letter-spacing":"0.18em"}, svg), "CORTILE");
+  txt(el("text", {x:X(2.8), y:Y(15.55), "text-anchor":"middle", "font-size":11,
+                  fill:"#6B6E67", "letter-spacing":"0.18em"}, svg), "VIA CAPRIN");
+
+  /* punti di ripresa delle foto */
+  var gFoto = el("g", {}, svg);
+  function disegnaFoto(){
+    while (gFoto.firstChild) gFoto.removeChild(gFoto.firstChild);
+    M.foto.forEach(function(f){
+      if (!f.posizione) return;
+      var a = (f.direzione_gradi || 0) * Math.PI / 180, fov = (f.fov_gradi || 65) * Math.PI / 180;
+      var R = 1.9 * S, cx = X(f.posizione[0]), cy = Y(f.posizione[1]);
+      function pt(t){ return [cx + R * Math.sin(t), cy + R * Math.cos(t)]; }
+      var p1 = pt(a - fov/2), p2 = pt(a + fov/2);
+      el("path", {d:"M " + cx + " " + cy + " L " + p1[0] + " " + p1[1] +
+                     " A " + R + " " + R + " 0 0 0 " + p2[0] + " " + p2[1] + " Z",
+                  fill:"#1BAE70", opacity:.16, stroke:"#06752E", "stroke-width":.6,
+                  "stroke-opacity":.5}, gFoto);
+      var g = el("g", {class:"puntoFoto", "data-id":f.id, tabindex:0, role:"button",
+                       "aria-label":"Foto: " + f.didascalia}, gFoto);
+      el("circle", {cx:cx, cy:cy, r:6, fill:"#06752E", stroke:"#fff", "stroke-width":1.6,
+                    style:"cursor:pointer"}, g);
+      txt(el("text", {x:cx, y:cy + 3.5, "text-anchor":"middle", "font-size":8,
+                      fill:"#fff", "font-family":"Poppins, sans-serif", style:"pointer-events:none"}, g), f.n || "");
+      g.addEventListener("click", function(){ seleziona(f.stanza, f.id); });
+    });
+  }
+
+  /* toggle */
+  function lega(idCheck, nodo){
+    var c = document.getElementById(idCheck);
+    c.addEventListener("change", function(){ nodo.style.display = c.checked ? "" : "none"; });
+  }
+  lega("q-quote", gQ); lega("q-nomi", gNomi); lega("q-foto", gFoto);
+
+  /* ---------- PANNELLO ---------- */
+  var pannello = document.getElementById("pannello");
+  function badge(c){
+    var m = {misurato:["misurato","misurato"], dedotto:["dedotto","dedotto"],
+             "da-verificare":["verifica","da verificare"]}[c] || ["dedotto", c];
+    var s = document.createElement("span"); s.className = "tag " + m[0]; s.textContent = m[1];
+    return s;
+  }
+  function seleziona(id, fotoId){
+    Array.prototype.forEach.call(document.querySelectorAll(".stanza"), function(g){
+      g.classList.toggle("sel", g.getAttribute("data-id") === id);
+    });
+    var s = stanzaDi[id];
+    pannello.textContent = "";
+    if (!s){ return; }
+    var h = document.createElement("h2"); h.textContent = s.nome; pannello.appendChild(h);
+    var a = document.createElement("p"); a.className = "area";
+    a.textContent = num(s.area_mq,1) + " m² · h 3,20 m · volume " + num(s.area_mq*3.2,0) + " m³";
+    pannello.appendChild(a);
+    pannello.appendChild(badge(s.certezza));
+
+    var dl = document.createElement("dl");
+    function riga(k, v){
+      var dt = document.createElement("dt"); dt.textContent = k;
+      var dd = document.createElement("dd"); dd.textContent = v;
+      dl.appendChild(dt); dl.appendChild(dd);
+    }
+    var xs = s.poligono.map(function(p){ return p[0]; }), ys = s.poligono.map(function(p){ return p[1]; });
+    riga("Ingombro", num(Math.max.apply(null,xs) - Math.min.apply(null,xs)) + " × " +
+                     num(Math.max.apply(null,ys) - Math.min.apply(null,ys)) + " m");
+    var fin = M.aperture.filter(function(o){ return o.tipo === "finestra" && o.stanza === id; });
+    if (fin.length) riga("Finestre", fin.map(function(o){
+      return num(o.larghezza_m) + " m — " + o.affaccio; }).join(" · "));
+    var porte = M.aperture.filter(function(o){ return o.da_stanza === id || o.a_stanza === id; });
+    if (porte.length) riga("Collegamenti", porte.map(function(o){
+      var altro = o.da_stanza === id ? o.a_stanza : o.da_stanza;
+      return (stanzaDi[altro] ? stanzaDi[altro].nome : altro) + " (" + num(o.larghezza_m) + " m)";
+    }).join(" · "));
+    pannello.appendChild(dl);
+
+    if (s.nota){ var p = document.createElement("p"); p.textContent = s.nota; pannello.appendChild(p); }
+
+    var foto = M.foto.filter(function(f){ return f.stanza === id; });
+    if (foto.length){
+      var dt = document.createElement("dt"); dt.textContent = "Fotografie"; dl.appendChild(dt);
+      foto.forEach(function(f){
+        var fig = document.createElement("figure");
+        fig.style.margin = "10px 0 0";
+        if (f.file){
+          var img = document.createElement("img");
+          img.src = f.file; img.alt = f.didascalia; img.loading = "lazy";
+          img.style.cssText = "width:100%;border-radius:8px;border:1px solid var(--line)";
+          if (fotoId && f.id === fotoId) img.style.outline = "2px solid var(--green-d)";
+          fig.appendChild(img);
+        }
+        var cap = document.createElement("figcaption");
+        cap.style.cssText = "font-size:.8rem;color:var(--muted);margin-top:4px";
+        cap.textContent = (f.n ? f.n + " · " : "") + f.didascalia;
+        fig.appendChild(cap);
+        pannello.appendChild(fig);
+      });
+    } else {
+      var p2 = document.createElement("p");
+      p2.style.color = "var(--muted)";
+      p2.textContent = "Nessuna fotografia agganciata a questa stanza.";
+      pannello.appendChild(p2);
+    }
+  }
+
+  /* ---------- ASSONOMETRIA (isometrica, senza librerie) ---------- */
+  function assonometria(){
+    var s2 = document.getElementById("svg-asso");
+    var K = 40, HV = 1.35;            /* muri sezionati a 1,35 m per vedere dentro */
+    var cx = Math.cos(Math.PI/6), sy = Math.sin(Math.PI/6);
+    function P(x, y, z){ return [(x - y) * cx * K, (x + y) * sy * K - z * K]; }
+    var pts = [];
+    M.stanze.forEach(function(st){ st.poligono.forEach(function(q){
+      pts.push(P(q[0], q[1], 0)); pts.push(P(q[0], q[1], HV)); }); });
+    var xs = pts.map(function(p){ return p[0]; }), ys = pts.map(function(p){ return p[1]; });
+    var minX = Math.min.apply(null,xs), maxX = Math.max.apply(null,xs);
+    var minY = Math.min.apply(null,ys), maxY = Math.max.apply(null,ys);
+    var m2 = 50;
+    s2.setAttribute("viewBox", (minX-m2) + " " + (minY-m2) + " " +
+                    (maxX-minX+2*m2) + " " + (maxY-minY+2*m2));
+    function pl(list, attrs){
+      attrs.points = list.map(function(p){ return p[0] + "," + p[1]; }).join(" ");
+      return el("polygon", attrs, s2);
+    }
+    /* aperture per lato: servono a bucare il muro giusto */
+    function apertureSu(A, B){
+      var vert = Math.abs(A[0] - B[0]) < 0.05;
+      return M.aperture.filter(function(a){
+        var aVert = Math.abs(a.da[0] - a.a[0]) < 0.05;
+        if (aVert !== vert) return false;
+        if (vert)  return Math.abs(a.da[0] - A[0]) < 0.35;
+        return Math.abs(a.da[1] - A[1]) < 0.35;
+      });
+    }
+    function muro(A, B, tono){
+      /* muro pieno, poi le aperture ritagliate sopra */
+      pl([P(A[0],A[1],0), P(B[0],B[1],0), P(B[0],B[1],HV), P(A[0],A[1],HV)],
+         {fill:tono, stroke:"#A9A79B", "stroke-width":.8, "stroke-linejoin":"round"});
+      apertureSu(A, B).forEach(function(a){
+        var t0, t1, lung = Math.hypot(B[0]-A[0], B[1]-A[1]);
+        var d0 = Math.hypot(a.da[0]-A[0], a.da[1]-A[1]) / lung;
+        var d1 = Math.hypot(a.a[0]-A[0], a.a[1]-A[1]) / lung;
+        t0 = Math.min(d0,d1); t1 = Math.max(d0,d1);
+        if (t1 < 0 || t0 > 1) return;
+        function su(t, z){ return P(A[0] + (B[0]-A[0])*t, A[1] + (B[1]-A[1])*t, z); }
+        var finestra = a.tipo === "finestra";
+        var z0 = finestra ? 0.95 : 0, z1 = HV;
+        pl([su(t0,z0), su(t1,z0), su(t1,z1), su(t0,z1)],
+           {fill: finestra ? "#9AD9BB" : "#FFFFFF",
+            stroke: a.certezza === "da-verificare" ? "#C8391A" : "#8E8C82",
+            "stroke-width":.9,
+            "stroke-dasharray": a.certezza === "da-verificare" ? "4 3" : null,
+            opacity: finestra ? .95 : 1});
+      });
+    }
+    var etichette = [];
+    var ordine = M.stanze.slice().filter(function(st){ return !st.comune; })
+      .sort(function(a,b){ var ca = centro(a.poligono), cb = centro(b.poligono);
+                           return (ca[0]+ca[1]) - (cb[0]+cb[1]); });
+    ordine.forEach(function(st){
+      var p = st.poligono, c = centro(p), lati = [];
+      for (var i = 0; i < p.length; i++){
+        var A = p[i], B = p[(i+1) % p.length];
+        var mx = (A[0]+B[0])/2, my = (A[1]+B[1])/2;
+        var lontano = (mx - c[0]) + (my - c[1]) < 0;
+        var vert = Math.abs(A[0]-B[0]) < 0.05;
+        lati.push({A:A, B:B, lontano:lontano, tono: vert ? "#DAD8CC" : "#EAE8DE"});
+      }
+      lati.filter(function(l){ return l.lontano; }).forEach(function(l){ muro(l.A, l.B, l.tono); });
+      pl(p.map(function(q){ return P(q[0], q[1], 0); }),
+         {fill:"#FCFBF7", stroke:"#C9C7BC", "stroke-width":.8});
+      etichette.push([P(c[0], c[1], 0), st.nome.toUpperCase()]);
+      lati.filter(function(l){ return !l.lontano; }).forEach(function(l){
+        muro(l.A, l.B, l.tono === "#DAD8CC" ? "#E6E4D9" : "#F2F0E7"); });
+    });
+    /* i nomi si scrivono per ultimi: nessun muro ci passa sopra */
+    etichette.forEach(function(e){
+      var t = el("text", {x:e[0][0], y:e[0][1], "text-anchor":"middle", "font-size":12,
+                          "font-family":"Poppins, sans-serif", fill:"#14261C",
+                          stroke:"#FCFBF7", "stroke-width":3.5, "paint-order":"stroke"}, s2);
+      txt(t, e[1]);
+    });
+  }
+
+  /* ---------- CIFRE, TABELLE, NOTA ---------- */
+  var netto = M.stanze.reduce(function(t, s){ return t + (s.comune ? 0 : s.area_mq); }, 0);
+  var cifre = [["Superficie netta", num(netto,1) + " m²"],
+               ["Vani", M.stanze.filter(function(s){ return !s.comune; }).length + ""],
+               ["Altezza interna", "3,20 m"],
+               ["Volume netto", num(netto*3.2,0) + " m³"],
+               ["Finestre", M.aperture.filter(function(a){ return a.tipo === "finestra"; }).length + ""],
+               ["Scala del rilievo", "1:100"]];
+  var ul = document.getElementById("cifre");
+  cifre.forEach(function(c){
+    var li = document.createElement("li");
+    var b = document.createElement("b"); b.textContent = c[1];
+    li.appendChild(b); li.appendChild(document.createTextNode(c[0]));
+    ul.appendChild(li);
+  });
+
+  function tabella(titolo, intestazioni, righe){
+    var h = document.createElement("h2");
+    h.style.cssText = "font-family:Poppins,sans-serif;color:var(--ink);font-size:1.05rem;margin:22px 0 8px";
+    h.textContent = titolo;
+    var t = document.createElement("table"), tr = document.createElement("tr");
+    intestazioni.forEach(function(i){ var th = document.createElement("th"); th.textContent = i; tr.appendChild(th); });
+    t.appendChild(tr);
+    righe.forEach(function(r){
+      var tr2 = document.createElement("tr");
+      r.forEach(function(c, i){
+        var td = document.createElement("td");
+        if (i > 0 && /^[\d,.\s×+-]+$/.test(String(c))) td.className = "num";
+        td.textContent = c; tr2.appendChild(td);
+      });
+      t.appendChild(tr2);
+    });
+    var box = document.getElementById("tabelle");
+    box.appendChild(h); box.appendChild(t);
+  }
+  tabella("Stanze", ["Stanza", "Ingombro (m)", "Superficie (m²)", "Volume (m³)", "Certezza"],
+    M.stanze.map(function(s){
+      var xs = s.poligono.map(function(p){ return p[0]; }), ys = s.poligono.map(function(p){ return p[1]; });
+      return [s.nome + (s.comune ? " (comune)" : ""),
+              num(Math.max.apply(null,xs)-Math.min.apply(null,xs)) + " × " + num(Math.max.apply(null,ys)-Math.min.apply(null,ys)),
+              num(s.area_mq,1), num(s.area_mq*3.2,0), s.certezza];
+    }));
+  tabella("Aperture", ["Apertura", "Tipo", "Larghezza (m)", "Certezza"],
+    M.aperture.map(function(a){
+      var dove = a.stanza ? (stanzaDi[a.stanza] ? stanzaDi[a.stanza].nome : a.stanza)
+                          : ((stanzaDi[a.da_stanza] ? stanzaDi[a.da_stanza].nome : a.da_stanza) + " → " +
+                             (stanzaDi[a.a_stanza] ? stanzaDi[a.a_stanza].nome : a.a_stanza));
+      return [dove, a.tipo, num(a.larghezza_m), a.certezza];
+    }));
+  tabella("Muri", ["Muro", "Spessore (m)", "Certezza"],
+    M.muri.map(function(w){ return [w.descrizione, num(w.spessore_m), w.certezza]; }));
+
+  var nota = document.getElementById("nota-metodo");
+  var h3 = document.createElement("h3"); h3.textContent = "Come sono state ricavate le misure";
+  nota.appendChild(h3);
+  var pM = document.createElement("p");
+  pM.textContent = "La planimetria fotografata è stata raddrizzata di 1,75° e ripulita dal fondo; " +
+    "le linee dei muri sono state individuate sui profili di densità, non a occhio. La scala viene da due " +
+    "riscontri indipendenti che coincidono: il passo dei gradini del vano scale (11,8 px, cioè una pedata " +
+    "di 29 cm) e la larghezza del foglio A4 alla scala 1:100. Ne esce 40,7 pixel per metro, con un errore " +
+    "atteso del 3%: su cinque metri, quindici centimetri.";
+  nota.appendChild(pM);
+  var ulN = document.createElement("ul");
+  ["Le posizioni delle porte vengono dai simboli di battente, non da interruzioni nei muri: su questo disegno le linee dei muri sono continue anche dove c'è un vano. Sono segnate in rosso, da confermare in loco.",
+   "Il tratteggio che divide la camera è stampato sul disegno: le foto mostrano una stanza con una sola finestra, quindi oggi la divisione c'è. Anche questo va confermato.",
+   "Il nord viene dalla rosa disegnata a mano in calce alla planimetria: tolleranza ±15°.",
+   "Le superfici sono nette, misurate dentro l'intonaco. La superficie lorda, muri compresi, è di circa 77 m²."
+  ].forEach(function(s){ var li = document.createElement("li"); li.textContent = s; ulN.appendChild(li); });
+  nota.appendChild(ulN);
+
+  /* ---------- schede ---------- */
+  var viste = {pianta:document.getElementById("vista-pianta"),
+               assonometria:document.getElementById("vista-assonometria"),
+               dati:document.getElementById("vista-dati")};
+  var fattaAsso = false;
+  Array.prototype.forEach.call(document.querySelectorAll(".tabs button"), function(b){
+    b.addEventListener("click", function(){
+      var v = b.getAttribute("data-vista");
+      Array.prototype.forEach.call(document.querySelectorAll(".tabs button"), function(o){
+        o.setAttribute("aria-selected", String(o === b)); });
+      for (var k in viste) viste[k].hidden = (k !== v);
+      if (v === "assonometria" && !fattaAsso){ assonometria(); fattaAsso = true; }
+    });
+  });
+
+  disegnaFoto();
+  seleziona("camera");
+})();
+</script>
+</body>
+</html>
