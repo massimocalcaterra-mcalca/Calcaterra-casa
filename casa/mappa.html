@@ -100,7 +100,8 @@
           <span><i class="sw" style="background:#2B3A33"></i> muratura</span>
           <span><i class="sw" style="background:#fff;border:1px solid #8E8C82"></i> vano</span>
           <span><i class="sw" style="background:#9AD9BB"></i> finestra</span>
-          <span><i class="sw" style="background:#E7E6DF"></i> porta / passaggio</span>
+          <span><i class="sw" style="background:#E7E6DF"></i> porta</span>
+          <span><i class="sw" style="background:#fff;border:1px solid #8E8C82"></i> arco / passaggio</span>
           <span><i class="sw" style="background:repeating-linear-gradient(90deg,#C8391A 0 3px,transparent 3px 6px)"></i> da verificare</span>
         </div>
       </div>
@@ -208,7 +209,8 @@
     var p = a.da, q = a.a;
     var orizz = Math.abs(p[1] - q[1]) < 0.02;
     var spess = {nord:0.74, sud:0.66, ovest:0.30, est:0.23, spina:0.57,
-                 "tramezza-cucina-bagno":0.17, "tramezza-bagno-ingresso":0.15}[a.muro] || 0.20;
+                 "tramezza-cucina-bagno":0.17, "tramezza-bagno-ingresso":0.15,
+                 "tramezza-camere":0.12}[a.muro] || 0.20;
     var x0, y0, w, h;
     if (orizz){                                   /* apertura in un muro orizzontale */
       x0 = Math.min(p[0], q[0]); w = Math.abs(q[0] - p[0]);
@@ -222,6 +224,7 @@
       x0 = p[0] - (a.muro === "ovest" ? spess : 0);
       if (a.muro === "est") x0 = p[0];
       if (a.muro === "tramezza-cucina-bagno") x0 = p[0];
+      if (a.muro === "tramezza-camere") x0 = p[0] - spess/2;
       w = spess;
     }
     var finestra = a.tipo === "finestra";
@@ -232,19 +235,42 @@
       if (orizz) el("rect", {x:X(x0), y:Y(y0 + h/2) - 2, width:w*S, height:4, fill:"#9AD9BB", stroke:"#3E9C74", "stroke-width":.6}, gAp);
       else       el("rect", {x:X(x0 + w/2) - 2, y:Y(y0), width:4, height:h*S, fill:"#9AD9BB", stroke:"#3E9C74", "stroke-width":.6}, gAp);
     } else {
-      /* soglia + arco di apertura */
       var incerta = a.certezza === "da-verificare";
       var col = incerta ? "#C8391A" : "#8E8C82";
       var dash = incerta ? "4 3" : null;
-      el("rect", {x:X(x0), y:Y(y0), width:w*S, height:h*S, fill:"#F4F3EE",
+      var battente = (a.tipo === "porta" || a.tipo === "porta-esterna");
+      el("rect", {x:X(x0), y:Y(y0), width:w*S, height:h*S,
+                  fill: battente ? "#F4F3EE" : "#FFFFFF",
                   stroke:col, "stroke-width":1, "stroke-dasharray":dash}, gAp);
-      var L = (orizz ? w : h) * S;
-      var cx = orizz ? X(x0) : X(x0 + w), cy = orizz ? Y(y0 + h) : Y(y0);
-      var arco = orizz
-        ? "M " + cx + " " + cy + " a " + L + " " + L + " 0 0 0 " + L + " " + (-L)
-        : "M " + cx + " " + cy + " a " + L + " " + L + " 0 0 1 " + (-L) + " " + L;
-      el("path", {d:arco, fill:"none", stroke:col, "stroke-width":.8,
-                  "stroke-dasharray":dash || "3 3", opacity:.75}, gAp);
+      if (battente){
+        /* anta aperta a 90 gradi, più l'arco che descrive */
+        var L = (orizz ? w : h) * S;
+        var cx = orizz ? X(x0) : X(x0 + w), cy = orizz ? Y(y0 + h) : Y(y0);
+        var arco = orizz
+          ? "M " + cx + " " + cy + " a " + L + " " + L + " 0 0 0 " + L + " " + (-L)
+          : "M " + cx + " " + cy + " a " + L + " " + L + " 0 0 1 " + (-L) + " " + L;
+        el("path", {d:arco, fill:"none", stroke:col, "stroke-width":.8,
+                    "stroke-dasharray":dash || "3 3", opacity:.75}, gAp);
+      } else {
+        /* passaggio senza anta: due spallette marcate. L'arco in muratura
+           si segna con una linea tratteggiata a mezzo spessore. */
+        var lung = (orizz ? w : h) * S, mez = 4;
+        if (orizz){
+          el("line", {x1:X(x0), y1:Y(y0), x2:X(x0), y2:Y(y0 + h), stroke:col, "stroke-width":1.4}, gAp);
+          el("line", {x1:X(x0 + w), y1:Y(y0), x2:X(x0 + w), y2:Y(y0 + h), stroke:col, "stroke-width":1.4}, gAp);
+        } else {
+          el("line", {x1:X(x0), y1:Y(y0), x2:X(x0 + w), y2:Y(y0), stroke:col, "stroke-width":1.4}, gAp);
+          el("line", {x1:X(x0), y1:Y(y0 + h), x2:X(x0 + w), y2:Y(y0 + h), stroke:col, "stroke-width":1.4}, gAp);
+        }
+        if (a.tipo === "arco"){
+          var ax = orizz ? X(x0 + w/2) : X(x0 + w/2), ay = orizz ? Y(y0 + h/2) : Y(y0 + h/2);
+          var d2 = orizz
+            ? "M " + X(x0) + " " + ay + " A " + (lung/2) + " " + (lung/2) + " 0 0 1 " + X(x0 + w) + " " + ay
+            : "M " + ax + " " + Y(y0) + " A " + (lung/2) + " " + (lung/2) + " 0 0 1 " + ax + " " + Y(y0 + h);
+          el("path", {d:d2, fill:"none", stroke:"#8E8C82", "stroke-width":.9,
+                      "stroke-dasharray":"3 2", opacity:.9}, gAp);
+        }
+      }
     }
   }
   M.aperture.forEach(disegnaApertura);
@@ -252,7 +278,7 @@
   /* annotazioni (tratteggio della divisione in camera) */
   var gAnn = el("g", {}, svg);
   M.annotazioni.forEach(function(a){
-    if (!a.da) return;
+    if (!a.da || a.tipo === "risolto") return;
     el("line", {x1:X(a.da[0]), y1:Y(a.da[1]), x2:X(a.a[0]), y2:Y(a.a[1]),
                 stroke:"#C8391A", "stroke-width":1.4, "stroke-dasharray":"9 6", opacity:.8}, gAnn);
   });
@@ -300,9 +326,10 @@
   }
   quotaH(0.31, 3.17, -0.42, 0.74, "2,86");     /* larghezza cucina */
   quotaH(3.34, 5.34, -0.42, 0.74, "2,00");     /* larghezza bagno  */
-  quotaH(0.31, 5.34, 15.05, 13.84, "5,03");    /* larghezza camera */
+  quotaH(0.31, 2.93, 15.05, 13.84, "2,62");    /* camera ovest */
+  quotaH(3.05, 5.34, 15.05, 13.84, "2,29");    /* camera est   */
   quotaV(0.74, 7.05, -0.42, 0.31, "6,31");     /* profondità cucina */
-  quotaV(7.63, 13.84, -0.42, 0.31, "6,21");    /* profondità camera */
+  quotaV(7.63, 13.84, -0.42, 0.31, "6,21");    /* profondità delle camere */
   quotaV(0.74, 5.23, 3.60, null, "4,49", 1.75); /* profondità bagno, dentro la stanza */
 
   /* scala grafica + nord */
@@ -598,7 +625,8 @@
   nota.appendChild(pM2);
   var ulN = document.createElement("ul");
   ["Le posizioni delle porte vengono dai simboli di battente, non da interruzioni nei muri: su questo disegno le linee dei muri sono continue anche dove c'è un vano. Sono segnate in rosso, da confermare in loco.",
-   "Il tratteggio che divide la camera è stampato sul disegno, ma la divisione non sembra ancora costruita: dalla porta si vede quasi tutta la stanza. Sulla mazzetta della porta ci sono però intonaco fresco e scatole elettriche nuove: un lavoro in corso proprio lì.",
+   "La divisione della camera, che sul disegno era solo un tratteggio, è stata costruita: le fotografie del 15 settembre mostrano una tramezza in cartongesso con i giunti ancora da tinteggiare, e una porta. La sua posizione sul disegno però resta quella del tratteggio, non è misurata sul posto.",
+   "L'arco fra ingresso e cucina era stato preso per una nicchia dietro il frigorifero: è invece il passaggio, aperto, alto circa 2,4 m alla chiave.",
    "Il riscontro sul foglio A4, usato nella prima versione di questa pagina, è stato ritirato: nella fotografia il foglio esce dall'inquadratura su tutti e due i lati, quindi non era misurabile.",
    "Il nord viene dalla rosa disegnata a mano in calce alla planimetria: tolleranza ±15°.",
    "Le superfici sono nette, misurate dentro l'intonaco. La superficie lorda, muri compresi, è di circa 77 m²."
