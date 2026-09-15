@@ -1,7 +1,12 @@
-# Via Caprin 10 — mappa virtuale dell'appartamento
+# Mappa virtuale dell'appartamento
 
-Ricostruzione del primo piano di via Giuseppe Caprin 10, Trieste, a partire dalla
-planimetria catastale fotografata e dalle fotografie degli interni.
+Ricostruzione del primo piano di una casa in muratura di fine Ottocento, a partire
+dalla planimetria catastale fotografata e dalle fotografie degli interni.
+
+> **Questo repository e' pubblico.** Indirizzo, identificativi catastali e nome del
+> redattore della planimetria sono stati tolti da questi file di proposito, e le
+> fotografie degli interni non vanno aggiunte qui. I commit precedenti al 15/09/2026
+> li contengono ancora: per toglierli servirebbe riscrivere la storia del branch.
 
 - [`modello.js`](modello.js) — il modello metrico: stanze, muri, aperture, foto. È la sorgente:
   tutto il resto si ridisegna da qui.
@@ -16,8 +21,8 @@ planimetria catastale fotografata e dalle fotografie degli interni.
 | **Superficie lorda** | ~77 m², muri compresi |
 | **Altezza interna** | 3,20 m (dichiarata sulla planimetria) |
 | **Volume netto** | ~194 m³ |
-| **Finestre** | 4: una in cucina e una in bagno sul cortile, due in camera su via Caprin |
-| **Affacci** | cortile a SSE, via Caprin a NNO (bussola disegnata a mano, ±15°) |
+| **Finestre** | 4: una in cucina e una in bagno sul cortile, due in camera sulla strada |
+| **Affacci** | cortile a SSE, strada a NNO (bussola disegnata a mano, ±15°) |
 
 ## Come sono state ricavate le misure
 
@@ -45,7 +50,7 @@ La planimetria è una fotografia di una stampa, quindi storta e sbiadita. Il pro
 
    Prova del nove sugli spessori: con 40,7 px/m le tramezze vengono 15–17 cm, il muro di spina 57 cm,
    i muri esterni 66–74 cm e le rampe 1,37 m. Tutti valori normali per una casa in muratura
-   dell'Ottocento triestino — ma lo sono anche a 44,9 px/m, quindi questo controllo conferma l'ordine
+   dell'Ottocento — ma lo sono anche a 44,9 px/m, quindi questo controllo conferma l'ordine
    di grandezza e non sceglie fra le due letture.
 
 **Errore atteso: 8%.** Su cinque metri sono quaranta centimetri. Va bene per capire la casa,

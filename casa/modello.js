@@ -1,8 +1,8 @@
-/* Modello metrico dell'appartamento di via Caprin 10, Trieste — primo piano.
+/* Modello metrico dell'appartamento — primo piano.
  *
  * Sistema di riferimento: metri, origine nell'angolo NORD-OVEST del disegno
  * (spigolo esterno del muro), X verso destra (est del disegno), Y verso il basso
- * (verso via Caprin). Non è il nord vero: vedi `nord`.
+ * (verso la strada). Non è il nord vero: vedi `nord`.
  *
  * Tutte le quote sono RICAVATE dalla planimetria catastale per fotogrammetria,
  * non da un rilievo. Incertezza dichiarata in `scala`. Ogni elemento porta
@@ -11,18 +11,13 @@
  */
 window.MODELLO = {
   meta: {
-    indirizzo: "Via Giuseppe Caprin 10, Trieste",
+    edificio: "Primo piano di una casa in muratura, di fine Ottocento",
     piano: "Primo",
     altezza_interna_m: 3.20,
-    catasto: {
-      comune: "Trieste", sezione: "V", foglio: "22",
-      particella: "7885", subalterno: "4",
-      protocollo: "TS0057578 del 14/07/2005",
-      redattore: "Sponza Andrea, Periti Edili prov. Trieste, n. 1008",
-      scala_disegno: "1:100", formato: "A4"
-    },
-    sorgente: "Planimetria catastale (estratto del 03/02/2026, n. T108813) fotografata + 4 foto d'interni",
-    aggiornato: "2026-09-14"
+    disegno: { scala: "1:100", formato: "A4", tipo: "planimetria catastale" },
+    sorgente: "Planimetria catastale fotografata + 4 fotografie d'interni",
+    aggiornato: "2026-09-15",
+    riservatezza: "Questo file sta in un repository pubblico: indirizzo, identificativi catastali e nome del redattore sono stati tolti di proposito. Non rimetterli, e non aggiungere qui le fotografie degli interni."
   },
 
   /* Calibrazione. Un solo ancoraggio fisico regge davvero:
@@ -50,11 +45,11 @@ window.MODELLO = {
   ],
 
   /* La bussola disegnata a mano sulla planimetria punta in basso a sinistra.
-   * Quindi l'alto del disegno (il cortile) guarda circa a SSE e via Caprin a NNO.
+   * Quindi l'alto del disegno (il cortile) guarda circa a SSE e la strada a NNO.
    * Simbolo tracciato a mano: tolleranza ampia. */
   nord: { azimut_alto_disegno_gradi: 149, certezza: "dedotto",
           incertezza_gradi: 15,
-          conseguenze: "Cucina e bagno (cortile) prendono luce da mattina a mezzogiorno; la camera su via Caprin prende la luce di fine pomeriggio." },
+          conseguenze: "Cucina e bagno (cortile) prendono luce da mattina a mezzogiorno; la camera sulla strada prende la luce di fine pomeriggio." },
 
   stanze: [
     { id: "cucina", nome: "Cucina", area_mq: 17.1, certezza: "misurato",
@@ -95,7 +90,7 @@ window.MODELLO = {
         "Sulla mazzetta della porta: intonaco fresco non tinteggiato e due scatole elettriche nuove con i cavi penzolanti. Punto luce a soffitto tappato.",
         "Cantiere aperto: teli sul letto, scala a libro, secchi e attrezzi."
       ],
-      nota: "5,03 x 6,21 m, due finestre su via Caprin. Sul disegno una linea tratteggiata la divide in due a 2,99 m dal muro ovest, una metà per finestra. Guardando la foto da vicino la divisione non sembra ancora costruita: dalla porta si vedono la parete di fondo per circa 3,6 m e l\'angolo sud-ovest, cioè quasi tutta la stanza. Sulla mazzetta della porta però ci sono intonaco fresco e due scatole elettriche nuove con i cavi penzolanti: un lavoro in corso proprio lì. L\'ipotesi è che la divisione sia in programma, non fatta." },
+      nota: "5,03 x 6,21 m, due finestre sulla strada. Sul disegno una linea tratteggiata la divide in due a 2,99 m dal muro ovest, una metà per finestra. Guardando la foto da vicino la divisione non sembra ancora costruita: dalla porta si vedono la parete di fondo per circa 3,6 m e l\'angolo sud-ovest, cioè quasi tutta la stanza. Sulla mazzetta della porta però ci sono intonaco fresco e due scatole elettriche nuove con i cavi penzolanti: un lavoro in corso proprio lì. L\'ipotesi è che la divisione sia in programma, non fatta." },
 
     { id: "vano-scale", nome: "Vano scale", area_mq: 18.5, certezza: "misurato",
       comune: true,
@@ -106,7 +101,7 @@ window.MODELLO = {
   /* Spessori dei muri misurati sul disegno, utili per capire l'età e il rumore. */
   muri: [
     { id: "nord",     descrizione: "Muro esterno sul cortile",        spessore_m: 0.74, certezza: "misurato" },
-    { id: "sud",      descrizione: "Muro esterno su via Caprin",      spessore_m: 0.66, certezza: "misurato" },
+    { id: "sud",      descrizione: "Muro esterno sulla strada",      spessore_m: 0.66, certezza: "misurato" },
     { id: "ovest",    descrizione: "Muro esterno ovest (confine)",    spessore_m: 0.30, certezza: "misurato" },
     { id: "est",      descrizione: "Muro verso il vano scale",        spessore_m: 0.23, certezza: "misurato" },
     { id: "spina",    descrizione: "Muro di spina fra cucina/ingresso e camera", spessore_m: 0.57, certezza: "misurato" },
@@ -120,9 +115,9 @@ window.MODELLO = {
       nota: "Nicchia profonda ~0,40 m nel muro da 74 cm. Arco a tutto sesto in alto (visibile nelle foto)." },
     { id: "fin-bagno", tipo: "finestra", stanza: "bagno", muro: "nord", affaccio: "cortile",
       da: [3.60,0.74], a: [4.90,0.74], larghezza_m: 1.30, certezza: "misurato" },
-    { id: "fin-camera-ovest", tipo: "finestra", stanza: "camera", muro: "sud", affaccio: "via Caprin",
+    { id: "fin-camera-ovest", tipo: "finestra", stanza: "camera", muro: "sud", affaccio: "strada",
       da: [0.75,13.84], a: [1.98,13.84], larghezza_m: 1.23, certezza: "misurato" },
-    { id: "fin-camera-est", tipo: "finestra", stanza: "camera", muro: "sud", affaccio: "via Caprin",
+    { id: "fin-camera-est", tipo: "finestra", stanza: "camera", muro: "sud", affaccio: "strada",
       da: [3.43,13.84], a: [4.90,13.84], larghezza_m: 1.47, certezza: "misurato" },
 
     { id: "porta-ingresso", tipo: "porta-esterna", da_stanza: "vano-scale", a_stanza: "ingresso",
@@ -150,7 +145,7 @@ window.MODELLO = {
   ],
 
   /* Punti di presa delle fotografie: dove stava chi ha scattato e dove guardava.
-   * `direzione_gradi`: 0 = verso il basso del disegno (via Caprin), 90 = verso
+   * `direzione_gradi`: 0 = verso il basso del disegno (la strada), 90 = verso
    * destra (vano scale), 180 = verso il cortile, 270 = verso ovest. */
   foto: [
     { id: "cucina-a", n: 1, stanza: "cucina", posizione: [2.60, 6.30], direzione_gradi: 180, fov_gradi: 70,
