@@ -17,7 +17,7 @@ dalla planimetria catastale fotografata e dalle fotografie degli interni.
 
 | | |
 |---|---|
-| **Superficie netta** | 59,5 m² (cucina 17,1 · bagno 9,0 · ingresso 3,3 · disimpegno 6,5 · camera ovest 12,6 · camera est 11,0) |
+| **Superficie netta** | 59,6 m² (cucina 17,1 · bagno 9,0 · ingresso 3,3 · disimpegno 3,0 · camera ovest 16,3 · camera est 11,0) |
 | **Superficie lorda** | ~77 m², muri compresi |
 | **Altezza interna** | 3,20 m (dichiarata sulla planimetria) |
 | **Volume netto** | ~192 m³ |
@@ -90,7 +90,7 @@ Cinque scatti del 15 settembre 2026 hanno risolto tre dei quattro dubbi aperti.
 1. **La scala assoluta.** Vedi sopra: 40,7 o 44,9 px/m, cioè 60 m² o 54. Il conteggio delle
    piastrelle in cucina inclina verso la prima, ma nessuna fotografia contiene ancora un oggetto
    di dimensione certa.
-2. **La posizione della porta nella tramezza nuova**, collocata a stima verso l'estremità nord.
+2. **Dove cadono esattamente le due porte del disimpegno**, oggi collocate a stima.
 3. **La porta del bagno**, ancora dedotta dal simbolo di battente.
 4. **Dove cade esattamente la tramezza nuova**: sul disegno sta a 2,99 m dal muro ovest,
    cioè sul setto fra le due finestre. È verosimile, ma non è stato misurato.

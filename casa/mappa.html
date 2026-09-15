@@ -153,6 +153,9 @@
   M.stanze.forEach(function(s){ stanzaDi[s.id] = s; });
 
   /* ---------- sagoma dell'edificio (muri pieni, vani scavati) ---------- */
+  /* la superficie di ogni stanza viene dal suo poligono, mai da un numero scritto a mano */
+  M.stanze.forEach(function(s){ s.area_mq = area(s.poligono); });
+
   var SAGOMA = [[0.73,0],[8.74,0],[8.74,7.37],[5.57,7.37],[5.57,14.50],[0,14.50],[0,2.09],[0.73,2.09]];
 
   /* ---------- PIANTA ---------- */
@@ -328,10 +331,11 @@
   quotaH(0.31, 3.17, -0.42, 0.74, "2,86");     /* larghezza cucina */
   quotaH(3.34, 5.34, -0.42, 0.74, "2,00");     /* larghezza bagno  */
   quotaV(7.63, 8.93, 5.85, 5.34, "1,30");     /* profondità del disimpegno, ipotizzata */
+  quotaH(3.05, 5.34, 15.05, 13.84, "2,29");    /* camera est */
   quotaH(0.31, 2.93, 15.05, 13.84, "2,62");    /* camera ovest */
   quotaH(3.05, 5.34, 15.05, 13.84, "2,29");    /* camera est   */
   quotaV(0.74, 7.05, -0.42, 0.31, "6,31");     /* profondità cucina */
-  quotaV(9.05, 13.84, -0.42, 0.31, "4,79");    /* profondità delle camere */
+  quotaV(7.63, 13.84, -0.42, 0.31, "6,21");    /* profondità della camera ovest */
   quotaV(0.74, 5.23, 3.60, null, "4,49", 1.75); /* profondità bagno, dentro la stanza */
 
   /* scala grafica + nord */
