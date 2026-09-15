@@ -17,7 +17,7 @@ dalla planimetria catastale fotografata e dalle fotografie degli interni.
 
 | | |
 |---|---|
-| **Superficie netta** | 59,6 m² (cucina 17,1 · bagno 9,0 · ingresso 3,3 · disimpegno 3,0 · camera ovest 16,3 · camera est 11,0) |
+| **Superficie netta** | 59,7 m² (cucina 17,1 · bagno 9,0 · ingresso 3,3 · disimpegno 2,6 · camera ovest 17,9 · camera est 9,7) |
 | **Superficie lorda** | ~77 m², muri compresi |
 | **Altezza interna** | 3,20 m (dichiarata sulla planimetria) |
 | **Volume netto** | ~192 m³ |

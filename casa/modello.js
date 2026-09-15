@@ -95,16 +95,16 @@ window.MODELLO = {
       nota: "2,00 x 1,67 m. È il nodo della casa: da qui si va in cucina (ovest), in bagno (nord) e in camera (sud); la porta di casa è a est, sul pianerottolo." },
 
     { id: "disimpegno-camere", nome: "Disimpegno", certezza: "da-verificare",
-      poligono: [[3.05,7.63],[5.34,7.63],[5.34,8.93],[3.05,8.93]],
+      poligono: [[3.32,7.63],[5.34,7.63],[5.34,8.93],[3.32,8.93]],
       dettagli: [
         "Ricavato con i lavori nuovi nella testata nord della vecchia camera: pavimento in listoni come le stanze che serve.",
         "Ci si arriva dall'ingresso attraverso il vano largo nel muro di spina, rifasciato in cartongesso con i montanti metallici ancora a vista.",
         "Da qui si aprono le due camere, una porta per parte."
       ],
-      nota: "2,29 x 1,30 m: largo quanto la camera est, che gli sta sotto. Le due porte sono ortogonali fra loro — quella della camera est nel muro a sud, quella della camera ovest nella tramezza a ovest. La profondita' di 1,30 m resta un'ipotesi: nessuna fotografia la inquadra per intero, e sulla planimetria del 2005 questo vano non esiste ancora." },
+      nota: "2,02 x 1,30 m: largo quanto la camera est, che gli sta sotto. Le due porte sono ortogonali fra loro — quella della camera est nel muro a sud, quella della camera ovest nella tramezza a ovest. La profondita' di 1,30 m resta un'ipotesi: nessuna fotografia la inquadra per intero, e sulla planimetria del 2005 questo vano non esiste ancora." },
 
     { id: "camera-ovest", nome: "Camera ovest", certezza: "misurato",
-      poligono: [[0.31,7.63],[2.93,7.63],[2.93,13.84],[0.31,13.84]],
+      poligono: [[0.31,7.63],[3.20,7.63],[3.20,13.84],[0.31,13.84]],
       dettagli: [
         "Pavimento in listoni di legno bruno-rossastri, consumati.",
         "Finestra con sguincio profondo e arco in testa, bancale in legno, radiatore appeso dentro il rientro.",
@@ -112,16 +112,17 @@ window.MODELLO = {
         "Sulla mazzetta della porta: intonaco fresco non tinteggiato e due scatole elettriche nuove con i cavi penzolanti. Punto luce a soffitto tappato.",
         "Cantiere aperto: teli sul letto, scala a libro, secchi e attrezzi."
       ],
-      nota: "2,62 x 6,21 m: corre per tutta la profondita' dell'edificio, perche' il disimpegno le sta accanto e non sopra. Ci si entra dalla tramezza a est, verso l'estremita' nord." },
+      nota: "2,89 x 6,21 m: corre per tutta la profondita' dell'edificio, perche' il disimpegno le sta accanto e non sopra. Ci si entra dalla tramezza a est, verso l'estremita' nord." },
 
     { id: "camera-est", nome: "Camera est", certezza: "da-verificare",
-      poligono: [[3.05,9.05],[5.34,9.05],[5.34,13.84],[3.05,13.84]],
+      poligono: [[3.32,9.05],[5.34,9.05],[5.34,13.84],[3.32,13.84]],
       dettagli: [
         "Stesso pavimento in listoni dell'altra camera, e stessa finestra ad arco con il radiatore dentro il rientro.",
         "Tutta la parete ovest e' la tramezza nuova in cartongesso: giunti nastrati e stuccati, ancora non tinteggiati.",
-        "Parete est in muratura, con un mobile basso protetto da un telo."
+        "Parete est in muratura, con un mobile basso protetto da un telo.",
+        "La finestra arriva quasi a filo della tramezza: fra il suo sguincio e l'angolo restano poco più di dieci centimetri. È il motivo per cui in fotografia quel lato sembra non avere spalletta."
       ],
-      nota: "2,29 x 4,79 m. La lunghezza dipende da quanto e' profondo il disimpegno, che e' ipotizzato: se il disimpegno e' meno profondo, la camera e' piu' lunga." },
+      nota: "2,02 x 4,79 m. La lunghezza dipende da quanto e' profondo il disimpegno, che e' ipotizzato: se il disimpegno e' meno profondo, la camera e' piu' lunga." },
 
     { id: "vano-scale", nome: "Vano scale", certezza: "misurato",
       comune: true,
@@ -166,8 +167,8 @@ window.MODELLO = {
       muro: "spina", da: [3.79,7.34], a: [4.89,7.34], larghezza_m: 1.10, certezza: "misurato",
       nota: "Vano largo nel muro di spina, rifasciato in cartongesso: nelle foto si vedono i montanti metallici sulle spalle. Porta nel disimpegno nuovo, non direttamente in una camera." },
     { id: "porta-camera-ovest", tipo: "porta", da_stanza: "disimpegno-camere", a_stanza: "camera-ovest",
-      muro: "tramezza-camere", da: [2.99,7.95], a: [2.99,8.75], larghezza_m: 0.80, certezza: "dedotto",
-      nota: "Nella tramezza a ovest del disimpegno, quindi ad angolo retto con quella della camera est. Dalla camera ovest si vede la mazzetta con l'intonaco fresco e le scatole nuove: nelle foto sta a sinistra guardando verso la finestra, cioe' a est, e torna." },
+      muro: "tramezza-camere", da: [3.26,7.95], a: [3.26,8.75], larghezza_m: 0.80, certezza: "dedotto",
+      nota: "Nella tramezza a ovest del disimpegno, allineata al muro cucina/bagno, quindi ad angolo retto con quella della camera est. Dalla camera ovest si vede la mazzetta con l'intonaco fresco e le scatole nuove: nelle foto sta a sinistra guardando verso la finestra, cioe' a est, e torna." },
     { id: "porta-camera-est", tipo: "porta", da_stanza: "disimpegno-camere", a_stanza: "camera-est",
       muro: "tramezza-disimpegno", da: [3.80,8.99], a: [4.60,8.99], larghezza_m: 0.80, certezza: "dedotto",
       nota: "E' la soglia da cui e' scattata la foto 8, con i montanti metallici sulle spalle." }
@@ -177,7 +178,7 @@ window.MODELLO = {
   annotazioni: [
     { id: "divisione-camera", tipo: "risolto", stanza: "camera-est",
       certezza: "misurato",
-      nota: "Il tratteggio stampato sulla planimetria del 2005 correva per tutta la profondita' della camera, e la tramezza costruita fa esattamente questo: separa la camera ovest dal disimpegno e dalla camera est, da un capo all'altro. La sua posizione (2,99 m dal muro ovest) resta pero' quella del disegno, non e' misurata sul posto." },
+      nota: "Il tratteggio stampato sulla planimetria del 2005 correva per tutta la profondita' della camera, e la tramezza costruita fa esattamente questo, da un capo all'altro. Non cade pero' dove lo aveva messo il disegno: e' allineata al muro fra cucina e bagno, cioe' spostata di una ventina di centimetri verso est. Lo dice chi la casa la conosce, e la fotografia della camera ovest lo conferma: la spalletta a est della finestra misura circa 0,9 volte la larghezza della finestra, e con la tramezza dove la metteva il disegno ne servirebbe 0,77." },
     { id: "nicchia-arco-cucina", tipo: "risolto", stanza: "cucina",
       certezza: "misurato",
       nota: "Risolto: non era una nicchia. È l'arco che mette in comunicazione la cucina con l'ingresso, visto dalla cucina con il frigorifero davanti." },
