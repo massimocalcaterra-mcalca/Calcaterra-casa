@@ -210,7 +210,7 @@
     var orizz = Math.abs(p[1] - q[1]) < 0.02;
     var spess = {nord:0.74, sud:0.66, ovest:0.30, est:0.23, spina:0.57,
                  "tramezza-cucina-bagno":0.17, "tramezza-bagno-ingresso":0.15,
-                 "tramezza-camere":0.12}[a.muro] || 0.20;
+                 "tramezza-camere":0.12, "tramezza-disimpegno":0.12}[a.muro] || 0.20;
     var x0, y0, w, h;
     if (orizz){                                   /* apertura in un muro orizzontale */
       x0 = Math.min(p[0], q[0]); w = Math.abs(q[0] - p[0]);
@@ -218,6 +218,7 @@
       if (a.muro === "sud") y0 = p[1];
       if (a.muro === "tramezza-bagno-ingresso") y0 = p[1] - spess/2;
       if (a.muro === "spina") y0 = p[1] - spess/2;
+      if (a.muro === "tramezza-disimpegno") y0 = p[1] - spess/2;
       h = spess;
     } else {                                      /* muro verticale */
       y0 = Math.min(p[1], q[1]); h = Math.abs(q[1] - p[1]);
@@ -326,10 +327,11 @@
   }
   quotaH(0.31, 3.17, -0.42, 0.74, "2,86");     /* larghezza cucina */
   quotaH(3.34, 5.34, -0.42, 0.74, "2,00");     /* larghezza bagno  */
+  quotaV(7.63, 8.93, 5.85, 5.34, "1,30");     /* profondità del disimpegno, ipotizzata */
   quotaH(0.31, 2.93, 15.05, 13.84, "2,62");    /* camera ovest */
   quotaH(3.05, 5.34, 15.05, 13.84, "2,29");    /* camera est   */
   quotaV(0.74, 7.05, -0.42, 0.31, "6,31");     /* profondità cucina */
-  quotaV(7.63, 13.84, -0.42, 0.31, "6,21");    /* profondità delle camere */
+  quotaV(9.05, 13.84, -0.42, 0.31, "4,79");    /* profondità delle camere */
   quotaV(0.74, 5.23, 3.60, null, "4,49", 1.75); /* profondità bagno, dentro la stanza */
 
   /* scala grafica + nord */

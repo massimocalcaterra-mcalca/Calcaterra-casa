@@ -17,7 +17,7 @@ dalla planimetria catastale fotografata e dalle fotografie degli interni.
 
 | | |
 |---|---|
-| **Superficie netta** | 59,9 m² (cucina 17,1 · bagno 9,0 · ingresso 3,3 · camera ovest 16,3 · camera est 14,2) |
+| **Superficie netta** | 59,5 m² (cucina 17,1 · bagno 9,0 · ingresso 3,3 · disimpegno 6,5 · camera ovest 12,6 · camera est 11,0) |
 | **Superficie lorda** | ~77 m², muri compresi |
 | **Altezza interna** | 3,20 m (dichiarata sulla planimetria) |
 | **Volume netto** | ~192 m³ |
@@ -70,11 +70,12 @@ La planimetria è una fotografia di una stampa, quindi storta e sbiadita. Il pro
 
 Cinque scatti del 15 settembre 2026 hanno risolto tre dei quattro dubbi aperti.
 
-1. **La camera è divisa davvero.** Il tratteggio stampato sulla planimetria è stato
-   costruito: una tramezza in cartongesso, giunti nastrati e ancora da tinteggiare, con
-   una porta. Si vede da tutte e due le parti — da ovest la mazzetta con l'intonaco fresco
-   e le scatole elettriche nuove, da est la parete di cartongesso per tutta la lunghezza.
-   Ne escono due stanze da 16,3 e 14,2 m², una finestra per ciascuna.
+1. **La camera è divisa davvero, e in tre pezzi.** Il tratteggio stampato sulla planimetria
+   prevedeva una sola divisione longitudinale; i lavori hanno fatto di più. Nella testata nord
+   c'è un disimpegno, e da lì si aprono le due camere, una finestra per ciascuna. Le tramezze
+   sono in cartongesso, con i giunti nastrati ancora da tinteggiare.
+   **La profondità del disimpegno è ipotizzata a 1,30 m**, non misurata: da quel numero dipende
+   la lunghezza di tutte e due le camere.
 2. **L'arco della cucina non era una nicchia.** Quello che sembrava un arco tamponato
    dietro il frigorifero è il passaggio fra ingresso e cucina: aperto, senza porta, con la
    chiave a circa 2,4 m. Dall'ingresso si vede benissimo, e attraverso di esso lo scaldabagno

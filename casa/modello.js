@@ -92,26 +92,34 @@ window.MODELLO = {
       ],
       nota: "2,00 x 1,67 m. È il nodo della casa: da qui si va in cucina (ovest), in bagno (nord) e in camera (sud); la porta di casa è a est, sul pianerottolo." },
 
-    { id: "camera-ovest", nome: "Camera ovest", area_mq: 16.3, certezza: "misurato",
-      poligono: [[0.31,7.63],[2.93,7.63],[2.93,13.84],[0.31,13.84]],
+    { id: "disimpegno-camere", nome: "Disimpegno", area_mq: 6.5, certezza: "da-verificare",
+      poligono: [[0.31,7.63],[5.34,7.63],[5.34,8.93],[0.31,8.93]],
+      dettagli: [
+        "Ricavato con i lavori nuovi nella testata nord della vecchia camera: pavimento in listoni come le stanze che serve.",
+        "Ci si arriva dall'ingresso attraverso il vano largo nel muro di spina, rifasciato in cartongesso con i montanti metallici ancora a vista.",
+        "Da qui si aprono le due camere, una porta per parte."
+      ],
+      nota: "5,03 x 1,30 m. La profondita' di 1,30 m e' un'ipotesi, non una misura: nessuna fotografia la inquadra per intero e sulla planimetria del 2005 questo vano non esiste ancora. Da confermare." },
+
+    { id: "camera-ovest", nome: "Camera ovest", area_mq: 12.6, certezza: "da-verificare",
+      poligono: [[0.31,9.05],[2.93,9.05],[2.93,13.84],[0.31,13.84]],
       dettagli: [
         "Pavimento in listoni di legno bruno-rossastri, consumati.",
         "Finestra con sguincio profondo e arco in testa, bancale in legno, radiatore appeso dentro il rientro.",
-        "Parete ovest cieca per tutta la lunghezza: è il muro esterno di confine.",
-        "Sulla mazzetta della porta verso l'altra camera: intonaco fresco non tinteggiato e due scatole elettriche nuove con i cavi penzolanti. Punto luce a soffitto tappato.",
+        "Parete ovest cieca per tutta la lunghezza: e' il muro esterno di confine.",
+        "Sulla mazzetta della porta: intonaco fresco non tinteggiato e due scatole elettriche nuove con i cavi penzolanti. Punto luce a soffitto tappato.",
         "Cantiere aperto: teli sul letto, scala a libro, secchi e attrezzi."
       ],
-      nota: "2,62 x 6,21 m. È la metà che si raggiunge passando per l'altra: la porta sta nella tramezza nuova, verso l'estremità nord." },
+      nota: "2,62 x 4,79 m. La lunghezza dipende da quanto e' profondo il disimpegno, che e' ipotizzato: se il disimpegno e' piu' stretto, la camera e' piu' lunga." },
 
-    { id: "camera-est", nome: "Camera est", area_mq: 14.2, certezza: "misurato",
-      poligono: [[3.05,7.63],[5.34,7.63],[5.34,13.84],[3.05,13.84]],
+    { id: "camera-est", nome: "Camera est", area_mq: 11.0, certezza: "da-verificare",
+      poligono: [[3.05,9.05],[5.34,9.05],[5.34,13.84],[3.05,13.84]],
       dettagli: [
-        "Stesso pavimento in listoni dell'altra metà, e stessa finestra ad arco con il radiatore dentro il rientro.",
-        "Tutta la parete ovest è la tramezza nuova in cartongesso: giunti nastrati e stuccati, ancora non tinteggiati.",
-        "Parete est in muratura, con un mobile basso protetto da un telo.",
-        "Ci si entra dall'ingresso passando per un vano rifasciato in cartongesso, con i montanti metallici ancora a vista."
+        "Stesso pavimento in listoni dell'altra camera, e stessa finestra ad arco con il radiatore dentro il rientro.",
+        "Tutta la parete ovest e' la tramezza nuova in cartongesso: giunti nastrati e stuccati, ancora non tinteggiati.",
+        "Parete est in muratura, con un mobile basso protetto da un telo."
       ],
-      nota: "2,29 x 6,21 m. È la stanza di passaggio fra l'ingresso e la camera ovest." },
+      nota: "2,29 x 4,79 m. Vale la stessa cautela della camera ovest." },
 
     { id: "vano-scale", nome: "Vano scale", area_mq: 18.5, certezza: "misurato",
       comune: true,
@@ -128,6 +136,7 @@ window.MODELLO = {
     { id: "spina",    descrizione: "Muro di spina fra cucina/ingresso e camera", spessore_m: 0.57, certezza: "misurato" },
     { id: "tramezza-cucina-bagno", descrizione: "Tramezza cucina/bagno", spessore_m: 0.17, certezza: "misurato" },
     { id: "tramezza-bagno-ingresso", descrizione: "Tramezza bagno/ingresso", spessore_m: 0.15, certezza: "misurato" },
+    { id: "tramezza-disimpegno", descrizione: "Tramezza nuova in cartongesso fra disimpegno e camere", spessore_m: 0.12, certezza: "dedotto" },
     { id: "tramezza-camere", descrizione: "Tramezza nuova in cartongesso fra le due camere", spessore_m: 0.12, certezza: "dedotto",
       nota: "Spessore non misurato: 12 cm è il valore corrente per una parete su montanti da 75 mm intonacata due volte." }
   ],
@@ -151,19 +160,22 @@ window.MODELLO = {
       nota: "Non è una porta: è un arco a tutto sesto, aperto, alto circa 2,4 m alla chiave. Si vede in fotografia dall'ingresso, e dalla cucina è quello che sembrava una nicchia dietro il frigorifero." },
     { id: "porta-bagno", tipo: "porta", da_stanza: "ingresso", a_stanza: "bagno",
       muro: "tramezza-bagno-ingresso", da: [3.91,5.30], a: [4.76,5.30], larghezza_m: 0.85, certezza: "da-verificare" },
-    { id: "passaggio-camera", tipo: "passaggio", da_stanza: "ingresso", a_stanza: "camera-est",
+    { id: "passaggio-camera", tipo: "passaggio", da_stanza: "ingresso", a_stanza: "disimpegno-camere",
       muro: "spina", da: [3.79,7.34], a: [4.89,7.34], larghezza_m: 1.10, certezza: "misurato",
-      nota: "Vano largo nel muro di spina, rifasciato in cartongesso: nelle foto si vedono i montanti metallici sulle spalle." },
-    { id: "porta-fra-camere", tipo: "porta", da_stanza: "camera-est", a_stanza: "camera-ovest",
-      muro: "tramezza-camere", da: [2.99,7.95], a: [2.99,8.75], larghezza_m: 0.80, certezza: "dedotto",
-      nota: "Porta nella tramezza nuova. Che ci sia è certo — si vede la mazzetta con l'intonaco fresco dalla camera ovest e il vano dalla camera est — la posizione esatta lungo la tramezza no." }
+      nota: "Vano largo nel muro di spina, rifasciato in cartongesso: nelle foto si vedono i montanti metallici sulle spalle. Porta nel disimpegno nuovo, non direttamente in una camera." },
+    { id: "porta-camera-ovest", tipo: "porta", da_stanza: "disimpegno-camere", a_stanza: "camera-ovest",
+      muro: "tramezza-disimpegno", da: [1.20,8.99], a: [2.00,8.99], larghezza_m: 0.80, certezza: "da-verificare",
+      nota: "Che ci sia e' certo: dalla camera ovest si vede la mazzetta con l'intonaco fresco e le scatole nuove. Dove cada lungo la tramezza, no." },
+    { id: "porta-camera-est", tipo: "porta", da_stanza: "disimpegno-camere", a_stanza: "camera-est",
+      muro: "tramezza-disimpegno", da: [3.80,8.99], a: [4.60,8.99], larghezza_m: 0.80, certezza: "da-verificare",
+      nota: "E' la soglia da cui e' scattata la foto 8, con i montanti metallici sulle spalle." }
   ],
 
   /* Elementi segnati sul disegno che non sono muri. */
   annotazioni: [
     { id: "divisione-camera", tipo: "risolto", stanza: "camera-est",
       certezza: "misurato",
-      nota: "Il tratteggio stampato sulla planimetria è stato costruito: la tramezza c'è, in cartongesso, con una porta. Le fotografie del 15 settembre 2026 la mostrano da tutte e due le parti. La posizione (2,99 m dal muro ovest) resta quella del disegno, non è misurata sul posto." },
+      nota: "Il tratteggio stampato sulla planimetria prevedeva una sola divisione longitudinale. I lavori hanno fatto di piu': un disimpegno nella testata nord, e da li' due camere. La posizione della tramezza fra le camere (2,99 m dal muro ovest) resta quella del disegno, non e' misurata sul posto." },
     { id: "nicchia-arco-cucina", tipo: "risolto", stanza: "cucina",
       certezza: "misurato",
       nota: "Risolto: non era una nicchia. È l'arco che mette in comunicazione la cucina con l'ingresso, visto dalla cucina con il frigorifero davanti." },
@@ -182,7 +194,7 @@ window.MODELLO = {
       didascalia: "La vista opposta, dal fondo verso l'arco: scaldabagno e canna fumaria sulla parete sud." },
     { id: "cucina-c", n: 3, stanza: "cucina", posizione: [1.45, 6.10], direzione_gradi: 180, fov_gradi: 72,
       didascalia: "15 settembre: la cucina sgombra. Lavello e mobili bassi sulla parete est, frigorifero accanto all'arco, radiatore sotto la finestra." },
-    { id: "cucina-e", n: 10, stanza: "cucina", posizione: [1.90, 3.30], direzione_gradi: 0, fov_gradi: 72,
+    { id: "cucina-e", n: 10, stanza: "cucina", posizione: [2.40, 3.05], direzione_gradi: 0, fov_gradi: 72,
       didascalia: "Dal fondo verso l'arco, un paio di metri più avanti della 2: in primo piano il lavello sulla parete est, in fondo lo scaldabagno." },
     { id: "bagno", n: 4, stanza: "bagno", posizione: [4.34, 4.80], direzione_gradi: 180, fov_gradi: 70,
       didascalia: "Dalla porta verso la finestra: vasca, bidet e WC a sinistra, lavabo a destra, arco ribassato in testa." },
@@ -190,11 +202,11 @@ window.MODELLO = {
       didascalia: "15 settembre, dalla soglia: si vede la porta con la maniglia in ottone e tutta l'infilata fino alla lavatrice sotto la finestra." },
     { id: "ingresso", n: 6, stanza: "ingresso", posizione: [5.15, 5.58], direzione_gradi: 315, fov_gradi: 80,
       didascalia: "Il nodo della casa, finalmente fotografato: a sinistra il vano verso la camera est, a destra l'arco della cucina, in mezzo il pilastro con l'applique e la scatola elettrica." },
-    { id: "camera-est-a", n: 7, stanza: "camera-est", posizione: [4.20, 8.90], direzione_gradi: 0, fov_gradi: 70,
+    { id: "camera-est-a", n: 7, stanza: "camera-est", posizione: [4.20, 10.60], direzione_gradi: 0, fov_gradi: 70,
       didascalia: "Dentro la camera est, verso la finestra: a destra la tramezza nuova in cartongesso, a sinistra la muratura." },
-    { id: "camera-est-b", n: 8, stanza: "camera-est", posizione: [4.34, 7.60], direzione_gradi: 0, fov_gradi: 65,
-      didascalia: "Dal vano di passaggio, con i montanti metallici sulle spalle: la stessa stanza vista da due metri più indietro." },
-    { id: "camera-ovest", n: 9, stanza: "camera-ovest", posizione: [2.60, 8.10], direzione_gradi: 335, fov_gradi: 75,
+    { id: "camera-est-b", n: 8, stanza: "disimpegno-camere", posizione: [4.20, 8.60], direzione_gradi: 0, fov_gradi: 65,
+      didascalia: "Dalla soglia della camera est, con i montanti metallici sulle spalle: in primo piano il pavimento del disimpegno." },
+    { id: "camera-ovest", n: 9, stanza: "camera-ovest", posizione: [1.60, 9.25], direzione_gradi: 335, fov_gradi: 75,
       didascalia: "Dalla porta della tramezza verso sud-sud-ovest: la finestra ovest e il muro esterno cieco. Il letto è sotto i teli.",
       nota: "Due scatti quasi identici dalla stessa soglia, a pochi minuti di distanza." }
   ],
