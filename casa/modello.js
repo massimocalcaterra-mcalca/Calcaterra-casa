@@ -44,6 +44,16 @@ window.MODELLO = {
       nota: "Nasce da un conteggio di elementi di radiatore (13 x 8 cm) e da piastrelle di formato assunto. Il bagno le da' una mano: una vasca da 70 cm piu' un passaggio stretto stanno in 1,75 m meglio che in 2,00." }
   ],
 
+  /* Un riscontro indipendente, fatto sulle fotografie del pavimento. */
+  riscontri: [
+    { cosa: "Larghezza della cucina contata sulle piastrelle",
+      come: "Sul pavimento piano, a riga d'immagine fissa, le distanze reali stanno in proporzione ai pixel. Il passo delle piastrelle e' stato trovato per autocorrelazione (122 px a meta' stanza, 152 px in primo piano: la crescita e' quella giusta della prospettiva), e il corridoio libero fra i due fronti di mobili misura 3,9 passi.",
+      conti: "I mobili base sono profondi 60 cm, quindi larghezza = 3,9 x piastrella + 1,1/1,2 m. Con piastrelle da 40 cm fanno 2,66-2,76 m, con piastrelle da 45 cm fanno 2,86-2,96 m.",
+      esito: "La cucina e' larga fra 2,7 e 2,9 m.",
+      favorisce: "La lettura a 40,7 px/m, che da' 2,86 m. L'altra vorrebbe 3,05 m, cioe' piastrelle da 50 cm, che non e' un formato corrente.",
+      cautela: "Regge sul fatto che i mobili siano profondi esattamente 60 cm e sullo zoccolo arretrato, che vale +/- 10 cm. Non chiude la questione: la sposta." }
+  ],
+
   /* La bussola disegnata a mano sulla planimetria punta in basso a sinistra.
    * Quindi l'alto del disegno (il cortile) guarda circa a SSE e la strada a NNO.
    * Simbolo tracciato a mano: tolleranza ampia. */
@@ -57,8 +67,9 @@ window.MODELLO = {
       dettagli: [
         "Parete ovest attrezzata: pensili con cappa, rivestimento a piastrelle su una fascia da ~0,50 a ~1,55 m, attacco acqua e prese. I mobili base sono stati in parte rimossi e a terra resta la traccia dello zoccolo.",
         "Parete sud: scaldabagno elettrico staffato in alto nell'angolo, tubi in rame a vista e, più in alto, un disco metallico che è quasi certamente il tappo di una canna fumaria.",
-        "Parete est: dietro il frigorifero c'è una nicchia ad arco che sulla planimetria non compare. Larghezza stimata 0,7-1,0 m: potrebbe essere una vecchia apertura tamponata.",
-        "La finestra sta dentro la parte stretta della stanza, e lì c'è un secondo punto luce a soffitto: quel rientro sembra un vano a sé, non un semplice sguincio.",
+        "Parete est, da sud a nord: l'arco verso l'ingresso, il frigorifero, poi il lavello a due vasche con i mobili bassi. È il lato acqua.",
+        "La finestra sta dentro la parte stretta della stanza, e lì c'è un secondo punto luce a soffitto: quel rientro è un vano a sé, non un semplice sguincio.",
+        "È una cucina in linea su due lati: cottura a ovest, acqua a est, passaggio libero in mezzo di circa 1,6 m.",
         "Pavimento in gres beige di grande formato. Lavori in corso, ma cucina ancora in uso."
       ],
       nota: "Stanza lunga e stretta: 2,86 m di larghezza per 6,31 m. Nell'angolo nord-ovest un risalto del muro di 56 cm per 1,72 m (probabile canna fumaria o spalla di camino): lì la stanza si stringe a 2,30 m." },
@@ -165,11 +176,14 @@ window.MODELLO = {
    * destra (vano scale), 180 = verso il cortile, 270 = verso ovest. */
   foto: [
     { id: "cucina-a", n: 1, stanza: "cucina", posizione: [2.55, 6.35], direzione_gradi: 180, fov_gradi: 70,
-      didascalia: "Dall'arco verso la finestra sul cortile: parete attrezzata con i pensili a sinistra, finestra in fondo nel rientro." },
+      didascalia: "Dall'arco verso la finestra sul cortile: parete attrezzata con i pensili a sinistra, finestra in fondo nel rientro.",
+      nota: "Di questa presa esiste un secondo scatto, più basso, che inquadra tutto il pavimento: è quello su cui è stato fatto il conteggio delle piastrelle." },
     { id: "cucina-b", n: 2, stanza: "cucina", posizione: [1.90, 1.90], direzione_gradi: 0, fov_gradi: 70,
       didascalia: "La vista opposta, dal fondo verso l'arco: scaldabagno e canna fumaria sulla parete sud." },
     { id: "cucina-c", n: 3, stanza: "cucina", posizione: [1.45, 6.10], direzione_gradi: 180, fov_gradi: 72,
       didascalia: "15 settembre: la cucina sgombra. Lavello e mobili bassi sulla parete est, frigorifero accanto all'arco, radiatore sotto la finestra." },
+    { id: "cucina-e", n: 10, stanza: "cucina", posizione: [1.90, 3.30], direzione_gradi: 0, fov_gradi: 72,
+      didascalia: "Dal fondo verso l'arco, un paio di metri più avanti della 2: in primo piano il lavello sulla parete est, in fondo lo scaldabagno." },
     { id: "bagno", n: 4, stanza: "bagno", posizione: [4.34, 4.80], direzione_gradi: 180, fov_gradi: 70,
       didascalia: "Dalla porta verso la finestra: vasca, bidet e WC a sinistra, lavabo a destra, arco ribassato in testa." },
     { id: "bagno-b", n: 5, stanza: "bagno", posizione: [4.34, 5.15], direzione_gradi: 180, fov_gradi: 75,
@@ -181,7 +195,8 @@ window.MODELLO = {
     { id: "camera-est-b", n: 8, stanza: "camera-est", posizione: [4.34, 7.60], direzione_gradi: 0, fov_gradi: 65,
       didascalia: "Dal vano di passaggio, con i montanti metallici sulle spalle: la stessa stanza vista da due metri più indietro." },
     { id: "camera-ovest", n: 9, stanza: "camera-ovest", posizione: [2.60, 8.10], direzione_gradi: 335, fov_gradi: 75,
-      didascalia: "Dalla porta della tramezza verso sud-sud-ovest: la finestra ovest e il muro esterno cieco. Il letto è sotto i teli." }
+      didascalia: "Dalla porta della tramezza verso sud-sud-ovest: la finestra ovest e il muro esterno cieco. Il letto è sotto i teli.",
+      nota: "Due scatti quasi identici dalla stessa soglia, a pochi minuti di distanza." }
   ],
 
   /* Cosa manca per chiudere la ricostruzione. */

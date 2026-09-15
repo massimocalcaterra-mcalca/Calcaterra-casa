@@ -48,6 +48,16 @@ La planimetria è una fotografia di una stampa, quindi storta e sbiadita. Il pro
    prima gioca il fatto di nascere da una misura presa sul disegno stesso. Con queste immagini le due
    letture non si riescono a separare.
 
+   **Un riscontro è arrivato dal pavimento della cucina.** Su un pavimento piano, lungo una riga
+   dell'immagine, le distanze reali stanno in proporzione ai pixel. Il passo delle piastrelle,
+   trovato per autocorrelazione, cresce da 122 a 152 pixel avvicinandosi — la crescita giusta
+   della prospettiva, quindi il segnale è vero — e il corridoio libero fra i due fronti di mobili
+   ne misura **3,9**. Con mobili base profondi 60 cm la cucina è larga fra **2,7 e 2,9 m**, a
+   seconda che le piastrelle siano da 40 o da 45. La lettura adottata qui ne dà 2,86; l'altra
+   vorrebbe 3,05, cioè piastrelle da 50 cm, che non è un formato corrente. Non chiude la
+   questione — regge sull'ipotesi che i mobili siano profondi esattamente 60 cm, e lo zoccolo
+   arretrato vale ±10 cm — ma la sposta.
+
    Prova del nove sugli spessori: con 40,7 px/m le tramezze vengono 15–17 cm, il muro di spina 57 cm,
    i muri esterni 66–74 cm e le rampe 1,37 m. Tutti valori normali per una casa in muratura
    dell'Ottocento — ma lo sono anche a 44,9 px/m, quindi questo controllo conferma l'ordine
@@ -76,8 +86,9 @@ Cinque scatti del 15 settembre 2026 hanno risolto tre dei quattro dubbi aperti.
 
 ## Quello che resta aperto
 
-1. **La scala assoluta.** Vedi sopra: 40,7 o 44,9 px/m, cioè 60 m² o 54. Le fotografie
-   nuove non la risolvono, perché nessuna contiene un oggetto di dimensione certa.
+1. **La scala assoluta.** Vedi sopra: 40,7 o 44,9 px/m, cioè 60 m² o 54. Il conteggio delle
+   piastrelle in cucina inclina verso la prima, ma nessuna fotografia contiene ancora un oggetto
+   di dimensione certa.
 2. **La posizione della porta nella tramezza nuova**, collocata a stima verso l'estremità nord.
 3. **La porta del bagno**, ancora dedotta dal simbolo di battente.
 4. **Dove cade esattamente la tramezza nuova**: sul disegno sta a 2,99 m dal muro ovest,
