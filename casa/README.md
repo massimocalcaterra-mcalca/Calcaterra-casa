@@ -11,7 +11,10 @@ dalla planimetria catastale fotografata e dalle fotografie degli interni.
 - [`modello.js`](modello.js) — il modello metrico: stanze, muri, aperture, foto. È la sorgente:
   tutto il resto si ridisegna da qui.
 - [`mappa.html`](mappa.html) — il visualizzatore. Si apre da solo, senza server e senza
-  compilazione: pianta in scala, assonometria sezionata, tabelle delle misure.
+  compilazione: pianta in scala, assonometria sezionata, proposta di arredo, tabelle delle misure.
+- [`sketchup.js`](sketchup.js) — genera le tabelle di coordinate per il modello SketchUp
+  (`node casa/sketchup.js`). Il .skp non sta nel repository: si rigenera da qui, e così non può
+  divergere dalla pianta.
 
 ## Che cosa è misurato e che cosa no
 
@@ -96,6 +99,15 @@ Cinque scatti del 15 settembre 2026 hanno risolto tre dei quattro dubbi aperti.
    cioè sul setto fra le due finestre. È verosimile, ma non è stato misurato.
 5. **Il risalto del muro in cucina** (56 cm per 1,72 m nell'angolo nord-ovest): probabile
    canna fumaria, mai inquadrato da vicino.
+
+## La proposta di arredo
+
+La scheda **Arredo** della pagina propone una sistemazione con mobili IKEA: cucina in linea su due
+lati nella nicchia, pranzo in mezzo, zona giorno verso l'ingresso; due letti sulle pareti lunghe
+nella camera ovest; studio con un piano unico da muro a muro sotto la finestra nella camera est;
+contenitori sull'unica parete libera del disimpegno. Ogni passaggio è misurato e scritto accanto al
+pezzo. I nomi dei prodotti vanno verificati a catalogo: le serie cambiano, e il modello porta già
+l'8% di incertezza sulla scala.
 
 ## Le fotografie che servono per chiudere la ricostruzione
 

@@ -214,6 +214,103 @@ window.MODELLO = {
       nota: "Due scatti quasi identici dalla stessa soglia, a pochi minuti di distanza." }
   ],
 
+  /* ------------------------------------------------------------------
+   * PROPOSTA DI ARREDO — mobili IKEA
+   * Rettangoli in pianta, stesse coordinate del resto del modello:
+   * x,y = spigolo nord-ovest del pezzo, w,h = ingombro in pianta, alt = altezza.
+   * I nomi dei prodotti e le loro misure vanno verificati a catalogo prima
+   * di comprare: IKEA cambia le serie, e questo modello porta gia' l'8% di
+   * incertezza sulla scala. Qui servono a dare misure concrete, non a fare
+   * una lista della spesa.
+   * ------------------------------------------------------------------ */
+  arredo: [
+    /* --- CUCINA: cottura nella nicchia, pranzo in mezzo, giorno verso l'ingresso --- */
+    { id: "cuc-ovest", stanza: "cucina", tipo: "cucina", nome: "Cucina METOD, lato ovest",
+      x: 0.87, y: 0.74, w: 0.60, h: 1.72, alt: 0.90,
+      misura: "1,72 x 0,60", dettaglio: "colonna frigo 60 + base 60 + base 40, piu' 12 cm di riempimento" },
+    { id: "cuc-est", stanza: "cucina", tipo: "cucina", nome: "Cucina METOD, lato est",
+      x: 2.57, y: 0.74, w: 0.60, h: 1.72, alt: 0.90,
+      misura: "1,72 x 0,60", dettaglio: "base lavello 80 + lavastoviglie da incasso 60 + base 30" },
+    { id: "cuc-finestra", stanza: "cucina", tipo: "ingombro", nome: "Piano sotto la finestra, se il radiatore si sposta",
+      x: 1.47, y: 0.74, w: 1.10, h: 0.60,
+      misura: "1,10 x 0,60", dettaglio: "base 60 con piano cottura + base 40: la nicchia diventa una U" },
+    { id: "tavolo", stanza: "cucina", tipo: "tavolo", nome: "Tavolo EKEDALEN allungabile",
+      x: 1.14, y: 3.05, w: 1.20, h: 0.80, alt: 0.75, misura: "1,20 x 0,80, chiuso" },
+    { id: "tavolo-aperto", stanza: "cucina", tipo: "ingombro", nome: "Tavolo aperto",
+      x: 0.84, y: 3.05, w: 1.80, h: 0.80, misura: "1,80 x 0,80, sei posti" },
+    { id: "sedia-1", stanza: "cucina", tipo: "seduta", nome: "Sedia EKEDALEN", x: 1.27, y: 2.55, w: 0.45, h: 0.45 , alt: 0.45 },
+    { id: "sedia-2", stanza: "cucina", tipo: "seduta", x: 1.82, y: 2.55, w: 0.45, h: 0.45 , alt: 0.45 },
+    { id: "sedia-3", stanza: "cucina", tipo: "seduta", x: 1.27, y: 3.90, w: 0.45, h: 0.45 , alt: 0.45 },
+    { id: "sedia-4", stanza: "cucina", tipo: "seduta", x: 1.82, y: 3.90, w: 0.45, h: 0.45 , alt: 0.45 },
+    { id: "divano", stanza: "cucina", tipo: "letto", nome: "Divano letto NYHAMN",
+      x: 0.31, y: 4.75, w: 0.99, h: 2.00, alt: 0.85, misura: "2,00 x 0,99", dettaglio: "aperto diventa un letto da 140 x 200" },
+    { id: "divano-aperto", stanza: "cucina", tipo: "ingombro", nome: "Divano aperto",
+      x: 0.31, y: 4.75, w: 1.40, h: 2.00, misura: "arriva a 1,40 m di profondita'" },
+    { id: "mobile-tv", stanza: "cucina", tipo: "tv", nome: "Mobile TV BESTA",
+      x: 2.75, y: 4.45, w: 0.42, h: 1.20, alt: 0.64, misura: "1,20 x 0,42", dettaglio: "schermo a parete sopra" },
+
+    /* --- DISIMPEGNO: l'unica parete senza aperture e' quella a est --- */
+    { id: "arm-disimpegno", stanza: "disimpegno-camere", tipo: "armadio", nome: "Armadio PAX, profondita' ridotta",
+      x: 4.99, y: 7.78, w: 0.35, h: 1.00, alt: 2.36, misura: "1,00 x 0,35, alto 236" },
+
+    /* --- CAMERA OVEST: due letti sulle pareti lunghe --- */
+    { id: "letto-a", stanza: "camera-ovest", tipo: "letto", nome: "Letto singolo 90 x 200",
+      x: 0.31, y: 7.63, w: 0.98, h: 2.09, alt: 0.45, misura: "ingombro 0,98 x 2,09" },
+    { id: "comodino-a", stanza: "camera-ovest", tipo: "armadio", nome: "Comodino HEMNES",
+      x: 1.29, y: 7.63, w: 0.46, h: 0.35, alt: 0.55, misura: "0,46 x 0,35" },
+    { id: "letto-b", stanza: "camera-ovest", tipo: "letto", nome: "Letto singolo 90 x 200",
+      x: 2.22, y: 8.85, w: 0.98, h: 2.09, alt: 0.45, misura: "ingombro 0,98 x 2,09" },
+    { id: "comodino-b", stanza: "camera-ovest", tipo: "armadio", nome: "Comodino HEMNES",
+      x: 1.76, y: 8.85, w: 0.46, h: 0.35, alt: 0.55, misura: "0,46 x 0,35" },
+    { id: "arm-ovest-1", stanza: "camera-ovest", tipo: "armadio", nome: "Armadio PAX 200",
+      x: 2.62, y: 11.84, w: 0.58, h: 2.00, alt: 2.36, misura: "2,00 x 0,58" },
+    { id: "arm-ovest-2", stanza: "camera-ovest", tipo: "armadio", nome: "Armadio PAX 150",
+      x: 0.31, y: 10.40, w: 0.58, h: 1.50, alt: 2.36, misura: "1,50 x 0,58" },
+
+    /* --- CAMERA EST: studio, scrivania sotto la finestra --- */
+    { id: "scrivania", stanza: "camera-est", tipo: "scrivania", nome: "Piano LAGKAPTEN 200 su cassettiere ALEX",
+      x: 3.33, y: 13.24, w: 2.00, h: 0.60, alt: 0.74,
+      misura: "2,00 x 0,60", dettaglio: "da muro a muro: la stanza e' larga 2,02. Due cassettiere ALEX 36 x 58 lo reggono alle estremita'" },
+    { id: "sedia-s1", stanza: "camera-est", tipo: "seduta", nome: "Sedia da lavoro", x: 3.70, y: 12.55, w: 0.55, h: 0.55 , alt: 0.45 },
+    { id: "sedia-s2", stanza: "camera-est", tipo: "seduta", x: 4.55, y: 12.55, w: 0.55, h: 0.55 , alt: 0.45 },
+    { id: "libreria", stanza: "camera-est", tipo: "armadio", nome: "Due librerie BILLY 80",
+      x: 5.06, y: 10.30, w: 0.28, h: 1.60, alt: 2.02, misura: "1,60 x 0,28" },
+    { id: "contenitore", stanza: "camera-est", tipo: "armadio", nome: "Contenitore KALLAX 4x4",
+      x: 3.32, y: 10.00, w: 0.39, h: 1.47, alt: 1.47, misura: "1,47 x 0,39" }
+  ],
+
+  /* Il ragionamento dietro ogni zona, con i passaggi misurati uno per uno. */
+  arredo_note: [
+    { stanza: "cucina", titolo: "Cucina: tre zone in fila",
+      punti: [
+        "**Cottura nella nicchia.** Due blocchi METOD da 1,72 m uno di fronte all'altro, profondi 60, con **1,10 m di corsia** in mezzo: fra due fronti di cucina il minimo comodo e' un metro. Fanno 3,44 m di fronte, che e' quanto serve a una cucina completa — frigorifero 60, forno e piano 60, lavello 80, lavastoviglie 60, piu' i piani di lavoro.",
+        "**Sotto la finestra** oggi c'e' il radiatore. Spostandolo si guadagnano 1,10 m di piano e il lavello prende luce diretta: e' l'intervento che rende di piu' e costa meno, perche' la nicchia diventa una cucina a U vera e i due fronti non devono piu' contenere tutto.",
+        "**Tavolo EKEDALEN in mezzo**, 1,20 x 0,80 chiuso: restano **0,83 m per passare** da ciascun lato, contro i 0,75 che servono a scostare una sedia. Aperto a 1,80 per sei, il passaggio scende a 0,53 m da ciascun lato: si passa di fianco, ed e' accettabile per una cena, non per tutti i giorni.",
+        "**Zona giorno verso l'ingresso.** Divano letto NYHAMN 2,00 x 0,99 contro il muro ovest; aperto arriva a 1,40 m e lascia **1,45 m di passaggio** verso il mobile TV. Il BESTA da 1,20 sta sul muro est, appena a nord dell'arco: la distanza di visione e' **1,45 m**, giusta per uno schermo da 40 pollici, troppo poca per un 55.",
+        "Un avvertimento onesto: l'arco e' l'ingresso della stanza, quindi si entra passando fra il divano e la TV. In una stanza passante non c'e' modo di evitarlo. L'alternativa e' la TV sulla parete sud e il divano girato, ma si perde il muro lungo — che e' l'unica parete piena della stanza."
+      ] },
+    { stanza: "camera-ovest", titolo: "Camera ovest: due letti",
+      punti: [
+        "**I due letti stanno sulle pareti lunghe, non affiancati.** Affiancati non ci starebbero: due telai da 90 fanno 1,96 m, e la porta si prende gli 80 cm a est aprendosi, quindi resterebbero 2,09 m per due letti e un comodino. Sulle pareti lunghe invece restano **0,93 m di corsia** in mezzo.",
+        "Il letto a est parte da 8,85 m, cioe' dopo l'arco di apertura della porta: **dieci centimetri di margine**, verificati.",
+        "**Due armadi PAX profondi 58**, uno da 2,00 m a est contro il muro della strada e uno da 1,50 m a ovest, sfalsati: fra i due restano **1,73 m**, abbastanza per aprire un'anta stando davanti all'altro.",
+        "**Davanti alla finestra restano quasi due metri liberi.** E' l'unico punto di luce della stanza e va lasciato vuoto — l'armadio a ovest si ferma prima apposta, perche' la finestra comincia a 75 cm dallo spigolo."
+      ] },
+    { stanza: "camera-est", titolo: "Camera est: studio",
+      punti: [
+        "**Un piano solo da muro a muro sotto la finestra**, non due scrivanie: la stanza e' larga 2,02 m, e due piani contrapposti lascerebbero 0,82 m fra gli schienali, cioe' non ci si passa dietro. Un LAGKAPTEN da 200 entra con due centimetri di gioco e fa due postazioni affiancate.",
+        "Lo reggono **due cassettiere ALEX alle estremita'**: niente gambe, e i cassetti sono quelli che servono a uno studio.",
+        "Sotto la finestra c'e' il radiatore: il piano va tenuto staccato di 5-10 cm, altrimenti il calore resta intrappolato sotto.",
+        "**Due BILLY sul muro est e un KALLAX sul muro ovest**, sfalsati: fra i due restano **1,35 m** di passaggio."
+      ] },
+    { stanza: "disimpegno-camere", titolo: "Disimpegno: contenitori",
+      punti: [
+        "Tre pareti su quattro hanno un'apertura: il vano verso l'ingresso a nord, la porta della camera est a sud, quella della camera ovest a ovest. **Resta libera solo la parete est**, 1,30 m.",
+        "Ci sta un PAX da 1,00 x 0,35 a tutta altezza, che lascia **1,67 m** fra se' e la tramezza.",
+        "Profondo 35 e non 58: a 58 il passaggio scenderebbe a 1,44 m e l'anta della porta della camera ovest comincerebbe a sfiorarlo."
+      ] }
+  ],
+
   /* Cosa manca per chiudere la ricostruzione. */
   da_rilevare: [
     { priorita: 1, cosa: "Una foto con il metro srotolato lungo una parete, una per stanza",

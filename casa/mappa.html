@@ -84,6 +84,7 @@
   <div class="tabs" role="tablist">
     <button role="tab" aria-selected="true" data-vista="pianta">Pianta</button>
     <button role="tab" aria-selected="false" data-vista="assonometria">Assonometria</button>
+    <button role="tab" aria-selected="false" data-vista="arredo">Arredo</button>
     <button role="tab" aria-selected="false" data-vista="dati">Dati e misure</button>
   </div>
 
@@ -95,6 +96,7 @@
           <label><input type="checkbox" id="q-quote" checked> Quote</label>
           <label><input type="checkbox" id="q-nomi" checked> Nomi e superfici</label>
           <label><input type="checkbox" id="q-foto" checked> Punti di ripresa</label>
+          <label><input type="checkbox" id="q-arredo"> Arredo</label>
         </div>
         <div class="legenda">
           <span><i class="sw" style="background:#2B3A33"></i> muratura</span>
@@ -112,6 +114,11 @@
   <div id="vista-assonometria" hidden>
     <div class="tela"><svg id="svg-asso" role="img" aria-label="Vista assonometrica dell'appartamento"></svg></div>
     <p class="controlli">Vista a scatola aperta: i muri sono tagliati a 1,35 m per vedere dentro le stanze, ma l'altezza interna vera è 3,20 m. Stessa origine e stessa scala della pianta; le finestre sono disegnate dal davanzale in su.</p>
+  </div>
+
+  <div id="vista-arredo" hidden>
+    <div class="tela"><div id="tela-arredo"></div></div>
+    <div id="arredo-testo"></div>
   </div>
 
   <div id="vista-dati" hidden>
@@ -383,12 +390,46 @@
     });
   }
 
+  /* ---------- ARREDO ---------- */
+  var TONI = {
+    cucina:    {f:"#DFE6E1", s:"#7E9188"},
+    tavolo:    {f:"#EFE8D9", s:"#A9977A"},
+    seduta:    {f:"#F5F1E6", s:"#B5AC96"},
+    letto:     {f:"#E6F1EA", s:"#86A897"},
+    armadio:   {f:"#E9E7DE", s:"#A3A093"},
+    scrivania: {f:"#EFE8D9", s:"#A9977A"},
+    tv:        {f:"#DCE4E8", s:"#8397A1"}
+  };
+  var gArredo = el("g", {id:"g-arredo", style:"display:none"});
+  svg.insertBefore(gArredo, gNomi);        /* sotto i nomi delle stanze */
+  (M.arredo || []).forEach(function(a){
+    var t = TONI[a.tipo];
+    var r;
+    if (!t){                                  /* ingombro: solo tratteggio */
+      r = el("rect", {x:X(a.x), y:Y(a.y), width:a.w*S, height:a.h*S, rx:2,
+                      fill:"none", stroke:"#8E8C82", "stroke-width":1,
+                      "stroke-dasharray":"5 4", opacity:.8}, gArredo);
+    } else {
+      r = el("rect", {x:X(a.x), y:Y(a.y), width:a.w*S, height:a.h*S,
+                      rx: a.tipo === "seduta" ? 5 : 2,
+                      fill:t.f, stroke:t.s, "stroke-width":1}, gArredo);
+    }
+    var tt = el("title", {}, r);
+    tt.appendChild(document.createTextNode(
+      (a.nome || "") + (a.misura ? " — " + a.misura + " m" : "")));
+  });
+
   /* toggle */
   function lega(idCheck, nodo){
     var c = document.getElementById(idCheck);
     c.addEventListener("change", function(){ nodo.style.display = c.checked ? "" : "none"; });
   }
+  gFoto.setAttribute("id", "g-foto");
   lega("q-quote", gQ); lega("q-nomi", gNomi); lega("q-foto", gFoto);
+  (function(){
+    var c = document.getElementById("q-arredo");
+    c.addEventListener("change", function(){ gArredo.style.display = c.checked ? "" : "none"; });
+  })();
 
   /* ---------- PANNELLO ---------- */
   var pannello = document.getElementById("pannello");
@@ -612,6 +653,65 @@
   tabella("Cosa manca", ["#", "Serve", "Perché"],
     M.da_rilevare.map(function(d){ return [d.priorita, d.cosa, d.perche]; }));
 
+  /* ---------- scheda ARREDO ---------- */
+  (function(){
+    var box = document.getElementById("arredo-testo");
+    var intro = document.createElement("p");
+    intro.style.cssText = "font-size:.9rem;margin:16px 2px 0";
+    intro.textContent = "Una sistemazione possibile, disegnata sopra il modello. Ogni pezzo è un " +
+      "rettangolo in scala e ogni passaggio è stato misurato: i numeri in grassetto qui sotto sono " +
+      "distanze vere, non impressioni. I nomi IKEA servono a dare misure concrete — vanno " +
+      "verificati a catalogo prima di comprare, perché le serie cambiano e il modello porta già " +
+      "l'8% di incertezza sulla scala.";
+    box.appendChild(intro);
+
+    (M.arredo_note || []).forEach(function(n){
+      var h = document.createElement("h2");
+      h.style.cssText = "font-family:Poppins,sans-serif;color:var(--ink);font-size:1.05rem;margin:22px 0 8px";
+      h.textContent = n.titolo;
+      box.appendChild(h);
+      var ul = document.createElement("ul");
+      ul.style.cssText = "margin:0;padding-left:18px;font-size:.9rem";
+      n.punti.forEach(function(p){
+        var li = document.createElement("li");
+        li.style.margin = "7px 0";
+        /* il grassetto si scrive con **...**, e si costruisce a nodi, mai con innerHTML */
+        p.split("**").forEach(function(pezzo, i){
+          if (!pezzo) return;
+          if (i % 2){
+            var b = document.createElement("strong");
+            b.textContent = pezzo; li.appendChild(b);
+          } else li.appendChild(document.createTextNode(pezzo));
+        });
+        ul.appendChild(li);
+      });
+      box.appendChild(ul);
+    });
+
+    /* elenco dei pezzi */
+    var h2 = document.createElement("h2");
+    h2.style.cssText = "font-family:Poppins,sans-serif;color:var(--ink);font-size:1.05rem;margin:26px 0 8px";
+    h2.textContent = "I pezzi, stanza per stanza";
+    box.appendChild(h2);
+    var t = document.createElement("table"), tr = document.createElement("tr");
+    ["Stanza", "Pezzo", "Ingombro (m)", "Note"].forEach(function(i){
+      var th = document.createElement("th"); th.textContent = i; tr.appendChild(th); });
+    t.appendChild(tr);
+    (M.arredo || []).filter(function(a){ return a.nome; }).forEach(function(a){
+      var r2 = document.createElement("tr");
+      [ (stanzaDi[a.stanza] ? stanzaDi[a.stanza].nome : a.stanza),
+        a.nome,
+        a.misura || (num(a.w) + " × " + num(a.h)),
+        a.dettaglio || "" ].forEach(function(c, i){
+          var td = document.createElement("td");
+          if (i === 2) td.className = "num";
+          td.textContent = c; r2.appendChild(td);
+        });
+      t.appendChild(r2);
+    });
+    box.appendChild(t);
+  })();
+
   var nota = document.getElementById("nota-metodo");
   var h3 = document.createElement("h3"); h3.textContent = "Come sono state ricavate le misure";
   nota.appendChild(h3);
@@ -650,7 +750,26 @@
   /* ---------- schede ---------- */
   var viste = {pianta:document.getElementById("vista-pianta"),
                assonometria:document.getElementById("vista-assonometria"),
+               arredo:document.getElementById("vista-arredo"),
                dati:document.getElementById("vista-dati")};
+  /* nella scheda Arredo la pianta è una copia: mobili accesi, coni di ripresa spenti */
+  (function(){
+    var copia = svg.cloneNode(true);
+    copia.setAttribute("aria-label", "Pianta con la proposta di arredo");
+    /* il pattern della muratura va rinominato: due id uguali nella stessa pagina
+       si risolvono sul primo, che sta nella scheda nascosta e non dipinge */
+    var pat = copia.querySelector("pattern");
+    if (pat){
+      pat.setAttribute("id", "tratto-arredo");
+      var mass = copia.querySelector('path[fill="url(#tratto)"]');
+      if (mass) mass.setAttribute("fill", "url(#tratto-arredo)");
+    }
+    var a = copia.querySelector("#g-arredo"), fo = copia.querySelector("#g-foto");
+    if (a) a.style.display = "";
+    if (fo) fo.style.display = "none";
+    copia.removeAttribute("id");
+    document.getElementById("tela-arredo").appendChild(copia);
+  })();
   var fattaAsso = false;
   Array.prototype.forEach.call(document.querySelectorAll(".tabs button"), function(b){
     b.addEventListener("click", function(){
