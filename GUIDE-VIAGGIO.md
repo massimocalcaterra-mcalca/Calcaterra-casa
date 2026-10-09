@@ -324,6 +324,13 @@ build.py → HTML + CSS paged media → WeasyPrint → PDF stampa + PDF leggero
 - Sillabazione (B3): al massimo due righe spezzate di fila; solo parole da 8 lettere
   in su; mai in titoli, didascalie, tabelle, testatine, nomi di luogo e di locale.
 - Il peso del PDF leggero resta sotto i 25 MB.
+- **Nessun font di ripiego**: l'elenco dei font incorporati (`pdffonts`) contiene solo quelli
+  del progetto. Un font estraneo vuol dire che manca un glifo. Casi già visti: il trattino di
+  sillabazione U+2010 (si imposta `hyphenate-character: "-"`) e il pallino «●» nelle legende.
+- **Testi sulle mappe SVG**: WeasyPrint ignora `paint-order`, quindi l'alone chiaro si disegna
+  con una copia del testo solo contorno, messa sotto il testo pieno.
+- **Foto da Wikimedia**: `upload.wikimedia.org` accetta solo miniature di larghezza standard
+  (es. 960px, 1920px); per la stampa serve l'originale, da scaricare con calma (limite 429).
 - Metadati del PDF: titolo **in testo semplice**, autore, lingua `it`.
 
 ### 8.3 Errori visti nel modello, da non ripetere
