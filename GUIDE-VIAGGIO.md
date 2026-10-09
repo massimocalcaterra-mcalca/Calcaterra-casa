@@ -1,4 +1,4 @@
-# Come si realizza una guida di viaggio (PDF, slide, testo narrato)
+# Come si realizza una guida di viaggio (PDF, presentazione HTML, testo narrato)
 
 Manuale operativo per le guide «narrate per i compagni di viaggio» di Massimo:
 viaggi on the road di 2–3 settimane, 3–4 coppie, ognuna con la sua auto.
@@ -22,9 +22,9 @@ applicarle e quali errori evitare. Se i due testi divergono, valgono le linee gu
 |---|---|---|
 | PDF stampa | 170×240 mm, 3 mm di abbondanza, segni di taglio | una sola build finale (A9) |
 | PDF leggero | stesso PDF, meno di 25 MB | foto ricompresse (≈ 200 dpi effettivi) |
-| Presentazione | PowerPoint 16:9, 1920×1080 | numero e titolo sempre nella stessa posizione; foto d'apertura del giorno a destra |
+| Presentazione | **sempre HTML** (mai PowerPoint), 16:9, base 1920×1080 | § 8.4; numero e titolo sempre nella stessa posizione; foto d'apertura del giorno a destra |
 | Testo narrato | Markdown o DOCX | lo stesso testo approvato, senza riquadri |
-| Lettering | SVG + PNG 300 dpi trasparenti; sequenze PNG o MP4 per le slide | B4 |
+| Lettering | SVG + PNG 300 dpi trasparenti | B4; nella presentazione HTML si usa l'SVG |
 | Video e mappe animate | MP4 H.264, 1920×1080, 30 fps, senza audio | B5 |
 
 ---
@@ -336,6 +336,38 @@ build.py → HTML + CSS paged media → WeasyPrint → PDF stampa + PDF leggero
 
 ---
 
+### 8.4 Presentazione in HTML
+Decisione di Massimo (9/10/2026): **le presentazioni si fanno sempre in HTML**.
+Su questo punto prevale sulle linee guida, che in B3 e B5 parlano di PowerPoint,
+transizione Morph e sequenze PNG/MP4.
+- **Un solo file HTML autonomo** (`presentazione.html`): CSS e JavaScript nel file,
+  foto in una cartella accanto, o incorporate se il peso lo consente. Si apre
+  offline in qualsiasi browser, senza installare nulla.
+- Generato dalla **stessa build e dagli stessi dati** del PDF: testo approvato,
+  `tabella_km.csv`, `titoli.csv`, `foto.csv`. Nessuna slide scritta a mano.
+- **Formato**: palco 16:9 disegnato a 1920×1080 e scalato per riempire lo schermo
+  (`transform: scale()` sul contenitore). Leggibile anche su telefono, con il palco
+  ridotto in proporzione.
+- **Navigazione**: frecce e spazio, clic o tocco, swipe sul telefono; `F` per lo
+  schermo intero; numero della slide nell'URL (`#12`), così si può riaprire da lì.
+  Tasto `P` per la stampa: una slide per pagina A4 orizzontale, tramite `@media print`.
+- **Impaginazione fissa**: numero e titolo del giorno sempre nello stesso punto;
+  foto d'apertura del giorno a destra; stessi font, colori e riquadri del PDF (§ 4).
+- **Lettering**: gli SVG di Calligrafia inseriti direttamente, nitidi a ogni risoluzione.
+- **Transizioni**: tra un giorno e l'altro una trasformazione morbida degli elementi
+  comuni (View Transitions API o transizioni CSS su posizione e scala: è l'equivalente
+  di Morph); tra i capitoli dissolvenza o scorrimento. Titolo e numero del giorno restano
+  fermi. Con `prefers-reduced-motion` le transizioni si tolgono.
+- **Mappe animate**: il percorso del giorno si disegna con un'animazione SVG
+  (`stroke-dashoffset`) sugli stessi GeoJSON del PDF. Km e ore vengono dalla tabella
+  unica e restano separati tra mattina e pomeriggio (B5).
+- **Video**: se serve un filmato (MP4 H.264, 1920×1080, 30 fps, senza audio, B5),
+  si registra dalla presentazione HTML stessa (es. Playwright), non si rifà a parte.
+- Nessun testo non approvato da Copy (B5). Le librerie esterne, se servono, hanno una
+  versione fissata; meglio nessuna.
+- Controlli della build: ogni slide entra nel palco senza tagli, le immagini esistono,
+  i numeri coincidono con la tabella km, i segni di bozza sono contati come nel PDF.
+
 ## 9. Lista di controllo prima della build finale
 - [ ] Tutte le scelte aperte decise da Massimo e riportate nel brief.
 - [ ] Riconciliazione fatta: grafie, numeri e luoghi coerenti in tutti i file.
@@ -349,4 +381,5 @@ build.py → HTML + CSS paged media → WeasyPrint → PDF stampa + PDF leggero
 - [ ] Foto viste una per una; crediti completi in didascalia e in appendice.
 - [ ] Citazioni verificate sul volume stampato (editore, anno, pagina, traduttore).
 - [ ] Appendice completa: da ricontrollare, da prenotare, fonti con data, fonti deboli, crediti.
+- [ ] Presentazione HTML generata dagli stessi dati, provata su computer e telefono.
 - [ ] Segni di bozza a zero, oppure elencati e accettati da Massimo.

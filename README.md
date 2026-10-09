@@ -17,4 +17,4 @@ pubblicate automaticamente da **Cloudflare Pages** a ogni push su `main`.
 Dettagli, setup Cloudflare e rollback: vedi **[PUBLISHING.md](PUBLISHING.md)**.
 
 ## Guide di viaggio in PDF
-Manuale per realizzare le guide narrate (PDF 170×240, slide, testo): **[GUIDE-VIAGGIO.md](GUIDE-VIAGGIO.md)**.
+Manuale per realizzare le guide narrate (PDF 170×240, presentazione HTML, testo): **[GUIDE-VIAGGIO.md](GUIDE-VIAGGIO.md)**.
