@@ -15,3 +15,6 @@ pubblicate automaticamente da **Cloudflare Pages** a ogni push su `main`.
 3. `push`. Online in ~1 minuto; hub e mappa si aggiornano da soli.
 
 Dettagli, setup Cloudflare e rollback: vedi **[PUBLISHING.md](PUBLISHING.md)**.
+
+## Guide di viaggio in PDF
+Manuale per realizzare le guide narrate (PDF 170×240, slide, testo): **[GUIDE-VIAGGIO.md](GUIDE-VIAGGIO.md)**.
