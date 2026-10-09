@@ -134,6 +134,13 @@ Ordine delle sezioni (come nel modello, circa 100 pagine per 16–18 giorni):
 | Nomi dei locali, cifre chiave | Barlow Semi Condensed SemiBold | 8,2–8,4 pt | inchiostro |
 
 Capolettera in Marcellus terracotta solo all'inizio delle sezioni narrative.
+
+**Lingua locale.** Se i titoli usano un alfabeto o lettere non latine (B4: toponimi
+nella grafia della loro lingua), i font del modello possono non bastare: Marcellus,
+Pinyon Script e Barlow non hanno il cirillico. Prima di scegliere un font si controlla
+la **tabella dei caratteri del file**, lettera per lettera (es. con fontTools), e non
+solo la dichiarazione del sottoinsieme: Great Vibes dichiara il cirillico esteso, ma
+non ha le lettere kirghise Ө, Ү, Ң.
 I font si scaricano da Google Fonts (API CSS o pacchetti `@fontsource` su jsDelivr).
 `github.com/google/fonts` può essere bloccato dall'ambiente.
 
