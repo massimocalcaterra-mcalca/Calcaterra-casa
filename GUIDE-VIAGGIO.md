@@ -59,6 +59,18 @@ fondo, con la data. Il brief è la sola fonte delle scelte.
 Ordine: ricerca → **riconciliazione** (§ 2.3) → testo → revisione di Copy →
 verifica del Ricercatore → impaginazione → **una sola build finale**.
 
+### 2.2 bis Coordinamento tra agenti
+Quando più agenti lavorano in parallelo, il coordinatore apre subito un file
+`COORDINAMENTO.md` nella cartella del progetto, **prima** che qualcuno scriva file. Contiene:
+- **chi possiede cosa**: ogni agente scrive solo nelle sue cartelle; negli altri file legge e basta;
+- **i formati di scambio**: ID dei giorni, struttura dei testi, schema dei dati dei locali,
+  colonne della tabella km, nomi e formati delle mappe. Chi produce rispetta il formato,
+  chi legge non lo reinterpreta;
+- **una sola fonte per ogni dato**, letta e mai ricopiata a mano;
+- **una bacheca** in fondo al file, solo in aggiunta: consegne, avvisi, richieste agli altri agenti.
+Ogni agente lo legge all'inizio, a ogni tappa e prima di consegnare. I formati li decide il
+coordinatore; un agente che ne ha bisogno di uno diverso lo chiede in bacheca.
+
 ### 2.3 Riconciliazione (passaggio da non saltare)
 I ricercatori lavorano in parallelo e i loro file finiscono per contraddirsi.
 Prima di scrivere il testo, un passaggio dedicato confronta tutti i file e produce
