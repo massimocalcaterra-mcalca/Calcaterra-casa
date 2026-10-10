@@ -327,6 +327,8 @@ build.py → HTML + CSS paged media → WeasyPrint → PDF stampa + PDF leggero
 - **Nessun font di ripiego**: l'elenco dei font incorporati (`pdffonts`) contiene solo quelli
   del progetto. Un font estraneo vuol dire che manca un glifo. Casi già visti: il trattino di
   sillabazione U+2010 (si imposta `hyphenate-character: "-"`) e il pallino «●» nelle legende.
+- **Sfumature sulle foto a piena pagina**: un riquadro sfumato che finisce a metà pagina lascia
+  una riga visibile sul bordo. La sfumatura copre tutta la pagina e diventa trasparente a metà.
 - **Testi sulle mappe SVG**: WeasyPrint ignora `paint-order`, quindi l'alone chiaro si disegna
   con una copia del testo solo contorno, messa sotto il testo pieno.
 - **Foto da Wikimedia**: `upload.wikimedia.org` accetta solo miniature di larghezza standard
